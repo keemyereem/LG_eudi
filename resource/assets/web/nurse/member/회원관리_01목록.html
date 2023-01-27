@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+    <head> 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+		
+	
+
+
+
+
+<script>
+
+/*ControllerUtil.redirectPost alert*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+</script>
+
+
+	<!-- SET FILE PATH :: compatibility ie9 code -->
+        <base href="../" />
+        <!--[if IE]><script type="text/javascript">
+            // Fix for IE ignoring relative base tags.
+            (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+            })();
+        </script><![endif]-->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+          
+        	
+        	
+        		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        	
+        
+        <meta name="format-detection" content="telephone=no">
+	     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <!-- TITLE -->
+         <title>EuDi</title>
+	     <link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
+	     
+
+    
+
+
+<!-- common css file-->
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=1.3">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=1.3">
+
+
+<!-- nurse css file -->
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
+
+<!-- nurse js file-->
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?version=1.2"></script>
+
+
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
+<script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
+
+
+
+  <script>
+      $(function(){
+          selEvent.init();
+        
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_main').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+
+      });
+      
+   	function fnSearch(){
+
+			$("#pageIndex").val("1");
+			$("#reSearch").val("Y");
+		 	document.listForm.action = "/nurse/member/list.do";
+			document.listForm.submit();
+	}
+ 
+	
+	function fnViewPage(cIdx,cBirth,privateYn){
+		$("#cIdx").val(cIdx);
+		$("#cBirth").val(cBirth);
+		$("#privateYn").val(privateYn);
+	 	document.listForm.action = "/nurse/member/view.do";
+	    document.listForm.submit();
+		
+	}
+
+  	/*pagination 페이지 링크 function*/
+  	function fnLinkPage(pageNo){
+  	document.listForm.pageIndex.value = pageNo;
+     	document.listForm.action = "/nurse/member/list.do";
+      document.listForm.submit();
+  	}
+  </script>
+  <script src='/eum_.js'></script></head>
+
+ <body>
+	  <div class="wrap wrap_sub wrap_sub01">
+      <!--// top -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">회원관리</h2>
+            <div class="back"><a href="/nurse/main.do"><img src="/resource/assets/web/nurse/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+      </div>
+      <!-- top //-->
+      <!--// content -->
+       	<form id="listForm" name="listForm" action="/nurse/member/list.do" method="post">
+				    <input type="hidden" name="pageUnit" id="pageUnit" value="10">
+				    <input type="hidden" name="hIdx" id="hIdx" value="">
+				
+				    <input type="hidden" name="cIdx" id="cIdx" value="">
+				    <input type="hidden" name="cBirth" id="cBirth" value="">
+				    <input type="hidden" name="privateYn" id="privateYn" value="">
+				    <input type="hidden" name="reSearch" id="reSearch" value="N">
+				    <input type="hidden" name="searchId" id="searchId" value="4mnurse">
+     			  <input type="hidden" name="searchName" id="searchName" value="">
+
+      <div class="content con_sub con_sub01">
+        <div class="con_box">
+          <div class="search_box">
+            <p>회원검색</p>
+            <div class="srh_box">
+              <div>
+                <div class="input_srh input_srh02">
+                  <span class="input_box">
+                    <input type="text" id="searchKeyword" name="searchKeyword" class="ipt" placeholder="아이명" value="">
+      						</span>
+      					</div>
+                <div class="input_srh input_srh02">
+                  <span class="input_box">
+                    <input type="text" id="hName" name="hName" class="ipt" placeholder="아이디" value="">
+                  </span>
+                </div>
+              </div>
+              <div class="mt5">
+                <div class="inputBox_DP">
+                  <input type="date" name="" class="date" value="" data-placeholder="생년월일">
+                </div>
+                <div class="select_srh select_srh02">
+                  <label for="cState">회원상태</label>
+                  <select id="cState" name="cState">
+                      <option value="" selected="selected">회원상태</option>
+                      <option value="">전체</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mt5">
+                <div class="input_srh input_srh02">
+                  <span class="input_box">
+                    <input type="text" id="searchKeyword" name="searchKeyword" class="ipt" placeholder="병원명" value="">
+      						</span>
+      					</div>
+                <div class="input_srh input_srh02">
+                  <span class="input_box">
+                    <input type="text" id="hName" name="hName" class="ipt" placeholder="의사명" value="">
+                  </span>
+                </div>
+              </div>
+              <div class="mt5">
+                <div class="select_srh select_srh02">
+                  <label for="srh03">진행상황</label>
+                    <select id="srh03" name="srh03">
+                      <option value="4mnurse" selected="selected">진행상황</option>
+                      <option value="all" >전체</option>
+                  </select>
+                </div>
+                <div class="select_srh select_srh02">
+                  <label for="srh03">내 요청 내역</label>
+                    <select id="srh03" name="srh03">
+                      <option value="4mnurse" selected="selected">내 요청 내역</option>
+                      <option value="all" >전체</option>
+                      <option value="chloe1" >김광열</option>
+                      <option value="jeewoo1025" >김영미</option>
+                      <option value="rajhkim" >김지혜</option>
+                      <option value="cokiri" >김진경</option>
+                      <option value="lgrhj" >노희정</option>
+                      <option value="ekgml38" >류다희</option>
+                      <option value="jieun.park" >박지은</option>
+                      <option value="skywlgp" >박지혜</option>
+                      <option value="jiyoung.seo" >서지영</option>
+                      <option value="sheom" >엄소희</option>
+                      <option value="twofuture" >이미래</option>
+                      <option value="iamej" >이은주</option>
+                      <option value="jiyoun0531" >이지연</option>
+                      <option value="echoran" >이초란</option>
+                      <option value="hyeyeonyi124" >이혜연</option>
+                      <option value="happyjw116" >임종원</option>
+                      <option value="valavazz" >최지현</option>
+                      <option value="hanmijin" >한미진</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="btn_box btn_box01">
+              <div class="btn_green"><a href="javascript:;" onclick="fnSearch()">검색</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="con_box">
+          <div class="con_inner02">
+            <div class="search_info">총 <span><b>55</b>명</span>의 회원, 총<span><b>3</b>명</span>의 회원요청 대기자가 있습니다.</div>
+            <div class="con_list">
+              <ul>
+                <li><a href="javascript:;">
+                  <div><span class="lblbox lbl01">회원요청</span><p class="idbox">abcdabcd12312</p></div>
+                  <div><span class="datebox">2019.07.10</span><p class="namebox">이하준</p></div>
+                </a></li>
+                <li><a href="javascript:;">
+                  <div><span class="lblbox lbl01">회원요청</span><p class="idbox">abcdabcd12312</p></div>
+                  <div><span class="datebox">2019.07.10</span><p class="namebox">이신우</p></div>
+                </a></li>
+                <li><a href="javascript:;">
+                  <div><span class="lblbox lbl02">회원</span><p class="idbox">abcdabcd12312</p></div>
+                  <div><span class="datebox">2019.07.10</span><p class="namebox">김주호</p></div>
+                </a></li>
+                <li><a href="javascript:;">
+                  <div><span class="lblbox lbl03">반려회원</span><p class="idbox">abcdabcd12312</p></div>
+                  <div><span class="datebox">2019.07.10</span><p class="namebox">김유리</p></div>
+                </a></li>
+                <li><a href="javascript:;">
+                  <div><span class="lblbox lbl04">탈퇴요청</span><p class="idbox">abcdabcd12312</p></div>
+                  <div><span class="datebox">2019.07.10</span><p class="namebox">우희경</p></div>
+                </a></li>
+
+              </ul>
+            </div>
+
+	    	    <div class="paging">
+              <a href="javascript:;"  title="맨 앞" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_front.png" alt="처음"></a><a href="javascript:;"  title="이 전" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_prev.png" alt="이전"></a><ul><li class="active"><a href="javascript:;" return false;">1</a></li></ul><a href="javascript:;"  title="다음" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_next.png" alt="다음"></a><a href="javascript:;"  title="맨끝" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_last.png" alt="마지막"></a>
+
+              <input id="pageIndex" name="pageIndex" type="hidden" value="1"/>
+				    </div>
+				    
+	          </div>
+	        </div>
+          </form>
+      </div>
+      <!-- content //-->
+	  </div>
+	    <script>
+	  $("#srh02").change(function() {
+		  $("#hIdx").val($("#srh02").val());
+		  if($("#srh02 option:selected").text() == "병원명" || $("#srh02 option:selected").text() == "전체"){
+			  $("#hName").val("");
+		  } else {
+			  $("#hName").val($("#srh02 option:selected").text());
+		  }
+
+		});
+	  
+	  $("#srh03").change(function() {
+		  $("#searchId").val($("#srh03").val());
+		  $("#searchName").val($("#srh03 option:selected").text());
+     });
+	  </script>
+  </body>
+</html>

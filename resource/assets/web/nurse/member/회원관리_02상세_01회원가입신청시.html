@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<html>
+<head> 
+
+  <script>
+
+  /*ControllerUtil.redirectPost alert*/
+  if("" != ""){
+    var msg = "".replace("<br>", "\n");
+    alert(msg);
+
+  }
+  </script>
+
+
+    <!-- SET FILE PATH :: compatibility ie9 code -->
+    <base href="../" />
+    <!--[if IE]><script type="text/javascript">
+        // Fix for IE ignoring relative base tags.
+        (function() {
+            var baseTag = document.getElementsByTagName('base')[0];
+            baseTag.href = baseTag.href;
+        })();
+    </script><![endif]-->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+      
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- TITLE -->
+    <title>EuDi</title>
+    <link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
+    
+
+    <!-- common css file-->
+    <link rel="stylesheet" href="/resource/assets/web/css/main.css?version=1.3">
+    <link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=1.3">
+
+
+    <!-- nurse css file -->
+    <link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?version=2.1">
+    <link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
+    <link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
+
+    <!-- nurse js file-->
+    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
+    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
+    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
+    <script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?version=1.2"></script>
+
+
+    <!-- common js file-->
+    <script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
+    <script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
+
+    <script type="text/javascript" src="/resource/assets/web/nurse/js/clipboard.min.js"></script>
+
+    <script src='/eum_.js'></script>
+
+
+</head>
+
+   <body>
+	  <div class="wrap wrap_sub wrap_sub01">
+      <!--// top -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">회원상세</h2>
+            <div class="back"><a href="javascript:;" onclick="fnListPage()"><img src="/resource/assets/web/nurse/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+        <!--// 수정 -->
+  		<div class="tab tab_border">
+          <div class="inner">
+            <ul>
+              <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
+              <li><a href="">상담관리</a></li>
+              <li><a href="javascript:fnDosePage()">투여확인</a></li>
+  
+
+            </ul>
+          </div>
+        </div>
+        <!-- 수정 //-->
+      </div>
+      <!-- top //-->
+      <!--// content -->
+      <form id="viewForm" name="viewForm" role="form" action="/nurse/member/view.do" method="post">
+        <input type="hidden" name="pageIndex" id="pageIndex" value="1">
+        <input type="hidden" name="cHospitalIdx" id="cHospitalIdx" value="">
+        <input type="hidden" name="cHospitalName" id="cHospitalName" value="dsad">
+        <input type="hidden" name="cIdx" id="cIdx" value="18135">
+        <input type="hidden" name="cBirth" id="cBirth" value="2008-01-27">
+        <input type="hidden" name="mId" id="mId" value="4mtest3">
+        <input type="hidden" name="ori_cState" id="ori_cState" value="AA">
+        <input type="hidden" name="searchName" id="searchName" value="">
+        <input type="hidden" name="searchId" id="searchId" value="4mnurse">
+        <input type="hidden" name="srh03" id="srh03" value="4mnurse">
+        <input type="hidden" name="searchKeyword" id="searchKeyword" value="">
+        <input type="hidden" name="cState" id="cState" value="AA">
+        <input type="hidden" name="hIdx" id="hIdx" value="">
+        <input type="hidden" name="hName" id="hName" value="">
+        <input type="hidden" name="docNo" id="docNo" value="">
+        <input type="hidden" name="reSearch" id="reSearch" value="Y">
+        <input type="hidden" name="privateYn" id="privateYn" value="N">
+      <div class="content con_sub con_sub01">
+        <div class="ipt_box">
+          <div class="inner">           
+            <h3 class="info01">기본 정보</h3>
+            <div class="tb">
+              <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                <caption>기본 정보</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="tit"><p>가입일자</p></td>
+                    <td class="cont"><p>2020-01-09</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>아이디</p></td>
+                    <td class="cont"><p>4mtest3</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>회원상태</p></td>
+                    <td class="cont"><p>회원요청</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>휴대폰번호</p></td>
+                    <td class="cont">
+                      <div class="select_tel">
+                        <label for="tel01">010</label>
+                        <select id="tel01" name="mCpnumber1">
+                          <option selected="selected">010</option>
+                          <option value="011">011</option>
+                          <option value="017">017</option>
+                          <option value="018">018</option>
+                          <option value="019">019</option>
+                        </select>
+                      </div>
+                      <span class="hyphen">-</span>
+                      <div class="input_tel">
+            						<span class="input_box">
+          							  <input type="text" id="tel02" name="mCpnumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="4726" class="ipt"  maxlength="4">
+            						</span>
+            					</div>
+                      <span class="hyphen">-</span>
+                      <div class="input_tel">
+            						<span class="input_box">
+          							  <input type="text" id="tel03" name="mCpnumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="8132" class="ipt"  maxlength="4">
+            						</span>
+            					</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>주소</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="addr_box01" id="addr_box01">
+                          <div class="input_addr">
+                            <span class="input_box">
+                              <input type="text" id="pPost" name="pPost" class="ipt" value="" readonly="">
+                            </span>
+                            <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
+                          </div>
+                          <div class="input_row mt5">
+                            <span class="input_box">
+                              <input type="text" id="pAddr1" name="pAddr1" class="ipt" value="" readonly="">
+                            </span>
+                          </div>
+                          <div class="input_row mt5">
+                            <span class="input_box">
+                              <input type="text" id="pAddr2" name="pAddr2" class="ipt" value="">
+                            </span>
+                          </div>
+                        </div>
+                        <div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+                          <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="width:20px;cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+                        </div>
+                        <!--// 주소 입력 후 -->
+                        <div class="addr_box02 blind" id="addr_box02">
+                          <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
+                          <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="info02">아이 정보</h3>
+            <div>
+              <h4>기본 정보</h4>
+              <div class="tb">
+                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>기본 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>아이명</p></td>
+                      <!--  빌리버 화상통신 버튼 추가 -->
+                      <td class="cont flex">
+                        <p class="border">이하준</p>
+                        <div class="btn_green"><a href="javascript:;" onclick="fnJoinVideoCall();">&nbsp;화상미팅&nbsp;</a></div>
+                      </td>
+                      <!--  빌리버 코드 끝 -->
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>성별</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel01">남자</label>
+                          <select id="sel01" name="gender">
+                            <option value="male">남자</option>
+                            <option value="female" >여자</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>생년월일</p></td>
+                      <td class="cont flex">
+                        <div class="inputBox_DP">
+                          <input type="date" name="" class="date" value="2010-05-03">
+                        </div>
+                        <p class="shrink0"><span>12</span>세</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>담당 간호사</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel02">박소라</label>
+                          <select id="sel02" name="cChargNurseId">
+                            <option value="chloe1" >김광열</option>
+                            <option value="jeewoo1025" >김영미</option>
+                            <option value="rajhkim" >김지혜</option>
+                            <option value="cokiri" >김진경</option>
+                            <option value="lgrhj" >노희정</option>
+                            <option value="ekgml38" >류다희</option>
+                            <option value="jieun.park" >박지은</option>
+                            <option value="skywlgp" >박지혜</option>
+                            <option value="jiyoung.seo" >서지영</option>
+                            <option value="sheom" >엄소희</option>
+                            <option value="twofuture" >이미래</option>
+                            <option value="iamej" >이은주</option>
+                            <option value="jiyoun0531" >이지연</option>
+                            <option value="echoran" >이초란</option>
+                            <option value="hyeyeonyi124" >이혜연</option>
+                            <option value="happyjw116" >임종원</option>
+                            <option value="valavazz" >최지현</option>
+                            <option value="hanmijin" >한미진</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4>처방 및 병원 정보</h4>
+              <div class="tb">
+                <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>처방 및 병원 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>최초 처방일</p></td>
+                      <td class="cont flex">
+                        <div class="inputBox_DP">
+                          <input type="date" name="cInitialPrescription" class="date" value="2010-05-03" />
+                        </div>
+                        <div class="radio_row shrink0">
+                          <input type="radio" name="confirm" class="radio" />
+                          <label for="confirm">확정</label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>최초 처방일</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel03">유트로핀 펜주</label>
+                          <select id="sel03" name="">
+                            <option value="" >유트로핀 펜주</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>병원명</p></td>
+                      <td class="cont"><p id="hNameText">연세대학병원</p></td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>병원명 확인</p></td>
+                      <td class="cont">
+                        <div class="input_search">
+                          <span class="input_box">
+                            <input type="text" class="ipt"   id="selectHname"  value="연세대학교 병원" readonly="">
+                            <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>의사명</p></td>
+                      <td class="cont">
+                        <p class="border">김기준</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="btn_box btn_box03 mt50">
+              <div class="btn_gray"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
+              <div class="btn_gray"><a href="javascript:;" onclick="childStateUpdate('R')">반려</a></div>
+              <div class="btn_green"><a href="javascript:;" onclick="childStateUpdate('M')">승인</a></div>
+            <!-- 회원 복구 2021-10-26 -->
+            </div>
+                                      
+          </div>
+        </div>
+      </div>
+    </form>
+      <!-- content //-->
+      
+      <!-- 병원명 검색 -->
+      <div class="pop_mask"></div>
+      <div class="pop_search">
+        <div class="pop_search_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="pop_tit">병원명 검색</div>
+            <div class="search_area">
+              <p>등록되어 있는 병원명 또는 간략한 주소를 입력하시고 [검색]버튼을 클릭해주세요.</p>
+              <div class="search_ipt">
+                <div class="search_cell">
+                  <div class="input_row">
+                    <span class="input_box">
+                      <input type="text" id="search_name"  class="ipt">
+                    </span>
+                  </div>
+                </div>
+                <div class="search_cell btn">
+                  <div class="btn_search"><a href="javascript:fnHospitalSearch();">검색</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="search_list" id="search_hospital">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+            <!-- 의사 검색 -->
+      <div class="pop_mask_doctor"></div>
+      <div class="pop_search_doctor">
+        <div class="pop_search_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="pop_tit">의사명 검색</div>
+            <div class="search_area">
+                <p>등록되어 있는 의사명 입력하시고 [검색]버튼을 클릭해주세요.</p>
+              <div class="search_ipt">
+                <div class="search_cell">
+                  <div class="input_row">
+                    <span class="input_box">
+                      <input type="text" id="search_doctor_name"  class="ipt">
+                    </span>
+                  </div>
+                </div>
+                <div class="search_cell btn">
+                  <div class="btn_search"><a href="javascript:fnDoctorSearch();">검색</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="search_list" id="search_doctor">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      <!-- 로딩바 -->
+      <div id="loading"  style=" display:none;top: 60%; left: 70%;  margin-left:-100px;z-index: 9999; border: 3px #2B97D6;position:fixed">
+        <p style="text-align: center;">
+          <img src="/resource/assets/nurse/images/common/loading.gif" alt="loading" />
+          <font color="#0054FF"><span id="percentage"></span></font>
+        </p>
+      </div>
+
+      <!-- 임시비밀번호 -->
+      <div class="pop_mask_temp"></div>
+      <div class="pop_search_temp">
+        <div class="pop_search_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="pop_tit">임시 비밀번호 발급</div>
+            <div class="search_area">
+              <p>임시 비밀번호 복사를 터치하여 임시 비밀번호를 전달하세요.</p>
+              <div class="search_ipt">
+                <div class="search_cell">
+                  <div class="input_row">
+                    <span class="input_box">
+                      <input type="text" id="temp_pass"class="ipt" readonly>
+                    </span>
+                  </div>
+                </div>  
+              </div>
+              <div class="search_ipt">
+                <div class="search_cell btn" style="width: 100%;">
+                  <div class="btn_search" style="margin-left: 0;width: 100%;"><a  href="javascript:alert('임시비밀번호가 복사되었습니다');" class="clipboard"  data-clipboard-target="#temp_pass">임시 비밀번호 복사</a></div>
+                </div>   
+              </div>
+              <div class="search_list" id="search_doctor">
+              </div>
+          </div>
+        </div>
+      </div>
+      
+	  </div>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        // 우편번호 찾기 찾기 화면을 넣을 element
+        //var element_wrap = document.getElementById('addr_wrap');
+        var element_layer = document.getElementById('layer');
+    
+    /*     function foldDaumPostcode() {
+            // iframe을 넣은 element를 안보이게 한다.
+            element_wrap.style.display = 'none';
+        }
+         */
+        function closeDaumPostcode() {
+            // iframe을 넣은 element를 안보이게 한다.
+            element_layer.style.display = 'none';
+        }
+
+        function sample2_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+    
+                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var addr = ''; // 주소 변수
+                    var extraAddr = ''; // 참고항목 변수
+    
+                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                        addr = data.roadAddress;
+                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        addr = data.jibunAddress;
+                    }
+    
+                    // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                    if(data.userSelectedType === 'R'){
+                        // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                        // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                            extraAddr += data.bname;
+                        }
+                        // 건물명이 있고, 공동주택일 경우 추가한다.
+                        if(data.buildingName !== '' && data.apartment === 'Y'){
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                        }
+                        // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                        if(extraAddr !== ''){
+                            extraAddr = ' (' + extraAddr + ')';
+                        }
+                        // 조합된 참고항목을 해당 필드에 넣는다.
+                        document.getElementById("pAddr2").value = extraAddr;
+    
+                    } else {
+                        document.getElementById("pAddr2").value = '';
+                    }
+    
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('pPost').value = data.zonecode;
+                    document.getElementById("pAddr1").value = addr;
+                    // 커서를 상세주소 필드로 이동한다.
+                    document.getElementById("pAddr2").focus();
+                    $("#addr_box01").removeClass("blind");
+                    $("#addr_box02").addClass("blind");
+    
+                    // iframe을 넣은 element를 안보이게 한다.
+                    // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                    element_layer.style.display = 'none';
+    
+    
+                },
+                width : '100%',
+                height : '100%',
+                maxSuggestItems : 5
+            }).embed(element_layer);
+    
+            // iframe을 넣은 element를 보이게 한다.
+            element_layer.style.display = 'block';
+    
+            // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+            initLayerPosition();
+        }
+    
+    
+        function initLayerPosition(){
+            var width = 300; //우편번호서비스가 들어갈 element의 width
+            var height = 400; //우편번호서비스가 들어갈 element의 height
+            var borderWidth = 5; //샘플에서 사용하는 border의 두께
+    
+            // 위에서 선언한 값들을 실제 element에 넣는다.
+            element_layer.style.width = width + 'px';
+            element_layer.style.height = height + 'px';
+            element_layer.style.border = borderWidth + 'px solid';
+            // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+            element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
+            element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+        }
+    
+    
+        function maxLengthCheck(object){
+        if(object.value.length > object.maxLength) {
+          object.value = object.value.slice(0, object.maxLength);
+        }
+      }
+      
+      //select
+      $(".select_row > select").change(function() {
+        var changeValue = $(".select_row > select").val();
+        $(".select_row > label").text(changeValue);
+        $("select#requestAddCotton option").remove();
+        $("#requestAddCotton").append("<option value='0'>0</option>");
+        $("#requestAddCotton").append("<option value='100'>100</option>");
+        $("#requestAddCotton").val(changeValue).prop("selected", true);
+      });
+    
+    </script>
+  </body>
+</html>

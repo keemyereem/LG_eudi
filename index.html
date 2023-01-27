@@ -24,6 +24,7 @@
             ul, ol, li {list-style: none;}
             
             .hr { color:red; font-weight: bold; }
+            
             .header { background:#79bd28; padding:10px; color:#fff; font-size:20px; font-weight:bold;}
             .content {padding:15px;}
             .content table {width:100%; border-collapse:collapse; border-spacing:0;}
@@ -31,14 +32,13 @@
             .content table thead th { border: 1px solid rgba(0, 0, 0, .1); }
             .content th {background:#e3e3e3;}
             .content th, 
-            .content td {border:1px solid #ddd; border-spacing:0; padding:15px 5px; text-align:center; font-size: 16px; }
-            .content td a { font-size: 16px; text-decoration: none; }
-
+            .content td {border:1px solid #ddd; border-spacing:0; padding:5px; text-align:center; font-size: 14px; }
+            .content td a { font-size: 14px; text-decoration: none; }
+            .img a { font-size: 16px !important; }
+            .tr_devide { background: rgb(121, 189, 40, .4); }
             .th_width100 { width:100px; }
             table tbody:nth-child(2n-1) { background: rgb(121, 189, 40, .8); color: #ffffff; }
-
         </style>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     </head>
     <body>
         <div class="header">LG EUDI Application</div>
@@ -55,72 +55,253 @@
                       <th>1depth</th>
                       <th>2depth</th>
                       <th>3depth</th>
-                      <th class="th_width100">팝업</th>
+                      <th>팝업</th>
                       <th>비고</th>
+                      <th class="dd">자료</th>
                       <th>화면 ID</th>
                       <th class="th_width100">진행여부</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                      <td rowspan="10">간호사앱</td>
-                      <td rowspan="4">상담일정관리</td>
-                      <td>캘린더</td>
+                      <td rowspan="22">간호사앱</td>
+                      <td rowspan="10">회원관리</td>
+                      <td>목록</td>
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td><a href="html/NS-00-01.html" target="_blank">NS-00-01.html</a></td>
-                      <td></td>
+                      <td class="img">
+                        <a href="images/sample/1.jpg" target="_blank">①</a>
+                      </td>
+                      <td><a href="html/NS-000.html" target="_blank">NS-000.html</a></td>
+                      <td>●</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="6">상세</td>
+                    <td>가입신청</td>
+                    <td>중복확인</td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/2.jpg" target="_blank">①</a>
+                      <a href="images/sample/3.jpg" target="_blank">②</a>
+                    </td>
+                    <td><a href="html/NS-001.html" target="_blank">NS-001.html</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>상세정보(회원)</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/4.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-002.html" target="_blank">NS-002.html</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>탈퇴요청</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/5.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-003.html" target="_blank">NS-003.html</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>반려회원</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/6.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-004.html" target="_blank">NS-004.html</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>휴면회원</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/7.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-005.html" target="_blank">NS-005.html</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>탈퇴회원</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/8.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-006.html" target="_blank">NS-006.html</a></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td rowspan="3">상담관리</td>
+                    <td>환아목록</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/9.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-007.html" target="_blank">NS-007.html</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>상담이력</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/10.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-008.html" target="_blank">NS-008.html</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>상담이력 등록</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/11.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-009.html" target="_blank">NS-009.html</a></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td rowspan="4">상담일정관리</td>
+                    <td>캘린더</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/12.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-100.html" target="_blank">NS-100.html</a></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td rowspan="3">상세일정</td>
                     <td>메인</td>
+                    <td>불가관리</td>
                     <td></td>
-                    <td></td>
-                    <td><a href="html/NS-00-02.html" target="_blank">NS-00-02.html</a></td>
+                    <td class="img">
+                      <a href="images/sample/13.jpg" target="_blank">①</a>
+                      <a href="images/sample/14.jpg" target="_blank">②</a>
+                    </td>
+                    <td><a href="html/NS-101.html" target="_blank">NS-101.html</a></td>
                     <td></td>
                   </tr>
                   <tr>
                     <td>상담이력등록</td>
                     <td></td>
                     <td></td>
-                    <td><a href="html/NS-00-03.html" target="_blank">NS-00-03.html</a></td>
+                    <td class="img">
+                      <a href="images/sample/15.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-102.html" target="_blank">NS-102.html</a></td>
                     <td></td>
                   </tr>
                   <tr>
                     <td>교육상담해피콜등록</td>
                     <td></td>
                     <td></td>
-                    <td><a href="html/NS-00-04.html" target="_blank">NS-00-04.html</a></td>
+                    <td class="img">
+                      <a href="images/sample/16.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-103.html" target="_blank">NS-103.html</a></td>
                     <td></td>
                   </tr>
 
                   <tr>
-                    <td rowspan="5">상담가능일정등록</td>
-                    <td>캘린더</td>
+                    <td rowspan="7">상담가능일정등록</td>
+                    <td rowspan="3">캘린더</td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><a href="html/NS-01-01.html" target="_blank">NS-01-01.html</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td rowspan="4">일정등록</td>
-                    <td>저장</td>
-                    <td></td>
-                    <td></td>
-                    <td rowspan="4"><a href="html/NS-01-02.html" target="_blank">NS-01-02.html</a></td>
+                    <td class="img">
+                      <a href="images/sample/17.jpg" target="_blank">①</a>
+                    </td>
+                    <td><a href="html/NS-200.html" target="_blank">NS-200.html</a></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td rowspan="2">불가 및 관리</td>
-                    <td>등록</td>
+                    <td rowspan="2">편집모드</td>
+                    <td>상세설정</td>
                     <td></td>
+                    <td class="img">
+                      <a href="images/sample/18.jpg" target="_blank">①</a>
+                      <a href="images/sample/19.jpg" target="_blank">②</a>
+                    </td>
+                    <td rowspan="2"><a href="html/NS-201.html" target="_blank">NS-201.html</a></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td>수정</td>
+                    <td>불가</td>
                     <td></td>
+                    <td class="img">
+                      <a href="images/sample/20.jpg" target="_blank">①</a>
+                      <a href="images/sample/21.jpg" target="_blank">②</a>
+                      <a href="images/sample/22.jpg" target="_blank">③</a>
+                    </td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td rowspan="4">시간별</td>
+                    <td>&nbsp;</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/23.jpg" target="_blank">①</a>
+                    </td>
+                    <td rowspan="4"><a href="html/NS-202.html" target="_blank">NS-202.html</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>가능</td>
+                    <td></td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/24.jpg" target="_blank">①</a>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>불가</td>
+                    <td rowspan="2">사유등록</td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/25.jpg" target="_blank">①</a>
+                      <a href="images/sample/26.jpg" target="_blank">②</a>
+                      <a href="images/sample/27.jpg" target="_blank">③</a>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>불가수정</td>
+                    <td></td>
+                    <td class="img">
+                      <a href="images/sample/28.jpg" target="_blank">①</a>
+                      <a href="images/sample/29.jpg" target="_blank">②</a>
+                    </td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>로그인</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>인증번호 틀린경우도 포함</td>
+                    <td class="img">
+                      <a href="images/sample/30.jpg" target="_blank">①</a>
+                      <a href="images/sample/31.jpg" target="_blank">②</a>
+                    </td>
+                    <td><a href="html/NS-301.html" target="_blank">NS-301.html</a></td>
                     <td></td>
                   </tr>
                 </tbody>
@@ -134,7 +315,8 @@
                       <td>메인</td>
                       <td>이용안내</td>
                       <td></td>
-                      <td rowspan="4"><a href="html/EP-00-01.html" target="_blank">EP-00-01.html</a></td>
+                      <td></td>
+                      <td rowspan="4"><a href="html/EP-000.html" target="_blank">EP-000.html</a></td>
                       <td></td>
                   </tr>
                   <tr>
@@ -143,9 +325,11 @@
                     <td>유형선택</td>
                     <td></td>
                     <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td>신청완료</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -155,11 +339,50 @@
                     <td>재확인</td>
                     <td></td>
                     <td></td>
+                    <td></td>
                   </tr>
                 </tbody>
             </table>
         </div>
 
-    </body>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 
 </html>
