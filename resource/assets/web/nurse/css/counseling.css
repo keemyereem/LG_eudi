@@ -1,0 +1,51 @@
+@charset "UTF-8"; 
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////                                                        ** 간호사앱 **                                                              ///////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* 
+**** 폰트 
+Light - 
+'NanumSquareL', "맑은 고딕", "Malgun Gothic"
+
+Regular - 
+'NanumSquareR', "맑은 고딕", "Malgun Gothic"
+
+Bold - 
+'NanumSquareB', "맑은 고딕", "Malgun Gothic"
+
+ExtraBold - 
+'NanumSquareEB', "맑은 고딕", "Malgun Gothic"
+*/
+
+.wrap_sub .sub_top .sub_nav{ display:flex; justify-content: space-between; padding: 0 15px; border-bottom: 8px solid #f1f1f1 }
+.wrap_sub .sub_top .sub_nav a{  padding: 16.5px 10px; display: block; width: 33.3333333333%; text-align: center; white-space: nowrap; font-size: 15px }
+.wrap_sub .sub_top .sub_nav a.active{ color: #f18e1e; border-bottom: 2px solid #f18e1e; font-family: 'NanumSquareEB', "맑은 고딕", "Malgun Gothic" }
+
+/* 상담일정관리 - 캘린더 */
+.wrap_sub .sec_cal { width: 100%; padding: 35px 15px 57px }
+.wrap_sub .sec_cal .cal_nav { display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 48px; line-height: 78px }
+.wrap_sub .sec_cal .cal_nav .year-month { font-family: 'NanumSquareEB', "맑은 고딕", "Malgun Gothic"; width: 300px; text-align: center; line-height: 1 }
+.wrap_sub .sec_cal .cal_nav .year-month span {  }
+.wrap_sub .sec_cal .cal_nav .nav { display: flex; border: 1px solid #333; border-radius: 5px }
+.wrap_sub .sec_cal .cal_nav .go-next,.wrap_sub .sec_cal .cal_nav .go-prev { width: 50px; height: 78px; font-size: 0; display: flex; justify-content: center; align-items: center }
+.wrap_sub .sec_cal .cal_nav .go-next::before,.wrap_sub .sec_cal .cal_nav .go-prev::before { content: ""; display: block; width: 20px; height: 20px; border: 3px solid #000; border-width: 3px 3px 0 0; transition: border .1s }
+.wrap_sub .sec_cal .cal_nav .go-next:hover::before,.wrap_sub .sec_cal .cal_nav .go-prev:hover::before { border-color: #ed2a61 }
+.wrap_sub .sec_cal .cal_nav .go-prev::before { transform: rotate(-135deg) }
+.wrap_sub .sec_cal .cal_nav .go-next::before { transform: rotate(45deg) }
+.wrap_sub .sec_cal .cal_wrap { padding-top: 40px; position: relative; margin: 0 auto }
+.wrap_sub .sec_cal .cal_wrap::after { top: 368px }
+.wrap_sub .sec_cal .cal_wrap .days { display: flex; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd }
+.wrap_sub .sec_cal .cal_wrap .day { display: flex; align-items: center; justify-content: center; width: 14.2857142857%; color: #999; font-size: 12px; text-align: center; border-radius: 5px }
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n) { color: #3c6ffa }
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1) { color: #ed2a61 }
+.wrap_sub .sec_cal .cal_wrap .day.disable { color: #ddd }
+.wrap_sub .sec_cal .cal_wrap .dates { display: flex; flex-flow: wrap; height: 290px }
+.wrap_sub .sec_cal .current.today { background: #f2f2f2 }
+
+/*  */
+.wrap_sub .con_sub .info_box>ul { display: flex; flex-wrap: wrap; align-items: center }
+.wrap_sub .con_sub .info_box ul li { width: 50%; display: flex; }
+.wrap_sub .con_sub .info_box ul li .tit { font-family: 'NanumSquareB'; color: #999; }
+.wrap_sub .con_sub .info_box ul li .value { color: #333; }
