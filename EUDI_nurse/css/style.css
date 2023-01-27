@@ -54,8 +54,6 @@ header a { display: block; position: absolute; left: 15px; }
 header a img { width: 25px; object-fit: scale-down; }
 
 /* manage member */
-
-/** common **/
 .manage section { padding: 20px 15px 15px; }
 .manage section h2 { font-weight: 200; font-size: 13px; padding-bottom: 15px; }
 .manage section h2 b { font-weight: 400; color: #79bd28; }
@@ -74,7 +72,6 @@ header a img { width: 25px; object-fit: scale-down; }
 .manage select { -o-appearance: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; background: url(../images/common/select.png) calc(100% - 12px) 50% no-repeat; background-size: 7px 4.5px; }
 .manage select::-ms-expand { display: none; }
 .manage select:focus { background: url(../images/common/select_on.png) calc(100% - 12px) 50% no-repeat; background-size: 7px 4.5px; }
-
 .manage .mmList { border-top: 1px solid #727272; }
 .manage .mmList li { height: 70px; display: flex; justify-content: space-between; padding: 14px 15px 14px; border-bottom: 1px solid #e5e5e5; }
 .manage .mmList li > * { font-size: 13px; font-weight: 200; width: 20%; text-align: right; }
@@ -85,15 +82,18 @@ header a img { width: 25px; object-fit: scale-down; }
 .manage .mmList li > div:first-child span[data-type='member'] { color: #999999; border-color: #cfcfcf; }
 .manage .mmList li > div:first-child span[data-type='return'] { color: #727272; border-color: #727272; }
 .manage .mmList li > div:first-child span[data-type='quit'] { color: #333333; border-color: #333333; }
-
-.manage .pagination { padding: 30px 17.5px 65px; display: flex; justify-content: center; }
-.manage .pagination li:not(.pagination_num) { border: 1px solid red; width: 30px; height: 30px; }
-.manage .pagination .pagination_num { padding: 0 10px; }
+.manage .pagination { padding: 30px 0 65px; display: flex; justify-content: center; }
+.manage .pagination li:not(.pagination_num) { width: 30px; height: 30px; border-radius: 2.5px; }
+.manage .pagination .pagination_num { padding: 0 2vw; }
 .manage .pagination .pagination_num ul { display: flex; }
 .manage .pagination .pagination_num ul li { margin: 0 1px; display: grid; }
-.manage .pagination .pagination_num ul li.active {  }
+.manage .pagination .pagination_num ul li.active { background: #999999; color: #ffffff; }
 .manage .pagination .prev,
-.manage .pagination .next { margin: 0 4px; }
+.manage .pagination .next { margin: 0 1vw; }
+.manage .pagination .prev img,
+.manage .pagination .next img { display: block; width: 6px; }
+.manage .pagination > li:not(.pagination_num) { border: 1px solid #cfcfcf; display: flex; justify-content: center; }
+.manage .pagination > li:not(.pagination_num, .next, .prev) img { width: 10px; display: block; }
 
 @media screen and (max-width:375px) {
 
