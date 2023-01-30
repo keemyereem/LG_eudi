@@ -1,110 +1,192 @@
-/* --------------------- Eudi Released 2023.01.26 --------------------- */
-/* --------------------- Published by 4m Creative --------------------- */
-
-'use strict'
-
-$(function () {
-
-});
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////                                                       **간호사앱**                                                                 ///////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-var nurseJS = {
-  init: function () {
-    this.calInit();
-  },
-
-  calInit: () => {
-    /*
-    참고: https://codepen.io/ylem76/pen/xxrMOEJ
-    달력 렌더링 할 때 필요한 정보 목록 
-
-    현재 월(초기값 : 현재 시간)
-    금월 마지막일 날짜와 요일
-    전월 마지막일 날짜와 요일
-    */
-
-    // 날짜 정보 가져오기
-    var date = new Date(); // 현재 날짜(로컬 기준) 가져오기
-    var utc = date.getTime() + (date.getTimezoneOffset() * 60 * 1000); // uct 표준시 도출
-    var kstGap = 9 * 60 * 60 * 1000; // 한국 kst 기준시간 더하기
-    var today = new Date(utc + kstGap); // 한국 시간으로 date 객체 만들기(오늘)
-  
-    var thisMonth = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    // 달력에서 표기하는 날짜 객체
-  
-    
-    var currentYear = thisMonth.getFullYear(); // 달력에서 표기하는 연
-    var currentMonth = thisMonth.getMonth() + 1; // 달력에서 표기하는 월
-    var currentDate = thisMonth.getDate(); // 달력에서 표기하는 일
-
-    // kst 기준 현재시간
-    // console.log(thisMonth);
-
-    // 캘린더 렌더링
-    renderCalender(thisMonth);
-
-    function renderCalender(thisMonth) {
-
-      // 렌더링을 위한 데이터 정리
-      currentYear = thisMonth.getFullYear();
-      currentMonth = thisMonth.getMonth();
-      currentDate = thisMonth.getDate();
-
-      // 이전 달의 마지막 날 날짜와 요일 구하기
-      var startDay = new Date(currentYear, currentMonth, 0);
-      var prevDate = startDay.getDate();
-      var prevDay = startDay.getDay();
-
-      // 이번 달의 마지막날 날짜와 요일 구하기
-      var endDay = new Date(currentYear, currentMonth + 1, 0);
-      var nextDate = endDay.getDate();
-      var nextDay = endDay.getDay();
-
-      // console.log(prevDate, prevDay, nextDate, nextDay);
-
-      // 현재 월 표기
-      $('.year-month').html('<span>' + currentYear + '</span>년 <span>' + (currentMonth + 1) + '</span>월');
-
-      // 렌더링 html 요소 생성
-      var calendar = document.querySelector('.dates')
-      calendar.innerHTML = '';
-      
-      // 지난달
-      for (var i = prevDate - prevDay; i <= prevDate; i++) {
-          calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable">' + i + '</div>'
-      }
-      // 이번달
-      for (var i = 1; i <= nextDate; i++) {
-          calendar.innerHTML = calendar.innerHTML + '<div class="day current">' + i + '</div>'
-      }
-      // 다음달
-      for (var i = 1; i <= (7 - nextDay == 7 ? 0 : 6 - nextDay); i++) {
-          calendar.innerHTML = calendar.innerHTML + '<div class="day next disable">' + i + '</div>'
-      }
-
-      // 오늘 날짜 표기
-      if (today.getMonth() == currentMonth) {
-          var todayDate = today.getDate();
-          var currentMonthDate = document.querySelectorAll('.dates .current');
-          currentMonthDate[todayDate -1].classList.add('today');
-      }
-    }
-
-    // 이전달로 이동
-    $('.go-prev').on('click', function() {
-        thisMonth = new Date(currentYear, currentMonth - 1, 1);
-        renderCalender(thisMonth);
+var gnbMenu = {
+  init:function(){
+    $(".header .menu").find("a").on("click",function(){
+       $(".gnb_box").css("display","block");
+       $(".gnb_box .gnb_bg").stop().animate({ left:0 },300);
     });
-
-    // 다음달로 이동
-    $('.go-next').on('click', function() {
-        thisMonth = new Date(currentYear, currentMonth + 1, 1);
-        renderCalender(thisMonth); 
+    $(".gnb_box .gnb_close").find("a").on("click",function(){
+       $(".gnb_box .gnb_bg").stop().animate({ left:"-300px" },300,function(){
+           $(".gnb_box").css("display","none");
+       });
     });
-  },
-
-
+  }
 }
+
+var selEvent = {
+    init:function(){
+        var selectType0 = $(".select_row>select, .select_tel>select, .select_srh>select");
+
+        selectChange(selectType0);
+
+        function selectChange(type){
+            type.change(function(){
+                var select_name = $(this).children("option:selected").text();
+                $(this).siblings("label").text(select_name);
+            });
+        };
+    }
+};
+
+var tabEvent = {
+	    init:function(){
+	        $(".sub_tab ul li>a").on("click",function(){
+	          var tabType = $(this).parent().index();
+	          $(".sub_tab ul li").removeClass("active");
+	          $(this).parent().addClass("active");
+	          $(".tab_cont").addClass("blind");
+	          $(".tab_cont0"+tabType).removeClass("blind");
+	        });
+	    }
+	};
+
+var tabClick = {
+	    init:function(){
+	      $(".chartTop>ul>li>a").on("click",function(){
+	        if(!$(this).parent().hasClass("active")){
+	            $(this).parent().siblings().removeClass("active");
+	            $(this).parent().addClass("active");
+	        }
+	      });
+	    }
+};
+	
+var noteOpen = {
+	init:function(){
+		$(".btn_note").on("click",function(){
+			if(!$(this).parents().next(".note_box").hasClass("blind")){
+			   $(this).parents("tr").next(".note_box").addClass("blind");
+			   $(this).removeClass("on");
+			}else{
+			   $(this).parents("tr").next(".note_box").removeClass("blind");
+			   $(this).addClass("on");
+			}
+		});
+	}
+};
+
+function popupInfo(popInfo) {
+  var popthis = $(".pop_info."+popInfo);
+  var mask = $(".pop_mask");
+  popthis.css({
+    "top":  (($(window).height()-popthis.outerHeight())/2) + $(window).scrollTop()+"px",
+    "left": (($(window).width()-popthis.outerWidth())/2+$(window).scrollLeft())+"px",
+  });
+  popthis.fadeIn(300);
+  mask.css("display","block");
+  popthis.find(".pop_close").click(function(){
+      popthis.fadeOut(300);
+      mask.css("display","none");
+  });
+}
+
+function popupOpen(popConts) {
+  var popthis = $(".pop_wrap."+popConts);
+  popthis.fadeIn(300);
+  $(".wrap_sub").addClass("not_scroll");
+   popthis.find(".pop_close").click(function(){
+       popthis.fadeOut(300);
+       $(".wrap_sub").removeClass("not_scroll");
+   });
+}
+
+function popupsrh() {
+	  var popthis = $(".pop_search");
+	  var mask = $(".pop_mask");
+	  popthis.css({
+	    "top":  (($(window).height()-popthis.outerHeight())/2) + $(window).scrollTop()+"px",
+	    "left": (($(window).width()-popthis.outerWidth())/2+$(window).scrollLeft())+"px",
+	  });
+	  popthis.fadeIn(300);
+	  mask.css("display","block");
+	  popthis.find(".pop_close").click(function(){
+	      popthis.fadeOut(300);
+	      mask.css("display","none");
+	  });
+	}
+
+
+
+
+function popupdoctor() {
+	  var popthis = $(".pop_search_doctor");
+	  var mask = $(".pop_mask_doctor");
+	  popthis.css({
+	    "top":  (($(window).height()-popthis.outerHeight())/2) + $(window).scrollTop()+"px",
+	    "left": (($(window).width()-popthis.outerWidth())/2+$(window).scrollLeft())+"px",
+	  });
+	  popthis.fadeIn(300);
+	  mask.css("display","block");
+	  popthis.find(".pop_close").click(function(){
+	      popthis.fadeOut(300);
+	      mask.css("display","none");
+	  });
+	}
+
+
+function loginEvent() {
+  var wW = $(window).width();
+  var wH = $(window).height()
+  var boxH = $(".intro_bot").height()+25;
+  var topH = $(window).height()-boxH;
+  $(".intro_box").css("height",topH);
+
+  if($(".intro_box").height()<=210){
+    $(".intro_bg .logo").addClass("blind");
+    $(".intro_bg .logo02").removeClass("blind");
+  } else {
+    $(".intro_bg .logo02").addClass("blind");
+    $(".intro_bg .logo").removeClass("blind");
+  }
+}
+
+
+var dateEvent = {
+	    init:function(){
+	        $.datepicker.setDefaults( $.datepicker.regional["ko"]);
+	        $(".date").datepicker({
+	            dateFormat : 'yy-mm-dd',
+	            showOn: "both",
+	            buttonImage: "/resource/assets/nurse/images/common/icon_schedule.png",
+	            buttonImageOnly: true
+	        });
+
+	    
+	    }
+};
+
+/* 20230130 추가 */
+
+var datetimeEvent = {
+	init:function(){
+		jQuery.datetimepicker.setLocale('kr');
+		$(".datetime").datetimepicker({
+			lang : 'ko',
+			format:'Y-m-d H:i',
+			step: 30,
+			allowTimes: [
+				"9:00",
+				"9:30",
+        "10:00",
+        "10:30",
+        "11:00",
+        "11:30",
+        "12:00",
+        "12:30",
+        "13:00",
+        "13:30",
+        "14:00",
+        "14:30",
+        "15:00",
+        "15:30",
+        "16:00",
+        "16:30",
+        "17:00",
+        "17:30",
+				"18:00",
+				"18:30",
+      ],
+		});
+
+	
+	}
+};

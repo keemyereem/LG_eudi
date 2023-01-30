@@ -6,7 +6,7 @@
 * {margin:0; padding:0; box-sizing:border-box;}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, article, aside, hgroup, header, footer, figure, figcaption, nav, section { margin:0; padding:0; border:0; font-size:100%; vertical-align:baseline; background:transparent; }
 article, aside, hgroup, header, footer, figure, figcaption, nav, section {display:block;}
-html, body {width:100%; height:100%; font-size:15px; font-family:'NanumSquareR','맑은 고딕','Malgun Gothic',sans-serif; color:#000; line-height:1; font-weight:normal;-webkit-font-smoothing: antialiased;}
+html, body {width:100%; height:100%; font-size:13px; font-family:'NanumSquareR','맑은 고딕','Malgun Gothic',sans-serif; color:#000; line-height:1; font-weight:normal;-webkit-font-smoothing: antialiased;}
 body {overflow-x:hidden;}
 h1, h2, h3, h4, h5, h6 {font-weight:normal; line-height:1; word-break: keep-all;}
 fieldset {border:none;}
@@ -41,6 +41,7 @@ input[type="text"]:disabled {background: #fff;}
 .ellipsis {text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;width:100%;overflow:hidden;}
 .not_scroll {position: fixed;}
 .mt5 {margin-top: 5px;}
+.mt8 {margin-top: 8px;}
 .mt20 {margin-top: 20px;}
 .mt40 {margin-top: 40px;}
 .mt50 {margin-top: 50px;}
@@ -135,6 +136,7 @@ input[type="text"]:disabled {background: #fff;}
 .inputBox_DP {display:inline-block; *display:inline-block; position:relative; width:135px; height:40px; zoom:1;}
 .inputBox_DP input {width:100%; height:100%; padding-left:12px; font-size:12px; color:#333; border:1px solid #e5e5e5; border-radius:5px; outline-style:none; -webkit-appearance:none; -moz-appearance:none; appearance:none; letter-spacing:-.5px;}
 .inputBox_DP img {position:absolute; top:12px; right:15px; width:14px; cursor:pointer;}
+input[type="text"].datetime,
 input[type="date"] {appearance: none;-webkit-appearance: none;display: inline-block !important;visibility: visible !important;background:#fff url(../images/common/icon_schedule02.png) 50% 50% no-repeat;background-size: 15px 12px;background-position: 92% 50%;}
 input[type="date"]::-webkit-inner-spin-button {display: none;}
 input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
@@ -225,6 +227,7 @@ select option[value=""][disabled] { display: none; }
 .btn_box03 .btn_gray {float: left;width: 32%;}
 .btn_box03 .btn_green {float: left;width: 32%;}
 .btn_box03 .btn_white {float: left;width: 32%;}
+.btn_box03 .btn_orange {float: left;width: 32%;}
 .btn_box03>div:nth-child(2) {margin-left: 2%;}
 .btn_box03>div:last-child {margin-left: 2%;}
 

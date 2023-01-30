@@ -19,33 +19,99 @@ ExtraBold -
 'NanumSquareEB', "맑은 고딕", "Malgun Gothic"
 */
 
+/*  */
+.con_box .con_tit { font-family: 'NanumSquareEB'; color: #f18e1e; }
+.con_box .con_tit::after { content:''; display: block; width: 100%; height: 1px; background: #f18e1e; margin-top: 8px; }
+
+.btn_box04 .btn_orange { float: left; width: 60px; height: 40px; line-height: 40px; margin-left: 4px; }
+
 .wrap_sub .sub_top .sub_nav{ display:flex; justify-content: space-between; padding: 0 15px; border-bottom: 8px solid #f1f1f1 }
-.wrap_sub .sub_top .sub_nav a{  padding: 16.5px 10px; display: block; width: 33.3333333333%; text-align: center; white-space: nowrap; font-size: 15px }
+.wrap_sub .sub_top .sub_nav a{  padding: 16.5px 0px; display: block; width: 33.3333333333%; text-align: center; white-space: nowrap; font-size: 15px }
 .wrap_sub .sub_top .sub_nav a.active{ color: #f18e1e; border-bottom: 2px solid #f18e1e; font-family: 'NanumSquareEB', "맑은 고딕", "Malgun Gothic" }
 
-/* 상담일정관리 - 캘린더 */
-.wrap_sub .sec_cal { width: 100%; padding: 35px 15px 57px }
+/* 상담일정관리 - 공통 */
+.wrap_sub .sec_cal { width: 100%; padding: 35px 15px 57px; letter-spacing: -1px; }
+.wrap_sub .sec_cal .alert01 { font-size: 12px; letter-spacing: -1.2px; color: #333333; line-height: 1; display: flex; align-items: center; padding-bottom: 15px; }
+.wrap_sub .sec_cal .alert01 i { background: #13bfd6; width: 5px; height: 5px; display: inline-block; border-radius: 100%; margin-right: 6px; }
+.wrap_sub .sec_cal .cal_nav .year-month { font-family: 'NanumSquareEB', "맑은 고딕", "Malgun Gothic"; text-align: center; line-height: .8; font-size: 22.85px; color: #333333; letter-spacing: -1.2px; }
+.wrap_sub .sec_cal .cal_nav .year-month span { font-size: 24.83px; }
 .wrap_sub .sec_cal .cal_nav { display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 48px; line-height: 78px }
-.wrap_sub .sec_cal .cal_nav .year-month { font-family: 'NanumSquareEB', "맑은 고딕", "Malgun Gothic"; width: 300px; text-align: center; line-height: 1 }
-.wrap_sub .sec_cal .cal_nav .year-month span {  }
 .wrap_sub .sec_cal .cal_nav .nav { display: flex; border: 1px solid #333; border-radius: 5px }
-.wrap_sub .sec_cal .cal_nav .go-next,.wrap_sub .sec_cal .cal_nav .go-prev { width: 50px; height: 78px; font-size: 0; display: flex; justify-content: center; align-items: center }
-.wrap_sub .sec_cal .cal_nav .go-next::before,.wrap_sub .sec_cal .cal_nav .go-prev::before { content: ""; display: block; width: 20px; height: 20px; border: 3px solid #000; border-width: 3px 3px 0 0; transition: border .1s }
-.wrap_sub .sec_cal .cal_nav .go-next:hover::before,.wrap_sub .sec_cal .cal_nav .go-prev:hover::before { border-color: #ed2a61 }
+.wrap_sub .sec_cal .cal_nav a { width: 15px; height: 25px; text-indent: -9999px; display: flex; justify-content: center; align-items: center; transition: all ease .1s; }
+.wrap_sub .sec_cal .cal_nav a:active { transform: scale(1.2); }
+.wrap_sub .sec_cal .cal_nav .go-next { background: url(../images/common/cal_arrow_next.png) 0% 50% no-repeat; background-size: 7px 12px; }
+.wrap_sub .sec_cal .cal_nav .go-prev { background: url(../images/common/cal_arrow_prev.png) 100% 50% no-repeat; background-size: 7px 12px; }
 .wrap_sub .sec_cal .cal_nav .go-prev::before { transform: rotate(-135deg) }
 .wrap_sub .sec_cal .cal_nav .go-next::before { transform: rotate(45deg) }
-.wrap_sub .sec_cal .cal_wrap { padding-top: 40px; position: relative; margin: 0 auto }
-.wrap_sub .sec_cal .cal_wrap::after { top: 368px }
-.wrap_sub .sec_cal .cal_wrap .days { display: flex; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd }
-.wrap_sub .sec_cal .cal_wrap .day { display: flex; align-items: center; justify-content: center; width: 14.2857142857%; color: #999; font-size: 12px; text-align: center; border-radius: 5px }
-.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n) { color: #3c6ffa }
-.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1) { color: #ed2a61 }
-.wrap_sub .sec_cal .cal_wrap .day.disable { color: #ddd }
-.wrap_sub .sec_cal .cal_wrap .dates { display: flex; flex-flow: wrap; height: 290px }
-.wrap_sub .sec_cal .current.today { background: #f2f2f2 }
 
-/*  */
-.wrap_sub .con_sub .info_box>ul { display: flex; flex-wrap: wrap; align-items: center }
+/* 상담일정관리 - 캘린더 */
+.wrap_sub .calendar .sec_cal .cal_nav .year-month { width: 157.5px; }
+.wrap_sub .sec_cal .cal_wrap { padding-top: 30px; position: relative; margin: 0 auto }
+.wrap_sub .sec_cal .cal_wrap::after { top: 368px }
+.wrap_sub .sec_cal .cal_wrap .days { display: flex; padding: 11.5px 0 13px; border-top: 1px solid #333333; border-bottom: .5px solid #e5e5e5; }
+.wrap_sub .sec_cal .cal_wrap .day { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; width: calc(100% / 7); font-family: 'NanumSquareB', "맑은 고딕", "Malgun Gothic"; color: #727272; font-size: 10px; text-align: center; }
+.wrap_sub .sec_cal .cal_wrap .day.disable { color: rgba(114, 114, 114, .4); }
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n).disable { color: rgba(50, 99, 224, .4); }
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1).disable { color: rgba(227, 40, 40, .4); }
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n),
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n) a { color: #3263e0; pointer-events: none; }
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1),
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1) a { color: #e32828; pointer-events: none; }
+.wrap_sub .sec_cal .cal_wrap .dates { display: flex; flex-flow: wrap; }
+.wrap_sub .sec_cal .cal_wrap .dates .day { height: 79px; border-bottom: .5px solid #e5e5e5; }
+.wrap_sub .sec_cal .cal_wrap .dates .day:not(.current) { padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
+.wrap_sub .sec_cal .cal_wrap .dates .day a { display: flex; width: 100%; height: 100%; padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
+.wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n),
+.wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n+1),
+.wrap_sub .sec_cal .cal_wrap .dates .day.disable,
+.wrap_sub .sec_cal .current.today { background: #f6f6f6; }
+.wrap_sub .sec_cal .current .hpc_block { width: 57%; max-width: 25px; height: 15px; border: 1px solid #13bfd6; color: #13bfd6; text-align: center; font-size: 9px; line-height: 14px; border-radius: 7.5px; margin:-3px .3vw 0 0; }
+.wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB', "맑은 고딕", "Malgun Gothic"; padding: 0 5.5px; }
+.wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #fc637d; }
+.wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #79bd28; }
+
+/* 상담일정관리 - 상세일정 */
+.wrap_sub .schedules .sec_cal .cal_nav .year-month { width: 237.5px; }
+.wrap_sub .sec_cal .schedule_wrap { padding-top: 23.5px; position: relative; margin: 0 auto }
+.wrap_sub .sec_cal .schedule_wrap .alert01 { font-family: 'NanumSquareEB', "맑은 고딕", "Malgun Gothic"; font-size: 13px; }
+.wrap_sub .sec_cal .schedule_wrap .dates > * { font-size: 10px; font-family: 'NanumSquareB', "맑은 고딕", "Malgun Gothic"; color: #333333; }
+
+/* 상담일정관리 - 상담이력등록 */
+.wrap_sub .con_sub .con_flex { display: flex; align-items: center; }
+.wrap_sub .con_sub .info_box { padding: 30px 15px 25px; background: #fff; }
+.wrap_sub .con_sub .info_box .con_tit { margin-bottom: 20px; }
+.wrap_sub .con_sub .info_box>ul { display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
 .wrap_sub .con_sub .info_box ul li { width: 50%; display: flex; }
+.wrap_sub .con_sub .info_box ul li+li { margin-top: 7px; }
+.wrap_sub .con_sub .info_box ul li:nth-child(2n-1) .tit { max-width: 73px; width: 43%; }
+.wrap_sub .con_sub .info_box ul li:nth-child(2n) .tit { max-width: 85px; width: 50%; }
 .wrap_sub .con_sub .info_box ul li .tit { font-family: 'NanumSquareB'; color: #999; }
 .wrap_sub .con_sub .info_box ul li .value { color: #333; }
+.wrap_sub .con_sub .form_box { padding: 30px 15px 0; background: #fff; }
+.wrap_sub .con_sub .form_box02 { padding: 30px 15px 65px; }
+.wrap_sub .con_sub .form_box .tit { font-family: 'NanumSquareB'; margin: 20px 0 10px; }
+.wrap_sub .con_sub .form_box .con_form { width: 100%; }
+.wrap_sub .con_sub .con_flex { justify-content: space-between; }
+.wrap_sub .con_sub .form_box .con_flex > div { width: calc(50% - 7.5px); }
+.wrap_sub .con_sub .form_box .con_date { display: flex; align-items: center; justify-content: space-between; }
+.wrap_sub .con_sub .form_box .con_date .hypen { display: block; }
+.wrap_sub .con_sub .form_box .con_date .inputBox_DP { width: calc(50% - 18px); }
+.wrap_sub .con_sub .form_box .con_flex .inputBox_DP { width: 100%; }
+.wrap_sub .con_sub .form_box .consultDate_form { display: none; }
+
+/* 상담일정관리 - 해피콜등록 */
+.con_sub .con_list03>ul>li { padding: 41px 15px 15px; }
+.con_sub .con_list03>ul>li>a { display: table;width: 100%; position: relative; }
+.con_sub .con_list03>ul>li>a>div:last-child { width: 40%;text-align: right; }
+.con_sub .con_list03>ul>li>a>div .lblbox { position: absolute; top: -26px; left: 0; }
+.con_sub .con_list03>ul>li>a>div>ul { display: flex; align-items: center; color: #727272; font-size: 11px; }
+.con_sub .con_list03>ul>li>a>div>ul>li::after { content:''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px -2px; }
+.con_sub .con_list03>ul>li>a>div>ul>li:last-child::after { display: none; }
+.con_sub .con_list03>ul>li>a>div>ul .name { font-family: 'NanumSquareB'; font-size: 13px; color: #333; }
+.con_sub .con_list03>ul>li>a>div .idbox { color: #727272; line-height: 1; margin-top: 10px; }
+.con_sub .con_list03>ul>li>a>div .hospital { font-size: 11px; color: #999; }
+.con_sub .con_list03>ul>li>a>div .phone { letter-spacing: -1.1px; }
+.con_sub .con_list03>ul>li>a>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
+.con_sub .srh_box .con_flex .input_srh:first-of-type { width: calc(41% - 2.5px); }
+.con_sub .srh_box .con_flex .input_srh:nth-of-type(2) { width: calc(59% - 2.5px); }
+.con_sub .con_head h3 { font-family: 'NanumSquareEB'; font-size: 50px; color: #333; text-align: center; }
