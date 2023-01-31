@@ -4,6 +4,16 @@
 'use strict'
 
 $(function () {
+  $(function () {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    //resize
+    window.addEventListener("resize", () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
+  });
 
 });
 
@@ -15,6 +25,7 @@ var nurseJS = {
   init: function () {
     this.calInit();
     this.counselHis();
+    this.popup();
   },
 
   calInit: () => {
@@ -73,6 +84,7 @@ var nurseJS = {
 
       // 렌더링 html 요소 생성
       var calendar = document.querySelector('.dates');
+      calendar.dataset.cal = currentYear + '년 ' + (currentMonth + 1) + '월';
       calendar.innerHTML = '';
       
       // 지난달
@@ -96,10 +108,63 @@ var nurseJS = {
           currentMonthDate[todayDate - 1].classList.add('today');
       }
 
+
+      // 연도수와 월을 데이터로 저장
+      var getData = ['2023', '1'];
+      var getData02 = ['2023', '1'];
+
+      if (calendar.dataset.cal === getData[0] + '년 ' + getData[1] + '월') { // 해당 데이터로 이동 시 정보 불러오기
+        
+        // 정보 예제 출력
+        var cb = $('.dates .day.current a');
+
+        const data_edu = ['2', '5', '5']
+        const data_cs = ['4', '2']
+        const data_hpc = ['3', '2', '9']
+
+        cb.eq(4).addClass('edu');
+        cb.eq(8).addClass('hpc edu');
+        cb.eq(9).addClass('hpc');
+        cb.eq(10).addClass('edu cs');
+        cb.eq(16).addClass('hpc');
+        cb.eq(17).addClass('cs');
+
+        $('.edu').append('<span class="hpc_block">' + data_hpc[0] + '</span>');
+        $('.edu').append('<span class="schedule edu_block">교육<b>' + data_edu[0] + '</b></span>');
+        $('.cs').append('<span class="schedule cs_block">상담<b>' + data_cs[0] + '</b></span>');
+
+      } else if (calendar.dataset.cal === getData02[0] + '년 ' + getData02[1] + '월') {
+        var cb02 = $('.dates .day.current a');
+        
+        const data_pos = ['16', '12', '5']
+        const data_impos = ['12', '2']
+        const data_hpc02 = ['7', '8', '10', '12']
+        
+        cb02.eq(0).addClass('impos');
+        cb02.eq(4).addClass('hpc02 pos');
+        cb02.eq(6).addClass('impos');
+        cb02.eq(7).addClass('impos');
+        cb02.eq(8).addClass('hpc02 pos');
+        cb02.eq(9).addClass('hpc02 pos');
+        cb02.eq(10).addClass('hpc02 pos');
+        cb02.eq(11).addClass('hpc02 pos');
+        cb02.eq(12).addClass('hpc02 pos');
+        cb02.eq(13).addClass('impos');
+        cb02.eq(14).addClass('impos');
+        cb02.eq(20).addClass('impos');
+        cb02.eq(21).addClass('impos');
+        cb02.eq(27).addClass('impos');
+        cb02.eq(10).addClass('pos impos');
+        cb02.eq(16).addClass('hpc02 impos');
+        cb02.eq(17).addClass('impos');
+        
+        $('.hpc02').append('<span class="hpc_block">' + data_hpc02[0] + '</span>');
+        $('.pos').append('<span class="schedule pos_block">교육<b>' + data_pos[0] + '</b></span>');
+        $('.impos').append('<span class="schedule impos_block">상담<b>' + data_impos[0] + '</b></span>');
+      }
+
+      
     }
-
-    
-
 
     // ------------------------------------------------------------+| 상세일정 렌더링 |+------------------------------------------------------------ //
 
@@ -123,7 +188,7 @@ var nurseJS = {
         $('.year-month').html('<span>' + currentYear + '</span>년 <span>' + (currentMonth + 1) + '</span>월 <span>' + currentDate + '</span>일 (' + week + ')');
 
         // 렌더링 html 요소 생성
-        var schduler = document.querySelector('.dates');
+        var schduler = document.querySelector('.lines');
         schduler.innerHTML = '';
 
         // 시간대별 라인 생성
@@ -157,11 +222,6 @@ var nurseJS = {
         })
         
     }
-
-    
-    
-    $('.line')
-
 
     // 이전달로 이동
     $('.go-prev').on('click', function() {
@@ -226,11 +286,27 @@ var nurseJS = {
       }
     });
 
+    /* 상담가능일정등록 */
+    // const $calBody = document.querySelector('.cal_wrap .dates');
+    // $calBody.addEventListener('click', (e) => {
+    //   if (e.target.classList.contains('day')) {
+    //     if (init.activeDTag) {
+    //       init.activeDTag.classList.remove('on');
+    //     }
+    //     let day = Number(e.target.textContent);
+    //     loadDate(day, e.target.cellIndex);
+    //     e.target.classList.add('on');
+    //     init.activeDTag = e.target;
+    //     init.activeDate.setDate(day);
+    //     reloadTodo();
+    //   }
+    // });
+  
     
   },
 
   counselHis: function () {
-    //이메일 직접입력 선택시 입력칸 추가
+    //상담일정관리 상담분류 "해피콜"일 경우 상담예정일 칸 생성
     var selectType = $(".select_row>#sel01");
     selectChange(selectType);
     function selectChange(type) {
@@ -247,5 +323,67 @@ var nurseJS = {
     }
   },
 
+  
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////                                                           **팝업**                                                                 ///////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  popup: () => {
+  
+    // 스크롤 값 추적
+    let scrollPosition = 0;
+    const body = document.querySelector("body");
+    $(window).on("scroll", () => {
+      scrollPosition = window.pageYOffset;
+    });
+
+    // 팝업 열기 
+    $(document).on("click",".open_pop", function() {
+      openProcessor();
+
+      if ($('.popup').find('.impossible_pop').length) {
+        let imposDate = $('.year-month').text();
+        imposDate = imposDate.substring(0, imposDate.length - 4)
+    
+        let imposTimeIndex = $(this).parents('li').index(),
+            imposTimeRow = Number($(this).parents('li').data('type').replace('row-', '')),
+            imposTimeStart = $('.lines').children().eq(imposTimeIndex).text(),
+            imposTimeEnd = $('.lines').children().eq(imposTimeIndex + imposTimeRow).text();
+    
+        $('.impossible_pop .info').html('<span>' + imposDate + '</span>' + imposTimeStart + ' ~ ' + imposTimeEnd);
+      }
+    });
+
+    // 팝업 닫기
+    $(document).on("click",".close_pop", () => {
+      closeProcessor();
+
+      $('.popup').find('.info').html('');
+    });
+
+    // 팝업 열기 function
+    function openProcessor() {
+      scrollPosition = window.pageYOffset;
+
+      $(".popup").addClass("on");
+      $("html").addClass("blockScroll");
+
+      // body.style.top = `-${scrollPosition}px`;
+    }
+
+    // 팝업 닫기 function
+    function closeProcessor() {
+      $("html").removeClass("blockScroll");
+      $(".popup").removeClass("on");
+
+      // scrollPosition = body.style.top;
+      // scrollPosition = scrollPosition.replace("px", "");
+
+      // window.scrollTo(0, -scrollPosition);
+      // body.style.removeProperty("top");
+    }
+
+  },
 
 }

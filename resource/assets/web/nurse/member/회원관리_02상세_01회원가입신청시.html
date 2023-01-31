@@ -45,13 +45,19 @@
     <link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?version=2.1">
     <link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
     <link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
+    <link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css">
+
+    <!-- 임시 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
+    <!-- 임시 제이쿼리 -->
 
     <!-- nurse js file-->
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
+    <!-- <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
     <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
+    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script> -->
     <script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?version=1.2"></script>
-
+    <script type="text/javascript" src="/resource/assets/web/nurse/js/counseling.js"></script> 
 
     <!-- common js file-->
     <script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
@@ -61,7 +67,13 @@
 
     <script src='/eum_.js'></script>
 
-
+    <script>
+      $(document).ready(()=> {
+        selEvent.init();
+        nurseJS.popup();
+      })
+      
+    </script>
 </head>
 
    <body>
@@ -81,8 +93,6 @@
               <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
               <li><a href="">상담관리</a></li>
               <li><a href="javascript:fnDosePage()">투여확인</a></li>
-  
-
             </ul>
           </div>
         </div>
@@ -162,7 +172,7 @@
                   <tr>
                     <td class="tit"><p>주소</p></td>
                     <td class="cont">
-                      <div class="cont_inner">
+                      <!-- <div class="cont_inner"> -->
                         <div class="addr_box01" id="addr_box01">
                           <div class="input_addr">
                             <span class="input_box">
@@ -193,7 +203,7 @@
                             <li></li>
                           </ul>
                         </div>
-                      </div>
+                      <!-- </div> -->
                     </td>
                   </tr>
                 </tbody>
@@ -238,7 +248,7 @@
                         <div class="inputBox_DP">
                           <input type="date" name="" class="date" value="2010-05-03">
                         </div>
-                        <p class="shrink0"><span>12</span>세</p>
+                        <!-- <p class="shrink0"><span>12</span>세</p> -->
                       </td>
                     </tr>
                     <tr>
@@ -273,7 +283,7 @@
                 </table>
               </div>
               <h4>처방 및 병원 정보</h4>
-              <div class="tb">
+              <div class="tb tb03">
                 <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
                   <caption>처방 및 병원 정보</caption>
                   <colgroup>
@@ -288,8 +298,8 @@
                           <input type="date" name="cInitialPrescription" class="date" value="2010-05-03" />
                         </div>
                         <div class="radio_row shrink0">
-                          <input type="radio" name="confirm" class="radio" />
-                          <label for="confirm">확정</label>
+                          <input type="radio" id="radio01" name="" class="radio" />
+                          <label for="radio01">확정</label>
                         </div>
                       </td>
                     </tr>
@@ -325,23 +335,180 @@
                         <p class="border">김기준</p>
                       </td>
                     </tr>
+                    <tr>
+                      <td class="tit"><p>타사제품<br> 사용경험</p></td>
+                      <td class="cont">
+                        <div class="radio_row">
+                          <input type="radio" id="radio02" name="exp" class="radio" value="" checked="checked" />
+                          <label for="radio02">네</label>
+                        </div>
+                        <div class="radio_row">
+                          <input type="radio" id="radio03" name="exp" class="radio" />
+                          <label for="radio03">아니요</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>                                      
+          </div>
+
+          <div class="inner">
+            <h3 class="info02">아이 정보</h3>
+            <div>
+              <h4>기본 정보</h4>
+              <div class="tb">
+                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>기본 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>아이명</p></td>
+                      <!--  빌리버 화상통신 버튼 추가 -->
+                      <td class="cont flex">
+                        <p class="border">이유준</p>
+                        <div class="btn_green"><a href="javascript:;" onclick="fnJoinVideoCall();">&nbsp;화상미팅&nbsp;</a></div>
+                      </td>
+                      <!--  빌리버 코드 끝 -->
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>성별</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel01">남자</label>
+                          <select id="sel01" name="gender">
+                            <option value="male">남자</option>
+                            <option value="female" >여자</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>생년월일</p></td>
+                      <td class="cont flex">
+                        <div class="inputBox_DP">
+                          <input type="date" name="" class="date" value="2018-06-10">
+                        </div>
+                        <!-- <p class="shrink0"><span>12</span>세</p> -->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>담당 간호사</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel02">박소라</label>
+                          <select id="sel02" name="cChargNurseId">
+                            <option value="chloe1" >김광열</option>
+                            <option value="jeewoo1025" >김영미</option>
+                            <option value="rajhkim" >김지혜</option>
+                            <option value="cokiri" >김진경</option>
+                            <option value="lgrhj" >노희정</option>
+                            <option value="ekgml38" >류다희</option>
+                            <option value="jieun.park" >박지은</option>
+                            <option value="skywlgp" >박지혜</option>
+                            <option value="jiyoung.seo" >서지영</option>
+                            <option value="sheom" >엄소희</option>
+                            <option value="twofuture" >이미래</option>
+                            <option value="iamej" >이은주</option>
+                            <option value="jiyoun0531" >이지연</option>
+                            <option value="echoran" >이초란</option>
+                            <option value="hyeyeonyi124" >이혜연</option>
+                            <option value="happyjw116" >임종원</option>
+                            <option value="valavazz" >최지현</option>
+                            <option value="hanmijin" >한미진</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4>처방 및 병원 정보</h4>
+              <div class="tb tb03">
+                <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>처방 및 병원 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>최초 처방일</p></td>
+                      <td class="cont flex">
+                        <div class="inputBox_DP">
+                          <input type="date" name="cInitialPrescription" class="date" value="2018-06-10" />
+                        </div>
+                        <div class="radio_row shrink0">
+                          <input type="radio" id="radio04" name="radio04" class="radio" />
+                          <label for="radio04">확정</label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>최초 처방일</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel03">유트로핀펜</label>
+                          <select id="sel03" name="">
+                            <option value="" >유트로핀펜</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>병원명</p></td>
+                      <td class="cont"><p id="hNameText">분당서울병원</p></td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>병원명 확인</p></td>
+                      <td class="cont">
+                        <div class="input_search">
+                          <span class="input_box">
+                            <input type="text" class="ipt"   id="selectHname"  value="분당서울대학교 병원" readonly="">
+                            <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>의사명</p></td>
+                      <td class="cont">
+                        <p class="border">김기성</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>타사제품<br> 사용경험</p></td>
+                      <td class="cont">
+                        <div class="radio_row">
+                          <input type="radio" id="radio05" name="exp02" class="radio" />
+                          <label for="radio05">네</label>
+                        </div>
+                        <div class="radio_row">
+                          <input type="radio" id="radio06" name="exp02" class="radio" value="" checked="checked" />
+                          <label for="radio06">아니요</label>
+                        </div>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
             <div class="btn_box btn_box03 mt50">
-              <div class="btn_gray"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
+              <div class="btn_white"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
               <div class="btn_gray"><a href="javascript:;" onclick="childStateUpdate('R')">반려</a></div>
-              <div class="btn_green"><a href="javascript:;" onclick="childStateUpdate('M')">승인</a></div>
+              <div class="btn_green"><a href="javascript:;" onclick="childStateUpdate('M')" class="open_pop">승인</a></div>
             <!-- 회원 복구 2021-10-26 -->
             </div>
-                                      
           </div>
         </div>
       </div>
     </form>
-      <!-- content //-->
+      <!-- content //-->  
       
       <!-- 병원명 검색 -->
       <div class="pop_mask"></div>
@@ -372,7 +539,7 @@
       </div>
       
       
-            <!-- 의사 검색 -->
+      <!-- 의사 검색 -->
       <div class="pop_mask_doctor"></div>
       <div class="pop_search_doctor">
         <div class="pop_search_inner">
@@ -400,8 +567,62 @@
         </div>
       </div>
       
-      
-      
+      <!-- 중복환아 검색 -->
+      <div class="pop_info popup">
+        <div class="pop_info_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="tb_top">
+              <p class="title">정보 상세</p>
+            </div>
+            <div class="tb02">
+              <table summary="정보상세" cellpadding="0" cellspacing="0" border="0">
+                <caption>정보상세</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="tit"><p>이름</p></td>
+                    <td class="cont"><p>간호사</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>아이디</p></td>
+                    <td class="cont"><p>4mnurse</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>변경 비밀번호</p></td>
+                    <td class="cont">
+                      <div class="input_row">
+                        <span class="input_box">
+                          <input type="password" id="password" name="password" required="required" class="ipt" minlength="8" maxlength="16" data-title="변경 비밀번호를" title="변경 비밀번호">
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><div class="tit_inner"><p>변경비밀번호 확인</p></div></td>
+                    <td class="cont">
+                      <div class="input_row">
+                        <span class="input_box">
+                        <input type="password" id="password_confirm" name="password_confirm" class="ipt" equalto="password" required="required" minlength="8" maxlength="16" data-title="변경 비밀번호 확인을" title="변경 비밀번호 확인">
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <ul class="info_list">
+              <li>비밀번호는 영문, 숫자를 포함하여 10자리 이상 또는 영문, 숫자, 특수문자를 포함하여 8자리 이상 입력해주세요.</li>
+            </ul>
+            <div class="btn_box">
+              <div class="btn_green"><a href="javascript:;" onclick="fnJoinChk()">확인</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
       
       <!-- 로딩바 -->
       <div id="loading"  style=" display:none;top: 60%; left: 70%;  margin-left:-100px;z-index: 9999; border: 3px #2B97D6;position:fixed">
