@@ -1,24 +1,15 @@
 @charset "UTF-8"; 
 
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////                                                        ** 간호사앱 **                                                              ///////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
 /* 
-**** 폰트 
-Light - 
-'NanumSquareL', "맑은 고딕", "Malgun Gothic"
-
-Regular - 
-'NanumSquareR', "맑은 고딕", "Malgun Gothic"
-
-Bold - 
-'NanumSquareB', "맑은 고딕", "Malgun Gothic"
-
-ExtraBold - 
-'NanumSquareEB', "맑은 고딕", "Malgun Gothic"
+Light - 'NanumSquareL'
+Regular - 'NanumSquareR'
+Bold - 'NanumSquareB'
+ExtraBold - 'NanumSquareEB'
 */
 
+/*/////////////////////////////////////////////////////////////////////////
+///////////                        ** 팝업 **                       ///////
+/////////////////////////////////////////////////////////////////////////*/
 
 /* 팝업 - 공통 */
 .blockScroll { height: calc(var(--vh, 1vh) * 100); overflow: hidden; }
@@ -26,6 +17,19 @@ ExtraBold -
 .popup.on { opacity: 1; visibility: visible; }
 .popup .inner_pop { position: relative; transform: translate(-50%, -50%); left: 50%; top: 50%; padding-top: 40px; }
 .popup .inner_pop .btn_close { width: 30px; height: 30px; border-radius: 100%; background: #ffffff url(../images/common/popup_close.png)50% 50% no-repeat; background-size: 10.5px 10.5px; position: absolute; right: 0; top: 0; }
+.popup .inner_pop .pop_content { display: none; }
+
+/*  팝업 - 공통 - alert */
+.popup.popup_alert .inner_pop { max-width: 260px; }
+.popup .pop_alert { padding: 35px 20px 20px; background: #fff; border-radius: 10px; }
+.popup .pop_alert .pop_tit { font-size: 18px; line-height: 1.25; text-align: center; }
+.popup .pop_alert .btn_box { margin-top: 20px; }
+.popup .pop_alert .btn_box > div { height: 40px; line-height: 40px; }
+
+/* 팝업 - 공통 - 밑에서 나오는 팝업 */
+.popup.popup_bottom { padding: 0; }
+.popup.popup_bottom .inner_pop { position: absolute; top: initial; bottom: 0; transform: translate(-50%, 0); width: 100%; }
+.popup.popup_bottom .inner_pop .btn_close { right: 15px; }
 
 /* 팝업 - 불가관리 */
 .impossible_pop { background: #ffffff; border-radius: 10px; padding: 30px 25px 35px; display: flex; flex-wrap: wrap; justify-content: space-between; }
@@ -38,6 +42,19 @@ ExtraBold -
 .impossible_pop ul .impos_action select:focus { background: #ffffff url(../images/common/select_on.png) calc(100% - 10px) 50% no-repeat; background-size: 6px 3px; }
 .impossible_pop > button { width: calc(50% - 10px); border-radius: 5px; margin-top: 30px; font-size: 13px; font-family: 'NanumSquareB'; color: #727272; background: #cfcfcf; padding: 14px 0; }
 .impossible_pop > button.save { background: #f18e1e; color: #ffffff; }
+
+/* 팝업 - 근무/휴무 선택 */
+.scheduleEdit_pop { background: #ffffff; border-radius: 10px 10px 0 0; padding: 30px 15px 53px; }
+.scheduleEdit_pop .date_select { overflow-x: auto; height: auto; margin: 10px 0 20px; }
+.scheduleEdit_pop .date_select ul { display: flex; align-items: center; }
+.scheduleEdit_pop .date_select ul li { flex-shrink: 0; width: 70px; height: 30px; margin-right: 5px; background: #f6f6f6; border-radius: 5px; line-height: 30px; text-align: center; font-size: 12px; }
+.scheduleEdit_pop .schedule_select { display: flex; align-items: center; justify-content: space-between; margin: 10px 0 30px; }
+.scheduleEdit_pop .schedule_select li { width: calc((100% - 10px) / 3); height: 40px; line-height: 40px; border: 1px solid #cfcfcf; border-radius: 5px; font-size: 12px; text-align: center; }
+.scheduleEdit_pop .schedule_select li a { display: block; width: 100%; height: 100%; }
+.scheduleEdit_pop .schedule_select li:hover { border-color: #f18e1e; }
+.scheduleEdit_pop .schedule_select li:hover a { color: #f18e1e; }
+.scheduleEdit_pop .btn_box a { font-size: 15px; }
+
 
 /*  */
 .ffEB { font-family: 'NanumSquareEB'; }
@@ -53,6 +70,10 @@ ExtraBold -
 .wrap_sub .sub_top .sub_nav{ display:flex; justify-content: space-between; padding: 0 15px; border-bottom: 8px solid #f1f1f1 }
 .wrap_sub .sub_top .sub_nav a{  padding: 16.5px 0px; display: block; width: 33.3333333333%; text-align: center; white-space: nowrap; font-size: 15px }
 .wrap_sub .sub_top .sub_nav a.active{ color: #f18e1e; border-bottom: 2px solid #f18e1e; font-family: 'NanumSquareEB' }
+
+/*/////////////////////////////////////////////////////////////////////////
+///////////                   ** 상담일정관리 **                    ///////
+/////////////////////////////////////////////////////////////////////////*/
 
 /* 상담일정관리 - 공통 */
 .wrap_sub .sec_cal { width: 100%; padding: 35px 15px 57px; letter-spacing: -1px; }
@@ -71,8 +92,7 @@ ExtraBold -
 
 /* 상담일정관리 - 캘린더 */
 .wrap_sub .calendar .sec_cal .cal_nav .year-month { width: 157.5px; }
-.wrap_sub .sec_cal .cal_wrap { padding-top: 30px; position: relative; margin: 0 auto }
-.wrap_sub .sec_cal .cal_wrap::after { top: 368px }
+.wrap_sub .sec_cal .cal_wrap { padding-top: 30px; position: relative; margin: 0 auto; }
 .wrap_sub .sec_cal .cal_wrap .days { display: flex; padding: 11.5px 0 13px; border-top: 1px solid #333333; border-bottom: .5px solid #e5e5e5; }
 .wrap_sub .sec_cal .cal_wrap .day { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; width: calc(100% / 7); font-family: 'NanumSquareB'; color: #727272; font-size: 10px; text-align: center; }
 .wrap_sub .sec_cal .cal_wrap .day.disable { color: rgba(114, 114, 114, .4); }
@@ -95,10 +115,6 @@ ExtraBold -
 .wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
 .wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #fc637d; }
 .wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #79bd28; }
-
-/* 상담가능일정등록 - 캘린더 */
-.wrap_sub .sec_cal .current .schedule.pos_block { bottom: 23.5px; background: #f18e1e; }
-.wrap_sub .sec_cal .current .schedule.impos_block { bottom: 6px; background: #6e6e6e; }
 
 /* 상담일정관리 - 상세일정 */
 .wrap_sub .schedules .sec_cal .cal_nav .year-month { width: 237.5px; }
@@ -139,7 +155,6 @@ ExtraBold -
 .wrap_sub .sec_cal .hpc_wrap li p span::before { content: ''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px; vertical-align: middle; }
 .wrap_sub .sec_cal .hpc_wrap li button { border: 1px solid #f18e1e; }
 
-
 /* 상담일정관리 - 상담이력등록 */
 .wrap_sub .con_sub .con_flex { display: flex; align-items: center; }
 .wrap_sub .con_sub .info_box { padding: 30px 15px 25px; background: #fff; }
@@ -168,7 +183,6 @@ ExtraBold -
 .happycall .srh_box .con_flex .input_srh:nth-of-type(2) { width: calc(59% - 2.5px); }
 .happycall .con_head .date_tit { font-family: 'NanumSquareEB'; font-size: 23px; color: #333; letter-spacing: -2.7px; text-align: center; padding: 35px 0; }
 .happycall .con_head p { font-family: 'NanumSquareB'; font-size: 18px; color: #333; letter-spacing: -1.8px; }
-
 .happycall .con_list03>ul>li { padding: 41px 15px 15px; cursor: pointer; }
 .happycall .con_list03>ul>li:hover { background: rgba(241, 142, 30, .05); }
 .happycall .con_list03>ul>li>a { display: table;width: 100%; position: relative; }
@@ -183,7 +197,6 @@ ExtraBold -
 .happycall .con_list03>ul>li>a>div .phone { letter-spacing: -1.1px; }
 .happycall .con_list03>ul>li>a>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
 .happycall .con_box .con_inner03 .paging { padding-bottom: 31px; }
-
 .happycall .con_box .info01 { padding: 30px 15px; background: #fff; position: relative; }
 .happycall .con_box .info01::after { content: ''; display: block; width: calc(100% - 30px); height: 1px; background: #e5e5e5; position: absolute; bottom: 0; left: 15px; }
 .happycall .con_box .info01 ul { display: flex; padding: 15px 12px; margin-top: 10px; background: #f6f6f6; border-radius: 5px; }
@@ -194,6 +207,41 @@ ExtraBold -
 .happycall .con_box .info02 { padding: 30px 0 25px; }
 .happycall .con_box .info02 > span { display: block; margin-top: 15px; }
 .happycall .con_box .info02 > span::before { content:''; display: inline-block; width: 3px; height: 3px; background: #f18e1e; border-radius: 50%; vertical-align: middle; margin-right: 7px; margin-top: -2px; }
+
+
+/*/////////////////////////////////////////////////////////////////////////
+///////////                  ** 상담가능일정등록 **                 ///////
+/////////////////////////////////////////////////////////////////////////*/
+
+/* 상담가능일정등록 - 캘린더 */
+.wrap_sub .sec_cal .register { margin-bottom: 25px; }
+.wrap_sub .sec_cal .current .schedule.pos_block { bottom: 23.5px; background: #f18e1e; }
+.wrap_sub .sec_cal .current .schedule.impos_block { bottom: 6px; background: #6e6e6e; }
+.wrap_sub .sec_cal .register + .btn_box a { font-size: 15px; }
+
+/* 상담가능일정등록 - 시간별 */
+.wrap_sub .register .sec_cal { padding: 35px 0 57px; overflow: hidden; }
+.wrap_sub .register .sec_cal .cal_nav .year-month { width: 157.5px; }
+.wrap_sub .register .sec_cal .time_wrap { position: relative; height: 375px; margin: 30px 0 25px 15px; overflow: scroll; }
+.wrap_sub .register .sec_cal .time_wrap > span { background: #ffffff; display: inline-block; position: absolute; top: 1px; left: 0; z-index: 9; font-size: 15px; font-family: 'NanumSquareEB'; height: 47.5px; width: 18.7vw; display: flex; align-items: center; justify-content: center; border-width: 0 1px 1px 0; border-style: solid; border-color: #333333 #eeeeee #eeeeee transparent; }
+.wrap_sub .register .sec_cal .time_wrap table { width: calc((25.75vw * 7) + 18.7vw); position: relative; margin-right: 15px; }
+.wrap_sub .register .sec_cal .time_wrap table tr { height: 47.5px; }
+.wrap_sub .register .sec_cal .time_wrap table tr td { background: #ffffff; width: 25.6vw; height: inherit; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #eeeeee; border-width: 0 1px 1px 0; }
+.wrap_sub .register .sec_cal .time_wrap table thead { position: absolute; padding-left: 18.7vw; width: calc((25.6vw * 7) + 18.7vw); z-index: 1; border-top: 1px solid #333333; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr { position: relative; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr td { height: inherit; font-size: 15px; font-family: 'NanumSquareEB'; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr td span { font-family: 'NanumSquareR'; margin-left: 4px; }
+.wrap_sub .register .sec_cal .time_wrap table tbody { padding-left: 18.7vw; margin-top: 47.5px; display: inline-block; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td.moveL { width: 18.7vw; position: absolute; left: 0; font-size: 14px; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button { width: 72px; height: 30px; border-radius: 15px; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button::after { display: block; font-size: 14px; font-family: 'NanumSquareR'; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"] { border: 1px solid #f18e1e; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"]::after { content: '가능'; color: #f18e1e; }
+
+
+/*/////////////////////////////////////////////////////////////////////////
+///////////                     ** 회원관리 **                      ///////
+/////////////////////////////////////////////////////////////////////////*/
 
 /* 회원관리 */
 .con_sub01 .ipt_box .inner+.inner .info02 { position: relative; padding-top: 65px; }

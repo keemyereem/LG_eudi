@@ -65,14 +65,14 @@
         <button type="button" onclick="javascript:;" class="btn_close close_pop"></button>
 
         <!-- 불가관리용 컴포 -->
-        <div class="impossible_pop">
+        <div class="pop_content impossible_pop">
           <h3>불가 관리</h3>
           <ul>
             <li class="info"></li>
 
             <li class="impos_action">
               <select name="action" required>
-                <option value="" selected>선택</option>
+                <option value="" selected>선택하세요</option>
                 <option value="move">이동</option>
                 <option value="delete">삭제</option>
                 <option value="add">추가</option>
@@ -138,7 +138,7 @@
               <p>불가(이동)</p>
               <div>
   <!-- 클래스명 'open_pop' = 팝업 열기 -->
-                <button type="button" class="open_pop"><img src="/resource/assets/web/nurse/images/common/disable_setting.png" alt="disable_setting"></button>
+                <button type="button" class="disable_pop" onclick="openPopup('impossible_pop');"><img src="/resource/assets/web/nurse/images/common/disable_setting.png" alt="disable_setting"></button>
               </div>
             </li>
             <li class="empty" data-type="blind"><div><button type="button" onclick="javascript:;"></button></div></li>
@@ -156,7 +156,7 @@
             <li class="disable" data-type="row-2">
               <p>불가(식사)</p>
               <div>
-                <button type="button" class="open_pop"><img src="/resource/assets/web/nurse/images/common/disable_setting.png" alt="disable_setting"></button>
+                <button type="button" class="open_pop" onclick="openPopup('impossible_pop');"><img src="/resource/assets/web/nurse/images/common/disable_setting.png" alt="disable_setting"></button>
               </div>
             </li>
             <li class="empty" data-type="blind"><div><button type="button" onclick="javascript:;"></button></div></li>

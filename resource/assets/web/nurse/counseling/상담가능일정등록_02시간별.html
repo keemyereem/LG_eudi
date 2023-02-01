@@ -16,7 +16,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- TITLE -->
-<title>EuDi 상담가능일정등록-캘린더</title>
+<title>EuDi 상담일정관리-시간별</title>
 <link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico">
 	    
 <!-- common css file
@@ -52,16 +52,7 @@
 <script>
   $(document).ready(()=> {
     nurseJS.init();
-
-    // var Date = $('.sec_cal .cal_wrap .dates .day.current a');
-    // Date.on('click', ()=> {
-    //   $(this).toggleClass('on');
-    //   console.log(this);
-    //   // alert();
-    // })
   })
-
-  
 </script>
 
 </head>
@@ -88,38 +79,119 @@
     <!-- top //-->
 
     <!--// content -->
-    <div class="content calendar">
+    <div class="content register">
       <div class="sec_cal">
         <div class="cal_nav">
           <a href="javascript:;" class="nav-btn go-prev">prev</a>
           <div class="year-month"></div>
           <a href="javascript:;" class="nav-btn go-next">next</a>
         </div>
-        <div class="cal_wrap register">
-          <span class="alert01"><i></i> 예약완료</span>
-          <div class="days">
-            <div class="day">일</div>
-            <div class="day">월</div>
-            <div class="day">화</div>
-            <div class="day">수</div>
-            <div class="day">목</div>
-            <div class="day">금</div>
-            <div class="day">토</div>
-            
-          </div>
 
-          <!-- 날짜 변경시 마다 재렌더링 (counseling.js 47줄) -->
-          <div class="dates" data-cal=""></div>
-        </div>
-        <div class="btn_box btn_box01">
-          <!-- 기본버튼 -->
-          <div class="btn_gray">
-            <a href="javascript:;" title="편집모드" >편집모드</a>
-          </div>
-          <!-- 활성화버튼 -->
-          <!-- <div class="btn_orange">
-            <a href="javascript:;" title="편집모드" >편집모드</a>
-          </div> -->
+        <div class="time_wrap">
+          <span>시간</span>
+          <table>
+            <thead>
+              <tr>
+                <td>11<span>(목)</span></td>
+                <td>12<span>(금)</span></td>
+                <td>13<span>(토)</span></td>
+                <td>14<span>(일)</span></td>
+                <td>15<span>(월)</span></td>
+                <td>16<span>(화)</span></td>
+                <td>17<span>(수)</span></td>
+              </tr>
+            </thead>
+            <tr>
+              <td class="moveL">09:00</td>
+              <td><button type="button" data-type="0"></button></td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+            <tr>
+              <td class="moveL">09:30</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+            <tr>
+              <td class="moveL">10:00</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+            <tr>
+              <td class="moveL">10:30</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+            <tr>
+              <td class="moveL">11:00</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+            <tr>
+              <td class="moveL">11:30</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+            <tr>
+              <td class="moveL">12:00</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+            <tr>
+              <td class="moveL">12:30</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+            <tr>
+              <td class="moveL">13:00</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+              <td>시간</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
