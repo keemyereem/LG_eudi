@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
 <link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
 <link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.0/main.css">
 
 <!-- nurse js file
 <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
@@ -43,6 +44,7 @@
 
 <script src="/resource/assets/web/nurse/js/counseling.js"></script> 
 <script src="/resource/assets/web/nurse/js/common.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.1/index.global.min.js"></script>
 
 <!-- common js file
 <script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
@@ -50,12 +52,56 @@
 -->
 
 <script>
-  $(document).ready(()=> {
-    nurseJS.init();
-
-  })
-
-  
+  (function(){
+    $(function(){
+      // calendar element 취득
+      var calendarEl = $('#calendar')[0];
+      // full-calendar 생성하기
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        height: '700px', // calendar 높이 설정
+        expandRows: true, // 화면에 맞게 높이 재설정
+        slotMinTime: '08:00', // Day 캘린더에서 시작 시간
+        slotMaxTime: '20:00', // Day 캘린더에서 종료 시간
+        // 해더에 표시할 툴바
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        },
+        initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
+        initialDate: '2021-07-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
+        navLinks: true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
+        editable: true, // 수정 가능?
+        selectable: true, // 달력 일자 드래그 설정가능
+        nowIndicator: true, // 현재 시간 마크
+        dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
+        locale: 'ko', // 한국어 설정
+        eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트
+          console.log(obj);
+        },
+        eventChange: function(obj) { // 이벤트가 수정되면 발생하는 이벤트
+          console.log(obj);
+        },
+        eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트
+          console.log(obj);
+        },
+        select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
+          var title = prompt('Event Title:');
+          if (title) {
+            calendar.addEvent({
+              title: title,
+              start: arg.start,
+              end: arg.end,
+              allDay: arg.allDay
+            })
+          }
+          calendar.unselect()
+        }
+      });
+      // 캘린더 랜더링
+      calendar.render();
+    });
+  })();
 </script>
 
 </head>
@@ -146,38 +192,8 @@
     <!-- top //-->
 
     <!--// content -->
-    <div class="content calendar">
-      <div class="sec_cal">
-        <div class="cal_nav">
-          <a href="javascript:;" class="nav-btn go-prev">prev</a>
-          <div class="year-month"></div>
-          <a href="javascript:;" class="nav-btn go-next">next</a>
-        </div>
-        <div class="cal_wrap register">
-          <span class="alert01"><i></i> 예약완료</span>
-          <div class="days">
-            <div class="day">일</div>
-            <div class="day">월</div>
-            <div class="day">화</div>
-            <div class="day">수</div>
-            <div class="day">목</div>
-            <div class="day">금</div>
-            <div class="day">토</div>
-            
-          </div>
-
-          <!-- 날짜 변경시 마다 재렌더링 (counseling.js 47줄) -->
-          <div class="dates" data-cal=""></div>
-        </div>
-        <div class="btn_box btn_box02">
-          <div class="btn_gray">
-            <a href="javascript:;" title="취소" onclick="openPopup('EditImp_pop');"  >취소</a>
-          </div>
-          <div class="btn_orange">
-            <a href="javascript:;" title="변경" onclick="openPopup('scheduleEdit_pop');" >변경</a>
-          </div>
-        </div>
-      </div>
+    <div class="content">
+      <div id="calendar"></div>
     </div>
 
     <!-- content //-->

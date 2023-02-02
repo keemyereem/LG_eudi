@@ -25,6 +25,7 @@ var nurseJS = {
   init: function () {
     this.calInit();
     this.counselHis();
+    this.scheduleEdit();
     this.popup();
   },
 
@@ -90,7 +91,7 @@ var nurseJS = {
       }
       // 이번달
       for (var i = 1; i <= nextDate; i++) {
-          calendar.innerHTML = calendar.innerHTML + '<div class="day current"><a href="javascript:;" title="dates" class="dayButton">' + i + '</a></div>'
+          calendar.innerHTML = calendar.innerHTML + '<div class="day current"><a href="javascript:;" title="dates">' + i + '</a></div>'
       }
       // 다음달
       for (var i = 1; i <= (6 - nextDay == 7 ? 0 : 6 - nextDay); i++) {
@@ -105,7 +106,6 @@ var nurseJS = {
           currentMonthDate[todayDate - 1].classList.add('today');
       }
     
-
       if(!$('.calendar .cal_wrap').hasClass('register')){  //상담일정관리 캘린더
         // 연도수와 월을 데이터로 저장
         var getData = ['2023', '2'];
@@ -129,6 +129,7 @@ var nurseJS = {
           $('.edu').append('<span class="schedule edu_block">교육<b>' + data_edu[0] + '</b></span>');
           $('.cs').append('<span class="schedule cs_block">상담<b>' + data_cs[0] + '</b></span>');
         }
+        
       } else {  //상담가능일정등록 캘린더
         var getData02 = ['2023', '2'];
         
@@ -161,8 +162,8 @@ var nurseJS = {
           $('.pos').append('<span class="schedule pos_block">가능<b>' + data_pos[0] + '</b></span>');
           $('.impos').append('<span class="schedule impos_block">불가<b>' + data_impos[0] + '</b></span>');
         }
-      }
 
+      }
       
     }
 
@@ -231,6 +232,63 @@ var nurseJS = {
       // 현재 월 표기
       $('.year-month').html('<span>' + currentYear + '</span>년 <span>' + (currentMonth + 1) + '</span>월');
 
+      // 버튼 생성
+      let btnFuncName = ['가능', '불가', '불가(공휴일)', '불가(이동)', '불가(휴가)', '불가(퇴사)', '예약'];
+      for(let i=0; i < btnFuncName.length; i++) {
+        $('button[data-type="' + i + '"]').text(btnFuncName[i]);
+      }
+      // 불가사유 버튼 색깔 단독변경
+      $('.impossible_pop').find('.save').css('background', '#e26a2c')
+      
+      // *타임테이블 스크롤 시 가장자리 정보 셀 고정
+      $('.time_wrap').on('load resize scroll', function() {
+        $("thead").css("top", 0 + $(this).scrollTop());
+        $(".moveL").css("left", 0 + $(this).scrollLeft());
+        $(this).children('span').css({"top": 1 + $(this).scrollTop(), "left": 0 + $(this).scrollLeft()});0
+      });
+
+      // 타임테이블 내부 버튼 클릭 시
+      $('.time_wrap button').on('click', function() {
+        $(this).toggleClass('on');
+        
+        // 가능, 불가버튼
+        const btnFirst = $('.sec_cal > .btn_box02').children().first(),
+              btnLast = $('.sec_cal > .btn_box02').children().last();
+
+        let btnImpossible = $('button:not([data-type="0"], [data-type="6"]).on'),
+            btnPossible = $('button[data-type="0"].on');
+
+        // 불가버튼 클릭 시
+        if (btnImpossible.length > 0) {
+          btnFirst.removeClass('btn_gray').addClass('btn_orange');
+
+          // 불가 + 가능 복수 선택 시
+          if (btnPossible.length > 0) {
+            btnLast.removeClass('btn_gray btn_green').addClass('btn_red');
+            btnLast.children().text('불가').attr('onClick', "openPopup('impossible_pop')");
+          
+          // 불가만 선택 시
+          } else {
+            btnLast.removeClass('btn_gray').addClass('btn_green');
+            btnLast.children().text('불가 수정').attr('onClick', "openPopup('imposReason_pop')");
+          }  
+
+        // 가능버튼 클릭 시
+        } else if (btnPossible.length > 0) {
+          // 가능만 선택 시
+          if (!btnImpossible.length > 0) {
+            btnFirst.removeClass('btn_orange').addClass('btn_gray');
+            btnLast.removeClass('btn_gray').addClass('btn_red');
+            btnLast.children().attr('onClick', "openPopup('impossible_pop')");
+          }
+        // 모두 선택 취소 시
+        } else {
+          btnFirst.removeClass('btn_orange').addClass('btn_gray');
+          btnLast.removeClass('btn_green').addClass('btn_gray');
+          btnLast.children().text('불가').attr('onClick', "openPopup('impossible_pop')");
+        }
+
+      })
     }
 
     // ------------------------------------------------------------+| 작동 기능들 |+------------------------------------------------------------ //
@@ -289,53 +347,45 @@ var nurseJS = {
       calBoard = document.querySelector('.dates');
     } else if ($('.time_wrap').length) {
       calBoard = document.querySelector('.time_wrap');
-      
     }
     
-    // 모바일 터치 이벤트 (스와이프)
-    calBoard.addEventListener("touchstart", (e) => {
-      // console.log("touchstart", e.touches[0].pageX);
-      startPoint = e.touches[0].pageX; // 터치가 시작되는 위치 저장
-      vStartPoint = e.touches[0].pageY;
-    });
-    calBoard.addEventListener("touchend", (e) => {
-      // console.log("touchend", e.changedTouches[0].pageX);
-      endPoint = e.changedTouches[0].pageX; // 터치가 끝나는 위치 저장
-      vEndPoint = e.changedTouches[0].pageY;
-
-
-      // 오른쪽으로 스와이프 된 경우 (prev move)
-      if (startPoint < endPoint - detectCal && vStartPoint < vEndPoint + 40 && vStartPoint + 40 > vEndPoint ) {
-        // 캘린더페이지
-        if ($('.cal_wrap').length) {
-          thisMonth = new Date(currentYear, currentMonth - 1, 1);
-          renderCalender(thisMonth);
-
-        // 상세일정페이지
-        } else if ($('.schedule_wrap').length) {
-          thisMonth = new Date(currentYear, currentMonth, currentDate - 1, 1);
-          renderSchedule(thisMonth);
-        }
-
-      // 왼쪽으로 스와이프 된 경우 (next move)
-      } else if (startPoint > endPoint + detectCal && vStartPoint > vEndPoint - 40 && vStartPoint - 40 < vEndPoint) {
-        if ($('.cal_wrap').length) {
-          thisMonth = new Date(currentYear, currentMonth + 1, 1);
-          renderCalender(thisMonth);
-
-        } else if ($('.schedule_wrap').length) {
-          thisMonth = new Date(currentYear, currentMonth, currentDate + 1, 1);
-          renderSchedule(thisMonth);
-        }
-      }
-      
-      $('.time_wrap').on('load resize scroll', function() {
-          $("thead").css("top", 0 + $(this).scrollTop());
-          $(".moveL").css("left", 0 + $(this).scrollLeft());
-          $(this).children('span').css({"top": 1 + $(this).scrollTop(), "left": 0 + $(this).scrollLeft()});
+    if($('.calendar').length){
+      // 모바일 터치 이벤트 (스와이프)
+      calBoard.addEventListener("touchstart", (e) => {
+        startPoint = e.touches[0].pageX; // 터치가 시작되는 위치 저장
+        vStartPoint = e.touches[0].pageY;
       });
+      calBoard.addEventListener("touchend", (e) => {
+        endPoint = e.changedTouches[0].pageX; // 터치가 끝나는 위치 저장
+        vEndPoint = e.changedTouches[0].pageY;
 
-    });
+        // 오른쪽으로 스와이프 된 경우 (prev move)
+        if (startPoint < endPoint - detectCal && vStartPoint < vEndPoint + 40 && vStartPoint + 40 > vEndPoint ) {
+          // 캘린더페이지
+          if ($('.cal_wrap').length) {
+            thisMonth = new Date(currentYear, currentMonth - 1, 1);
+            renderCalender(thisMonth);
+
+          // 상세일정페이지
+          } else if ($('.schedule_wrap').length) {
+            thisMonth = new Date(currentYear, currentMonth, currentDate - 1, 1);
+            renderSchedule(thisMonth);
+          }
+
+        // 왼쪽으로 스와이프 된 경우 (next move)
+        } else if (startPoint > endPoint + detectCal && vStartPoint > vEndPoint - 40 && vStartPoint - 40 < vEndPoint) {
+          if ($('.cal_wrap').length) {
+            thisMonth = new Date(currentYear, currentMonth + 1, 1);
+            renderCalender(thisMonth);
+
+          } else if ($('.schedule_wrap').length) {
+            thisMonth = new Date(currentYear, currentMonth, currentDate + 1, 1);
+            renderSchedule(thisMonth);
+          }
+        }
+        
+      });
+    }
 
   },
 
@@ -356,6 +406,22 @@ var nurseJS = {
       });
     }
   },
+
+  //상담가능일정등록
+  scheduleEdit: () => {
+    //달력 날짜 선택
+    if($('.calendar .register').length){
+      $('.register .dates .day a').on('click', function(){
+        $(this).toggleClass('on')
+      });
+    }
+    //팝업 : 근무/휴일 선택
+    $('.scheduleEdit_pop .schedule_select li').on('click', function(){
+      $('.scheduleEdit_pop .schedule_select li').removeClass('on');
+      $(this).addClass('on');
+    });
+    
+  },
   
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -363,95 +429,71 @@ var nurseJS = {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   popup: () => {
+    // 불가관리 팝업
+    $('.disable_pop').on('click', function(){
+      let imposDate = $('.year-month').text(),
+          imposTimeIndex = undefined,
+          imposTimeRow = undefined,
+          imposTimeStart = undefined,
+          imposTimeEnd = undefined;
 
-    $(document).on("click",".disable_pop", function() {
+      // 상세일정 - 날짜와 시간 가져오기
+      if ($('.schedule_wrap').length) {  
+        // 날짜, 라인인덱스, 데이터타입(차지하는 열 개수), 시작시간과 끝시간 텍스트 가져오기 
+        imposDate = imposDate.substring(0, imposDate.length - 4)
+        imposTimeIndex = $(this).parents('li').index();
+        imposTimeRow = Number($(this).parents('li').data('type').replace('row-', ''));
+        imposTimeStart = $('.lines').children().eq(imposTimeIndex).text();
+        imposTimeEnd = $('.lines').children().eq(imposTimeIndex + imposTimeRow).text();
+        $('.impossible_pop ul').prepend('<li class="info"></li>');
+        $('.impossible_pop .info').html('<span>' + imposDate + '</span>' + imposTimeStart + ' ~ ' + imposTimeEnd);
 
-      let imposDate = $('.year-month').text();
-      imposDate = imposDate.substring(0, imposDate.length - 4)
-  
-      let imposTimeIndex = $(this).parents('li').index(),
-          imposTimeRow = Number($(this).parents('li').data('type').replace('row-', '')),
-          imposTimeStart = $('.lines').children().eq(imposTimeIndex).text(),
-          imposTimeEnd = $('.lines').children().eq(imposTimeIndex + imposTimeRow).text();
-  
-      $('.impossible_pop .info').html('<span>' + imposDate + '</span>' + imposTimeStart + ' ~ ' + imposTimeEnd);
-      console.log(imposDate);
-    });
-
-
-  
-    // 스크롤 값 추적
-    let scrollPosition = 0;
-    const body = document.querySelector("body");
-    $(window).on("scroll", () => {
-      scrollPosition = window.pageYOffset;
-    });
-
-    // 팝업 열기 
-    // $(document).on("click",".open_pop", function() {
-    //   openProcessor();
-
-    //   if ($('.popup').find('.impossible_pop').length) {
-    //     let imposDate = $('.year-month').text();
-    //     imposDate = imposDate.substring(0, imposDate.length - 4)
-    
-    //     let imposTimeIndex = $(this).parents('li').index(),
-    //         imposTimeRow = Number($(this).parents('li').data('type').replace('row-', '')),
-    //         imposTimeStart = $('.lines').children().eq(imposTimeIndex).text(),
-    //         imposTimeEnd = $('.lines').children().eq(imposTimeIndex + imposTimeRow).text();
-    
-    //     $('.impossible_pop .info').html('<span>' + imposDate + '</span>' + imposTimeStart + ' ~ ' + imposTimeEnd);
-    //   }
-    // });
-
-    // 팝업 닫기
-    $(document).on("click",".close_pop", () => {
-      closeProcessor();
-
-      $('.popup').find('.info').html('');
-    });
-
-    // 팝업 열기 function
-    function openProcessor() {
-
-      if($(".popup").hasClass('pop_bottom')){ //밑에서 뜨는 팝업
+      // 상담일정관리 - 클릭한 버튼의 데이터 가져오기
+      } else if ($('.time_wrap').length) {
         
-      } else { //스크롤에 따라 가운데서 뜨는 팝업
-        scrollPosition = window.pageYOffset;
+        // 버튼의 좌표 위치 담을 배열 생성
+        let arrObj = new Array;
+        $('button:not([data-type="2"]).on').each(function(index) {
+          // 버튼 각각 좌표 생성
+          var rowPos = $('button:not([data-type="2"]).on').eq(index).closest('tr').index() + 1,
+              colPos = $('button:not([data-type="2"]).on').eq(index).closest('td').index();
+            
+          // 버튼의 행, 열 좌표를 작은 배열에 담은 후, 각각의 작은 배열들을 좌표 위치 배열에 담기
+          let posArr = [rowPos, colPos];
+
+          arrObj.push(posArr);
+          // 날짜 및 시간 정렬 - 2번째 요소 오름차순 -> 1번째 요소 오름차순
+          arrObj.sort((prev, cur) => {  
+            if (prev[1] > cur[1]) return -1;
+            if (prev[1] < cur[1]) return 1;
+            if (prev[0] > cur[0]) return -1;
+            if (prev[0] < cur[0]) return 1;
+          });
+        });
+        
+        // 선택한 버튼만큼 info 생성
+        for(var i=1; i<= $('button:not([data-type="2"]).on').length; i++) { 
+          let imposDay = $('thead tr td').eq(arrObj[i - 1][1]).html(),
+              imposTimeStart = $('.moveL').eq((arrObj[i -1][0]) - 1).html(),
+              imposTimeEnd = $('.moveL').eq((arrObj[i -1][0])).html();
+          $('.impossible_pop ul, .imposReason_pop ul')
+          .prepend('<li class="info"><span>' + imposDate + ' <b>' + imposDay + '일</b></span>' + imposTimeStart + ' ~ ' + imposTimeEnd + '</li>');
+        }
       }
-      // scrollPosition = window.pageYOffset;
-
-      $(".popup").addClass("on");
-      $("html").addClass("blockScroll");
-
-      body.style.top = `-${scrollPosition}px`;
-    }
-
-
-    // 팝업 닫기 function
-    function closeProcessor() {
-      $("html").removeClass("blockScroll");
-      $(".popup").removeClass("on");
-
-      // scrollPosition = body.style.top;
-      // scrollPosition = scrollPosition.replace("px", "");
-
-      // window.scrollTo(0, -scrollPosition);
-      // body.style.removeProperty("top");
-    }
+    });
 
   },
 
-
 }
 
-function openPopup(popConts) {
+function openPopup(popConts) {  //onclick="openPopup('popConts');"
   //팝업 열기
-  var popthis = $(".popup ." + popConts);
+  var popthis = $(".popup ." + popConts); //popConts : .pop_content 
   $(".pop_content").hide();
   $(".popup").addClass("on");
-  popthis.fadeIn(100);
+  popthis.fadeIn(50);
 
+  eval($().data('callback'));
 
   if(popthis.hasClass('pop_alert')) { //alert 팝업
     popthis.parents('.popup').addClass('popup_alert')
@@ -465,12 +507,16 @@ function openPopup(popConts) {
     popthis.parents('.popup').removeClass('popup_bottom')
   }
 
-
-
   //팝업 닫기
-  popthis.siblings(".close_pop").click(function(){
+  popthis.siblings(".close_pop").click(function(){ // 팝업 내 X버튼
     $(".popup").removeClass("on");
+    $('.info').remove();
     popthis.hide();
-    // $('.popup').find('.info').html('');
+  });
+  popthis.find(".close_pop").click(function(){ // 기타 버튼 클릭시 닫기
+    $(".popup").removeClass("on");
+    $('.info').remove(); //팝업 내 동적내용 삭제
+    popthis.hide();
   });
 }
+

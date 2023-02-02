@@ -32,16 +32,28 @@ ExtraBold - 'NanumSquareEB'
 .popup.popup_bottom .inner_pop .btn_close { right: 15px; }
 
 /* 팝업 - 불가관리 */
-.impossible_pop { background: #ffffff; border-radius: 10px; padding: 30px 25px 35px; display: flex; flex-wrap: wrap; justify-content: space-between; }
-.impossible_pop h3 { font-family: 'NanumSquareB'; font-size: 18px; padding-bottom: 16px; width: 100%; }
+.impossible_pop,
+.imposReason_pop { background: #ffffff; border-radius: 10px; padding: 30px 25px 35px; display: flex; flex-wrap: wrap; justify-content: space-between; }
+.impossible_pop h3,
+.imposReason_pop h3 { font-family: 'NanumSquareB'; font-size: 18px; padding-bottom: 16px; width: 100%; }
+.imposReason_pop ul,
 .impossible_pop ul { padding: 27px 15px; background: #f6f6f6; border-top: 1px solid #727272; width: 100%; }
+.imposReason_pop ul li:not(.impos_action),
 .impossible_pop ul li:not(.impos_action) { display: flex; justify-content: space-between; overflow: inherit; font-size: 13px; font-family: 'NanumSquareB'; color: #333333; padding-bottom: 13.5px; }
+.imposReason_pop ul li:not(.impos_action) span::before,
 .impossible_pop ul li:not(.impos_action) span::before { content: ''; display: inline-block; width: 3px; height: 3px; background: #f18e1e; vertical-align: middle; margin-right: 7px; }
+.imposReason_pop ul li:not(.impos_action) span span,
+.impossible_pop ul li:not(.impos_action) span span { display: none; }
+.imposReason_pop ul .impos_action select,
 .impossible_pop ul .impos_action select { font-family: 'NanumSquareB'; font-size: 12px; -o-appearance: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; height: 40px; padding: 0 11px; border: 1px solid #cfcfcf; border-radius: 5px; background:#ffffff url(../images/common/select.png) calc(100% - 10px) 50% no-repeat; background-size: 6px 3px; }
+.imposReason_pop ul .impos_action select::-ms-expand,
 .impossible_pop ul .impos_action select::-ms-expand { display: none; }
+.imposReason_pop ul .impos_action select:focus,
 .impossible_pop ul .impos_action select:focus { background: #ffffff url(../images/common/select_on.png) calc(100% - 10px) 50% no-repeat; background-size: 6px 3px; }
-.impossible_pop > button { width: calc(50% - 10px); border-radius: 5px; margin-top: 30px; font-size: 13px; font-family: 'NanumSquareB'; color: #727272; background: #cfcfcf; padding: 14px 0; }
-.impossible_pop > button.save { background: #f18e1e; color: #ffffff; }
+.imposReason_pop > button,
+.impossible_pop > button { width: calc(50% - 5px); border-radius: 5px; margin-top: 30px; font-size: 13px; font-family: 'NanumSquareB'; color: #727272; background: #cfcfcf; padding: 14px 0; }
+.imposReason_pop > button.save,
+.impossible_pop > button.save { background: #f18e1e; color: #ffffff; float: right; }
 
 /* 팝업 - 근무/휴무 선택 */
 .scheduleEdit_pop { background: #ffffff; border-radius: 10px 10px 0 0; padding: 30px 15px 53px; }
@@ -52,12 +64,15 @@ ExtraBold - 'NanumSquareEB'
 .scheduleEdit_pop .schedule_select li { width: calc((100% - 10px) / 3); height: 40px; line-height: 40px; border: 1px solid #cfcfcf; border-radius: 5px; font-size: 12px; text-align: center; }
 .scheduleEdit_pop .schedule_select li a { display: block; width: 100%; height: 100%; }
 .scheduleEdit_pop .schedule_select li:hover { border-color: #f18e1e; }
-.scheduleEdit_pop .schedule_select li:hover a { color: #f18e1e; }
+.scheduleEdit_pop .schedule_select li:hover a, 
+.scheduleEdit_pop .schedule_select li.on a { color: #f18e1e; }
 .scheduleEdit_pop .btn_box a { font-size: 15px; }
 
 
 /*  */
 .ffEB { font-family: 'NanumSquareEB'; }
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
 .con_box .con_tit { font-family: 'NanumSquareEB'; color: #f18e1e; }
 .con_box .con_tit::after { content:''; display: block; width: 100%; height: 1px; background: #f18e1e; margin-top: 8px; }
 .con_sub .con_box .con_inner03 { padding: 0 15px; background: #fff; }
@@ -99,18 +114,18 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .cal_wrap .day:nth-child(7n).disable { color: rgba(50, 99, 224, .4); }
 .wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1).disable { color: rgba(227, 40, 40, .4); }
 .wrap_sub .sec_cal .cal_wrap .day:nth-child(7n),
-.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n) a { color: #3263e0; pointer-events: none; }
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n) a { color: #3263e0; }
 .wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1),
-.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1) a { color: #e32828; pointer-events: none; }
+.wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1) a { color: #e32828; }
 .wrap_sub .sec_cal .cal_wrap .dates { display: flex; flex-flow: wrap; }
 .wrap_sub .sec_cal .cal_wrap .dates .day { height: 79px; border-bottom: .5px solid #e5e5e5; }
 .wrap_sub .sec_cal .cal_wrap .dates .day:not(.current) { padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
 .wrap_sub .sec_cal .cal_wrap .dates .day a { display: flex; width: 100%; height: 100%; padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
 .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n),
 .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n+1),
-.wrap_sub .sec_cal .cal_wrap .dates .day.disable,
-.wrap_sub .sec_cal .current.today { background: #f6f6f6; }
-.wrap_sub .sec_cal .cal_wrap .dates .day a.on { background: #79bd28; }
+/* .wrap_sub .sec_cal .current.today,  */
+.wrap_sub .sec_cal .cal_wrap .dates .day.disable { background: #f6f6f6; }
+.wrap_sub .sec_cal .cal_wrap .dates .day a.on { background: #79bd28; color: #fff; }
 .wrap_sub .sec_cal .current .hpc_block { width: 57%; max-width: 25px; height: 15px; border: 1px solid #13bfd6; color: #13bfd6; text-align: center; font-size: 9px; line-height: 14px; border-radius: 7.5px; margin:-3px .3vw 0 0; }
 .wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
 .wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #fc637d; }
@@ -219,6 +234,9 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .current .schedule.impos_block { bottom: 6px; background: #6e6e6e; }
 .wrap_sub .sec_cal .register + .btn_box a { font-size: 15px; }
 
+/* test */
+
+
 /* 상담가능일정등록 - 시간별 */
 .wrap_sub .register .sec_cal { padding: 35px 0 57px; overflow: hidden; }
 .wrap_sub .register .sec_cal .cal_nav .year-month { width: 157.5px; }
@@ -227,16 +245,25 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal .time_wrap table { width: calc((25.75vw * 7) + 18.7vw); position: relative; margin-right: 15px; }
 .wrap_sub .register .sec_cal .time_wrap table tr { height: 47.5px; }
 .wrap_sub .register .sec_cal .time_wrap table tr td { background: #ffffff; width: 25.6vw; height: inherit; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #eeeeee; border-width: 0 1px 1px 0; }
-.wrap_sub .register .sec_cal .time_wrap table thead { position: absolute; padding-left: 18.7vw; width: calc((25.6vw * 7) + 18.7vw); z-index: 1; border-top: 1px solid #333333; }
+.wrap_sub .register .sec_cal .time_wrap table thead { position: absolute; width: calc((25.6vw * 7) + 18.7vw); z-index: 1; border-top: 1px solid #333333; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr { position: relative; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td { height: inherit; font-size: 15px; font-family: 'NanumSquareEB'; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr td:first-child { width: 18.7vw; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td span { font-family: 'NanumSquareR'; margin-left: 4px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody { padding-left: 18.7vw; margin-top: 47.5px; display: inline-block; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td.moveL { width: 18.7vw; position: absolute; left: 0; font-size: 14px; }
-.wrap_sub .register .sec_cal .time_wrap table tbody tr td button { width: 72px; height: 30px; border-radius: 15px; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button { width: 72px; height: 30px; border-radius: 15px; line-height: 29px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button::after { display: block; font-size: 14px; font-family: 'NanumSquareR'; }
-.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"] { border: 1px solid #f18e1e; }
-.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"]::after { content: '가능'; color: #f18e1e; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"] { border: 1px solid #f18e1e; color: #f18e1e; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"].on { background: #f18e1e; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="6"] { border: 1px solid #13bfd6; color: #13bfd6; pointer-events: none; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="6"]) { border: 1px solid #999999; color: #999999; font-size: 12px; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="6"]).on { background: #999999; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button.on  { color: #ffffff; }
+.wrap_sub .register .sec_cal .btn_box02 { padding: 0 15px; }
+.wrap_sub .register .sec_cal .btn_box02 .btn_gray a { pointer-events: none; }
+.wrap_sub .register .sec_cal .btn_box02 > div:first-child { float: left; }
+.wrap_sub .register .sec_cal .btn_box02 > div:last-child { float: right; }
 
 
 /*/////////////////////////////////////////////////////////////////////////
@@ -248,6 +275,10 @@ ExtraBold - 'NanumSquareEB'
 .con_sub01 .ipt_box .inner+.inner .info02::before { content:''; display: block; width: 100%; height: 1px; background: url(../images/common/dashed_border.jpg) repeat-x; background-size: contain; position: absolute; top: 35px; left: 0; }
 
 
+/*/////////////////////////////////////////////////////////////////////////
+///////////                     ** 물품관리 **                      ///////
+/////////////////////////////////////////////////////////////////////////*/
 
-
-
+.con_sub .search_box .srh_box .con_flex > p { width: 56px; flex-shrink: 0; font-size: 12px; }
+.con_sub .search_box .srh_box .con_flex .date_box .hypen { padding: 0 15px; }
+.wrap_sub03 .pop_search .pop_con .search_area .search_ipt .btn_search { background: #fc637d; }
