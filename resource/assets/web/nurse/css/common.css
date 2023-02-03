@@ -93,7 +93,7 @@ input[type="text"]:disabled {background: #fff;}
 .sub_top .tab ul:after {content: "";display: block;clear: both;}
 .sub_top .tab ul>li {flex:1;/* float: left;width: 24.33%; */height: 50px;line-height: 50px;border-bottom: 2px solid #fff;box-sizing: border-box;}
 .sub_top .tab ul>li.active {border-bottom: 2px solid #79bd28;}
-.sub_top .tab ul>li>a {display: block;width: 100%;color: #666;text-align: center;}
+.sub_top .tab ul>li>a {display: block;width: 100%;color: #666;text-align: center;font-size: 15px;}
 .sub_top .tab ul>li.active>a {font-family: 'NanumSquareEB';color: #79bd28;}
 .sub_top .tab.tab_border {border-bottom: 8px solid #f1f1f1;}
 

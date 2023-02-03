@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+  // Fix for IE ignoring relative base tags.
+  (function() {
+      var baseTag = document.getElementsByTagName('base')[0];
+      baseTag.href = baseTag.href;
+  })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- TITLE -->
+<title>EuDi 상담일정관리-상세일정-해피콜등록</title>
+<link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
+	    
+<!-- common css file
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=1.3">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=1.3">
+-->
+
+<!-- nurse css file -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" />
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css">
+
+<!-- nurse js file
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
+-->
+
+<!-- 임시 제이쿼리 -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
+<!-- 임시 제이쿼리 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js"></script> 
+<script type="text/javascript" src="/resource/assets/web/nurse/js/counseling.js"></script> 
+
+<!-- common js file
+<script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
+<script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script> 
+-->
+
+<script>
+  $(document).ready(()=> {
+    selEvent.init();
+    datetimeEvent.init();
+    nurseJS.counselHis();
+  })
+  
+</script>
+
+</head>
+
+ <body>
+ <div class="wrap wrap_sub wrap_sub01">
+    <!--// top -->
+    <div class="sub_top">
+      <div class="nav">
+        <div class="nav_inner">
+          <h2 class="title">회원상세</h2>
+          <div class="back">
+            <a href="/nurse/main.do" title="뒤로가기"><img src="/resource/assets/web/nurse/images/common/back.png" alt="뒤로가기"></a>
+          </div>
+        </div>
+      </div>
+      <!-- 추가 2023.01.27 -->
+      <div class="tab tab_border">
+        <div class="inner">
+          <ul>
+            <li class="active"><a href="javascript:;">상담관리</a></li>
+            <li><a href="javascript:fnDosePage()">투여확인</a></li>
+            <li><a href="javascript:;">투여계획</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- top //-->
+
+    <!--// content --> 
+    <div class="content con_sub">
+
+      <div class="list_box">
+        <div class="con_flex">
+          <p class="ffEB">신청대상</p>
+          <div class="search_total">총<span><b>2</b>건</span></div>
+        </div>
+        <div class="con_list child_list">
+          <ul>
+            <li><a href="javascript:;">
+              <div class="tw100"><span class="lblbox lbl01">계획</span></div>
+              <div class="tw60">
+                <ul>
+                  <li><div class="tit">상담예정일</div><div class="date">2023.03.16</div></li>
+                  <li><div class="tit colorgrn">처방일자</div><div class="date colorgrn">2022.12.26</div></li>
+                </ul>
+              </div>
+              <div class="tw40">
+                <p class="progress colorgrn">진행</p>
+                <p class="name">이하중</p>
+              </div>
+            </a></li>
+            <li><a href="javascript:;">
+              <div class="tw100"><span class="lblbox lbl04">미정</span></div>
+              <div class="tw60">
+                <ul>
+                  <li><div class="tit">상담예정일</div><div class="date">2023.03.16</div></li>
+                  <li><div class="tit colorgrn">처방일자</div><div class="date colorgrn">2022.12.26</div></li>
+                </ul>
+              </div>
+              <div class="tw40">
+                <p class="progress colorgrn">진행</p>
+                <p class="name">이하준</p>
+              </div>
+            </a></li>
+          </ul>
+        </div>
+        <div class="con_flex">
+          <p class="ffEB">신청대상</p>
+          <div>
+            <div class="search_name"><b>이하준</b>님</div>
+            <div class="search_total">총<span><b>2</b>건</span></div>
+          </div>
+        </div>
+        <div class="con_list con_list03 counsel_his">
+          <ul>
+            <li><a href="javascript:;">
+              <div>
+                <ul>
+                  <li><div class="tit">상담예정일</div><div class="date">2023.03.16</div></li>
+                  <li><div class="tit colorgrn">상담일</div><div class="date colorgrn"></div></li>
+                </ul>
+              </div>
+              <div>
+                <p class="height"></p>
+                <p class="weight"></p>
+              </div>
+              <div class="tw100 note"></div>
+            </a></li>
+            <li><a href="javascript:;">
+              <div>
+                <ul>
+                  <li><div class="tit">상담예정일</div><div class="date">2023.03.16</div></li>
+                  <li><div class="tit colorgrn">상담일</div><div class="date colorgrn">2022.12.26</div></li>
+                </ul>
+              </div>
+              <div>
+                <p class="height">키 146.71(149.7)cm</p>
+                <p class="weight">체중 39.7kg</p>
+              </div>
+              <div class="tw100 note">노디에서 에스펜 5/6(M) 전화</div>
+            </a></li>
+          </ul>
+        </div>
+        <div class="btn_box btn_box01 mt50">
+          <div class="btn_green">
+            <a href="javascript:;" title="신규등록">신규등록</a>
+          </div>
+        </div>
+      </div>
+    <!-- content //-->
+	</div>
+  </body>
+</html>

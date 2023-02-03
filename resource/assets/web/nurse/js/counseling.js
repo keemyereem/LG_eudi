@@ -233,12 +233,10 @@ var nurseJS = {
       $('.year-month').html('<span>' + currentYear + '</span>년 <span>' + (currentMonth + 1) + '</span>월');
 
       // 버튼 생성
-      let btnFuncName = ['가능', '불가', '불가(공휴일)', '불가(이동)', '불가(휴가)', '불가(퇴사)', '예약'];
+      let btnFuncName = ['가능', '예약', '불가(교육)', '불가(공휴일)', '불가(이동)', '불가(휴가)', '불가(회의)', '불가(기타)'];
       for(let i=0; i < btnFuncName.length; i++) {
         $('button[data-type="' + i + '"]').text(btnFuncName[i]);
       }
-      // 불가사유 버튼 색깔 단독변경
-      $('.impossible_pop').find('.save').css('background', '#e26a2c')
       
       // *타임테이블 스크롤 시 가장자리 정보 셀 고정
       $('.time_wrap').on('load resize scroll', function() {
@@ -250,27 +248,41 @@ var nurseJS = {
       // 타임테이블 내부 버튼 클릭 시
       $('.time_wrap button').on('click', function() {
         $(this).toggleClass('on');
+
+        // 불가사유 버튼 색깔 단독변경
+        $('.impossible_pop').find('.save').addClass('time_btnColor');
+        
         
         // 가능, 불가버튼
         const btnFirst = $('.sec_cal > .btn_box02').children().first(),
               btnLast = $('.sec_cal > .btn_box02').children().last();
 
-        let btnImpossible = $('button:not([data-type="0"], [data-type="6"]).on'),
+        let btnImpossible = $('button:not([data-type="0"], [data-type="1"], [data-type="3"]).on'),
+            btnImposWeekend = $('button[data-type="3"].on'),
             btnPossible = $('button[data-type="0"].on');
 
         // 불가버튼 클릭 시
-        if (btnImpossible.length > 0) {
+        if (btnImpossible.length > 0 || btnImposWeekend.length > 0) {
           btnFirst.removeClass('btn_gray').addClass('btn_orange');
 
           // 불가 + 가능 복수 선택 시
           if (btnPossible.length > 0) {
             btnLast.removeClass('btn_gray btn_green').addClass('btn_red');
             btnLast.children().text('불가').attr('onClick', "openPopup('impossible_pop')");
+            $('.impossible_pop').removeClass('reason_setting');
           
+          // 불가(공휴일) + 가능 복수 선택 시
+          } else if (btnImposWeekend.length > 0 && btnImpossible.length === 0) {
+            btnFirst.removeClass('btn_gray').addClass('btn_orange');
+            btnLast.removeClass('btn_red btn_green').addClass('btn_gray');
+            btnLast.children().text('불가').attr('onClick', "openPopup('impossible_pop')");
+            $('.impossible_pop').removeClass('reason_setting');
+
           // 불가만 선택 시
           } else {
             btnLast.removeClass('btn_gray').addClass('btn_green');
-            btnLast.children().text('불가 수정').attr('onClick', "openPopup('imposReason_pop')");
+            btnLast.children().text('불가 수정').attr('onClick', "openPopup('impossible_pop')");
+            $('.impossible_pop').addClass('reason_setting');
           }  
 
         // 가능버튼 클릭 시
@@ -280,15 +292,20 @@ var nurseJS = {
             btnFirst.removeClass('btn_orange').addClass('btn_gray');
             btnLast.removeClass('btn_gray').addClass('btn_red');
             btnLast.children().attr('onClick', "openPopup('impossible_pop')");
+            $('.impossible_pop').removeClass('reason_setting');
+            
+          } else {
+            
           }
         // 모두 선택 취소 시
         } else {
           btnFirst.removeClass('btn_orange').addClass('btn_gray');
           btnLast.removeClass('btn_green').addClass('btn_gray');
-          btnLast.children().text('불가').attr('onClick', "openPopup('impossible_pop')");
+          btnLast.children().text('불가').attr('onClick', "openPopup('')");
+          $('.impossible_pop').removeClass('reason_setting');
         }
-
-      })
+        
+      });
     }
 
     // ------------------------------------------------------------+| 작동 기능들 |+------------------------------------------------------------ //
@@ -453,14 +470,14 @@ var nurseJS = {
         
         // 버튼의 좌표 위치 담을 배열 생성
         let arrObj = new Array;
-        $('button:not([data-type="2"]).on').each(function(index) {
+        $('button:not([data-type="3"]).on').each(function(index) {
           // 버튼 각각 좌표 생성
-          var rowPos = $('button:not([data-type="2"]).on').eq(index).closest('tr').index() + 1,
-              colPos = $('button:not([data-type="2"]).on').eq(index).closest('td').index();
+          var rowPos = $('button:not([data-type="3"]).on').eq(index).closest('tr').index() + 1,
+              colPos = $('button:not([data-type="3"]).on').eq(index).closest('td').index(),
+              colNextPos = $('button:not([data-type="3"]).on').eq(index + 1).closest('td').index();
             
           // 버튼의 행, 열 좌표를 작은 배열에 담은 후, 각각의 작은 배열들을 좌표 위치 배열에 담기
           let posArr = [rowPos, colPos];
-
           arrObj.push(posArr);
           // 날짜 및 시간 정렬 - 2번째 요소 오름차순 -> 1번째 요소 오름차순
           arrObj.sort((prev, cur) => {  
@@ -469,15 +486,21 @@ var nurseJS = {
             if (prev[0] > cur[0]) return -1;
             if (prev[0] < cur[0]) return 1;
           });
+
         });
-        
+        console.log(arrObj)
+
         // 선택한 버튼만큼 info 생성
-        for(var i=1; i<= $('button:not([data-type="2"]).on').length; i++) { 
+        for(var i=1; i<= $('button:not([data-type="3"]).on').length; i++) {
           let imposDay = $('thead tr td').eq(arrObj[i - 1][1]).html(),
               imposTimeStart = $('.moveL').eq((arrObj[i -1][0]) - 1).html(),
               imposTimeEnd = $('.moveL').eq((arrObj[i -1][0])).html();
+              if (imposTimeEnd === undefined) { imposTimeEnd = '18:30' }
           $('.impossible_pop ul, .imposReason_pop ul')
           .prepend('<li class="info"><span>' + imposDate + ' <b>' + imposDay + '일</b></span>' + imposTimeStart + ' ~ ' + imposTimeEnd + '</li>');
+
+          console.log($('thead tr td').eq(arrObj[i - 1][1]))
+            
         }
       }
     });
@@ -491,31 +514,40 @@ function openPopup(popConts) {  //onclick="openPopup('popConts');"
   var popthis = $(".popup ." + popConts); //popConts : .pop_content 
   $(".pop_content").hide();
   $(".popup").addClass("on");
-  popthis.fadeIn(50);
+  popthis.css('display', 'flex');
 
   eval($().data('callback'));
 
   if(popthis.hasClass('pop_alert')) { //alert 팝업
-    popthis.parents('.popup').addClass('popup_alert')
+    popthis.parents('.popup').addClass('popup_alert');
   }else {
-    popthis.parents('.popup').removeClass('popup_alert')
+    popthis.parents('.popup').removeClass('popup_alert');
   }
 
   if(popthis.hasClass('pop_bottom')) { //밑에서 뜨는 팝업
-    popthis.parents('.popup').addClass('popup_bottom')
+    popthis.parents('.popup').addClass('popup_bottom');
+    popthis.css('display', 'block');
   }else {
-    popthis.parents('.popup').removeClass('popup_bottom')
+    popthis.parents('.popup').removeClass('popup_bottom');
+  }
+
+  // 불가 사유
+  if (popthis.hasClass('reason_setting')) {
+    popthis.children('button.cancel').before('<button type="button" onclick="javascript:;" class="delete">삭제</button>');
+    popthis.children('button.save').text('저장');
+  } else {
+    popthis.children('button.save').text('등록');
   }
 
   //팝업 닫기
   popthis.siblings(".close_pop").click(function(){ // 팝업 내 X버튼
     $(".popup").removeClass("on");
-    $('.info').remove();
+    $('.info, .delete').remove();
     popthis.hide();
   });
   popthis.find(".close_pop").click(function(){ // 기타 버튼 클릭시 닫기
     $(".popup").removeClass("on");
-    $('.info').remove(); //팝업 내 동적내용 삭제
+    $('.info, .delete').remove(); //팝업 내 동적내용 삭제
     popthis.hide();
   });
 }

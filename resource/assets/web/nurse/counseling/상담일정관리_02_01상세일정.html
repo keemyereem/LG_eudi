@@ -69,16 +69,18 @@
           <h3>불가 관리</h3>
           <ul>
             <!-- <li class="info"></li> -->
-
-            <li class="impos_action">
-              <select name="action" required>
-                <option value="" selected>선택하세요</option>
-                <option value="move">이동</option>
-                <option value="delete">삭제</option>
-                <option value="add">추가</option>
-              </select>
-            </li>
           </ul>
+          <div class="impos_action">
+            <select name="action" required>
+              <option value="" selected>선택하세요</option>
+              <option value="seminar">주사교육</option>
+              <option value="counsel">상담</option>
+              <option value="move">이동중</option>
+              <option value="vacation">휴가</option>
+              <option value="review">회의</option>
+              <option value="etc">기타</option>
+            </select>
+          </div>
 
           <button type="button" onclick="javascript:;" class="cancel close_pop">취소</button>
           <button type="button" onclick="javascript:;" class="save">저장</button>

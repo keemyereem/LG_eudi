@@ -71,11 +71,7 @@
           <div class="pop_tit">
             수정이 완료되었습니다.
           </div>
-          <div class="btn_box btn_box01">
-            <div class="btn_orange">
-              <a href="javascript:;" class="close_pop" title="확인">확인</a>
-            </div>
-          </div>
+          <button type="button" onclick="javascript:;" class="check close_pop">확인</button>
         </div>
 
         <!-- 불가관리용 컴포 -->
@@ -83,39 +79,22 @@
           <h3>불가사유 등록</h3>
           <ul>
             <!-- <li class="info"></li> -->
-
-            <li class="impos_action">
-              <select name="action" required>
-                <option value="" selected>선택하세요</option>
-                <option value="move">이동</option>
-                <option value="delete">삭제</option>
-                <option value="add">추가</option>
-              </select>
-            </li>
           </ul>
+          <div class="impos_action">
+            <select name="action" required>
+              <option value="" selected>선택하세요</option>
+              <option value="seminar">주사교육</option>
+              <option value="counsel">상담</option>
+              <option value="move">이동중</option>
+              <option value="vacation">휴가</option>
+              <option value="review">회의</option>
+              <option value="etc">기타</option>
+            </select>
+          </div>
+          
 
           <button type="button" onclick="javascript:;" class="cancel close_pop">취소</button>
           <button type="button" onclick="javascript:;" class="save">등록</button>
-        </div>
-
-        
-        <div class="pop_content imposReason_pop">
-          <h3>불가 관리</h3>
-          <ul>
-            <!-- <li class="info"></li> -->
-
-            <li class="impos_action">
-              <select name="action" required>
-                <option value="" selected>선택하세요</option>
-                <option value="move">이동</option>
-                <option value="delete">삭제</option>
-                <option value="add">추가</option>
-              </select>
-            </li>
-          </ul>
-
-          <button type="button" onclick="javascript:;" class="cancel close_pop">취소</button>
-          <button type="button" onclick="javascript:;" class="save">저장</button>
         </div>
       </div>
     </div>
@@ -147,7 +126,8 @@
           <a href="javascript:;" class="nav-btn go-next">next</a>
         </div>
 
-        <!-- data-type = 0 : [가능] |  1 : [불가] | 2 : [불가(공휴일)] | 3 : [불가(이동)] | 4 : [불가(휴가)] | 5 : [불가(퇴사)] | 6 : [예약] -->
+        <!-- data-type = 0 : [가능] |  1 : [예약] | 2 : [불가] | 3 : [불가(공휴일)] | 4 : [불가(이동)] | 5 : [불가(휴가)] | 6 : [불가(퇴사)] | 7 : [] -->
+        <!-- 공휴일 불가버튼은 가능만 되도록 함 -->
         <div class="time_wrap">
           <span>시간</span>
           <table>
@@ -167,18 +147,18 @@
               <td class="moveL">09:00</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="6"></button></td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="1"></button></td>
+              <td><button type="button" data-type="1"></button></td>
               <td><button type="button" data-type="0"></button></td>
             </tr>
             <tr>
               <td class="moveL">09:30</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
@@ -187,9 +167,9 @@
               <td class="moveL">10:00</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
               <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="4"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
             </tr>
@@ -197,28 +177,28 @@
               <td class="moveL">10:30</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
               <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="2"></button></td>
               <td><button type="button" data-type="4"></button></td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="1"></button></td>
             </tr>
             <tr>
               <td class="moveL">11:00</td>
-              <td><button type="button" data-type="6"></button></td>
-              <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="0"></button></td>
+              <td><button type="button" data-type="1"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="0"></button></td>
+              <td><button type="button" data-type="0"></button></td>
+              <td><button type="button" data-type="6"></button></td>
             </tr>
             <tr>
               <td class="moveL">11:30</td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="1"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
@@ -227,8 +207,8 @@
               <td class="moveL">12:00</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
@@ -237,21 +217,21 @@
               <td class="moveL">12:30</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
             </tr>
             <tr>
               <td class="moveL">13:00</td>
+              <td><button type="button" data-type="7"></button></td>
+              <td><button type="button" data-type="7"></button></td>
               <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="3"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
               <td><button type="button" data-type="6"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="2"></button></td>
             </tr>
 
             <!-- 오후 -->
@@ -259,8 +239,8 @@
               <td class="moveL">13:30</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
@@ -269,9 +249,9 @@
               <td class="moveL">14:00</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
               <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="5"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
             </tr>
@@ -279,28 +259,28 @@
               <td class="moveL">14:30</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
               <td><button type="button" data-type="3"></button></td>
-              <td><button type="button" data-type="4"></button></td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="5"></button></td>
+              <td><button type="button" data-type="7"></button></td>
+              <td><button type="button" data-type="1"></button></td>
             </tr>
             <tr>
               <td class="moveL">15:00</td>
-              <td><button type="button" data-type="6"></button></td>
-              <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="0"></button></td>
+              <td><button type="button" data-type="1"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="0"></button></td>
+              <td><button type="button" data-type="0"></button></td>
+              <td><button type="button" data-type="4"></button></td>
             </tr>
             <tr>
               <td class="moveL">15:30</td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="1"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
@@ -309,8 +289,8 @@
               <td class="moveL">16:00</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
@@ -319,41 +299,41 @@
               <td class="moveL">16:30</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
             </tr>
             <tr>
               <td class="moveL">17:00</td>
+              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="2"></button></td>
               <td><button type="button" data-type="3"></button></td>
-              <td><button type="button" data-type="4"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="1"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="1"></button></td>
             </tr>
             <tr>
               <td class="moveL">17:30</td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
               <td><button type="button" data-type="0"></button></td>
             </tr>
             <tr>
               <td class="moveL">18:00</td>
-              <td><button type="button" data-type="4"></button></td>
-              <td><button type="button" data-type="4"></button></td>
-              <td><button type="button" data-type="2"></button></td>
-              <td><button type="button" data-type="2"></button></td>
               <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="3"></button></td>
+              <td><button type="button" data-type="1"></button></td>
               <td><button type="button" data-type="0"></button></td>
-              <td><button type="button" data-type="6"></button></td>
+              <td><button type="button" data-type="1"></button></td>
             </tr>
           </table>
         </div>

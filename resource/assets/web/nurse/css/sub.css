@@ -89,7 +89,6 @@
 .con_sub .con_box .con_inner {margin-top: 8px;padding: 25px 15px 100px 15px;background: #fff;}
 .con_sub .con_box .con_inner02 {margin-top: 8px;padding: 25px 15px 25px 15px;background: #fff;}
 
-
 .con_sub .tb {border-top: 1px solid #b0b0b0;}
 .con_sub .tb table {width: 100%;border-collapse: collapse;table-layout: fixed;}
 .con_sub .tb table tbody tr {border-bottom: 1px solid #ececec;}
@@ -436,7 +435,6 @@
 
 
 /* 투여관리 */
-
 .con_sub .day_tit {padding-bottom: 10px;font-size: 12px;}
 .con_sub .radio_time input[type="radio"] + label {margin-right:15px;}
 .con_sub .radio_time:last-child input[type="radio"] + label {margin-right: 0;}

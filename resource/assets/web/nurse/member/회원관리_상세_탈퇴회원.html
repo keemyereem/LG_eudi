@@ -69,7 +69,8 @@
 
     <script>
       $(document).ready(()=> {
-        nurseJS.init();
+        selEvent.init();
+        nurseJS.popup();
       })
       
     </script>
@@ -86,7 +87,7 @@
           </div>
         </div>
         <!--// 수정 -->
-  		  <div class="tab tab_border">
+  		<div class="tab tab_border">
           <div class="inner">
             <ul>
               <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
@@ -501,6 +502,36 @@
                         </div>
                       </td>
                     </tr>
+
+<!--///////////////////////////////////////////////////////////////////////
+///////////                ** 퍼블추가 - 2023.02 **                 ///////
+////////////////////////////////////////////////////////////////////////-->
+                    <tr>
+                      <td class="tit"><p>키 / 몸무게</p></td>
+                      <td class="cont">
+                        
+                        <div class="input_physics">
+                          <span class="input_box">
+                            <input type="text" id="physic01" name="physNumver1" required="required" data-title="신장길이를" title="신장길이를" value="120" class="ipt"  maxlength="3">
+                          </span>
+                          <span class="physic">cm</span>
+                        </div>
+                        
+                        
+                        <div class="input_physics">
+                          <span class="input_box">
+                            <input type="text" id="physic02" name="physNumver2" required="required" data-title="신장길이를" title="신장길이를" value="27" class="ipt"  maxlength="3">
+                          </span>
+                          <span class="physic">kg</span>
+                        </div>
+                        
+                      </td>
+                    </tr>
+
+<!--///////////////////////////////////////////////////////////////////////
+///////////                ** 퍼블추가 - 2023.02 **                 ///////
+////////////////////////////////////////////////////////////////////////-->
+
                   </tbody>
                 </table>
               </div>
@@ -509,7 +540,7 @@
             <div class="btn_box btn_box03 mt50">
               <div class="btn_white"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
               <div class="btn_gray"><a href="javascript:;" onclick="childStateUpdate('R')">반려</a></div>
-              <div class="btn_green"><a href="javascript:;" onclick="openPopup('duplicateChild_pop'); childStateUpdate('M');" class="open_pop">승인</a></div>
+              <div class="btn_green"><a href="javascript:;" onclick="childStateUpdate('M')" class="open_pop">승인</a></div>
             <!-- 회원 복구 2021-10-26 -->
             </div>
           </div>
@@ -576,90 +607,59 @@
       </div>
       
       <!-- 중복환아 검색 -->
-      <div class="popup">
-        <div class="inner_pop">
-          <button type="button" onclick="javascript:;" class="btn_close close_pop"></button>
-  
-          <div class="pop_content duplicateChild_pop">
-            <h3>중복 환아 검색 결과</h3>
-
-            <div class="search_info"><span class="search_info_tit"><b>이하준 2010-05-03</b> 으로 아이 검색결과</span><span class="search_info_total">총 <b>2명</b></span></div>
-            <div class="con_list">
-              <ul>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-              </ul>
+      <div class="pop_info popup">
+        <div class="pop_info_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="tb_top">
+              <p class="title">정보 상세</p>
             </div>
-            <div class="search_info">
-              <b>20명까지 확인 가능합니다.</b><br>
-              모든 중복 환아 검색은 <b>목록 페이지</b>를 이용해 주세요.
+            <div class="tb02">
+              <table summary="정보상세" cellpadding="0" cellspacing="0" border="0">
+                <caption>정보상세</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="tit"><p>이름</p></td>
+                    <td class="cont"><p>간호사</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>아이디</p></td>
+                    <td class="cont"><p>4mnurse</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>변경 비밀번호</p></td>
+                    <td class="cont">
+                      <div class="input_row">
+                        <span class="input_box">
+                          <input type="password" id="password" name="password" required="required" class="ipt" minlength="8" maxlength="16" data-title="변경 비밀번호를" title="변경 비밀번호">
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><div class="tit_inner"><p>변경비밀번호 확인</p></div></td>
+                    <td class="cont">
+                      <div class="input_row">
+                        <span class="input_box">
+                        <input type="password" id="password_confirm" name="password_confirm" class="ipt" equalto="password" required="required" minlength="8" maxlength="16" data-title="변경 비밀번호 확인을" title="변경 비밀번호 확인">
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <p>
-              중복된 환아정보가 존재합니다. <br>
-              그래도 승인하시겠습니까? 
-            </p>
-            <div class="btn_box btn_box02">
-              <div class="btn_gray">
-                <a href="javascript:;" title="취소" class="close_pop">취소</a>
-              </div>
-              <div class="btn_green">
-                <a href="javascript:;" title="승인">승인</a>
-              </div>
+            <ul class="info_list">
+              <li>비밀번호는 영문, 숫자를 포함하여 10자리 이상 또는 영문, 숫자, 특수문자를 포함하여 8자리 이상 입력해주세요.</li>
+            </ul>
+            <div class="btn_box">
+              <div class="btn_green"><a href="javascript:;" onclick="fnJoinChk()">확인</a></div>
             </div>
+          </div>
         </div>
       </div>
       
