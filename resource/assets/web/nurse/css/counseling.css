@@ -94,9 +94,11 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .con_box .con_inner03 { padding: 0 15px; background: #fff; }
 .con_sub .con_box .con_inner04 { padding: 20px 15px 65px 15px; background: #fff; }
 .con_sub .search_box .srh_box02 { margin-bottom: 0; }
-.con_sub .tb03 {border-top: 1px solid #ececec;}
+.con_sub .tb03,
+.con_sub .tb04 {border-top: 1px solid #ececec;}
 
 .btn_box04 .btn_orange { float: left; width: 60px; height: 40px; line-height: 40px; margin-left: 4px; }
+.btn_box04 .btn_orange a { font-family: 'NanumSquareB'; font-size: 12px; }
 
 .wrap_sub .sub_top .sub_nav{ display:flex; justify-content: space-between; padding: 0 15px; border-bottom: 8px solid #f1f1f1 }
 .wrap_sub .sub_top .sub_nav a{  padding: 16.5px 0px; display: block; width: 33.3333333333%; text-align: center; white-space: nowrap; font-size: 15px }
@@ -202,6 +204,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .con_sub .form_box .tit { font-family: 'NanumSquareB'; margin: 20px 0 10px; }
 .wrap_sub .con_sub .form_box .con_form { width: 100%; }
 .wrap_sub .con_sub .con_flex { justify-content: space-between; }
+.wrap_sub .con_sub .con_flex h4 { font-size: 13px; }
 .wrap_sub .con_sub .form_box .con_flex > div { width: calc(50% - 7.5px); }
 .wrap_sub .con_sub .form_box .con_date { display: flex; align-items: center; justify-content: space-between; }
 .wrap_sub .con_sub .form_box .con_date .hypen { display: block; }
@@ -225,18 +228,21 @@ ExtraBold - 'NanumSquareEB'
 .happycall .con_list03>ul>li>a>div>ul .name { font-family: 'NanumSquareB'; font-size: 13px; color: #333; }
 .happycall .con_list03>ul>li>a>div .idbox { color: #727272; line-height: 1; margin-top: 10px; }
 .happycall .con_list03>ul>li>a>div .hospital { font-size: 11px; color: #999; }
-.happycall .con_list03>ul>li>a>div .phone { letter-spacing: -1.1px; }
+.happycall .con_list03>ul>li>a>div .phone { font-size: 11px; letter-spacing: -1.1px; }
 .happycall .con_list03>ul>li>a>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
 .happycall .con_box .con_inner03 .paging { padding-bottom: 31px; }
+.happycall .con_box h4 { font-size: 13px; }
 .happycall .con_box .info01 { padding: 30px 15px; background: #fff; position: relative; }
 .happycall .con_box .info01::after { content: ''; display: block; width: calc(100% - 30px); height: 1px; background: #e5e5e5; position: absolute; bottom: 0; left: 15px; }
 .happycall .con_box .info01 ul { display: flex; padding: 15px 12px; margin-top: 10px; background: #f6f6f6; border-radius: 5px; }
 .happycall .con_box .info01 ul li { font-family: 'NanumSquareB'; }
+.happycall .con_box .info01 ul .name,
+.happycall .con_box .info01 ul .id { font-size: 13px; }
 .happycall .con_box .info01 ul .date { color: #999; font-size: 11px; line-height: 1.3; }
 .happycall .con_box .info01 ul .date::after { content:''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px; line-height: 1.3; vertical-align: middle; }
 .happycall .con_box .con_form { margin-top: 10px; }
 .happycall .con_box .info02 { padding: 30px 0 25px; }
-.happycall .con_box .info02 > span { display: block; margin-top: 15px; }
+.happycall .con_box .info02 > span { display: block; margin-top: 15px; font-size: 13px; }
 .happycall .con_box .info02 > span::before { content:''; display: inline-block; width: 3px; height: 3px; background: #f18e1e; border-radius: 50%; vertical-align: middle; margin-right: 7px; margin-top: -2px; }
 
 
@@ -248,7 +254,6 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .register { margin-bottom: 25px; }
 .wrap_sub .sec_cal .current .schedule.pos_block { bottom: 23.5px; background: #f18e1e; }
 .wrap_sub .sec_cal .current .schedule.impos_block { bottom: 6px; background: #6e6e6e; }
-.wrap_sub .sec_cal .register + .btn_box a { font-size: 15px; }
 
 
 
@@ -293,6 +298,9 @@ ExtraBold - 'NanumSquareEB'
 
 /* 상담관리 */
 
+/* 상담관리 - 상담이력등록 */
+.con_sub.consultHistory {  }
+
 /* 환아목록 */
 .con_sub .list_box { padding: 35px 15px 25px; background: #fff; }
 .con_sub .list_box .con_flex+.con_list { margin-top: 14px; }
@@ -301,7 +309,7 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .list_box .search_total { display: inline-block; }
 .con_sub .list_box .search_total > span { color: #79bd28; font-family: 'NanumSquareEB'; }
 .con_sub .list_box .search_total > span > b { font-size: 16px; line-height: 1.2; }
-.con_sub .list_box .con_list>ul>li>a { display: flex; flex-wrap: wrap; justify-content: space-between; }
+.con_sub .list_box .con_list>ul>li>a { display: flex; flex-wrap: wrap; justify-content: space-between; font-size: 13px; }
 .con_sub .list_box .con_list>ul>li>a>div:last-child { text-align: left; }
 .con_sub .list_box .con_list>ul>li>a>div.tw100{ width: 100%; }
 .con_sub .list_box .con_list>ul>li>a>div.tw40 p{ text-align: right; }
@@ -319,21 +327,40 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .list_box .child_list>ul>li>a .name { color: #333; }
 .con_sub .list_box .counsel_his>ul>li>a .note { font-family: 'NanumSquareB'; margin-top: 10px; color: #333; }
 .con_sub .list_box .con_list>ul>li>a>div .progress { font-family: 'NanumSquareB';  font-size: 11px; }
-.con_sub .list_box .btn_box a { font-size: 15px; }
+
+/* 회원관리 - 상세 */
+.con_sub .child_info { float: right; margin-top: -5px; letter-spacing: -1px; display: flex; align-items: center; line-height: 1; }
+.con_sub .child_info img { width: 25px; }
+.con_sub .child_info span { font-size: 15px; margin-left: 10px; color: #333333; position: relative; z-index: 1; }
+.con_sub .child_info span::before { content: ''; display: block; position: absolute; width: 85px; height: 7px; background: #79bd28; z-index: -1; bottom: -4px; left: -2px; }
+.con_sub .child_info span b { font-family: 'NanumSquareEB'; }
+.con_sub .child_info i { color: #999999; font-size: 12px; padding: 5px 0 0 12.5px; }
+
+.con_sub .tb01 .inputBox_DP { width: 75%; }
+.con_sub .tb01 .shrink0 { font-family: 'NS'; font-weight: 200; letter-spacing: -1px; padding-left: 8px; color: #333333; }
+.con_sub .input_physics { float: left; display: block; position: relative; padding: 0 10px; width: 35%; height: 40px; line-height: 40px; margin-right: 30px; background: #fff; border: 1px solid #e9e9e9; border-radius: 5px; vertical-align: middle; }
+.con_sub .input_physics .physic { float: left; width: auto; display: block; height: 40px; line-height: 42px; text-align: center; position: absolute; font-size: 12px; right: -25px; top: 0; }
+.con_sub .input_physics .input_box { position: relative; display: block; width: 100%; overflow: hidden; }
+.con_sub .input_physics .input_box .ipt { position: relative; width: 100%; height: 100%; border: none; font-size: 13px; line-height: 1.2; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+.con_sub .cont .input_row + .unit { display: inline-block; margin: 0 5px 0 10px; font-size: 12px; }
 
 /* 회원관리 - 상세 - 탈퇴회원 */
-.physic { float: left; width: auto; display: block; height: 40px; line-height: 42px; text-align: center; position: absolute; font-size: 12px; right: -10px; top: 0; }
-.physic:last-of-type { margin-right: 0; }
-.input_physics { float: left; display: block; position: relative; padding: 0 10px; width: 21vw; height: 40px; line-height: 40px; background: #fff; border: 1px solid #e9e9e9; border-radius: 5px; vertical-align: middle; }
-.input_physics .input_box { position: relative; display: block; width: 100%; overflow: hidden; }
-.input_physics .input_box .ipt { position: relative; width: 100%; height: 100%; border: none; font-size: 13px; line-height: 1.2; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+.con_sub.withdrawal .tb04 button[type="date"]::before { content: attr(data-placeholder); }
 
+/* 회원관리 - 상세 - 휴면회원 */
+.con_sub.dormancy {  }
+
+/* 회원관리 - 상세 - 반려회원 */
+.con_sub.refer {  }
+
+/* 회원관리 - 상세 - 탈퇴요청 */
+.con_sub.requestWdrwl {  }
 
 
 /*/////////////////////////////////////////////////////////////////////////
 ///////////                     ** 물품관리 **                      ///////
 /////////////////////////////////////////////////////////////////////////*/
-
 .con_sub .search_box .srh_box .con_flex > p { width: 56px; flex-shrink: 0; font-size: 12px; }
 .con_sub .search_box .srh_box .con_flex .date_box .hypen { padding: 0 15px; }
 .wrap_sub03 .pop_search .pop_con .search_area .search_ipt .btn_search { background: #fc637d; }
@@ -353,9 +380,18 @@ ExtraBold - 'NanumSquareEB'
 .con_login .authentic_cont .input_row .timer { font-family: 'NanumSquareB'; color: #333; position: absolute; top: 0; right: 0; }
 .con_login .authentic_cont .input_row + .alert_txt { font-size: 12px; color: #79bd28; margin-top: 10px; }
 .con_login .btn_box { position: absolute; bottom: 25px; width: calc(100% - 30px); }
-.con_login .btn_box a { font-size: 15px; }
 
 
+
+
+
+/*/////////////////////////////////////////////////////////////////////////
+///////////              ** common.css 공통추가부분 **              ///////
+/////////////////////////////////////////////////////////////////////////*/
+/* textarea */
+.textarea_row { position: relative;overflow: hidden; padding: 10px; width: 100%;height: 150px; background: #fff; border: 1px solid #e9e9e9; border-radius: 5px;}
+.textarea_row textarea { width: 100%; height: 100%; line-height: 40px; border: none; line-height: 1.6; resize: none; }
+.textarea_row textarea::placeholder { font-family: 'NanumSquareR'; font-size: 12px; color: #999; z-index: 10;}
 
 
 

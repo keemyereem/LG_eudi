@@ -94,7 +94,7 @@
 .con_sub .tb table tbody tr {border-bottom: 1px solid #ececec;}
 .con_sub .tb table tbody td {position: relative;height: 60px;padding: 8px 10px;}
 .con_sub .tb table tbody td.tit {padding: 0 14px;background: #f6f6f6;}
-.con_sub .tb table tbody td.tit p {font-family: 'NanumSquareB';font-size: 13px;}
+.con_sub .tb table tbody td.tit p {font-family: 'NanumSquareB';font-size: 13px; line-height: 1.23; }
 .con_sub .tb table tbody td.tit p>span {margin-left: 4px;display: inline-block;width: 3px;height: 3px;background: #7cbe2d;border-radius: 100%;vertical-align: middle;}
 .con_sub .tb table tbody td.flex {display:flex;align-items: center;}
 .con_sub .tb table tbody td.cont {background: #fff;}

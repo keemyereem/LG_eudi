@@ -24,9 +24,10 @@ $(function () {
 var nurseJS = {
   init: function () {
     this.calInit();
-    this.counselHis();
+    // this.counselHis();
     this.scheduleEdit();
     this.popup();
+    this.tabEvent();
   },
 
   calInit: () => {
@@ -242,7 +243,7 @@ var nurseJS = {
       $('.time_wrap').on('load resize scroll', function() {
         $("thead").css("top", 0 + $(this).scrollTop());
         $(".moveL").css("left", 0 + $(this).scrollLeft());
-        $(this).children('span').css({"top": 1 + $(this).scrollTop(), "left": 0 + $(this).scrollLeft()});0
+        $(this).children('span').css({"top": 1 + $(this).scrollTop(), "left": 0 + $(this).scrollLeft()});
       });
 
       // 타임테이블 내부 버튼 클릭 시
@@ -251,7 +252,6 @@ var nurseJS = {
 
         // 불가사유 버튼 색깔 단독변경
         $('.impossible_pop').find('.save').addClass('time_btnColor');
-        
         
         // 가능, 불가버튼
         const btnFirst = $('.sec_cal > .btn_box02').children().first(),
@@ -293,10 +293,8 @@ var nurseJS = {
             btnLast.removeClass('btn_gray').addClass('btn_red');
             btnLast.children().attr('onClick', "openPopup('impossible_pop')");
             $('.impossible_pop').removeClass('reason_setting');
-            
-          } else {
-            
           }
+
         // 모두 선택 취소 시
         } else {
           btnFirst.removeClass('btn_orange').addClass('btn_gray');
@@ -406,23 +404,23 @@ var nurseJS = {
 
   },
 
-  counselHis: () => {
-    //상담일정관리 상담분류 "해피콜"일 경우 상담예정일 칸 생성
-    var selectType = $(".select_row>#sel01");
-    selectChange(selectType);
-    function selectChange(type) {
-      type.change(function () {
-        var select_name = $(this).children("option:selected").text();
-        $(this).siblings("label").text(select_name);
+  // counselHis: () => {
+  //   //상담일정관리 상담분류 "해피콜"일 경우 상담예정일 칸 생성
+  //   var selectType = $(".happycall .select_row>#sel01");
+  //   selectChange(selectType);
+  //   function selectChange(type) {
+  //     type.change(function () {
+  //       var select_name = $(this).children("option:selected").text();
+  //       $(this).siblings("label").text(select_name);
 
-        if (select_name === "해피콜") {
-          $(".consultDate_form").show();
-        } else {
-          $(".consultDate_form").hide();
-        }
-      });
-    }
-  },
+  //       if (select_name === "해피콜") {
+  //         $(".consultDate_form").show();
+  //       } else {
+  //         $(".consultDate_form").hide();
+  //       }
+  //     });
+  //   }
+  // },
 
   //상담가능일정등록
   scheduleEdit: () => {
@@ -438,6 +436,59 @@ var nurseJS = {
       $(this).addClass('on');
     });
     
+  },
+
+  tabEvent: () => {
+    //tab 메뉴 3개 이상일 경우 스크롤
+    const tabContainer = $(".tab_slide > .inner"),
+      tabBox = tabContainer.find("> ul"),
+      tabButton = tabBox.find("> li");
+
+    let size = tabButton.length,
+      tbIndex = 0;
+
+    if (tabBox.length) {
+      $(document).ready(function () {
+        let tbOn = Math.floor(tabBox.find("> li.active").position().left),
+            tbWidth = tabButton.width();
+
+        tabContainer.animate({ scrollLeft: tbOn - tbWidth }, 0);
+      });
+
+      tabContainer.on("load resize scroll", () => {
+        tabBoxPosition = Math.abs(tabBox.position().left);
+
+        tabButton.each((index) => {
+          tabButtonPosition = Math.floor(tabButton.eq(index).position().left);
+
+          if (size !== index + 1) {
+            nextIndexPosition = Math.floor(
+              tabButton.eq(index).next().position().left
+            );
+
+            if (
+              tabBoxPosition > tabButtonPosition &&
+              tabBoxPosition <= nextIndexPosition
+            ) {
+              tbIndex = index;
+            }
+          }
+        });
+
+        if (tabBox.children().length > 3) {
+          if (tabContainer.scrollLeft() == 0) {
+            tabBox.parents(".tab_slide").addClass("right");
+          } else if (
+            Math.round(tabBox.width() - tabContainer.scrollLeft()) ===
+            tabContainer.width()
+          ) {
+            tabBox.parents(".tab_slide").addClass("left");
+          } else {
+            tabBox.parents(".tab_slide").removeClass("left right");
+          }
+        }
+      });
+    }
   },
   
 
@@ -488,7 +539,7 @@ var nurseJS = {
           });
 
         });
-        console.log(arrObj)
+        // console.log(arrObj)
 
         // 선택한 버튼만큼 info 생성
         for(var i=1; i<= $('button:not([data-type="3"]).on').length; i++) {
@@ -498,8 +549,6 @@ var nurseJS = {
               if (imposTimeEnd === undefined) { imposTimeEnd = '18:30' }
           $('.impossible_pop ul, .imposReason_pop ul')
           .prepend('<li class="info"><span>' + imposDate + ' <b>' + imposDay + '일</b></span>' + imposTimeStart + ' ~ ' + imposTimeEnd + '</li>');
-
-          console.log($('thead tr td').eq(arrObj[i - 1][1]))
             
         }
       }

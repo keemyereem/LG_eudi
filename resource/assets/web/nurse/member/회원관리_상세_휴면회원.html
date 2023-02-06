@@ -32,7 +32,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- TITLE -->
-    <title>EuDi</title>
+    <title>EuDi - 회원관리 - 휴면회원</title>
     <link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
     
 
@@ -70,7 +70,7 @@
     <script>
       $(document).ready(()=> {
         selEvent.init();
-        nurseJS.init();
+        nurseJS.popup();
       })
       
     </script>
@@ -87,7 +87,6 @@
           </div>
         </div>
         <!--// 수정 -->
-        
         <div class="tab tab_border tab_slide">
           <div class="inner">
             <ul>
@@ -121,16 +120,16 @@
         <input type="hidden" name="docNo" id="docNo" value="">
         <input type="hidden" name="reSearch" id="reSearch" value="Y">
         <input type="hidden" name="privateYn" id="privateYn" value="N">
-      <div class="content con_sub con_sub01">
+      <div class="content con_sub con_sub01 dormancy"><!-- 퍼블 클래스 'dormancy'추가 - 2023.02 -->
         <div class="ipt_box">
-          <div class="inner">           
+          <div class="inner"> 
             <h3 class="info01">회원 정보
               <p class="child_info"><img src="/resource/assets/web/nurse/images/member/character.png" alt="character"><span><b>홍길동</b> 어린이</span><i>33개월 (만 6살 1개월)</i></p>
             </h3>
             
             <div class="tb">
-              <table summary="회원 정보" cellpadding="0" cellspacing="0" border="0">
-                <caption>회원 정보</caption>
+              <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                <caption>기본 정보</caption>
                 <colgroup>
                     <col style="width:110px;">
                     <col style="*">
@@ -138,15 +137,15 @@
                 <tbody>
                   <tr>
                     <td class="tit"><p>가입일자</p></td>
-                    <td class="cont"><p>2020-01-09</p></td>
+                    <td class="cont"><p>2019-06-10</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>아이디</p></td>
-                    <td class="cont"><p>4mtest3</p></td>
+                    <td class="cont"><p>abac12</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>회원상태</p></td>
-                    <td class="cont"><p>회원</p></td>
+                    <td class="cont"><p>휴면회원</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>휴대폰번호</p></td>
@@ -164,13 +163,13 @@
                       <span class="hyphen">-</span>
                       <div class="input_tel">
             						<span class="input_box">
-          							  <input type="text" id="tel02" name="mCpnumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="4726" class="ipt"  maxlength="4">
+          							  <input type="text" id="tel02" name="mCpnumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="1234" class="ipt"  maxlength="4">
             						</span>
             					</div>
                       <span class="hyphen">-</span>
                       <div class="input_tel">
             						<span class="input_box">
-          							  <input type="text" id="tel03" name="mCpnumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="8132" class="ipt"  maxlength="4">
+          							  <input type="text" id="tel03" name="mCpnumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="1234" class="ipt"  maxlength="4">
             						</span>
             					</div>
                     </td>
@@ -219,7 +218,7 @@
             <h3 class="info02">아이 정보</h3>
             <div>
               <h4>기본 정보</h4>
-              <div class="tb">
+              <div class="tb tb01">
                 <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
                   <caption>기본 정보</caption>
                   <colgroup>
@@ -246,8 +245,8 @@
                         <div class="select_row">
                           <label for="selectHgender">남자</label>
                           <select id="selectHgender" name="selectHgender">
-                            <option value="남자">남자</option>
-                            <option value="여자" >여자</option>
+                            <option value="male">남자</option>
+                            <option value="female" >여자</option>
                           </select>
                         </div>
                       </td>
@@ -264,6 +263,12 @@
                   </tbody>
                 </table>
               </div>
+
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
+<!-- 처방 및 병원 -->
               <h4>처방 및 병원 정보</h4>
               <div class="tb tb03">
                 <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
@@ -305,10 +310,10 @@
                       <td class="tit"><p>최초 처방일</p></td>
                       <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="cInitialPrescription" class="date" value="2010-05-03" />
+                          <input type="date" name="cInitialPrescription" class="date" value="2018-06-10" />
                         </div>
                         <div class="radio_row shrink0">
-                          <input type="radio" id="radio01" name="" class="radio" checked="checked" />
+                          <input type="radio" id="radio01" name="" class="radio" />
                           <label for="radio01">확정</label>
                         </div>
                       </td>
@@ -320,7 +325,6 @@
                           <label for="sel03">유트로핀 펜주</label>
                           <select id="sel03" name="">
                             <option value="" >유트로핀 펜주</option>
-                            <option value="" >유트로핀</option>
                           </select>
                         </div>
                       </td>
@@ -366,29 +370,31 @@
                     </tr>
                     <tr>
                       <td class="tit"><p>키 / 몸무게</p></td>
-                      <td class="cont flex">
-                        <div class="input_row">
+                      <td class="cont">
+                        <div class="input_physics">
                           <span class="input_box">
-                            <input type="text" class="ipt" id="" value="120">
+                            <input type="text" id="physic01" name="physNumver1" required="required" data-title="신장길이를" title="신장길이를" value="120" class="ipt"  maxlength="3">
                           </span>
+                          <span class="physic">cm</span>
                         </div>
-                        <span class="unit">cm</span>
-                        <div class="input_row">
+                        <div class="input_physics">
                           <span class="input_box">
-                            <input type="text" class="ipt" id="" value="27">
+                            <input type="text" id="physic02" name="physNumver2" required="required" data-title="신장길이를" title="신장길이를" value="27" class="ipt"  maxlength="3">
                           </span>
+                          <span class="physic">kg</span>
                         </div>
-                        <span class="unit">kg</span>
                       </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>처방병명</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">Normal</label>
-                          <select id="sel03" name="">
-                            <option value="" >Normal</option>
-                            <option value="" ></option>
+                          <label for="prescriptionName">Normal</label>
+                          <select id="prescriptionName" name="prescriptionName">
+                            <option value="Normal" >Normal</option>
+                            <option value="prescription01" >prescription01</option>
+                            <option value="prescription02" >prescription02</option>
+                            <option value="prescription03" >prescription03</option>
                           </select>
                         </div>
                       </td>
@@ -397,10 +403,12 @@
                       <td class="tit"><p>처방경로</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">본인의사</label>
-                          <select id="sel03" name="">
-                            <option value="" >본인의사</option>
-                            <option value="" ></option>
+                          <label for="prescriptionRoute">본인의사</label>
+                          <select id="prescriptionRoute" name="prescriptionRoute">
+                            <option value="doctor" >본인의사</option>
+                            <option value="Route01" >Route01</option>
+                            <option value="Route02" >Route02</option>
+                            <option value="Route03" >Route03</option>
                           </select>
                         </div>
                       </td>
@@ -409,10 +417,12 @@
                       <td class="tit"><p>과거사용제품</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">싸이젠</label>
-                          <select id="sel03" name="">
-                            <option value="" >싸이젠</option>
-                            <option value="" ></option>
+                          <label for="prescriptionNamePrev">싸이젠</label>
+                          <select id="prescriptionNamePrev" name="prescriptionNamePrev">
+                            <option value="doctor" >싸이젠</option>
+                            <option value="prescription01" >prescription01</option>
+                            <option value="prescription02" >prescription02</option>
+                            <option value="prescription03" >prescription03</option>
                           </select>
                         </div>
                       </td>
@@ -420,8 +430,8 @@
                     <tr>
                       <td class="tit"><p>제품변경사유</p></td>
                       <td class="cont">
-                        <div class="area_box">
-                          <textarea type="text" id="" name="" placeholder="사유를 입력해주세요"></textarea>
+                        <div class="textarea_row">
+                          <textarea name="reasonChange" placeholder="사유를 입력해주세요"></textarea>
                         </div>
                       </td>
                     </tr>
@@ -429,19 +439,22 @@
                       <td class="tit"><p>진행상황</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">진행</label>
-                          <select id="sel03" name="">
-                            <option value="" >진행</option>
-                            <option value="" ></option>
+                          <label for="prescriptionName">진행</label>
+                          <select id="prescriptionName" name="prescriptionName">
+                            <option value="proceed" >진행</option>
+                            <option value="pause" >보류 </option>
+                            <option value="cancel" >중지</option>
                           </select>
                         </div>
                       </td>
                     </tr>
+                    <tr>
                   </tbody>
                 </table>
               </div>
+<!-- 종료 및 탈퇴 -->
               <h4>종료 및 탈퇴 정보</h4>
-              <div class="tb tb03">
+              <div class="tb tb04">
                 <table summary="종료 및 탈퇴 정보" cellpadding="0" cellspacing="0" border="0">
                   <caption>종료 및 탈퇴 정보</caption>
                   <colgroup>
@@ -451,112 +464,102 @@
                   <tbody>
                     <tr>
                       <td class="tit"><p>종료예정일</p></td>
-                      <td class="cont">
+                      <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="" class="date" value="" />
+                          <input type="date" name="preordination" class="date" value="" data-placeholder="YYYY-MM-DD" required>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>종료일</p></td>
-                      <td class="cont">
+                      <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="" class="date" value="" />
+                          <input type="date" name="withdrawalDay" class="date" value="" data-placeholder="YYYY-MM-DD" required>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>종료사유(선택)</p></td>
+                         <td class="cont">
+                          <div class="select_row">
+                            <label for="endReason">선택하세요</label>
+                             <select id="endReason" name="endReason">
+                                <option value="0">선택하세요</option>
+                                <option value="1">치료 완료(효과만족/성장판닫힘)</option>
+                                <option value="2">타제품 전환(경제적부담)</option>
+                                <option value="3">타제품 전환(주사스트레스/통증)</option>
+                                <option value="4">타제품 전환(효과미비)</option>
+                                <option value="5">타제품 전환(부작용발생)</option>
+                                <option value="6">타제품 전환(기타)</option>
+                                <option value="7">치료 중단(경제적부담)</option>
+                                <option value="8">치료 중단(주사스트레스/통증)</option>
+                                <option value="9">치료 중단(효과미비)</option>
+                                <option value="10">치료 중단(부작용발생/우려)</option>
+                                <option value="11">상담 중단(연락두절)</option>
+                                <option value="12">상담 중단(해외출국)</option>
+                                <option value="13">동의 철회(해피콜 거부/삭제 요청)</option>
+                                <option value="14">기타 (사유를 서술형으로 적어주세요)</option>
+                                
+                            </select>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>종료사유 <br>(직접입력)</p></td>
+                      <td class="cont">
+                        <div class="textarea_row">
+                          <textarea name="endReasonWrite" placeholder="사유를 입력해주세요"></textarea>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>탈퇴유형</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">선택하세요</label>
-                          <select id="sel03" name="">
-                            <option value="" >선택하세요</option>
-                            <option value="" ></option>
+                          <label for="withdrawalType">선택하세요</label>
+                          <select id="withdrawalType" name="withdrawalType">
+                            <option value="0" >선택하세요</option>
+                            <option value="Type01" >Type01</option>
+                            <option value="Type02" >Type02</option>
+                            <option value="Type03" >Type03</option>
                           </select>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="tit"><p>종료사유<br>(직접입력)</p></td>
-                      <td class="cont">
-                        <div class="area_box">
-                          <textarea type="text" id="" name="" placeholder="사유를 입력해주세요"></textarea>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>탈퇴 유형</p></td>
+                      <td class="tit"><p>스마트케이스 <br>반납여부</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="mWithdrawCode">탈퇴 유형를 선택해주세요</label>
-                           <select id="mWithdrawCode" name="mWithdrawCode">
-                              <option value="0">탈퇴 유형를 선택해주세요</option>
-                              
-                              <option value="1">치료 완료(효과만족/성장판닫힘)</option>
-                          
-                              <option value="2">타제품 전환(경제적부담)</option>
-                          
-                              <option value="3">타제품 전환(주사스트레스/통증)</option>
-                          
-                              <option value="4">타제품 전환(효과미비)</option>
-                          
-                              <option value="5">타제품 전환(부작용발생)</option>
-                          
-                              <option value="6">타제품 전환(기타)</option>
-                          
-                              <option value="7">치료 중단(경제적부담)</option>
-                          
-                              <option value="8">치료 중단(주사스트레스/통증)</option>
-                          
-                              <option value="9">치료 중단(효과미비)</option>
-                          
-                              <option value="10">치료 중단(부작용발생/우려)</option>
-                          
-                              <option value="11">상담 중단(연락두절)</option>
-                          
-                              <option value="12">상담 중단(해외출국)</option>
-                          
-                              <option value="13">동의 철회(해피콜 거부/삭제 요청)</option>
-                          
-                              <option value="14">기타 (사유를 서술형으로 적어주세요)</option>
+                          <label for="returnSmartcase">미사용</label>
+                          <select id="returnSmartcase" name="returnSmartcase">
+                            <option value="notUsed" >미사용</option>
+                            <option value="return" >반납</option>
+                            <option value="yet" >미반납</option>
                           </select>
                         </div>
                       </td>
                     </tr>
-                    <tr>
-                      <td class="tit"><p>스마트케이스 반납여부</p></td>
-                      <td class="cont">
-                        <div class="select_row">
-                          <label for="sel03">미사용</label>
-                          <select id="sel03" name="">
-                            <option value="" >미사용</option>
-                            <option value="" ></option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
                   </tbody>
                 </table>
               </div>
-            </div>    
-            
+            </div>      
+
             <div class="btn_box btn_box03 mt50">
               <div class="btn_white"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
-              <div class="btn_gray"><a href="javascript:;" onclick="">비밀번호<br> 초기화</a></div>
-              <div class="btn_line_green"><a href="javascript:;" onclick="openPopup('duplicateChild_pop'); childStateUpdate('M');" class="open_pop">탈퇴</a></div>
-            </div>
-            <div class="btn_box btn_box01 mt10">
-              <div class="btn_green"><a href="javascript:;">저장</a></div>
+              <div class="btn_gray"><a href="javascript:;" onclick="childInfoUpdate()">계정활성화</a></div>
+              <div class="btn_green"><a href="javascript:;" onclick="childStateUpdate('D')">탈퇴</a></div>
+              <!-- 회원 복구 2021-10-26 -->
             </div>
           </div>
-        </div>
-
         </div>
       </div>
     </form>
       <!-- content //-->  
       
+
       <!-- 병원명 검색 -->
       <div class="pop_mask"></div>
       <div class="pop_search">
@@ -615,90 +618,59 @@
       </div>
       
       <!-- 중복환아 검색 -->
-      <div class="popup">
-        <div class="inner_pop">
-          <button type="button" onclick="javascript:;" class="btn_close close_pop"></button>
-  
-          <div class="pop_content duplicateChild_pop">
-            <h3>중복 환아 검색 결과</h3>
-
-            <div class="search_info"><span class="search_info_tit"><b>이하준 2010-05-03</b> 으로 아이 검색결과</span><span class="search_info_total">총 <b>2명</b></span></div>
-            <div class="con_list">
-              <ul>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-              </ul>
+      <div class="pop_info popup">
+        <div class="pop_info_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="tb_top">
+              <p class="title">정보 상세</p>
             </div>
-            <div class="search_info">
-              <b>20명까지 확인 가능합니다.</b><br>
-              모든 중복 환아 검색은 <b>목록 페이지</b>를 이용해 주세요.
+            <div class="tb02">
+              <table summary="정보상세" cellpadding="0" cellspacing="0" border="0">
+                <caption>정보상세</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="tit"><p>이름</p></td>
+                    <td class="cont"><p>간호사</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>아이디</p></td>
+                    <td class="cont"><p>4mnurse</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>변경 비밀번호</p></td>
+                    <td class="cont">
+                      <div class="input_row">
+                        <span class="input_box">
+                          <input type="password" id="password" name="password" required="required" class="ipt" minlength="8" maxlength="16" data-title="변경 비밀번호를" title="변경 비밀번호">
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><div class="tit_inner"><p>변경비밀번호 확인</p></div></td>
+                    <td class="cont">
+                      <div class="input_row">
+                        <span class="input_box">
+                        <input type="password" id="password_confirm" name="password_confirm" class="ipt" equalto="password" required="required" minlength="8" maxlength="16" data-title="변경 비밀번호 확인을" title="변경 비밀번호 확인">
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <p>
-              중복된 환아정보가 존재합니다. <br>
-              그래도 승인하시겠습니까? 
-            </p>
-            <div class="btn_box btn_box02">
-              <div class="btn_gray">
-                <a href="javascript:;" title="취소" class="close_pop">취소</a>
-              </div>
-              <div class="btn_green">
-                <a href="javascript:;" title="승인">승인</a>
-              </div>
+            <ul class="info_list">
+              <li>비밀번호는 영문, 숫자를 포함하여 10자리 이상 또는 영문, 숫자, 특수문자를 포함하여 8자리 이상 입력해주세요.</li>
+            </ul>
+            <div class="btn_box">
+              <div class="btn_green"><a href="javascript:;" onclick="fnJoinChk()">확인</a></div>
             </div>
+          </div>
         </div>
       </div>
       
@@ -843,6 +815,15 @@
         }
       }
       
+      //select
+      $(".select_row > select").change(function() {
+        var changeValue = $(".select_row > select").val();
+        $(".select_row > label").text(changeValue);
+        $("select#requestAddCotton option").remove();
+        $("#requestAddCotton").append("<option value='0'>0</option>");
+        $("#requestAddCotton").append("<option value='100'>100</option>");
+        $("#requestAddCotton").val(changeValue).prop("selected", true);
+      });
     
     </script>
   </body>

@@ -32,7 +32,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- TITLE -->
-    <title>EuDi</title>
+    <title>EuDi - 회원관리 - 탈퇴회원</title>
     <link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
     
 
@@ -87,12 +87,14 @@
           </div>
         </div>
         <!--// 수정 -->
-  		<div class="tab tab_border">
+        <div class="tab tab_border tab_slide">
           <div class="inner">
             <ul>
               <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
-              <li><a href="">상담관리</a></li>
+              <li><a href="javascript:;">상담관리</a></li>
               <li><a href="javascript:fnDosePage()">투여확인</a></li>
+              <li><a href="javascript:fnScheduleManagementPage()">투여계획</a></li>
+              <li><a href="javascript:fnGrowthGraphPage()">성장관리</a></li>
             </ul>
           </div>
         </div>
@@ -118,10 +120,13 @@
         <input type="hidden" name="docNo" id="docNo" value="">
         <input type="hidden" name="reSearch" id="reSearch" value="Y">
         <input type="hidden" name="privateYn" id="privateYn" value="N">
-      <div class="content con_sub con_sub01">
+      <div class="content con_sub con_sub01 withdrawal"><!-- 퍼블 클래스 'withdrawal'추가 - 2023.02 -->
         <div class="ipt_box">
-          <div class="inner">           
-            <h3 class="info01">기본 정보</h3>
+          <div class="inner"> 
+            <h3 class="info01">회원 정보
+              <p class="child_info"><img src="/resource/assets/web/nurse/images/member/character.png" alt="character"><span><b>홍길동</b> 어린이</span><i>33개월 (만 6살 1개월)</i></p>
+            </h3>
+            
             <div class="tb">
               <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
                 <caption>기본 정보</caption>
@@ -132,15 +137,15 @@
                 <tbody>
                   <tr>
                     <td class="tit"><p>가입일자</p></td>
-                    <td class="cont"><p>2020-01-09</p></td>
+                    <td class="cont"><p>2019-06-10</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>아이디</p></td>
-                    <td class="cont"><p>4mtest3</p></td>
+                    <td class="cont"><p>abac12</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>회원상태</p></td>
-                    <td class="cont"><p>회원요청</p></td>
+                    <td class="cont"><p>탈퇴회원</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>휴대폰번호</p></td>
@@ -158,13 +163,13 @@
                       <span class="hyphen">-</span>
                       <div class="input_tel">
             						<span class="input_box">
-          							  <input type="text" id="tel02" name="mCpnumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="4726" class="ipt"  maxlength="4">
+          							  <input type="text" id="tel02" name="mCpnumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="1234" class="ipt"  maxlength="4">
             						</span>
             					</div>
                       <span class="hyphen">-</span>
                       <div class="input_tel">
             						<span class="input_box">
-          							  <input type="text" id="tel03" name="mCpnumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="8132" class="ipt"  maxlength="4">
+          							  <input type="text" id="tel03" name="mCpnumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="1234" class="ipt"  maxlength="4">
             						</span>
             					</div>
                     </td>
@@ -176,18 +181,18 @@
                         <div class="addr_box01" id="addr_box01">
                           <div class="input_addr">
                             <span class="input_box">
-                              <input type="text" id="pPost" name="pPost" class="ipt" value="" readonly="">
+                              <input type="text" id="pPost" name="pPost" class="ipt" value="" readonly="" placeholder="06760">
                             </span>
                             <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
                           </div>
                           <div class="input_row mt5">
                             <span class="input_box">
-                              <input type="text" id="pAddr1" name="pAddr1" class="ipt" value="" readonly="">
+                              <input type="text" id="pAddr1" name="pAddr1" class="ipt" value="" readonly="" placeholder="서울시 서초구 태봉로2길 60">
                             </span>
                           </div>
                           <div class="input_row mt5">
                             <span class="input_box">
-                              <input type="text" id="pAddr2" name="pAddr2" class="ipt" value="">
+                              <input type="text" id="pAddr2" name="pAddr2" class="ipt" value="" placeholder="(우면동, 네이처힐 4단지)">
                             </span>
                           </div>
                         </div>
@@ -213,7 +218,7 @@
             <h3 class="info02">아이 정보</h3>
             <div>
               <h4>기본 정보</h4>
-              <div class="tb">
+              <div class="tb tb01">
                 <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
                   <caption>기본 정보</caption>
                   <colgroup>
@@ -252,9 +257,27 @@
                         <div class="inputBox_DP">
                           <input type="date" name="" class="date" value="2010-05-03">
                         </div>
-                        <!-- <p class="shrink0"><span>12</span>세</p> -->
+                        <p class="shrink0"><span>12</span>세</p>
                       </td>
                     </tr>
+                  </tbody>
+                </table>
+              </div>
+
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
+<!-- 처방 및 병원 -->
+              <h4>처방 및 병원 정보</h4>
+              <div class="tb tb03">
+                <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>처방 및 병원 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
                     <tr>
                       <td class="tit"><p>담당 간호사</p></td>
                       <td class="cont">
@@ -283,23 +306,11 @@
                         </div>
                       </td>
                     </tr>
-                  </tbody>
-                </table>
-              </div>
-              <h4>처방 및 병원 정보</h4>
-              <div class="tb tb03">
-                <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
-                  <caption>처방 및 병원 정보</caption>
-                  <colgroup>
-                      <col style="width:110px;">
-                      <col style="*">
-                  </colgroup>
-                  <tbody>
                     <tr>
                       <td class="tit"><p>최초 처방일</p></td>
                       <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="cInitialPrescription" class="date" value="2010-05-03" />
+                          <input type="date" name="cInitialPrescription" class="date" value="2018-06-10" />
                         </div>
                         <div class="radio_row shrink0">
                           <input type="radio" id="radio01" name="" class="radio" />
@@ -308,7 +319,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="tit"><p>최초 처방일</p></td>
+                      <td class="tit"><p>처방제품명</p></td>
                       <td class="cont">
                         <div class="select_row">
                           <label for="sel03">유트로핀 펜주</label>
@@ -357,190 +368,187 @@
                         </div>
                       </td>
                     </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>                                      
-          </div>
-
-          <div class="inner">
-            <h3 class="info02">아이 정보</h3>
-            <div>
-              <h4>기본 정보</h4>
-              <div class="tb">
-                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
-                  <caption>기본 정보</caption>
-                  <colgroup>
-                      <col style="width:110px;">
-                      <col style="*">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <td class="tit"><p>아이명</p></td>
-                      <!--  빌리버 화상통신 버튼 추가 -->
-                      <td class="cont flex">
-                        <p class="border">이유준</p>
-                        <div class="btn_green"><a href="javascript:;" onclick="fnJoinVideoCall();">&nbsp;화상미팅&nbsp;</a></div>
-                      </td>
-                      <!--  빌리버 코드 끝 -->
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>성별</p></td>
-                      <td class="cont">
-                        <div class="select_row">
-                          <label for="sel01">남자</label>
-                          <select id="sel01" name="gender">
-                            <option value="male">남자</option>
-                            <option value="female" >여자</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>생년월일</p></td>
-                      <td class="cont flex">
-                        <div class="inputBox_DP">
-                          <input type="date" name="" class="date" value="2018-06-10">
-                        </div>
-                        <!-- <p class="shrink0"><span>12</span>세</p> -->
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>담당 간호사</p></td>
-                      <td class="cont">
-                        <div class="select_row">
-                          <label for="sel02">박소라</label>
-                          <select id="sel02" name="cChargNurseId">
-                            <option value="chloe1" >김광열</option>
-                            <option value="jeewoo1025" >김영미</option>
-                            <option value="rajhkim" >김지혜</option>
-                            <option value="cokiri" >김진경</option>
-                            <option value="lgrhj" >노희정</option>
-                            <option value="ekgml38" >류다희</option>
-                            <option value="jieun.park" >박지은</option>
-                            <option value="skywlgp" >박지혜</option>
-                            <option value="jiyoung.seo" >서지영</option>
-                            <option value="sheom" >엄소희</option>
-                            <option value="twofuture" >이미래</option>
-                            <option value="iamej" >이은주</option>
-                            <option value="jiyoun0531" >이지연</option>
-                            <option value="echoran" >이초란</option>
-                            <option value="hyeyeonyi124" >이혜연</option>
-                            <option value="happyjw116" >임종원</option>
-                            <option value="valavazz" >최지현</option>
-                            <option value="hanmijin" >한미진</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <h4>처방 및 병원 정보</h4>
-              <div class="tb tb03">
-                <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
-                  <caption>처방 및 병원 정보</caption>
-                  <colgroup>
-                      <col style="width:110px;">
-                      <col style="*">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <td class="tit"><p>최초 처방일</p></td>
-                      <td class="cont flex">
-                        <div class="inputBox_DP">
-                          <input type="date" name="cInitialPrescription" class="date" value="2018-06-10" />
-                        </div>
-                        <div class="radio_row shrink0">
-                          <input type="radio" id="radio04" name="radio04" class="radio" />
-                          <label for="radio04">확정</label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>최초 처방일</p></td>
-                      <td class="cont">
-                        <div class="select_row">
-                          <label for="sel03">유트로핀펜</label>
-                          <select id="sel03" name="">
-                            <option value="" >유트로핀펜</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>병원명</p></td>
-                      <td class="cont"><p id="hNameText">분당서울병원</p></td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>병원명 확인</p></td>
-                      <td class="cont">
-                        <div class="input_search">
-                          <span class="input_box">
-                            <input type="text" class="ipt"   id="selectHname"  value="분당서울대학교 병원" readonly="">
-                            <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>의사명</p></td>
-                      <td class="cont">
-                        <p class="border">김기성</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>타사제품<br> 사용경험</p></td>
-                      <td class="cont">
-                        <div class="radio_row">
-                          <input type="radio" id="radio05" name="exp02" class="radio" />
-                          <label for="radio05">네</label>
-                        </div>
-                        <div class="radio_row">
-                          <input type="radio" id="radio06" name="exp02" class="radio" value="" checked="checked" />
-                          <label for="radio06">아니요</label>
-                        </div>
-                      </td>
-                    </tr>
-
-<!--///////////////////////////////////////////////////////////////////////
-///////////                ** 퍼블추가 - 2023.02 **                 ///////
-////////////////////////////////////////////////////////////////////////-->
                     <tr>
                       <td class="tit"><p>키 / 몸무게</p></td>
                       <td class="cont">
-                        
                         <div class="input_physics">
                           <span class="input_box">
                             <input type="text" id="physic01" name="physNumver1" required="required" data-title="신장길이를" title="신장길이를" value="120" class="ipt"  maxlength="3">
                           </span>
                           <span class="physic">cm</span>
                         </div>
-                        
-                        
                         <div class="input_physics">
                           <span class="input_box">
                             <input type="text" id="physic02" name="physNumver2" required="required" data-title="신장길이를" title="신장길이를" value="27" class="ipt"  maxlength="3">
                           </span>
                           <span class="physic">kg</span>
                         </div>
-                        
                       </td>
                     </tr>
-
-<!--///////////////////////////////////////////////////////////////////////
-///////////                ** 퍼블추가 - 2023.02 **                 ///////
-////////////////////////////////////////////////////////////////////////-->
-
+                    <tr>
+                      <td class="tit"><p>처방병명</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="prescriptionName">Normal</label>
+                          <select id="prescriptionName" name="prescriptionName">
+                            <option value="Normal" >Normal</option>
+                            <option value="prescription01" >prescription01</option>
+                            <option value="prescription02" >prescription02</option>
+                            <option value="prescription03" >prescription03</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>처방경로</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="prescriptionRoute">본인의사</label>
+                          <select id="prescriptionRoute" name="prescriptionRoute">
+                            <option value="doctor" >본인의사</option>
+                            <option value="Route01" >Route01</option>
+                            <option value="Route02" >Route02</option>
+                            <option value="Route03" >Route03</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>과거사용제품</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="prescriptionNamePrev">싸이젠</label>
+                          <select id="prescriptionNamePrev" name="prescriptionNamePrev">
+                            <option value="doctor" >싸이젠</option>
+                            <option value="prescription01" >prescription01</option>
+                            <option value="prescription02" >prescription02</option>
+                            <option value="prescription03" >prescription03</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>제품변경사유</p></td>
+                      <td class="cont">
+                        <div class="textarea_row">
+                          <textarea name="reasonChange" placeholder="사유를 입력해주세요"></textarea>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>진행상황</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="prescriptionName">진행</label>
+                          <select id="prescriptionName" name="prescriptionName">
+                            <option value="proceed" >진행</option>
+                            <option value="pause" >보류 </option>
+                            <option value="cancel" >중지</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
                   </tbody>
                 </table>
               </div>
-            </div>
+<!-- 종료 및 탈퇴 -->
+              <h4>종료 및 탈퇴 정보</h4>
+              <div class="tb tb04">
+                <table summary="종료 및 탈퇴 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>종료 및 탈퇴 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>종료예정일</p></td>
+                      <td class="cont flex">
+                        <div class="inputBox_DP">
+                          <input type="date" name="preordination" class="date" value="" data-placeholder="YYYY-MM-DD" required>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>종료일</p></td>
+                      <td class="cont flex">
+                        <div class="inputBox_DP">
+                          <input type="date" name="withdrawalDay" class="date" value="" data-placeholder="YYYY-MM-DD" required>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>종료사유(선택)</p></td>
+                         <td class="cont">
+                          <div class="select_row">
+                            <label for="endReason">선택하세요</label>
+                             <select id="endReason" name="endReason">
+                                <option value="0">선택하세요</option>
+                                <option value="1">치료 완료(효과만족/성장판닫힘)</option>
+                                <option value="2">타제품 전환(경제적부담)</option>
+                                <option value="3">타제품 전환(주사스트레스/통증)</option>
+                                <option value="4">타제품 전환(효과미비)</option>
+                                <option value="5">타제품 전환(부작용발생)</option>
+                                <option value="6">타제품 전환(기타)</option>
+                                <option value="7">치료 중단(경제적부담)</option>
+                                <option value="8">치료 중단(주사스트레스/통증)</option>
+                                <option value="9">치료 중단(효과미비)</option>
+                                <option value="10">치료 중단(부작용발생/우려)</option>
+                                <option value="11">상담 중단(연락두절)</option>
+                                <option value="12">상담 중단(해외출국)</option>
+                                <option value="13">동의 철회(해피콜 거부/삭제 요청)</option>
+                                <option value="14">기타 (사유를 서술형으로 적어주세요)</option>
+                                
+                            </select>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>종료사유 <br>(직접입력)</p></td>
+                      <td class="cont">
+                        <div class="textarea_row">
+                          <textarea name="endReasonWrite" placeholder="사유를 입력해주세요"></textarea>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>탈퇴유형</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="withdrawalType">선택하세요</label>
+                          <select id="withdrawalType" name="withdrawalType">
+                            <option value="0" >선택하세요</option>
+                            <option value="Type01" >Type01</option>
+                            <option value="Type02" >Type02</option>
+                            <option value="Type03" >Type03</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>스마트케이스 <br>반납여부</p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="returnSmartcase">미사용</label>
+                          <select id="returnSmartcase" name="returnSmartcase">
+                            <option value="notUsed" >미사용</option>
+                            <option value="return" >반납</option>
+                            <option value="yet" >미반납</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+                  </tbody>
+                </table>
+              </div>
+            </div>      
 
-            <div class="btn_box btn_box03 mt50">
-              <div class="btn_white"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
-              <div class="btn_gray"><a href="javascript:;" onclick="childStateUpdate('R')">반려</a></div>
-              <div class="btn_green"><a href="javascript:;" onclick="childStateUpdate('M')" class="open_pop">승인</a></div>
+            <div class="btn_box btn_box01 mt50">
+              <div class="btn_green"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
             <!-- 회원 복구 2021-10-26 -->
             </div>
           </div>
@@ -549,6 +557,7 @@
     </form>
       <!-- content //-->  
       
+
       <!-- 병원명 검색 -->
       <div class="pop_mask"></div>
       <div class="pop_search">
