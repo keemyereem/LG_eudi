@@ -109,7 +109,7 @@ input[type="text"]:disabled {background: #fff;}
 .input_row {position: relative;overflow: hidden;padding: 0 10px;width: 100%;height: 40px;line-height: 40px;background: #fff;border: 1px solid #e9e9e9;border-radius: 5px;}
 .input_row .input_box {position: relative;display: block;width: 100%;overflow: hidden;}
 .input_row .input_box input::placeholder {font-family: 'NanumSquareR';font-size: 12px;color: #999;z-index: 10;}
-.input_row .input_box .ipt {position: relative;width: 100%;height: 100%;border: none;font-size: 12px;line-height: 1.2;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+.input_row .input_box .ipt {position: relative;width: 100%;height: 100%;border: none;font-size: 12px;line-height: 1.2;-webkit-appearance: none;-moz-appearance: none;appearance: none; letter-spacing: -1px;}
 .input_row .btn_chk {position: absolute;right: 0;top: 0;width: 60px;height: 100%;background: #cfcfcf;border-left: 1px solid #e9e9e9;z-index: 20;}
 .input_row .btn_chk>a {display: block;width: 100%;height: 100%;font-family: 'NanumSquareB';font-size: 12px;color: #727272;text-align: center;}
 .input_row02 {display:inline-block; *display:inline-block;width: 135px;vertical-align: middle;}
@@ -181,9 +181,10 @@ select option[value=""][disabled] { display: none; }
 
 .checkbox_row {display:inline-block; *display:inline-block; position:relative; top:0; zoom:1;}
 .checkbox_row input[type="checkbox"] {display:none;}
-.checkbox_row input[type="checkbox"] + label {display:inline-block; *display:inline-block; position: relative;top: 0;cursor:pointer; zoom:1;}
-.checkbox_row input[type="checkbox"] + label:before {content:""; display:inline-block; *display:inline-block; position:absolute;top: -3px;left: 0;background: url("../images/common/bg_check.png") 50% 50% no-repeat;background-size: cover;zoom:1;}
+.checkbox_row input[type="checkbox"] + label {display:inline-block; *display:inline-block; position: relative;top: 0; margin-right:20px; padding-left: 25px; line-height: normal pointer; zoom:1; font-family: 'NotoSansR'; color:#333; font-size:13px; letter-spacing: -1.3px; cursor:pointer; zoom:1; }
+.checkbox_row input[type="checkbox"] + label:before {content:""; display:inline-block; *display:inline-block; top: -2px; position:absolute; left: 0; bottom: 0; width:18px; height:18px; margin-right: 8px; background: url("../images/common/bg_check.png") 50% 50% no-repeat;background-size: 100%; vertical-align: top; zoom:1;}
 .checkbox_row input[type="checkbox"]:checked + label:before {content:""; background: url("../images/common/bg_check_on.png") 50% 50% no-repeat;background-size: cover;}
+
 
 .radio_row {display:inline-block; *display:inline-block; position:relative; zoom:1;}
 .radio_row input[type="radio"] {display:none;}

@@ -121,7 +121,7 @@
         <input type="hidden" name="docNo" id="docNo" value="">
         <input type="hidden" name="reSearch" id="reSearch" value="Y">
         <input type="hidden" name="privateYn" id="privateYn" value="N">
-      <div class="content con_sub con_sub01">
+      <div class="content con_sub con_sub01 member"><!-- 퍼블 클래스 'member'추가 - 2023.02 -->
         <div class="ipt_box">
           <div class="inner">           
             <h3 class="info01">회원 정보
@@ -307,9 +307,9 @@
                         <div class="inputBox_DP">
                           <input type="date" name="cInitialPrescription" class="date" value="2010-05-03" />
                         </div>
-                        <div class="radio_row shrink0">
-                          <input type="radio" id="radio01" name="" class="radio" checked="checked" />
-                          <label for="radio01">확정</label>
+                        <div class="checkbox_row shrink0">
+                          <input type="checkbox" id="checkbox01" name="" class="checkbox" />
+                          <label for="checkbox01">확정</label>
                         </div>
                       </td>
                     </tr>
@@ -842,7 +842,16 @@
           object.value = object.value.slice(0, object.maxLength);
         }
       }
-      
+
+      //select
+      // $(".select_row > select").change(function() {
+      //   var changeValue = $(".select_row > select").val();
+      //   $(".select_row > label").text(changeValue);
+      //   $("select#requestAddCotton option").remove();
+      //   $("#requestAddCotton").append("<option value='0'>0</option>");
+      //   $("#requestAddCotton").append("<option value='100'>100</option>");
+      //   $("#requestAddCotton").val(changeValue).prop("selected", true);
+      // });
     
     </script>
   </body>
