@@ -92,7 +92,7 @@
           <div class="inner">
             <ul>
               <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
-              <li><a href="javascript:;">상담관리</a></li>
+              <li><a href="javascript:;">상담관리</a></li>  <!-- 메뉴 추가 2023.02 -->
               <li><a href="javascript:fnDosePage()">투여확인</a></li>
               <li><a href="javascript:fnScheduleManagementPage()">투여계획</a></li>
               <li><a href="javascript:fnGrowthGraphPage()">성장관리</a></li>
@@ -172,6 +172,11 @@
             					</div>
                     </td>
                   </tr>
+                                    
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
                   <tr>
                     <td class="tit"><p>주소</p></td>
                     <td class="cont">
@@ -261,6 +266,8 @@
                   </tbody>
                 </table>
               </div>
+              
+<!-- 처방 및 병원 -->
               <h4>처방 및 병원 정보</h4>
               <div class="tb tb03">
                 <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
@@ -304,9 +311,9 @@
                         <div class="inputBox_DP">
                           <input type="date" name="cInitialPrescription" class="date" value="2010-05-03" />
                         </div>
-                        <div class="radio_row shrink0">
-                          <input type="radio" id="radio01" name="" class="radio" />
-                          <label for="radio01">확정</label>
+                        <div class="checkbox_row shrink0">
+                          <input type="checkbox" id="checkbox01" name="" class="checkbox" />
+                          <label for="checkbox01">확정</label>
                         </div>
                       </td>
                     </tr>
@@ -343,7 +350,7 @@
                         <div class="input_search">
                           <span class="input_box">
                               <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
-                        	  <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
+                              <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
                           </span>
                         </div>
                       </td>
@@ -435,6 +442,10 @@
         </div>
       </div>
       
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
       <!-- 중복환아 검색 -->
       <div class="popup">
         <div class="inner_pop">
@@ -561,6 +572,11 @@
       </div>
       
 	  </div>
+        
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
         // 우편번호 찾기 찾기 화면을 넣을 element
@@ -663,7 +679,21 @@
           object.value = object.value.slice(0, object.maxLength);
         }
       }
-      
+
+      //select
+      $("#sel02").change(function() {
+        $("#cHospitalIdx").val($("#sel02 option:selected").val());
+        $("#cHospitalName").val($("#sel02 option:selected").text());
+        $("#hNameText").text($("#sel02 option:selected").text());
+			});
+		
+      $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
+        if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술
+          $("#withdrawContent").css("display", "");
+        } else {
+          $("#withdrawContent").css("display", "none");
+        }
+			});
     
     </script>
   </body>

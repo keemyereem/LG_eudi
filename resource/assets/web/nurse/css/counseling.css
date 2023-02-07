@@ -321,7 +321,7 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)>div { /* display: inline-block; */ float: left; min-width: 50%; }
 .con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)::after { content:''; display: block; clear: both; } 
 .con_sub .list_box .child_list>ul>li>a>div:last-child { width: 100%; text-align: left; font-family: 'NanumSquareR'; color: #999; }
-.con_sub .list_box .btn_box { width: calc(100% - 30px); left: 15px; }
+.con_sub .list_box .btn_bottom { width: calc(100% - 30px); left: 15px; }
 
 .con_sub .list_box { padding: 35px 15px 125px; background: #fff; min-height: calc(100vh - 268px); box-sizing: content-box; }
 .con_sub .list_box .con_flex+.con_list { margin-top: 12px; }
@@ -351,10 +351,6 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .input_physics .input_box { position: relative; display: block; width: 100%; overflow: hidden; }
 .con_sub .input_physics .input_box .ipt { position: relative; width: 100%; height: 100%; border: none; font-size: 13px; line-height: 1.2; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
 .con_sub .cont .input_row + .unit { display: inline-block; margin: 0 5px 0 10px; font-size: 12px; }
-
-/* 회원관리 - 상세 - 회원 */
-/* .con_sub .tb .inputBox_DP+.checkbox_row { margin-left: 10px; }
-.con_sub .tb .inputBox_DP+.checkbox_row label { margin-right: 0; } */
 
 /* 회원관리 - 상세 - 탈퇴회원 */
 .con_sub.withdrawal .tb04 button[type="date"]::before { content: attr(data-placeholder); }
@@ -388,21 +384,6 @@ ExtraBold - 'NanumSquareEB'
 .con_login .authentic_cont .input_row { padding: 0 15px; height: 50px; line-height: 50px; border: 1px solid #cfcfcf; margin: 40px auto 0; }
 .con_login .authentic_cont .input_row:hover { border: 1px solid #333; }
 .con_login .authentic_cont .input_row .ipt { font-family: 'NanumSquareB'; font-size: 13px; color: #333; }
-.con_login .authentic_cont .input_row .timer { font-family: 'NanumSquareB'; color: #333; position: absolute; top: 0; right: 0; }
+.con_login .authentic_cont .input_row .timer { font-family: 'NanumSquareB'; font-size: 13px; color: #333; position: absolute; top: 0; right: 0; }
 .con_login .authentic_cont .input_row + .alert_txt { font-size: 12px; color: #79bd28; margin-top: 10px; }
 .con_login .btn_box { position: absolute; bottom: 25px; width: calc(100% - 30px); }
-
-
-
-
-
-/*/////////////////////////////////////////////////////////////////////////
-///////////              ** common.css 공통추가부분 **              ///////
-/////////////////////////////////////////////////////////////////////////*/
-/* textarea */
-.textarea_row { position: relative;overflow: hidden; padding: 10px; width: 100%;height: 150px; background: #fff; border: 1px solid #e9e9e9; border-radius: 5px;}
-.textarea_row textarea { width: 100%; height: 100%; line-height: 40px; border: none; line-height: 1.6; resize: none; }
-.textarea_row textarea::placeholder { font-family: 'NanumSquareR'; font-size: 12px; color: #999; z-index: 10;}
-
-
-

@@ -92,7 +92,7 @@
           <div class="inner">
             <ul>
               <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
-              <li><a href="javascript:;">상담관리</a></li>
+              <li><a href="javascript:;">상담관리</a></li>  <!-- 메뉴 추가 2023.02 -->
               <li><a href="javascript:fnDosePage()">투여확인</a></li>
               <li><a href="javascript:fnScheduleManagementPage()">투여계획</a></li>
               <li><a href="javascript:fnGrowthGraphPage()">성장관리</a></li>
@@ -175,6 +175,11 @@
             					</div>
                     </td>
                   </tr>
+                  
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
                   <tr>
                     <td class="tit"><p>주소</p></td>
                     <td class="cont">
@@ -264,6 +269,8 @@
                   </tbody>
                 </table>
               </div>
+              
+<!-- 처방 및 병원 -->
               <h4>처방 및 병원 정보</h4>
               <div class="tb tb03">
                 <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
@@ -346,7 +353,7 @@
                         <div class="input_search">
                           <span class="input_box">
                               <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
-                        	  <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
+                              <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
                           </span>
                         </div>
                       </td>
@@ -385,10 +392,12 @@
                       <td class="tit"><p>처방병명</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">Normal</label>
-                          <select id="sel03" name="">
-                            <option value="" >Normal</option>
-                            <option value="" ></option>
+                          <label for="prescriptionName">Normal</label>
+                          <select id="prescriptionName" name="prescriptionName">
+                            <option value="Normal" >Normal</option>
+                            <option value="prescription01" >prescription01</option>
+                            <option value="prescription02" >prescription02</option>
+                            <option value="prescription03" >prescription03</option>
                           </select>
                         </div>
                       </td>
@@ -397,10 +406,12 @@
                       <td class="tit"><p>처방경로</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">본인의사</label>
-                          <select id="sel03" name="">
-                            <option value="" >본인의사</option>
-                            <option value="" ></option>
+                          <label for="prescriptionRoute">본인의사</label>
+                          <select id="prescriptionRoute" name="prescriptionRoute">
+                            <option value="doctor" >본인의사</option>
+                            <option value="Route01" >Route01</option>
+                            <option value="Route02" >Route02</option>
+                            <option value="Route03" >Route03</option>
                           </select>
                         </div>
                       </td>
@@ -409,10 +420,12 @@
                       <td class="tit"><p>과거사용제품</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">싸이젠</label>
-                          <select id="sel03" name="">
-                            <option value="" >싸이젠</option>
-                            <option value="" ></option>
+                          <label for="prescriptionNamePrev">싸이젠</label>
+                          <select id="prescriptionNamePrev" name="prescriptionNamePrev">
+                            <option value="doctor" >싸이젠</option>
+                            <option value="prescription01" >prescription01</option>
+                            <option value="prescription02" >prescription02</option>
+                            <option value="prescription03" >prescription03</option>
                           </select>
                         </div>
                       </td>
@@ -429,10 +442,11 @@
                       <td class="tit"><p>진행상황</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">진행</label>
-                          <select id="sel03" name="">
-                            <option value="" >진행</option>
-                            <option value="" ></option>
+                          <label for="prescriptionName">진행</label>
+                          <select id="prescriptionName" name="prescriptionName">
+                            <option value="proceed" >진행</option>
+                            <option value="pause" >보류 </option>
+                            <option value="cancel" >중지</option>
                           </select>
                         </div>
                       </td>
@@ -440,8 +454,9 @@
                   </tbody>
                 </table>
               </div>
+<!-- 종료 및 탈퇴 -->
               <h4>종료 및 탈퇴 정보</h4>
-              <div class="tb tb03">
+              <div class="tb tb04">
                 <table summary="종료 및 탈퇴 정보" cellpadding="0" cellspacing="0" border="0">
                   <caption>종료 및 탈퇴 정보</caption>
                   <colgroup>
@@ -451,31 +466,45 @@
                   <tbody>
                     <tr>
                       <td class="tit"><p>종료예정일</p></td>
-                      <td class="cont">
+                      <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="" class="date" value="" />
+                          <input type="date" name="preordination" class="date" value="" data-placeholder="YYYY-MM-DD" required>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>종료일</p></td>
-                      <td class="cont">
+                      <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="" class="date" value="" />
+                          <input type="date" name="withdrawalDay" class="date" value="" data-placeholder="YYYY-MM-DD" required>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>종료사유(선택)</p></td>
-                      <td class="cont">
-                        <div class="select_row">
-                          <label for="sel03">선택하세요</label>
-                          <select id="sel03" name="">
-                            <option value="" >선택하세요</option>
-                            <option value="" ></option>
-                          </select>
-                        </div>
-                      </td>
+                        <td class="cont">
+                          <div class="select_row">
+                            <label for="endReason">선택하세요</label>
+                            <select id="endReason" name="endReason">
+                                <option value="0">선택하세요</option>
+                                <option value="1">치료 완료(효과만족/성장판닫힘)</option>
+                                <option value="2">타제품 전환(경제적부담)</option>
+                                <option value="3">타제품 전환(주사스트레스/통증)</option>
+                                <option value="4">타제품 전환(효과미비)</option>
+                                <option value="5">타제품 전환(부작용발생)</option>
+                                <option value="6">타제품 전환(기타)</option>
+                                <option value="7">치료 중단(경제적부담)</option>
+                                <option value="8">치료 중단(주사스트레스/통증)</option>
+                                <option value="9">치료 중단(효과미비)</option>
+                                <option value="10">치료 중단(부작용발생/우려)</option>
+                                <option value="11">상담 중단(연락두절)</option>
+                                <option value="12">상담 중단(해외출국)</option>
+                                <option value="13">동의 철회(해피콜 거부/삭제 요청)</option>
+                                <option value="14">기타 (사유를 서술형으로 적어주세요)</option>
+                                
+                            </select>
+                          </div>
+                        </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>종료사유<br>(직접입력)</p></td>
@@ -490,7 +519,7 @@
                       <td class="cont">
                         <div class="select_row">
                           <label for="mWithdrawCode">탈퇴 유형를 선택해주세요</label>
-                           <select id="mWithdrawCode" name="mWithdrawCode">
+                          <select id="mWithdrawCode" name="mWithdrawCode">
                               <option value="0">탈퇴 유형를 선택해주세요</option>
                               
                               <option value="1">치료 완료(효과만족/성장판닫힘)</option>
@@ -525,13 +554,14 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="tit"><p>스마트케이스 반납여부</p></td>
+                      <td class="tit"><p>스마트케이스 <br>반납여부</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">미사용</label>
-                          <select id="sel03" name="">
-                            <option value="" >미사용</option>
-                            <option value="" ></option>
+                          <label for="returnSmartcase">미사용</label>
+                          <select id="returnSmartcase" name="returnSmartcase">
+                            <option value="notUsed" >미사용</option>
+                            <option value="return" >반납</option>
+                            <option value="yet" >미반납</option>
                           </select>
                         </div>
                       </td>
@@ -614,6 +644,10 @@
         </div>
       </div>
       
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
       <!-- 중복환아 검색 -->
       <div class="popup">
         <div class="inner_pop">
@@ -740,6 +774,11 @@
       </div>
       
 	  </div>
+        
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
         // 우편번호 찾기 찾기 화면을 넣을 element
@@ -844,14 +883,19 @@
       }
 
       //select
-      // $(".select_row > select").change(function() {
-      //   var changeValue = $(".select_row > select").val();
-      //   $(".select_row > label").text(changeValue);
-      //   $("select#requestAddCotton option").remove();
-      //   $("#requestAddCotton").append("<option value='0'>0</option>");
-      //   $("#requestAddCotton").append("<option value='100'>100</option>");
-      //   $("#requestAddCotton").val(changeValue).prop("selected", true);
-      // });
+      $("#sel02").change(function() {
+        $("#cHospitalIdx").val($("#sel02 option:selected").val());
+        $("#cHospitalName").val($("#sel02 option:selected").text());
+        $("#hNameText").text($("#sel02 option:selected").text());
+			});
+		
+      $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
+        if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술
+          $("#withdrawContent").css("display", "");
+        } else {
+          $("#withdrawContent").css("display", "none");
+        }
+			});
     
     </script>
   </body>

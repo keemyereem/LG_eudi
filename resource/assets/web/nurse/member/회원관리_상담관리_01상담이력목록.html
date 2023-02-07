@@ -52,9 +52,7 @@
 
 <script>
   $(document).ready(()=> {
-    selEvent.init();
-    datetimeEvent.init();
-    nurseJS.counselHis();
+    // nurseJS.counselHis();
   })
   
 </script>
@@ -114,7 +112,46 @@
               </div>
               <div>키 / 체중: 149.7 / 39.7 (표준키: 149.7)</div>
             </a></li>
+            <li><a href="javascript:;">
+              <div><span class="lblbox lbl06">구환교육</span></div>
+              <div>
+                <div>상담예정일: 2023-03-16</div>
+                <div>상담일: 2022-12-16</div>
+              </div>
+              <div>키 / 체중: 149.7 / 39.7 (표준키: 149.7)</div>
+            </a></li>
+            <li><a href="javascript:;">
+              <div><span class="lblbox lbl01">상담</span></div>
+              <div>
+                <div>상담예정일: 2022-12-16</div>
+                <div>상담일: 2022-12-16</div>
+              </div>
+              <div>키 / 체중: 149.7 / 39.7 (표준키: 149.7)</div>
+            </a></li>
+            <li><a href="javascript:;">
+              <div><span class="lblbox lbl06">신환교육</span></div>
+              <div>
+                <div>상담예정일: 2023-03-16</div>
+                <div>상담일: 2022-12-16</div>
+              </div>
+              <div>키 / 체중: 149.7 / 39.7 (표준키: 149.7)</div>
+            </a></li>
           </ul>
+        </div>
+        <div class="paging">
+          <a href="javascript:;"  title="맨 앞" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_front.png" alt="처음"></a>
+          <a href="javascript:;"  title="이 전" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_prev.png" alt="이전"></a>
+          <ul>
+            <li class="active"><a href="javascript:;" return false;">1</a></li>
+            <li><a href="javascript:;" return false;">2</a></li>
+            <li><a href="javascript:;" return false;">3</a></li>
+            <li><a href="javascript:;" return false;">4</a></li>
+            <li><a href="javascript:;" return false;">5</a></li>
+          </ul>
+          <a href="javascript:;"  title="다음" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_next.png" alt="다음"></a>
+          <a href="javascript:;"  title="맨끝" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_last.png" alt="마지막"></a>
+
+          <input id="pageIndex" name="pageIndex" type="hidden" value="1"/>
         </div>
         <div class="btn_box btn_box01 btn_bottom">
           <div class="btn_green">

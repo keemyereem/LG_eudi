@@ -63,15 +63,565 @@
     <script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
     <script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
 
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/clipboard.min.js"></script>
 
+    <script type="text/javascript">
+
+
+      function SHA256(s){
+        
+          var chrsz   = 8;
+          var hexcase = 0;
+        
+          function safe_add (x, y) {
+              var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+              var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+              return (msw << 16) | (lsw & 0xFFFF);
+          }
+        
+          function S (X, n) { return ( X >>> n ) | (X << (32 - n)); }
+          function R (X, n) { return ( X >>> n ); }
+          function Ch(x, y, z) { return ((x & y) ^ ((~x) & z)); }
+          function Maj(x, y, z) { return ((x & y) ^ (x & z) ^ (y & z)); }
+          function Sigma0256(x) { return (S(x, 2) ^ S(x, 13) ^ S(x, 22)); }
+          function Sigma1256(x) { return (S(x, 6) ^ S(x, 11) ^ S(x, 25)); }
+          function Gamma0256(x) { return (S(x, 7) ^ S(x, 18) ^ R(x, 3)); }
+          function Gamma1256(x) { return (S(x, 17) ^ S(x, 19) ^ R(x, 10)); }
+        
+          function core_sha256 (m, l) {
+               
+              var K = new Array(0x428A2F98, 0x71374491, 0xB5C0FBCF, 0xE9B5DBA5, 0x3956C25B, 0x59F111F1,
+                  0x923F82A4, 0xAB1C5ED5, 0xD807AA98, 0x12835B01, 0x243185BE, 0x550C7DC3,
+                  0x72BE5D74, 0x80DEB1FE, 0x9BDC06A7, 0xC19BF174, 0xE49B69C1, 0xEFBE4786,
+                  0xFC19DC6, 0x240CA1CC, 0x2DE92C6F, 0x4A7484AA, 0x5CB0A9DC, 0x76F988DA,
+                  0x983E5152, 0xA831C66D, 0xB00327C8, 0xBF597FC7, 0xC6E00BF3, 0xD5A79147,
+                  0x6CA6351, 0x14292967, 0x27B70A85, 0x2E1B2138, 0x4D2C6DFC, 0x53380D13,
+                  0x650A7354, 0x766A0ABB, 0x81C2C92E, 0x92722C85, 0xA2BFE8A1, 0xA81A664B,
+                  0xC24B8B70, 0xC76C51A3, 0xD192E819, 0xD6990624, 0xF40E3585, 0x106AA070,
+                  0x19A4C116, 0x1E376C08, 0x2748774C, 0x34B0BCB5, 0x391C0CB3, 0x4ED8AA4A,
+                  0x5B9CCA4F, 0x682E6FF3, 0x748F82EE, 0x78A5636F, 0x84C87814, 0x8CC70208,
+                  0x90BEFFFA, 0xA4506CEB, 0xBEF9A3F7, 0xC67178F2);
+   
+              var HASH = new Array(0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A, 0x510E527F, 
+                         0x9B05688C, 0x1F83D9AB, 0x5BE0CD19);
+   
+              var W = new Array(64);
+              var a, b, c, d, e, f, g, h, i, j;
+              var T1, T2;
+        
+              m[l >> 5] |= 0x80 << (24 - l % 32);
+              m[((l + 64 >> 9) << 4) + 15] = l;
+        
+              for ( var i = 0; i<m.length; i+=16 ) {
+                  a = HASH[0];
+                  b = HASH[1];
+                  c = HASH[2];
+                  d = HASH[3];
+                  e = HASH[4];
+                  f = HASH[5];
+                  g = HASH[6];
+                  h = HASH[7];
+        
+                  for ( var j = 0; j<64; j++) {
+                      if (j < 16) W[j] = m[j + i];
+                      else W[j] = safe_add(safe_add(safe_add(Gamma1256(W[j - 2]), W[j - 7]), Gamma0256(W[j - 15])), W[j - 16]);
+        
+                      T1 = safe_add(safe_add(safe_add(safe_add(h, Sigma1256(e)), Ch(e, f, g)), K[j]), W[j]);
+                      T2 = safe_add(Sigma0256(a), Maj(a, b, c));
+        
+                      h = g;
+                      g = f;
+                      f = e;
+                      e = safe_add(d, T1);
+                      d = c;
+                      c = b;
+                      b = a;
+                      a = safe_add(T1, T2);
+                  }
+        
+                  HASH[0] = safe_add(a, HASH[0]);
+                  HASH[1] = safe_add(b, HASH[1]);
+                  HASH[2] = safe_add(c, HASH[2]);
+                  HASH[3] = safe_add(d, HASH[3]);
+                  HASH[4] = safe_add(e, HASH[4]);
+                  HASH[5] = safe_add(f, HASH[5]);
+                  HASH[6] = safe_add(g, HASH[6]);
+                  HASH[7] = safe_add(h, HASH[7]);
+              }
+              return HASH;
+          }
+        
+          function str2binb (str) {
+              var bin = Array();
+              var mask = (1 << chrsz) - 1;
+              for(var i = 0; i < str.length * chrsz; i += chrsz) {
+                  bin[i>>5] |= (str.charCodeAt(i / chrsz) & mask) << (24 - i%32);
+              }
+              return bin;
+          }
+        
+          function Utf8Encode(string) {
+              string = string.replace(/\r\n/g,"\n");
+              var utftext = "";
+        
+              for (var n = 0; n < string.length; n++) {
+        
+                  var c = string.charCodeAt(n);
+        
+                  if (c < 128) {
+                      utftext += String.fromCharCode(c);
+                  }
+                  else if((c > 127) && (c < 2048)) {
+                      utftext += String.fromCharCode((c >> 6) | 192);
+                      utftext += String.fromCharCode((c & 63) | 128);
+                  }
+                  else {
+                      utftext += String.fromCharCode((c >> 12) | 224);
+                      utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                      utftext += String.fromCharCode((c & 63) | 128);
+                  }
+        
+              }
+        
+              return utftext;
+          }
+        
+          function binb2hex (binarray) {
+              var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+              var str = "";
+              for(var i = 0; i < binarray.length * 4; i++) {
+                  str += hex_tab.charAt((binarray[i>>2] >> ((3 - i%4)*8+4)) & 0xF) +
+                  hex_tab.charAt((binarray[i>>2] >> ((3 - i%4)*8  )) & 0xF);
+              }
+              return str;
+          }
+        
+          s = Utf8Encode(s);
+          return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
+        
+      }
+       
+    /*
+     * App & ì¤ë§í¸ì¼ì´ì¤ ê´ë ¨.. 
+     * */
+    // íì¬ í¸ì¶í ëë°ì´ì¤ê° ì´ë¤ ê²ì¸ì§ ì²´í¬í©ëë¤.
+    var isMobile = {
+      Android: function () {
+        return navigator.userAgent.match(/Android/i) == null ? false : true;
+      },
+      iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+      },
+      any: function () {
+        return (isMobile.Android() || isMobile.iOS());
+      }
+    };
+    
+    //Appì ë¡ê·¸ì¸ì ë³´ ì ë¬
+    function fnAppLoginChk() {
+      $.ajax({
+        type: "POST",
+        url: "/smart/getLoginInfo.do",
+        //data:JSON.stringify(data),
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        dataType: "json"
+      }).done(function(resp){
+            data = {"result":"success","memberInfo":{"mIdx":"122","mId":"4mtest"}};
+         
+        //Appì Javascript Bridge ì°ê²°íì¬ ì ë¬
+        if (isMobile.any()) {
+          if (isMobile.Android()) {
+            window.eudiApp.fnAppLoginChk_Res(JSON.stringify(data));
+          } else if (isMobile.iOS()) {
+            webkit.messageHandlers.fnAppLoginChk_Res.postMessage(JSON.stringify(data));
+          }
+        }
+      }).fail(function(error){
+        //alert(JSON.stringify(error));
+      });
+    }
+    
+  </script>
+  
+  
+  
+      <script type="text/javascript" src="/resource/assets/web/nurse/js/clipboard.min.js"></script>
+    <script>
+    <!-- 빌리버, 화상 통화 화면 띄우는 javascript, 간호사idx가 숫자로 넘어가야하나 현재 stringID만 넘어와 우선은 환아 idx로 대체해둠  -->
+    function fnJoinVideoCall(){
+        //var web_rtc_server_url = 'https://api.webrtc.belivvr.com';
+        var web_rtc_server_url = 'https://jitsi.belivvr.com/';
+        var seed = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+        var open_url = web_rtc_server_url + seed + '/nurse/' + '26772';
+        window.open(open_url, 'window','height=' + screen.height + ',width=' + screen.width + 'fullscreen=yes');
+      return;
+    }
+    /* 빌리버 코드변경 끝 */
+    
+        $(function(){
+          /* inEvent.init(); */
+            selEvent.init();
+           var clipboard = new Clipboard('.clipboard');//붙여넣기
+          $(window).resize(resizeContents);
+          resizeContents();
+          function resizeContents() {
+            $('.wrap_main').css({
+              'min-height': $(window).height() + 'px'
+            });
+          }
+  
+        });
+        
+        
+       function fnListPage(){
+         if($("#cState").val() == "RM"){
+           $("#cState").val("M");
+         }
+       document.viewForm.action = "/nurse/member/list.do";
+        document.viewForm.submit();
+      
+    }
+       
+  
+    
+    function fnViewPage(cIdx){
+      $("#cIdx").val(cIdx);
+       document.viewForm.action = "/nurse/member/view.do";
+        document.viewForm.submit();
+      
+    }
+  
+  
+  
+    function childInfoUpdate(){
+      var frm = 'viewForm';
+      if(checkValidation(frm)){
+         if($("#sel02").val() == "0"){
+            alert("병원명을 확인해주세요");
+            return false;
+          }
+          var result = confirm("저장하겠습니까?");
+          if(result){
+             actionurl = "/nurse/mis/updateChildInfo.do";
+                  $.ajax({
+                      async: false,
+                      type: "POST",
+                      url : actionurl,
+                      data : $("#viewForm").serialize(),
+                      dataType : "json",
+                      success: function(obj){
+                        if(obj.result < 1){
+                          alert("일시적인 오류 입니다,다시 시도 해주세요");
+                          return;
+                        } else {
+                         // location.reload();
+                          //fnViewPage($("#cIdx").val());
+                          fnListPage();
+                          
+                        }
+                                     
+                      },
+                      error: function(xhr, option, error){
+                            alert(xhr.status+" | "+error); //오류코드 | 오류내용
+                      }
+                      /*error : function(success){
+                          meg = "서버와 통신중 에러가 발생하였습니다."
+                          alert("처리결과 : "+meg);
+                      }*/
+                  });
+          }
+      }
+       
+    }
+  
+  
+    function childStateUpdate(Cstate){
+      $("#cState").val(Cstate);
+  
+      if(Cstate == "M"){
+        if($("#sel02").val() == "0"){
+          alert("병원명을 확인해주세요.");
+          return;
+        }
+      }
+      
+      var questionStr = "";
+      if(Cstate == "M"){
+        questionStr ="승인하시겠습니까?";
+      } else if(Cstate == "R") {
+        questionStr ="반려하시겠습니까?";
+      } else if(Cstate == "RM") {
+        questionStr ="복구하시겠습니까?";
+      } else if(Cstate == "RMA") {
+        questionStr ="복구하시겠습니까?";
+        $("#cState").val("A");
+      } else {
+        questionStr ="탈퇴 처리 하시겠습니까?";
+      }
+  
+  
+      if($("#ori_cState").val() == "DR"){
+        if(Cstate == "D"){
+          $("#cState").val("D");
+        } else {
+          $("#cState").val("M");
+        }
+      }
+      
+      if($("#cState").val() == "D"){//탈퇴사유 추가
+        if($("#mWithdrawCode option:selected").val() == "" || $("#mWithdrawCode option:selected").val() == null  || $("#mWithdrawCode option:selected").val() == 0){
+          alert("탈퇴 유형을 선택해 주세요.");
+          return;
+        }
+  
+        if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술 선택 했으면 사유 체크
+          if($("#mWithdrawContent").val() == ""){
+            alert("탈퇴 사유를 작성해 주세요.");
+            return;
+          }
+        }
+      
+      }
+  
+      
+      
+      var result = confirm(questionStr);
+          if(result){
+              actionurl = "/nurse/mis/updateMemberState.do";
+                $.ajax({
+                    async: false,
+                    type: "POST",
+                    url : actionurl,
+                    data : $("#viewForm").serialize(),
+                    dataType : "json",
+                    success: function(obj){
+                      if(obj.result < 1){
+                        alert("일시적인 오류 입니다,다시 시도 해주세요");
+                        return;
+                      } else {
+                        if(Cstate == "A" || Cstate == "M"){
+                          alert("승인 되었습니다");
+                       }  else if(Cstate == "RM" || Cstate == "RMA"){
+                          alert("복구 되었습니다");
+                       } else if(Cstate == "R"){
+                          alert("반려 되었습니다");
+                       } 
+                        fnListPage();
+                      }
+                  
+                    },
+                    error: function(xhr, option, error){
+                          alert(xhr.status+" | "+error); //오류코드 | 오류내용
+                    }
+                    /*error : function(success){
+                        meg = "서버와 통신중 에러가 발생하였습니다."
+                        alert("처리결과 : "+meg);
+                    }*/
+                });
+                
+              }
+        }
+  
+      
+     function fnHospitalSearch(){
+           var hospital_list ="";
+        $("#search_hospital").html("");
+  
+        
+         var chkData = { "searchKeyword": $("#search_name").val() };
+        
+       if($("#search_name").val() == "") {
+          alert("병원명을 입력해주세요");
+          $("#search_name").focus();
+          return;
+        } 
+        $("#loading").show();
+        setTimeout(function() {
+              actionurl = "/search_hospital.do";
+            $.ajax({
+                async: false,
+                type: "POST",
+                url : actionurl,
+                data:chkData,
+                dataType : "json",
+                complete: function(){ $("#loading").hide();},
+                success: function(obj){
+                
+                if(obj.result.length < 1){
+                 hospital_list += "<ul>";
+                   hospital_list += "<li class='result_none'><p>검색결과가 없습니다.</p></li>";
+                   hospital_list += "</ul>";
+                } else {
+                      hospital_list += "<ul>";
+                            for(var i=0;i < obj.result.length;i++){
+                              hospital_list += "<li><a href='javascript:selectHospitalName(\""+obj.result[i].hmHospCd+"\",\""+obj.result[i].hmHospNm+"\",\""+obj.result[i].hmHospAddress1+"\",\""+obj.result[i].hmHospAddress2+"\");''>"+obj.result[i].hmHospNm+"("+obj.result[i].hmHospAddress1+obj.result[i].hmHospAddress2+")</a></li>";
+                            }
+                       hospital_list += "</ul>";
+                }
+                
+                },
+                error: function(xhr, option, error){
+                      alert(xhr.status+" | "+error); //오류코드 | 오류내용
+                }
+                /*error : function(success){
+                    meg = "서버와 통신중 에러가 발생하였습니다."
+                    alert("처리결과 : "+meg);
+                }*/
+            }); 
+            
+            
+            $("#search_hospital").html(hospital_list);
+      }, 0); // End setTimeout(function()
+          
+       }
+     
+     function fnDoctorSearch(){
+        var hm_hosp_cd = $("#cHospitalIdx").val();//선택한 병원 코드
+      if(hm_hosp_cd == null || hm_hosp_cd == ""){
+        alert("병원을 먼저 선택하시면 해당 병원 소속 의사를 검색합니다.");
+        return;
+      }
+        
+      if($("#search_doctor_name").val() == "") {
+            alert("의사명을 입력해주세요");
+            $("#search_doctor_name").focus();
+            return;
+          }
+      
+         var doctor_list ="";
+             var chkData = { "hmHospCd": $("#cHospitalIdx").val(),"searchKeyword": $("#search_doctor_name").val() };
+            $("#search_doctor").html("");
+             $("#loading").show();
+             setTimeout(function() {
+               actionurl = "/search_doctor_nopaging.do";
+               $.ajax({
+                   async: false,
+                   type: "POST",
+                   url : actionurl,
+                   data:chkData,
+                   dataType : "json",
+                   complete: function(){ $("#loading").hide();},
+                   success: function(obj){
+                   
+                   if(obj.result.length < 1){
+                     doctor_list += "<ul>";
+                     doctor_list += "<li class='result_none'><p>검색결과가 없습니다.</p></li>";
+                     doctor_list += "</ul>";
+                   } else {
+                     doctor_list += "<ul>";
+                            for(var i=0;i < obj.result.length;i++){
+                             doctor_list += "<li><a href='javascript:selectDoctorName(\""+obj.result[i].docNo+"\",\""+obj.result[i].docNm+"\");''>"+obj.result[i].docNm+"("+obj.result[i].docNo+")</a></li>";
+                            }
+                           doctor_list += "</ul>";
+                   }
+                   
+                   },
+                   error: function(xhr, option, error){
+                         alert(xhr.status+" | "+error); //오류코드 | 오류내용
+                   }
+                   /*error : function(success){
+                       meg = "서버와 통신중 에러가 발생하였습니다."
+                       alert("처리결과 : "+meg);
+                   }*/
+               }); 
+               
+               
+               $("#search_doctor").html(doctor_list);
+           }, 0); // End setTimeout(function()
+  
+      }
+       
+      function selectHospitalName(hidx,hname,haddr1,haddr2){
+          $("#selectHname").val(hname+"("+haddr1+haddr2+")");
+          $("#cHospitalIdx").val(hidx);
+          $("#cHospitalName").val(hname);
+          $("#hNameText").text(hname+"("+haddr1+haddr2+")");
+          $(".pop_mask").css("display","none");
+          $(".pop_search").css("display","none");
+  
+       }
+    
+    function selectDoctorName(docNo,docNm){
+        $("#cDoctorName").val(docNm);
+         $("#docNo").val(docNo);
+       $(".pop_mask_doctor").css("display","none");
+       $(".pop_search_doctor").css("display","none");
+     }
+    
+    function fnCreateTempPassword(){
+      var result = confirm("비밀번호 초기화가 되면 기존 비밀번호는 찾을 수 없습니다,초기화 시키시겠습니까?");
+        if(result){
+          
+            actionurl = "/nurse/createTempPassword.do";
+              $.ajax({
+                  async: false,
+                  type: "POST",
+                  url : actionurl,
+                  data : $("#viewForm").serialize(),
+                  dataType : "json",
+                  success: function(obj){
+     
+                      $("#temp_pass").val(obj.result);
+                        var popthis = $(".pop_search_temp");
+                        popthis.css({
+                          "top":  (($(window).height()-popthis.outerHeight())/2) + $(window).scrollTop()+"px",
+                          "left": (($(window).width()-popthis.outerWidth())/2+$(window).scrollLeft())+"px",
+                        });
+                        popthis.css("display","block");
+                        $(".pop_mask_temp").css("display","block");
+                        popthis.find(".pop_close").click(function(){
+                          $(".pop_mask_temp").css("display","none");
+                          popthis.css("display","none");
+                        });
+                
+                  },
+                  error: function(xhr, option, error){
+                        alert(xhr.status+" | "+error); //오류코드 | 오류내용
+                  }
+                  /*error : function(success){
+                      meg = "서버와 통신중 에러가 발생하였습니다."
+                      alert("처리결과 : "+meg);
+                  }*/
+              });
+              
+              
+      
+        }
+        
+        
+    }
+  
+    
+    function fnGrowthGraphPage(){
+        if("Y" == "N"){
+          alert("해당 환아는 정보를 공개하지 않았습니다");
+          return;
+        }
+        document.viewForm.action = "/nurse/member/growth_graph.do";
+           document.viewForm.submit();
+      
+       
+     }
+     
+     function fnDosePage(){
+         document.viewForm.action = "/nurse/member/dose_pre.do";
+        document.viewForm.submit();
+      }
+     
+      
+      function fnScheduleManagementPage(){
+         document.viewForm.action = "/nurse/member/scheduleManagement.do";
+        document.viewForm.submit();
+      }
+  
+  
+     
+     
+    </script>
     <script src='/eum_.js'></script>
 
     <script>
       $(document).ready(()=> {
-        selEvent.init();
         nurseJS.popup();
-        nurseJS.tabEvent();
       })
       
     </script>
@@ -92,7 +642,7 @@
           <div class="inner">
             <ul>
               <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
-              <li><a href="javascript:;">상담관리</a></li>
+              <li><a href="javascript:;">상담관리</a></li>  <!-- 메뉴 추가 2023.02 -->
               <li><a href="javascript:fnDosePage()">투여확인</a></li>
               <li><a href="javascript:fnScheduleManagementPage()">투여계획</a></li>
               <li><a href="javascript:fnGrowthGraphPage()">성장관리</a></li>
@@ -129,8 +679,8 @@
             </h3>
             
             <div class="tb">
-              <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
-                <caption>기본 정보</caption>
+              <table summary="회원 정보" cellpadding="0" cellspacing="0" border="0">
+                <caption>회원 정보</caption>
                 <colgroup>
                     <col style="width:110px;">
                     <col style="*">
@@ -146,7 +696,7 @@
                   </tr>
                   <tr>
                     <td class="tit"><p>회원상태</p></td>
-                    <td class="cont"><p>탈퇴회원</p></td>
+                    <td class="cont"><p>탈퇴요청</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>휴대폰번호</p></td>
@@ -175,6 +725,11 @@
             					</div>
                     </td>
                   </tr>
+                  
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
                   <tr>
                     <td class="tit"><p>주소</p></td>
                     <td class="cont">
@@ -265,10 +820,6 @@
                 </table>
               </div>
 
-<!--///////////////////////////////////////////////////////////////////////
-///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
-////////////////////////////////////////////////////////////////////////-->
-
 <!-- 처방 및 병원 -->
               <h4>처방 및 병원 정보</h4>
               <div class="tb tb03">
@@ -351,7 +902,7 @@
                         <div class="input_search">
                           <span class="input_box">
                               <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
-                        	  <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
+                              <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
                           </span>
                         </div>
                       </td>
@@ -371,19 +922,19 @@
                     </tr>
                     <tr>
                       <td class="tit"><p>키 / 몸무게</p></td>
-                      <td class="cont">
-                        <div class="input_physics">
+                      <td class="cont flex">
+                        <div class="input_row">
                           <span class="input_box">
-                            <input type="text" id="physic01" name="physNumber1" required="required" data-title="신장길이를" title="신장길이를" value="120" class="ipt"  maxlength="3">
+                            <input type="text" class="ipt" id="" value="120">
                           </span>
-                          <span class="physic">cm</span>
                         </div>
-                        <div class="input_physics">
+                        <span class="unit">cm</span>
+                        <div class="input_row">
                           <span class="input_box">
-                            <input type="text" id="physic02" name="physNumber2" required="required" data-title="신장길이를" title="신장길이를" value="27" class="ipt"  maxlength="3">
+                            <input type="text" class="ipt" id="" value="27">
                           </span>
-                          <span class="physic">kg</span>
                         </div>
+                        <span class="unit">kg</span>
                       </td>
                     </tr>
                     <tr>
@@ -431,8 +982,8 @@
                     <tr>
                       <td class="tit"><p>제품변경사유</p></td>
                       <td class="cont">
-                        <div class="textarea_row">
-                          <textarea name="reasonChange" placeholder="사유를 입력해주세요"></textarea>
+                        <div class="area_box">
+                          <textarea type="text" id="" name="" placeholder="사유를 입력해주세요"></textarea>
                         </div>
                       </td>
                     </tr>
@@ -481,10 +1032,10 @@
                     </tr>
                     <tr>
                       <td class="tit"><p>종료사유(선택)</p></td>
-                         <td class="cont">
+                        <td class="cont">
                           <div class="select_row">
                             <label for="endReason">선택하세요</label>
-                             <select id="endReason" name="endReason">
+                            <select id="endReason" name="endReason">
                                 <option value="0">선택하세요</option>
                                 <option value="1">치료 완료(효과만족/성장판닫힘)</option>
                                 <option value="2">타제품 전환(경제적부담)</option>
@@ -506,23 +1057,48 @@
                         </td>
                     </tr>
                     <tr>
-                      <td class="tit"><p>종료사유 <br>(직접입력)</p></td>
+                      <td class="tit"><p>종료사유<br>(직접입력)</p></td>
                       <td class="cont">
-                        <div class="textarea_row">
-                          <textarea name="endReasonWrite" placeholder="사유를 입력해주세요"></textarea>
+                        <div class="area_box">
+                          <textarea type="text" id="" name="" placeholder="사유를 입력해주세요"></textarea>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="tit"><p>탈퇴유형</p></td>
+                      <td class="tit"><p>탈퇴 유형</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="withdrawalType">선택하세요</label>
-                          <select id="withdrawalType" name="withdrawalType">
-                            <option value="0" >선택하세요</option>
-                            <option value="Type01" >Type01</option>
-                            <option value="Type02" >Type02</option>
-                            <option value="Type03" >Type03</option>
+                          <label for="mWithdrawCode">탈퇴 유형를 선택해주세요</label>
+                          <select id="mWithdrawCode" name="mWithdrawCode">
+                              <option value="0">탈퇴 유형를 선택해주세요</option>
+                              
+                              <option value="1">치료 완료(효과만족/성장판닫힘)</option>
+                          
+                              <option value="2">타제품 전환(경제적부담)</option>
+                          
+                              <option value="3">타제품 전환(주사스트레스/통증)</option>
+                          
+                              <option value="4">타제품 전환(효과미비)</option>
+                          
+                              <option value="5">타제품 전환(부작용발생)</option>
+                          
+                              <option value="6">타제품 전환(기타)</option>
+                          
+                              <option value="7">치료 중단(경제적부담)</option>
+                          
+                              <option value="8">치료 중단(주사스트레스/통증)</option>
+                          
+                              <option value="9">치료 중단(효과미비)</option>
+                          
+                              <option value="10">치료 중단(부작용발생/우려)</option>
+                          
+                              <option value="11">상담 중단(연락두절)</option>
+                          
+                              <option value="12">상담 중단(해외출국)</option>
+                          
+                              <option value="13">동의 철회(해피콜 거부/삭제 요청)</option>
+                          
+                              <option value="14">기타 (사유를 서술형으로 적어주세요)</option>
                           </select>
                         </div>
                       </td>
@@ -540,9 +1116,6 @@
                         </div>
                       </td>
                     </tr>
-<!--///////////////////////////////////////////////////////////////////////
-///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
-////////////////////////////////////////////////////////////////////////-->
                   </tbody>
                 </table>
               </div>
@@ -618,6 +1191,10 @@
         </div>
       </div>
       
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
       <!-- 중복환아 검색 -->
       <div class="pop_info popup">
         <div class="pop_info_inner">
@@ -713,6 +1290,11 @@
       </div>
       
 	  </div>
+    
+<!--///////////////////////////////////////////////////////////////////////
+///////////             ** 퍼블추가 - 2023.02 **              ///////
+////////////////////////////////////////////////////////////////////////-->
+
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
         // 우편번호 찾기 찾기 화면을 넣을 element
@@ -817,14 +1399,19 @@
       }
       
       //select
-      $(".select_row > select").change(function() {
-        var changeValue = $(".select_row > select").val();
-        $(".select_row > label").text(changeValue);
-        $("select#requestAddCotton option").remove();
-        $("#requestAddCotton").append("<option value='0'>0</option>");
-        $("#requestAddCotton").append("<option value='100'>100</option>");
-        $("#requestAddCotton").val(changeValue).prop("selected", true);
-      });
+      $("#sel02").change(function() {
+        $("#cHospitalIdx").val($("#sel02 option:selected").val());
+        $("#cHospitalName").val($("#sel02 option:selected").text());
+        $("#hNameText").text($("#sel02 option:selected").text());
+			});
+		
+      $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
+        if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술
+          $("#withdrawContent").css("display", "");
+        } else {
+          $("#withdrawContent").css("display", "none");
+        }
+			});
     
     </script>
   </body>
