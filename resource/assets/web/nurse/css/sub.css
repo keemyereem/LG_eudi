@@ -354,11 +354,9 @@
 .con_sub03 .sel_chk .checkbox_row input[type="checkbox"]:checked + label:before {background: url(../images/common/bg_check_pink_on.png) 50% 50% no-repeat;background-size: cover;}
 .con_sub03 .sel_chk .checkbox_row input[type="checkbox"] + label:before {width: 18px;height: 18px;}
 
-/* 물품신청 */
-.con_sub01 .con_inner02 .date_list {padding: 20px 15px;;}
-.con_sub01 .con_inner02 .date_list h3 {padding: 10px 0;}
-.con_sub01 .tb02 table tbody td {position: relative;padding: 15px 5px;background: #fff;}
-/* .con_sub01 {background: #fff;} */
+/* 물품신청 수정 2023.02.08*/
+.con_sub03 .con_inner02 .date_list table td { text-align: center; }
+.con_sub03 .tb02 table tbody td {position: relative;padding: 15px 5px;background: #fff;}
 
 /* 정보변경 */
 .con_sub04 .sub_box {padding: 30px 0 100px 0;background: #fff;}

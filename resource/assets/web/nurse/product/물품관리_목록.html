@@ -412,26 +412,37 @@ function fnLinkPage(pageNo){
         <div class="con_box">
           <div class="search_box">
             <p>요청내역 검색</p>
+						<!-- 2022.02.08 추가/수정 -->
             <div class="srh_box">
               <div>
                 <div class="input_srh input_srh02">
-              			  <span class="input_box">
-      						<input type="text" id="searchKeyword" name="searchKeyword" class="ipt" placeholder="아이명" value="">
-      						</span>
+									<span class="input_box">
+										<input type="text" id="searchKeyword" name="searchKeyword" class="ipt" placeholder="아이명" value="">
+									</span>
+								</div>
+                <div class="input_srh input_srh02">
+									<span class="input_box">
+										<input type="text" id="" name="" class="ipt" placeholder="아이디" value="">
+									</span>
+								</div>
+              </div>
+            
+              <div class="mt5">
+                <div class="input_srh input_srh02">
+									<span class="input_box">
+										<input type="text" id="" name="" class="ipt" placeholder="병원명" value="">
+									</span>
+								</div>
+                <div class="input_srh input_srh02">
+									<span class="input_box">
+										<input type="text" id="" name="" class="ipt" placeholder="휴대폰번호" value="">
+									</span>
+								</div>
+              </div>
 
-      					</div>
-                <div class="select_srh select_srh02">
-                  <label for="srh02">
-                    
-	                  	
-		                  		요청
-		                  	
-		                  	
-		                  	
-		                  	
-		                  	
-		                  	
-                 		 
+              <div class="mt5">
+								<div class="select_srh select_srh02">
+                  <label for="srh02">요청
                   </label>
                   <select id="srh02" name="pState">
                       <option  value="" >진행상황 전체</option>
@@ -442,57 +453,29 @@ function fnLinkPage(pageNo){
                       <option  value="C" >요청취소</option>
                   </select>
                 </div>
-              </div>
-            
-              
-              <div class="mt5">
-                <div class="select_row">
-                  <label for="srh04">
-                      
-	                  	
-	                  		              내 요청내역
-	                  	
-	                  	
-	                  
-                  </label>
+
+                <div class="select_srh select_srh02">
+                  <label for="srh04"> 내 요청내역</label>
                   <select id="srh04">
-                       <option value="4mnurse" selected="selected">내 요청내역</option>
-                      <option value="all" >전체</option>
-                       
-                         	<option value="chloe1" >김광열</option>
-                       
-                         	<option value="jeewoo1025" >김영미</option>
-                       
-                         	<option value="rajhkim" >김지혜</option>
-                       
-                         	<option value="cokiri" >김진경</option>
-                       
-                         	<option value="ekgml38" >류다희</option>
-                       
-                         	<option value="jieun.park" >박지은</option>
-                       
-                         	<option value="skywlgp" >박지혜</option>
-                       
-                         	<option value="jiyoung.seo" >서지영</option>
-                       
-                         	<option value="sheom" >엄소희</option>
-                       
-                         	<option value="twofuture" >이미래</option>
-                       
-                         	<option value="iamej" >이은주</option>
-                       
-                         	<option value="jiyoun0531" >이지연</option>
-                       
-                         	<option value="echoran" >이초란</option>
-                       
-                         	<option value="hyeyeonyi124" >이혜연</option>
-                       
-                         	<option value="happyjw116" >임종원</option>
-                       
-                         	<option value="valavazz" >최지현</option>
-                       
-                         	<option value="hanmijin" >한미진</option>
-                       
+											<option value="4mnurse" selected="selected">내 요청내역</option>
+											<option value="all" >전체</option>
+											<option value="chloe1" >김광열</option>
+											<option value="jeewoo1025" >김영미</option>
+											<option value="rajhkim" >김지혜</option>
+											<option value="cokiri" >김진경</option>
+											<option value="ekgml38" >류다희</option>
+											<option value="jieun.park" >박지은</option>
+											<option value="skywlgp" >박지혜</option>
+											<option value="jiyoung.seo" >서지영</option>
+											<option value="sheom" >엄소희</option>
+											<option value="twofuture" >이미래</option>
+											<option value="iamej" >이은주</option>
+											<option value="jiyoun0531" >이지연</option>
+											<option value="echoran" >이초란</option>
+											<option value="hyeyeonyi124" >이혜연</option>
+											<option value="happyjw116" >임종원</option>
+											<option value="valavazz" >최지현</option>
+											<option value="hanmijin" >한미진</option>
                   </select>
                 </div>
               </div>

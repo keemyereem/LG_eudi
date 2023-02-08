@@ -6,30 +6,6 @@
     <head>
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-	
-	
-		
-	
-
-
-
-
 <script>
 
 /*ControllerUtil.redirectPost alert*/
@@ -353,7 +329,7 @@ if("" != ""){
         <input type="hidden" name="pageIndex" id="pageIndex" value="1">
         <input type="hidden" name="pIdx" id="pIdx" value="37122">
         <input type="hidden" name="searchKeyword" id="searchKeyword" value="">
-         <input type="hidden" name="pState" id="pState" value="R">
+        <input type="hidden" name="pState" id="pState" value="R">
         <input type="hidden" name="searchId" id="searchId" value="4mnurse">
         <input type="hidden" name="searchName" id="searchName" value="">
       	<input type="hidden" name="pGubun" id="pGubun" value="view"><!-- 상세에서 주사바늘,알콜솜,기타자재,요청내용 수정 가능 -->
@@ -366,18 +342,7 @@ if("" != ""){
           <div class="inner">
             <div class="tb_top">
               <div class="tit">
-                <p>
-                   
-	                  	
-		                  		유트로핀
-		                  	
-		                  	
-		                  	
-		                  	
-		                  	 
-		                  	
-                 		
-                </p>
+                <p>유트로핀</p>
                 <div class="date">2022.02.10</div>
               </div>
             </div>
@@ -412,9 +377,10 @@ if("" != ""){
                   <tr>
                     <td class="tit"><p>의사명</p></td>
                     <td class="cont">
-                      <div class="input_row">
+                      <div class="input_search">
                         <span class="input_box">
-                          <input type="text" id="" name="" class="ipt" value="김기준">
+                            <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
+                          <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
                         </span>
                       </div>
                     </td>
@@ -423,80 +389,45 @@ if("" != ""){
                   <tr>
                     <td class="tit"><p>주사바늘</p></td>
                     <td class="cont">
-	                     <div class="cont_inner">
-	                        <div class="select_row select_row02">
-	                          <label for="requestCottonNeedleAmount" id="requestCottonNeedleAmount_txt">200</label>
-	                          <select id="requestCottonNeedleAmount" name="requestCottonNeedleAmount">
-	                            
-	                              	
-				                  		    <option value="0" >0</option>
-			                                <option value="100" >100</option>
-			                                <option value="200"  selected="selected">200</option>
-				                  	
-				                  	
-				                  	
-				                  	
-				                  	
-	                            
-	                          
-	                          </select>
-	                        </div>
-	                      </div>
-                    
-                   
-                    
-                    
-                    
-                    
+                      <div class="cont_inner">
+                          <div class="select_row select_row02">
+                            <label for="requestCottonNeedleAmount" id="requestCottonNeedleAmount_txt">200</label>
+                            <select id="requestCottonNeedleAmount" name="requestCottonNeedleAmount">
+                                <option value="0" >0</option>
+                                <option value="100" >100</option>
+                                <option value="200"  selected="selected">200</option>
+                            </select>
+                          </div>
+                        </div>
                     </td>
                   </tr>
                   <tr>
                     <td class="tit"><p>알콜솜</p></td>
                     <td class="cont">
-                       <div class="cont_inner">
+                      <div class="cont_inner">
                         <div class="select_row select_row02">
                           <label for="requestAddCotton" id="requestAddCotton_txt">400</label>
                           <select id="requestAddCotton" name="requestAddCotton">
-                                 
-	                              	
-				                  		    <option value="0" >0</option>
-				                  		    <option value="100" >100</option>
-			                                <option value="200" >200</option>
-			                                <option value="400"  selected="selected">400</option>
-				                  	
-				                  	
-				                  	
-				                  	    
-				                  	
-	                            
+                              <option value="0" >0</option>
+                              <option value="100" >100</option>
+                              <option value="200" >200</option>
+                              <option value="400"  selected="selected">400</option>
                           </select>
                         </div>
                       </div>
-                    
-                 
-                    
-                    
                     </td>
                   </tr>
                   <tr>
                     <td class="tit"><p>기타자재</p></td>
-                    <td class="cont03"><div class="cont_inner">
-                    
-                       
-	                  		
-		                  	
-		                  		
-		                  	
-                		 
-                 		 
-                 		 
-                    <div class="input_row">
-                        <span class="input_box">
-                          <input type="text" id="requestEtcInfo" name="requestEtcInfo" class="ipt" maxlength="50" value="test">
-                        </span>
-                      </div>
-                    
-                    </div></td>
+                    <td class="cont03">
+                      <div class="cont_inner">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="requestEtcInfo" name="requestEtcInfo" class="ipt" maxlength="50" value="test">
+                          </span>
+                        </div>
+                    </div>
+                  </td>
                   </tr>
                   <tr>
                     <td class="tit"><p>요청 내용</p></td>
@@ -512,13 +443,7 @@ if("" != ""){
                     <td class="tit"><p>휴대폰 번호</p></td>
                     <td class="cont03">
                       <div class="cont_inner">
-                        <p>
-	                        
-	                        	
-	                        	
-	                        	010-4726-8132
-	                        
-                        </p>
+                        <p>010-4726-8132</p>
                       </div>
                     </td>
                   </tr>
@@ -536,17 +461,7 @@ if("" != ""){
                     <td class="tit"><p>진행상황</p></td>
                     <td class="cont">
                       <div class="select_row">
-                        <label for="sel01">
-                             
-			                  	
-				                  	요청
-			                  	
-			                  	
-			                  	
-			                  	
-			                  	
-		                 	
-                        </label>
+                        <label for="sel01">요청</label>
                         <select id="sel01" name="pState2">
                             <option value="R" selected="selected">요청</option>
                             <option value="W" >준비중</option>
@@ -557,42 +472,41 @@ if("" != ""){
                       </div>
                     </td>
                   </tr>
-             <tr>
-                  	<td class="tit"><p>발송 완료 내역</p></td>
-                  	<td class="cont03">
+                  <tr>
+                    <td class="tit"><p>발송 완료 내역</p></td>
+                    <td class="cont03">
                       <div class="cont_inner">
-                      		
-                      <table>
-                      <!-- <table id="testTable"> -->
-                        <colgroup>
-      <!--                     <col style="width:25%;">
-                    <col style="width:25%;">
-                    <col style="width:25%;">
-                    <col style="width:25%;"> -->
-                    <!-- <col style="*"> -->
-                </colgroup>
-                      	<thead>
-                      		<tr>
-                      			<td style="padding:15px 1px;"><p>년도</p></td>
-                      			<td style="padding:15px 1px; text-align:center;"><p>2021</p></td>
-                      			<td style="padding:15px 1px; text-align:center;"><p>2022</p></td>
-                      			<td style="padding:15px 1px; text-align:center;"><p>2023</p></td>
-                      		</tr>
-                      		<tr>
-                      			<td style="padding:15px 1px; text-align:center;"><p>바늘</td>
-                      			<td style="padding:15px 1px; text-align:center;"><p></p></td>
-                      			<td style="padding:15px 1px; text-align:center;"><p></p></td>
-                      			<td style="padding:15px 1px; text-align:center;"><p></p></td>
-                      		</tr>
-                      		<tr>
-                      			<td style="padding:3px 1px; text-align:center;"><p>알콜솜</p></td>
-                      			<td style="padding:3px 1px; text-align:center;"><p></p></td>
-                      			<td style="padding:3px 1px; text-align:center;"><p></p></td>
-                      			<td style="padding:3px 1px; text-align:center;"><p></p></td>
-                      		</tr>
+                        <table>
+                        <!-- <table id="testTable"> -->
+                          <colgroup>
+                <!-- <col style="width:25%;">
+                      <col style="width:25%;">
+                      <col style="width:25%;">
+                      <col style="width:25%;"> -->
+                      <!-- <col style="*"> -->
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <td style="padding:15px 1px;"><p>년도</p></td>
+                              <td style="padding:15px 1px; text-align:center;"><p>2021</p></td>
+                              <td style="padding:15px 1px; text-align:center;"><p>2022</p></td>
+                              <td style="padding:15px 1px; text-align:center;"><p>2023</p></td>
+                            </tr>
+                            <tr>
+                              <td style="padding:15px 1px; text-align:center;"><p>바늘</td>
+                              <td style="padding:15px 1px; text-align:center;"><p></p></td>
+                              <td style="padding:15px 1px; text-align:center;"><p></p></td>
+                              <td style="padding:15px 1px; text-align:center;"><p></p></td>
+                            </tr>
+                            <tr>
+                              <td style="padding:3px 1px; text-align:center;"><p>알콜솜</p></td>
+                              <td style="padding:3px 1px; text-align:center;"><p></p></td>
+                              <td style="padding:3px 1px; text-align:center;"><p></p></td>
+                              <td style="padding:3px 1px; text-align:center;"><p></p></td>
+                            </tr>
 
-                      	</thead>
-                      </table>
+                          </thead>
+                        </table>
                       </div>
                   </tr>
                 </tbody>
@@ -637,6 +551,35 @@ if("" != ""){
           </div>
         </div>
       </div>
+
+      <!-- 의사 검색 -->
+      <div class="pop_mask_doctor"></div>
+      <div class="pop_search_doctor">
+        <div class="pop_search_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="pop_tit">의사명 검색</div>
+            <div class="search_area">
+                <p>등록되어 있는 의사명 입력하시고 [검색]버튼을 클릭해주세요.</p>
+              <div class="search_ipt">
+                <div class="search_cell">
+                  <div class="input_row">
+                    <span class="input_box">
+                      <input type="text" id="search_doctor_name"  class="ipt">
+                    </span>
+                  </div>
+                </div>
+                <div class="search_cell btn">
+                  <div class="btn_search"><a href="javascript:fnDoctorSearch();">검색</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="search_list" id="search_doctor">
+            </div>
+          </div>
+        </div>
+      </div>
+
 	  </div>
   </body>
   <script>

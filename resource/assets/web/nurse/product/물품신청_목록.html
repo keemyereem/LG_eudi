@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+    <head>
+<script>
+
+/*ControllerUtil.redirectPost alert*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+</script>
+
+
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+  // Fix for IE ignoring relative base tags.
+  (function() {
+      var baseTag = document.getElementsByTagName('base')[0];
+      baseTag.href = baseTag.href;
+  })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- TITLE -->
+<title>EuDi</title>
+<link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
+
+<!-- common css file-->
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=1.3">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=1.3">
+
+
+<!-- nurse css file -->
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
+
+<!-- nurse js file-->
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?version=1.2"></script>
+
+
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
+<script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
+
+
+<script type="text/javascript">
+
+
+    function SHA256(s){
+      
+        var chrsz   = 8;
+        var hexcase = 0;
+      
+        function safe_add (x, y) {
+            var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+            var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+            return (msw << 16) | (lsw & 0xFFFF);
+        }
+      
+        function S (X, n) { return ( X >>> n ) | (X << (32 - n)); }
+        function R (X, n) { return ( X >>> n ); }
+        function Ch(x, y, z) { return ((x & y) ^ ((~x) & z)); }
+        function Maj(x, y, z) { return ((x & y) ^ (x & z) ^ (y & z)); }
+        function Sigma0256(x) { return (S(x, 2) ^ S(x, 13) ^ S(x, 22)); }
+        function Sigma1256(x) { return (S(x, 6) ^ S(x, 11) ^ S(x, 25)); }
+        function Gamma0256(x) { return (S(x, 7) ^ S(x, 18) ^ R(x, 3)); }
+        function Gamma1256(x) { return (S(x, 17) ^ S(x, 19) ^ R(x, 10)); }
+      
+        function core_sha256 (m, l) {
+             
+            var K = new Array(0x428A2F98, 0x71374491, 0xB5C0FBCF, 0xE9B5DBA5, 0x3956C25B, 0x59F111F1,
+                0x923F82A4, 0xAB1C5ED5, 0xD807AA98, 0x12835B01, 0x243185BE, 0x550C7DC3,
+                0x72BE5D74, 0x80DEB1FE, 0x9BDC06A7, 0xC19BF174, 0xE49B69C1, 0xEFBE4786,
+                0xFC19DC6, 0x240CA1CC, 0x2DE92C6F, 0x4A7484AA, 0x5CB0A9DC, 0x76F988DA,
+                0x983E5152, 0xA831C66D, 0xB00327C8, 0xBF597FC7, 0xC6E00BF3, 0xD5A79147,
+                0x6CA6351, 0x14292967, 0x27B70A85, 0x2E1B2138, 0x4D2C6DFC, 0x53380D13,
+                0x650A7354, 0x766A0ABB, 0x81C2C92E, 0x92722C85, 0xA2BFE8A1, 0xA81A664B,
+                0xC24B8B70, 0xC76C51A3, 0xD192E819, 0xD6990624, 0xF40E3585, 0x106AA070,
+                0x19A4C116, 0x1E376C08, 0x2748774C, 0x34B0BCB5, 0x391C0CB3, 0x4ED8AA4A,
+                0x5B9CCA4F, 0x682E6FF3, 0x748F82EE, 0x78A5636F, 0x84C87814, 0x8CC70208,
+                0x90BEFFFA, 0xA4506CEB, 0xBEF9A3F7, 0xC67178F2);
+ 
+            var HASH = new Array(0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A, 0x510E527F, 
+                       0x9B05688C, 0x1F83D9AB, 0x5BE0CD19);
+ 
+            var W = new Array(64);
+            var a, b, c, d, e, f, g, h, i, j;
+            var T1, T2;
+      
+            m[l >> 5] |= 0x80 << (24 - l % 32);
+            m[((l + 64 >> 9) << 4) + 15] = l;
+      
+            for ( var i = 0; i<m.length; i+=16 ) {
+                a = HASH[0];
+                b = HASH[1];
+                c = HASH[2];
+                d = HASH[3];
+                e = HASH[4];
+                f = HASH[5];
+                g = HASH[6];
+                h = HASH[7];
+      
+                for ( var j = 0; j<64; j++) {
+                    if (j < 16) W[j] = m[j + i];
+                    else W[j] = safe_add(safe_add(safe_add(Gamma1256(W[j - 2]), W[j - 7]), Gamma0256(W[j - 15])), W[j - 16]);
+      
+                    T1 = safe_add(safe_add(safe_add(safe_add(h, Sigma1256(e)), Ch(e, f, g)), K[j]), W[j]);
+                    T2 = safe_add(Sigma0256(a), Maj(a, b, c));
+      
+                    h = g;
+                    g = f;
+                    f = e;
+                    e = safe_add(d, T1);
+                    d = c;
+                    c = b;
+                    b = a;
+                    a = safe_add(T1, T2);
+                }
+      
+                HASH[0] = safe_add(a, HASH[0]);
+                HASH[1] = safe_add(b, HASH[1]);
+                HASH[2] = safe_add(c, HASH[2]);
+                HASH[3] = safe_add(d, HASH[3]);
+                HASH[4] = safe_add(e, HASH[4]);
+                HASH[5] = safe_add(f, HASH[5]);
+                HASH[6] = safe_add(g, HASH[6]);
+                HASH[7] = safe_add(h, HASH[7]);
+            }
+            return HASH;
+        }
+      
+        function str2binb (str) {
+            var bin = Array();
+            var mask = (1 << chrsz) - 1;
+            for(var i = 0; i < str.length * chrsz; i += chrsz) {
+                bin[i>>5] |= (str.charCodeAt(i / chrsz) & mask) << (24 - i%32);
+            }
+            return bin;
+        }
+      
+        function Utf8Encode(string) {
+            string = string.replace(/\r\n/g,"\n");
+            var utftext = "";
+      
+            for (var n = 0; n < string.length; n++) {
+      
+                var c = string.charCodeAt(n);
+      
+                if (c < 128) {
+                    utftext += String.fromCharCode(c);
+                }
+                else if((c > 127) && (c < 2048)) {
+                    utftext += String.fromCharCode((c >> 6) | 192);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+                else {
+                    utftext += String.fromCharCode((c >> 12) | 224);
+                    utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+      
+            }
+      
+            return utftext;
+        }
+      
+        function binb2hex (binarray) {
+            var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+            var str = "";
+            for(var i = 0; i < binarray.length * 4; i++) {
+                str += hex_tab.charAt((binarray[i>>2] >> ((3 - i%4)*8+4)) & 0xF) +
+                hex_tab.charAt((binarray[i>>2] >> ((3 - i%4)*8  )) & 0xF);
+            }
+            return str;
+        }
+      
+        s = Utf8Encode(s);
+        return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
+      
+    }
+     
+	/*
+	 * App & ì¤ë§í¸ì¼ì´ì¤ ê´ë ¨.. 
+	 * */
+	// íì¬ í¸ì¶í ëë°ì´ì¤ê° ì´ë¤ ê²ì¸ì§ ì²´í¬í©ëë¤.
+	var isMobile = {
+		Android: function () {
+			return navigator.userAgent.match(/Android/i) == null ? false : true;
+		},
+		iOS: function () {
+			return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+		},
+		any: function () {
+			return (isMobile.Android() || isMobile.iOS());
+		}
+	};
+	
+	//Appì ë¡ê·¸ì¸ì ë³´ ì ë¬
+	function fnAppLoginChk() {
+		$.ajax({
+			type: "POST",
+			url: "/smart/getLoginInfo.do",
+			//data:JSON.stringify(data),
+			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			dataType: "json"
+		}).done(function(resp){
+			  	data = {"result":"success","memberInfo":{"mIdx":"122","mId":"4mtest"}};
+			 
+			//Appì Javascript Bridge ì°ê²°íì¬ ì ë¬
+			if (isMobile.any()) {
+				if (isMobile.Android()) {
+					window.eudiApp.fnAppLoginChk_Res(JSON.stringify(data));
+				} else if (isMobile.iOS()) {
+					webkit.messageHandlers.fnAppLoginChk_Res.postMessage(JSON.stringify(data));
+				}
+			}
+		}).fail(function(error){
+			//alert(JSON.stringify(error));
+		});
+	}
+	
+</script>
+
+
+
+  <script>
+      $(function(){
+          selEvent.init();
+
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_main').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+
+      });
+
+function fnSearch(){
+  $("#pageIndex").val("1");
+  $("#reSearch").val("Y");
+  document.listForm.action = "/nurse/product/product_list.do";
+  document.listForm.submit();
+}
+
+
+
+function productUpdate(){
+	if(Number($('input:checkbox[name=chk]:checked').length) < 1){
+		alert("1개 이상 선택해주세요.");
+		return;
+	}
+
+	var send_array = Array();
+	var send_cnt = 0;
+	var chkbox = $(".checkSelect");
+
+  for(i=0;i<chkbox.length;i++) {
+      if (chkbox[i].checked == true){
+          send_array[send_cnt] = chkbox[i].value;
+          send_cnt++;
+      }
+  }
+
+  $("#pArrayIdx").val(send_array);
+    $("#pStateArray").val($("#pState2").val());
+    var result = confirm("진행상황 상태를 변경하시겠습니까?");
+    if(result){
+        actionurl = "/nurse/mis/productUpdate.do";
+            $.ajax({
+                async: false,
+                type: "POST",
+                url : actionurl,
+                data : $("#listForm").serialize(),
+                dataType : "json",
+                success: function(obj){
+                  if(obj.result < 1){
+                    alert("일시적인 오류 입니다,다시 시도 해주세요");
+                    return;
+                  } else {
+                    location.reload();
+                  }
+
+
+                },
+                error: function(xhr, option, error){
+                      alert(xhr.status+" | "+error); //오류코드 | 오류내용
+                }
+                /*error : function(success){
+                    meg = "서버와 통신중 에러가 발생하였습니다."
+                    alert("처리결과 : "+meg);
+                }*/
+            });
+    }
+
+	
+}
+/*pagination 페이지 링크 function*/
+function fnLinkPage(pageNo){
+	$("#reSearch").val("Y");
+	document.listForm.pageIndex.value = pageNo;
+	document.listForm.action = "/nurse/product/product_list.do";
+	document.listForm.submit();
+}
+
+/*신청페이지 이동*/
+function fnProductRequest(cidx,mid,id){
+	//회원 정보 세팅
+	$("#cIdx").val(cidx);
+	$("#mId").val(mid);
+	$("#id").val(id);
+	document.listForm.action = "/nurse/product/product_request.do";
+	document.listForm.submit();
+}
+  </script>
+  <script src='/eum_.js'></script></head>
+  <body>
+  <div class="wrap wrap_sub wrap_sub03">
+      <!--// top -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">물품신청</h2>
+            <div class="back"><a href="/nurse/main.do"><img src="/resource/assets/web/nurse/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+        
+        <div class="tab tab01 tab_border">
+          <div class="inner">
+            <ul>
+              <li><a href="/nurse/product/list.do">물품관리</a></li>
+              <li class="active"><a href="javascript:;">물품신청</a></li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+      <!-- top //-->
+      <!--// content -->
+          <form id="listForm" name="listForm" action="/nurse/product/product_list.do" method="post">
+            <input type="hidden" name="pageUnit" id="pageUnit" value="5">
+        
+            <input type="hidden" name="cIdx" id="cIdx" value="">
+            <input type="hidden" name="id" id="id" value="">
+            <input type="hidden" name="mId" id="mId" value="">
+
+            <input type="hidden" name="privateYn" id="privateYn" value="">
+            <input type="hidden" name="reSearch" id="reSearch" value="N">
+            <input type="hidden" name="searchId" id="searchId" value="4mnurse">
+            <input type="hidden" name="searchName" id="searchName" value="">
+      <div class="content con_sub con_sub03">
+        <div class="con_box">
+          <div class="search_box">
+            <p>회원검색</p>
+            <div class="srh_box">
+              <div>
+                <div class="input_srh input_srh02">
+                    <span class="input_box">
+                    <input type="text" id="searchKeyword" name="searchKeyword" class="ipt" placeholder="아이명" value="">
+                  </span>
+                </div>
+                <div class="select_srh select_srh02">
+                  <label for="cState"> 내 담당 환아</label>
+                  <select id="srh03" name="srh03">
+                      <option value="4mnurse" selected="selected">내 담당 환아</option>
+                      <option value="all" >전체</option>
+                      <option value="chloe1" >김광열</option>
+                      <option value="jeewoo1025" >김영미</option>
+                      <option value="rajhkim" >김지혜</option>
+                      <option value="cokiri" >김진경</option>
+                      <option value="ekgml38" >류다희</option>
+                      <option value="jieun.park" >박지은</option>
+                      <option value="skywlgp" >박지혜</option>
+                      <option value="jiyoung.seo" >서지영</option>
+                      <option value="sheom" >엄소희</option>
+                      <option value="twofuture" >이미래</option>
+                      <option value="iamej" >이은주</option>
+                      <option value="jiyoun0531" >이지연</option>
+                      <option value="echoran" >이초란</option>
+                      <option value="hyeyeonyi124" >이혜연</option>
+                      <option value="happyjw116" >임종원</option>
+                      <option value="valavazz" >최지현</option>
+                      <option value="hanmijin" >한미진</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="btn_box btn_box01">
+              <div class="btn_pink"><a href="javascript:;" onclick="fnSearch()">검색</a></div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="con_box"> <!-- 퍼블수정 2023.02.08 -->
+          <div class="con_inner con_inner02">
+            <div class="search_info">총 <span><b>10</b>명</span></div> <!-- 퍼블수정 2023.02.08 -->
+            <div class="tb02 mt15">
+              <div class="date_list" id="date_list">
+                <table summary="확인일자" cellpadding="0" cellspacing="0" border="0" >
+                  <caption>확인일자</caption>
+                  <colgroup>
+                    <col style="width:14%;">
+                    <col style="width:18%;">
+                    <col style="width:18%;">
+                    <col style="width:25%;">
+                    <col style="width:25%;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><p>NO</p></th>
+                      <th><p>아이명</p></th>
+                      <th><p>간호사명</p></th>
+                      <th><p>병원명</p></th>
+                      <th><p>물품신청</p></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="tit"><p>10</p></th>
+                      <td><p>아이2</p></td>
+                      <td><p>간호사</p></td>
+                      <td><p>아산병원</p></td>
+                      <td class="t_center">
+                        <div class="btn_box btn_box01">
+                          <div class="btn_pink_s"><a href="javascript:;" onclick="fnProductRequest('31476','whyfrees','')">신청</a></div>
+                        </div>
+                      </td>
+                    </tr>
+                      
+                    <tr>
+                      <th class="tit"><p>9</p></th>
+                      <td><p>아이1</p></td>
+                      <td><p>간호사</p></td>
+                      <td><p>아산병원</p></td>
+                      <td class="t_center">
+                        <div class="btn_box btn_box01">
+                          <div class="btn_pink_s"><a href="javascript:;" onclick="fnProductRequest('31475','whyfrees','')">신청</a></div>
+                        </div>
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <th class="tit"><p>8</p></th>
+                      <td><p>테테테</p></td>
+                      <td><p>간호사</p></td>
+                      <td><p>병원</p></td>
+                      <td class="t_center">
+                        <div class="btn_box btn_box01">
+                          <div class="btn_pink_s"><a href="javascript:;" onclick="fnProductRequest('20628','ursure','')">신청</a></div>
+                        </div>
+                      </td>
+                    </tr>
+                      
+                    <tr>
+                      <th class="tit"><p>7</p></th>
+                      <td><p>이지현</p></td>
+                      <td><p>간호사</p></td>
+                      <td><p>학교법인연세대학교의과대학세브란스병원</p></td>
+                      <td class="t_center">
+                        <div class="btn_box btn_box01">
+                          <div class="btn_pink_s"><a href="javascript:;" onclick="fnProductRequest('19474','4mtest','')">신청</a></div>
+                        </div>
+                      </td>
+                    </tr>
+                      
+                    <tr>
+                      <th class="tit"><p>6</p></th>
+                      <td><p>테스트입니다</p></td>
+                      <td><p>간호사</p></td>
+                      <td><p>운</p></td>
+                      <td class="t_center">
+                        <div class="btn_box btn_box01">
+                          <div class="btn_pink_s"><a href="javascript:;" onclick="fnProductRequest('19404','4mtest123','')">신청</a></div>
+                        </div>
+                      </td>
+                    </tr>
+  
+                  </tbody>
+                </table>
+  
+                <div class="paging" id="paging_doc">
+                  <a href="javascript:;"  title="맨 앞" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_front.png" alt="처음"></a><a href="javascript:;"  title="이 전" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_prev.png" alt="이전"></a><ul><li class="active"><a href="javascript:;" return false;">1</a></li><li><a href="javascript:;" onclick="fnLinkPage(2); return false;">2</a></li></ul><a href="javascript:;"  title="다음" onclick="fnLinkPage(2); return false;"><img src="/resource/assets/web/child/images/common/arrow_next.png" alt="다음"></a><a href="javascript:;"  title="맨끝" onclick="fnLinkPage(2); return false;"><img src="/resource/assets/web/child/images/common/arrow_last.png" alt="마지막"></a>
+                  <input id="pageIndex" name="pageIndex" type="hidden" value="1"/>
+                </div>
+              </div> 
+            </div> 
+          </div> 
+        </div>
+          </form>
+      </div>
+      <!-- content //-->
+	</div>
+	<script>
+    $("#srh02").change(function() {
+      $("#hIdx").val($("#srh02").val());
+      if($("#srh02 option:selected").text() == "병원명" || $("#srh02 option:selected").text() == "전체"){
+        $("#hName").val("");
+      } else {
+        $("#hName").val($("#srh02 option:selected").text());
+      }
+
+    });
+    
+    $("#srh03").change(function() {
+      $("#searchId").val($("#srh03").val());
+      $("#searchName").val($("#srh03 option:selected").text());
+    });
+	</script>
+  </body>
+</html>
