@@ -256,6 +256,7 @@ var dateList = {
 	 }
 };
 
+/* 교육/상담 캘린더 2023.02.08 추가 */
 var calendar = {
   init:function(){
     /*
@@ -318,7 +319,7 @@ var calendar = {
       }
       // 이번달
       for (var i = 1; i <= nextDate; i++) {
-          calendar.innerHTML = calendar.innerHTML + '<div class="day current"><a href="javascript:;" title="dates">' + i + '</a></div>'
+          calendar.innerHTML = calendar.innerHTML + '<div class="day current"><a href="javascript:;" title="dates">' + i + '<div class="circle"></div></a></div>'
       }
       // 다음달
       for (var i = 1; i <= (6 - nextDay == 7 ? 0 : 6 - nextDay); i++) {
@@ -333,63 +334,25 @@ var calendar = {
           currentMonthDate[todayDate - 1].classList.add('today');
       }
     
-      if(!$('.calendar .cal_wrap').hasClass('register')){  //상담일정관리 캘린더
+      if(!$('.calendar .cal_wrap').hasClass('register')){  //교육/상담신청 캘린더
         // 연도수와 월을 데이터로 저장
         var getData = ['2023', '2'];
   
         if (calendar.dataset.cal === getData[0] + '년 ' + getData[1] + '월') { // 해당 데이터로 이동 시 정보 불러오기
           
           // 정보 예제 출력
-          var cb = $('.dates .day.current a');
+          var cb = $('.dates .day.current a .circle');
   
-          const data_edu = ['2', '5', '5']
-          const data_cs = ['4', '2']
-          const data_hpc = ['3', '2', '9']
+          cb.eq(20).addClass('cir01');
+          cb.eq(21).addClass('cir02');
+          cb.eq(22).addClass('cir03');
+          cb.eq(23).addClass('cir04');
   
-          cb.eq(2).addClass('edu');
-          cb.eq(7).addClass('hpc edu');
-          cb.eq(8).addClass('edu cs');
-          cb.eq(13).addClass('hpc');
-          cb.eq(19).addClass('cs');
-  
-          $('.hpc').append('<span class="hpc_block">' + data_hpc[0] + '</span>');
-          $('.edu').append('<span class="schedule edu_block">교육<b>' + data_edu[0] + '</b></span>');
-          $('.cs').append('<span class="schedule cs_block">상담<b>' + data_cs[0] + '</b></span>');
+          // $('.hpc').append('<span class="hpc_block">' + data_hpc[0] + '</span>');
+          // $('.edu').append('<span class="schedule edu_block">교육<b>' + data_edu[0] + '</b></span>');
+          // $('.cs').append('<span class="schedule cs_block">상담<b>' + data_cs[0] + '</b></span>');
         }
         
-      } else {  //상담가능일정등록 캘린더
-        var getData02 = ['2023', '2'];
-        
-        if (calendar.dataset.cal === getData02[0] + '년 ' + getData02[1] + '월') {
-          var cb02 = $('.dates .day.current a');
-          
-          const data_pos = ['16', '12', '5']
-          const data_impos = ['12', '2']
-          const data_hpc02 = ['7', '8', '10', '12']
-          
-          cb02.eq(3).addClass('impos');
-          cb02.eq(4).addClass('impos');
-          cb02.eq(5).addClass('hpc02 pos');
-          cb02.eq(6).addClass('hpc02 pos');
-          cb02.eq(7).addClass('hpc02 pos impos');
-          cb02.eq(8).addClass('hpc02 pos');
-          cb02.eq(9).addClass('hpc02 pos');
-          cb02.eq(10).addClass('impos');
-          cb02.eq(11).addClass('impos');
-          cb02.eq(12).addClass('hpc02 pos');
-          cb02.eq(13).addClass('impos');
-          cb02.eq(14).addClass('hpc02 pos impos');
-          cb02.eq(16).addClass('hpc02 impos');
-          cb02.eq(17).addClass('impos');
-          cb02.eq(18).addClass('impos');
-          cb02.eq(24).addClass('impos');
-          cb02.eq(25).addClass('impos');
-          
-          $('.hpc02').append('<span class="hpc_block">' + data_hpc02[0] + '</span>');
-          $('.pos').append('<span class="schedule pos_block">가능<b>' + data_pos[0] + '</b></span>');
-          $('.impos').append('<span class="schedule impos_block">불가<b>' + data_impos[0] + '</b></span>');
-        }
-
       }
       
     }
@@ -630,6 +593,7 @@ var calendar = {
 
   },
 };
+
 
 function loginEvent() {
 	  var wW = $(window).width();
