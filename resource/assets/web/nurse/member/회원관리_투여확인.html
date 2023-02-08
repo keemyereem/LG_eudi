@@ -257,6 +257,7 @@ if("" != ""){
         tabEvent.init();
         selEvent.init();
         noteOpen.init();
+				nurseJS.tabEvent();
         if("[]" != "[]"){
 	    	$("#re_txt").empty();
     		$("#re_txt").append($("#sIdx option:selected").text());
@@ -354,9 +355,9 @@ if("" != ""){
         <div class="tab tab_border tab_slide">
           <div class="inner">
             <ul>
-              <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
+              <li><a href="/nurse/member/view.do">회원상세</a></li>
               <li><a href="javascript:;">상담관리</a></li>  <!-- 메뉴 추가 2023.02 -->
-              <li><a href="javascript:fnDosePage()">투여확인</a></li>
+              <li class="active"><a href="javascript:fnDosePage()">투여확인</a></li>
               <li><a href="javascript:fnScheduleManagementPage()">투여계획</a></li>
               <li><a href="javascript:fnGrowthGraphPage()">성장관리</a></li>
             </ul>
@@ -378,10 +379,10 @@ if("" != ""){
         <div class="con_box">
           <div class="profile">
             <div class="pro_pic">
-              <img src="/resource/assets/web/child/images/character/img_profile_null.png" alt="프로필 사진">
+              <img src="/resource/assets/web/nurse/images/member/character.png" alt="프로필 사진">
             </div>
             <div class="pro_name">
-              <div><p><span>dsad</span> 어린이</p><em>33개월 (만 6살 1개월)</em></div><!-- 퍼블수정 2023.02.07 -->
+              <div><p><span>dsad</span> 어린이</p><em>33개월 (만 6살)</em></div><!-- 퍼블수정 2023.02.07 -->
             </div>
           </div>
         </div>

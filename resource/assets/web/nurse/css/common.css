@@ -42,10 +42,13 @@ input[type="text"]:disabled {background: #fff;}
 .not_scroll {position: fixed;}
 .mt5 {margin-top: 5px;}
 .mt8 {margin-top: 8px;}
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
 .mt20 {margin-top: 20px;}
 .mt40 {margin-top: 40px;}
 .mt50 {margin-top: 50px;}
 .shrink0 {flex-shrink: 0;}
+.ffEB { font-family: 'NanumSquareEB'; }
 
 /*=============================================
 =                   ##HEADER                  =

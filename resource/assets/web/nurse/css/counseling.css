@@ -67,9 +67,11 @@ ExtraBold - 'NanumSquareEB'
 /* 팝업 - 중복환아검색 */
 .duplicateChild_pop { padding: 30px 25px 35px; border-radius: 10px; flex-direction: column; }
 .duplicateChild_pop .search_info { font-size: 12px; margin-top: 15px; text-align: center; line-height: 1.33; }
-.duplicateChild_pop .search_info b { color: #79bd28; }
+.duplicateChild_pop .search_info b { font-size: 15px; color: #79bd28; }
+.duplicateChild_pop .search_info > span { font-family: 'NanumSquareEB'; color: #79bd28; }
 .duplicateChild_pop .search_info .search_info_tit { float: left; }
 .duplicateChild_pop .search_info .search_info_total { float: right; }
+.duplicateChild_pop .search_info .search_info_total > span { font-family: 'NanumSquareEB'; color: #79bd28; }
 .duplicateChild_pop .con_list>ul { border-top: 1px solid #727272; margin-top: 15px; }
 .duplicateChild_pop .con_list>ul>li { padding: 15px 0 12px; cursor: pointer; border-bottom: 1px solid #e5e5e5; }
 .duplicateChild_pop .con_list>ul>li:hover { background: rgba(241, 142, 30, .05); }
@@ -79,18 +81,13 @@ ExtraBold - 'NanumSquareEB'
 .duplicateChild_pop .con_list>ul>li>a>div>ul>li::after { content:''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px -2px; }
 .duplicateChild_pop .con_list>ul>li>a>div>ul>li:last-child::after { display: none; }
 .duplicateChild_pop .con_list>ul>li>a>div>ul .name { font-family: 'NanumSquareB'; font-size: 13px; color: #333; }
-.duplicateChild_pop .con_list>ul>li>a>div .idbox { color: #727272; margin-top: 10px; }
+.duplicateChild_pop .con_list>ul>li>a>div .idbox { font-size: 13px; color: #727272; margin-top: 10px; }
 .duplicateChild_pop .con_list>ul>li>a>div .hospital { font-size: 11px; color: #999; }
 .duplicateChild_pop .con_list>ul>li>a>div .phone { font-size: 11px; letter-spacing: -1.1px; color: #333; }
 .duplicateChild_pop .con_list>ul>li>a>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
 .duplicateChild_pop>p { font-size: 18px; text-align: center; line-height: 1.25; margin: 35px 0 40px; }
 
 /*  */
-.ffEB { font-family: 'NanumSquareEB'; }
-.mt10 { margin-top: 10px; }
-.mt15 { margin-top: 15px; }
-.con_box .con_tit { font-family: 'NanumSquareEB'; color: #f18e1e; }
-.con_box .con_tit::after { content:''; display: block; width: 100%; height: 1px; background: #f18e1e; margin-top: 8px; }
 .con_sub .con_box .con_inner03 { padding: 0 15px; background: #fff; }
 .con_sub .con_box .con_inner04 { padding: 20px 15px 65px 15px; background: #fff; }
 .con_sub .search_box .srh_box02 { margin-bottom: 0; }
@@ -191,8 +188,10 @@ ExtraBold - 'NanumSquareEB'
 /* 상담일정관리 - 상담이력등록 */
 .wrap_sub .con_sub .con_flex { display: flex; align-items: center; }
 .wrap_sub .con_sub .info_box { padding: 30px 15px 25px; background: #fff; }
+.wrap_sub .con_sub .con_box .con_tit { font-family: 'NanumSquareEB'; font-size: 13px; color: #f18e1e; }
+.wrap_sub .con_sub .con_box .con_tit::after { content:''; display: block; width: 100%; height: 1px; background: #f18e1e; margin-top: 8px; }
 .wrap_sub .con_sub .info_box .con_tit { margin-bottom: 20px; }
-.wrap_sub .con_sub .info_box>ul { display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
+.wrap_sub .con_sub .info_box>ul { display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 20px; font-size: 13px; }
 .wrap_sub .con_sub .info_box ul li { width: 50%; display: flex; }
 .wrap_sub .con_sub .info_box ul li+li { margin-top: 7px; }
 .wrap_sub .con_sub .info_box ul li:nth-child(2n-1) .tit { max-width: 73px; width: 43%; }
@@ -202,7 +201,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .con_sub .form_box { padding: 30px 15px 0; background: #fff; }
 .wrap_sub .con_sub .form_box02 { padding: 30px 15px 65px; }
 .wrap_sub .con_sub .form_box .tit { font-family: 'NanumSquareB'; margin: 20px 0 10px; }
-.wrap_sub .con_sub .form_box .con_form { width: 100%; }
+.wrap_sub .con_sub .form_box .con_form { width: 100%; font-size: 13px; }
 .wrap_sub .con_sub .con_flex { justify-content: space-between; }
 .wrap_sub .con_sub .con_flex h4 { font-size: 13px; }
 .wrap_sub .con_sub .form_box .con_flex > div { width: calc(50% - 7.5px); }
@@ -255,8 +254,6 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .current .schedule.pos_block { bottom: 23.5px; background: #f18e1e; }
 .wrap_sub .sec_cal .current .schedule.impos_block { bottom: 6px; background: #6e6e6e; }
 
-
-
 /* 상담가능일정등록 - 시간별 */
 .wrap_sub .register .sec_cal { padding: 35px 0 57px; overflow: hidden; }
 .wrap_sub .register .sec_cal .cal_nav .year-month { width: 157.5px; }
@@ -296,42 +293,6 @@ ExtraBold - 'NanumSquareEB'
 .con_sub01 .ipt_box .inner+.inner .info02 { position: relative; padding-top: 65px; }
 .con_sub01 .ipt_box .inner+.inner .info02::before { content:''; display: block; width: 100%; height: 1px; background: url(../images/common/dashed_border.jpg) repeat-x; background-size: contain; position: absolute; top: 35px; left: 0; }
 
-/* .con_sub.member .checkbox_row input[type="checkbox"]:checked + label:before,
-.con_sub.withdrawal .checkbox_row input[type="checkbox"]:checked + label:before,
-.con_sub.dormancy .checkbox_row input[type="checkbox"]:checked + label:before,
-.con_sub.refer .checkbox_row input[type="checkbox"]:checked + label:before,
-.con_sub.requestWdrwl .checkbox_row input[type="checkbox"]:checked + label:before {content:""; background: url("../images/common/bg_check_green_on.png") 50% 50% no-repeat;background-size: cover;} */
-
-/* .con_sub.member .checkbox_row { margin-left: 10px; }
-.con_sub.member .checkbox_row label { margin-right: 0px; } */
-
-
-/* 상담관리 - 상담이력 */
-.con_sub.consultHistory .tb table tbody td.cont p { font-size: 12px; padding-left: 0; letter-spacing: -1px; }
-.con_sub.consultHistory .tb .input_physics  { width: 85%; }
-.con_sub.consultHistory .tb .inputBox_DP { width: 100%; }
-
-/* 상담이력목록 */
-.con_sub .list_box .con_flex .con_head { width: 100%; font-family: 'NanumSquareB'; font-size: 18px; color: #333; letter-spacing: -1.8px; }
-.con_sub .list_box .con_flex .con_head .child_info { margin-left: auto; }
-.con_sub .list_box .con_flex .con_head  .search_total { display: inline-block; font-size: 13px; color: #333; }
-.con_sub .list_box .child_list>ul>li>a { display: block; }
-.con_sub .list_box .child_list>ul>li>a>div { display: block; font-family: 'NanumSquareB'; color: #333; }
-.con_sub .list_box .child_list>ul>li>a>div+div { margin-top: 10px; }
-.con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)>div { /* display: inline-block; */ float: left; min-width: 50%; }
-.con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)::after { content:''; display: block; clear: both; } 
-.con_sub .list_box .child_list>ul>li>a>div:last-child { width: 100%; text-align: left; font-family: 'NanumSquareR'; color: #999; }
-.con_sub .list_box .btn_bottom { width: calc(100% - 30px); left: 15px; }
-
-.con_sub .list_box { padding: 35px 15px 125px; background: #fff; min-height: calc(100vh - 268px); box-sizing: content-box; }
-.con_sub .list_box .con_flex+.con_list { margin-top: 12px; }
-.con_sub .list_box .con_list+.con_flex { margin-top: 40px; }
-.con_sub .list_box .search_name{  display: inline-block; width: 70px; height: 22px; line-height: 22px; background: rgba(121, 189, 40, .1); border-radius: 11px; text-align: center; }
-.con_sub .list_box .search_total { display: inline-block; }
-.con_sub .list_box .search_total > span { color: #79bd28; }
-.con_sub .list_box .search_total > span > b { font-family: 'NanumSquareEB'; font-size: 16px; line-height: 1.2; }
-.con_sub .list_box .con_list>ul>li>a { font-size: 13px; }
-
 /* 회원관리 - 상세 */
 .con_sub .child_info { float: right; margin-top: -3px; letter-spacing: -1px; display: flex; align-items: center; line-height: 1; }
 .con_sub .child_info img { width: 25px; }
@@ -364,6 +325,32 @@ ExtraBold - 'NanumSquareEB'
 /* 회원관리 - 상세 - 탈퇴요청 */
 .con_sub.requestWdrwl {  }
 
+
+/* 상담관리 - 상담이력목록 */
+.con_sub .list_box .con_flex .con_head { width: 100%; font-family: 'NanumSquareB'; font-size: 18px; color: #333; letter-spacing: -1.8px; }
+.con_sub .list_box .con_flex .con_head .child_info { margin-left: auto; }
+.con_sub .list_box .con_flex .con_head  .search_total { display: inline-block; font-size: 13px; color: #333; }
+.con_sub .list_box .child_list>ul>li>a { display: block; }
+.con_sub .list_box .child_list>ul>li>a>div { display: block; font-family: 'NanumSquareB'; color: #333; }
+.con_sub .list_box .child_list>ul>li>a>div+div { margin-top: 10px; }
+.con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)>div { /* display: inline-block; */ float: left; min-width: 50%; }
+.con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)::after { content:''; display: block; clear: both; } 
+.con_sub .list_box .child_list>ul>li>a>div:last-child { width: 100%; text-align: left; font-family: 'NanumSquareR'; color: #999; }
+.con_sub .list_box .btn_bottom { width: calc(100% - 30px); left: 15px; }
+
+.con_sub .list_box { padding: 35px 15px 125px; background: #fff; min-height: calc(100vh - 268px); box-sizing: content-box; }
+.con_sub .list_box .con_flex+.con_list { margin-top: 12px; }
+.con_sub .list_box .con_list+.con_flex { margin-top: 40px; }
+.con_sub .list_box .search_name{  display: inline-block; width: 70px; height: 22px; line-height: 22px; background: rgba(121, 189, 40, .1); border-radius: 11px; text-align: center; }
+.con_sub .list_box .search_total { display: inline-block; }
+.con_sub .list_box .search_total > span { color: #79bd28; }
+.con_sub .list_box .search_total > span > b { font-family: 'NanumSquareEB'; font-size: 16px; line-height: 1.2; }
+.con_sub .list_box .con_list>ul>li>a { font-size: 13px; }
+
+/* 상담관리 - 상담이력 */
+.con_sub.consultHistory .tb table tbody td.cont p { font-size: 12px; padding-left: 0; letter-spacing: -1px; }
+.con_sub.consultHistory .tb .input_physics  { width: 85%; }
+.con_sub.consultHistory .tb .inputBox_DP { width: 100%; }
 
 /*/////////////////////////////////////////////////////////////////////////
 ///////////                     ** 물품관리 **                      ///////

@@ -123,16 +123,16 @@
       <div class="content con_sub con_sub01 consultHistory"><!-- 퍼블 클래스 'consultHistory'추가 - 2023.02 -->
         <div class="ipt_box">
           <div class="inner"> 
-            <h3 class="info01">상담이력 등록
-              <p class="child_info"><img src="/resource/assets/web/nurse/images/member/character.png" alt="character"><span><b>홍길동</b> 어린이</span><i>33개월 (만 6살 1개월)</i></p>
+            <h3 class="info01">상담 이력 상세
+              <p class="child_info"><img src="/resource/assets/web/nurse/images/member/character.png" alt="character"><span><b>홍길동</b> 어린이</span><i>33개월 (만 6살)</i></p>
             </h3>
 <!--///////////////////////////////////////////////////////////////////////
 ///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
 ////////////////////////////////////////////////////////////////////////-->        
             <h4 class="pre_subtit">상담이력</h4>  
             <div class="tb">
-              <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
-                <caption>기본 정보</caption>
+              <table summary="상담이력" cellpadding="0" cellspacing="0" border="0">
+                <caption>상담이력</caption>
                 <colgroup>
                     <col style="width:110px;">
                     <col style="*">
@@ -142,7 +142,7 @@
                     <td class="tit"><p>상담예정일</p></td>
                     <td class="cont flex">
                       <div class="inputBox_DP">
-                        <input type="date" name="preordinationConsult" class="date" value="" data-placeholder="YYYY-MM-DD" required>
+                        <input type="date" name="preordinationConsult" class="date" value="2022-12-16" data-placeholder="YYYY-MM-DD" required>
                       </div>
                     </td>
                   </tr>
@@ -150,7 +150,7 @@
                     <td class="tit"><p>상담일자</p></td>
                     <td class="cont flex">
                       <div class="inputBox_DP">
-                        <input type="date" name="ConsultDay" class="date" value="" data-placeholder="YYYY-MM-DD" required>
+                        <input type="date" name="ConsultDay" class="date" value="2022-12-16" data-placeholder="YYYY-MM-DD" required>
                       </div>
                     </td>
                   </tr>
@@ -225,8 +225,8 @@
                   <tr>
                     <td class="tit"><p>상담내역</p></td>
                     <td class="cont">
-                      <div class="textarea_row">
-                        <textarea name="consultList" placeholder="내용을 입력하세요"></textarea>
+                      <div class="area_box">
+                        <textarea type="text" id="" name="" placeholder="내용을 입력하세요"></textarea>
                       </div>
                     </td>
                   </tr>
@@ -248,7 +248,7 @@
                       <td class="tit"><p>처방일자</p></td>
                       <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="prescriptionDate" class="date" value="" data-placeholder="YYYY-MM-DD" required>
+                          <input type="date" name="prescriptionDate" class="date" value="2018-06-10" data-placeholder="YYYY-MM-DD" required>
                         </div>
                       </td>
                     </tr>
@@ -298,7 +298,7 @@
                       <td class="cont">
                         <div class="input_row">
                           <span class="input_box">
-                            <input type="number" id="dose01" name="doseNumber1" required="required" data-title="실투여량" title="실투여량" value="" class="ipt" >
+                            <input type="number" id="dose01" name="doseNumber1" required="required" data-title="실투여량" title="실투여량" value="4000" class="ipt" >
                           </span>
                         </div>
                       </td>
@@ -323,9 +323,10 @@
                     <tr>
                       <td class="tit"><p>특이사항</p></td>
                       <td class="cont">
-                        <div class="textarea_row">
-                          <textarea name="consultList" placeholder="내용을 입력하세요"></textarea>
+                        <div class="area_box">
+                          <textarea type="text" id="" name="" placeholder="내용을 입력하세요"></textarea>
                         </div>
+                      </td>
                       </td>
                     </tr>
                   </tbody>
