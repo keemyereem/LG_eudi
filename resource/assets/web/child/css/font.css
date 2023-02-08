@@ -1,41 +1,46 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'NanumSquareR';
-    font-weight: normal;
-    font-style: normal;
-    src: url('../font/NanumSquareR.eot');
-    src: url('../font/NanumSquareR.eot?#iefix') format('embedded-opentype'),
-         url('../font/NanumSquareR.woff') format('woff');
+    font-family: 'NanumSquareL';
+    src: local(※),
+    url(../font/NanumSquareL.eot?#iefix) format('embedded-opentype'),
+    url(../font/NanumSquareL.ttf) format('truetype'),
+    url(../font/NanumSquareL.otf) format('truetype'),
+    url(../font/NanumSquareL.woff) format('truetype'),
+    url(../font/NanumSquareL.woff2) format('truetype');
 }
 
 @font-face {
-    font-family: 'NanumSquareEB';
-    font-weight: normal;
+    font-family: 'NanumSquareR';
     font-style: normal;
-    src: url('../font/NanumSquareEB.eot');
-    src: url('../font/NanumSquareEB.eot?#iefix') format('embedded-opentype'),
-         url('../font/NanumSquareEB.woff') format('woff');
+    font-display: fallback;
+    src: local(※),
+    url(../font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+    url(../font/NanumSquareR.ttf) format('truetype'),
+    url(../font/NanumSquareR.otf) format('truetype'),
+    url(../font/NanumSquareR.woff) format('truetype'),
+    url(../font/NanumSquareR.woff2) format('truetype');
 }
 
 @font-face {
     font-family: 'NanumSquareB';
-    font-weight: normal;
-    font-style: normal;
-    src: url('../font/NanumSquareB.eot');
-    src: url('../font/NanumSquareB.eot?#iefix') format('embedded-opentype'),
-         url('../font/NanumSquareB.woff') format('woff');
+    src: local(※),
+    url(../font/NanumSquareB.eot?#iefix) format('embedded-opentype'),
+    url(../font/NanumSquareB.ttf) format('truetype'),
+    url(../font/NanumSquareB.otf) format('truetype'),
+    url(../font/NanumSquareB.woff) format('truetype'),
+    url(../font/NanumSquareB.woff2) format('truetype');
 }
 
 @font-face {
-    font-family: 'NanumSquareL';
-    font-weight: normal;
-    font-style: normal;
-    src: url('../font/NanumSquareL.eot');
-    src: url('../font/NanumSquareL.eot?#iefix') format('embedded-opentype'),
-         url('../font/NanumSquareL.woff') format('woff');
+    font-family: 'NanumSquareEB';
+    src: local(※),
+    url(../font/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
+    url(../font/NanumSquareEB.ttf) format('truetype'),
+    url(../font/NanumSquareEB.otf) format('truetype'),
+    url(../font/NanumSquareEB.woff) format('truetype'),
+    url(../font/NanumSquareEB.woff2) format('truetype');
 }
-
 @font-face {
     font-family: 'NotoSansR';
     font-weight: normal;
