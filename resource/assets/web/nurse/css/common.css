@@ -219,7 +219,7 @@ select option[value=""][disabled] { display: none; }
 .btn_pink {display: inline-block;*display:inline-block;width: auto;height: 50px;line-height: 50px;background: #fc637d;border-radius: 5px;zoom:1;}
 .btn_pink a {display: block;font-family: 'NanumSquareEB';color: #fff;text-align: center;}
 .btn_pink_s {display: inline-block;*display:inline-block;width: auto;height: 30px;line-height: 30px;background: #fc637d;border-radius: 5px;zoom:1;}
-.btn_pink_s a {display: block;font-family: 'NanumSquareB';color: #fff;text-align: center;padding: 0 10px;}
+.btn_pink_s a {display: block;font-family: 'NanumSquareB';color: #fff;text-align: center;padding: 0 10px; font-size: 12px;}
 
 .btn_blue {display: inline-block;*display:inline-block;width: auto;height: 50px;line-height: 50px;background: #13bfd6;border-radius: 5px;zoom:1;}
 .btn_blue a {display: block;font-family: 'NanumSquareEB';color: #fff;text-align: center;}

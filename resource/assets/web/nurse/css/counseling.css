@@ -358,7 +358,8 @@ ExtraBold - 'NanumSquareEB'
 /////////////////////////////////////////////////////////////////////////*/
 .con_sub .search_box .srh_box .con_flex > p { width: 56px; flex-shrink: 0; font-size: 12px; }
 .con_sub .search_box .srh_box .con_flex .date_box .hypen { padding: 0 15px; }
-.wrap_sub03 .pop_search .pop_con .search_area .search_ipt .btn_search { background: #fc637d; }
+.wrap_sub03 .pop_search .pop_con .search_area .search_ipt .btn_search,
+.wrap_sub03 .pop_search_doctor .pop_con .search_area .search_ipt .btn_search { background: #fc637d; }
 
 /*/////////////////////////////////////////////////////////////////////////
 ///////////                 ** 로그인 - 단계인증 **                  ///////

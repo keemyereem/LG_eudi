@@ -355,7 +355,6 @@
 .con_sub03 .sel_chk .checkbox_row input[type="checkbox"] + label:before {width: 18px;height: 18px;}
 
 /* 물품신청 수정 2023.02.08*/
-.con_sub03 .con_inner02 .date_list table td { text-align: center; }
 .con_sub03 .tb02 table tbody td {position: relative;padding: 15px 5px;background: #fff;}
 
 /* 정보변경 */
