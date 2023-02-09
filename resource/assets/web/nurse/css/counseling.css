@@ -304,7 +304,7 @@ ExtraBold - 'NanumSquareEB'
 
 .con_sub .ipt_box .pre_subtit { padding: 10px 0 15px 0; }
 .con_sub .tb .shrink0+.inputBox_DP { width: 75%; }
-.con_sub .tb .shrink0 { font-family: 'NS'; font-weight: 200; font-size: 13px; letter-spacing: -1px; padding-left: 8px; color: #333333; min-width: 55px; }
+.con_sub .tb .shrink0 { font-family: 'NotoSansR'; font-weight: 200; font-size: 13px; letter-spacing: -1px; padding-left: 8px; color: #333333; min-width: 55px; }
 .con_sub01 .tb .inputBox_DP+.checkbox_row input[type="checkbox"]:checked + label:before { content:''; background: url("../images/common/bg_check_green_on.png") 50% 50% no-repeat; background-size: cover; }
 .con_sub01 .tb .inputBox_DP+.checkbox_row label { margin-right: 0; }
 

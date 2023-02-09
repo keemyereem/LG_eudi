@@ -72,6 +72,8 @@ if("" != ""){
 <script>
   $(document).ready(()=> {
     calendar.init();
+    eduApply.init();
+    selEvent.init();
   })
 </script>
 
@@ -83,7 +85,7 @@ if("" != ""){
     <div class="sub_top">
       <div class="nav">
         <div class="nav_inner">
-          <h2 class="title">상담관리</h2>
+          <h2 class="title">물품/상담</h2>
           <div class="back">
             <a href="/nurse/main.do" title="뒤로가기"><img src="/resource/assets/web/nurse/images/common/back.png" alt="뒤로가기"></a>
           </div>
@@ -117,201 +119,252 @@ if("" != ""){
             <table>
               <thead>
                 <tr>
-                  <td><span>11</span>(목)</td>
-                  <td><span>12</span>(금)</td>
-                  <td><span>13</span>(토)</td>
-                  <td><span>14</span>(일)</td>
-                  <td><span>15</span>(월)</td>
-                  <td><span>16</span>(화)</td>
-                  <td><span>17</span>(수)</td>
+                  <td><span>11</span>(토)</td>
+                  <td><span>12</span>(일)</td>
+                  <td class="today"><span>13</span>(월)</td>
+                  <td><span>14</span>(화)</td>
+                  <td><span>15</span>(수)</td>
+                  <td><span>16</span>(목)</td>
+                  <td><span>17</span>(금)</td>
                 </tr>
               </thead>
-              <tr>
-                <td><button type="button">09:00</button></td>
-                <td><button type="button">09:00</button></td>
-                <td><button type="button">09:00</button></td>
-                <td><button type="button">09:00</button></td>
-                <td><button type="button">09:00</button></td>
-                <td><button type="button">09:00</button></td>
-                <td><button type="button">09:00</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">09:30</button></td>
-                <td><button type="button">09:30</button></td>
-                <td><button type="button">09:30</button></td>
-                <td><button type="button">09:30</button></td>
-                <td><button type="button">09:30</button></td>
-                <td><button type="button">09:30</button></td>
-                <td><button type="button">09:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">10:00</button></td>
-                <td><button type="button">10:00</button></td>
-                <td><button type="button">10:00</button></td>
-                <td><button type="button">10:00</button></td>
-                <td><button type="button">10:00</button></td>
-                <td><button type="button">10:00</button></td>
-                <td><button type="button">10:00</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">10:30</button></td>
-                <td><button type="button">10:30</button></td>
-                <td><button type="button">10:30</button></td>
-                <td><button type="button">10:30</button></td>
-                <td><button type="button">10:30</button></td>
-                <td><button type="button">10:30</button></td>
-                <td><button type="button">10:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">11:00</button></td>
-                <td><button type="button">11:00</button></td>
-                <td><button type="button">11:00</button></td>
-                <td><button type="button">11:00</button></td>
-                <td><button type="button">11:00</button></td>
-                <td><button type="button">11:00</button></td>
-                <td><button type="button">11:00</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">11:30</button></td>
-                <td><button type="button">11:30</button></td>
-                <td><button type="button">11:30</button></td>
-                <td><button type="button">11:30</button></td>
-                <td><button type="button">11:30</button></td>
-                <td><button type="button">11:30</button></td>
-                <td><button type="button">11:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">12:00</button></td>
-                <td><button type="button">12:00</button></td>
-                <td><button type="button">12:00</button></td>
-                <td><button type="button">12:00</button></td>
-                <td><button type="button">12:00</button></td>
-                <td><button type="button">12:00</button></td>
-                <td><button type="button">12:00</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">12:30</button></td>
-                <td><button type="button">12:30</button></td>
-                <td><button type="button">12:30</button></td>
-                <td><button type="button">12:30</button></td>
-                <td><button type="button">12:30</button></td>
-                <td><button type="button">12:30</button></td>
-                <td><button type="button">12:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">13:00</button></td>
-                <td><button type="button">13:00</button></td>
-                <td><button type="button">13:00</button></td>
-                <td><button type="button">13:00</button></td>
-                <td><button type="button">13:00</button></td>
-                <td><button type="button">13:00</button></td>
-                <td><button type="button">13:00</button></td>
-              </tr>
-  
-              <!-- 오후 -->
-              <tr>
-                <td><button type="button">13:30</button></td>
-                <td><button type="button">13:30</button></td>
-                <td><button type="button">13:30</button></td>
-                <td><button type="button">13:30</button></td>
-                <td><button type="button">13:30</button></td>
-                <td><button type="button">13:30</button></td>
-                <td><button type="button">13:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">14:00</button></td>
-                <td><button type="button">14:00</button></td>
-                <td><button type="button">14:00</button></td>
-                <td><button type="button">14:00</button></td>
-                <td><button type="button">14:00</button></td>
-                <td><button type="button">14:00</button></td>
-                <td><button type="button">14:00</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">14:30</button></td>
-                <td><button type="button">14:30</button></td>
-                <td><button type="button">14:30</button></td>
-                <td><button type="button">14:30</button></td>
-                <td><button type="button">14:30</button></td>
-                <td><button type="button">14:30</button></td>
-                <td><button type="button">14:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">15:00</button></td>
-                <td><button type="button">15:00</button></td>
-                <td><button type="button">15:00</button></td>
-                <td><button type="button">15:00</button></td>
-                <td><button type="button">15:00</button></td>
-                <td><button type="button">15:00</button></td>
-                <td><button type="button">15:00</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">15:30</button></td>
-                <td><button type="button">15:30</button></td>
-                <td><button type="button">15:30</button></td>
-                <td><button type="button">15:30</button></td>
-                <td><button type="button">15:30</button></td>
-                <td><button type="button">15:30</button></td>
-                <td><button type="button">15:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">16:00</button></td>
-                <td><button type="button">16:00</button></td>
-                <td><button type="button">16:00</button></td>
-                <td><button type="button">16:00</button></td>
-                <td><button type="button">16:00</button></td>
-                <td><button type="button">16:00</button></td>
-                <td><button type="button">16:00</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">16:30</button></td>
-                <td><button type="button">16:30</button></td>
-                <td><button type="button">16:30</button></td>
-                <td><button type="button">16:30</button></td>
-                <td><button type="button">16:30</button></td>
-                <td><button type="button">16:30</button></td>
-                <td><button type="button">16:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">17:00</button></td>
-                <td><button type="button">17:00</button></td>
-                <td><button type="button">17:00</button></td>
-                <td><button type="button">17:00</button></td>
-                <td><button type="button">17:00</button></td>
-                <td><button type="button">17:00</button></td>
-                <td><button type="button">17:00</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">17:30</button></td>
-                <td><button type="button">17:30</button></td>
-                <td><button type="button">17:30</button></td>
-                <td><button type="button">17:30</button></td>
-                <td><button type="button">17:30</button></td>
-                <td><button type="button">17:30</button></td>
-                <td><button type="button">17:30</button></td>
-              </tr>
-              <tr>
-                <td><button type="button">18:00</button></td>
-                <td><button type="button">18:00</button></td>
-                <td><button type="button">18:00</button></td>
-                <td><button type="button">18:00</button></td>
-                <td><button type="button">18:00</button></td>
-                <td><button type="button">18:00</button></td>
-                <td><button type="button">18:00</button></td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td><button type="button" data-type="0">09:00<br>d</button></td>
+                  <td><button type="button" data-type="0">09:00</button></td>
+                  <td><button type="button" data-type="1">09:00</button></td>
+                  <td><button type="button" data-type="0">09:00</button></td>
+                  <td><button type="button" data-type="1">09:00</button></td>
+                  <td><button type="button" data-type="1">09:00</button></td>
+                  <td><button type="button" data-type="1">09:00</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="0">09:30</button></td>
+                  <td><button type="button" data-type="0">09:30</button></td>
+                  <td><button type="button" data-type="1">09:30</button></td>
+                  <td><button type="button" data-type="1">09:30</button></td>
+                  <td><button type="button" data-type="1">09:30</button></td>
+                  <td><button type="button" data-type="1">09:30</button></td>
+                  <td><button type="button" data-type="1">09:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="0">10:00</button></td>
+                  <td><button type="button" data-type="0">10:00</button></td>
+                  <td><button type="button" data-type="1">10:00</button></td>
+                  <td><button type="button" data-type="1">10:00</button></td>
+                  <td><button type="button" data-type="1">10:00</button></td>
+                  <td><button type="button" data-type="1">10:00</button></td>
+                  <td><button type="button" data-type="1">10:00</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="0">10:30</button></td>
+                  <td><button type="button" data-type="0">10:30</button></td>
+                  <td><button type="button" data-type="1">10:30</button></td>
+                  <td><button type="button" data-type="1">10:30</button></td>
+                  <td><button type="button" data-type="1">10:30</button></td>
+                  <td><button type="button" data-type="1">10:30</button></td>
+                  <td><button type="button" data-type="1">10:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="0">11:00</button></td>
+                  <td><button type="button" data-type="0">11:00</button></td>
+                  <td><button type="button" data-type="1">11:00</button></td>
+                  <td><button type="button" data-type="1">11:00</button></td>
+                  <td><button type="button" data-type="1">11:00</button></td>
+                  <td><button type="button" data-type="1">11:00</button></td>
+                  <td><button type="button" data-type="1">11:00</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="0">11:30</button></td>
+                  <td><button type="button" data-type="0">11:30</button></td>
+                  <td><button type="button" data-type="0">11:30</button></td>
+                  <td><button type="button" data-type="1">11:30</button></td>
+                  <td><button type="button" data-type="1">11:30</button></td>
+                  <td><button type="button" data-type="1">11:30</button></td>
+                  <td><button type="button" data-type="1">11:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">12:00</button></td>
+                  <td><button type="button" data-type="1">12:00</button></td>
+                  <td><button type="button" data-type="1">12:00</button></td>
+                  <td><button type="button" data-type="1">12:00</button></td>
+                  <td><button type="button" data-type="1">12:00</button></td>
+                  <td><button type="button" data-type="1">12:00</button></td>
+                  <td><button type="button" data-type="1">12:00</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">12:30</button></td>
+                  <td><button type="button" data-type="1">12:30</button></td>
+                  <td><button type="button" data-type="1">12:30</button></td>
+                  <td><button type="button" data-type="1">12:30</button></td>
+                  <td><button type="button" data-type="1">12:30</button></td>
+                  <td><button type="button" data-type="1">12:30</button></td>
+                  <td><button type="button" data-type="1">12:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">13:00</button></td>
+                  <td><button type="button" data-type="1">13:00</button></td>
+                  <td><button type="button" data-type="1">13:00</button></td>
+                  <td><button type="button" data-type="1">13:00</button></td>
+                  <td><button type="button" data-type="1">13:00</button></td>
+                  <td><button type="button" data-type="1">13:00</button></td>
+                  <td><button type="button" data-type="1">13:00</button></td>
+                </tr>
+    
+                <!-- 오후 -->
+                <tr>
+                  <td><button type="button" data-type="1">13:30</button></td>
+                  <td><button type="button" data-type="1">13:30</button></td>
+                  <td><button type="button" data-type="1">13:30</button></td>
+                  <td><button type="button" data-type="1">13:30</button></td>
+                  <td><button type="button" data-type="1">13:30</button></td>
+                  <td><button type="button" data-type="1">13:30</button></td>
+                  <td><button type="button" data-type="1">13:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">14:00</button></td>
+                  <td><button type="button" data-type="1">14:00</button></td>
+                  <td><button type="button" data-type="1">14:00</button></td>
+                  <td><button type="button" data-type="1">14:00</button></td>
+                  <td><button type="button" data-type="1">14:00</button></td>
+                  <td><button type="button" data-type="1">14:00</button></td>
+                  <td><button type="button" data-type="1">14:00</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">14:30</button></td>
+                  <td><button type="button" data-type="1">14:30</button></td>
+                  <td><button type="button" data-type="1">14:30</button></td>
+                  <td><button type="button" data-type="1">14:30</button></td>
+                  <td><button type="button" data-type="1">14:30</button></td>
+                  <td><button type="button" data-type="1">14:30</button></td>
+                  <td><button type="button" data-type="1">14:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">15:00</button></td>
+                  <td><button type="button" data-type="1">15:00</button></td>
+                  <td><button type="button" data-type="1">15:00</button></td>
+                  <td><button type="button" data-type="1">15:00</button></td>
+                  <td><button type="button" data-type="1">15:00</button></td>
+                  <td><button type="button" data-type="1">15:00</button></td>
+                  <td><button type="button" data-type="1">15:00</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">15:30</button></td>
+                  <td><button type="button" data-type="1">15:30</button></td>
+                  <td><button type="button" data-type="1">15:30</button></td>
+                  <td><button type="button" data-type="1">15:30</button></td>
+                  <td><button type="button" data-type="1">15:30</button></td>
+                  <td><button type="button" data-type="1">15:30</button></td>
+                  <td><button type="button" data-type="1">15:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">16:00</button></td>
+                  <td><button type="button" data-type="1">16:00</button></td>
+                  <td><button type="button" data-type="1">16:00</button></td>
+                  <td><button type="button" data-type="1">16:00</button></td>
+                  <td><button type="button" data-type="1">16:00</button></td>
+                  <td><button type="button" data-type="1">16:00</button></td>
+                  <td><button type="button" data-type="1">16:00</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">16:30</button></td>
+                  <td><button type="button" data-type="1">16:30</button></td>
+                  <td><button type="button" data-type="1">16:30</button></td>
+                  <td><button type="button" data-type="1">16:30</button></td>
+                  <td><button type="button" data-type="1">16:30</button></td>
+                  <td><button type="button" data-type="1">16:30</button></td>
+                  <td><button type="button" data-type="1">16:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">17:00</button></td>
+                  <td><button type="button" data-type="1">17:00</button></td>
+                  <td><button type="button" data-type="1">17:00</button></td>
+                  <td><button type="button" data-type="1">17:00</button></td>
+                  <td><button type="button" data-type="1">17:00</button></td>
+                  <td><button type="button" data-type="1">17:00</button></td>
+                  <td><button type="button" data-type="1">17:00</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">17:30</button></td>
+                  <td><button type="button" data-type="1">17:30</button></td>
+                  <td><button type="button" data-type="1">17:30</button></td>
+                  <td><button type="button" data-type="1">17:30</button></td>
+                  <td><button type="button" data-type="1">17:30</button></td>
+                  <td><button type="button" data-type="1">17:30</button></td>
+                  <td><button type="button" data-type="1">17:30</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" data-type="1">18:00</button></td>
+                  <td><button type="button" data-type="1">18:00</button></td>
+                  <td><button type="button" data-type="1">18:00</button></td>
+                  <td><button type="button" data-type="1">18:00</button></td>
+                  <td><button type="button" data-type="1">18:00</button></td>
+                  <td><button type="button" data-type="1">18:00</button></td>
+                  <td><button type="button" data-type="1">18:00</button></td>
+                </tr>
+              </tbody>
             </table>
           </div>
-  
+
           <div class="btn_box btn_box01">
+            <!-- 버튼 비활성화 -->
             <div class="btn_gray">
-              <a href="javascript:;" title="가능">가능</a>
+              <a href="javascript:popupInfo('pop_apply');" title="신청하기">신청하기</a>
             </div>
+            <!-- 버튼 활성화 -->
+            <!-- <div class="btn_pink">
+              <a href="javascript:popupInfo('pop_apply');" title="신청하기">신청하기</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      
+  
+    </div>
+
+    <!-- content //-->
+
+    <!-- 교육/상담 신청 팝업 -->
+    <div class="pop_mask"></div>
+    <div class="pop_info pop_apply">
+      <div class="pop_info_inner">
+        <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
+        <div class="pop_con">
+          <p class="pop_tit">교육/상담 신청</p>
+          <p class="pop_txt">
+            2022.12.16 10:30 ~ 11:30
+          </p>
+
+          <div class="select_row mt15">
+            <label for="">신청유형을 선택하세요</label>
+            <select name="" id="">
+              <option value="">교육</option>
+              <option value="">상담</option>
+            </select>
+          </div>
+          <div class="select_row mt10">
+            <label for="">신청사유을 선택하세요</label>
+            <select name="" id="">
+              <option value="">사유1</option>
+              <option value="">사유2</option>
+              <option value="">기타</option>
+            </select>
+          </div>
+          <div class="input_row mt10">
+            <span class="input_box">
+              <input type="text" id="" name="" class="ipt" data-title="기타 내용" placeholder="신청사유을 입력하세요">
+            </span>
+          </div>
+
+          <div class="btn_box btn_box02">
+            <div class="btn_gray"><a href="javascript:;" title="닫기">닫기</a></div>
+            <div class="btn_pink"><a href="javascript:;" title="신청">신청</a></div>
           </div>
         </div>
       </div>
     </div>
+    <!-- // 교육/상담 신청 팝업 -->
 
-    <!-- content //-->
 	</div>
 
   </body>

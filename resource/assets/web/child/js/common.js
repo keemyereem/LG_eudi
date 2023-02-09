@@ -39,6 +39,7 @@ var selEvent = {
                 $(this).siblings("label").text(select_name);
             });
         };
+        
     }
 };
 
@@ -347,68 +348,12 @@ var calendar = {
           cb.eq(21).addClass('cir02');
           cb.eq(22).addClass('cir03');
           cb.eq(23).addClass('cir04');
-  
-          // $('.hpc').append('<span class="hpc_block">' + data_hpc[0] + '</span>');
-          // $('.edu').append('<span class="schedule edu_block">교육<b>' + data_edu[0] + '</b></span>');
-          // $('.cs').append('<span class="schedule cs_block">상담<b>' + data_cs[0] + '</b></span>');
         }
         
       }
       
     }
 
-    // ------------------------------------------------------------+| 상세일정 렌더링 |+------------------------------------------------------------ //
-
-    function renderSchedule(thisMonth) {
-
-        // 렌더링을 위한 데이터 정리
-        currentYear = thisMonth.getFullYear();
-        currentMonth = thisMonth.getMonth();
-        currentDate = thisMonth.getDate();
-
-        var daySheet = currentYear + '-' + (currentMonth + 1) + '-' + currentDate;
-        let day = new Date(daySheet);
-        const weekday = ['일', '월', '화', '수', '목', '금', '토'];
-        let week = weekday[day.getDay()];
-
-        // 현재 월 표기
-        $('.year-month').html('<span>' + currentYear + '</span>년 <span>' + (currentMonth + 1) + '</span>월 <span>' + currentDate + '</span>일 (' + week + ')');
-
-        // 렌더링 html 요소 생성
-        var schduler = document.querySelector('.lines');
-        schduler.innerHTML = '';
-
-        // 시간대별 라인 생성
-        for (var i = 0; i <= 9; i++) {
-          schduler.innerHTML = schduler.innerHTML + '<div class="line">' + (i + 9) + '</div>'
-        }
-
-        // 라인 변수 선언 및 반시간 라인 설정
-        var line = $('.line');
-        var lineHalf = line.map(function(element) {
-          let lineHalfTxt = line.eq(element).text();
-          // 9시 숫자 한개일 경우 앞에 '0' 추가
-          if (lineHalfTxt.length == 1) {
-            lineHalfTxt = 0 + lineHalfTxt;
-          }
-          // 뒤에 ':30'을 붙여 내보내기
-          return lineHalfTxt + ':30';
-        });
-
-        // 반시간 라인 생성
-        for (var i = 0; i <= 8; i++) {
-          line.eq(i).after('<div class="line_half">' + lineHalf[i] + '</div>');
-        }
-
-        // 시간대별 라인에 9시 숫자 한개일 경우 앞에 '0' 추가 / 뒤에 ':00'을 붙여 내보내기
-        line.each((index)=> {
-          if (line.eq(index).text().length == 1) {
-            line.eq(index).html(0 + line.eq(index).text());
-          }
-          line.eq(index).html(line.eq(index).text() + ':00')
-        })
-        
-    }
     
     // ------------------------------------------------------------+| 타임테이블 렌더링 |+------------------------------------------------------------ //
 
@@ -421,12 +366,6 @@ var calendar = {
 
       // 현재 월 표기
       $('.year-month').html('<span>' + currentYear + '</span>년 <span>' + (currentMonth + 1) + '</span>월');
-
-      // 버튼 생성
-      let btnFuncName = ['가능', '예약', '불가(교육)', '불가(공휴일)', '불가(이동)', '불가(휴가)', '불가(회의)', '불가(기타)'];
-      for(let i=0; i < btnFuncName.length; i++) {
-        $('button[data-type="' + i + '"]').text(btnFuncName[i]);
-      }
       
       // *타임테이블 스크롤 시 가장자리 정보 셀 고정
       $('.time_wrap').on('load resize scroll', function() {
@@ -435,64 +374,6 @@ var calendar = {
         $(this).children('span').css({"top": 1 + $(this).scrollTop(), "left": 0 + $(this).scrollLeft()});
       });
 
-      // 타임테이블 내부 버튼 클릭 시
-      $('.time_wrap button').on('click', function() {
-        $(this).toggleClass('on');
-
-        // 불가사유 버튼 색깔 단독변경
-        $('.impossible_pop').find('.save').addClass('time_btnColor');
-        
-        // 가능, 불가버튼
-        const btnFirst = $('.sec_cal > .btn_box02').children().first(),
-              btnLast = $('.sec_cal > .btn_box02').children().last();
-
-        let btnImpossible = $('button:not([data-type="0"], [data-type="1"], [data-type="3"]).on'),
-            btnImposWeekend = $('button[data-type="3"].on'),
-            btnPossible = $('button[data-type="0"].on');
-
-        // 불가버튼 클릭 시
-        if (btnImpossible.length > 0 || btnImposWeekend.length > 0) {
-          btnFirst.removeClass('btn_gray').addClass('btn_orange');
-
-          // 불가 + 가능 복수 선택 시
-          if (btnPossible.length > 0) {
-            btnLast.removeClass('btn_gray btn_green').addClass('btn_red');
-            btnLast.children().text('불가').attr('onClick', "openPopup('impossible_pop')");
-            $('.impossible_pop').removeClass('reason_setting');
-          
-          // 불가(공휴일) + 가능 복수 선택 시
-          } else if (btnImposWeekend.length > 0 && btnImpossible.length === 0) {
-            btnFirst.removeClass('btn_gray').addClass('btn_orange');
-            btnLast.removeClass('btn_red btn_green').addClass('btn_gray');
-            btnLast.children().text('불가').attr('onClick', "openPopup('impossible_pop')");
-            $('.impossible_pop').removeClass('reason_setting');
-
-          // 불가만 선택 시
-          } else {
-            btnLast.removeClass('btn_gray').addClass('btn_green');
-            btnLast.children().text('불가 수정').attr('onClick', "openPopup('impossible_pop')");
-            $('.impossible_pop').addClass('reason_setting');
-          }  
-
-        // 가능버튼 클릭 시
-        } else if (btnPossible.length > 0) {
-          // 가능만 선택 시
-          if (!btnImpossible.length > 0) {
-            btnFirst.removeClass('btn_orange').addClass('btn_gray');
-            btnLast.removeClass('btn_gray').addClass('btn_red');
-            btnLast.children().attr('onClick', "openPopup('impossible_pop')");
-            $('.impossible_pop').removeClass('reason_setting');
-          }
-
-        // 모두 선택 취소 시
-        } else {
-          btnFirst.removeClass('btn_orange').addClass('btn_gray');
-          btnLast.removeClass('btn_green').addClass('btn_gray');
-          btnLast.children().text('불가').attr('onClick', "openPopup('')");
-          $('.impossible_pop').removeClass('reason_setting');
-        }
-        
-      });
     }
 
     // ------------------------------------------------------------+| 작동 기능들 |+------------------------------------------------------------ //
@@ -502,8 +383,6 @@ var calendar = {
       renderCalender(thisMonth);
     } else if ($('.time_wrap').length) {
       renderTimeTable(thisMonth);
-    } else if ($('.schedule_wrap').length) {
-      renderSchedule(thisMonth);
     }
 
     // 이전달로 이동
@@ -512,10 +391,6 @@ var calendar = {
         thisMonth = new Date(currentYear, currentMonth - 1, 1);
         renderCalender(thisMonth);
         
-      } else if ($('.schedule_wrap').length) {
-        thisMonth = new Date(currentYear, currentMonth, currentDate - 1, 1);
-        renderSchedule(thisMonth);
-
       } else if ($('.time_wrap').length) {
         thisMonth = new Date(currentYear, currentMonth - 1, 1);
         renderTimeTable(thisMonth);
@@ -527,10 +402,6 @@ var calendar = {
       if ($('.cal_wrap').length) {
         thisMonth = new Date(currentYear, currentMonth + 1, 1);
         renderCalender(thisMonth);
-      } else if ($('.schedule_wrap').length) {
-        thisMonth = new Date(currentYear, currentMonth, currentDate + 1, 1);
-        renderSchedule(thisMonth);
-
       } else if ($('.time_wrap').length) {
         thisMonth = new Date(currentYear, currentMonth + 1, 1);
         renderTimeTable(thisMonth);
@@ -570,10 +441,7 @@ var calendar = {
             thisMonth = new Date(currentYear, currentMonth - 1, 1);
             renderCalender(thisMonth);
 
-          // 상세일정페이지
-          } else if ($('.schedule_wrap').length) {
-            thisMonth = new Date(currentYear, currentMonth, currentDate - 1, 1);
-            renderSchedule(thisMonth);
+          
           }
 
         // 왼쪽으로 스와이프 된 경우 (next move)
@@ -582,9 +450,6 @@ var calendar = {
             thisMonth = new Date(currentYear, currentMonth + 1, 1);
             renderCalender(thisMonth);
 
-          } else if ($('.schedule_wrap').length) {
-            thisMonth = new Date(currentYear, currentMonth, currentDate + 1, 1);
-            renderSchedule(thisMonth);
           }
         }
         
@@ -593,6 +458,45 @@ var calendar = {
 
   },
 };
+
+
+var eduApply = {
+  init: () => {
+
+    //오늘 표시
+    var today = $('.time_wrap thead tr .today');
+    var idx = $('.time_wrap thead tr td').index(today);
+
+    $('.time_wrap tbody tr').each(function(i){
+      $('.time_wrap tbody tr').eq(i).children('td').eq(idx).css({'background':'#fff7f8'});
+    });
+
+    $('.time_wrap button[data-type="1"]').on('click', function(){
+      $(this).toggleClass('on');
+    });
+
+    $('.time_wrap tbody tr .scheduled').on('click', function(){
+      $(this).toggleClass('on');
+    });
+
+    //교육/상담 신청사유 "기타"일 경우 입력칸 생성
+    var selectType = $(".pop_apply .select_row:nth-of-type(2)>select");
+    selectChange(selectType);
+    function selectChange(type) {
+      type.change(function () {
+        var select_name = $(this).children("option:selected").text();
+        $(this).siblings("label").text(select_name);
+
+        if (select_name === "기타") {
+          $(".pop_apply .input_row").show();
+        } else {
+          $(".pop_apply .input_row").hide();
+        }
+      });
+    }
+  },
+};
+
 
 
 function loginEvent() {

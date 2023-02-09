@@ -1,83 +1,46 @@
 @charset "utf-8";
-/* FONT */
-
-/* ------------------------------------ 나눔스퀘어 ----------------------------------- */
-@font-face {
-  font-family: 'NanumSquareL';
-  src: local(※),
-  url(../font/NanumSquareL.eot?#iefix) format('embedded-opentype'),
-  url(../font/NanumSquareL.ttf) format('truetype'),
-  url(../font/NanumSquareL.otf) format('truetype'),
-  url(../font/NanumSquareL.woff) format('truetype'),
-  url(../font/NanumSquareL.woff2) format('truetype');
-}
-@font-face {
-  font-family: 'NanumSquareR';
-  font-style: normal;
-  font-display: fallback;
-  src: local(※),
-  url(../font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
-  url(../font/NanumSquareR.ttf) format('truetype'),
-  url(../font/NanumSquareR.otf) format('truetype'),
-  url(../font/NanumSquareR.woff) format('truetype'),
-  url(../font/NanumSquareR.woff2) format('truetype');
-}
-@font-face {
-  font-family: 'NanumSquareB';
-  src: local(※),
-  url(../font/NanumSquareB.eot?#iefix) format('embedded-opentype'),
-  url(../font/NanumSquareB.ttf) format('truetype'),
-  url(../font/NanumSquareB.otf) format('truetype'),
-  url(../font/NanumSquareB.woff) format('truetype'),
-  url(../font/NanumSquareB.woff2) format('truetype');
-}
 
 @font-face {
-  font-family: 'NanumSquareEB';
-  src: local(※),
-  url(../font/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
-  url(../font/NanumSquareEB.ttf) format('truetype'),
-  url(../font/NanumSquareEB.otf) format('truetype'),
-  url(../font/NanumSquareEB.woff) format('truetype'),
-  url(../font/NanumSquareEB.woff2) format('truetype');
-}
-
-/* ------------------------------------ noto sans kr ----------------------------------- */
-@font-face {
-    font-family: 'NS';
-    font-weight: 100;
-    src: local(※),
-    url(../font/NotoSansCJKkr-Light.eot?#iefix) format('embedded-opentype'),
-    url(../font/NotoSansCJKkr-Light.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'NS';
-    font-weight: 150;
-    src: local(※),
-    url(../font/NotoSansCJKkr-DemiLight.eot?#iefix) format('embedded-opentype'),
-    url(../font/NotoSansCJKkr-DemiLight.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'NS';
+    font-family: 'NanumSquareR';
+    font-weight: normal;
     font-style: normal;
-    font-display: fallback;
-    font-weight: 200;
-    src: local(※),
-    url(../font/NotoSansCJKkr-Regular.eot?#iefix) format('embedded-opentype'),
-    url(../font/NotoSansCJKkr-Regular.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'NS';
-    font-weight: 300;
-    src: local(※),
-    url(../font/NotoSansCJKkr-Medium.eot?#iefix) format('embedded-opentype'),
-    url(../font/NotoSansCJKkr-Medium.ttf) format('truetype');
+    src: url('../font/NanumSquareR.eot');
+    src: url('../font/NanumSquareR.eot?#iefix') format('embedded-opentype'),
+         url('../font/NanumSquareR.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'NS';
-    font-weight: 400;
-    src: local(※),
-    url(../font/NotoSansCJKkr-Bold.eot?#iefix) format('embedded-opentype'),
-    url(../font/NotoSansCJKkr-Bold.ttf) format('truetype');
+    font-family: 'NanumSquareEB';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/NanumSquareEB.eot');
+    src: url('../font/NanumSquareEB.eot?#iefix') format('embedded-opentype'),
+         url('../font/NanumSquareEB.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NanumSquareB';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/NanumSquareB.eot');
+    src: url('../font/NanumSquareB.eot?#iefix') format('embedded-opentype'),
+         url('../font/NanumSquareB.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NanumSquareL';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/NanumSquareL.eot');
+    src: url('../font/NanumSquareL.eot?#iefix') format('embedded-opentype'),
+         url('../font/NanumSquareL.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NotoSansR';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/NotoSansCJKkr-Regular.eot');
+    src: url('../font/NotoSansCJKkr-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../font/NotoSansCJKkr-Regular.woff') format('woff');
 }
