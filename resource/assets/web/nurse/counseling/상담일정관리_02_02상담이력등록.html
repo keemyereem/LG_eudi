@@ -86,6 +86,7 @@
     <div class="content con_sub con_sub02">
       <div class="con_box">
         <div class="info_box">
+          <h2>상담이력 상세</h2>
           <p class="con_tit">환아정보</p>
           <ul>
             <li>
@@ -137,22 +138,23 @@
 
       <div class="con_box mt8">
         <div class="form_box">
+          <p class="con_tit">상담신청 정보</p>
+          <ul class="con_form con_form_info">
+            <li>
+              <div class="tit">상담신청일시</div>
+              <p>2022-12-16 15:00 ~ 16:00</p>
+            </li>
+            <li>
+              <div class="tit">신청사유</div>
+              <p>신환교육</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form_box">
           <p class="con_tit">상담이력</p>
 
-          <div class="con_form">
-            <div class="tit">상담분류</div>
-            <div class="select_row">
-              <label for="sel01">상담분류</label>
-              <select name="sel01" id="sel01">
-                <option value="">상담분류</option>
-                <option value="">신환교육</option>
-                <option value="">구환교육</option>
-                <option value="">상담</option>
-                <option value="">해피콜</option>
-              </select>
-            </div>
-          </div>
-          <div class="con_form">
+          <!-- <div class="con_form">
             <div class="tit">신청사유</div>
             <div class="select_row">
               <label for="sel02"></label>
@@ -163,7 +165,7 @@
                 <option value=""></option>
               </select>
             </div>
-          </div>
+          </div> -->
   
           <div class="con_form consultDate_form">
             <div class="tit">상담예정일</div>
@@ -176,15 +178,30 @@
           </div>
 
           <div class="con_form">
-            <div class="tit">신청일자</div>
             <div class="con_date">
               <div class="inputBox_DP">
-                <input type="date" name="consultDate" id="consultDate" class="date" value="" required="required" data-title="상담예정일" title="상담예정일">
+                <div class="tit">상담예정일</div>
+                <input type="date" name="consultDate" id="consultDate" class="date" value="2022-12-10" required="required" data-title="상담예정일" title="상담예정일">
               </div>
-              <span class="hypen">~</span>
+              <!-- <span class="hypen">~</span> -->
               <div class="inputBox_DP">
-                <input type="date" name="consultDate" id="consultDate" class="date" value="" required="required" data-title="상담예정일" title="상담예정일">
+                <div class="tit">상담일자</div>
+                <input type="date" name="consultDate" id="consultDate" class="date" value="2022-12-10" required="required" data-title="상담예정일" title="상담예정일">
               </div>
+            </div>
+          </div>
+
+          <div class="con_form">
+            <div class="tit">상담분류</div>
+            <div class="select_row">
+              <label for="sel01">상담분류</label>
+              <select name="sel01" id="sel01">
+                <option value="">상담분류</option>
+                <option value="">신환교육</option>
+                <option value="">구환교육</option>
+                <option value="">상담</option>
+                <option value="">해피콜</option>
+              </select>
             </div>
           </div>
   
@@ -207,7 +224,7 @@
             </div>
           </div>
 
-          <div class="con_form">
+          <!-- <div class="con_form">
             <div class="tit">환아관리자</div>
             <div class="select_row">
               <label for="">환아관리자</label>
@@ -218,7 +235,7 @@
                 <option value=""></option>
               </select>
             </div>
-          </div>
+          </div> -->
 
           <div class="con_form">
             <div class="tit">상담내역</div>
@@ -229,54 +246,68 @@
         </div>
 
         <div class="form_box form_box02">
-          <p class="con_tit">상담이력</p>
+          <p class="con_tit">처방내역</p>
 
           <div class="con_form con_flex">
             <div>
               <div class="tit">처방일자</div>
               <div class="inputBox_DP">
-                <input type="text" name="consultDate" id="consultDate" class="datetime" value="" required="required" data-title="상담예정일" title="상담예정일">
+                <input type="text" name="consultDate" id="consultDate" class="datetime" value="2022-12-10 16:30" required="required" data-title="상담예정일" title="상담예정일">
               </div>
             </div>
             <div>
               <div class="tit">담당의사</div>
-              <div class="input_srh input_srh03">
+              <!-- <div class="input_srh input_srh03">
                 <div class="input_box">
                   <input type="text" id="weight" name="" class="ipt" placeholder="kg" value="">
                 </div>
+              </div> -->
+              <div class="input_search">
+                <span class="input_box">
+                    <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
+                  <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
+                </span>
               </div>
             </div>
           </div>
 
           <div class="con_form">
             <div class="tit">소속병원</div>
-            <div class="input_srh input_srh03">
+            <!-- <div class="input_srh input_srh03">
               <div class="input_box">
                 <input type="text" id="height" name="" class="ipt" value="">
               </div>
+            </div> -->
+            <div class="input_search">
+              <span class="input_box">
+                <input type="text" class="ipt" id="selectHname" value="연세대학교 병원" readonly="">
+                <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
+              </span>
             </div>
           </div>
 
           <div class="con_form con_flex">
             <div>
               <div class="tit">영업부서</div>
-              <div class="input_srh input_srh03">
+              <!-- <div class="input_srh input_srh03">
                 <div class="input_box">
                   <input type="text" id="height" name="" class="ipt" value="">
                 </div>
-              </div>
+              </div> -->
+              <p id="mDepartText">Speciallty Care. 마케팅.마케팅 1팀</p>
             </div>
             <div>
               <div class="tit">영업사원명</div>
-              <div class="input_srh input_srh03">
+              <!-- <div class="input_srh input_srh03">
                 <div class="input_box">
                   <input type="text" id="weight" name="" class="ipt" value="">
                 </div>
-              </div>
+              </div> -->
+              <p id="mNameText">임종원</p>
             </div>
           </div>
 
-          <div class="con_form con_flex">
+          <div class="con_form">
             <div>
               <div class="tit">제품</div>
               <div class="select_row">
@@ -289,8 +320,11 @@
                 </select>
               </div>
             </div>
+          </div>
+
+          <div class="con_form con_flex">
             <div>
-              <div class="tit">실투여량</div>
+              <div class="tit">주간투여횟수</div>
               <div class="select_row">
                 <label for="sel02">선택하세요</label>
                 <select name="sel02" id="sel02">
@@ -301,18 +335,14 @@
                 </select>
               </div>
             </div>
-          </div>
-
-          <div class="con_form con_flex">
             <div>
-              <div class="tit">투여횟수</div>
+              <div class="tit">실투여량</div>
               <div class="input_srh input_srh03">
                 <div class="input_box">
                   <input type="text" id="weight" name="" class="ipt" value="">
                 </div>
               </div>
             </div>
-            <div></div>
           </div>
 
           <div class="con_form">
@@ -331,8 +361,65 @@
         </div>
       </div>
     </div>
-
     <!-- content //-->
+
+
+
+    <!-- 병원명 검색 -->
+    <div class="pop_mask"></div>
+    <div class="pop_search">
+      <div class="pop_search_inner">
+        <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+        <div class="pop_con">
+          <div class="pop_tit">병원명 검색</div>
+          <div class="search_area">
+            <p>등록되어 있는 병원명 또는 간략한 주소를 입력하시고 [검색]버튼을 클릭해주세요.</p>
+            <div class="search_ipt">
+              <div class="search_cell">
+                <div class="input_row">
+                  <span class="input_box">
+                    <input type="text" id="search_name"  class="ipt">
+                  </span>
+                </div>
+              </div>
+              <div class="search_cell btn">
+                <div class="btn_search"><a href="javascript:fnHospitalSearch();">검색</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="search_list" id="search_hospital">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 의사 검색 -->
+    <div class="pop_mask_doctor"></div>
+    <div class="pop_search_doctor">
+      <div class="pop_search_inner">
+        <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+        <div class="pop_con">
+          <div class="pop_tit">의사명 검색</div>
+          <div class="search_area">
+              <p>등록되어 있는 의사명 입력하시고 [검색]버튼을 클릭해주세요.</p>
+            <div class="search_ipt">
+              <div class="search_cell">
+                <div class="input_row">
+                  <span class="input_box">
+                    <input type="text" id="search_doctor_name"  class="ipt">
+                  </span>
+                </div>
+              </div>
+              <div class="search_cell btn">
+                <div class="btn_search"><a href="javascript:fnDoctorSearch();">검색</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="search_list" id="search_doctor">
+          </div>
+        </div>
+      </div>
+    </div>
 	</div>
   </body>
 </html>

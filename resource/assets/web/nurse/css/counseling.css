@@ -52,7 +52,7 @@ ExtraBold - 'NanumSquareEB'
 .reason_setting > button.delete { background: #ffffff; border: 1px solid #cfcfcf; }
 
 /* 팝업 - 근무/휴무 선택 */
-.scheduleEdit_pop { background: #ffffff; border-radius: 10px 10px 0 0; padding: 30px 15px 53px; }
+.scheduleEdit_pop { background: #ffffff; border-radius: 10px 10px 0 0; padding: 30px 15px 25px; }
 .scheduleEdit_pop .date_select { overflow-x: auto; height: auto; margin: 10px 0 20px; }
 .scheduleEdit_pop .date_select ul { display: flex; align-items: center; }
 .scheduleEdit_pop .date_select ul li { flex-shrink: 0; width: 70px; height: 30px; margin-right: 5px; background: #f6f6f6; border-radius: 5px; line-height: 30px; text-align: center; font-size: 12px; }
@@ -107,7 +107,7 @@ ExtraBold - 'NanumSquareEB'
 /////////////////////////////////////////////////////////////////////////*/
 
 /* 상담일정관리 - 공통 */
-.wrap_sub .sec_cal { width: 100%; padding: 35px 15px 57px; letter-spacing: -1px; }
+.wrap_sub .sec_cal { width: 100%; padding: 35px 15px 57px; letter-spacing: -1px; background: #ffffff; }
 .wrap_sub .sec_cal .alert01 { font-size: 12px; letter-spacing: -1.2px; color: #333333; line-height: 1; display: flex; align-items: center; padding-bottom: 15px; }
 .wrap_sub .sec_cal .alert01 i { background: #13bfd6; width: 5px; height: 5px; display: inline-block; border-radius: 100%; margin-right: 6px; }
 .wrap_sub .sec_cal .cal_nav .year-month { font-family: 'NanumSquareEB'; text-align: center; line-height: .8; font-size: 22.85px; color: #333333; letter-spacing: -1.2px; }
@@ -155,7 +155,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .schedule_wrap .lines > * { font-size: 10px; font-family: 'NanumSquareB'; color: #333333; display: flex; align-items: center; }
 .wrap_sub .sec_cal .schedule_wrap .lines > *:not(:last-of-type) { padding-bottom: 53px; }
 .wrap_sub .sec_cal .schedule_wrap .lines > *::after { content: ''; display: inline-block; width: 100%; height: 1px; background: #e5e5e5; margin-left: 16px; }
-.wrap_sub .sec_cal .schedule_wrap .dates { position: absolute; top: 42px; right: 0; width: calc(100% - 39px); height: calc(100% - 47px); padding: 0 10px; z-index: 1; }
+.wrap_sub .sec_cal .schedule_wrap .dates { position: absolute; top: 42px; right: 0; width: calc(100% - 39px); height: calc(100% - 47px); padding: 0 3px; z-index: 1; }
 .wrap_sub .sec_cal .schedule_wrap .dates li { display: inline-flex; width: 100%; height: calc(100% / 18 - 10px); border-radius: 10px; font-size: 13px; line-height: 1.2; margin: 5px 0; padding: 0 15px; position: relative; justify-content: space-between; align-items: center; font-family: 'NanumSquareB'; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available { color: #ffffff; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available.edu { background: #fc637d; }
@@ -170,7 +170,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .hpc_wrap li div { display: flex; }
 .wrap_sub .sec_cal .schedule_wrap .dates li button,
 .wrap_sub .sec_cal .hpc_wrap li button { width: 30px; height: 30px; position: relative; border-radius: 100%; display: flex; align-items: center; }
-.wrap_sub .sec_cal .schedule_wrap .dates li button:last-of-type,
+.wrap_sub .sec_cal .schedule_wrap .dates li button:not(:first-of-type),
 .wrap_sub .sec_cal .hpc_wrap li button:last-of-type { margin-left: 8px; }
 .wrap_sub .sec_cal .schedule_wrap .dates li button img,
 .wrap_sub .sec_cal .hpc_wrap li button img { height: calc(100% - 14px); object-fit: contain; }
@@ -191,6 +191,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .con_sub .info_box { padding: 30px 15px 25px; background: #fff; }
 .wrap_sub .con_sub .con_box .con_tit { font-family: 'NanumSquareEB'; font-size: 13px; color: #f18e1e; }
 .wrap_sub .con_sub .con_box .con_tit::after { content:''; display: block; width: 100%; height: 1px; background: #f18e1e; margin-top: 8px; }
+.wrap_sub .con_sub .info_box h2 { font-size: 18px; font-family: 'NanumSquareB'; color: #f18e1e; letter-spacing: -1px; padding-bottom: 15px; }
 .wrap_sub .con_sub .info_box .con_tit { margin-bottom: 20px; }
 .wrap_sub .con_sub .info_box>ul { display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 20px; font-size: 13px; }
 .wrap_sub .con_sub .info_box ul li { width: 50%; display: flex; }
@@ -200,15 +201,21 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .con_sub .info_box ul li .tit { font-family: 'NanumSquareB'; color: #999; }
 .wrap_sub .con_sub .info_box ul li .value { color: #333; }
 .wrap_sub .con_sub .form_box { padding: 30px 15px 0; background: #fff; }
-.wrap_sub .con_sub .form_box02 { padding: 30px 15px 65px; }
+.wrap_sub .con_sub .form_box02 { padding: 30px 15px 25px; }
 .wrap_sub .con_sub .form_box .tit { font-family: 'NanumSquareB'; margin: 20px 0 10px; }
 .wrap_sub .con_sub .form_box .con_form { width: 100%; font-size: 13px; }
+.wrap_sub .con_sub .form_box .con_form_info { display: flex; padding-top: 20px; letter-spacing: -1px; justify-content: space-between; }
+.wrap_sub .con_sub .form_box .con_form_info li:last-child { width: calc(50% - 7.5px); }
+.wrap_sub .con_sub .form_box .con_form_info li .tit { margin: 0 0 9px; }
+.wrap_sub .con_sub .form_box .con_form_info li p { font-size: 12px; font-family: 'NanumSquareR'; }
 .wrap_sub .con_sub .con_flex { justify-content: space-between; }
 .wrap_sub .con_sub .con_flex h4 { font-size: 13px; }
+.wrap_sub .con_sub .con_flex p { font-size: 12px; letter-spacing: -1px; color: #333333; }
 .wrap_sub .con_sub .form_box .con_flex > div { width: calc(50% - 7.5px); }
 .wrap_sub .con_sub .form_box .con_date { display: flex; align-items: center; justify-content: space-between; }
 .wrap_sub .con_sub .form_box .con_date .hypen { display: block; }
-.wrap_sub .con_sub .form_box .con_date .inputBox_DP { width: calc(50% - 18px); }
+.wrap_sub .con_sub .form_box .con_date .inputBox_DP { width: calc(50% - 12.5px); height: auto; }
+.wrap_sub .con_sub .form_box .con_date .inputBox_DP input { height: 40px; }
 .wrap_sub .con_sub .form_box .con_flex .inputBox_DP { width: 100%; }
 .wrap_sub .con_sub .form_box .consultDate_form { display: none; }
 
