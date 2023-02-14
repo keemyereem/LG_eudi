@@ -71,7 +71,7 @@
             <!-- <li class="info"></li> -->
           </ul>
           <div class="impos_action">
-            <select name="action" required>
+            <select name="action" id="impos_select" required>
               <option value="" selected>선택하세요</option>
               <option value="seminar">주사교육</option>
               <option value="counsel">상담</option>
@@ -79,11 +79,21 @@
               <option value="vacation">휴가</option>
               <option value="review">회의</option>
               <option value="etc">기타</option>
+              <textarea name="etc" id="etc_textarea" placeholder="내용을 입력해주세요"></textarea>
             </select>
           </div>
 
           <button type="button" onclick="javascript:;" class="cancel close_pop">취소</button>
           <button type="button" onclick="javascript:;" class="save">저장</button>
+        </div>
+
+        <!-- 수정예정 팝업 2023.02.14 -->
+        <div class="pop_content pop_alert step01">
+          <div class="pop_tit">
+            등록할 항목을 선택하세요.
+          </div>
+          <button type="button" onclick="location.href='./counseling/상담일정관리_02_01상담신청수정.html'" class="">상담신청</button>
+          <button type="button" onclick="openPopup('impossible_pop');" class="">불가사유</button>
         </div>
 
       </div>
@@ -134,7 +144,7 @@
             </li>
 
 <!-- 'data-type="blind"' = 컬럼 1개 소멸(위 컬럼이 'row-2'일 경우) -->
-            <li class="empty" data-type="blind"><div><button type="button" onclick="javascript:;"></button></div></li>
+            <li class="empty" data-type="blind"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
 
 <!-- 클래스명 'disable' = 불가 항목 -->
             <li class="disable" data-type="row-2">
@@ -144,7 +154,7 @@
                 <button type="button" class="disable_pop" onclick="openPopup('impossible_pop');"><img src="/resource/assets/web/nurse/images/common/disable_setting.png" alt="disable_setting"></button>
               </div>
             </li>
-            <li class="empty" data-type="blind"><div><button type="button" onclick="javascript:;"></button></div></li>
+            <li class="empty" data-type="blind"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
 
 <!-- 클래스명 'edu' = 구/신환교육 -->
             <li class="available edu" data-type="row-2">
@@ -155,7 +165,7 @@
                 <button type="button" onclick="javascript:;"><img src="/resource/assets/web/nurse/images/common/sked_icon02.png" alt="chart"></button>
               </div>
             </li>
-            <li class="empty" data-type="blind"><div><button type="button" onclick="javascript:;"></button></div></li>
+            <li class="empty" data-type="blind"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
 
             <li class="disable" data-type="row-2">
               <p>불가(식사)</p>
@@ -163,7 +173,7 @@
                 <button type="button" class="disable_pop" onclick="openPopup('impossible_pop');"><img src="/resource/assets/web/nurse/images/common/disable_setting.png" alt="disable_setting"></button>
               </div>
             </li>
-            <li class="empty" data-type="blind"><div><button type="button" onclick="javascript:;"></button></div></li>
+            <li class="empty" data-type="blind"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
 
             <li class="available edu" data-type="row-2">
               <p><span>신환교육</span>김길서<i>010-56**-1234</i></p>
@@ -173,10 +183,9 @@
                 <button type="button" onclick="javascript:;"><img src="/resource/assets/web/nurse/images/common/sked_icon02.png" alt="chart"></button>
               </div>
             </li>
-            <li class="empty" data-type="blind"><div><button type="button" onclick="javascript:;"></button></div></li>
+            <li class="empty" data-type="blind"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
 
-<!-- 'data-type=""' = 아무것도 없을경우, 컬럼 1개(30분) -->
-            <li class="available edu" data-type="">
+            <li class="available edu" data-type="row-1">
               <p><span>구환교육</span>이예준<i>010-43**-8785</i></p>
               <div>
                 <button type="button" onclick="javascript:;"><img src="/resource/assets/web/nurse/images/common/sked_icon01.png" alt="call"></button>
@@ -186,11 +195,11 @@
             </li>
 
 <!-- 클래스명 'empty' = 신규 생성 -->
-            <li class="empty" data-type=""><div><button type="button" onclick="javascript:;"></button></div></li>
-            <li class="empty" data-type=""><div><button type="button" onclick="javascript:;"></button></div></li>
+            <li class="empty" data-type="row-1"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
+            <li class="empty" data-type="row-1"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
 
 <!-- 클래스명 'cs' = 상담 -->
-            <li class="available cs" data-type="">
+            <li class="available cs" data-type="row-1">
               <p><span>상담</span>민여진<i>010-44**-8159</i></p>
               <div>
                 <button type="button" onclick="javascript:;"><img src="/resource/assets/web/nurse/images/common/sked_icon01.png" alt="call"></button>
@@ -207,9 +216,10 @@
                 <button type="button" onclick="javascript:;"><img src="/resource/assets/web/nurse/images/common/sked_icon02.png" alt="chart"></button>
               </div>
             </li>
-
-            <li class="empty" data-type=""><div><button type="button" onclick="javascript:;"></button></div></li>
-            <li class="empty" data-type=""><div><button type="button" onclick="javascript:;"></button></div></li>
+            <li class="empty" data-type="blind"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
+            
+            <li class="empty" data-type="row-1"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
+            <li class="empty" data-type="row-1"><div><button type="button" onclick="openPopup('step01')" class="disable_pop"></button></div></li>
           </ul>
         </div>
 

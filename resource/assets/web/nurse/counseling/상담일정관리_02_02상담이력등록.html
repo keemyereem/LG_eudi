@@ -54,7 +54,7 @@
   $(document).ready(()=> {
     selEvent.init();
     datetimeEvent.init();
-    nurseJS.counselHis();
+    nurseJS.counselRegis();
   })
   
 </script>
@@ -167,7 +167,7 @@
             </div>
           </div> -->
   
-          <div class="con_form consultDate_form">
+          <!-- <div class="con_form consultDate_form">
             <div class="tit">상담예정일</div>
             <div class="con_date">
               <div class="inputBox_DP">
@@ -175,7 +175,7 @@
               </div>
               <div></div>
             </div>
-          </div>
+          </div> -->
 
           <div class="con_form">
             <div class="con_date">
@@ -186,12 +186,12 @@
               <!-- <span class="hypen">~</span> -->
               <div class="inputBox_DP">
                 <div class="tit">상담일자</div>
-                <input type="date" name="consultDate" id="consultDate" class="date" value="2022-12-10" required="required" data-title="상담예정일" title="상담예정일">
+                <input type="date" name="consultDate" id="consultDate" class="date" value="2022-12-10" required="required" data-title="상담일자" title="상담일자">
               </div>
             </div>
           </div>
 
-          <div class="con_form">
+          <div class="con_form consultSort_form">
             <div class="tit">상담분류</div>
             <div class="select_row">
               <label for="sel01">상담분류</label>
@@ -203,6 +203,9 @@
                 <option value="">해피콜</option>
               </select>
             </div>
+          </div>
+          <div class="con_form">
+            <p class="hpc_date">+7 업무일 (2022-12-19) 에 해피콜 등록</p>
           </div>
   
           <div class="con_form con_flex">
@@ -328,10 +331,13 @@
               <div class="select_row">
                 <label for="sel02">선택하세요</label>
                 <select name="sel02" id="sel02">
-                  <option value=""></option>
-                  <option value=""></option>
-                  <option value=""></option>
-                  <option value=""></option>
+                  <option value="">1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                  <option value="">7</option>
                 </select>
               </div>
             </div>

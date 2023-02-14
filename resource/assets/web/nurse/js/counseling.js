@@ -25,6 +25,7 @@ var nurseJS = {
   init: function () {
     this.calInit();
     // this.counselHis();
+    this.counselRegis();
     this.scheduleEdit();
     this.popup();
     this.tabEvent();
@@ -233,12 +234,75 @@ var nurseJS = {
       // 현재 월 표기
       $('.year-month').html('<span>' + currentYear + '</span>년 <span>' + (currentMonth + 1) + '</span>월');
 
+      // 이번 달의 마지막날 날짜와 요일 구하기
+      var endDay = new Date(currentYear, currentMonth + 1, 0),
+          nextDate = endDay.getDate();
+
+      // 월별 일수 계산 후 css용 변수 생성
+      document.documentElement.style.setProperty("--dn", nextDate);
+
+      // 월별 일수 계산 후 타임테이블 세팅 및 공휴일 데이터값 보정
+      let dateCell = $('.time_wrap table tbody tr'),
+          dayCell = $('.time_wrap table thead tr'),
+          week = undefined,
+          day = undefined;
+
+      dateCell.children('td:not(:first-child)').remove();
+      dayCell.children('td:not(:first-child)').remove();
+
+      for (var i=0; i < nextDate; i++) {
+        const weekday = ['일', '월', '화', '수', '목', '금', '토'];
+        day = new Date(currentYear, currentMonth, i + 1);
+        week = weekday[day.getDay()];
+
+        dayCell.append('<td>' + (i + 1) + '<span>(' + week + ')</span></td>');
+        dateCell.append('<td><button type="button" data-type=""></button></td>');
+
+        if (week === '토' || week === '일') {
+          dayCell.children('td').eq(i + 1).css('color', '#3263e0');
+          dateCell.each(function(idx) {
+            dateCell.eq(idx).children('td').eq(i + 1).find('button').attr('data-type', 7);
+          })
+        }
+      }
+
+
+
+
+// ****************************************************************************************************************** //
+// ****************************** 타임테이블 데이터값 랜덤셋팅(개발시 삭제 요망) ************************************ // 
+// ****************************************************************************************************************** //
+      dateCell.each(function(idx) {
+        dateCell.eq(idx).find('td').each(function(i) {
+          const randNum = Math.floor(Math.random() * 7);
+          dateCell.eq(idx).find('td').eq(i).children('button:not([data-type="7"])').attr('data-type', randNum);
+        })
+      });
+// ****************************************************************************************************************** //
+// ****************************** 타임테이블 데이터값 랜덤셋팅(개발시 삭제 요망) ************************************ // 
+// ****************************************************************************************************************** //    
+
+
+
+
+
       // 버튼 생성
-      let btnFuncName = ['가능', '예약', '불가(교육)', '불가(공휴일)', '불가(이동)', '불가(휴가)', '불가(회의)', '불가(기타)'];
+      let btnFuncName = ['가능', '예약', '불가(교육)', '불가(이동)', '불가(휴가)', '불가(회의)', '불가(기타)', '불가(공휴일)'];
       for(let i=0; i < btnFuncName.length; i++) {
         $('button[data-type="' + i + '"]').text(btnFuncName[i]);
       }
-      
+
+      // 렌더링시 현재 날짜로 타임테이블 스크롤 포커싱 맞추기
+      if (currentMonth === today.getMonth()) {
+        $('.time_wrap').animate({
+          scrollLeft: $('table thead tr td').eq(today.getDate()).position().left - $('table thead tr td').eq(0).outerWidth()
+        }, 200);
+      } else {
+        $('.time_wrap').animate({
+          scrollLeft: 0
+        }, 200);
+      }
+
       // *타임테이블 스크롤 시 가장자리 정보 셀 고정
       $('.time_wrap').on('load resize scroll', function() {
         $("thead").css("top", 0 + $(this).scrollTop());
@@ -257,8 +321,8 @@ var nurseJS = {
         const btnFirst = $('.sec_cal > .btn_box02').children().first(),
               btnLast = $('.sec_cal > .btn_box02').children().last();
 
-        let btnImpossible = $('button:not([data-type="0"], [data-type="1"], [data-type="3"]).on'),
-            btnImposWeekend = $('button[data-type="3"].on'),
+        let btnImpossible = $('button:not([data-type="0"], [data-type="1"], [data-type="7"]).on'),
+            btnImposWeekend = $('button[data-type="7"].on'),
             btnPossible = $('button[data-type="0"].on');
 
         // 불가버튼 클릭 시
@@ -302,8 +366,11 @@ var nurseJS = {
           btnLast.children().text('불가').attr('onClick', "openPopup('')");
           $('.impossible_pop').removeClass('reason_setting');
         }
-        
+
       });
+
+      
+      
     }
 
     // ------------------------------------------------------------+| 작동 기능들 |+------------------------------------------------------------ //
@@ -422,6 +489,24 @@ var nurseJS = {
   //   }
   // },
 
+  counselRegis: () => {
+    //상담이력등록 상담분류 "신환교육"일 경우 해피콜 예정일 노출
+    var selectType = $(".consultSort_form .select_row>select");
+    selectChange(selectType);
+    function selectChange(type) {
+      type.change(function () {
+        var select_name = $(this).children("option:selected").text();
+        $(this).siblings("label").text(select_name);
+
+        if (select_name === "신환교육") {
+          $('.consultSort_form').siblings('.con_form').find(".hpc_date").show();
+        } else {
+          $('.consultSort_form').siblings('.con_form').find(".hpc_date").hide();
+        }
+      });
+    }
+  },
+
   //상담가능일정등록
   scheduleEdit: () => {
     //달력 날짜 선택
@@ -516,16 +601,17 @@ var nurseJS = {
         $('.impossible_pop ul').prepend('<li class="info"></li>');
         $('.impossible_pop .info').html('<span>' + imposDate + '</span>' + imposTimeStart + ' ~ ' + imposTimeEnd);
 
+
       // 상담일정관리 - 클릭한 버튼의 데이터 가져오기
       } else if ($('.time_wrap').length) {
         
         // 버튼의 좌표 위치 담을 배열 생성
         let arrObj = new Array;
-        $('button:not([data-type="3"]).on').each(function(index) {
+        $('button:not([data-type="7"]).on').each(function(index) {
           // 버튼 각각 좌표 생성
-          var rowPos = $('button:not([data-type="3"]).on').eq(index).closest('tr').index() + 1,
-              colPos = $('button:not([data-type="3"]).on').eq(index).closest('td').index(),
-              colNextPos = $('button:not([data-type="3"]).on').eq(index + 1).closest('td').index();
+          var rowPos = $('button:not([data-type="7"]).on').eq(index).closest('tr').index() + 1,
+              colPos = $('button:not([data-type="7"]).on').eq(index).closest('td').index(),
+              colNextPos = $('button:not([data-type="7"]).on').eq(index + 1).closest('td').index();
             
           // 버튼의 행, 열 좌표를 작은 배열에 담은 후, 각각의 작은 배열들을 좌표 위치 배열에 담기
           let posArr = [rowPos, colPos];
@@ -542,7 +628,7 @@ var nurseJS = {
         // console.log(arrObj)
 
         // 선택한 버튼만큼 info 생성
-        for(var i=1; i<= $('button:not([data-type="3"]).on').length; i++) {
+        for(var i=1; i<= $('button:not([data-type="7"]).on').length; i++) {
           let imposDay = $('thead tr td').eq(arrObj[i - 1][1]).html(),
               imposTimeStart = $('.moveL').eq((arrObj[i -1][0]) - 1).html(),
               imposTimeEnd = $('.moveL').eq((arrObj[i -1][0])).html();
@@ -587,6 +673,15 @@ function openPopup(popConts) {  //onclick="openPopup('popConts');"
   } else {
     popthis.children('button.save').text('등록');
   }
+
+  $("#impos_select").on("change", function(){
+    var choose = $(this).find("option:selected").attr('value');
+    if (choose === 'etc') { 
+      $('#etc_textarea').show();
+    } else {
+      $('#etc_textarea').hide();
+    }
+  });
 
   //팝업 닫기
   popthis.siblings(".close_pop").click(function(){ // 팝업 내 X버튼

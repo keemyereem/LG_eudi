@@ -25,6 +25,8 @@ ExtraBold - 'NanumSquareEB'
 .popup .pop_alert { padding: 35px 20px 20px; background: #fff; border-radius: 10px; flex-wrap: wrap; }
 .popup .pop_alert .pop_tit { font-size: 18px; line-height: 1.25; text-align: center; width: 100%; }
 .popup .pop_alert button { margin-top: 24px; background: #f18e1e; color: #ffffff; width: 100%; padding: 14px 0; border-radius: 5px; }
+.popup .pop_alert.step01 button { font-size: 13px; font-family: 'NanumSquareB'; }
+.popup .pop_alert.step01 button:last-child { margin-top: 9px; background: #79bd28; }
 
 /* 팝업 - 공통 - 밑에서 나오는 팝업 */
 .popup.popup_bottom { padding: 0; }
@@ -43,6 +45,7 @@ ExtraBold - 'NanumSquareEB'
 .impossible_pop .impos_action select { font-family: 'NanumSquareB'; font-size: 12px; -o-appearance: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; height: 40px; padding: 0 11px; border: 1px solid #cfcfcf; border-radius: 5px; background:#ffffff url(../images/common/select.png) calc(100% - 10px) 50% no-repeat; background-size: 6px 3px; }
 .impossible_pop .impos_action select::-ms-expand { display: none; }
 .impossible_pop .impos_action select:focus { background: #ffffff url(../images/common/select_on.png) calc(100% - 10px) 50% no-repeat; background-size: 6px 3px; }
+.impossible_pop .impos_action textarea { border: 1px solid #cfcfcf; width: 100%; height: 150px; border-radius: 5px; margin-top: 10px; resize: none; padding: 15px 11px; line-height: 1.2; font-size: 12px; color: #333333; display: none; }
 .impossible_pop > button { width: calc(50% - 5px); border-radius: 5px; margin-top: 30px; font-size: 13px; font-family: 'NanumSquareB'; color: #727272; background: #cfcfcf; padding: 14px 0; }
 .impossible_pop > button.save { background: #f18e1e; color: #ffffff; float: right; }
 .impossible_pop > button.save.time_btnColor { background: #e26a2c; }
@@ -87,6 +90,11 @@ ExtraBold - 'NanumSquareEB'
 .duplicateChild_pop .con_list>ul>li>a>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
 .duplicateChild_pop>p { font-size: 18px; text-align: center; line-height: 1.25; margin: 35px 0 40px; }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .popup .inner_pop { width: 345px; }
+  .scheduleEdit_pop { padding: 30px 15px 70px; }
+}
+
 /*  */
 .con_sub .con_box .con_inner03 { padding: 0 15px; background: #fff; }
 .con_sub .con_box .con_inner04 { padding: 20px 15px 65px 15px; background: #fff; }
@@ -101,6 +109,11 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sub_top .sub_nav{ display:flex; justify-content: space-between; padding: 0 15px; border-bottom: 8px solid #f1f1f1 }
 .wrap_sub .sub_top .sub_nav a{  padding: 16.5px 0px; display: block; width: 33.3333333333%; text-align: center; white-space: nowrap; font-size: 15px }
 .wrap_sub .sub_top .sub_nav a.active{ color: #f18e1e; border-bottom: 2px solid #f18e1e; font-family: 'NanumSquareEB' }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .con_sub .con_box .con_inner05 { padding: 20px 15px 125px 15px; }
+}
+
 
 /*/////////////////////////////////////////////////////////////////////////
 ///////////                   ** 상담일정관리 **                    ///////
@@ -120,6 +133,10 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .cal_nav .go-prev { background: url(../images/common/cal_arrow_prev.png) 100% 50% no-repeat; background-size: 7px 12px; }
 .wrap_sub .sec_cal .cal_nav .go-prev::before { transform: rotate(-135deg) }
 .wrap_sub .sec_cal .cal_nav .go-next::before { transform: rotate(45deg) }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
 
 /* 상담일정관리 - 캘린더 */
 .wrap_sub .calendar .sec_cal .cal_nav .year-month { width: 157.5px; }
@@ -146,6 +163,17 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
 .wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #fc637d; }
 .wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #79bd28; }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrap_sub .calendar .sec_cal .cal_nav .year-month { width: 187.5px; }
+  .wrap_sub .sec_cal .cal_wrap .dates .day { height: 18.3vw; }
+  .wrap_sub .sec_cal .cal_wrap .dates .day a { padding: 7.5px 5px 12px; }
+  .wrap_sub .sec_cal .current .hpc_block { max-width: 35px; height: 20px; line-height: 20px; font-size: 12px; border-radius: 10px; margin:-4px 4px 0 0; }
+  .wrap_sub .sec_cal .current .schedule { width: calc(100% - 10px); height: 20px; font-size: 12px; left: 5px; }
+  .wrap_sub .sec_cal .current .schedule.edu_block { bottom: 37px; }
+  .wrap_sub .sec_cal .current .schedule.cs_block { bottom: 12px; }
+}
+
 
 /* 상담일정관리 - 상세일정 */
 .wrap_sub .schedules .sec_cal .cal_nav .year-month { width: 237.5px; }
@@ -186,6 +214,11 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .hpc_wrap li p span::before { content: ''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px; vertical-align: middle; }
 .wrap_sub .sec_cal .hpc_wrap li button { border: 1px solid #f18e1e; }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrap_sub .schedules .sec_cal .cal_nav .year-month { width: 63vw; }
+
+}
+
 /* 상담일정관리 - 상담이력등록 */
 .wrap_sub .con_sub .con_flex { display: flex; align-items: center; }
 .wrap_sub .con_sub .info_box { padding: 30px 15px 25px; background: #fff; }
@@ -219,7 +252,12 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .con_sub .form_box .con_flex .inputBox_DP { width: 100%; }
 .wrap_sub .con_sub .form_box .consultDate_form { display: none; }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrap_sub .con_sub .form_box02 { padding: 30px 15px 50px; }
+}
+
 /* 상담일정관리 - 해피콜등록 */
+.happycall { background: #fff; padding-bottom: 100px; }
 .happycall .srh_box .con_flex .input_srh:first-of-type { width: calc(41% - 2.5px); }
 .happycall .srh_box .con_flex .input_srh:nth-of-type(2) { width: calc(59% - 2.5px); }
 .happycall .con_head .date_tit { font-family: 'NanumSquareEB'; font-size: 23px; color: #333; letter-spacing: -2.7px; text-align: center; padding: 35px 0; }
@@ -252,6 +290,10 @@ ExtraBold - 'NanumSquareEB'
 .happycall .con_box .info02 > span { display: block; margin-top: 15px; font-size: 13px; }
 .happycall .con_box .info02 > span::before { content:''; display: inline-block; width: 3px; height: 3px; background: #f18e1e; border-radius: 50%; vertical-align: middle; margin-right: 7px; margin-top: -2px; }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .happycall { padding-bottom: 125px; }
+}
+
 
 /*/////////////////////////////////////////////////////////////////////////
 ///////////                  ** 상담가능일정등록 **                 ///////
@@ -267,11 +309,11 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal .cal_nav .year-month { width: 157.5px; }
 .wrap_sub .register .sec_cal .time_wrap { position: relative; height: 375px; margin: 30px 0 25px 15px; overflow: scroll; }
 .wrap_sub .register .sec_cal .time_wrap > span { background: #ffffff; display: inline-block; position: absolute; top: 1px; left: 0; z-index: 9; font-size: 15px; font-family: 'NanumSquareEB'; height: 47.5px; width: 18.7vw; display: flex; align-items: center; justify-content: center; border-width: 0 1px 1px 0; border-style: solid; border-color: #333333 #eeeeee #eeeeee transparent; }
-.wrap_sub .register .sec_cal .time_wrap table { width: calc((25.75vw * 7) + 18.7vw); position: relative; margin-right: 15px; }
+.wrap_sub .register .sec_cal .time_wrap table { width: calc((25.75vw * var(--dn)) + 18.7vw); position: relative; margin-right: 15px; }
 .wrap_sub .register .sec_cal .time_wrap table tr { height: 47.5px; }
-.wrap_sub .register .sec_cal .time_wrap table tr td { background: #ffffff; width: 25.6vw; height: inherit; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #eeeeee; border-width: 0 1px 1px 0; }
+.wrap_sub .register .sec_cal .time_wrap table tr td { background: #ffffff; width: 25.75vw; height: inherit; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #eeeeee; border-width: 0 1px 1px 0; }
 .wrap_sub .register .sec_cal .time_wrap table tr td:last-child { border-width: 0 0 1px 0; }
-.wrap_sub .register .sec_cal .time_wrap table thead { position: absolute; width: calc((25.6vw * 7) + 18.7vw); z-index: 1; border-top: 1px solid #333333; }
+.wrap_sub .register .sec_cal .time_wrap table thead { position: absolute; width: 100%; z-index: 1; border-top: 1px solid #333333; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr { position: relative; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td { height: inherit; font-size: 15px; font-family: 'NanumSquareEB'; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td:first-child { width: 18.7vw; }
@@ -283,14 +325,30 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"] { border: 1px solid #f18e1e; color: #f18e1e; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"].on { background: #f18e1e; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="1"] { border: 1px solid #13bfd6; color: #13bfd6; pointer-events: none; }
-.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="3"].on { background: #999999; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="7"].on { background: #999999; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="1"]) { border: 1px solid #999999; color: #999999; font-size: 12px; }
-.wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="1"], [data-type="3"]).on { background: #79bd28; color: #ffffff; border: 1px solid #79bd28; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="1"], [data-type="7"]).on { background: #79bd28; color: #ffffff; border: 1px solid #79bd28; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button.on  { color: #ffffff; }
 .wrap_sub .register .sec_cal .btn_box02 { padding: 0 15px; }
 .wrap_sub .register .sec_cal .btn_box02 .btn_gray a { pointer-events: none; }
 .wrap_sub .register .sec_cal .btn_box02 > div:first-child { float: left; }
 .wrap_sub .register .sec_cal .btn_box02 > div:last-child { float: right; }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrap_sub .sec_cal .current .schedule.pos_block { bottom: 37px; }
+  .wrap_sub .sec_cal .current .schedule.impos_block { bottom: 12px; }
+
+  .wrap_sub .sec_cal .register { margin-bottom: 50px; }
+  .wrap_sub .register .sec_cal .cal_nav .year-month { width: 187.5px; }
+  .wrap_sub .register .sec_cal .time_wrap { height: 60vh; }
+  .wrap_sub .register .sec_cal .time_wrap > span { height: 72.5px; width: 105px; } 
+  .wrap_sub .register .sec_cal .time_wrap table { width: calc((105px * var(--dn)) + 105px); }
+  .wrap_sub .register .sec_cal .time_wrap table tr { height: 72.5px; }
+  .wrap_sub .register .sec_cal .time_wrap table tr td,
+  .wrap_sub .register .sec_cal .time_wrap table thead tr td:first-child { width: 105px; }
+  .wrap_sub .register .sec_cal .time_wrap table tbody { padding-left: 105px; margin-top: 72.5px; }
+  .wrap_sub .register .sec_cal .time_wrap table tbody tr td.moveL { width: 105px; }
+}
 
 
 /*/////////////////////////////////////////////////////////////////////////
@@ -346,7 +404,7 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .list_box .child_list>ul>li>a>div:last-child { width: 100%; text-align: left; font-family: 'NanumSquareR'; color: #999; }
 .con_sub .list_box .btn_bottom { width: calc(100% - 30px); left: 15px; }
 
-.con_sub .list_box { padding: 35px 15px 125px; background: #fff; min-height: calc(100vh - 268px); box-sizing: content-box; }
+.con_sub .list_box { padding: 35px 15px 125px; background: #fff; box-sizing: content-box; }
 .con_sub .list_box .con_flex+.con_list { margin-top: 12px; }
 .con_sub .list_box .con_list+.con_flex { margin-top: 40px; }
 .con_sub .list_box .search_name{  display: inline-block; width: 70px; height: 22px; line-height: 22px; background: rgba(121, 189, 40, .1); border-radius: 11px; text-align: center; }
@@ -359,6 +417,13 @@ ExtraBold - 'NanumSquareEB'
 .con_sub.consultHistory .tb table tbody td.cont p { font-size: 12px; padding-left: 0; letter-spacing: -1px; }
 .con_sub.consultHistory .tb .input_physics  { width: 85%; }
 .con_sub.consultHistory .tb .inputBox_DP { width: 100%; }
+.con_sub.consultHistory .tb .hpc_date { font-size: 12px; color: #79bd28; }
+
+.con_sub .form_box .con_form .hpc_date { font-size: 12px; color: #f18e1e; margin-top: 10px; display: none; }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .con_sub .list_box { padding: 35px 15px 150px; }
+}
 
 /*/////////////////////////////////////////////////////////////////////////
 ///////////                     ** 물품관리 **                      ///////
@@ -377,9 +442,14 @@ ExtraBold - 'NanumSquareEB'
 .con_login .authentic_cont { padding: 0 20px; }
 .con_login .authentic_cont > p { font-size: 13px; text-align: center; color: #727272; }
 .con_login .authentic_cont > p > b { font-family: 'NanumSquareEB'; color: #79bd28; display: block; margin-bottom: 9px; }
-.con_login .authentic_cont .input_row { padding: 0 15px; height: 50px; line-height: 50px; border: 1px solid #cfcfcf; margin: 40px auto 0; }
+.con_login .authentic_cont .input_row { padding: 0 15px; height: 50px; line-height: 50px; border: 1px solid #cfcfcf; margin: 40px auto 0; max-width: 610px; }
 .con_login .authentic_cont .input_row:hover { border: 1px solid #333; }
 .con_login .authentic_cont .input_row .ipt { font-family: 'NanumSquareB'; font-size: 13px; color: #333; }
 .con_login .authentic_cont .input_row .timer { font-family: 'NanumSquareB'; font-size: 13px; color: #333; position: absolute; top: 0; right: 0; }
-.con_login .authentic_cont .input_row + .alert_txt { font-size: 12px; color: #79bd28; margin-top: 10px; }
+.con_login .authentic_cont .input_row + .alert_txt { font-size: 12px; color: #79bd28; margin: 10px auto 0; max-width: 610px; }
 .con_login .btn_box { position: absolute; bottom: 25px; width: calc(100% - 30px); }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .con_login .logo { padding: 200px 0 25px; }
+  .con_login .btn_box { bottom: 70px; }
+}

@@ -55,6 +55,13 @@
     selEvent.init();
     datetimeEvent.init();
     nurseJS.init();
+    $(window).resize(resizeContents);
+    resizeContents();
+    function resizeContents() {
+      $('.wrap_sub').css({
+        'min-height': $(window).height() + 'px'
+      });
+    }
   })
   
 </script>
@@ -141,15 +148,17 @@
           <div class="info02">
             <h4 class="ffEB">신청일시</h4>
             <span>2022년 12월 10일 17:00 ~ 18:00</span>
-            <div class="btn_box btn_box02 mt50">
-              <div class="btn_gray"><a href="javascript:;">취소</a></div>
-              <div class="btn_orange"><a href="javascript:;">등록</a></div>
-            </div>
           </div>
         </div>
       </div>
-    </div>
 
+    </div>
+    <div class="btn_box btn_box02 btn_bottom">
+      <div class="inner">
+        <div class="btn_gray"><a href="javascript:;">취소</a></div>
+        <div class="btn_orange"><a href="javascript:;">등록</a></div>
+      </div>
+    </div>
 
 
 
