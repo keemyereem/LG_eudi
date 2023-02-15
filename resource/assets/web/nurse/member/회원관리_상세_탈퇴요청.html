@@ -373,7 +373,7 @@
           return;
         }
   
-        if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술 선택 했으면 사유 체크
+        if($("#mWithdrawCode option:selected").val()  == "7"){//기타 서술 선택 했으면 사유 체크 //셀렉트박스 옵션변경 2023.02.15
           if($("#mWithdrawContent").val() == ""){
             alert("탈퇴 사유를 작성해 주세요.");
             return;
@@ -874,9 +874,13 @@
                       <td class="tit"><p>처방제품명</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">유트로핀 펜주</label>
+                          <label for="sel03">유트로핀 펜</label>
                           <select id="sel03" name="">
-                            <option value="" >유트로핀 펜주</option>
+                            <option value="" >유트로핀에스펜</option>
+                            <option value="" >유트로핀 펜</option>
+                            <option value="" >유트로핀</option>
+                            <option value="" >유트로핀플러스</option>
+                            <option value="" >유트로핀12IU</option>
                           </select>
                         </div>
                       </td>
@@ -944,9 +948,16 @@
                           <label for="prescriptionName">Normal</label>
                           <select id="prescriptionName" name="prescriptionName">
                             <option value="Normal" >Normal</option>
-                            <option value="prescription01" >prescription01</option>
-                            <option value="prescription02" >prescription02</option>
-                            <option value="prescription03" >prescription03</option>
+                            <option value="" >소아GHD</option>
+                            <option value="" >터너증후군</option>
+                            <option value="" >CRF</option>
+                            <option value="" >SGA</option>
+                            <option value="" >특발성저신장</option>
+                            <option value="" >PWS</option>
+                            <option value="" >성조숙증</option>
+                            <option value="" >누난증후군</option>
+                            <option value="" >성인GHD</option>
+                            <option value="" >기타</option>
                           </select>
                         </div>
                       </td>
@@ -957,10 +968,13 @@
                         <div class="select_row">
                           <label for="prescriptionRoute">본인의사</label>
                           <select id="prescriptionRoute" name="prescriptionRoute">
-                            <option value="doctor" >본인의사</option>
-                            <option value="Route01" >Route01</option>
-                            <option value="Route02" >Route02</option>
-                            <option value="Route03" >Route03</option>
+                            <option value="" >의사권유</option>
+                            <option value="" >본인의사</option>
+                            <option value="" >매체정보</option>
+                            <option value="" >지인추천</option>
+                            <option value="" >LG임직원 소개</option>
+                            <option value="" >LG복지재단</option>
+                            <option value="" >기타</option>
                           </select>
                         </div>
                       </td>
@@ -971,10 +985,12 @@
                         <div class="select_row">
                           <label for="prescriptionNamePrev">싸이젠</label>
                           <select id="prescriptionNamePrev" name="prescriptionNamePrev">
-                            <option value="doctor" >싸이젠</option>
-                            <option value="prescription01" >prescription01</option>
-                            <option value="prescription02" >prescription02</option>
-                            <option value="prescription03" >prescription03</option>
+                            <option value="" >싸이젠</option>
+                            <option value="" >그로트로핀</option>
+                            <option value="" >지노트로핀</option>
+                            <option value="" >노디트로핀</option>
+                            <option value="" >싸이트로핀</option>
+                            <option value="" >조맥톤</option>
                           </select>
                         </div>
                       </td>
@@ -1037,21 +1053,13 @@
                             <label for="endReason">선택하세요</label>
                             <select id="endReason" name="endReason">
                                 <option value="0">선택하세요</option>
-                                <option value="1">치료 완료(효과만족/성장판닫힘)</option>
-                                <option value="2">타제품 전환(경제적부담)</option>
-                                <option value="3">타제품 전환(주사스트레스/통증)</option>
-                                <option value="4">타제품 전환(효과미비)</option>
-                                <option value="5">타제품 전환(부작용발생)</option>
-                                <option value="6">타제품 전환(기타)</option>
-                                <option value="7">치료 중단(경제적부담)</option>
-                                <option value="8">치료 중단(주사스트레스/통증)</option>
-                                <option value="9">치료 중단(효과미비)</option>
-                                <option value="10">치료 중단(부작용발생/우려)</option>
-                                <option value="11">상담 중단(연락두절)</option>
-                                <option value="12">상담 중단(해외출국)</option>
-                                <option value="13">동의 철회(해피콜 거부/삭제 요청)</option>
-                                <option value="14">기타 (사유를 서술형으로 적어주세요)</option>
-                                
+                                <option value="1">치료완료(치료목표달성/효과만족/성장판닫힘)</option>
+                                <option value="2">치료 중단(경제적부담)</option>
+                                <option value="3">치료중단(주사스트레스/통증)</option>
+                                <option value="4">치료중단(효과미비)</option>
+                                <option value="5">치료중단(부작용발생/우려)</option>
+                                <option value="6">타제품 전환</option>
+                                <option value="7">기타(사유를 서술형으로 적어주세요)</option>
                             </select>
                           </div>
                         </td>
@@ -1064,45 +1072,34 @@
                         </div>
                       </td>
                     </tr>
+                    
                     <tr>
                       <td class="tit"><p>탈퇴 유형</p></td>
                       <td class="cont">
                         <div class="select_row">
                           <label for="mWithdrawCode">탈퇴 유형를 선택해주세요</label>
                           <select id="mWithdrawCode" name="mWithdrawCode">
-                              <option value="0">탈퇴 유형를 선택해주세요</option>
-                              
-                              <option value="1">치료 완료(효과만족/성장판닫힘)</option>
-                          
-                              <option value="2">타제품 전환(경제적부담)</option>
-                          
-                              <option value="3">타제품 전환(주사스트레스/통증)</option>
-                          
-                              <option value="4">타제품 전환(효과미비)</option>
-                          
-                              <option value="5">타제품 전환(부작용발생)</option>
-                          
-                              <option value="6">타제품 전환(기타)</option>
-                          
-                              <option value="7">치료 중단(경제적부담)</option>
-                          
-                              <option value="8">치료 중단(주사스트레스/통증)</option>
-                          
-                              <option value="9">치료 중단(효과미비)</option>
-                          
-                              <option value="10">치료 중단(부작용발생/우려)</option>
-                          
-                              <option value="11">상담 중단(연락두절)</option>
-                          
-                              <option value="12">상담 중단(해외출국)</option>
-                          
-                              <option value="13">동의 철회(해피콜 거부/삭제 요청)</option>
-                          
-                              <option value="14">기타 (사유를 서술형으로 적어주세요)</option>
+                            <option value="0">탈퇴 유형를 선택해주세요</option>
+                            <option value="1">치료완료(치료목표달성/효과만족/성장판닫힘)</option>
+                            <option value="2">치료 중단(경제적부담)</option>
+                            <option value="3">치료중단(주사스트레스/통증)</option>
+                            <option value="4">치료중단(효과미비)</option>
+                            <option value="5">치료중단(부작용발생/우려)</option>
+                            <option value="6">타제품 전환</option>
+                            <option value="7">기타(사유를 서술형으로 적어주세요)</option>
                           </select>
                         </div>
                       </td>
                     </tr>
+                    <tr id="withdrawContent" style="display:none">
+                      <td class="tit"><p>탈퇴 사유</p></td>
+                      <td class="cont">
+                        <div class="area_box">
+                          <textarea type="text" id="mWithdrawContent" name="mWithdrawContent" placeholder="사유를 입력해주세요"></textarea>
+                        </div>                  
+                      </td>
+                    </tr>
+
                     <tr>
                       <td class="tit"><p>스마트케이스 <br>반납여부</p></td>
                       <td class="cont">
@@ -1406,7 +1403,7 @@
 			});
 		
       $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
-        if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술
+        if($("#mWithdrawCode option:selected").val()  == "7"){//기타 서술 //셀렉트박스 옵션 수정 2023.02.15
           $("#withdrawContent").css("display", "");
         } else {
           $("#withdrawContent").css("display", "none");

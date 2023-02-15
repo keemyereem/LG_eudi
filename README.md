@@ -18,7 +18,9 @@ since 2023.01.25
 >>3. **상담일정관리_02상세일정** - 불가관리 팝업(기타버튼 클릭시 textarea 보여주게)및  
 신규생성 팝업 수정(불가쪽 버튼 클릭시 불가관리 팝업 동일)
   
-  
-  
+> 2/15 네이트온 수신(이팀장님)
+>>1. 셀렉트박스 옵션 수정 (https://docs.google.com/spreadsheets/d/1W6-7dgqOaZqHobT8y6DAvbZ0Or64aOWIYDg6efTDxfA/edit#gid=0 참고)  
+>>2. **상담관리** - 온라인 상담 >> '온라인문의'로 메뉴명 변경
+
 2. 환아앱
 >
