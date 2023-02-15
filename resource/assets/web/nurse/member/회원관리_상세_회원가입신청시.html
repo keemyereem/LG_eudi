@@ -344,10 +344,13 @@
                       <td class="tit"><p>처방제품명</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">유트로핀 펜주</label>
+                          <label for="sel03">유트로핀 펜</label>
                           <select id="sel03" name="">
-                            <option value="" >유트로핀 펜주</option>
-                            <option value="" >유트로핀 펜주</option>
+                            <option value="" >유트로핀에스펜</option>
+                            <option value="" >유트로핀 펜</option>
+                            <option value="" >유트로핀</option>
+                            <option value="" >유트로핀플러스</option>
+                            <option value="" >유트로핀12IU</option>
                           </select>
                         </div>
                       </td>
@@ -711,7 +714,7 @@
 			});
 		
       $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
-        if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술
+        if($("#mWithdrawCode option:selected").val()  == "7"){//기타 서술
           $("#withdrawContent").css("display", "");
         } else {
           $("#withdrawContent").css("display", "none");
