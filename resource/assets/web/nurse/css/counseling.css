@@ -296,15 +296,15 @@ ExtraBold - 'NanumSquareEB'
 
 
 /*/////////////////////////////////////////////////////////////////////////
-///////////                  ** 상담가능일정등록 **                 ///////
+///////////                  ** 상담가능일정관리 **                 ///////
 /////////////////////////////////////////////////////////////////////////*/
 
-/* 상담가능일정등록 - 캘린더 */
+/* 상담가능일정관리 - 캘린더 */
 .wrap_sub .sec_cal .register { margin-bottom: 25px; }
 .wrap_sub .sec_cal .current .schedule.pos_block { bottom: 23.5px; background: #f18e1e; }
 .wrap_sub .sec_cal .current .schedule.impos_block { bottom: 6px; background: #6e6e6e; }
 
-/* 상담가능일정등록 - 시간별 */
+/* 상담가능일정관리 - 시간별 */
 .wrap_sub .register .sec_cal { padding: 35px 0 57px; overflow: hidden; }
 .wrap_sub .register .sec_cal .cal_nav .year-month { width: 157.5px; }
 .wrap_sub .register .sec_cal .time_wrap { position: relative; height: 375px; margin: 30px 0 25px 15px; overflow: scroll; }

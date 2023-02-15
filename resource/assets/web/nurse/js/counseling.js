@@ -132,7 +132,7 @@ var nurseJS = {
           $('.cs').append('<span class="schedule cs_block">상담<b>' + data_cs[0] + '</b></span>');
         }
         
-      } else {  //상담가능일정등록 캘린더
+      } else {  //상담가능일정관리 캘린더
         var getData02 = ['2023', '2'];
         
         if (calendar.dataset.cal === getData02[0] + '년 ' + getData02[1] + '월') {
@@ -507,7 +507,7 @@ var nurseJS = {
     }
   },
 
-  //상담가능일정등록
+  //상담가능일정관리
   scheduleEdit: () => {
     //달력 날짜 선택
     if($('.calendar .register').length){
