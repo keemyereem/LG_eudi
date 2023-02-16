@@ -604,7 +604,7 @@
 
 .tab_cont01 {padding: 15px;}
 
-.tab_cont01.tab_dosePre {backgrond: #fff;}
+.tab_cont01.tab_dosePre {background: #fff;}
 .cont_dosePre .tab_cont01 {padding: 0 15px 12px 15px;background: #fff;}
 
 .con_sub01 .compliance {margin-top: 0; width: 100%;height: 310px;border: 1px solid #79bd28;border-radius: 8px;background: #f5faf4;box-shadow: 1px 1px 5px rgba(0,0,0,0.23);}
@@ -783,6 +783,8 @@
 
 /* 물품/상담 */
 .wrap_sub04 .sub_top .nav {background: #fc637d;}
+.wrap_sub04 .sub_top .tab ul { display: flex; }
+.wrap_sub04 .sub_top .tab ul li { flex-grow: 1; width: auto;}
 .wrap_sub04 .sub_top .tab ul>li.active {border-bottom: 2px solid #fc637d;}
 .wrap_sub04 .sub_top .tab ul>li.active>a {color: #fc637d;}
 .wrap_sub04 .con_sub .profile .pro_name>div:after {content: "";display: block;position: absolute;bottom: -3px;left: 0;width: 100%;height: 8px;background: #fc637d;}
