@@ -143,7 +143,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .cal_wrap { padding-top: 30px; position: relative; margin: 0 auto; }
 .wrap_sub .sec_cal .cal_wrap .days { display: flex; padding: 11.5px 0 13px; border-top: 1px solid #333333; border-bottom: .5px solid #e5e5e5; }
 .wrap_sub .sec_cal .cal_wrap .day { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; width: calc(100% / 7); font-family: 'NanumSquareB'; color: #727272; font-size: 10px; text-align: center; }
-.wrap_sub .sec_cal .cal_wrap .day.disable { color: rgba(114, 114, 114, .4); }
+.wrap_sub .sec_cal .cal_wrap .day.disable a { color: rgba(114, 114, 114, .4); }
 .wrap_sub .sec_cal .cal_wrap .day:nth-child(7n).disable { color: rgba(50, 99, 224, .4); }
 .wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1).disable { color: rgba(227, 40, 40, .4); }
 .wrap_sub .sec_cal .cal_wrap .day:nth-child(7n),
@@ -152,7 +152,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .cal_wrap .day:nth-child(7n+1) a { color: #e32828; }
 .wrap_sub .sec_cal .cal_wrap .dates { display: flex; flex-flow: wrap; }
 .wrap_sub .sec_cal .cal_wrap .dates .day { height: 79px; border-bottom: .5px solid #e5e5e5; }
-.wrap_sub .sec_cal .cal_wrap .dates .day:not(.current) { padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
+.wrap_sub .sec_cal .cal_wrap .dates .day:not(.current) { /* padding: 7.5px 5px 6px; */ position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
 .wrap_sub .sec_cal .cal_wrap .dates .day a { display: flex; width: 100%; height: 100%; padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
 .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n),
 .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n+1),
