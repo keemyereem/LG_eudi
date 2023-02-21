@@ -244,8 +244,8 @@ select option[value=""][disabled] { display: none; }
 .btn_box02 .btn_pink {float: right;width: calc(50% - 5px);}
 .btn_box02 .btn_blue {float: right;width: calc(50% - 5px);}
 
-.btn_box02 > div:first-of-type {float: left;}
-.btn_box02 > div:last-of-type {float: right;}
+.btn_box02:not(.btn_bottom) > div:first-of-type {float: left;}
+.btn_box02:not(.btn_bottom) > div:last-of-type {float: right;}
 
 .btn_box03 .btn_gray {float: left;width: 32%;}
 .btn_box03 .btn_green {float: left;width: 32%;}
