@@ -27,6 +27,9 @@ ExtraBold - 'NanumSquareEB'
 .popup .pop_alert button { margin-top: 24px; background: #f18e1e; color: #ffffff; width: 100%; padding: 14px 0; border-radius: 5px; }
 .popup .pop_alert.step01 button { font-size: 13px; font-family: 'NanumSquareB'; }
 .popup .pop_alert.step01 button:last-child { margin-top: 9px; background: #79bd28; }
+.popup .pop_alert .btn_box { width: 100%; margin-top: 24px; }
+.popup .pop_alert .btn_box > div { height: 40px; }
+.popup .pop_alert .btn_box > div a { line-height: 40px; font-size: 13px; }
 
 /* 팝업 - 공통 - 밑에서 나오는 팝업 */
 .popup.popup_bottom { padding: 0; }
