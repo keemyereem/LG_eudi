@@ -157,8 +157,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .cal_wrap .dates .day { height: 79px; border-bottom: .5px solid #e5e5e5; }
 .wrap_sub .sec_cal .cal_wrap .dates .day:not(.current) { /* padding: 7.5px 5px 6px; */ position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
 .wrap_sub .sec_cal .cal_wrap .dates .day a { display: flex; width: 100%; height: 100%; padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
-.wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n),
-.wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n+1),
+/* .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n), */
+/* .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n+1), */
 /* .wrap_sub .sec_cal .current.today,  */
 .wrap_sub .sec_cal .cal_wrap .dates .day.disable { background: #f6f6f6; }
 .wrap_sub .sec_cal .cal_wrap .dates .day a.on { background: #79bd28; color: #fff; }
@@ -327,13 +327,13 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button::after { display: block; font-size: 14px; font-family: 'NanumSquareR'; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"] { border: 1px solid #f18e1e; color: #f18e1e; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"].on { background: #f18e1e; }
-.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="1"] { border: 1px solid #13bfd6; color: #13bfd6; pointer-events: none; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="1"] { border: 1px solid #13bfd6; color: #13bfd6; /* pointer-events: none; */ }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="7"].on { background: #999999; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="1"]) { border: 1px solid #999999; color: #999999; font-size: 12px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="1"], [data-type="7"]).on { background: #79bd28; color: #ffffff; border: 1px solid #79bd28; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button.on  { color: #ffffff; }
 .wrap_sub .register .sec_cal .btn_box02 { padding: 0 15px; }
-.wrap_sub .register .sec_cal .btn_box02 .btn_gray a { pointer-events: none; }
+.wrap_sub .register .sec_cal .btn_box02 .btn_gray a { /* pointer-events: none; */ }
 .wrap_sub .register .sec_cal .btn_box02 > div:first-child { float: left; }
 .wrap_sub .register .sec_cal .btn_box02 > div:last-child { float: right; }
 
