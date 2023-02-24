@@ -157,8 +157,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .cal_wrap .dates .day { height: 79px; border-bottom: .5px solid #e5e5e5; }
 .wrap_sub .sec_cal .cal_wrap .dates .day:not(.current) { /* padding: 7.5px 5px 6px; */ position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
 .wrap_sub .sec_cal .cal_wrap .dates .day a { display: flex; width: 100%; height: 100%; padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
-.wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n),
-.wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n+1),
+/* .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n), */
+/* .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n+1), */
 /* .wrap_sub .sec_cal .current.today,  */
 .wrap_sub .sec_cal .cal_wrap .dates .day.disable { background: #f6f6f6; }
 .wrap_sub .sec_cal .cal_wrap .dates .day a.on { background: #79bd28; color: #fff; }
