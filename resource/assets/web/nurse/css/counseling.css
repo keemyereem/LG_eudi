@@ -331,6 +331,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="7"].on { background: #999999; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="1"]) { border: 1px solid #999999; color: #999999; font-size: 12px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="1"], [data-type="7"]).on { background: #79bd28; color: #ffffff; border: 1px solid #79bd28; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td button em {font-size: 10px;}
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button.on  { color: #ffffff; }
 .wrap_sub .register .sec_cal .btn_box02 { padding: 0 15px; }
 .wrap_sub .register .sec_cal .btn_box02 .btn_gray a { pointer-events: none; }
