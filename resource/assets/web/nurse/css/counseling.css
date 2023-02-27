@@ -156,12 +156,12 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .cal_wrap .dates { display: flex; flex-flow: wrap; }
 .wrap_sub .sec_cal .cal_wrap .dates .day { height: 79px; border-bottom: .5px solid #e5e5e5; }
 .wrap_sub .sec_cal .cal_wrap .dates .day:not(.current) { /* padding: 7.5px 5px 6px; */ position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
-.wrap_sub .sec_cal .cal_wrap .dates .day a { display: flex; width: 100%; height: 100%; padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
+.wrap_sub .sec_cal .cal_wrap .dates .day button { display: flex; width: 100%; height: 100%; padding: 7.5px 5px 6px; position: relative; font-size: 9px; align-items: flex-start; justify-content: space-between; }
 /* .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n), */
 /* .wrap_sub .sec_cal .cal_wrap .dates .day:nth-child(7n+1), */
 /* .wrap_sub .sec_cal .current.today,  */
 .wrap_sub .sec_cal .cal_wrap .dates .day.disable { background: #f6f6f6; }
-.wrap_sub .sec_cal .cal_wrap .dates .day a.on { background: #79bd28; color: #fff; }
+.wrap_sub .sec_cal .cal_wrap .dates .day button.on { background: #79bd28; color: #fff; }
 .wrap_sub .sec_cal .current .hpc_block { width: 57%; max-width: 25px; height: 15px; border: 1px solid #13bfd6; color: #13bfd6; text-align: center; font-size: 9px; line-height: 14px; border-radius: 7.5px; margin:-3px .3vw 0 0; }
 .wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
 .wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #fc637d; }
@@ -170,7 +170,7 @@ ExtraBold - 'NanumSquareEB'
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrap_sub .calendar .sec_cal .cal_nav .year-month { width: 187.5px; }
   .wrap_sub .sec_cal .cal_wrap .dates .day { height: 18.3vw; }
-  .wrap_sub .sec_cal .cal_wrap .dates .day a { padding: 7.5px 5px 12px; }
+  .wrap_sub .sec_cal .cal_wrap .dates .day button { padding: 7.5px 5px 12px; }
   .wrap_sub .sec_cal .current .hpc_block { max-width: 35px; height: 20px; line-height: 20px; font-size: 12px; border-radius: 10px; margin:-4px 4px 0 0; }
   .wrap_sub .sec_cal .current .schedule { width: calc(100% - 10px); height: 20px; font-size: 12px; left: 5px; }
   .wrap_sub .sec_cal .current .schedule.edu_block { bottom: 37px; }
