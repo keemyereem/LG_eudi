@@ -64,7 +64,8 @@ ExtraBold - 'NanumSquareEB'
 .scheduleEdit_pop .date_select ul li { flex-shrink: 0; width: 70px; height: 30px; margin-right: 5px; background: #f6f6f6; border-radius: 5px; line-height: 30px; text-align: center; font-size: 12px; }
 .scheduleEdit_pop .schedule_select { display: flex; align-items: center; justify-content: space-between; margin: 10px 0 30px; }
 .scheduleEdit_pop .schedule_select li { width: calc((100% - 10px) / 3); height: 40px; line-height: 40px; border: 1px solid #cfcfcf; border-radius: 5px; font-size: 12px; text-align: center; }
-.scheduleEdit_pop .schedule_select li a { display: block; width: 100%; height: 100%; }
+.scheduleEdit_pop .schedule_select li button,
+.scheduleEdit_pop .schedule_select li a { display: block; width: 100%; height: 100%;}
 .scheduleEdit_pop .schedule_select li.on { border-color: #f18e1e; }
 .scheduleEdit_pop .schedule_select li:hover a, 
 .scheduleEdit_pop .schedule_select li.on a { color: #f18e1e; }
