@@ -1,0 +1,154 @@
+@charset "utf-8"; 
+/*=============================================
+=                   ##RESET                   =
+=============================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, article, aside, hgroup, header, footer, figure, figcaption, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+article, aside, hgroup, header, footer, figure, figcaption, nav, section {
+    display: block;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-family: 'NanumSquareR','맑은 고딕','Malgun Gothic',sans-serif;
+    color: #000;
+    line-height: 1;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1;
+    word-break: keep-all;
+}
+
+fieldset {
+    border: none;
+}
+
+ol, li {
+    list-style: none;
+    overflow: hidden;
+    zoom:1;}
+
+span, p, a, div, em {
+    word-break: break-all;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,q:before, q:after {
+    content: '';
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    overflow: visible;
+    cursor: pointer;
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+a {
+    color: #221e1f;
+}
+
+a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+legend, caption {
+    display: none;
+}
+
+textarea {
+    resize: vertical;
+    font: inherit;
+    overflow-y: auto;
+}
+
+input, select {
+    color: inherit;
+    font: inherit;
+    color: #333;
+}
+
+button, input, select, textarea {
+    vertical-align: top;
+    font-family: inherit;
+    outline-style: none;
+}
+
+label {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+address, i, em {
+    display: inline;
+    font-style: normal;
+    zoom:1;}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+img, select, input, button {
+    vertical-align: middle;
+}
+
+
+/*=============================================
+=                   ##main                 =
+=============================================*/
+.con_main .inner {margin: 0 auto;width: 1041px;}
+.con_main .main_visual {width: 100%;height: 477px;background: #79bd28 url(../images/main/main_bg.jpg)no-repeat 50% 50%;background-size: auto 100%;}
+.con_main .main_list {padding-top: 40px;display: flex;justify-content: space-between;width: 100%;}
+.con_main .main_list>div {width: calc(50% - 45px);}
+.con_main .main_list .list_box .list_top {font-family: 'NanumSquareB';font-size: 21px;padding-bottom: 10px;border-bottom: 1px solid #79bd28;}
+.con_main .main_list .list_box .list_top::before {content:'';display: inline-block;width: 4px;height: 19px;background: #79bd28;vertical-align:middle;margin-right: 3px;}
+.con_main .main_list .list_box .list_cont {padding: 15px 10px 30px;}
+.con_main .main_list .list_box .list_cont ul li+li {margin-top: 10px;}
+.con_main .main_list .list_box .list_cont p {font-size: 13px;transform: skew(-0.1deg);text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;width: 100%;overflow: hidden;}
+.con_main .main_list .list_box .list_cont p.list_none {color: #888;}
+.con_main .main_list .list_box .list_cont .list_date {font-size: 12px;color: #555;}
+.con_main .main_list .list_box .list_cont .new img {width: 32px;margin-right: 5px;}
+.con_main .main_list .list_box01 .list_cont ul li {display: flex;justify-content: space-between;align-items: center;}
+.con_main .main_list .list_box01 .list_cont p {width: 85%;}
+
+

@@ -368,13 +368,13 @@
       
       if($("#cState").val() == "D"){//탈퇴사유 추가
         if($("#mWithdrawCode option:selected").val() == "" || $("#mWithdrawCode option:selected").val() == null  || $("#mWithdrawCode option:selected").val() == 0){
-          alert("탈퇴 유형을 선택해 주세요.");
+          alert("탈퇴사유를 선택해 주세요.");
           return;
         }
   
         if($("#mWithdrawCode option:selected").val()  == "7"){//기타 서술 선택 했으면 사유 체크 //셀렉트박스 옵션 수정 2023.02.15
           if($("#mWithdrawContent").val() == ""){
-            alert("탈퇴 사유를 작성해 주세요.");
+            alert("탈퇴사유를 작성해 주세요.");
             return;
           }
         }
@@ -1072,12 +1072,12 @@
                     </tr>
 
                     <tr>
-                      <td class="tit"><p>탈퇴 유형</p></td>
+                      <td class="tit"><p>탈퇴사유</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="mWithdrawCode">탈퇴 유형를 선택해주세요</label>
+                          <label for="mWithdrawCode">선택하세요</label>
                           <select id="mWithdrawCode" name="mWithdrawCode">
-                            <option value="0">탈퇴 유형를 선택해주세요</option>
+                            <option value="0">탈퇴사유를 선택해주세요</option>
                             <option value="1">치료완료(치료목표달성/효과만족/성장판닫힘)</option>
                             <option value="2">치료 중단(경제적부담)</option>
                             <option value="3">치료중단(주사스트레스/통증)</option>
@@ -1090,10 +1090,10 @@
                       </td>
                     </tr>
                     <tr id="withdrawContent" style="display:none">
-                      <td class="tit"><p>탈퇴 사유</p></td>
+                      <td class="tit"><p>탈퇴사유<br>(서술)</p></td>
                       <td class="cont">
                         <div class="area_box">
-                          <textarea type="text" id="mWithdrawContent" name="mWithdrawContent" placeholder="사유를 입력해주세요"></textarea>
+                          <textarea type="text" id="mWithdrawContent" name="mWithdrawContent" placeholder="내용을 입력해주세요"></textarea>
                         </div>                  
                       </td>
                     </tr>

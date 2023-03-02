@@ -519,10 +519,10 @@ function loginEvent() {
 function popupOpen(popConts) {
   var popthis = $(".pop_wrap."+popConts);
   popthis.fadeIn(300);
-  $(".wrap_sub").addClass("not_scroll");
+  $(".wrap_sub, .wrap_main").addClass("not_scroll");
   popthis.find(".pop_close").click(function(){
       popthis.fadeOut(300);
-      $(".wrap_sub").removeClass("not_scroll");
+      $(".wrap_sub, .wrap_main").removeClass("not_scroll");
   });
 }
 
