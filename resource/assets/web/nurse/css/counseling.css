@@ -320,10 +320,12 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal .time_wrap table thead { position: absolute; width: 100%; z-index: 1; border-top: 1px solid #333333; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr { position: relative; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td { height: inherit; font-size: 15px; font-family: 'NanumSquareEB'; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr td.past_date { background: #f6f6f6; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td:first-child { width: 18.7vw; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td span { font-family: 'NanumSquareR'; margin-left: 4px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody { padding-left: 18.7vw; margin-top: 47.5px; display: inline-block; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td.moveL { width: 18.7vw; position: absolute; left: 0; font-size: 14px; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td.past_time { background: #f6f6f6; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button { width: 72px; height: 30px; border-radius: 15px; line-height: 29px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button::after { display: block; font-size: 14px; font-family: 'NanumSquareR'; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"] { border: 1px solid #f18e1e; color: #f18e1e; }
