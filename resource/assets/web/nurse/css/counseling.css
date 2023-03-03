@@ -51,11 +51,11 @@ ExtraBold - 'NanumSquareEB'
 .impossible_pop .impos_action textarea { border: 1px solid #cfcfcf; width: 100%; height: 150px; border-radius: 5px; margin-top: 10px; resize: none; padding: 15px 11px; line-height: 1.2; font-size: 12px; color: #333333; display: none; }
 .impossible_pop > button { width: calc(50% - 5px); border-radius: 5px; margin-top: 30px; font-size: 13px; font-family: 'NanumSquareB'; color: #727272; background: #cfcfcf; padding: 14px 0; }
 .impossible_pop > button.save { background: #f18e1e; color: #ffffff; float: right; }
-.impossible_pop > button.save.time_btnColor { background: #e26a2c; }
-.reason_setting > button { width: calc(100% / 3 - calc(20px / 3)); height: 40px; border-radius: 5px; margin-top: 30px; color: #727272; font-size: 13px; font-family: 'NanumSquareB'; background: #cfcfcf; }
+.impossible_pop > button.save.time_btnColor { background: #f18e1e; }
+/* .reason_setting > button { width: calc(100% / 3 - calc(20px / 3)); height: 40px; border-radius: 5px; margin-top: 30px; color: #727272; font-size: 13px; font-family: 'NanumSquareB'; background: #cfcfcf; }
 .reason_setting > button.save { background: #79bd28; color: #ffffff; }
 .reason_setting > button.save.time_btnColor { background: #79bd28; }
-.reason_setting > button.delete { background: #ffffff; border: 1px solid #cfcfcf; }
+.reason_setting > button.delete { background: #ffffff; border: 1px solid #cfcfcf; } */
 
 /* 팝업 - 근무/휴무 선택 */
 .scheduleEdit_pop { background: #ffffff; border-radius: 10px 10px 0 0; padding: 30px 15px 25px; }
@@ -64,7 +64,8 @@ ExtraBold - 'NanumSquareEB'
 .scheduleEdit_pop .date_select ul li { flex-shrink: 0; width: 70px; height: 30px; margin-right: 5px; background: #f6f6f6; border-radius: 5px; line-height: 30px; text-align: center; font-size: 12px; }
 .scheduleEdit_pop .schedule_select { display: flex; align-items: center; justify-content: space-between; margin: 10px 0 30px; }
 .scheduleEdit_pop .schedule_select li { width: calc((100% - 10px) / 3); height: 40px; line-height: 40px; border: 1px solid #cfcfcf; border-radius: 5px; font-size: 12px; text-align: center; }
-.scheduleEdit_pop .schedule_select li a { display: block; width: 100%; height: 100%; }
+.scheduleEdit_pop .schedule_select li button,
+.scheduleEdit_pop .schedule_select li a { display: block; width: 100%; height: 100%;}
 .scheduleEdit_pop .schedule_select li.on { border-color: #f18e1e; }
 .scheduleEdit_pop .schedule_select li:hover a, 
 .scheduleEdit_pop .schedule_select li.on a { color: #f18e1e; }
@@ -319,10 +320,12 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal .time_wrap table thead { position: absolute; width: 100%; z-index: 1; border-top: 1px solid #333333; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr { position: relative; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td { height: inherit; font-size: 15px; font-family: 'NanumSquareEB'; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr td.past_date { background: #f6f6f6; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td:first-child { width: 18.7vw; }
 .wrap_sub .register .sec_cal .time_wrap table thead tr td span { font-family: 'NanumSquareR'; margin-left: 4px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody { padding-left: 18.7vw; margin-top: 47.5px; display: inline-block; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td.moveL { width: 18.7vw; position: absolute; left: 0; font-size: 14px; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td.past_time { background: #f6f6f6; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button { width: 72px; height: 30px; border-radius: 15px; line-height: 29px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button::after { display: block; font-size: 14px; font-family: 'NanumSquareR'; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button[data-type="0"] { border: 1px solid #f18e1e; color: #f18e1e; }
