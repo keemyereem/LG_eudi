@@ -1107,11 +1107,14 @@
 
 /* 교육/상담신청 팝업*/
 .pop_apply { width: calc(100% - 30px); max-width: 345px; }
-.pop_apply .pop_con { padding: 30px 25px; }
+.pop_apply .pop_con { padding: 30px 25px; letter-spacing: -0.5px; }
 .pop_apply .pop_con .pop_tit { font-family: 'NanumSquareB'; text-align: left; padding-top: 0; }
 .pop_apply .pop_con .pop_txt { text-align: left; position: relative; padding-left: 9px; }
 .pop_apply .pop_con .pop_txt::before { content:''; display: inline-block; width: 3px; height: 3px; background: #fc637d; border-radius: 50%; position: absolute; top: 20px; left: 0; }
-.pop_apply .pop_con .input_row { display: none; }
+.pop_apply .pop_con .pop_txt:last-of-type { padding-top: 10px; word-wrap: break-word; }
+.pop_apply .pop_con .pop_txt:last-of-type::before { background: #999; top: 14px; }
+.pop_apply .pop_con .area_box { display: none; height: 150px; }
+.pop_apply .pop_con .area_box textarea { padding: 10px; line-height: 1.2; }
 .pop_apply .pop_con .btn_box { margin-top: 20px; }
 
 /* 교육/상담 신청취소 팝업*/

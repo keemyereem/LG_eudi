@@ -108,6 +108,7 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .tb04 {border-top: 1px solid #ececec;}
 
 .btn_box04 .btn_orange { float: left; width: 60px; height: 40px; line-height: 40px; margin-left: 4px; }
+.btn_box04 .btn_orange button,
 .btn_box04 .btn_orange a { font-family: 'NanumSquareB'; font-size: 12px; }
 
 .wrap_sub .sub_top .sub_nav{ display:flex; justify-content: space-between; padding: 0 15px; border-bottom: 8px solid #f1f1f1 }
@@ -266,20 +267,25 @@ ExtraBold - 'NanumSquareEB'
 .happycall .srh_box .con_flex .input_srh:nth-of-type(2) { width: calc(59% - 2.5px); }
 .happycall .con_head .date_tit { font-family: 'NanumSquareEB'; font-size: 23px; color: #333; letter-spacing: -2.7px; text-align: center; padding: 35px 0; }
 .happycall .con_head p { font-family: 'NanumSquareB'; font-size: 18px; color: #333; letter-spacing: -1.8px; }
-.happycall .con_list03>ul>li { padding: 41px 15px 15px; cursor: pointer; }
+.happycall .con_list03>ul>li { padding: 41px 15px 15px; /* cursor: pointer; */ }
 .happycall .con_list03>ul>li:hover { background: rgba(241, 142, 30, .05); }
-.happycall .con_list03>ul>li>a { display: table;width: 100%; position: relative; }
-.happycall .con_list03>ul>li>a>div:last-child { width: 40%;text-align: right; }
-.happycall .con_list03>ul>li>a>div .lblbox { position: absolute; top: -26px; left: 0; }
+
+.happycall .con_list03>ul>li {display: flex;}
+.happycall .con_list03>ul>li>a { width: 60%; }
+.happycall .con_list03>ul>li>a>div:last-child { text-align: left;width: 40%; }
+.happycall .con_list03>ul>li>a>div .lblbox { position: absolute; top: -26px; left: 0; cursor: default; }
 .happycall .con_list03>ul>li>a>div>ul { display: flex; align-items: center; color: #727272; font-size: 11px; }
 .happycall .con_list03>ul>li>a>div>ul>li::after { content:''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px -2px; }
 .happycall .con_list03>ul>li>a>div>ul>li:last-child::after { display: none; }
 .happycall .con_list03>ul>li>a>div>ul .name { font-family: 'NanumSquareB'; font-size: 13px; color: #333; }
 .happycall .con_list03>ul>li>a>div .idbox { color: #727272; line-height: 1; margin-top: 10px; }
-.happycall .con_list03>ul>li>a>div .hospital { font-size: 11px; color: #999; }
-.happycall .con_list03>ul>li>a>div .phone { font-size: 11px; letter-spacing: -1.1px; }
-.happycall .con_list03>ul>li>a>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
+.happycall .con_list03>ul>li>div { text-align: right; width: 40%; }
+.happycall .con_list03>ul>li>div>a {display: inline-block;}
+.happycall .con_list03>ul>li>div .hospital { font-size: 11px; color: #999; }
+.happycall .con_list03>ul>li>div .phone { font-size: 11px; letter-spacing: -1.1px; }
+.happycall .con_list03>ul>li>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
 .happycall .con_box .con_inner03 .paging { padding-bottom: 31px; }
+
 .happycall .con_box h4 { font-size: 13px; }
 .happycall .con_box .info01 { padding: 30px 15px; background: #fff; position: relative; }
 .happycall .con_box .info01::after { content: ''; display: block; width: calc(100% - 30px); height: 1px; background: #e5e5e5; position: absolute; bottom: 0; left: 15px; }

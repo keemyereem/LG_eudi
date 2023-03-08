@@ -363,7 +363,8 @@ if("" != ""){
                     <div class="gnb_tit"><a href="/nurse/member/list.do">회원관리</a></div>
                     <div class="gnb_list">
                       <ul>
-                        <li><a href="javascript:;" onclick="fnSearch('M')">- 컨펌대기 회원 바로보기</a></li>
+                        <!-- <li><a href="javascript:;" onclick="fnSearch('M')">- 컨펌대기 회원 바로보기</a></li> -->
+                        <li><a href="javascript:;" onclick="fnSearch('M')">- 회원목록</a></li>
                       </ul>
                     </div>
                   </li>
@@ -371,7 +372,10 @@ if("" != ""){
                     <div class="gnb_tit"><a href="/nurse/counseling/list.do">상담관리</a></div>
                     <div class="gnb_list">
                       <ul>
-                        <li><a href="javascript:;" onclick="fnSearch('C')">- 미상담 내역 바로보기</a></li>
+                        <!-- <li><a href="javascript:;" onclick="fnSearch('C')">- 미상담 내역 바로보기</a></li> -->
+                        <li><a href="javascript:;" onclick="">- 온라인문의</a></li>
+                        <li><a href="javascript:;" onclick="">- 상담일정관리</a></li>
+                        <li><a href="javascript:;" onclick="">- 상담가능일정관리</a></li>
                       </ul>
                     </div>
                   </li>
@@ -379,13 +383,15 @@ if("" != ""){
                     <div class="gnb_tit"><a href="/nurse/product/list.do">물품관리</a></div>
                     <div class="gnb_list">
                       <ul>
-                        <li><a href="javascript:;" onclick="fnSearch('P')">- 미발송 내역 바로보기</a></li>
+                        <!-- <li><a href="javascript:;" onclick="fnSearch('P')">- 미발송 내역 바로보기</a></li> -->
+                        <li><a href="javascript:;" onclick="">- 물품관리</a></li>
+                        <li><a href="javascript:;" onclick="">- 물품신청</a></li>
                       </ul>
                     </div>
                   </li>
-                  <li>
+                  <!-- <li>
                     <div class="gnb_tit"><a href="javascript:popupInfo('pop_modify');">정보변경</a></div>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -401,7 +407,7 @@ if("" != ""){
           <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기" /></a></div>
           <div class="pop_con">
             <div class="tb_top">
-              <p class="title">정보 상세</p>
+              <p class="title">내 정보</p>
             </div>
             <div class="tb02">
               <table summary="정보상세" cellpadding="0" cellspacing="0" border="0">
@@ -419,7 +425,7 @@ if("" != ""){
                     <td class="tit"><p>아이디</p></td>
                     <td class="cont"><p>4mnurse</p></td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <td class="tit"><p>변경 비밀번호</p></td>
                     <td class="cont">
                       <div class="input_row">
@@ -438,15 +444,15 @@ if("" != ""){
                         </span>
                       </div>
                     </td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
-            <ul class="info_list">
+            <!-- <ul class="info_list">
               <li>비밀번호는 영문, 숫자를 포함하여 10자리 이상 또는 영문, 숫자, 특수문자를 포함하여 8자리 이상 입력해주세요.</li>
-            </ul>
+            </ul> -->
             <div class="btn_box">
-              <div class="btn_green"><a href="javascript:;" onclick="fnJoinChk()">확인</a></div>
+              <div class="btn_green"><a href="javascript:;" onclick="fnJoinChk()">닫기</a></div>
             </div>
             </form>
           </div>
@@ -499,7 +505,7 @@ if("" != ""){
           <div class="main_box">
             <div class="nu_name">
               <div><p><span>김재희</span> 간호사</p></div>
-              <a href="javascript:popupInfo('pop_modify');" title="정보변경">정보변경</a>
+              <a href="javascript:popupInfo('pop_modify');" title="내 정보">내 정보</a>
             </div>
 
             <div class="menu_list">

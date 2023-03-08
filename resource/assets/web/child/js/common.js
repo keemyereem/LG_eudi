@@ -488,9 +488,9 @@ var eduApply = {
         $(this).siblings("label").text(select_name);
 
         if (select_name === "기타") {
-          $(".pop_apply .input_row").show();
+          $(".pop_apply .area_box").show();
         } else {
-          $(".pop_apply .input_row").hide();
+          $(".pop_apply .area_box").hide();
         }
       });
     }
