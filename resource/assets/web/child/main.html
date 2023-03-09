@@ -51,17 +51,18 @@ if("" != ""){
 <link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
 <link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
 <link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
+
+<!-- 임시 제이쿼리 -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
+<!-- 임시 제이쿼리 -->
+
 <!-- child js file--> 
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
-
-<!-- 임시 제이쿼리 -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
-<!-- 임시 제이쿼리 -->
 
 <!-- common js file-->
 <script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
@@ -605,7 +606,6 @@ if("" != ""){
       $(function(){
         mySlider.init();
         gnbMenu.init();
-
 
         eudiApiCall('getUuid?succUuid');
 
@@ -1443,6 +1443,84 @@ function fnLogOut(){
           </div>
         </div>
       </div>
+
+      <!-- 유디웹툰 -->
+      <div class="pop_wrap pop_webtoon">
+        <div class="pop_box">
+          <div class="pop_top">
+            <div class="pop_inner">
+              <h2 class="title">EuDi 스토리</h2>
+              <div class="pop_close close"><a href="/child/modify_info.do"><img src="/resource/assets/web/child/images/common/close.png" alt="닫기" /></a></div>
+            </div>
+          </div>
+          <div class="pop_cont">
+            <div class="webtoon_info">
+              <div class="pop_inner">
+                <p>
+                  <img src="/resource/assets/web/child/images/common/logo.png" alt="eudi">
+                  <b>스토리</b>는 4명의 캐릭터가 만들어 갑니다.
+                </p>
+                <ul>
+                  <li>
+                    <div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_stylisheudi_08.png" alt="투루디"></div>
+                    <p>
+                      성장에 좋은 음식을<br>
+                      알려주는 <b>[ 투루디 ]</b>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_smarteudi_08.png" alt="핀텔"></div>
+                    <p>
+                      성장에 대한 과학적<br>
+                      정보를 주는 <b>[ 핀텔 ]</b>                    
+                    </p>
+                  </li>
+                  <li>
+                    <div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_musicianeudi_08.png" alt="로미나"></div>
+                    <p>
+                      음악, 예술을<br>
+                      사랑하는 <b>[ 로미나 ]</b>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_championeudi_08.png" alt="유테"></div>
+                    <p>
+                      성장에 좋은 운동을<br>
+                      알려주는 <b>[ 유테 ]</b>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="webtoon_cont">
+              <div class="pop_inner">
+                <div class="select_row">
+                  <label for="episode">1화 보기</label>
+                  <select name="episode" id="episode">
+                    <option value="1">1화 보기</option>
+                    <option value="2">2화 보기</option>
+                    <option value="3">3화 보기</option>
+                  </select>
+                </div>
+                
+                <div class="webtoon_slider webtoon_slider01">
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
+                </div>
+
+                <div class="webtoon_slider webtoon_slider02">
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
       <!-- pop //-->
       
       
@@ -1496,6 +1574,51 @@ function fnLogOut(){
 	        })  
     	  
       }
+      
+      //유디 웹툰
+      $(".webtoon_slider").slick({
+        infinite: false,
+        dots: true,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        touchMove : true,
+        draggable : true,
+        focusOnSelect: false,
+        variableWidth : true,
+      });
+
+      var selectType0 = $("#episode");
+
+      selectChange(selectType0);
+
+      function selectChange(type){
+          type.change(function(){
+              var ep_num = $(this).children("option:selected").val(),
+                  ep_txt = $(this).children("option:selected").text();
+              $(this).siblings("label").text(ep_txt);
+
+              $('.webtoon_slider').hide();
+              $('.webtoon_slider0'+ep_num).show();
+              $('.webtoon_slider').slick('slickGoTo', 0);
+          });
+      };
+      // 웹툰 회차 셀렉트박스 클릭시 해당 이미지로 변경
+      // var selectType0 = $("#episode");
+
+      // selectChange(selectType0);
+
+      // function selectChange(type){
+      //     type.change(function(){
+      //         var ep_num = $(this).children("option:selected").val();
+      //         $(this).siblings("label").text(ep_num);
+
+      //         $('.webtoon_slider .webtoon_img').eq(0).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_01.jpg');
+      //         $('.webtoon_slider .webtoon_img').eq(1).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_02.jpg');
+      //         $('.webtoon_slider .webtoon_img').eq(2).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_03.jpg');
+      //     });
+      // };
+      
       </script>
           		  <img src="/resource/assets/web/child/images/main/spen_guideText.png" alt="spen_guideText" onclick="popupInfo2('pop_spen');"/>
             <!-- header //-->
@@ -1525,14 +1648,15 @@ function fnLogOut(){
                           <p>뮤지션 유디 <span>6단계</span></p>
                           <div class="btn_mychar"><a href="/child/character/view.do" class="btn_my_arrow">나의 캐릭터<br>확인하기</a></div>
                         </div>
-    
+                        <button class="btn_webtoon" onclick="popupOpen('pop_webtoon');"><img src="/resource/assets/web/child/images/webtoon/icon_webtoon02.png" alt="웹툰"></button>
+
                         <div class="my_bar">
                           <div class="bar"><span style="width: 60%"></span></div>
                           <div class="lbl"><b>36</b> / 60</div>
                         </div>
     
                         <div class="my_char">
-                          <img src="/resource/assets/web/child/images/character/musician/musician_eudi05.png" alt="EuDi" />
+                          <img src="/resource/assets/web/child/images/character/musician/musician_eudi02.png" alt="EuDi" />
                         </div>
                         
                       </div>
@@ -1540,6 +1664,7 @@ function fnLogOut(){
                       <div class="my_box02">
                         <div class="my_step"><p>선택된 캐릭터가 없습니다.</p></div>
                         <div class="btn_char"><a href="/child/character/main.do" class="btn_arrow">캐릭터 선택 바로가기</a></div>
+
                         <div class="my_char">
                           <img src="/resource/assets/web/child/images/main/character00.png" alt="EuDi" />
                         </div>
