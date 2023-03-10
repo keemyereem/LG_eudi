@@ -1450,6 +1450,31 @@ function fnLogOut(){
             </div>
           </div>
           <div class="pop_cont">
+            <div class="webtoon_cont">
+              <div class="pop_inner">
+                <div class="select_row">
+                  <label for="episode">1화 보기</label>
+                  <select name="episode" id="episode">
+                    <option value="1">1화 보기</option>
+                    <option value="2">2화 보기</option>
+                    <option value="3">3화 보기</option>
+                  </select>
+                </div>
+                
+                <div class="webtoon_slider webtoon_slider01">
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon02.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon03.jpg" alt="유디 웹툰"></div>
+                </div>
+
+                <div class="webtoon_slider webtoon_slider02">
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon02.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon03.jpg" alt="유디 웹툰"></div>
+                </div>
+              </div>
+            </div>
+
             <div class="webtoon_info">
               <div class="pop_inner">
                 <p>
@@ -1486,31 +1511,6 @@ function fnLogOut(){
                     </p>
                   </li>
                 </ul>
-              </div>
-            </div>
-
-            <div class="webtoon_cont">
-              <div class="pop_inner">
-                <div class="select_row">
-                  <label for="episode">1화 보기</label>
-                  <select name="episode" id="episode">
-                    <option value="1">1화 보기</option>
-                    <option value="2">2화 보기</option>
-                    <option value="3">3화 보기</option>
-                  </select>
-                </div>
-                
-                <div class="webtoon_slider webtoon_slider01">
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
-                </div>
-
-                <div class="webtoon_slider webtoon_slider02">
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
-                </div>
               </div>
             </div>
           </div>
@@ -1629,7 +1629,10 @@ function fnLogOut(){
 		               8단계
 		             
 		             </span></p></div>
-                 <button class="btn_webtoon" onclick="popupOpen('pop_webtoon');" style="width: 64px;position: absolute;top: 93px;left:25px;z-index:1;"><img src="/resource/assets/web/child/images/webtoon/icon_webtoon.png" alt="웹툰"></button>
+                 <button class="btn_webtoon" onclick="popupOpen('pop_webtoon');" style="width: 110px; height: 20px; position: absolute; bottom: 71px; left: 15px; z-index:1;">
+                   <img src="/resource/assets/web/child/images/webtoon/icon_webtoon_book.png" alt="웹툰">
+                   <b>웹툰</b>바로가기
+                 </button>
                         <div class="my_bar">
                             <div class="bar"><span style="width: 38%"></span></div>
                             <div class="lbl"><b>128</b> / 158</div>
