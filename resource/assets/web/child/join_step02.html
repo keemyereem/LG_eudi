@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+<script>
+
+/*ë©ì¸ì§*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+
+</script>
+
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<!-- TITLE -->
+<title>EuDi</title>
+
+    <!-- 스마트 케이스 팝업 추가 -->
+
+
+<!--2019-09-16 4M 김현빈-->
+<!-- common css file-->
+
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=2.1">
+
+
+<!-- child css file -->
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
+
+<!-- 임시 제이쿼리 -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
+<!-- 임시 제이쿼리 -->
+
+<!-- child js file--> 
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230223060144"></script>
+
+  <script>
+
+  
+      $(function(){
+        selEvent.init();
+        fileEvent.init();
+
+      });
+      
+      
+      function maxLengthCheck(object){
+    		if(object.value.length > object.maxLength) {
+    			object.value = object.value.slice(0, object.maxLength);
+    		}
+    	}
+
+      function fnFileReset1(){
+    	  $("#add_file1").val("");
+    	  $("#add_file_name1").val("");
+    	  $(".upload_field1").hide();
+      }
+      
+      function fnFileReset2(){
+    	  $("#add_file2").val("");
+    	  $("#add_file_name2").val("");
+    	  $(".upload_field2").hide();
+      }
+      
+      function fnFileReset3(){
+    	  $("#add_file3").val("");
+    	  $("#add_file_name3").val("");
+    	  $(".upload_field3").hide();
+      }
+    	
+    	
+      function fnAddChild(){
+    	  
+    	  if($("#child_02").css("display") == "none" && $("#child_03").css("display") == "none" ){   
+    		  $("#child_02").show();
+    		  
+    		  $("#cName_01").attr("required","required");
+    		  //$("#cBirth_01").attr("required","required");
+    		  $("#cChargNurseId_01").attr("required","required");
+    		  //$("#cInitialPrescription_01").attr("required","required");
+    		  $("#cHospitalName_01").attr("required","required");
+    		  
+    		  //의사명 추가
+    		   $("#cDoctorName_01").attr("required","required");
+    		  $("#mChildNumber").val(2);
+    	   } else if($("#child_02").css("display") != "none" && $("#child_03").css("display") == "none" ){    
+    		   $("#child_03").show();
+    		   
+				$("#cName_02").attr("required","required");
+				//$("#cBirth_02").attr("required","required");
+			    $("#cChargNurseId_02").attr("required","required");
+				//$("#cInitialPrescription_02").attr("required","required");
+				$("#cHospitalName_02").attr("required","required");
+				 //의사명 추가
+	    		$("#cDoctorName_02").attr("required","required");
+        		  
+    		   $("#mChildNumber").val(3);
+    	  }  else {
+    		   alert("아이 정보는 최대 3명까지 등록 가능합니다.");
+    		   return;
+    	  }
+    	  
+      }
+      
+      function fnDeleteChild(idx){
+    	  var result = confirm("추가한 환아 내역을 삭제하시겠습니까?");
+		  if(result){
+			  if(idx == "02"){
+				  $("#child_02").hide();
+	    		  
+	    		  $("#cName_01").removeAttr("required");
+	    		 // $("#cBirth_01").removeAttr("required");
+	    		  $("#cChargNurseId_01").removeAttr("required");
+	    		 // $("#cInitialPrescription_01").removeAttr("required");
+	    		  $("#cHospitalName_01").removeAttr("required");
+	    		  //의사명 추가
+	    		   $("#cDoctorName_01").removeAttr("required");
+	    		  
+	    		  $("#mChildNumber").val(1);
+			  } else {
+	 			 $("#child_03").hide();
+	    		  
+	    		  $("#cName_02").removeAttr("required");
+	    		  //$("#cBirth_02").removeAttr("required");
+	    		  $("#cChargNurseId_02").removeAttr("required");
+	    		 // $("#cInitialPrescription_02").removeAttr("required");
+	    		  $("#cHospitalName_02").removeAttr("required");
+	    		  
+	    		  //의사명 추가
+	    		   $("#cDoctorName_02").removeAttr("required");
+	    		  
+	    		  $("#mChildNumber").val(2);
+			  }
+		  }
+    	  
+      }
+      
+ 
+  </script>
+  </head>
+  <body>
+ <div class="wrap wrap_sub">
+      <!--// nav -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">회원가입</h2>
+            <div class="back"><a href="/child/join_step01.do"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+      </div>
+      <!-- nav //-->
+      <!--// content -->
+  <!--    <form id="frmJoin" name="frmJoin" action="/child/joinProc.do" role="form" method="post"> -->
+     <form:form commandName="MemberVO" id="frmJoin" name="frmJoin" method="post" action="/child/joinProc.do" enctype="multipart/form-data">
+	 <input type="hidden" name="IDCHECK" value="">
+	 <input type="hidden" name="CPCHECK" value="">	<!-- 연락처 중복체크 추가 -->
+	 <input type="hidden" name="mChildNumber"  id="mChildNumber" value="1">
+	 
+     <input type="hidden" name="cBirth" id="cBirth" value="">
+	 <input type="hidden" name="cBirth_01" id="cBirth_01" value="">
+	 <input type="hidden" name="cBirth_02" id="cBirth_02" value="">
+	 <input type="hidden" name="cInitialPrescription" id="cInitialPrescription" value="">
+	 <input type="hidden" name="cInitialPrescription_01" id="cInitialPrescription_01" value="">
+	 <input type="hidden" name="cInitialPrescription_02" id="cInitialPrescription_02" value="">
+	 
+	  <input type="hidden" name="privateYn" id="privateYn" value="${memberVo.privateYn}">
+	 
+	 
+      <div class="content con_sub con_join">
+        <div class="ipt_box">
+          <div class="inner">
+            <h3 class="info01">기본 정보</h3>
+            <div class="tb">
+              <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                <caption>기본 정보</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="tit"><p>아이디<span></span></p></td>
+                    <td class="cont">
+                      <div class="input_row">
+            						<span class="input_box">
+            							<input type="text" id="mId" name="mId" class="ipt" required="required" minlength="4" maxlength="13" data-title="아이디를"  placeholder="4~13자리 이내" oninput="maxLengthCheck(this)">
+            						</span>
+                        <div class="btn_chk"><a href="javascript:;" onclick="chkId()">중복확인</a></div>
+            					</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>비밀번호<span></span></p></td>
+                    <td class="cont">
+	                    <div class="cont_inner">
+	                      <div class="input_row">
+	            						<span class="input_box">
+	            							<input type="password" id="password" name="password" class="ipt"  required="required" minlength="8" maxlength="16" required="required" data-title="비밀번호를" title="비밀번호" oninput="maxLengthCheck(this)">
+	            						</span>
+	            					</div>
+	            			<p class="info">비밀번호는 영문, 숫자를 포함하여 10자리 이상 또는 영문, 숫자, 특수문자를 포함하여 8자리 이상 입력해주세요.</p>
+	                 	</div>
+	                 </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>비밀번호 확인<span></span></p></td>
+                    <td class="cont">                   
+                        <div class="input_row">
+              						<span class="input_box">
+              							<input type="password" id="password_confirm" name="password_confirm" class="ipt" equalTo="password" required="required" minlength="8" maxlength="16" required="required" data-title="비밀번호 확인을" title="비밀번호 확인을" oninput="maxLengthCheck(this)">
+              						</span>
+              					</div>                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>휴대폰번호<span></span></p></td>
+                    <td class="cont">
+                      <div class="select_tel">
+                        <label for="mCpnumber1">010</label>
+                        <select id="mCpnumber1" name="mCpnumber1">
+                            <option selected="selected">010</option>
+                  			 <option value="011">011</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                      </div>
+                      <span class="hyphen">-</span>
+                      <div class="input_tel">
+            						<span class="input_box">
+            							<input type="tel" id="mCpnumber2" name="mCpnumber2" class="ipt" style="ime-mode:disabled" required="required" data-title="휴대폰번호를" title="휴대폰번호를" maxlength="4" oninput="maxLengthCheck(this)">
+            						</span>
+            					</div>
+                      <span class="hyphen">-</span>
+                      <div class="input_tel">
+            						<span class="input_box">
+            							<input type="tel" id="mCpnumber3" name="mCpnumber3" class="ipt" style="ime-mode:disabled" required="required" data-title="휴대폰번호를" title="휴대폰번호를" maxlength="4" oninput="maxLengthCheck(this)">
+            						</span>
+            					</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+ 
+              <div class="btn_add"><a href="javascript:chkCp();">휴대폰번호 중복확인</a></div>
+   
+            </div>
+
+            <div class="tb mt30">
+              <table summary="주소" cellpadding="0" cellspacing="0" border="0">
+                <caption>주소</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="tit"><p>주소<span></span></p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="addr_box01" id="addr_box01">
+                          <div class="input_addr">
+                            <span class="input_box">
+                              <input type="text" id="pPost" name="pPost" class="ipt" value="" readonly="">
+                            </span>
+                            <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
+                          </div>
+                          <div class="input_row mt4">
+                            <span class="input_box">
+                              <input type="text" id="pAddr1" name="pAddr1" class="ipt" value="" readonly="">
+                            </span>
+                          </div>
+                          <div class="input_row mt4">
+                            <span class="input_box">
+                              <input type="text" id="pAddr2" name="pAddr2" class="ipt" value="">
+                            </span>
+                          </div>
+                          <p class="info">
+                            주소는 물품발송을 위해 사용되니 정확한 주소를 입력해주세요.
+                          </p>
+                        </div>
+                        <div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+                          <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="width:20px;cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+                        </div>
+                        <!--// 주소 입력 후 -->
+                        <div class="addr_box02 blind" id="addr_box02">
+                          <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
+                          <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+   
+            </div>
+
+            <h3 class="info02">아이 정보</h3>
+            <div id="child_01"> <!-- 아이 추가 시 info_add 클래스 추가 -->
+              <h4>기본 정보</h4>
+              <div class="tb">
+                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>기본 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>아이명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cName" name="cName" class="ipt" required="required" data-title="아이명을" title="아이명을" maxlength="20" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>성별 선택<span></span></p></td>
+                      <td class="cont">
+                        <div class="radio_row">
+          								<input type="radio" id="cSex1" name="cSex" value="M" checked="">
+          							  <label for="cSex1">남아</label>
+          							</div>
+                        <div class="radio_row">
+          								<input type="radio" id="cSex2" name="cSex" value="F">
+          							  <label for="cSex2">여아</label>
+          							</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>생년월일<span></span></p></td>
+                      <td class="cont">
+                 <!--        <div class="inputBox_DP">
+                          <input type="date" name="cBirth" id="cBirth" class="date" required="required" data-title="생년월일을" title="생년월일을"/>
+                        </div>
+     -->
+						<c:set var="now" value="<%=new java.util.Date()%>" />
+						<c:set var="sysYear"><fmt:formatDate value="${now}" pattern="yyyy" /></c:set> 
+						<c:set var="sysMonth"><fmt:formatDate value="${now}" pattern="MM" /></c:set> 
+					    <c:set var="sysDate"><fmt:formatDate value="${now}" pattern="dd" /></c:set> 
+                        <div class="select_day_box">
+                          <div class="select_row select_day01">
+                            <label for="sel01">${sysYear}</label>
+                            <select id="sel01">
+                                     <c:forEach var="i" begin="1980" end="${sysYear}">
+									      <option value="${i}" <c:if test="${sysYear eq i}">selected</c:if>>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel02">${sysMonth}</label>
+                            <select id="sel02">
+                                    <c:forEach var="i" begin="1" end="12">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysMonth eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel03">${sysDate}</label>
+                            <select id="sel03">
+                                  <c:forEach var="i" begin="1" end="31">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysDate eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                        </div>
+                 
+                      </td>
+                    </tr>
+                    <!-- 프로필사진 -->
+                     <tr>
+                    <td class="tit"><p>프로필사진</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="upload_field1">
+                          <input class="upload_name1 ellipsis" id="add_file_name1" value="파일선택" disabled="disabled">
+                          <a href="javascript:;" class="upload_del" onclick="fnFileReset1()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
+                        </div>
+                        <div class="filebox">
+                          <label for="add_file1">사진첨부</label>
+                          <input type="file" id="add_file1" name="file01" class="upload_hidden1">
+                        </div>
+                        <p class="txt">5MB 이하의 이미지 파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                    
+                    
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>처방 및 병원 정보</h4>
+              <div class="tb">
+                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>처방 및 병원 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>담당 간호사<span></span></p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel01">담당 간호사 입력</label>
+                          <select id="cChargNurseId" name="cChargNurseId" required="required" data-title="담당간호사를" title="담당간호사를">
+                               <option value="">담당 간호사 입력</option>
+                               <c:forEach items="${nurseList}" var="result" varStatus="status">
+                                   <option value="<c:out value="${result.id}"/>" <c:if test="${memberVO.nurseName eq result.id}">selected="selected"</c:if>><c:out value="${result.name}"/></option>
+                                 </c:forEach>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>최초 처방일<span></span></p></td>
+                      <td class="cont">
+                        <!-- <div class="inputBox_DP">
+                          <input type="date" name="cInitialPrescription" id="cInitialPrescription" class="date" required="required" data-title="최초처방일을" title="최초처방일을" />
+                        </div> -->
+                          <div class="select_day_box">
+                          <div class="select_row select_day01">
+                            <label for="sel04">${sysYear}</label>
+                            <select id="sel04">
+                                   <c:forEach var="i" begin="2000" end="${sysYear}">
+									      <option value="${i}" <c:if test="${sysYear eq i}">selected</c:if>>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel05">${sysMonth}</label>
+                            <select id="sel05">
+                                  <c:forEach var="i" begin="1" end="12">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysMonth eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel06">${sysDate}</label>
+                            <select id="sel06">
+                                  <c:forEach var="i" begin="1" end="31">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysDate eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>병원명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cHospitalName" name="cHospitalName" class="ipt"  required="required" data-title="병원명을" title="병원명을" maxlength="50" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>의사명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cDoctorName" name="cDoctorName" class="ipt" required="required" data-title="의사명을" title="의사명을" maxlength="20" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+             <!--  <div class="btn_add"><a href="javascript:;" onclick="fnAddChild()"><span>+</span> 아이 추가 하기</a></div> -->
+              
+              <div class="info_add" id="child_02" style="display:none;"> <!-- 아이 추가 시 info_add 클래스 추가 -->
+                  <a href="javascript:;" class="btn_del" onclick="fnDeleteChild('02')"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제하기" /></a>
+               <h4>기본 정보</h4>
+              <div class="tb">
+                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>기본 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>아이명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cName_01" name="cName_01" class="ipt" data-title="아이명을" title="아이명을" maxlength="20" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>성별 선택<span></span></p></td>
+                      <td class="cont">
+                        <div class="radio_row">
+          							  <input type="radio" id="cSex_011" name="cSex_01" value="M" checked="">
+          							  <label for="cSex_011">남아</label>
+          							</div>
+                        <div class="radio_row">
+          								<input type="radio" id="cSex_012" name="cSex_01" value="F">
+          							  <label for="cSex_012">여아</label>
+          							</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>생년월일<span></span></p></td>
+                      <td class="cont">
+                      <!--   <div class="inputBox_DP">
+                          <input type="date" name="cBirth_01" id="cBirth_01" class="date"  data-title="생년월일을" title="생년월일을"/>
+                        </div> -->
+                          <div class="select_day_box">
+                          <div class="select_row select_day01">
+                            <label for="sel01_01">${sysYear}</label>
+                            <select id="sel01_01">
+                                     <c:forEach var="i" begin="1980" end="${sysYear}">
+									      <option value="${i}" <c:if test="${sysYear eq i}">selected</c:if>>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel02_01">${sysMonth}</label>
+                            <select id="sel02_01">
+                                    <c:forEach var="i" begin="1" end="12">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysMonth eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel03_01">${sysDate}</label>
+                            <select id="sel03_01">
+                                  <c:forEach var="i" begin="1" end="31">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysDate eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    
+                   <!-- 프로필사진 -->
+                   <tr>
+                    <td class="tit"><p>프로필사진</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="upload_field2">
+                          <input class="upload_name2 ellipsis" id="add_file_name2" value="파일선택" disabled="disabled">
+                          <a href="javascript:;" class="upload_del" onclick="fnFileReset2()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
+                        </div>
+                        <div class="filebox">
+                          <label for="add_file2">사진첨부</label>
+                          <input type="file" id="add_file2" name="file02" class="upload_hidden2">
+                        </div>
+                        <p class="txt">5MB 이하의 이미지 파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                    
+                    
+                    
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>처방 및 병원 정보</h4>
+              <div class="tb">
+                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>처방 및 병원 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>담당 간호사<span></span></p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel01">담당 간호사 입력</label>
+                          <select id="cChargNurseId_01" name="cChargNurseId_01" data-title="담당간호사를" title="담당간호사를">
+                               <option value="">담당 간호사 입력</option>
+                               <c:forEach items="${nurseList}" var="result" varStatus="status">
+                                   <option value="<c:out value="${result.id}"/>" <c:if test="${memberVO.nurseName eq result.id}">selected="selected"</c:if>><c:out value="${result.name}"/></option>
+                                 </c:forEach>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>최초 처방일<span></span></p></td>
+                      <td class="cont">
+                        <!-- <div class="inputBox_DP">
+                          <input type="date" name="cInitialPrescription_01" id="cInitialPrescription_01" class="date" data-title="최초처방일을" title="최초처방일을" />
+                        </div> -->
+                          <div class="select_day_box">
+                          <div class="select_row select_day01">
+                            <label for="sel04_01">${sysYear}</label>
+                            <select id="sel04_01">
+                                   <c:forEach var="i" begin="2000" end="${sysYear}">
+									      <option value="${i}" <c:if test="${sysYear eq i}">selected</c:if>>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel05_01">${sysMonth}</label>
+                            <select id="sel05_01">
+                                  <c:forEach var="i" begin="1" end="12">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysMonth eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel06_01">${sysDate}</label>
+                            <select id="sel06_01">
+                                  <c:forEach var="i" begin="1" end="31">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysDate eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>병원명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cHospitalName_01" name="cHospitalName_01" class="ipt"   data-title="병원명을" title="병원명을" maxlength="50" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>의사명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cDoctorName_01" name="cDoctorName_01" class="ipt" data-title="의사명을" title="의사명을" maxlength="20" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="info_add" id="child_03" style="display:none;"> <!-- 아이 추가 시 info_add 클래스 추가 -->
+               <a href="javascript:;" class="btn_del" onclick="fnDeleteChild('03')"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제하기" /></a>
+              <h4>기본 정보</h4>
+              <div class="tb">
+                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>기본 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>아이명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cName_02" name="cName_02" class="ipt" data-title="아이명을" title="아이명을" maxlength="20" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>성별 선택<span></span></p></td>
+                      <td class="cont">
+                        <div class="radio_row">
+          								<input type="radio" id="cSex_021" name="cSex_02" value="M" checked="">
+          							  <label for="cSex_021">남아</label>
+          							</div>
+                        <div class="radio_row">
+          								<input type="radio" id="cSex_022" name="cSex_02" value="F">
+          							  <label for="cSex_022">여아</label>
+          							</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>생년월일<span></span></p></td>
+                      <td class="cont">
+                       <!--  <div class="inputBox_DP">
+                          <input type="date" name="cBirth_02" id="cBirth_02" class="date"   data-title="생년월일을" title="생년월일을"/>
+                        </div> -->
+                          <div class="select_day_box">
+                          <div class="select_row select_day01">
+                            <label for="sel01_02">${sysYear}</label>
+                            <select id="sel01_02">
+                                     <c:forEach var="i" begin="1980" end="${sysYear}">
+									      <option value="${i}" <c:if test="${sysYear eq i}">selected</c:if>>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel02_02">${sysMonth}</label>
+                            <select id="sel02_02">
+                                    <c:forEach var="i" begin="1" end="12">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysMonth eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel03_02">${sysDate}</label>
+                            <select id="sel03_02">
+                                  <c:forEach var="i" begin="1" end="31">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysDate eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    
+                    
+                 <!-- 프로필사진 -->
+                  <tr>
+                    <td class="tit"><p>프로필사진</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="upload_field3">
+                          <input class="upload_name3 ellipsis" id="add_file_name3" value="파일선택" disabled="disabled">
+                          <a href="javascript:;" class="upload_del" onclick="fnFileReset3()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
+                        </div>
+                        <div class="filebox">
+                          <label for="add_file3">사진첨부</label>
+                          <input type="file" id="add_file3" name="file03" class="upload_hidden3">
+                        </div>
+                        <p class="txt">5MB 이하의 이미지 파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                    
+                    
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>처방 및 병원 정보</h4>
+              <div class="tb">
+                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                  <caption>처방 및 병원 정보</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>담당 간호사<span></span></p></td>
+                      <td class="cont">
+                        <div class="select_row">
+                          <label for="sel01">담당 간호사 입력</label>
+                          <select id="cChargNurseId_02" name="cChargNurseId_02" data-title="담당간호사를" title="담당간호사를">
+                               <option value="">담당 간호사 입력</option>
+                               <c:forEach items="${nurseList}" var="result" varStatus="status">
+                                   <option value="<c:out value="${result.id}"/>" <c:if test="${memberVO.nurseName eq result.id}">selected="selected"</c:if>><c:out value="${result.name}"/></option>
+                                 </c:forEach>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>최초 처방일<span></span></p></td>
+                      <td class="cont">
+                    <!--     <div class="inputBox_DP">
+                          <input type="date" name="cInitialPrescription_02" id="cInitialPrescription_02" class="date"   data-title="최초처방일을" title="최초처방일을" />
+                        </div> -->
+                         <div class="select_day_box">
+                          <div class="select_row select_day01">
+                            <label for="sel04_02">${sysYear}</label>
+                            <select id="sel04_02">
+                                   <c:forEach var="i" begin="2000" end="${sysYear}">
+									      <option value="${i}" <c:if test="${sysYear eq i}">selected</c:if>>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel05_02">${sysMonth}</label>
+                            <select id="sel05_02">
+                                  <c:forEach var="i" begin="1" end="12">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysMonth eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                          <div class="select_row select_day02">
+                            <label for="sel06_02">${sysDate}</label>
+                            <select id="sel06_02">
+                                  <c:forEach var="i" begin="1" end="31">
+									      <option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${sysDate eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+									</c:forEach>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>병원명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cHospitalName_02" name="cHospitalName_02" class="ipt"  data-title="병원명을" title="병원명을" maxlength="50" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>의사명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="cDoctorName_02" name="cDoctorName_02" class="ipt" data-title="의사명을" title="의사명을" maxlength="20" oninput="maxLengthCheck(this)">
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+           </form:form>
+           
+           
+          
+            
+            
+          </div>
+	           <div class="btn_box btn_box02 mt50">
+	                 <div class="btn_add"><a href="javascript:;" onclick="fnAddChild()"><span>+</span> 아이 추가 하기</a></div>
+	            </div>
+
+              <div class="auto_login">
+                <div class="checkbox_row">
+                  <input type="checkbox" id="saveId">
+                  <label for="saveId">아이디 저장 및 자동로그인 사용</label>
+                </div>
+                <p class="info">
+                  자동로그인을 선택하시면 승인 알림에서 교육신청 페이지로<br> 바로 이동 가능합니다.
+                </p>
+              </div>
+          
+             <div class="btn_box btn_box02 mt50">
+	              <div class="btn_gray"><a href="/child/join_step01.do">취소</a></div>
+	              <div class="btn_green"><a href="javascript:;" onclick="fnJoinChk()">회원가입</a></div>
+          	  </div>
+            
+
+              
+        </div>
+  
+      </div>
+      <!-- content //-->
+	  </div>
+	  
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	  	<script>
+       	
+       	$(function(){
+       		$('[name=id]').change(function(){
+       			$('[name=IDCHECK]').val('N');
+       		})
+       		
+       		
+       		//연락처 중복체크 추가
+       		$('[name=mCpnumber2]').change(function(){
+       			$('[name=CPCHECK]').val('N');
+       		})
+       		
+       		$('[name=mCpnumber3]').change(function(){
+       			$('[name=CPCHECK]').val('N');
+       		})
+       		
+       		
+       	});
+       	
+       	
+       	//회원 가입 유효성 체크
+		function fnJoinChk(){
+			var frm = 'frmJoin';
+			
+		
+			
+			if($("#mId").val().search(/\s/) != -1) {
+				alert("아이디 공백을 제거해주세요");
+				return;
+			} 
+			
+		
+			if($("#password").val().search(/\s/) != -1 || $("#password_confirm").val().search(/\s/) != -1) {
+				alert("비밀번호 공백을 제거해주세요");
+				return;
+			}
+			
+		
+				if(checkValidation(frm)){
+					
+					if($('[name=IDCHECK]').val()!="Y"){
+						alert('아이디 중복체크를 해주세요.');
+						return;
+					}
+
+					if($('[name=CPCHECK]').val()!="Y"){
+						alert('휴대폰번호 중복확인을 해주세요.');
+						return;
+					}
+					
+					
+		            //아이명 공백 가입 추가 2020-01-30
+					var str = $("#cName").val();
+					var str1 = $("#cName_01").val();
+					var str2 = $("#cName_02").val();
+					var blank_pattern = /^\s+|\s+$/g;
+					
+		
+				
+					if(str.replace(blank_pattern,'') == "" ){
+					    alert("아이명을 입력해주세요");
+					    $("#cName").focus();
+					    return false;
+					}
+					
+					if($("#child_02").css("display") != "none"){
+						if(str1.replace(blank_pattern,'') == "" ){
+						    alert("아이명을 입력해주세요");
+						    $("#cName_01").focus();
+						    return false;
+						}
+					}
+					
+					if($("#child_03").css("display") != "none"){
+						if(str2.replace(blank_pattern,'') == "" ){
+						    alert("아이명을 입력해주세요");
+						    $("#cName_02").focus();
+						    return false;
+						}
+					}
+					
+					
+					$("#cBirth").val($("#sel01").val()+"-"+$("#sel02").val()+"-"+$("#sel03").val());
+					$("#cBirth_01").val($("#sel01_01").val()+"-"+$("#sel02_01").val()+"-"+$("#sel03_01").val());
+					$("#cBirth_02").val($("#sel01_02").val()+"-"+$("#sel02_02").val()+"-"+$("#sel03_02").val());
+					
+					$("#cInitialPrescription").val($("#sel04").val()+"-"+$("#sel05").val()+"-"+$("#sel06").val());
+					$("#cInitialPrescription_01").val($("#sel04_01").val()+"-"+$("#sel05_01").val()+"-"+$("#sel06_01").val());
+					$("#cInitialPrescription_02").val($("#sel04_02").val()+"-"+$("#sel05_02").val()+"-"+$("#sel06_02").val());
+
+					//푸쉬정보 업데이트
+					eudiApiCall('getUuid?succUuid');
+					
+				/* 	var formData = $("#"+frm).serialize();
+					$.ajax({
+						type : "POST",
+						url : $("#"+frm).attr("action"),
+						cache : false,
+						data : formData,
+						success : function(data, status){
+							var result = data.result;
+							if(result == 5){//아이디 중복
+								 alert("중복된 아이디가 있습니다,다시 시도해주세요");
+							}
+							else  if(result == 1){//가입성공
+								 window.location.href="/child/join_end.do";
+				            } else {
+				            	 alert("시스템 오류 입니다,다시 시도해주세요");
+				            }
+						},
+						error : function(data,status){
+							alert("시스템 오류 입니다,다시 시도해주세요");
+						}
+					});  */
+					document.frmJoin.submit();
+				}
+				return false;
+		}
+		
+	 	//아이디 중복 확인
+		function chkId(){
+
+			if($("#mId").val().trim() == ""){
+				alert("아이디를 입력해주세요");
+				$("#mId").focus();
+				return;
+			}
+			
+			
+			if($("#mId").val().search(/\s/) != -1) {
+				alert("공백을 제거해주세요");
+				return;
+			} 
+				
+			
+			if($("#mId").val().length > 13 || $("#mId").val().length < 4){
+				alert("아이디를 4자리 이상 13자리 이하로 입력해주세요.");
+				$("#mId").focus();
+				return;
+			}
+
+			var data = {"mId": $("#mId").val(),"chkMode":"J"};
+		    var actionurl = "/child/idChk.do";
+ 
+			 $.ajax({
+		            async: false,
+		            type: "POST",
+		            url : actionurl,
+		            cache : false,
+		            data : data,
+		            dataType : "json",
+		            success: function(obj){
+		            
+		            	var result = obj.result;
+			             if(result > 0){//아이디 존재
+			            	alert("사용할 수 없는 아이디입니다");
+			                return;
+			             } else {
+			                $('[name=IDCHECK]').val('Y');
+			            	alert("사용할 수 있는 아이디입니다");
+			                return;
+			             }
+		          
+		            },
+		            error: function(xhr, option, error){
+		                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		            }
+		        });
+		        
+		}
+	 	
+	 	
+	 	
+		//휴대폰번호 중복 확인
+		function chkCp(){
+
+			if($("#mCpnumber2").val().trim() == ""){
+				alert("휴대폰번호를 입력해주세요");
+				$("#mCpnumber2").focus();
+				return;
+			}
+			
+			
+			if($("#mCpnumber3").val().trim() == ""){
+				alert("휴대폰번호를 입력해주세요");
+				$("#mCpnumber3").focus();
+				return;
+			}
+			
+
+			var data = {"mCpnumber1": $("#mCpnumber1").val(),"mCpnumber2": $("#mCpnumber2").val(),"mCpnumber3": $("#mCpnumber3").val()};
+		    var actionurl = "/child/cpChk.do";
+ 
+			 $.ajax({
+		            async: false,
+		            type: "POST",
+		            url : actionurl,
+		            cache : false,
+		            data : data,
+		            dataType : "json",
+		            success: function(obj){
+		            
+		            	var result = obj.result;
+			             if(result > 0){//아이디 존재
+			            	alert("이미 가입된 휴대폰 번호입니다 다른 번호로 가입해 주세요");
+			                return;
+			             } else {
+			            	    var result = confirm("가입 가능한 휴대폰 번호입니다 이 번호로 진행하시겠습니까?");
+					   			  if(result){
+					   			   $('[name=CPCHECK]').val('Y');
+					   			  } else {
+					   				$("#mCpnumber2").val("");
+					   				$("#mCpnumber3").val("");
+					   				$('[name=CPCHECK]').val('N');
+					   				return;
+					             }
+			             }
+		          
+		            },
+		            error: function(xhr, option, error){
+		                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		            }
+		        });
+		        
+		}
+	 	
+		
+		
+		$("#mCpnumber2").keyup(function(event){
+		    var inputVal = $(this).val();
+		    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+
+		});
+
+
+		
+		$("#mCpnumber3").keyup(function(event){
+		    var inputVal = $(this).val();
+		    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+
+		});
+
+
+		/*   //파일 확장자,용량 체크
+		  $("input[id*=add_file").change(function(){
+		      if($(this).val() != ""){
+		          // 확장자 체크
+		              var ext = $(this).val().split(".").pop().toLowerCase();
+
+		              if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
+		                  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file").val("");
+		                  return;
+		              }
+		              
+		              // 용량 체크
+		              var fileSize = this.files[0].size;
+		              var maxSize =  5 * 1024 * 1024;
+		       
+		              if(fileSize > maxSize){
+		            	  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file").val("");
+		                  return;
+		              }
+		              
+		           
+		      }
+		  }); */
+		  
+
+		  //파일 확장자,용량 체크
+		  $("input[id*=add_file_name2").change(function(){
+		      if($(this).val() != ""){
+		          // 확장자 체크
+		              var ext = $(this).val().split(".").pop().toLowerCase();
+
+		              if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
+		                  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file_name2").val("");
+		                  return;
+		              }
+		              
+		              // 용량 체크
+		              var fileSize = this.files[0].size;
+		              var maxSize =  5 * 1024 * 1024;
+		       
+		              if(fileSize > maxSize){
+		            	  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file_name2").val("");
+		                  return;
+		              }
+		              
+		           
+		      }
+		  });
+		  
+		  //파일 확장자,용량 체크
+		  $("input[id*=add_file_name3").change(function(){
+		      if($(this).val() != ""){
+		          // 확장자 체크
+		              var ext = $(this).val().split(".").pop().toLowerCase();
+
+		              if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
+		                  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file_name3").val("");
+		                  return;
+		              }
+		              
+		              // 용량 체크
+		              var fileSize = this.files[0].size;
+		              var maxSize =  5 * 1024 * 1024;
+		       
+		              if(fileSize > maxSize){
+		            	  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file_name3").val("");
+		                  return;
+		              }
+		              
+		           
+		      }
+		  });
+		  
+
+	      function eudiApiCall(api)
+	      {
+	          var iframe = document.createElement('IFRAME');
+	          iframe.setAttribute('src', 'eudi://' + api);
+	          iframe.setAttribute('frameborder', '0');
+	          iframe.style.width='1px';
+	          iframe.style.height='1px';
+	          document.body.appendChild(iframe);
+	          document.body.removeChild(iframe);
+	          iframe = null;
+	      }
+
+	      function succUuid(uuid)
+	      {
+	    	   actionurl = "/child/updatePushInfo.do";
+	 		   var chkData = { "puDeviceId": uuid ,"mId":$("#mId").val()};
+	 		   $.ajax({
+	 	            async: false,
+	 	            type: "POST",
+	 	            data:chkData,
+	 	            url : actionurl,
+	 	            dataType : "json",
+	 	            success: function(obj){
+	 	              // alert(obj.result);
+	 	            },
+	 	            error: function(xhr, option, error){
+	 	                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+	 	            }
+	 	        }) ;
+	      }
+		  
+		  
+
+/* 퍼블추가 2023.03.10 */
+
+        // 우편번호 찾기 찾기 화면을 넣을 element
+        //var element_wrap = document.getElementById('addr_wrap');
+        var element_layer = document.getElementById('layer');
+    
+    /*     function foldDaumPostcode() {
+            // iframe을 넣은 element를 안보이게 한다.
+            element_wrap.style.display = 'none';
+        }
+         */
+        function closeDaumPostcode() {
+            // iframe을 넣은 element를 안보이게 한다.
+            element_layer.style.display = 'none';
+        }
+
+        function sample2_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+    
+                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var addr = ''; // 주소 변수
+                    var extraAddr = ''; // 참고항목 변수
+    
+                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                        addr = data.roadAddress;
+                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        addr = data.jibunAddress;
+                    }
+    
+                    // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                    if(data.userSelectedType === 'R'){
+                        // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                        // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                            extraAddr += data.bname;
+                        }
+                        // 건물명이 있고, 공동주택일 경우 추가한다.
+                        if(data.buildingName !== '' && data.apartment === 'Y'){
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                        }
+                        // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                        if(extraAddr !== ''){
+                            extraAddr = ' (' + extraAddr + ')';
+                        }
+                        // 조합된 참고항목을 해당 필드에 넣는다.
+                        document.getElementById("pAddr2").value = extraAddr;
+    
+                    } else {
+                        document.getElementById("pAddr2").value = '';
+                    }
+    
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('pPost').value = data.zonecode;
+                    document.getElementById("pAddr1").value = addr;
+                    // 커서를 상세주소 필드로 이동한다.
+                    document.getElementById("pAddr2").focus();
+                    $("#addr_box01").removeClass("blind");
+                    $("#addr_box02").addClass("blind");
+    
+                    // iframe을 넣은 element를 안보이게 한다.
+                    // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                    element_layer.style.display = 'none';
+    
+    
+                },
+                width : '100%',
+                height : '100%',
+                maxSuggestItems : 5
+            }).embed(element_layer);
+    
+            // iframe을 넣은 element를 보이게 한다.
+            element_layer.style.display = 'block';
+    
+            // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+            initLayerPosition();
+        }
+    
+    
+        function initLayerPosition(){
+            var width = 300; //우편번호서비스가 들어갈 element의 width
+            var height = 400; //우편번호서비스가 들어갈 element의 height
+            var borderWidth = 5; //샘플에서 사용하는 border의 두께
+    
+            // 위에서 선언한 값들을 실제 element에 넣는다.
+            element_layer.style.width = width + 'px';
+            element_layer.style.height = height + 'px';
+            element_layer.style.border = borderWidth + 'px solid';
+            // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+            element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
+            element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+        }
+    
+    
+        function maxLengthCheck(object){
+        if(object.value.length > object.maxLength) {
+          object.value = object.value.slice(0, object.maxLength);
+        }
+      }
+	</script>
+		
+  </body>
+</html>
