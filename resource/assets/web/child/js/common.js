@@ -480,7 +480,7 @@ var eduApply = {
     });
 
     //교육/상담 신청사유 "기타"일 경우 입력칸 생성
-    var selectType = $(".pop_apply .select_row:nth-of-type(2)>select");
+    var selectType = $(".pop_apply .select_row>select");
     selectChange(selectType);
     function selectChange(type) {
       type.change(function () {
