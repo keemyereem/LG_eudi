@@ -202,14 +202,21 @@
           </div>
           <div class="con_form">
             <div class="select_row">
-              <label for="sel02">신청사유</label>
-              <select name="sel02" id="sel02">
-                <option value="">제품변경 교육 요청</option>
-                <option value="">주사방법 재교육 요청</option>
-                <option value="">기타(사유를 서술형으로 적어주세요)</option>
+              <label for="applyReason">신청사유</label>
+              <select name="applyReason" id="applyReason">
+                <option value="0">제품변경 교육 요청</option>
+                <option value="1">주사방법 재교육 요청</option>
+                <option value="2">기타(사유를 서술형으로 적어주세요)</option>
               </select>
             </div>
           </div>
+          
+          <div class="con_form" id="appylyContent">
+            <div class="area_box">
+              <textarea type="text" id="" name="" placeholder="사유를 입력해주세요"></textarea>
+            </div>
+          </div>
+
           <div class="con_form">
             <div class="area_box">
               <textarea type="text" id="" name="" placeholder="메모"></textarea>
@@ -238,5 +245,15 @@
 
     <!-- content //-->
 	</div>
+
+  <script>
+      $("#applyReason").change(function() {//신청사유 서술형 textarea 처리
+        if($("#applyReason option:selected").val()  == "2"){//기타 서술 
+          $("#appylyContent").css("display", "block");
+        } else {
+          $("#appylyContent").css("display", "none");
+        }
+			});
+  </script>
   </body>
 </html>

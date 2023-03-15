@@ -431,6 +431,9 @@ if("" != ""){
                   </tr>
                 </tbody>
               </table>
+
+              <div class="btn_add"><a href="javascript:chkCp();">휴대폰번호 중복확인</a></div>
+
             </div>
 
             <div class="tb mt30">
@@ -510,7 +513,7 @@ if("" != ""){
 			                      <td class="cont">
 			                        <div class="input_row">
 			                          <span class="input_box">
-			                            <input type="text" id="cName<c:if test="${i > 1}">_0${i-1}</c:if>" name="cName<c:if test="${i > 1}">_0${i-1}</c:if>" class="ipt" value="${fn:split(myInfo.cName,',')[i-1]}">
+			                            <input type="text" id="cName">
 			                          </span>
 			                        </div>
 			                      </td>
@@ -611,26 +614,32 @@ if("" != ""){
 			                      <col style="*">
 			                  </colgroup>
 			                  <tbody>
+                          <tr>
+                            <td class="tit"><p>유사제품경험<span></span></p></td>
+                            <td class="cont">
+                              <p>있음 / 유트로핀 펜</p>
+                            </td>
+                          </tr>
 			                    <tr>
-			                      <td class="tit"><p>담당 간호사</p></td>
+			                      <td class="tit"><p>담당 간호사<span></span></p></td>
 			                      <td class="cont">
 			                        <p><c:out value="${fn:split(myInfo.cChargNurseName,',')[i-1]}"/></p>
 			                      </td>
 			                    </tr>
 			                    <tr>
-			                      <td class="tit"><p>최초 처방일</p></td>
+			                      <td class="tit"><p>최초 처방일<span></span></p></td>
 			                      <td class="cont">
 			                        <p><c:out value="${fn:split(myInfo.cInitialPrescription,',')[i-1]}"/></p>
 			                      </td>
 			                    </tr>
 			                    <tr>
-			                      <td class="tit"><p>병원명</p></td>
+			                      <td class="tit"><p>병원명<span></span></p></td>
 			                      <td class="cont">
 			                        <p><c:out value="${fn:split(myInfo.cHospitalName,',')[i-1]}"/></p>
 			                      </td>
 			                    </tr>
 			                    <tr>
-			                      <td class="tit"><p>의사명</p></td>
+			                      <td class="tit"><p>의사명<span></span></p></td>
 			                      <td class="cont">
 			                        <p>
 			                         <c:choose>
@@ -846,13 +855,16 @@ if("" != ""){
     
           <!--   <h3 class="info02" onclick="fnBarcodeChk()" id="withdraw_area">스마트기기 관리</h3> -->
             
-            <div class="btn_box btn_box01 mt20">
+            <div class="btn_box btn_box01 mt15">
               <div class="btn_line"><a href="javascript:;" onclick="fnBarcodeChk()" id="withdraw_area">스마트기기 관리</a></div>
             </div>
             
            <!--  <h3 class="info02">탈퇴신청</h3> -->
-            <div class="btn_box btn_box01 mt20">
+            <!-- <div class="btn_box btn_box01 mt15">
               <div class="btn_line"><a href="javascript:;" onclick="popupOpen('pop_drop');">탈퇴신청하기</a></div>
+            </div> -->
+            <div class="btn_box btn_box01 mt15">
+              <div class="btn_line"><a href="javascript:;" onclick="">휴대폰 정보 확인</a></div>
             </div>
 
             <div class="btn_box btn_box02 mt50">
@@ -1308,6 +1320,59 @@ if("" != ""){
 					setCookie('ioseudi', '1',1);
 				}
 			});
+
+    //휴대폰번호 중복 확인
+    function chkCp(){
+
+      if($("#mCpnumber2").val().trim() == ""){
+        alert("휴대폰번호를 입력해주세요");
+        $("#mCpnumber2").focus();
+        return;
+      }
+
+
+      if($("#mCpnumber3").val().trim() == ""){
+        alert("휴대폰번호를 입력해주세요");
+        $("#mCpnumber3").focus();
+        return;
+      }
+
+
+      var data = {"mCpnumber1": $("#mCpnumber1").val(),"mCpnumber2": $("#mCpnumber2").val(),"mCpnumber3": $("#mCpnumber3").val()};
+      var actionurl = "/child/cpChk.do";
+
+      $.ajax({
+          async: false,
+          type: "POST",
+          url : actionurl,
+          cache : false,
+          data : data,
+          dataType : "json",
+          success: function(obj){
+          
+            var result = obj.result;
+              if(result > 0){//아이디 존재
+              alert("이미 가입된 휴대폰 번호입니다 다른 번호로 가입해 주세요");
+                return;
+              } else {
+                  var result = confirm("가입 가능한 휴대폰 번호입니다 이 번호로 진행하시겠습니까?");
+                if(result){
+                $('[name=CPCHECK]').val('Y');
+                } else {
+                $("#mCpnumber2").val("");
+                $("#mCpnumber3").val("");
+                $('[name=CPCHECK]').val('N');
+                return;
+                  }
+              }
+        
+          },
+          error: function(xhr, option, error){
+                alert(xhr.status+" | "+error); //오류코드 | 오류내용
+          }
+      });
+          
+    }
 
 /* 퍼블추가 2023.03.10 */
 

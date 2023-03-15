@@ -260,8 +260,8 @@ select option[value=""][disabled] { display: none; }
 .btn_box03 .btn_white {float: left;width: 32%;}
 .btn_box03 .btn_orange {float: left;width: 32%;}
 .btn_box03 .btn_line_green {float: left;width: 32%;}
-.btn_box03>div:nth-child(2) {margin-left: 2%;}
-.btn_box03>div:last-child {margin-left: 2%;}
+.btn_box03 div:not(.inner):nth-child(2) {margin-left: 2%;}
+.btn_box03 div:not(.inner):last-child {margin-left: 2%;}
 
 .wrap_sub .btn_box.btn_bottom {position: absolute;bottom: 25px;left: 0;width: 100%;}
 @media screen and (min-width: 768px) and (max-width: 1024px) {
