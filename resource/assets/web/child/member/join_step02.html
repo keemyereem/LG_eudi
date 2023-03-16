@@ -216,12 +216,15 @@ if("" != ""){
                   <tr>
                     <td class="tit"><p>아이디<span></span></p></td>
                     <td class="cont">
-                      <div class="input_row">
-            						<span class="input_box">
-            							<input type="text" id="mId" name="mId" class="ipt" required="required" minlength="4" maxlength="13" data-title="아이디를"  placeholder="4~13자리 이내" oninput="maxLengthCheck(this)">
-            						</span>
-                        <div class="btn_chk"><a href="javascript:;" onclick="chkId()">중복확인</a></div>
-            					</div>
+                      <div class="cont_inner">
+                        <div class="input_row">
+                          <span class="input_box">
+                            <input type="text" id="mId" name="mId" class="ipt" required="required" minlength="4" maxlength="13" data-title="아이디를"  placeholder="4~13자리 이내" oninput="maxLengthCheck(this)">
+                          </span>
+                          <div class="btn_chk"><a href="javascript:;" onclick="chkId()">중복확인</a></div>
+                        </div>
+                        <p class="info">영문과 숫자만 사용가능, 최소 4자, 최대 13자 까지 가능 </p>
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -233,9 +236,9 @@ if("" != ""){
 	            							<input type="password" id="password" name="password" class="ipt"  required="required" minlength="8" maxlength="16" required="required" data-title="비밀번호를" title="비밀번호" oninput="maxLengthCheck(this)">
 	            						</span>
 	            					</div>
-	            			<p class="info">비밀번호는 영문, 숫자를 포함하여 10자리 이상 또는 영문, 숫자, 특수문자를 포함하여 8자리 이상 입력해주세요.</p>
-	                 	</div>
-	                 </td>
+	            			    <p class="info">비밀번호는 영문, 숫자를 포함하여 10자리 이상 또는 영문, 숫자, 특수문자를 포함하여 8자리 이상 입력해주세요.</p>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="tit"><p>비밀번호 확인<span></span></p></td>
@@ -254,7 +257,7 @@ if("" != ""){
                         <label for="mCpnumber1">010</label>
                         <select id="mCpnumber1" name="mCpnumber1">
                             <option selected="selected">010</option>
-                  			 <option value="011">011</option>
+                  			    <option value="011">011</option>
                             <option value="017">017</option>
                             <option value="018">018</option>
                             <option value="019">019</option>
@@ -533,7 +536,7 @@ if("" != ""){
                         </div>
                       </td>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                       <td class="tit"><p>사용한 제품</p></td>
                       <td class="cont">
                         <div class="select_row">
@@ -548,7 +551,7 @@ if("" != ""){
                           </select>
                         </div>
                       </td>
-                    </tr> -->
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -750,7 +753,7 @@ if("" != ""){
                         </div>
                       </td>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                       <td class="tit"><p>사용한 제품</p></td>
                       <td class="cont">
                         <div class="select_row">
@@ -765,7 +768,7 @@ if("" != ""){
                           </select>
                         </div>
                       </td>
-                    </tr> -->
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -965,7 +968,7 @@ if("" != ""){
                         </div>
                       </td>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                       <td class="tit"><p>사용한 제품</p></td>
                       <td class="cont">
                         <div class="select_row">
@@ -980,7 +983,7 @@ if("" != ""){
                           </select>
                         </div>
                       </td>
-                    </tr> -->
+                    </tr>
                   </tbody>
                 </table>
               </div>

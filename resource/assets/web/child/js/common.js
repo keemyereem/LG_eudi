@@ -830,3 +830,35 @@ function popupHeight() {
 
  }
 
+function popupsrh() {
+  var popthis = $(".pop_search");
+  var mask = $(".pop_mask");
+  popthis.css({
+    "top":  (($(window).height()-popthis.outerHeight())/2) + $(window).scrollTop()+"px",
+    "left": (($(window).width()-popthis.outerWidth())/2+$(window).scrollLeft())+"px",
+  });
+  popthis.fadeIn(300);
+  mask.css("display","block");
+  popthis.find(".pop_close").click(function(){
+      popthis.fadeOut(300);
+      mask.css("display","none");
+  });
+}
+
+
+
+
+function popupdoctor() {
+  var popthis = $(".pop_search_doctor");
+  var mask = $(".pop_mask");
+  popthis.css({
+    "top":  (($(window).height()-popthis.outerHeight())/2) + $(window).scrollTop()+"px",
+    "left": (($(window).width()-popthis.outerWidth())/2+$(window).scrollLeft())+"px",
+  });
+  popthis.fadeIn(300);
+  mask.css("display","block");
+  popthis.find(".pop_close").click(function(){
+      popthis.fadeOut(300);
+      mask.css("display","none");
+  });
+}

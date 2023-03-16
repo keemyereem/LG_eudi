@@ -215,6 +215,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .hpc_wrap li button img { height: calc(100% - 14px); object-fit: contain; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available a,
 .wrap_sub .sec_cal .schedule_wrap .dates li.available button { border: 1px solid #ffffff; }
+.wrap_sub .sec_cal .schedule_wrap .dates li.available button.not_registered { opacity: 0.3; }
 .wrap_sub .sec_cal .schedule_wrap .dates li[data-type="row-2"] { height: calc(100% / 9 - 10px); }
 .wrap_sub .sec_cal .schedule_wrap .dates li[data-type="row-3"] { height: calc(100% / 6 - 10px); } /* 더 필요할 경우 칸 추가 */
 .wrap_sub .sec_cal .schedule_wrap .dates li[data-type="blind"] { display: none; visibility: hidden; }
@@ -224,7 +225,9 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .hpc_wrap li p { font-size: 13px; color: #333333; font-family: 'NanumSquareB'; }
 .wrap_sub .sec_cal .hpc_wrap li p span { font-family: 'NanumSquareR'; font-size: 11px; color: #999999; }
 .wrap_sub .sec_cal .hpc_wrap li p span::before { content: ''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px; vertical-align: middle; }
+.wrap_sub .sec_cal .hpc_wrap li a,
 .wrap_sub .sec_cal .hpc_wrap li button { border: 1px solid #f18e1e; }
+.wrap_sub .sec_cal .hpc_wrap li .not_registered {opacity: 0.3;}
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrap_sub .schedules .sec_cal .cal_nav .year-month { width: 63vw; }
