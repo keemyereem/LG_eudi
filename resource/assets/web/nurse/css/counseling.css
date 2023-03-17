@@ -215,7 +215,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .hpc_wrap li button img { height: calc(100% - 14px); object-fit: contain; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available a,
 .wrap_sub .sec_cal .schedule_wrap .dates li.available button { border: 1px solid #ffffff; }
-.wrap_sub .sec_cal .schedule_wrap .dates li.available button.not_registered { opacity: 0.3; }
+.wrap_sub .sec_cal .schedule_wrap .dates li.available .not_registered { opacity: 0.3; }
 .wrap_sub .sec_cal .schedule_wrap .dates li[data-type="row-2"] { height: calc(100% / 9 - 10px); }
 .wrap_sub .sec_cal .schedule_wrap .dates li[data-type="row-3"] { height: calc(100% / 6 - 10px); } /* 더 필요할 경우 칸 추가 */
 .wrap_sub .sec_cal .schedule_wrap .dates li[data-type="blind"] { display: none; visibility: hidden; }
@@ -443,7 +443,7 @@ ExtraBold - 'NanumSquareEB'
 .con_sub.consultHistory .tb .inputBox_DP { width: 100%; }
 .con_sub.consultHistory .tb .hpc_date { font-size: 12px; color: #79bd28; }
 
-.con_sub .form_box .con_form .hpc_date { font-size: 12px; color: #f18e1e; margin-top: 10px; display: none; }
+.con_sub .form_box .con_form .hpc_date { font-size: 12px; color: #f18e1e; margin-top: 10px; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .con_sub .list_box { padding: 35px 15px 150px; }

@@ -52,10 +52,7 @@ if("" != ""){
 <link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
 <link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
 
-<!-- 임시 제이쿼리 -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
-<!-- 임시 제이쿼리 -->
+
 
 <!-- child js file--> 
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
@@ -375,7 +372,7 @@ if("" != ""){
 
   	  
     }
-    
+
 	$(window).load(function() {
 		if("19474"){
 			fnAppPopupCheck(0);//로드시 팝업 호출
@@ -774,7 +771,7 @@ function fnLogOut(){
                         <ul>
                           <li><a href="/child/schedule_management.do">- 투여계획</a></li>
                           <li><a href="/child/dose_input_cal.do">- 투여입력</a></li>
-                          <li><a href="/child/dose_pre.do">- 의사선생님 함께 보기</a></li>
+                          <li><a href="/child/dose_pre.do">- 의사선생님 함께보기</a></li>
                         </ul>
                       </div>
                     </li>
@@ -794,9 +791,10 @@ function fnLogOut(){
                       <div class="gnb_tit"><a href="/product/counseling_list.do">물품/상담</a></div>
                       <div class="gnb_list">
                         <ul>
-                          <li><a href="/product/product_request.do">- 물품요청하기</a></li>
-                          <li><a href="/product/counseling_list.do">- 상담하기</a></li>
-                          <li><a href="/product/product_question.do">- 자주하는질문</a></li>
+                          <li><a href="/product/product_request.do">- 물품요청</a></li>
+                          <li><a href="/product/counseling_list.do">- 교육/상담신청</a></li>
+                          <li><a href="#">- 온라인문의</a></li>
+                          <li><a href="/product/product_question.do">- FAQ</a></li>
                         </ul>
                       </div>
                     </li>
@@ -808,7 +806,7 @@ function fnLogOut(){
                 <div class="gnb_bot">
                   <ul>
                     <li><a href="javascript:;" onclick="popupOpen('pop_agree01');">이용약관</a></li>
-                    <li><a href="javascript:;" onclick="popupOpen('pop_agree02');">개인정보 수집 및 이용동의</a></li><!--  -->
+                    <li><a href="javascript:;" onclick="popupOpen('pop_agree02');" style="font-family: 'NanumSquareB'; color: #222222;">개인정보 처리방침</a></li><!--  -->
                     <li><a href="javascript:;" onclick="popupOpen('pop_drop');">탈퇴신청</a></li>
                   </ul>
                 </div>
@@ -1401,12 +1399,18 @@ function fnLogOut(){
         </div>
       </div>
 
+      <!-- 탈퇴신청 팝업 UI추가 및 수정 - 2023.03.17 -->
       <div class="pop_wrap pop_drop">
         <div class="pop_box">
           <div class="pop_top">
             <div class="pop_inner">
               <h2 class="title">회원탈퇴신청</h2>
-              <div class="pop_close close"><a href="/child/modify_info.do"><img src="/resource/assets/web/child/images/common/close.png" alt="닫기" /></a></div>
+              <div class="pop_close close">
+                <!--<a href="/child/modify_info.do">-->
+                <a href="javascript:;">
+                  <img src="/resource/assets/web/child/images/common/close.png" alt="닫기" />
+                </a>
+              </div>
             </div>
           </div>
           <div class="pop_cont">
@@ -1423,9 +1427,54 @@ function fnLogOut(){
                       <td class="tit"><p>탈퇴사유</p></td>
                       <td class="cont">
                         <div class="cont_inner">
+                          <div class="select_row">
+                            <label for="mWithdrawReason">탈퇴사유를 입력해주세요</label>
+                            <select id="mWithdrawReason" name="mWithdrawReason">
+                              <option value="complete" >치료완료(치료목표달성/ 효과만족/ 성장판닫힘)</option>
+                              <option value="pauseForM" >치료중단(경제적부담)</option>
+                              <option value="pauseForP" >치료중단(주사스트레스/통증)</option>
+                              <option value="pauseForE" >치료중단(효과미비) </option>
+                              <option value="pauseForW" >치료중단(부작용발생/우려) </option>
+                              <option value="change" >타제품 전환</option>
+                              <option value="etc" >기타(사유를 서술형으로 적어주세요)</option>
+                            </select>
+                          </div>
                           <div class="area_box">
                             <textarea type="text" id="mWithdrawReason" name="mWithdrawReason" placeholder="탈퇴사유를 입력해주세요."></textarea>
                           </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="tb">
+                <table summary="탈퇴신청" cellpadding="0" cellspacing="0" border="0">
+                  <caption>탈퇴신청</caption>
+                  <colgroup>
+                      <col style="width:110px;">
+                      <col style="*">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"><p>스마트기기 <br>반납여부</p></td>
+                      <td class="cont mainWithdrawlRad">
+                        <div class="radio_row">
+                          <input type="radio" id="radio01" name="returnSmartDevice" class="radio" value="" checked >
+                          <label for="radio01">반납</label>
+                        </div>
+                        <div class="radio_row">
+                          <input type="radio" id="radio02" name="returnSmartDevice" class="radio" value="">
+                          <label for="radio02">미반납(반납예정)</label>
+                        </div>
+                        <div class="radio_row">
+                          <input type="radio" id="radio03" name="returnSmartDevice" class="radio" value="">
+                          <label for="radio03">처음부터 받지 않았음</label>
+                        </div>
+                        <div class="radio_row">
+                          <input type="radio" id="radio04" name="returnSmartDevice" class="radio" value="">
+                          <label for="radio04">분실</label>
                         </div>
                       </td>
                     </tr>
@@ -1443,6 +1492,23 @@ function fnLogOut(){
           </div>
         </div>
       </div>
+
+      <script>
+        // 탈퇴신청팝업 셀렉트바 제목 바꾸기/ 기타버튼 선택시 사유 열기 - 2023.03.17
+        var selectType = $(".pop_drop .select_row>select");
+        selectChange(selectType);
+        function selectChange(type) {
+          type.change(function () {
+            var select_name = $(this).children("option:selected");
+            $(this).siblings("label").text(select_name.text());
+            if (select_name.val() === "etc") {
+              $(".pop_drop .area_box").show();
+            } else {
+              $(".pop_drop .area_box").hide();
+            }
+          });
+        }
+      </script>
 
       <!-- 유디웹툰 -->
       <div class="pop_wrap pop_webtoon">

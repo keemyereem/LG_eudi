@@ -486,7 +486,6 @@ var eduApply = {
       type.change(function () {
         var select_name = $(this).children("option:selected").text();
         $(this).siblings("label").text(select_name);
-
         if (select_name === "기타") {
           $(".pop_apply .area_box").show();
         } else {
@@ -541,6 +540,13 @@ function popupInfo(popInfo) {
       popthis.fadeOut(300);
       mask.css("display","none");
   });
+
+  // 2차 팝업 띄우기 - 2023.03.17
+  if ($('.pop_apply2').length) {
+    $('.pop_continue').click(function() {
+      $('.pop_apply').hide();
+    })
+  }
 }
 
 

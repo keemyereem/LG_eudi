@@ -52,10 +52,7 @@ if("" != ""){
 <link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
 <link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
 
-<!-- 임시 제이쿼리 -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
-<!-- 임시 제이쿼리 -->
+
 
 <!-- child js file--> 
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
@@ -615,9 +612,33 @@ if("" != ""){
 			                  </colgroup>
 			                  <tbody>
                           <tr>
-                            <td class="tit"><p>유사제품경험<span></span></p></td>
+                            <td class="tit"><p>성장 호르몬<br>치료경험</p></td>
                             <td class="cont">
-                              <p>있음 / 유트로핀 펜</p>
+                              <div class="radio_row">
+                                <input type="radio" id="yes" name="treatExp" value="Y" checked="">
+                                <label for="yes">예</label>
+                              </div>
+                              <div class="radio_row">
+                                <input type="radio" id="no" name="treatExp" value="N">
+                                <label for="no">아니오</label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tit"><p>과거<br>사용한 제품</p></td>
+                            <td class="cont">
+                              <div class="select_row">
+                                <label for="sel04"></label>
+                                <select id="sel04" name="sel04" data-title="" title="">
+                                     <option value="">싸이젠</option>
+                                     <option value="">그로트로핀</option>
+                                     <option value="">지노트로핀</option>
+                                     <option value="">노디트로핀</option>
+                                     <option value="">싸이트로핀</option>
+                                     <option value="">조맥톤</option>
+                                     <option value="">모름</option>
+                                </select>
+                              </div>
                             </td>
                           </tr>
 			                    <tr>
@@ -627,7 +648,7 @@ if("" != ""){
 			                      </td>
 			                    </tr>
                           <tr>
-                            <td class="tit"><p>최초 처방일</p></td>
+                            <td class="tit"><p>최초 처방일<span></span></p></td>
                             <td class="cont">
                               <div class="inputBox_DP w100">
                                 <input type="date" name="cInitialPrescription" class="date" value="2018-06-10" />
@@ -636,7 +657,7 @@ if("" != ""){
                           </tr>
 
                           <tr>
-                            <td class="tit"><p>병원명</p></td>
+                            <td class="tit"><p>병원명<span></span></p></td>
                             <td class="cont">
                               <div class="input_search">
                                 <span class="input_box">
@@ -647,7 +668,7 @@ if("" != ""){
                             </td>
                           </tr>
                           <tr>
-                            <td class="tit"><p>의사명</p></td>
+                            <td class="tit"><p>의사명<span></span></p></td>
                             <td class="cont">
                               <div class="input_search">
                                 <span class="input_box">
@@ -788,6 +809,35 @@ if("" != ""){
                       <col style="*">
                   </colgroup>
                   <tbody>
+                    <td class="tit"><p>성장 호르몬<br>치료경험</p></td>
+                    <td class="cont">
+                      <div class="radio_row">
+                        <input type="radio" id="yes_01" name="treatExp_01" value="Y" checked="">
+                        <label for="yes_01">예</label>
+                      </div>
+                      <div class="radio_row">
+                        <input type="radio" id="no_01" name="treatExp_01" value="N">
+                        <label for="no_01">아니오</label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>과거<br>사용한 제품</p></td>
+                    <td class="cont">
+                      <div class="select_row">
+                        <label for="sel04_01"></label>
+                        <select id="sel04_01" name="sel04_01" data-title="" title="">
+                             <option value="">싸이젠</option>
+                             <option value="">그로트로핀</option>
+                             <option value="">지노트로핀</option>
+                             <option value="">노디트로핀</option>
+                             <option value="">싸이트로핀</option>
+                             <option value="">조맥톤</option>
+                             <option value="">모름</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
                     <tr>
                       <td class="tit"><p>담당 간호사<span></span></p></td>
                       <td class="cont">
@@ -837,8 +887,31 @@ if("" != ""){
                         </div>
                       </td>
                     </tr>
+
                     <tr>
-                      <td class="tit"><p>병원명</p></td>
+                      <td class="tit"><p>병원명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_search">
+                          <span class="input_box">
+                            <input type="text" class="ipt"   id="selectHname_01"  value="연세대학교병원" readonly="">
+                            <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="tit"><p>의사명<span></span></p></td>
+                      <td class="cont">
+                        <div class="input_search">
+                          <span class="input_box">
+                              <input type="text" id="cDoctorName_01" name="cDoctorName_01" value="김기준" class="ipt">
+                              <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- <tr>
+                      <td class="tit"><p>병원명<span></span></p></td>
                       <td class="cont">
                        <div class="input_row">
                           <span class="input_box">
@@ -848,7 +921,7 @@ if("" != ""){
                       </td>
                     </tr>
                     <tr>
-                     <td class="tit"><p>의사명</p></td>
+                     <td class="tit"><p>의사명<span></span></p></td>
                       <td class="cont">
                         <div class="input_row">
                           <span class="input_box">
@@ -856,7 +929,7 @@ if("" != ""){
                           </span>
                         </div>
                       </td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
@@ -881,7 +954,7 @@ if("" != ""){
     
           <!--   <h3 class="info02" onclick="fnBarcodeChk()" id="withdraw_area">스마트기기 관리</h3> -->
             
-            <div class="btn_box btn_box01 mt15">
+            <div class="btn_box btn_box01 mt10">
               <div class="btn_line"><a href="javascript:;" onclick="fnBarcodeChk()" id="withdraw_area">스마트기기 관리</a></div> 
             </div>
             
@@ -889,7 +962,7 @@ if("" != ""){
             <!-- <div class="btn_box btn_box01 mt15">
               <div class="btn_line"><a href="javascript:;" onclick="popupOpen('pop_drop');">탈퇴신청하기</a></div>
             </div> -->
-            <div class="btn_box btn_box01 mt15">
+            <div class="btn_box btn_box01 mt10">
               <div class="btn_line"><a href="javascript:;" onclick="">휴대폰 정보 확인</a></div>
             </div>
 

@@ -489,23 +489,6 @@ var nurseJS = {
   //   }
   // },
 
-  counselRegis: () => {
-    //상담이력등록 상담분류 "신환교육"일 경우 해피콜 예정일 노출
-    var selectType = $(".consultSort_form .select_row>select");
-    selectChange(selectType);
-    function selectChange(type) {
-      type.change(function () {
-        var select_name = $(this).children("option:selected").text();
-        $(this).siblings("label").text(select_name);
-
-        if (select_name === "신환교육") {
-          $('.consultSort_form').siblings('.con_form').find(".hpc_date").show();
-        } else {
-          $('.consultSort_form').siblings('.con_form').find(".hpc_date").hide();
-        }
-      });
-    }
-  },
 
   //상담가능일정관리
   scheduleEdit: () => {

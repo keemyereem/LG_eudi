@@ -83,7 +83,7 @@ input[type="text"]:disabled {background: #fff;}
 .header .gnb_box .gnb_sel>ul>li.active a {font-family: 'NanumSquareB';color: #79bd28;}
 .header .gnb_box .gnb_menu {margin-top: 8px;padding: 30px 15px 45px 15px;background: #fff;}
 .header .gnb_box .gnb_menu>.gnb_home>p {position: relative;display: inline-block;}
-.header .gnb_box .gnb_menu>.gnb_home>p:after {content: "";display: block;position: absolute;left: 0;bottom: 0;width: 100%;height: 5px;background: #79bd28;}
+.header .gnb_box .gnb_menu>.gnb_home>p:after {content: "";display: block;position: absolute;left: 0;bottom: 3px;width: 100%;height: 5px;background: #79bd28;}
 .header .gnb_box .gnb_menu>.gnb_home>p>span {position: relative;display: inline-block;font-family: 'NanumSquareB';font-size: 18px;z-index: 1;}
 .header .gnb_box .gnb_menu>ul>li .gnb_tit {padding-top: 30px;}
 .header .gnb_box .gnb_menu>ul>li .gnb_tit>a {font-family: 'NanumSquareB';font-size: 18px;}

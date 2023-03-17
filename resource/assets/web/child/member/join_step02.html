@@ -52,10 +52,7 @@ if("" != ""){
 <link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
 <link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
 
-<!-- 임시 제이쿼리 -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
-<!-- 임시 제이쿼리 -->
+
 
 <!-- child js file--> 
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
@@ -447,12 +444,12 @@ if("" != ""){
                       <td class="tit"><p>LG화학<br> 주사교육을<br> 받으셨나요?<span></span></p></td>
                       <td class="cont">
                         <div class="radio_row">
-          								<input type="radio" id="yes" name="injectionEdu" value="Y" checked="">
-          							  <label for="yes">예</label>
+          								<input type="radio" id="yes1" name="injectionEdu" value="Y" checked="">
+          							  <label for="yes1">예</label>
           							</div>
                         <div class="radio_row">
-          								<input type="radio" id="no" name="injectionEdu" value="N">
-          							  <label for="no">아니오</label>
+          								<input type="radio" id="no1" name="injectionEdu" value="N">
+          							  <label for="no1">아니오</label>
           							</div>
                       </td>
                     </tr>
@@ -527,27 +524,29 @@ if("" != ""){
                     <tr>
                       <td class="tit"><p>과거성장<br> 치료경험<span></span></p></td>
                       <td class="cont">
-                        <div class="select_row">
-                          <label for="sel07"></label>
-                          <select id="treatExp" name="treatExp" required="required" data-title="" title="">
-                               <option value="">있음</option>
-                               <option value="">없음</option>
-                          </select>
-                        </div>
+                        <div class="radio_row">
+          								<input type="radio" id="yes2" name="treatExp" value="Y" checked="">
+          							  <label for="yes2">예</label>
+          							</div>
+                        <div class="radio_row">
+          								<input type="radio" id="no2" name="treatExp" value="N">
+          							  <label for="no2">아니오</label>
+          							</div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="tit"><p>사용한 제품</p></td>
+                      <td class="tit"><p>과거<br>사용한 제품</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel08"></label>
-                          <select id="usedProduct" name="usedProduct" data-title="" title="">
+                          <label for="sel07"></label>
+                          <select id="sel07" name="usedProduct" data-title="" title="">
                                <option value="">싸이젠</option>
                                <option value="">그로트로핀</option>
                                <option value="">지노트로핀</option>
                                <option value="">노디트로핀</option>
                                <option value="">싸이트로핀</option>
                                <option value="">조맥톤</option>
+                               <option value="">모름</option>
                           </select>
                         </div>
                       </td>
@@ -664,12 +663,12 @@ if("" != ""){
                       <td class="tit"><p>LG화학<br> 주사교육을<br> 받으셨나요?<span></span></p></td>
                       <td class="cont">
                         <div class="radio_row">
-          								<input type="radio" id="yes_01" name="injectionEdu" value="Y" checked="">
-          							  <label for="yes_01">예</label>
+          								<input type="radio" id="yes1_01" name="injectionEdu_01" value="Y" checked="">
+          							  <label for="yes1_01">예</label>
           							</div>
                         <div class="radio_row">
-          								<input type="radio" id="no_01" name="injectionEdu" value="N">
-          							  <label for="no_01">아니오</label>
+          								<input type="radio" id="no1_01" name="injectionEdu_01" value="N">
+          							  <label for="no1_01">아니오</label>
           							</div>
                       </td>
                     </tr>
@@ -744,27 +743,29 @@ if("" != ""){
                     <tr>
                       <td class="tit"><p>과거성장<br> 치료경험<span></span></p></td>
                       <td class="cont">
-                        <div class="select_row">
-                          <label for="sel07_01"></label>
-                          <select id="sel07_01" name="sel07_01" required="required" data-title="" title="">
-                               <option value="">있음</option>
-                               <option value="">없음</option>
-                          </select>
-                        </div>
+                        <div class="radio_row">
+          								<input type="radio" id="yes2_01" name="treatExp_01" value="Y" checked="">
+          							  <label for="yes2_01">예</label>
+          							</div>
+                        <div class="radio_row">
+          								<input type="radio" id="no2_01" name="treatExp_01" value="N">
+          							  <label for="no2_01">아니오</label>
+          							</div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="tit"><p>사용한 제품</p></td>
+                      <td class="tit"><p>과거<br>사용한 제품</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel08_01"></label>
-                          <select id="sel07_02" name="sel07_02" data-title="" title="">
+                          <label for="sel07_01"></label>
+                          <select id="sel07_01" name="usedProduct" data-title="" title="">
                                <option value="">싸이젠</option>
                                <option value="">그로트로핀</option>
                                <option value="">지노트로핀</option>
                                <option value="">노디트로핀</option>
                                <option value="">싸이트로핀</option>
                                <option value="">조맥톤</option>
+                               <option value="">모름</option>
                           </select>
                         </div>
                       </td>
@@ -879,12 +880,12 @@ if("" != ""){
                       <td class="tit"><p>LG화학<br> 주사교육을<br> 받으셨나요?<span></span></p></td>
                       <td class="cont">
                         <div class="radio_row">
-          								<input type="radio" id="yes_02" name="injectionEdu" value="Y" checked="">
-          							  <label for="yes_01">예</label>
+          								<input type="radio" id="yes1_02" name="injectionEdu_02" value="Y" checked="">
+          							  <label for="yes1_02">예</label>
           							</div>
                         <div class="radio_row">
-          								<input type="radio" id="no_02" name="injectionEdu" value="N">
-          							  <label for="no_01">아니오</label>
+          								<input type="radio" id="no1_02" name="injectionEdu_02" value="N">
+          							  <label for="no1_02">아니오</label>
           							</div>
                       </td>
                     </tr>
@@ -959,27 +960,29 @@ if("" != ""){
                     <tr>
                       <td class="tit"><p>과거성장<br> 치료경험<span></span></p></td>
                       <td class="cont">
-                        <div class="select_row">
-                          <label for="sel07_02"></label>
-                          <select id="sel07_02" name="sel07_02" required="required" data-title="" title="">
-                               <option value="">있음</option>
-                               <option value="">없음</option>
-                          </select>
-                        </div>
+                        <div class="radio_row">
+          								<input type="radio" id="yes2_02" name="treatExp_02" value="Y" checked="">
+          							  <label for="yes2_02">예</label>
+          							</div>
+                        <div class="radio_row">
+          								<input type="radio" id="no2_02" name="treatExp_02" value="N">
+          							  <label for="no2_02">아니오</label>
+          							</div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="tit"><p>사용한 제품</p></td>
+                      <td class="tit"><p>과거<br>사용한 제품</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel08_02"></label>
-                          <select id="sel08_02" name="sel08_02" data-title="" title="">
+                          <label for="sel07_02"></label>
+                          <select id="sel07_02" name="usedProduct" data-title="" title="">
                                <option value="">싸이젠</option>
                                <option value="">그로트로핀</option>
                                <option value="">지노트로핀</option>
                                <option value="">노디트로핀</option>
                                <option value="">싸이트로핀</option>
                                <option value="">조맥톤</option>
+                               <option value="">모름</option>
                           </select>
                         </div>
                       </td>

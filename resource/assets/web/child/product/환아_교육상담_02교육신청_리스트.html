@@ -58,10 +58,7 @@ if("" != ""){
 <script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230206042416"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
 
-<!-- 임시 제이쿼리 -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script>
-<!-- 임시 제이쿼리 -->
+
 
 
 <!-- common js file-->
@@ -329,6 +326,12 @@ if("" != ""){
       <div class="pop_info_inner">
         <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
         <div class="pop_con">
+          <!-- <<p class="pop_tit">지금 물품신청도 하시겠습니까?</p>
+          <p class="pop_txt">
+            교육신청이 접수되었습니다. <br>
+            교육은 신청하신 시간에 담당간호사가 <br>
+            연락하여 진행됩니다.
+          </p> -->
           <p class="pop_tit">교육/상담 신청</p>
           <p class="pop_txt">
             2022.12.16 10:30 ~ 11:30
@@ -341,30 +344,53 @@ if("" != ""){
               <option value="">상담</option>
             </select>
           </div> -->
+          
+
           <div class="select_row mt10">
-            <label for="">신청사유을 선택하세요</label>
+            <label for="">신청사유를 선택하세요</label>
             <select name="" id="">
               <option value="">사유1</option>
               <option value="">사유2</option>
               <option value="">기타</option>
             </select>
           </div>
-
           <div class="area_box mt10">
-            <textarea type="text" id="mWithdrawReason" name="mWithdrawReason" placeholder="신청사유을 입력하세요"></textarea>
+            <textarea type="text" id="mWithdrawReason" name="mWithdrawReason" placeholder="신청사유를 입력하세요"></textarea>
           </div>
+
           <p class="pop_txt">
             신청사유 외 상담은 온라인문의 또는 FAQ를 활용해주시기 바랍니다.  
           </p>
 
           <div class="btn_box btn_box02">
-            <div class="btn_gray"><a href="javascript:;" title="닫기">닫기</a></div>
-            <div class="btn_pink"><a href="javascript:;" title="신청">신청</a></div>
+            <div class="btn_gray pop_close"><a href="javascript:;" title="닫기">닫기</a></div>
+            <div class="btn_pink pop_continue"><a href="javascript:popupInfo('pop_apply2');" title="신청">신청</a></div>
           </div>
         </div>
       </div>
     </div>
     <!-- // 교육/상담 신청 팝업 -->
+
+    <!-- 물품신청 팝업 -->
+    <div class="pop_info pop_apply2">
+      <div class="pop_info_inner">
+        <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
+        <div class="pop_con">
+          <p class="pop_tit">지금 물품신청도 하시겠습니까?</p>
+          <p class="pop_txt">
+            교육신청이 접수되었습니다. <br>
+            교육은 신청하신 시간에 담당간호사가 <br>
+            연락하여 진행됩니다.
+          </p>
+
+          <div class="btn_box btn_box02">
+            <div class="btn_gray pop_close"><a href="javascript:;" title="닫기">닫기</a></div>
+            <div class="btn_pink"><a href="javascript:;" title="신청">신청</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // 물품신청 팝업 -->
 
 	</div>
 
