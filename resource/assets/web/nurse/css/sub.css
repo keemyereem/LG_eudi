@@ -248,6 +248,20 @@
 .con_sub .con_list02>ul>li>a>div i.bar {margin: 0 8px;display: inline-block;width: 1px;height: 10px;background: #e5e5e5;vertical-align: middle;}
 .con_sub .con_list02>ul>li>a>div .idbox {width: 100%;}
 
+/* 회원관리 목록 리스트 */
+.con_sub01 .con_list>ul>li>a {display: flex;flex-direction: column;width: 100%;}
+.con_sub01 .con_list>ul>li>a>div {position: relative;display: flex;align-items: center;justify-content: space-between;width: 100%;}
+.con_sub01 .con_list>ul>li>a>div+div {margin-top: 10px;}
+.con_sub01 .con_list>ul>li>a>div > p:nth-child(1):not(.lblbox) {width: 70%;}
+.con_sub01 .con_list>ul>li>a>div > p:nth-child(2) {width: 30%;text-align: right;}
+.con_sub01 .con_list>ul>li>a>div:nth-child(2){font-size: 13px;color: #333;}
+.con_sub01 .con_list>ul>li>a>div:nth-child(3){font-size: 11px;color: #999;}
+.con_sub01 .con_list>ul>li>a>div:last-child {width: auto;text-align: left;}
+.con_sub01 .con_list>ul>li>a>div .datebox {font-family: 'NanumSquareB';letter-spacing: -0.65px;margin-top: 0;}
+.con_sub01 .con_list>ul>li>a>div .idbox {font-family: 'NanumSquareB';line-height: initial;margin-top: 0;}
+.con_sub01 .con_list>ul>li>a>div .namebox .genderbox {font-size: 11px;color: #727272;}
+.con_sub01 .con_list>ul>li>a>div .namebox .genderbox::before {content:'';display: inline-block;width: 1px;height: 10px;background: #e5e5e5;margin: 0 8px;}
+
 .con_sub .tb_top .ctg {padding-bottom: 20px;font-family: 'NanumSquareEB';font-size: 13px;}
 .con_sub .tb_top .tit {padding: 0 0 15px 0;}
 .con_sub .tb_top .tit:after {content: "";display: block;clear: both;}
