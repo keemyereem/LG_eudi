@@ -343,6 +343,44 @@
 .pop_wrap.pop_drop .pop_btn .btn_green {float: right;width: calc(50% - 5px);}
 .pop_wrap.pop_drop .comment {padding: 20px 0 20px 50px;font-family: 'NanumSquareB';font-size: 12px;color: #79bd28;line-height: 1.4;background-image: url(../images/common/icon_img01.png);background-size: 40px 40px;background-position: 0 50%;background-repeat: no-repeat;}
 
+/* 병원명 검색 팝업 */
+.pop_search {display: none;position:absolute;top: 0;width: 96%;z-index: 30;}
+.pop_search .pop_search_inner {position: relative;padding-top: 40px;}
+.pop_search .btn_close {position: absolute;top: 0;right: 0;width: 30px;height: 30px;}
+.pop_search .pop_con {padding: 30px 25px 35px 25px;background: #fff;border-radius: 10px;}
+.pop_search .pop_con .pop_tit {padding-bottom: 15px;border-bottom: 1px solid #727272;font-family: 'NanumSquareB';font-size: 18px;}
+.pop_search .pop_con .search_area {padding: 25px 15px;background: #f6f6f6;border-bottom: 1px solid #e5e5e5;}
+.pop_search .pop_con .search_area p {font-size: 13px;color: #999;line-height: 1.2;}
+.pop_search .pop_con .search_area .search_ipt {margin-top: 15px;display: table;width: 100%;table-layout: fixed;}
+.pop_search .pop_con .search_area .search_ipt .search_cell {display: table-cell;vertical-align: middle;}
+.pop_search .pop_con .search_area .search_ipt .search_cell.btn {width: 65px;}
+.pop_search .pop_con .search_area .search_ipt .btn_search {margin-left: 5px;width: 60px;height: 40px;background: #78bc27;border-radius: 5px;}
+.pop_search .pop_con .search_area .search_ipt .btn_search a {display: block;font-size: 12px;color: #fff;line-height: 40px;text-align: center;}
+.pop_search .pop_con .search_list {padding: 10px 15px;height: 165px;overflow-y: auto;border-bottom: 1px solid #e5e5e5;}
+.pop_search .pop_con .search_list ul li {padding: 6px 0;}
+.pop_search .pop_con .search_list ul li a {font-size: 12px;line-height: 1.2;letter-spacing: -0.5px;}
+.pop_search .pop_con .search_list ul li.result_none {background-image: url(../images/common/icon_none.png);background-size: 45px 45px;background-position: 50% 45px;background-repeat: no-repeat;}
+.pop_search .pop_con .search_list ul li.result_none p {padding-top: 95px;font-size: 15px;color: #999;text-align: center;}
+
+/* 의사명 검색 팝업 */
+.pop_search_doctor {display: none;position:absolute;top: 0;width: 96%;z-index: 30;}
+.pop_search_doctor .pop_search_inner {position: relative;padding-top: 40px;}
+.pop_search_doctor .btn_close {position: absolute;top: 0;right: 0;width: 30px;height: 30px;}
+.pop_search_doctor .pop_con {padding: 30px 25px 35px 25px;background: #fff;border-radius: 10px;}
+.pop_search_doctor .pop_con .pop_tit {padding-bottom: 15px;border-bottom: 1px solid #727272;font-family: 'NanumSquareB';font-size: 18px;}
+.pop_search_doctor .pop_con .search_area {padding: 25px 15px;background: #f6f6f6;border-bottom: 1px solid #e5e5e5;}
+.pop_search_doctor .pop_con .search_area p {font-size: 13px;color: #999;line-height: 1.2;}
+.pop_search_doctor .pop_con .search_area .search_ipt {margin-top: 15px;display: table;width: 100%;table-layout: fixed;}
+.pop_search_doctor .pop_con .search_area .search_ipt .search_cell {display: table-cell;vertical-align: middle;}
+.pop_search_doctor .pop_con .search_area .search_ipt .search_cell.btn {width: 65px;}
+.pop_search_doctor .pop_con .search_area .search_ipt .btn_search {margin-left: 5px;width: 60px;height: 40px;background: #78bc27;border-radius: 5px;}
+.pop_search_doctor .pop_con .search_area .search_ipt .btn_search a {display: block;font-size: 12px;color: #fff;line-height: 40px;text-align: center;}
+.pop_search_doctor .pop_con .search_list {padding: 10px 15px;height: 165px;overflow-y: auto;border-bottom: 1px solid #e5e5e5;}
+.pop_search_doctor .pop_con .search_list ul li {padding: 6px 0;}
+.pop_search_doctor .pop_con .search_list ul li a {font-size: 12px;line-height: 1.2;letter-spacing: -0.5px;}
+.pop_search_doctor .pop_con .search_list ul li.result_none {background-image: url(../images/common/icon_none.png);background-size: 45px 45px;background-position: 50% 45px;background-repeat: no-repeat;}
+.pop_search_doctor .pop_con .search_list ul li.result_none p {padding-top: 95px;font-size: 15px;color: #999;text-align: center;}
+
 /* 로그인 */
 .con_sub .pass_box {padding: 30px 0;background: #fff;}
 .con_sub .pass_box h3 {font-family: 'NanumSquareB';font-size: 18px;}
