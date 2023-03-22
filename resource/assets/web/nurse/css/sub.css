@@ -99,7 +99,7 @@
   .con_main .main_box .nu_name > a::after {width: 7px;height: 11.5px;}
 
   .con_main .list_box_wrap {display: flex;flex-wrap: wrap;}
-  .con_main .list_box {width: calc(50% - 5px);margin-left: 0;border-radius: 10px;margin-bottom: 50px;position: relative;}
+  .con_main .list_box {width: calc(50% - 5px);min-height: 371px;margin-left: 0;border-radius: 10px;margin-bottom: 50px;position: relative;}
   .con_main .list_box01, .con_main .list_box03 {margin-right: 10px;}
   .con_main .list_box03, .con_main .list_box04 {margin-bottom: 0;}
   .con_main .list_box::before {width: 40px;height: 40px;background-size: 34px 34px;top: -20px;left: 50%;transform: translate(-50%,0);}
