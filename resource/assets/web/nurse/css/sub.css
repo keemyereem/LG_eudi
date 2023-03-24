@@ -415,8 +415,9 @@
 
 .con_sub03 .search_info>span {color: #fc637d;}
 .con_sub03 .sub_box {padding: 25px 0 100px 0;background: #fff;}
-.con_sub03 .date_box {width: 100%; display: flex; justify-content: space-between;align-items: center;}
+.con_sub03 .date_box {width: calc(100% - 56px); display: flex; justify-content: space-between;align-items: center;}
 .con_sub03 .date_box .inputBox_DP {width: calc(50% - 10px);}
+.con_sub03 .search_box .srh_box .inputBox_DP {width: calc(50% - 20px);}
 .con_sub03 .search_info {padding: 0;}
 .con_sub03 .infotop:after {content: "";display: block;clear: both;}
 .con_sub03 .infotop {padding-bottom: 20px;display:table;width:100%;}
