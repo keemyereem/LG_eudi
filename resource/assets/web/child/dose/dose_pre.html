@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+<script>
+
+/*ë©ì¸ì§*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+
+</script>
+
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<!-- TITLE -->
+<title>EuDi</title>
+
+<!-- common css file-->
+
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=2.1">
+
+
+<!-- child css file -->
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
+
+
+
+<!-- child js file--> 
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230223060144"></script>
+<!--   multi 달력 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<script type="text/javascript" src="/resource/assets/web/child/js/jquery-ui.multidatespicker.js"></script>
+<style>
+    #gnb .list>li.m7 .test1 {display:none;}
+
+    @media all and (max-width: 768px) {
+      /* .test {display:none;} */
+      /* .test1 {display:inline;} */
+      #gnb .list>li.m7 .test {display:none;}
+      #gnb .list>li.m7 .test1 {display:inline;}
+    }
+</style>
+
+  <script>
+      $(function(){
+
+
+    	  
+    	  selEvent.init();
+    	    if("${scheduleList}" != "[]"){
+    	    	$("#re_txt").empty();
+        		$("#re_txt").append($("#sIdx option:selected").text());
+
+    	    }
+
+
+    		tabEvent.init();
+    		noteOpen.init();
+            //deleteList.init();
+            dateList.init();
+
+            
+          if("${memberVo.pageLocation}" == "D"){
+       	   var offset = $("#paging_doc").offset();
+       	   $('html, body').animate({scrollTop: offset.top+650},400); 
+          } else if("${memberVo.pageLocation}" == "I"){
+       	   var offset = $("#paging_dose").offset();
+       	   $('html, body').animate({scrollTop: offset.top-400},400); 
+          } else {
+        	  
+          }
+           
+         
+
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_sub').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+        
+        if($("#searchYn").val() == "N"){
+        	 popupSearch();
+        } else {
+        	var popthis = $(".search_box");
+        	   popthis.fadeOut(300);
+        	    $(".wrap_sub").removeClass("not_scroll");
+        }
+
+
+        
+        if($("#slideYn").val() == "N"){
+       			$("#date_list").hide();
+       		    $("input:checkbox[id='toggle']").prop("checked", false); 
+       } else {
+    	   	     $("#date_list").show();
+    	   	     $("input:checkbox[id='toggle']").prop("checked", true); 
+       }
+
+        
+
+        $('.input_height').click(function(){
+          popupHeight();
+        });
+
+      /*   $('.dr_check').click(function(){
+          alert('전문의만 클릭하는 버튼입니다. \n진행하시겠습니까?');
+        }); */
+        
+      });
+
+
+      /*pagination 페이지 링크 function*/
+    	function fnLinkPage(pageNo){
+	       document.listForm.pageIndex.value = pageNo;
+	       document.listForm.searchYn.value = "Y";
+		   /*     if(($("#sel01").val() == $("#sel04").val()) && ($("#sel01").val() == $("#sel04").val()) && ($("#sel01").val() == $("#sel04").val())){
+  	     $("#sDoseDate").val("");
+		     $("#eDoseDate").val("");
+     } else {
+  	   $("#sDoseDate").val($("#sel01").val()+"-"+$("#sel02").val()+"-"+$("#sel03").val());
+		    $("#eDoseDate").val($("#sel04").val()+"-"+$("#sel05").val()+"-"+$("#sel06").val());
+     } */
+      // $("#sDoseDate").val($("#sel01").val()+"-"+$("#sel02").val()+"-"+$("#sel03").val());
+	   //$("#eDoseDate").val($("#sel04").val()+"-"+$("#sel05").val()+"-"+$("#sel06").val());
+	       $("#pageLocation").val("I");
+	       document.listForm.action = "/child/dose_pre.do";
+	       document.listForm.submit();
+    	}
+
+    	   
+ 	   /*pagination 페이지 링크 function*/
+	 	function fnLinkDoctorPage(pageNo){
+		       document.listForm.pageIndex2.value = pageNo;
+		       document.listForm.searchYn.value = "Y";
+		       document.listForm.slideYn.value = "Y";
+		       document.listForm.action = "/child/dose_pre.do";
+		       $("#pageLocation").val("D");
+		       document.listForm.submit();
+	 	}
+
+
+    	function fnSearch(){
+    		var gubun = $('input:radio[name="searchType_radio"]:checked').val();
+         	$("#pageIndex").val("1");
+    		//P:처방,D:기간
+    		$("#searchType").val(gubun);
+         	$("#searchYn").val("Y");
+         	
+    	    if(gubun == "D"){
+    	    	if($('#periodDatePicker').val() == "" || $('#periodDatePicker').val().indexOf("~") == -1){
+    	    		alert("기간을 설정해주세요");
+    	    		return;
+    	    	}
+    	    }
+    		if(gubun == "P"){
+    			
+    		} else {
+    			
+    			  var totalDate = $('#periodDatePicker').val().split('~');
+    			  var startdate = totalDate[0].trim();//시작일
+    			  var enddate  = totalDate[1].trim();//종료일
+	   /*  		if(startdate > enddate){
+		    			alert("기간 설정이 잘못되었습니다(시작일이 종료일 보다 나중입니다)");
+						 return;
+		    		} */
+			
+				$("#sDoseDate").val(startdate);
+			    $("#eDoseDate").val(enddate);
+    		}
+
+			 	document.listForm.action = "/child/dose_pre.do";
+			    document.listForm.submit(); 
+			}
+
+    	
+    	function fnChkDoctor(){
+ 		   var result = confirm("전문의만 클릭하는 버튼입니다. \n진행하시겠습니까?");
+ 	   		  if(result){
+				  actionurl = "/child/insertDoctorChk.do";
+	  			   $.ajax({
+	  		            async: false,
+	  		            type: "POST",
+	  		            url : actionurl,
+	  		            dataType : "json",
+	  		            success: function(obj){
+	  		            	   if(obj.result > 0){
+	  			                	alert("확인 되었습니다"); 
+	  			                } else {
+	  			                	alert("일시적인 오류 입니다,다시 시도해주세요"); 
+	  			                	return;
+	  			                }
+	  		               document.listForm.pageIndex2.value = 1;
+	  		  		       document.listForm.searchYn.value = "Y";
+	  		  		       document.listForm.slideYn.value = "Y";
+	  		  		       document.listForm.action = "/child/dose_pre.do";
+	  		  		       $("#pageLocation").val("D");
+	  		  		       document.listForm.submit();
+	  		            },
+	  		            error: function(xhr, option, error){
+	  		                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+	  		            }
+	  		        }) ;
+ 	   		  }
+ 	}
+    	
+    	function fnChangeSlideMode(){//모드변경
+    		if($("input:checkbox[id='toggle']").is(":checked") == true){
+    			$("#slideYn").val("Y");
+    		} else {
+    			$("#slideYn").val("N");
+    		}
+    		
+    	}
+    	
+  </script>
+  </head>
+  <body>
+	  <div class="wrap wrap_sub wrap_mint">
+      <!--// nav -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">치료과정 공유</h2>
+            <div class="back"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+        <div class="tab tab02">
+          <div class="inner">
+            <ul>
+              <li class="active"><a href="/child/dose_pre.do">의사선생님함께보기</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- nav //-->
+     <!--// content -->
+     <form:form commandName="memberVo" id="listForm" name="listForm" method="post" >
+        <input type="hidden" name="pageUnit" id="pageUnit" value="">
+        <input type="hidden" name="sDoseDate" id="sDoseDate" value="">
+        <input type="hidden" name="eDoseDate" id="eDoseDate" value="">
+  			<input type="hidden" name="reSearch" id="reSearch" value="">
+  			<input type="hidden" name="searchType" id="searchType" value="">
+  			<input type="hidden" name="searchYn" id="searchYn" value="${memberVo.searchYn}">
+  			<input type="hidden" name="slideYn" id="slideYn" value="${memberVo.slideYn}">
+  			<input type="hidden" name="pageLocation" id="pageLocation" value="${memberVo.pageLocation}">
+
+      <div class="content con_sub con_sub01 cont_dosePre">
+        <div class="con_box">
+          <div class="profile">
+            <div class="pro_pic">
+              <img src="/resource/assets/web/child/images/character/img_profile_null.png" alt="프로필 사진" />
+            </div>
+            <div class="pro_name"><div><p><span></span> 어린이</p></div></div></div>
+        </div>
+        <div class="con_box">
+          <div class="con_inner con_inner02">
+            <div class="sub_tab mb0">
+              <ul>
+                <li class="active"><a href="/child/dose_pre.do">처방별 투여기록 보기</a></li>
+                <li><a href="/child/dose_cal.do">전체 투여기록 보기</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tab_cont tab_cont01 tab_dosePre" >
+            	<div class="top_srh_box">
+            		<div class="srh_period">  
+            		<c:choose>
+            			<c:when test="${memberVo.searchType eq 'P'}">
+            				<p><b>처방검색</b> : ~</p>
+            			</c:when>
+            			<c:otherwise>
+            				<p><b>기간검색</b> : ~</p>
+            			</c:otherwise>
+            		</c:choose>
+            		</div>
+            		<div class="pro_srch"><a href="javascript:popupSearch();" class="btn_popsearch btn_popsearch1">투여기록 검색</a></div>
+            	</div>
+              <div class="compliance">
+                <div class="top">
+                  <div class="left">
+                    <h2>순응도</h2>
+                    <ul>
+                      <li class="inject">
+                        <span class="tit">투여</span>
+                        <span class="num"><b><c:out value="${totCnt}"/></b>회</span>
+                      </li>
+                      <li class="plan">
+                        <span class="tit">계획</span>
+                        <span class="num"><b></b>회</span>
+                      </li>
+                      <li class="plan">
+                        <span class="tit">전체계획</span>
+                        <span class="num"><b></b>회</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="right">
+                    <div class="graph">
+                      <div class="percent"><b></b>%</div>     
+                      <img src="/resource/assets/web/child/images/sub/graph96_100.png" alt="순응도 96-100%" class="graph96_100">
+                    </div>
+                  </div>
+                </div>
+                <div class="sum">
+                  <div class="icon"></div>
+                  <dl class="avg_day"> 
+                    <dt>일평균 투여량</dt>
+                    <dd>
+                      <b>0.0</b>iu
+                    </dd>
+                  </dl>
+                  <dl class="avg_week">
+                    <dt>주평균 투여량</dt>
+                    <dd>
+                      <b>0.0</b>iu
+                    </dd>
+                  </dl>
+                  <dl class="avg_day">
+                    <dt>월평균 주사기</dt>
+                    <dd>
+                      <b>0.0</b>개
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              <div class="avg_time">평균 투여시간<b>  </b></div>
+
+              <div class="height_measurement">
+                <div class="icon"></div>
+                <div class="height">
+                  <div class="tit">월 일 병원 측정키</div>
+                  <div class="num"><b>160</b>cm</div>
+                </div>
+                <a href="javascript:;" class="input_height">측정키 입력</a>
+              </div>
+              <a href="javascript:fnChkDoctor();" class="dr_check">의사선생님 확인</a>
+
+              <div class="pop_mask"></div>
+              <div class="popup_height">
+                <a href="javascript:;" class="height_close pop_close">닫기</a>
+                <h2>측정키 입력</h2>
+                <p class="sub">
+                  병원에서 측정한 키, 몸무게를 입력하세요<br>
+                  성장기록페이지에도 자동 저장 됩니다.
+                </p>
+                <table>
+                  <caption>측정키</caption>
+                  <tr>
+                    <td class="tit">키</td>
+                    <td class="iput">
+                      <input type="text" id="gHeight" name="gHeight" class="ipt" maxlength="5"  onkeyUp="Tcheck(this)"><span>cm</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit">몸무게</td>
+                    <td class="iput">
+                      <input type="text" id="gWeight" name="gWeight" class="ipt" maxlength="5"  onkeyUp="Tcheck(this)"><span>kg</span>
+                    </td>
+                  </tr>
+                </table>
+                <a href="javascript:fnInsertGrowth()" class="btn_input">입력하기</a>
+              </div>
+  
+              <!-- 검색 팝업 -->
+              <div class="pop_mask"></div>
+              <div class="search_box">
+                <a href="javascript:;" class="search_close pop_close">닫기</a>
+                <h2><b>검색기간</b> 설정</h2>
+                <input type="radio" name="searchType_radio" id="per_prescipt" value="P" checked/>
+                <label for="per_prescipt"></label>
+                <p>처방별 검색</p>
+                <div class="srh_box">
+                  <div class="select_row">
+                     <label for="sIdx" id="re_txt"><c:if test="${empty scheduleList}">없음</c:if></label>
+                    <select id="sIdx" name="sIdx">
+                     	   <c:forEach items="${scheduleList}" var="result" varStatus="status">
+                              <option value="<c:out value="${result.sIdx}"/>" <c:if test="${memberVo.sIdx eq result.sIdx}">selected</c:if>><c:out value="${result.doseStartDate}"/>~<c:out value="${result.doseEndDate}"/></option>
+                            </c:forEach>
+                       <!--  <option selected="selected">2019-03-26~2019-05-26</option>
+                        <option></option> -->
+                    </select>
+                  </div>
+                </div>
+                
+               <input type="radio" name="searchType_radio" id="per_period" value="D"/>
+                <label for="per_period"></label>
+                <p class="mt15">기간으로 검색</p>
+                <div class="srh_box">
+                  
+             
+
+                   <div class="search_calendar">
+                    	<input type="text" id="periodDatePicker" readonly/>
+                    </div>
+        
+                   <!--  <em>~</em>
+                    <div class="select_row select_day02">
+                      <label for="sel_till">2019-04-25</label>
+                      <select id="sel_till">
+                          <option value="" selected="selected">01</option>
+                          <option value="">02</option>
+                      </select>
+                    </div> -->
+       
+                 
+                </div>
+                <div class="btn_search"><a href="javascript:fnSearch();">검색</a></div>
+              </div>            
+            
+            
+<!-- <%--               <div class="search_box">
+                <p>처방별 보기</p>
+                <div class="srh_box">
+                  <div class="select_row">
+                    <label for="sIdx" id="re_txt"><c:if test="${empty scheduleList}">없음</c:if></label>
+                    <select id="sIdx" name="sIdx">
+                     	   <c:forEach items="${scheduleList}" var="result" varStatus="status">
+                              <option value="<c:out value="${result.sIdx}"/>" <c:if test="${memberVo.sIdx eq result.sIdx}">selected</c:if>><c:out value="${result.doseStartDate}"/>~<c:out value="${result.doseEndDate}"/></option>
+                            </c:forEach>
+
+                    </select>
+                  </div>
+                </div>              
+                <div class="btn_search"><a href="javascript:;" onclick="fnSearch('P')">처방별 검색</a></div>
+                <p class="mt15">기간설정</p>
+                <div class="srh_box">
+
+                <c:set var="now" value="<%=new java.util.Date()%>" />
+				<c:set var="sysYear"><fmt:formatDate value="${now}" pattern="yyyy" /></c:set>
+				<c:set var="sysMonth"><fmt:formatDate value="${now}" pattern="MM" /></c:set>
+			    <c:set var="sysDate"><fmt:formatDate value="${now}" pattern="dd" /></c:set>
+                  <p class="day_tit">시작일</p>
+                  <div class="select_day_box">
+                    <div class="select_row select_day01">
+                      <label for="sel01">
+                         <c:choose>
+	                           	<c:when test="${empty memberVo.sDoseDate}">${sysYear}</c:when>
+	                           	<c:otherwise>${fn:split(memberVo.sDoseDate,'-')[0]}</c:otherwise>
+                           </c:choose>
+                      </label>
+                      <select id="sel01">
+                        <c:forEach var="i" begin="2015" end="${sysYear+5}">
+						      <option value="${i}"
+						         <c:choose>
+					                           	<c:when test="${empty memberVo.sDoseDate}"><c:if test="${sysYear eq i}">selected</c:if></c:when>
+					                           	<c:otherwise><c:if test="${fn:split(memberVo.sDoseDate,'-')[0] eq i}">selected</c:if></c:otherwise>
+				                           </c:choose>
+						      >${i}</option>
+						</c:forEach>
+                      </select>
+                    </div>
+                    <div class="select_row select_day02">
+                      <label for="sel02">
+                         <c:choose>
+	                           	<c:when test="${empty memberVo.sDoseDate}">${sysMonth}</c:when>
+	                           	<c:otherwise>${fn:split(memberVo.sDoseDate,'-')[1]}</c:otherwise>
+                           </c:choose>
+                      </label>
+                      <select id="sel02">
+                          <c:forEach var="i" begin="1" end="12">
+								<option value="<c:if test="${i < 10}">0</c:if>${i}"
+								     <c:choose>
+					                           	<c:when test="${empty memberVo.sDoseDate}"><c:if test="${sysMonth eq i}">selected</c:if></c:when>
+					                           	<c:otherwise><c:if test="${fn:split(memberVo.sDoseDate,'-')[1] eq i}">selected</c:if></c:otherwise>
+				                           </c:choose>
+								><c:if test="${i < 10}">0</c:if>${i}</option>
+						  </c:forEach>
+                      </select>
+                    </div>
+                    <div class="select_row select_day02">
+                      <label for="sel03">
+                       <c:choose>
+			                           	<c:when test="${empty memberVo.sDoseDate}">${sysDate}</c:when>
+			                           	<c:otherwise>${fn:split(memberVo.sDoseDate,'-')[2]}</c:otherwise>
+		                           </c:choose>
+                      </label>
+                      <select id="sel03">
+                         <c:forEach var="i" begin="1" end="31">
+								<option value="<c:if test="${i < 10}">0</c:if>${i}"
+										<c:choose>
+					                           	<c:when test="${empty memberVo.sDoseDate}"><c:if test="${sysDate eq i}">selected</c:if></c:when>
+					                           	<c:otherwise><c:if test="${fn:split(memberVo.sDoseDate,'-')[2] eq i}">selected</c:if></c:otherwise>
+				                           </c:choose>
+								><c:if test="${i < 10}">0</c:if>${i}</option>
+						  </c:forEach>
+                      </select>
+                    </div>
+                  </div>
+                  <p class="day_tit mt10">종료일</p>
+                  <div class="select_day_box">
+                    <div class="select_row select_day01">
+                      <label for="sel04">
+                       <c:choose>
+	                           	<c:when test="${empty memberVo.eDoseDate}">${sysYear}</c:when>
+	                           	<c:otherwise>${fn:split(memberVo.eDoseDate,'-')[0]}</c:otherwise>
+                           </c:choose>
+                      </label>
+                      <select id="sel04">
+                        	<c:forEach var="i" begin="2015" end="${sysYear+5}">
+									      <option value="${i}"
+									       <c:choose>
+					                           	<c:when test="${empty memberVo.eDoseDate}"><c:if test="${sysYear eq i}">selected</c:if></c:when>
+					                           	<c:otherwise><c:if test="${fn:split(memberVo.eDoseDate,'-')[0] eq i}">selected</c:if></c:otherwise>
+				                           </c:choose>
+									      >${i}</option>
+									</c:forEach>
+                      </select>
+                    </div>
+                    <div class="select_row select_day02">
+                      <label for="sel05">
+                         <c:choose>
+	                           	<c:when test="${empty memberVo.eDoseDate}">${sysMonth}</c:when>
+	                           	<c:otherwise>${fn:split(memberVo.eDoseDate,'-')[1]}</c:otherwise>
+                           </c:choose>
+                      </label>
+                      <select id="sel05">
+                           <c:forEach var="i" begin="1" end="12">
+								<option value="<c:if test="${i < 10}">0</c:if>${i}"
+								 <c:choose>
+					                           	<c:when test="${empty memberVo.eDoseDate}"><c:if test="${sysMonth eq i}">selected</c:if></c:when>
+					                           	<c:otherwise><c:if test="${fn:split(memberVo.eDoseDate,'-')[1] eq i}">selected</c:if></c:otherwise>
+				                           </c:choose>
+								><c:if test="${i < 10}">0</c:if>${i}</option>
+						  </c:forEach>
+                      </select>
+                    </div>
+                    <div class="select_row select_day02">
+                      <label for="sel06">
+                        <c:choose>
+			                           	<c:when test="${empty memberVo.eDoseDate}">${sysDate}</c:when>
+			                           	<c:otherwise>${fn:split(memberVo.eDoseDate,'-')[2]}</c:otherwise>
+		                           </c:choose>
+                      </label>
+                      <select id="sel06">
+                           <c:forEach var="i" begin="1" end="31">
+								<option value="<c:if test="${i < 10}">0</c:if>${i}"
+								<c:choose>
+					                           	<c:when test="${empty memberVo.eDoseDate}"><c:if test="${sysDate eq i}">selected</c:if></c:when>
+					                           	<c:otherwise><c:if test="${fn:split(memberVo.eDoseDate,'-')[2] eq i}">selected</c:if></c:otherwise>
+				                           </c:choose>
+								><c:if test="${i < 10}">0</c:if>${i}</option>
+						  </c:forEach>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="btn_search"><a href="javascript:;" onclick="fnSearch('D')">기간설정 검색</a></div>
+              </div>
+              <div class="search_lbl">
+                <ul>
+                  <li>
+                    <p>계획</p>
+                    <div><span><c:out value="${scheduleCount}"/></span>회</div>
+                  </li>
+                  <li>
+                    <p>투여</p>
+                    <div><span><c:out value="${totCnt}"/></span>회</div>
+                  </li>
+                  <li>
+                    <p>투여율</p>
+                    <div><span><c:out value="${doseRate}"/></span>%</div>
+                  </li>
+                </ul>
+ --%>              </div> -->
+              <div class="con_inner con_inner02" style="margin-top:0; padding: 0 0 15px 0;">
+                  <div class="tb02">
+                    <label class="switch">
+                      <input type="checkbox" id="toggle" onclick="fnChangeSlideMode()">
+                      <span class="slider"></span>
+                    </label>
+
+                    <div class="date_list" id="date_list">
+                      <h3><b>확인일자</b> 리스트</h3>
+                      <table summary="확인일자" cellpadding="0" cellspacing="0" border="0" >
+                        <caption>확인일자</caption>
+                        <colgroup>
+                            <col style="width:13%;">
+                            <col style="width:39%;">
+                            <col style="width:30%;">
+                            <col style="width:18%;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th><p>NO</p></th>
+                            <th><p>확인일자</p></th>
+                            <th><p>확인시간</p></th>
+                            <th><p>삭제</p></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <c:choose>
+                        <c:when test="${fn:length(doctorChkList) > 0}">
+                              <c:forEach items="${doctorChkList}" var="result" varStatus="status">
+                                  <tr>
+                                    <td class="tit"><p><c:out value="${paginationInfo2.totalRecordCount+1 - ((memberVo.pageIndex2-1) * memberVo.pageSize + status.count)}"/></p></td>
+                                    <td><p><c:out value="${fn:substring(result.cRegDate,0,10)}"/></p></td>
+                                    <td><p><c:out value="${fn:substring(result.cRegDate,11,20)}"/></p></td>
+                                    <td class="t_center">
+                                        <div class="btn_delete"><a href="javascript:fnDeleteDoctorChk('${result.idx}');">삭제하기</a></div>
+                                      </td>
+                                  </tr>
+                          
+                              </c:forEach>
+                        </c:when>
+                          <c:otherwise>
+                            <tr>
+                      <td colspan="4"  class="none_tblList">
+                      <div><p>내역이 없습니다.</p></div>
+                      </td>
+                    </tr>
+                        </c:otherwise>
+              </c:choose>
+
+                        </tbody>
+                      </table>
+      
+                        <div class="paging" id="paging_doc">
+                  <c:if test="${not empty paginationInfo2}">
+                      <ui:pagination paginationInfo = "${paginationInfo2}" type="front" jsFunction="fnLinkDoctorPage"/>
+                  </c:if>
+                <form:hidden path="pageIndex2" />
+                </div>
+                    </div>              
+                    
+            <div class="inject_list" id="inject_list">
+            <h3><b>투여기록</b> 리스트</h3>
+            <table summary="투여기록" cellpadding="0" cellspacing="0" border="0">
+                      <caption>투여기록</caption>
+                      <colgroup>
+                          <col style="width:13%;">
+                          <col style="width:26%;">
+                          <col style="width:20%;">
+                          <col style="width:26%;">
+                          <col style="width:15%;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th><p>NO</p></th>
+                          <th><p>투여일자</p></th>
+                          <th><p>투여량</p></th>
+                          <th><p>투여부위</p></th>
+                          <th><p>기타</p></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <c:choose>
+                        <c:when test="${fn:length(doseList) > 0}">
+                              <c:forEach items="${doseList}" var="result" varStatus="status">
+                                  <tr>
+                                    <td class="tit"><p><c:out value="${paginationInfo.totalRecordCount+1 - ((memberVo.pageIndex-1) * memberVo.pageSize + status.count)}"/></p></td>
+                                    <td><p><c:out value="${result.amDate}"/></p></td>
+                                    <td><p><c:out value="${result.amAmount}"/>iu</p></td>
+                                    <td><p><c:out value="${result.amPart}"/></p></td>
+                                    <td class="t_center">
+                                      <div class="btn_note"><a href="javascript:;">메세지보기</a></div>
+                                      </td>
+                                  </tr>
+                                  <tr class="note_box blind">
+                                    <td colspan="5"><p><c:out value="${result.amMemo}"/></p></td>
+                                  </tr>
+                              </c:forEach>
+                        </c:when>
+                          <c:otherwise>
+                            <tr>
+                      <td colspan="5"  class="none_tblList">
+                      <div><p>내역이 없습니다.</p></div>
+                      </td>
+                    </tr>
+                        </c:otherwise>
+              </c:choose>
+                      </tbody>
+                      </table>
+
+                    <div class="paging" id="paging_dose">
+                <c:if test="${not empty paginationInfo}">
+                    <ui:pagination paginationInfo = "${paginationInfo}" type="front" jsFunction="fnLinkPage"/>
+                </c:if>
+              <form:hidden path="pageIndex" />
+              </div>
+            </div>
+                  </div>
+
+
+
+              </div>
+          </div>
+        </div>
+      </form:form>
+        <c:set var="now" value="<%=new java.util.Date()%>" />
+        <c:set var="sysYear"><fmt:formatDate value="${now}" pattern="YYYY" type="date"/></c:set>
+        <c:set var="sysMonth"><fmt:formatDate value="${now}" pattern="MM" type="date"/></c:set>
+        <c:set var="sysDate"><fmt:formatDate value="${now}" pattern="dd" type="time"/></c:set>
+        <form id="frmWrite" name="frmWrite" action="/child/insertGrowth.do" role="form" method="post">
+        <input type="hidden" id="gDate" name="gDate" value="${sysYear}-${sysMonth}-${sysDate}"/>
+        <input type="hidden" id="gGubun" name="gGubun" value="H"/>
+        <div class="pop_mask"></div>
+        <div class="popup_height">
+          <a href="javascript:;" class="height_close pop_close">닫기</a>
+          <h2>측정키 입력</h2>
+          <p class="sub">
+            병원에서 측정한 키, 몸무게를 입력하세요<br>
+            성장기록페이지에도 자동 저장 됩니다.
+          </p>
+          <table>
+            <caption>측정키</caption>
+            <tr>
+              <td class="tit">키</td>
+              <td class="iput">
+                <input type="text" id="gHeight" name="gHeight" class="ipt" maxlength="5"  onkeyUp="Tcheck(this)"><span>cm</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="tit">몸무게</td>
+              <td class="iput">
+                <input type="text" id="gWeight" name="gWeight" class="ipt" maxlength="5"  onkeyUp="Tcheck(this)"><span>kg</span>
+              </td>
+            </tr>
+          </table>
+          <a href="javascript:fnInsertGrowth()" class="btn_input">입력하기</a>
+        </div>
+      </form>
+      <div class="con_sub01 p15"><a href="javascript:popupSearch();" class="btn_popsearch">투여기록 검색</a></div>
+      <!-- content //-->
+	  </div>
+	  
+	   <script>
+	   
+	   
+        	$(function(){
+        		
+        		//멀티 달력 세팅
+        		$('#periodDatePicker').multiDatesPicker({ 
+        			  maxPicks: 2,
+        			  autoclose: true,
+        			  dateFormat: "yy-mm-dd",
+        			  prevText: '이전 달',
+        		      nextText: '다음 달',
+        		      monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        		      monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        		      dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        		      dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+        		      dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+        		      showMonthAfterYear: true,
+        		      yearSuffix: '년',
+        		      changeMonth:true,
+        		      changeYear:true,
+        		      buttonImage:"/resource/assets/web/child/images/common/icon_schedule.png",
+        		      showOn:"both",
+        			  onSelect: function(datetext) {
+        				  if(Number($('#periodDatePicker').val().split(',').length)  == 2){
+        					  $('#periodDatePicker').val(replaceAll($('#periodDatePicker').val(), ",", " ~ "));
+        					  $("#ui-datepicker-div").hide();
+        				  }
+        				
+        				  
+        			  }
+        		
+        		});
+        		
+               	//투여기록 입력 날짜 지정시 체크박스 변경
+       		 	$("#periodDatePicker").click(function(){
+       		 	$("input[id=per_period]").prop("checked", true);
+       			  $("#ui-datepicker-div").show();
+       		    });
+
+
+        		$("#sIdx").change(function(){
+        			$("#re_txt").empty();
+        			$("input[id=per_prescipt]").prop("checked", true);
+        			$("#re_txt").append($("#sIdx option:selected").text());
+
+        		});
+        	});
+
+        	
+        	
+        	  // 숫자 체크
+            function Tcheck(target) {
+                var i;
+                var t = target.value;
+                var k = '0123456789.';
+                var flag = false;
+
+                for (i = 0; i < t.length; i++) {
+                    if (k.indexOf(t.substring(i, i + 1)) < 0) {
+                        flag = true;
+                    }
+                }
+                if (flag) {
+                    alert("숫자만 입력할 수 있습니다.");
+                    target.value = target.value.substring(0,target.value.length - 1);
+                    return;
+
+                }
+                if (t.indexOf('.') != -1) { // '.' 이 포함되어 있다면.. 
+
+                    var t_length = t.substring(t.indexOf('.') + 1);
+                    if (t_length.length > 1) {
+                        alert('소수점 1자리까지만 입력됩니다.');
+                        target.value = target.value.substring(0,target.value.length - 1);
+                        return;
+                    }
+                }
+
+                return flag;
+            }
+            
+        	  
+        	  function fnInsertGrowth(){
+
+           	   
+           	   if($.trim($("#gHeight").val())  == ""){
+       			   alert("키를 입력해주세요.");
+       			   $("#gHeight").focus();
+       			   return;
+       		  }
+           	   
+           	   if($.trim($("#gWeight").val())  == ""){
+       			   alert("체중을 입력해주세요.");
+       			   $("#gWeight").focus();
+       			   return;
+       		  }
+           	   
+           	   
+           	   
+           	   if($.trim($("#gHeight").val())  == "0"){
+       			   alert("키는 1 cm 이상 입력 가능합니다");
+       			   $("#gHeight").focus();
+       			   return;
+       		  }
+           	   
+           	   if($.trim($("#gWeight").val())  == "0"){
+       			   alert("체중은 1 kg 이상 입력 가능합니다");
+       			   $("#gWeight").focus();
+       			   return;
+       		  }
+           	  //2020-12-28 숫자 체크 추가
+           	 String.prototype.ltrimzero = function() { return this.replace(/(^0+)/, ""); };
+
+           	 $("#gWeight").val($("#gWeight").val().ltrimzero());
+           	 $("#gHeight").val($("#gHeight").val().ltrimzero());
+           	 
+           	 
+           	 
+           	 var heightVal = $("#gHeight").val();
+           	 if(heightVal.charAt(heightVal.length-1) == "."){
+           		 $("#gHeight").val(heightVal.slice(0,heightVal.length-1));
+           	 }
+           	 
+           	 
+           	 var weightVal = $("#gWeight").val();
+           	 if(weightVal.charAt(weightVal.length-1) == "."){
+           		 $("#gWeight").val(weightVal.slice(0,weightVal.length-1));
+           	 }
+
+           	        var frm = 'frmWrite';
+       				var formData = $("#"+frm).serialize();
+       				$.ajax({
+       					type : "POST",
+       					url : $("#"+frm).attr("action"),
+       					cache : false,
+       					data : formData,
+       					success : function(obj){
+       						 if(obj.result > 0){
+       							 alert("저장 되었습니다");
+       						    document.listForm.searchYn.value = "Y";
+       						    document.listForm.pageLocation.value = "M";
+		            		 	document.listForm.action = "/child/dose_pre.do";
+		        				document.listForm.submit(); 
+       	                	  } else {
+       	                		  alert("일시적인 오류 입니다,다시 시도해주세요.");
+       	                		  return;
+       	                	  }
+       					},
+       					error : function(data,status){
+       						alert("시스템 오류 입니다,다시 시도해주세요");
+       					}
+       				}); 
+       				
+           	   
+              }
+
+        	  
+        	  function fnDeleteDoctorChk(idx){
+        		  
+        		  var result = confirm('의사선생님 확인을 삭제하시겠습니까?');
+        		  if(result){
+        		   actionurl = "/child/deleteDoctorChk.do";
+    			   var chkData = { "idx": idx};
+    			   $.ajax({
+    		            async: false,
+    		            type: "POST",
+    		            data:chkData,
+    		            url : actionurl,
+    		            dataType : "json",
+    		            success: function(obj){
+    		            	 if(obj.result > 0){
+    		            		    document.listForm.searchYn.value = "Y";
+    		            		    document.listForm.pageLocation.value = "D";
+    		            		 	document.listForm.action = "/child/dose_pre.do";
+    		        				document.listForm.submit(); 
+       	                	  } else {
+       	                		  alert("일시적인 오류 입니다,다시 시도해주세요.");
+       	                		  return;
+       	                	  }
+    		            },
+    		            error: function(xhr, option, error){
+    		                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+    		            }
+    		        });
+        		  }
+        	  }
+        	  
+        	  function replaceAll(str, searchStr, replaceStr) {
+        		   return str.split(searchStr).join(replaceStr);
+        		}
+
+
+
+        </script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+<script>
+
+/*ë©ì¸ì§*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+
+</script>
+
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<!-- TITLE -->
+<title>EuDi</title>
+
+<!-- common css file-->
+
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=2.1">
+
+
+<!-- child css file -->
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
+
+
+
+<!-- child js file--> 
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230223060144"></script>
+  <script>
+      $(function(){
+        selEvent.init();
+        fileEvent.init();
+
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_sub').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+      });
+      
+      function fnWriteChk(){
+    		
+    		if($("#cTitle").val() == ""){
+    		    alert("제목을 입력해주세요");
+    		    $("#cTitle").focus();
+    		    return;
+    		}
+    		
+    		if($("#cGubun").val() == ""){
+    		    alert("상담구분을 선택해주세요.");
+    		    $("#cGubun").focus();
+    		    return;
+    		}
+    		
+    		if($("#cContent").val() == ""){
+    		    alert("내용을 입력해주세요.");
+    		    $("#cContent").focus();
+    		    return;
+    		}
+
+
+    		document.writeForm.submit();
+    		
+
+    	}
+
+  </script>
+  </head>
+  <body>
+	  <div class="wrap wrap_sub wrap_sub04 wrap_purple">
+      <!--// nav -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">물품/상담</h2>
+            <div class="back"><a href="/product/counseling_list.do"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+        <div class="tab">
+          <div class="inner">
+            <ul>
+              <li><a href="/product/product_list.do">물품요청</a></li>
+              <li class="active"><a href="/product/counseling_list.do">온라인문의</a></li>
+              <li><a href="/product/product_faq.do">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- nav //-->
+      <!--// content -->
+      <div class="content con_sub con_sub04">
+        <div class="con_box">
+          <div class="con_inner">
+
+            <div class="tb">
+              <table summary="상담하기" cellpadding="0" cellspacing="0" border="0">
+                <caption>상담하기</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                <form:form commandName="BoardVO" id="writeForm" name="writeForm" method="post" action="/counseling/writeProc.do" enctype="multipart/form-data">
+                  <input type="hidden" name="pageIndex" id="pageIndex" value="<c:out value="${boardVO.pageIndex}"/>">
+                  	<tr>
+                    <td class="tit"><p>제목</p></td>
+                    <td class="cont">
+                      <div class="input_row">
+                        <span class="input_box">
+                          <input type="text"  name="cTitle" id="cTitle" class="ipt">
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <!--제품선택 추가 -->
+                    <tr>
+                    <td class="tit"><p>제품선택</p></td>
+                    <td class="cont">
+	                    <div class="cont_inner">
+	                    	<div class="select_row">
+		                        <label for="cProductSort">선택</label>
+		                        <select id="cProductSort"  name="cProductSort">
+		                            <option value="">선택</option>
+		                            <option value="S">유트로핀에스펜</option> 
+		                            <option value="P">유트로핀 펜</option>
+		                            <option value="U">유트로핀</option>
+		                            <option value="PL">유트로핀플러스</option>
+		                            <option value="A">유트로핀12IU</option> 
+		                        </select>
+		                      </div>
+		                      <p class="txt">제품선택시 '반드시' 포장지의 제품명을 확인하여 주세요.(제품별 주사바늘 종류 다름)</p>
+	                    </div>
+                    </td>
+                  </tr>
+                   <!--제품선택 추가 -->
+                  <tr>
+                    <td class="tit"><p>상담구분</p></td>
+                    <td class="cont">
+                      <div class="select_row">
+                        <label for="cGubun">선택</label>
+                        <select id="cGubun" name="cGubun">
+                            <option selected="selected" value="">선택</option>
+                            <option value="I">투여관련</option>
+                            <option value="C">용량변경</option>
+                            <option value="S">보관방법</option>
+                            <option value="P">제품문의</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>내용</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="area_box">
+          						    <textarea type="text" id="cContent" name="cContent"></textarea>
+            						</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>첨부파일</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="upload_field">
+                          <input class="upload_name ellipsis" id="add_file_name" value="파일선택" disabled="disabled">
+                          <a href="javascript:;" class="upload_del" onclick="fnFileReset()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
+                        </div>
+                        <div class="filebox">
+                          <label for="add_file">사진첨부</label>
+                          <input type="file" id="add_file" name="file01" class="upload_hidden">
+                        </div>
+                        <p class="txt">5MB 이하의 이미지 파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  			</form:form>
+          </div>
+        </div>
+      </div>
+      <!-- content //-->
+      <div class="btn_box btn_box02 btn_bottom">
+        <div class="inner">
+          <div class="btn_gray"><a href="javascript:;" onclick="fnListPage()">취소</a></div>
+          <div class="btn_pink"><a href="javascript:;" onclick="fnWriteChk()">상담</a></div>
+        </div>
+      </div>
+	  </div>
+  </body>
+    <script>
+  function fnFileReset(){
+	  $("#add_file").val("");
+	  $("#add_file_name").val("");
+	  $(".upload_field").hide();
+  }
+  
+  function fnListPage(){
+	 	document.writeForm.action = "/product/counseling_list.do";
+	    document.writeForm.submit();
+		
+	}
+  
+  //파일 확장자,용량 체크
+  $("input[id*=add_file").change(function(){
+      if($(this).val() != ""){
+          // 확장자 체크
+              var ext = $(this).val().split(".").pop().toLowerCase();
+
+              if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
+                  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+                  $("#add_file").val("");
+                  return;
+              }
+              
+              // 용량 체크
+              var fileSize = this.files[0].size;
+              var maxSize =  5 * 1024 * 1024;
+       
+              if(fileSize > maxSize){
+            	  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+                  $("#add_file").val("");
+                  return;
+              }
+              
+           
+      }
+  });
+
+  </script>
+</html>

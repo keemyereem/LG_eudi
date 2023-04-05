@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+<script>
+
+/*ë©ì¸ì§*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+
+</script>
+
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<!-- TITLE -->
+<title>EuDi</title>
+
+<!-- common css file-->
+
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=2.1">
+
+
+<!-- child css file -->
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
+
+
+
+<!-- child js file--> 
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230223060144"></script>
+ <script>
+     $(function(){
+
+       $(window).resize(resizeContents);
+       resizeContents();
+       function resizeContents() {
+         $('.wrap_sub').css({
+           'min-height': $(window).height() + 'px'
+         });
+       }
+     });
+     
+   function fnViewPage(cIdx){
+   $("#cIdx").val(cIdx);
+    document.listForm.action = "/counseling/counseling_view.do";
+     document.listForm.submit();
+   
+ }
+   
+ /*pagination 페이지 링크 function*/
+ function fnLinkPage(pageNo){
+ document.listForm.pageIndex.value = pageNo;
+    document.listForm.action = "/product/counseling_list.do";
+   document.listForm.submit();
+ }
+ </script>
+ </head>
+ <body>
+   <div class="wrap wrap_sub wrap_sub04 wrap_purple">
+     <!--// nav -->
+     <div class="sub_top">
+       <div class="nav">
+         <div class="nav_inner">
+           <h2 class="title">물품/상담</h2>
+           <div class="back"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
+         </div>
+       </div>
+       <div class="tab">
+         <div class="inner">
+          <!-- 핑크색 버전 -->
+           <ul>
+             <li><a href="/dose/dose_info.do">투여방법</a></li>
+             <li><a href="/counsel/rsvt_monthly.do">교육/상담신청</a></li>
+             <li class="active"><a href="/product/counseling_list.do">온라인문의</a></li>
+             <li><a href="/product/product_faq.do">FAQ</a></li>
+           </ul>
+           <!-- 보라색 버전 -->
+           <!-- <ul>
+            <li><a href="/product/product_list.do">물품요청</a></li>
+            <li class="active"><a href="/product/counseling_list.do">온라인문의</a></li>
+            <li><a href="/product/product_faq.do">FAQ</a></li>
+          </ul> -->
+         </div>
+       </div>
+     </div>
+     <!-- nav //-->
+     <!--// content -->
+       <form:form commandName="boardVO" id="listForm" name="listForm" method="post">
+       <!-- <%-- <input type="hidden" name="pageUnit" id="pageUnit" value="<c:out value="${productVO.pageUnit}"/>"> --%>
+           <input type="hidden" name="pageUnit" id="pageUnit" value="<c:out value="${boardVO.pageUnit}"/>"> -->
+            <input type="hidden" name="cIdx" id="cIdx" value="">
+     <div class="content con_sub con_sub04">
+       <div class="con_box">
+         <div class="profile">
+           <div class="pro_pic">
+              <img src="/resource/assets/web/child/images/character/img_profile_null.png" alt="프로필 사진" />
+           </div>
+           <div class="pro_name"><div><p><span></span> 어린이</p></div></div></div>
+       </div>
+       <div class="con_box">
+         <div class="con_inner">
+          <div class="con_list">
+            <ul>
+              <li>
+                <div><span class="lblbox lblp">답변대기</span><span class="datebox">2019.07.10</span></div>
+                <p><a href="javascript:;">주사관련해서 문의드립니다.</a></p>
+              </li>
+              <li>
+                <div><span class="lblbox lblg">답변완료</span><span class="datebox">2019.07.10</span></div>
+                <p><a href="javascript:;">주사관련해서 문의드립니다.</a></p>
+              </li>
+              <li>
+                <div><span class="lblbox lblg">답변완료</span><span class="datebox">2019.07.10</span></div>
+                <p><a href="javascript:;">주사관련해서 문의드립니다.</a></p>
+              </li>
+              <li>
+                <div><span class="lblbox lblg">답변완료</span><span class="datebox">2019.07.10</span></div>
+                <p><a href="javascript:;">주사관련해서 문의드립니다.</a></p>
+              </li>
+              <li>
+                <div><span class="lblbox lblb">답변취소</span><span class="datebox">2019.07.10</span></div>
+                <p><a href="javascript:;">주사관련해서 문의드립니다.</a></p>
+              </li>
+            </ul>
+          </div>
+           <div class="paging">
+           <c:if test="${not empty paginationInfo}">
+               <ui:pagination paginationInfo = "${paginationInfo}" type="front" jsFunction="fnLinkPage"/>
+           </c:if>
+          <form:hidden path="pageIndex" />
+         </div>
+
+         </div>
+       </div>
+       </form:form>
+     </div>
+     <!-- content //-->
+     <div class="btn_box btn_box04 btn_bottom">
+      <div class="inner">
+        <div class="btn_line_pink"><a href="http://pf.kakao.com/_LVntj/chat" target='_blank'>실시간 상담하기</a></div>
+        <div class="btn_pink"><a href="/product/counseling_write.do">상담글 남기기</a></div>
+      </div>
+    </div>
+   </div>
+ </body>
+</html>

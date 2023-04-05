@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+<script>
+
+/*ë©ì¸ì§*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+
+</script>
+
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<!-- TITLE -->
+<title>EuDi</title>
+
+<!-- common css file-->
+
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=2.1">
+
+
+<!-- child css file -->
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
+
+
+
+<!-- child js file--> 
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230223060144"></script>
+
+  <script>
+  
+       var totalCnt = 0;//물품 신청 총수
+  
+       let submitFlag = false;//중복 방지 추가
+       
+      $(function(){
+        selEvent.init();
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_sub').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+      });
+
+  /*     function execDaumPostcode (){
+    	  new daum.Postcode({
+    		  oncomplete:function(data){
+
+   			    document.getElementById('pPost').value = "";
+    			document.getElementById('pAddr1').value = "";
+    		    document.getElementById('pAddr2').value = ""
+
+   				document.getElementById('pPost').value = data.zonecode;
+       			document.getElementById('pAddr1').value = data.roadAddress;
+       			document.getElementById('pAddr2').focus;
+
+
+    			 document.getElementById('pPost').value = data.zonecode;
+    			 document.getElementById('pAddr1').value = data.roadAddress;
+    			 document.getElementById('pAddr2').focus;
+
+    			 $("#addr_box01").removeClass("blind");
+    			 $("#addr_box02").addClass("blind");
+    		  }
+
+
+    	  }).open();
+      } */
+
+
+      
+      function fnWriteChk(){
+
+    	  if(submitFlag){
+    		  alert("현재 신청 중입니다.");
+    		  return;
+    	  }
+  		 if($("input[type='radio']:checked").size() < 1){
+   		    alert("제품명을 선택해주세요.");
+   		    $("#pProductSort").focus();
+   		    return;
+   		} 
+
+  		if($("#requestCottonNeedleAmount").val() == "0" && $("#requestAddCotton").val() == "0" && $("#requestEtcInfo").val() == "" ){
+  			alert("주사바늘,알콤솜,기타자재 중 하나 이상을 신청하셔야합니다");
+  		    $("#requestCottonNeedleAmount").focus();
+  		    return;
+  		}
+
+  		if($("#pPost").val() == ""){
+  		    alert("배송주소를 입력해주세요.");
+  		    $("#pPost").focus();
+  		    return;
+  		}
+
+  		 if($("input[type='radio']:checked").size() > 0 && ($("#requestCottonNeedleAmount").val() != "0" || $("#requestAddCotton").val() != "0" || $("#requestEtcInfo").val() !=  "") && $("#pPost").val() != ""){
+  			submitFlag = true;
+  		 }
+  		
+  		//document.writeForm.submit();
+	    $("#loading").show();
+	 	$("#div-dark").show(); 
+  		 var frm = 'writeForm';
+			var formData = $("#"+frm).serialize();
+			$.ajax({
+				type : "POST",
+				async: true,
+				url : $("#"+frm).attr("action"),
+				cache : false,
+				data : formData,
+				success : function(obj){
+					
+					/*  if(obj.result > 0){
+						 alert("저장 되었습니다");
+						 location.href="/growth/growth_graph.do";
+             	  } else {
+             		  alert("일시적인 오류 입니다,다시 시도해주세요.");
+             		  return;
+             	  } */
+            	  $("#loading").hide();
+          	 	  $("#div-dark").hide(); 
+
+	             	 if(obj.result > 0){
+		             	  if(obj.result == 2){
+		             		  $("#result_title_txt").html("").html("신청 개수를 초과하여 신청할 수 없습니다");
+		             	  }else {
+		             		  $("#result_title_txt").html("").html("물품신청이 완료 되었습니다");
+		             		  totalCnt = obj.totalCnt;//물품 신청 총수 정보
+		             	  }
+
+		             	  $("#result_txt").html("").html(obj.result_txt);
+		             	  popupInfo('pop_order_result');
+	             	 }
+				},
+				error : function(data,status){
+					alert("시스템 오류 입니다,다시 시도해주세요");
+				}
+			});
+
+
+  	}
+
+
+    /*   function openDaumZipAddress() {
+
+          // 우편번호 찾기 화면을 넣을 element를 지정
+          var element_wrap = document.getElementById("wrap");
+
+          // wrap 레이어가 off된 상태라면 다음 우편번호 레이어를 open 한다.
+          if(jQuery("#wrap").css("display") == "none") {
+              new daum.Postcode({
+                  oncomplete:function(data) {
+                	   document.getElementById('pPost').value = "";
+           			   document.getElementById('pAddr1').value = "";
+           		       document.getElementById('pAddr2').value = ""
+
+          				document.getElementById('pPost').value = data.zonecode;
+              			document.getElementById('pAddr1').value = data.roadAddress;
+              			document.getElementById('pAddr2').focus;
+
+
+           			 document.getElementById('pPost').value = data.zonecode;
+           			 document.getElementById('pAddr1').value = data.roadAddress;
+           			 document.getElementById('pAddr2').focus;
+
+           			 $("#addr_box01").removeClass("blind");
+           			 $("#addr_box02").addClass("blind");
+                  }
+
+                  // 사용자가 값을 주소를 선택해서 레이어를 닫을 경우
+                  // 다음 주소록 레이어를 완전히 종료 시킨다.
+                  , onclose:function(state) {
+                      if(state === "COMPLETE_CLOSE") {
+
+                          // 콜백함수를 실행하여 슬라이드 업 기능이 실행 완료후 작업을 진행한다.
+                          offDaumZipAddress(function() {
+                              element_wrap.style.display = "none";
+                          });
+                      }
+                  }
+              }).embed(element_wrap);
+
+              // 슬라이드 다운 기능을 이용해 레이어 창을 오픈한다.
+              jQuery("#wrap").slideDown();
+          }
+
+          // warp 레이어가 open된 상태라면 다음 우편번호 레이어를 off 상태로 변경한다.
+          else {
+
+              // 콜백함수를 실행하여 슬라이드 업 기능이 실행 완료후 작업을 진행한다.
+              offDaumZipAddress(function() {
+                  element_wrap.style.display = "none";
+                  return false;
+              });
+          }
+      }
+
+      function offDaumZipAddress() {
+
+
+
+          // 슬라이드 업 기능을 이용해 레이어 창을 닫는다.
+          jQuery("#wrap").slideUp();
+
+      } */
+
+     
+  </script>
+  </head>
+  <style>
+.dark {background-color:#B2B2B2;opacity:0.5;filter:Alpha(opacity:'30');width:100%;height:100%;top:0;left:0;position:fixed;z-index:9000;}
+</style>
+  <body>
+	  <div class="wrap wrap_sub wrap_sub04 wrap_purple">
+      <!--// nav -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">물품/상담</h2>
+            <div class="back"><a href="/child/main.do"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+        <div class="tab">
+          <div class="inner">
+            <ul>
+              <li class="active"><a href="/product/product_list.do">물품요청</a></li>
+              <li><a href="/product/counseling_list.do">온라인문의</a></li>
+              <li><a href="/product/product_faq.do">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- nav //-->
+      <!--// content -->
+       <form:form commandName="ProductVO" id="writeForm" name="writeForm" method="post" action="/product/writeProc.do">
+
+      <div class="content con_sub con_sub04">
+        <div class="con_box">
+          <div class="con_inner">
+            <div class="tb">
+              <table summary="물품요청" cellpadding="0" cellspacing="0" border="0">
+                <caption>물품요청</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                 <form name="writeForm" id="writeForm" role="form" method="post">
+                <tbody>
+                   <tr>
+                    <td class="tit"><p>제품선택</p></td>
+                    <td class="cont">
+	                    <div class="cont_inner">
+<!-- 	                    	<div class="select_row">
+		                        <label for="pProductSort">선택</label>
+		                        <select id="pProductSort"  name="pProductSort">
+		                            <option value="">선택</option>
+		                            <option value="P">유트로핀 펜</option>
+		                            <option value="U">유트로핀</option>
+		                            <option value="PL">유트로핀플러스</option>
+		                            <option value="A">유트로핀12IU</option>
+		                        </select>
+		                      </div> -->
+		                      
+							<div class="product_box">
+							  <div class="radio_row">
+		                      	<img alt="유트로핀 S펜" src="${BASE_ROOT}/resource/assets/web/child/images/sub/product_S.png">
+		                      	<input type="radio" id="S" name="pProductSort"  value="S">
+		                      	<label for="S">유트로핀에스펜</label>
+		                      </div>
+							  <div class="radio_row">
+		                      	<img alt="유트로핀 펜" src="${BASE_ROOT}/resource/assets/web/child/images/sub/product_P.png">
+		                      	<input type="radio" id="P" name="pProductSort"  value="P">
+		                      	<label for="P">유트로핀 펜</label>
+		                      </div>
+		                      <div class="radio_row">
+		                      	<img alt="유트로핀" src="${BASE_ROOT}/resource/assets/web/child/images/sub/product_U.png">
+		                      	<input type="radio" id="U" name="pProductSort" value="U">
+		                      	<label for="U">유트로핀</label>
+		                      </div>
+		                      <div class="radio_row">
+		                      	<img alt="유트로핀플러스" src="${BASE_ROOT}/resource/assets/web/child/images/sub/product_PL.png">
+		                      	<input type="radio" id="PL" name="pProductSort" value="PL">
+		                      	<label for="PL">유트로핀플러스</label>
+		                      </div>
+		                      <div class="radio_row">
+		                      	<img alt="유트로핀12IU" src="${BASE_ROOT}/resource/assets/web/child/images/sub/product_A.png">
+		                      	<input type="radio" id="A" name="pProductSort" value="A">
+		                      	<label for="A">유트로핀12IU</label>
+		                      </div>
+							</div>
+		                     <p class="txt">제품선택시 '반드시' 포장지의 제품명을 확인하여 주세요.(제품별 주사바늘 종류 다름)</p>
+	                    </div>
+                    </td>
+                  </tr>
+                    <td class="tit"><p>주사바늘</td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="select_row select_row02">
+                          <label for="requestCottonNeedleAmount" id="requestCottonNeedleAmount_txt">0 개</label>
+                          <select id="requestCottonNeedleAmount" name="requestCottonNeedleAmount">
+                              <option value="0" selected="selected" >0 개</option>
+                           <!-- <!--    <option value="90">90 개</option>
+                              <option value="120">120 개</option>
+                              <option value="150">150 개</option> --> -->
+                          </select>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>알콜솜</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="select_row select_row02">
+                          <label for="requestAddCotton" id="requestAddCotton_txt">0 개</label>
+                          <select id="requestAddCotton" name="requestAddCotton">
+                              <option value="0" selected="selected">0 개</option>
+                          <!--     <option value="100">100 개</option>
+                              <option value="200">200 개</option> -->
+                          </select>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>기타자재</p></td>
+                       <td class="cont">
+	                    <div class="cont_inner">
+	                    	<div class="input_row">
+		                        <span class="input_box">
+		                          <input type="text" id="requestEtcInfo" name="requestEtcInfo" class="ipt" maxlength="50">
+		                        </span>
+		                      </div>
+		                        <p class="txt">물품 신청 개수 초과 시에도 기타 자재만 신청하실 때에는 제품 선택을 하신 후 주사바늘, 알콜솜 수량을 0으로 하시고 주문하시면 신청이 가능합니다.</p>
+	                    </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>내용</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="area_box">
+          						    <textarea type="text" id="pContent" name="pContent"></textarea>
+            						</div>
+                      </div>
+                    </td>
+                  </tr>
+                     <tr>
+                    <td class="tit"><p>연락처</p></td>
+                     <td class="cont">
+                      <div class="select_tel">
+                        <label for="pCpNumber1"><c:out value="${productVo.pCpNumber1}"/></label>
+                        <select id="pCpNumber1" name="pCpNumber1">
+                            <option value="010" <c:if test="${productVo.pCpNumber1 eq '010'}">selected="selected"</c:if>>010</option>
+                  			 <option value="011" <c:if test="${productVo.pCpNumber1 eq '011'}"> selected="selected"</c:if>>011</option>
+                            <option value="017" <c:if test="${productVo.pCpNumber1 eq '017'}"> selected="selected"</c:if>>017</option>
+                            <option value="018" <c:if test="${productVo.pCpNumber1 eq '018'}"> selected="selected"</c:if>>018</option>
+                            <option value="019" <c:if test="${productVo.pCpNumber1 eq '019'}"> selected="selected"</c:if>>019</option>
+                        </select>
+                      </div>
+                      <span class="hyphen">-</span>
+                      <div class="input_tel">
+            						<span class="input_box">
+            							<input type="tel" id="pCpNumber2" name="pCpNumber2" value="${productVo.pCpNumber2}" class="ipt" style="ime-mode:disabled" required="required" data-title="휴대폰번호를" title="휴대폰번호를" maxlength="4" oninput="maxLengthCheck(this)">
+            						</span>
+            					</div>
+                      <span class="hyphen">-</span>
+                      <div class="input_tel">
+            						<span class="input_box">
+            							<input type="tel" id="pCpNumber3" name="pCpNumber3" value="${productVo.pCpNumber3}" class="ipt" style="ime-mode:disabled" required="required" data-title="휴대폰번호를" title="휴대폰번호를" maxlength="4" oninput="maxLengthCheck(this)">
+            						</span>
+            					</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>배송주소</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+
+                      	 <div class="addr_box01<c:if test="${!empty addrInfo}"> blind</c:if>" id="addr_box01">
+                          <div class="input_addr">
+                            <span class="input_box">
+                              <input type="text" id="pPost" name="pPost" class="ipt" value="<c:out value="${addrInfo.pPost}"/>" readonly>
+                            </span>
+                            <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
+                          </div>
+                          <div class="input_row mt4">
+                            <span class="input_box">
+                              <input type="text" id="pAddr1" name="pAddr1" class="ipt"  value="<c:out value="${addrInfo.pAddr1}"/>"readonly>
+                            </span>
+                          </div>
+                          <div class="input_row mt4">
+                            <span class="input_box">
+                              <input type="text" id="pAddr2" name="pAddr2" class="ipt" value="<c:out value="${addrInfo.pAddr2}"/>">
+                            </span>
+                          </div>
+                        </div>
+
+
+                        <!--// 주소 입력 후 -->
+                        <div class="addr_box02<c:if test="${empty addrInfo}"> blind</c:if>"  id="addr_box02">
+                          <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
+                          <ul>
+                            <li><c:out value="${addrInfo.pPost}"/></li>
+                            <li><c:out value="${addrInfo.pAddr1}"/></li>
+                            <li><c:out value="${addrInfo.pAddr2}"/></li>
+                          </ul>
+                        </div>
+
+                      </div>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 다음 우편번호 찾기 리스트를 띄울 영역을 지정 -->
+	<!-- 		<div id="addr_wrap" class="addrBox" style="display:none;border:1px solid;width:100%;height:auto;position:relative;top:-95px;">
+				<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="width:20px;cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+			</div> -->
+
+			<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+			<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="width:20px;cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+		<!-- 	<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼"> -->
+			</div>
+
+
+            <!-- //-->
+
+            <ul class="info_list">
+              <li>택배배송은 보통 3~4일 걸리며, 상황에 따라 1주일정도 걸릴수 있습니다.</li>
+              <li>신청하신 물품이 자동 배송되는 것은 아니며, 담당간호사의 확인 후 배송되어집니다.</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+      </form>
+      <!-- content //-->
+      <div class="btn_box btn_box02 btn_bottom">
+        <div class="inner">
+          <div class="btn_gray"><a href="javascript:;" onclick="fnListPage()">취소</a></div>
+          <div class="btn_pink"><a href="javascript:;" onclick="fnWriteChk()">신청</a></div>
+        </div>
+      </div>
+	  </div>
+	  </form:form>
+
+    <!-- 로딩 div -->
+    <div id="div-dark" class="dark" style="display:none;"></div>
+    <div id="loading"
+            style="display:none; top: 45%; left: 70%;  margin-left:-100px;z-index: 9999; border: 3px #2B97D6;position:fixed">
+            <p style="text-align: center;">
+                <img src="/resource/assets/nurse/images/common/loading.gif" alt="loading" />
+                <font color="#0054FF"><span id="percentage"></span></font>
+            </p>
+     </div>
+     
+     
+
+         <!--  물품신청 결과 -->
+      <div class="pop_mask"></div>
+      <div class="pop_info pop_order_result">
+        <div class="pop_info_inner">
+          <div class="btn_close pop_close"><a href="javascript:fnPopUpClose()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+          <div class="pop_con">
+            <p class="pop_tit">물품신청<br>
+            <span id="result_title_txt">신청 개수를 초과하여 신청할 수 없습니다</span>
+            </p>
+            <p class="pop_txt" id="result_txt"></p>
+            <div class="btn_box">
+              <div class="btn_green pop_close" style="width:100%"><a href="javascript:fnPopUpClose()">확인</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+  </body>
+    <script>
+  function fnListPage(){
+	 	document.writeForm.action = "/product/product_list.do";
+	    document.writeForm.submit();
+
+	}
+	</script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    // 우편번호 찾기 찾기 화면을 넣을 element
+    //var element_wrap = document.getElementById('addr_wrap');
+    var element_layer = document.getElementById('layer');
+
+/*     function foldDaumPostcode() {
+        // iframe을 넣은 element를 안보이게 한다.
+        element_wrap.style.display = 'none';
+    }
+     */
+    function closeDaumPostcode() {
+        // iframe을 넣은 element를 안보이게 한다.
+        element_layer.style.display = 'none';
+    }
+
+
+   /*  function sample3_execDaumPostcode() {
+        // 현재 scroll 위치를 저장해놓는다.
+        var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("pAddr2").value = extraAddr;
+
+                } else {
+                    document.getElementById("pAddr2").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('pPost').value = data.zonecode;
+                document.getElementById("pAddr1").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("pAddr2").focus();
+                $("#addr_box01").removeClass("blind");
+      			$("#addr_box02").addClass("blind");
+
+                // iframe을 넣은 element를 안보이게 한다.
+                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                element_wrap.style.display = 'none';
+
+                // 우편번호 찾기 화면이 보이기 이전으로 scroll 위치를 되돌린다.
+                document.body.scrollTop = currentScroll;
+            },
+            // 우편번호 찾기 화면 크기가 조정되었을때 실행할 코드를 작성하는 부분. iframe을 넣은 element의 높이값을 조정한다.
+            onresize : function(size) {
+                element_wrap.style.height = size.height+'px';
+            },
+            width : '100%',
+            height : '100%',
+        }).embed(element_wrap);
+
+        // iframe을 넣은 element를 보이게 한다.
+        element_wrap.style.display = 'block';
+
+    }
+     */
+
+    function sample2_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("pAddr2").value = extraAddr;
+
+                } else {
+                    document.getElementById("pAddr2").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('pPost').value = data.zonecode;
+                document.getElementById("pAddr1").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("pAddr2").focus();
+                $("#addr_box01").removeClass("blind");
+                $("#addr_box02").addClass("blind");
+
+                // iframe을 넣은 element를 안보이게 한다.
+                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                element_layer.style.display = 'none';
+
+
+            },
+            width : '100%',
+            height : '100%',
+            maxSuggestItems : 5
+        }).embed(element_layer);
+
+        // iframe을 넣은 element를 보이게 한다.
+        element_layer.style.display = 'block';
+
+        // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+        initLayerPosition();
+    }
+
+
+    function initLayerPosition(){
+        var width = 300; //우편번호서비스가 들어갈 element의 width
+        var height = 400; //우편번호서비스가 들어갈 element의 height
+        var borderWidth = 5; //샘플에서 사용하는 border의 두께
+
+        // 위에서 선언한 값들을 실제 element에 넣는다.
+        element_layer.style.width = width + 'px';
+        element_layer.style.height = height + 'px';
+        element_layer.style.border = borderWidth + 'px solid';
+        // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+        element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
+        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+    }
+
+    $('input[type=radio][name=pProductSort]').on('change', function() {
+/*     $("#pProductSort").change(function() { */
+    	$("select[name='requestCottonNeedleAmount'] option").remove();
+    	$("select[name='requestAddCotton'] option").remove();
+    	$("#requestCottonNeedleAmount_txt").text("0 개");
+    	$("#requestAddCotton_txt").text("0 개");
+    	  if( $("input[type='radio']:checked").val() == "U"){
+    		  $("#requestCottonNeedleAmount").append("<option value='0' selected='selected'>0 개</option>");
+    		  $("#requestCottonNeedleAmount").append("<option value='100'>100 개</option>");
+    		  $("#requestCottonNeedleAmount").append("<option value='200'>200 개</option>");
+
+    		 $("#requestAddCotton").append("<option value='0' selected='selected'>0 개</option>");
+     		 $("#requestAddCotton").append("<option value='100'>100 개</option>");
+     		 $("#requestAddCotton").append("<option value='200'>200 개</option>");
+
+
+    	  } else if( $("input[type='radio']:checked").val() == "P"){
+    		  $("#requestCottonNeedleAmount").append("<option value='0' selected='selected'>0 개</option>");
+     		  $("#requestCottonNeedleAmount").append("<option value='100'>100 개</option>");
+    		  $("#requestCottonNeedleAmount").append("<option value='200'>200 개</option>");
+    	/*
+    		   <!--유트로핀펜 주사바늘 0일때 알콜솜 100,200,300 으로 세팅 2021-02-03--> */
+
+   		    if($("#requestCottonNeedleAmount").val() != "0"){
+	   			 $("#requestAddCotton").append("<option value='0' selected='selected'>0 개</option>");
+        		 $("#requestAddCotton").append("<option value='100'>100 개</option>");
+         		 $("#requestAddCotton").append("<option value='200'>200 개</option>");
+    	     } else {
+    			 $("#requestAddCotton").append("<option value='0' selected='selected'>0 개</option>");
+         		 $("#requestAddCotton").append("<option value='100'>100 개</option>");
+         		 $("#requestAddCotton").append("<option value='200'>200 개</option>");
+    	     }
+
+
+
+    	  } else if( $("input[type='radio']:checked").val()== "PL"){
+    		  $("#requestCottonNeedleAmount").append("<option value='0' selected='selected'>0 개</option>");
+    		  $("#requestCottonNeedleAmount").append("<option value='50'>50 개</option>");
+
+   			  $("#requestAddCotton").append("<option value='0' selected='selected'>0 개</option>");
+        	  $("#requestAddCotton").append("<option value='100'>100 개</option>");
+
+
+    	  } else {
+     		  $("#requestCottonNeedleAmount").append("<option value='0' selected='selected'>0 개</option>");
+    		  $("#requestCottonNeedleAmount").append("<option value='100'>100 개</option>");
+    		  $("#requestCottonNeedleAmount").append("<option value='200'>200 개</option>");
+
+   			  $("#requestAddCotton").append("<option value='0' selected='selected'>0 개</option>");
+        	  $("#requestAddCotton").append("<option value='100'>100 개</option>");
+        	  $("#requestAddCotton").append("<option value='200'>200 개</option>");
+
+
+    	  }
+    	});
+    //주사바늘,추가 알콜솜 로직 변경 2020-01-30
+    $("#requestCottonNeedleAmount").change(function() {
+	    	if( $("input[type='radio']:checked").val() == "P" ||  $("input[type='radio']:checked").val() == "S"){
+	    		$("select[name='requestAddCotton'] option").remove();
+	    		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
+	    		  $("#requestAddCotton_txt").text(changeValue +" 개");
+	    		  $("select#requestAddCotton option").remove();
+	    		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
+	    		  $("#requestAddCotton").append("<option value='100'>100 개</option>");
+	    		  $("#requestAddCotton").append("<option value='200'>200 개</option>");
+	    		  if(changeValue == "400"){
+	    			  $("#requestAddCotton").append("<option value='400'>400 개</option>");
+	    		  }
+
+	    		  $("#requestAddCotton").val(changeValue).prop("selected", true);
+	    	}
+
+	    	if( $("input[type='radio']:checked").val() == "U" ||  $("input[type='radio']:checked").val() == "A"){
+	    		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
+	    		  $("#requestAddCotton_txt").text(changeValue +" 개");
+	    		  $("select#requestAddCotton option").remove();
+	    		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
+	    		  $("#requestAddCotton").append("<option value='100'>100 개</option>");
+	    		  $("#requestAddCotton").append("<option value='200'>200 개</option>");
+	    		  if(changeValue == "400"){
+	    			  $("#requestAddCotton").append("<option value='400'>400 개</option>");
+	    		  }
+
+	    		  $("#requestAddCotton").val(changeValue).prop("selected", true);
+	    	}
+
+		    if( $("input[type='radio']:checked").val()== "PL"){
+		  		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
+		  		  $("#requestAddCotton_txt").text(changeValue +" 개");
+		  		  $("select#requestAddCotton option").remove();
+		  		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
+				  $("#requestAddCotton").append("<option value='100'>100 개</option>");
+
+				  $("#requestAddCotton").val(changeValue).prop("selected", true);
+		  	}
+
+    });
+
+
+
+
+</script>
+</html>
