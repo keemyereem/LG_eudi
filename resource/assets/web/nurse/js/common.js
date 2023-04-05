@@ -190,3 +190,52 @@ var datetimeEvent = {
 	
 	}
 };
+
+
+$(document).on('keyup keydown','input[data-format-validate]',function(e){
+	const format = $(this).data('format-validate');
+	const oriVal = $(this).val();
+	
+	if (e.type=='keydown') {
+		$(this).data('prev-value', oriVal);
+	} else {
+		if (validateRexg(format, oriVal)===false && oriVal){
+			$(this).css('color','red');
+			// 이전값으로 복원
+			$(this).val($(this).data('prev-value'));
+		} else {
+			$(this).css('color','initial');
+		}
+	}
+});
+
+function validateRexg(format, txt){
+	let res;
+	switch (format) {
+		case 'height' : // 키 (소수점 1자리, 50~220)
+			res = txt.match(/^([5-9]\d{1}|1\d{2}|2[0-1]\d{1}|220)((\.\d{1})||(\.))?$/);
+			if (res <  50 || res > 220) {
+				res = null;
+			}
+			break;
+		case 'weight' : // 체중 (소수점 1자리, 10~120)
+			res = txt.match(/^([1-9]\d{1}|1[0-1]\d{1}|120)((\.\d{1})||(\.))?$/);
+			if (res <  10 || res > 120) {
+				res = null;
+			}
+			break;
+		case 'ast-qnty' : // 제품투여량 공통 (0.5~15)
+			res = txt.match(/^([0-9]|1[0-5])((\.\d{1})||(\.))?$/);
+			if (res <  0.5 || res > 15) {
+				res = null;
+			}
+			break;
+		case 'ast-qnty-plus' : // 제품투여량 유트로핀플러스 (0.5~60)
+			res = txt.match(/^([0-9]|[1-5]\d{1}|60)((\.\d{1})||(\.))?$/);
+			if (res <  0.5 || res > 60) {
+				res = null;
+			}
+			break;
+	}
+	return res ? true : false;
+};

@@ -194,6 +194,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .schedule_wrap .dates li.available.edu { background: #fc637d; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available.cs { background: #79bd28; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available p span { display: block; color: rgba(255, 255, 255, .5); font-size: 10px; padding-bottom: 7px; }
+.wrap_sub .sec_cal .schedule_wrap .dates li.available p span > i::before { content:''; display: inline-block; width: 1px; height: 7px; background: #fff; opacity: .5; margin-right: 6px; }
+.wrap_sub .sec_cal .schedule_wrap .dates li.available p span > i { color: #fff; letter-spacing: -.5px; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available p i { padding-left: 7px; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.disable { background: #f1f1f1; color: #999999; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.disable button { background: #cfcfcf; }

@@ -433,12 +433,13 @@
 .con_sub03 .con_list>ul>li>a>div i.bar {margin: 0 8px;display: inline-block;width: 1px;height: 10px;background: #e5e5e5;vertical-align: middle;}
 .con_sub03 .con_list>ul>li>a>div .datebox {margin-top: 0;display: inline-block;}
 .con_sub03 .con_list>ul>li>a>div .namebox {position: relative;display: inline-block;}
+.con_sub03 .con_list>ul>li>a>div .hospitalbox {font-size: 11px;color: #999;position: absolute;top: 5px;right: 0;}
 .con_sub03 .con_list>ul>li {position: relative;padding-left: 30px;}
-.con_sub03 .sel_all {padding-bottom: 10px;}
+.con_sub03 .sel_all {padding-bottom: 20px;}
 .con_sub03 .sel_all .checkbox_row input[type="checkbox"]:checked + label:before {background: url(../images/common/bg_check_pink_on.png) 50% 50% no-repeat;background-size: cover;}
 .con_sub03 .sel_all .checkbox_row input[type="checkbox"] + label:before {width: 18px;height: 18px;}
 .con_sub03 .sel_all .checkbox_row input[type="checkbox"] + label {padding-left: 25px;font-size: 13px;}
-.con_sub03 .sel_chk {position: absolute;left: 0;top: 15px;}
+.con_sub03 .sel_chk {position: absolute;left: 0;top: 10px;}
 .con_sub03 .sel_chk .checkbox_row input[type="checkbox"]:checked + label:before {background: url(../images/common/bg_check_pink_on.png) 50% 50% no-repeat;background-size: cover;}
 .con_sub03 .sel_chk .checkbox_row input[type="checkbox"] + label:before {width: 18px;height: 18px;}
 
