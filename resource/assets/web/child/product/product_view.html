@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+<script>
+
+/*ë©ì¸ì§*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+
+</script>
+
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<!-- TITLE -->
+<title>EuDi</title>
+
+<!-- common css file-->
+
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=2.1">
+
+
+<!-- child css file -->
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
+
+
+
+<!-- child js file--> 
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230223060144"></script>
+  <script>
+      $(function(){
+
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_sub').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+      });
+
+  </script>
+  </head>
+  <body>
+	  <div class="wrap wrap_sub wrap_sub04 wrap_purple">
+      <!--// nav -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">물품/상담</h2>
+            <div class="back"><a href="javascript:;" onclick="fnListPage()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+        <div class="tab">
+          <div class="inner">
+            <ul>
+              <li class="active"><a href="/product/product_list.do">물품요청</a></li>
+              <li><a href="/product/counseling_list.do">온라인문의</a></li>
+              <li><a href="/product/product_faq.do">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <form name="viewForm" id="viewForm" role="form" method="post">
+         <input type="hidden" name="pIdx"  id="pIdx" value="<c:out value="${productVO.pIdx}"/>">
+      	 <input type="hidden" name="pageIndex" id="pageIndex" value="<c:out value="${productVO.pageIndex}"/>">
+      <!-- nav //-->
+      <!--// content -->
+      <div class="content con_sub con_sub04">
+        <div class="con_box">
+          <div class="con_inner">
+            <div class="tb_top">
+              <div>
+              
+                     <c:choose>
+	                  	<c:when test="${product.pState eq 'R'}">
+		                  		<span class="lblbox lblp">요청</span>
+		                  	</c:when>
+		                  	<c:when test="${product.pState eq 'W'}">
+		                  		<span class="lblbox lblg">준비중</span>
+		                  	</c:when>
+		                  	<c:when test="${product.pState eq 'S'}">
+		                  		<span class="lblbox lblb">발송완료</span>
+		                  	</c:when>
+		                  	<c:when test="${product.pState eq 'C'}">
+		                  		<span class="lblbox lblp">요청취소</span>
+		                  	</c:when>
+		                  	<c:otherwise>
+		                  	</c:otherwise>
+                 		 </c:choose>
+
+              </div><!-- //발송완료 lblp 발송대기 lblg 발송완료 lblb -->
+              <div class="tit">
+               <c:set var="regDate" value="${fn:substring(product.pRegDate,0,10)}"/>
+                <p>
+                   <c:choose>
+	                  	<c:when test="${product.pProductSort eq 'U'}">
+		                  		유트로핀 
+		                  	</c:when>
+		                  	<c:when test="${product.pProductSort eq 'P'}">
+		                  		유트로핀 펜
+		                  	</c:when>
+		                  	<c:when test="${product.pProductSort eq 'PL'}">
+		                  		 유트로핀플러스
+		                  	</c:when>
+		                  	<c:when test="${product.pProductSort eq 'A'}">
+		                  		 유트로핀12IU
+		                  	</c:when>
+		                  	 <c:when test="${product.pProductSort eq 'S'}">
+		                  		 유트로핀에스펜
+		                  	</c:when>
+		                  	<c:otherwise>
+		                  	</c:otherwise>
+                 		 </c:choose>
+                </p>
+                <div class="date"><c:out value="${fn:substring(regDate,0,4)}"/>.<c:out value="${fn:substring(regDate,5,7)}"/>.<c:out value="${fn:substring(regDate,8,10)}"/></div>
+              </div>
+            </div>
+            <div class="tb03">
+              <table summary="상담내용" cellpadding="0" cellspacing="0" border="0">
+                <caption>상담내용</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="tit"><p>주사바늘</p></td>
+                    <td class="cont">
+                      <p> <c:out value="${product.requestCottonNeedleAmount}"/></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>알콜솜</p></td>
+                    <td class="cont">
+                      <p><c:out value="${product.requestAddCotton}"/></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>기타자재</p></td>
+                    <td class="cont04">
+                    	<div class="cont_inner">
+                      		<p><c:out value="${product.requestEtcInfo}" escapeXml="false"/></p>
+                      	</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>내용</p></td>
+                    <td class="cont04">
+                      <div class="cont_inner">
+                        <p>
+                            <c:out value="${fn:replace(conversionContents, newLineChar, '<br/>')}" escapeXml="false"/>
+                        	<%--  <c:out value="${product.pContent}" escapeXml="false"/> --%>
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                     <tr>
+                    <td class="tit"><p>연락처</p></td>
+                    <td class="cont04">
+                      <div class="cont_inner">
+                        <p>
+                            <c:out value="${product.pCpNumber1}"/>-<c:out value="${product.pCpNumber2}"/>-<c:out value="${product.pCpNumber3}"/>
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>배송주소</p></td>
+                    <td class="cont04">
+                      <div class="cont_inner">
+                        <p><c:out value="${product.pPost}"/></p>
+                        <p><c:out value="${product.pAddr1}"/></p>
+                        <p><c:out value="${product.pAddr2}"/></p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <ul class="info_list">
+              <li>택배배송은 보통 3~4일 걸리며, 상황에 따라 1주일정도 걸릴수 있습니다.</li>
+              <li>신청하신 물품이 자동 배송되는 것은 아니며, 담당간호사의 확인 후 배송되어집니다.</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+      </form>
+      <!-- content //-->
+      <div class="btn_box btn_box02 btn_bottom">
+        <div class="inner">
+        
+          <c:choose>
+        		<c:when  test="${product.pState eq 'W' or product.pState eq 'R'}">
+                   <div class="btn_gray"><a href="javascript:;" onclick="fnCancle()">요청취소</a></div>
+        		   <div class="btn_pink"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
+             	</c:when>
+             	<c:otherwise>
+             	     <div class="btn_pink" style="width:100%"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
+             	</c:otherwise>
+        </c:choose>
+        
+        
+
+        </div>
+      </div>
+	  </div>
+  </body>
+  <script>
+  function fnListPage(){
+	 	document.viewForm.action = "/product/product_list.do";
+	    document.viewForm.submit();
+		
+	}
+  
+  function fnCancle(){
+	  var result = confirm("물품 요청내역을 취소하겠습니까?");
+	  if(result){
+		   actionurl = "/product/cancle.do";
+	          $.ajax({
+	              async: false,
+	              type: "POST",
+	              url : actionurl,
+	              data : $("#viewForm").serialize(),
+	              dataType : "json",
+	              success: function(obj){
+	            	  if(obj.result > 0){
+	            		  alert("물품 요청이 취소되었습니다.");
+	            		  location.href="/product/product_list.do";
+	            	  } else {
+	            		  alert("일시적인 오류 입니다,다시 시도해주세요.");
+	            		  return;
+	            	  }
+	                
+	            
+	              },
+	              error: function(xhr, option, error){
+	                    alert(xhr.status+" | "+error); //오류코드 | 오류내용
+	              }
+	              /*error : function(success){
+	                  meg = "서버와 통신중 에러가 발생하였습니다."
+	                  alert("처리결과 : "+meg);
+	              }*/
+	          });
+	  }
+  }
+  </script>
+</html>

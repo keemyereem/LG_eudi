@@ -166,8 +166,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .cal_wrap .dates .day button.on { background: #79bd28; color: #fff; }
 .wrap_sub .sec_cal .current .hpc_block { width: 57%; max-width: 25px; height: 15px; border: 1px solid #13bfd6; color: #13bfd6; text-align: center; font-size: 9px; line-height: 14px; border-radius: 7.5px; margin:-3px .3vw 0 0; }
 .wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
-.wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #fc637d; }
-.wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #79bd28; }
+.wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #f49baa; }
+.wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #9ed363; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrap_sub .calendar .sec_cal .cal_nav .year-month { width: 187.5px; }
@@ -191,8 +191,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .schedule_wrap .dates { position: absolute; top: 42px; right: 0; width: calc(100% - 39px); height: calc(100% - 47px); padding: 0 3px; z-index: 1; }
 .wrap_sub .sec_cal .schedule_wrap .dates li { display: inline-flex; width: 100%; height: calc(100% / 18 - 10px); border-radius: 10px; font-size: 13px; line-height: 1.2; margin: 5px 0; padding: 0 15px; position: relative; justify-content: space-between; align-items: center; font-family: 'NanumSquareB'; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available { color: #ffffff; }
-.wrap_sub .sec_cal .schedule_wrap .dates li.available.edu { background: #fc637d; }
-.wrap_sub .sec_cal .schedule_wrap .dates li.available.cs { background: #79bd28; }
+.wrap_sub .sec_cal .schedule_wrap .dates li.available.edu { background: #f49baa; }
+.wrap_sub .sec_cal .schedule_wrap .dates li.available.cs { background: #9ed363; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available p span { display: block; color: rgba(255, 255, 255, .5); font-size: 10px; padding-bottom: 7px; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available p span > i::before { content:''; display: inline-block; width: 1px; height: 7px; background: #fff; opacity: .5; margin-right: 6px; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available p span > i { color: #fff; letter-spacing: -.5px; }
