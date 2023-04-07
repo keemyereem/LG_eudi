@@ -268,6 +268,12 @@
 .pop_wrap.pop_agree02 .radio_row input[type="radio"] + label:before {background: url(../images/common/bg_check.png) 50% 50% no-repeat;background-size: 100%;}
 .pop_wrap.pop_agree02 .radio_row input[type="radio"]:checked + label:before {background: url(../images/common/bg_check_on.png) 50% 50% no-repeat;background-size: 100%;}
 
+.pop_wrap.pop_agree02 .pop_cont02,
+.pop_wrap.pop_agree02 .pop_cont03 {display: none;} 
+.pop_wrap.pop_agree02 .policy_version {display: flex;justify-content: space-between;padding: 0 20px;} 
+.pop_wrap.pop_agree02 .policy_version .select_row {width: calc(100% - 65px);}
+.pop_wrap.pop_agree02 .policy_version>button {width: 60px;height: 40px;background: #727272;border-radius: 5px;font-size: 13px;color: #fff;}
+
 .con_join .agree_box .cont_box .pop_top {position: fixed;z-index: 20;}
 /* .con_join .agree_box .cont_box .pop_cont {padding-top: 50px;} */
 .con_join .agree_box .cont_box .pop_cont .pop_inner {padding: 10px;}
