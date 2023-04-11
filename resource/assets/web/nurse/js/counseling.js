@@ -191,8 +191,8 @@ var nurseJS = {
         schduler.innerHTML = '';
 
         // 시간대별 라인 생성
-        for (var i = 0; i <= 15; i++) { //15 = (끝나는 시간 - 시작 시간)
-          schduler.innerHTML = schduler.innerHTML + '<div class="line">' + (i + 7) + '</div>' //7 = 시작 시간
+        for (var i = 0; i <= 9; i++) {
+          schduler.innerHTML = schduler.innerHTML + '<div class="line">' + (i + 9) + '</div>'
         }
 
         // 라인 변수 선언 및 반시간 라인 설정
@@ -208,7 +208,7 @@ var nurseJS = {
         });
 
         // 반시간 라인 생성
-        for (var i = 0; i <= 14; i++) { //14 = (끝나는 시간 - 시작 시간) -1
+        for (var i = 0; i <= 8; i++) {
           line.eq(i).after('<div class="line_half">' + lineHalf[i] + '</div>');
         }
 
