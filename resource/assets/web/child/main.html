@@ -2381,22 +2381,17 @@ function fnLogOut(){
                   <label for="episode">1화 보기</label>
                   <select name="episode" id="episode">
                     <option value="1">1화 보기</option>
-                    <!-- <option value="2">2화 보기</option>
-                    <option value="3">3화 보기</option> -->
+                    <!-- <option value="2">2화 보기</option> -->
+                    <!-- <option value="3">3화 보기</option> -->
                   </select>
                 </div>
                 
-                <div class="webtoon_slider webtoon_slider01">
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon02.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon03.jpg" alt="유디 웹툰"></div>
+                <div class="webtoon_slider">
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_01.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_02.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_03.jpg" alt="유디 웹툰"></div>
                 </div>
 
-                <!-- <div class="webtoon_slider webtoon_slider02">
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon02.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon03.jpg" alt="유디 웹툰"></div>
-                </div> -->
               </div>
             </div>
 
@@ -2508,8 +2503,19 @@ function fnLogOut(){
         variableWidth : true,
       });
 
+      // 웹툰 회차 셀렉트박스 클릭시 해당 이미지로 변경
       var selectType0 = $("#episode");
+      var str = $('#episode').siblings("label").text(),
+          regex = /[^0-9]/g,
+          ep = str.replace(regex, "");
 
+      $('#episode option:eq(0)').attr('selected','selected');
+      $('#episode').val(ep);  
+      
+      $('.webtoon_slider').attr('data-value',ep);
+      $('.webtoon_slider .webtoon_img').eq(0).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_01.jpg');
+      $('.webtoon_slider .webtoon_img').eq(1).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_02.jpg');
+      $('.webtoon_slider .webtoon_img').eq(2).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_03.jpg');
       selectChange(selectType0);
 
       function selectChange(type){
@@ -2517,27 +2523,13 @@ function fnLogOut(){
               var ep_num = $(this).children("option:selected").val(),
                   ep_txt = $(this).children("option:selected").text();
               $(this).siblings("label").text(ep_txt);
-
-              $('.webtoon_slider').hide();
-              $('.webtoon_slider0'+ep_num).show();
               $('.webtoon_slider').slick('slickGoTo', 0);
+              $('.webtoon_slider').attr('data-value',ep_num);
+              $('.webtoon_slider .webtoon_img').eq(0).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_01.jpg');
+              $('.webtoon_slider .webtoon_img').eq(1).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_02.jpg');
+              $('.webtoon_slider .webtoon_img').eq(2).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_03.jpg');
           });
       };
-      // 웹툰 회차 셀렉트박스 클릭시 해당 이미지로 변경
-      // var selectType0 = $("#episode");
-
-      // selectChange(selectType0);
-
-      // function selectChange(type){
-      //     type.change(function(){
-      //         var ep_num = $(this).children("option:selected").val();
-      //         $(this).siblings("label").text(ep_num);
-
-      //         $('.webtoon_slider .webtoon_img').eq(0).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_01.jpg');
-      //         $('.webtoon_slider .webtoon_img').eq(1).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_02.jpg');
-      //         $('.webtoon_slider .webtoon_img').eq(2).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_03.jpg');
-      //     });
-      // };
       
       </script>
           		  <img src="/resource/assets/web/child/images/main/spen_guideText.png" alt="spen_guideText" onclick="popupInfo2('pop_spen');"/>
@@ -2650,7 +2642,7 @@ function fnLogOut(){
                             <li>
                               <a href="javascript:;" onclick="fnGoPage('G')">
                                 <div>성장관리</div>
-                                <p>성장을 칭찬합니다!</p>
+                                <p>얼마나 성장했나요?</p>
                               </a>
                             </li>
                             <li>
