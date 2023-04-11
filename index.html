@@ -37,7 +37,7 @@
             .tr_devide { background: rgb(121, 189, 40, .4); }
             .th_width100 { width:100px; }
             .th_width70 { width:70px; }
-            table tbody:nth-child(2n-1) { background: rgb(121, 189, 40, .8); color: #ffffff; }
+            /* table tbody:nth-child(2n-1) { background: rgb(121, 189, 40, .8); color: #ffffff; } */
         </style>
     </head>
     <body>
@@ -202,7 +202,7 @@
                   </tr>
 
                   <tr>
-                    <td>투여화인</td>
+                    <td rowspan="2">투여관리</td>
                     <td>투여확인(수정)</td>
                     <td></td>
                     <td>nurse/member/dose_pre.do</td>
@@ -213,7 +213,6 @@
                     <td>K</td>
                   </tr>
                   <tr>
-                    <td>투여계획</td>
                     <td>투여계획(수정)</td>
                     <td></td>
                     <td>nurse/member/scheduleManagement.do</td>
@@ -463,8 +462,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
                 <tbody>
                   <tr>
-                      <td rowspan="10">환아앱</td>
-                      <td rowspan="4">물품상담<br>교육/상담</td>
+                      <td rowspan="20">환아앱</td>
+                      <td rowspan="11" style="background: #7d35b1; color: #fff;">물품상담<br>교육/상담</td>
                       <td>캘린더</td>
                       <td>메인</td>
                       <td>이용안내</td>
@@ -503,9 +502,82 @@
                     <td></td>
                     <td></td>
                   </tr>
+                  <tr>
+                    <td rowspan="3">온라인문의</td>
+                    <td>목록</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/product/counseling_list.html" target="_blank">counseling_list.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td>상세</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/product/counseling_view.html" target="_blank">counseling_view.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td>신청</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/product/counseling_write.html" target="_blank">counseling_write.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3">물품요청</td>
+                    <td>목록</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/product/product_list.html" target="_blank">product_list.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td>요청</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/product/product_request.html" target="_blank">product_request.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td>상세</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/product/product_view.html" target="_blank">product_view.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td>FAQ</td>
+                    <td>FAQ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/product/product_faq.html" target="_blank">product_faq.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
 
                   <tr>
-                    <td rowspan="2">메인</td>
+                    <td rowspan="3" style="background: #eee;">메인</td>
                     <td>구버전</td>
                     <td></td>
                     <td></td>
@@ -515,18 +587,87 @@
                     <td>●</td>
                     <td>-</td>
                     <td>K</td>
-                </tr>
-                <tr>
-                  <td>신버전</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><a href="resource/assets/web/child/main.html" target="_blank">main.html</a></td>
-                  <td>●</td>
-                  <td>-</td>
-                  <td>K</td>
-              </tr>
+                  </tr>
+                  <tr>
+                    <td>신버전</td>
+                    <td></td>
+                    <td></td>
+                    <td>업데이트 팝업 - <b>.pop_update</b></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/main.html" target="_blank">main.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td>팝업</td>
+                    <td></td>
+                    <td></td>
+                    <td>공사중 팝업</td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/popup.html" target="_blank">popup.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3" style="background: #79bd28;">회원가입</td>
+                    <td>회원가입1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/member/join_step01.html" target="_blank">member/join_step01.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td>회원가입2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/member/join_step02.html" target="_blank">member/join_step02.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td>회원정보변경</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/member/modify_info.html" target="_blank">member/modify_info.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td style="background: #13bfd6;">투여관리</td>
+                    <td>투여방법</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/dose/dose_info.html" target="_blank">dose_info.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
+                  <tr>
+                    <td style="background: #1abf9d;">치료과정공유</td>
+                    <td>의사선생님과 함께보기</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="resource/assets/web/child/dose/dose_pre.html" target="_blank">dose_pre.html</a></td>
+                    <td>●</td>
+                    <td>-</td>
+                    <td>K</td>
+                  </tr>
               </tbody>
             </table>
         </div>
