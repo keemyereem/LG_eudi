@@ -171,15 +171,8 @@ if("" != ""){
                   </div>
                 </li>
                 <li>
-                  <div class="agree_chk">
-                    <div class="checkbox_row">
-            			    <input type="checkbox" id="agree_join01" class="chkAgree" name="chkag[]" value="1">
-            			    <label for="agree_join01">이용약관 동의(필수)</label>
-              			</div>
-                       <!-- <a href="javascript:;" class="ag_pop" onclick="popupOpen('pop_agree01');">팝업보기</a> -->
-                  </div>
+                  <p class="cont_tit">이용약관 동의(필수)</p>
                   <div class="cont_box">
-
                     <div class="pop_cont">
                       <div class="pop_inner">
                         <h3>제1장 총칙</h3>
@@ -248,6 +241,7 @@ if("" != ""){
                           <li><span>①</span>회원이 1년 이상 로그인을 하지 않은 경우 회원의 계정을 휴면상태로 전환하고, 해당 계정의 개인정보를 다른 회원의 개인정보와 분리하여 별도로 보관합니다.</li>
                           <li><span>②</span>휴면상태의 계정으로는 EuDi 회원 로그인 서비스 이용이 제한되고 회사는 휴면상태로 전환된 계정의 개인정보를 이용, 제공하지 않습니다.</li>
                           <li><span>③</span>회사는 처리예정일로부터 30일 이전에 해당 사실을 회원에게 사전 통지하고 휴면계정 전환 이후에 회원은 홈페이지에서 별도의 인증 절차를 통해 휴면을 해제할 수 있습니다.</li>
+                          <li><span>④</span>회사는 휴면계정 전환 이후 5년이 경과된 시점에 해당 계정의 개인정보를 파기, 삭제할 수 있습니다.</li>
                         </ul>              
                         <h3>제 3장 서비스 제공 및 이용</h3>
                         <h4>제7조 서비스 내용</h4>
@@ -345,96 +339,127 @@ if("" != ""){
           
                       </div>
                     </div>
-
+                  </div>
+                  <div class="agree_chk">
+                    <p>위와 같은 이용약관에 동의하십니까?</p>
+                    <div>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join01_01" class="chkAgree" name="chkAgree01" value="">
+                        <label for="agree_join01_01">동의함</label>
+                      </div>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join01_02" class="chkDisagree" name="chkAgree01" value="" >
+                        <label for="agree_join01_02">동의하지 않음</label>
+                      </div>
+                    </div>
                   </div>
                 </li>
                 <li>
-                  <div class="agree_chk">
-                    <div class="checkbox_row">
-            			    <input type="checkbox" id="agree_join02" class="chkAgree" name="chkag[]" value="2">
-            			    <label for="agree_join02">개인정보 수집 및 이용동의(필수)</label>
-              			</div>
-                     <!-- <a href="javascript:;" class="ag_pop" onclick="popupOpen('pop_agree02');">팝업보기</a> -->
-                  </div>
+                  <div class="cont_tit">개인정보 수집 및 이용동의(필수)</div>
                   <div class="cont_box">
                     <div class="pop_cont">
                       <div class="pop_inner">
                         <h3>개인정보 수집·이용 동의서</h3>
                         <p class="mt10">(주)LG화학 생명과학사업본부(이하 "회사"라 합니다)는 유트로핀® 유트로핀 플러스®  유트로핀펜®  유트로핀S펜® 제품을  처방받은 자녀 및 보호자를 위한 &lt;LG화학 EuDi APP&gt;에서의 서비스 제공을 위해 아래와 같이 이용자들의 개인정보의 수집·이용, 민감 정보의 수집·이용에 관한 내용을 관계 법령에 따라 고지하오니 동의하여 주시기 바랍니다.</p>
-                        <p class="mt10">회사는 이용자들의 개인정보를 처리함에 있어 개인정보가 분실,도난,누출,변조 및 훼손되지 않도록 다양한 기술적 보호 조치를 강구하고 있습니다. 기타 상세한 사항은 &lt;LG화학 EuDi APP&gt;내 게시된 "개인정보 처리방침"을 참조하시기 바랍니다.</p>
+                        <p class="mt10">(주)LG화학은 정보주체의 개인정보를 처리함에 있어 개인정보가 분실,도난,누출,변조 및 훼손되지 않도록 다양한 기술적 보호조치를 강구하고 있습니다. 기타 상세한 사항은 &lt;LG화학 EuDi APP&gt;내 게시된 "개인정보 처리방침"을 참조하시기 바랍니다.</p>
                         <h3 class="sub_tit mt10">개인정보 수집 및 이용 안내</h3>
+
                         <h4>(1) 개인정보 수집 및 이용 항목</h4>
-                        <p>기본 정보(자녀) : 성명, 성별, 생년월일 (필수항목)<br/>자택주소, 환아의 프로필 사진 (선택항목)</p>
-                        <p class="mt10">기본 정보(보호자) : 휴대폰 번호</p>
+                        <p><b>수집하는 개인정보</b></p>
+                        <ul class="mt10">
+                          <li><span>-</span><b>Eudi APP 가입 및 관리</b><br>ID/PW, 보호자명, 보호자전화번호, 환아명, 생년월일, 성별, 진단병원, 담당의사명, 최초처방일, 사진 </li>
+                          <li><span>-</span><b>물품 배송</b><br>보호자명, 배송지주소, 전화번호</li>
+                          <li><span>-</span><b>스마트기기 관리</b><br>보호자명, 배송지주소, 전화번호</li>
+                          <li><span>-</span><b>상담 서비스</b><br>보호자명, 보호자전화번호, 환아명, 생년월일, 성별, 진단병원, 담당의사명, 최초처방일, 사진, 배송지주소, 전화번호</li>
+                        </ul>
+                        <p class="mt10"><b>수집 및 이용 목적</b></p>
+                        <ul class="mt10">
+                          <li><span>-</span><b>Eudi APP 가입 및 관리</b><br>주사 투여관리를 위한 서비스 제공 (스켸줄 관리, 주사 상담관리 등) 표준 성장도표 곡선과의 비교를 위한 서비스 제공</li>
+                          <li><span>-</span><b>물품 배송</b><br>주사에 필요한 각종 부자재(주사기, 알코올솜 등) 발송 서비스</li>
+                          <li><span>-</span><b>스마트기기 관리</b><br>LG화학 대여품인 ‘스마트케이스’*의 등록 및 관리</li>
+                          <li><span>-</span><b>상담 서비스</b><br>업무활용 및 지원, 시스템 관리</li>
+                        </ul>
+                        <p class="mt10"><b>보유 및 이용기간</b></p>
+                        <p>- <span class="bold">어플리케이션 회원 가입 철회 시 및 탈퇴시</span></p>
 
-                        <h4>(2) 개인정보 수집 및 이용 목적 </h4>
-                        <p>1) 주사 투여관리를 위한 서비스 제공 (스켸줄 관리, 주사 상담관리 등)</p>
-                        <p>2) 표준 성장도표 곡선과의 비교를 위한 서비스 제공  </p>
-                        <p>3) 주사에 필요한 각종 부자재(주사기, 알코올솜 등) 발송 서비스</p>
-                        <p>4) 이상반응 등 제품의 안정성정보 관리 및 보고, 관련 법령의 준수</p>
-                        <p>5) LG화학 대여품인 ‘스마트케이스’*의 등록 및 관리<br/><em>(스마트 기기 : LG화학에서 제공하는 투여용량, 주사부위, 투여시간을 저장하고 &lt;LG화학 EuDi APP&gt;으로 전송할수 있는 기기)</em></p>
-                        <h4>(3) 개인정보 보유 및 이용기간 </h4>
-                        <p>회사는 아래의 경우까지 수집한 개인정보를 보유 및 이용합니다.</p>
-                        <span class="bold mt10">1) 어플리케이션 회원 가입 철회 시 및 탈퇴시</span><br />
-                        <span class="bold">2) 관리자에게 개인정보 파기 요청시</span>
-                        <p class="mt10">회원 가입 철회, 탈퇴, 개인정보 파기 요청이 있는 경우 회사는 수집한 개인정보를 지체없이 삭제합니다.</p>
-                        <h4>(4) 회사는 해당 업무 진행을 위해 아래와 같이 개인정보처리를 위탁합니다.</h4>
-                        <p>위탁받는자(수탁자) : 위탁하는 업무의 내용</p>
-                        <p class="mt10">LGCNS㈜ : 시스템 개발, 관리 및 유지보수</p>
-                        <p class="mt10">약물안전성관리업무 수탁기관 : 안전성 정보 보고 업무</p>
-                        <p class="mt10">㈜지오영 : 물품 배송</p>
-            
-                        <h4>(5) 이용자는 개인정보 수집 및 이용과 관련한 동의를 거부할 권리가 있으며, 동의 거부시 서비스 가입이 제한될 수 있습니다. </h4>
+                        <h4>(2) 정보주체는 개인정보 수집 및 이용과 관련한 동의를 거부할 권리가 있으며, 동의 거부시 서비스 가입이 제한될 수 있습니다. </h4>
 
-                        <h3>위치 데이터 및 앱의 위치 데이터 사용 및 처리</h3><br>
-                        <p>어플리케이션은 스마트케이스와 블루투스 연결을 위해 위치데이터를 사용합니다. </p><br>
-                        <p>이를 위해 위치정보 권한이 필요한것이지 위치데이터를 별도로 수집하거나 처리하지 않습니다. </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="agree_chk">
+                    <p>위와 같은 개인정보의 처리에 동의하십니까?</p>
+                    <p>정보주체가 만14세 미만의 아동일 경우 법정대리인께서도 동의해 주십시오</p>
+                    
+                    <div>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join02_01" class="chkAgree" name="chkAgree02" value="">
+                        <label for="agree_join02_01">동의함</label>
+                      </div>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join02_02" class="chkDisagree" name="chkAgree02" value="" >
+                        <label for="agree_join02_02">동의하지 않음</label>
+                      </div>
+                    </div>
+                    <div>
+                      <b>법정 대리인 동의</b>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join03_01" class="chkAgree" name="chkAgree03" value="">
+                        <label for="agree_join03_01">동의함</label>
+                      </div>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join03_02" class="chkDisagree" name="chkAgree03" value="" >
+                        <label for="agree_join03_02">동의하지 않음</label>
                       </div>
                     </div>
                   </div>
                 </li>
+
                 <li>
-                  <div class="agree_chk">
-                    <div class="checkbox_row">
-            			    <input type="checkbox" id="agree_join03" class="chkAgree" name="chkag[]" value="3">
-            			    <label for="agree_join03">법정 대리인 동의(필수)</label>
-              			</div>
-                     <!-- <a href="javascript:;" class="ag_pop" onclick="popupOpen('pop_agree03');">팝업보기</a> -->
-                  </div>
-                  <div class="cont_box">
-                    <div class="pop_cont">
-                      <div class="pop_inner">
-                        <p>고객이 만14세 미만 아동일 경우 법정대리인 동의가 필요합니다.</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="agree_chk">
-                    <div class="checkbox_row">
-            			    <input type="checkbox" id="agree_join04" class="chkAgree" name="chkag[]" value="4">
-            			    <label for="agree_join04">민감정보 수집 및 이용동의(필수)</label>
-              			</div>
-                     <!-- <a href="javascript:;" class="ag_pop" onclick="popupOpen('pop_agree03');">팝업보기</a> -->
-                  </div>
                   <div class="cont_box">
                     <div class="pop_cont">
                       <div class="pop_inner">
                         <h3>민감정보의 수집 및 이용 안내</h3>
                         <h4>(1) 민감정보 수집 및 이용 항목</h4>
-                        <p>유트로핀® 유트로핀 플러스®  유트로핀펜®  유트로핀S펜® 제품을 처방 받은 아이의 성명 제품을 처방받은  <span class="bold">자녀의 키, 몸무게, 제품, 투약정보, 진단명 (선택항목)</span></p>
-                        <p>유트로핀® 유트로핀 플러스®  유트로핀펜®  유트로핀S펜®  제품을 처방한 <span class="bold">병원, 담당 의사 (필수항목), 투약 정보, 최초 처방일 (선택항목)</span></p>
+                        <p>유트로핀® 유트로핀 플러스®  유트로핀펜®  유트로핀S펜® 제품을 처방 받은 아이의 성명 제품을 처방 받은 <span class="bold">자녀의 키, 몸무게, 제품, 투약정보, 진단명</span></p>
+                        <p>유트로핀® 유트로핀 플러스®  유트로핀펜®  유트로핀S펜®  제품을 처방한 <span class="bold">병원, 담당 의사, 투약 정보, 최초 처방일 </span></p>
                         <h4>(2) 민감정보 수집 및 이용 목적</h4>
-                        <p>1) 주사 투여관리를 위한 서비스 제공 (스켸줄 관리, 주사 상담관리 등)</p>
-                        <p>2) 표준 성장도표 곡선과의 비교를 위한 서비스 제공</p>
+                        <p>1) 주사 투여관리를 위한 서비스 제공 (스케줄 관리, 주사 상담관리 등)</p>
+                        <p>2) 표준 성장도표 곡선과의 비교를 위한 서비스 제공 </p>
                         <p>3) 주사에 필요한 각종 부자재(주사기, 알코올솜 등) 발송 서비스</p>
                         <h4>(3) 민감정보 보유 및 이용기간</h4>
                         <p>회사는 아래의 경우까지 수집한 민감정보를 보유 및 이용합니다.</p>
                         <span class="bold mt20">1) 어플리케이션 회원 가입 철회 시 및 탈퇴시</span><br />
                         <span class="bold">2) 관리자에게 개인정보 파기 요청시</span>
-                        <p class="mt20">회원 가입 철회, 탈퇴, 민감정보 파기 요청이 있는 경우 회사는 수집한 민감정보를 지체없이 삭제합니다.</p>
-                        <h4>(4) 이용자는 민감정보 수집 및 이용과 관련한 동의를 거부할 권리가 있으며, 동의 거부시 서비스 가입이 제한될 수 있습니다.</h4>
+                        <p class="mt20">회원 가입 철회, 탈퇴, 민감정보 파기 요청이 있는 경우 (주)LG화학은 수집한 민감정보를 지체없이 삭제합니다.</p>
+                        <h4>(4) 정보주체는 민감정보 수집 및 이용과 관련한 동의를 거부할 권리가 있으며, 동의 거부시 서비스 가입이 제한될 수 있습니다.</h4>
 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="agree_chk">
+                    <p>위와 같은 민감정보의 처리에 동의하십니까?</p>
+                    <p>정보주체가 만14세 미만의 아동일 경우 법정대리인께서도 동의해 주십시오</p>
+                    
+                    <div>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join04_01" class="chkAgree" name="chkAgree04" value="">
+                        <label for="agree_join04_01">동의함</label>
+                      </div>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join04_02" class="chkDisagree" name="chkAgree04" value="" >
+                        <label for="agree_join04_02">동의하지 않음</label>
+                      </div>
+                    </div>
+                    <div>
+                      <b>법정 대리인 동의</b>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join05_01" class="chkAgree" name="chkAgree05" value="">
+                        <label for="agree_join05_01">동의함</label>
+                      </div>
+                      <div class="radio_row">
+                        <input type="radio" id="agree_join05_02" class="chkDisagree" name="chkAgree05" value="" >
+                        <label for="agree_join05_02">동의하지 않음</label>
                       </div>
                     </div>
                   </div>
@@ -724,7 +749,7 @@ if("" != ""){
       							  <label for="radio01">동의함</label>
       							</div>
                     <div class="radio_row">
-      								<input type="radio" id="radio02" name="chk01" value="" disabled>
+      								<input type="radio" id="radio02" class="chkDisagree" name="chk01" value="" disabled>
       							  <label for="radio02">동의하지 않음</label>
       							</div>
                   </div>
@@ -735,7 +760,7 @@ if("" != ""){
       							  <label for="radio03">동의함</label>
       							</div>
                     <div class="radio_row">
-      								<input type="radio" id="radio04" name="chk02" value="" disabled>
+      								<input type="radio" id="radio04" class="chkDisagree" name="chk02" value="" disabled>
       							  <label for="radio04">동의하지 않음</label>
       							</div>
                   </div>
@@ -768,7 +793,7 @@ if("" != ""){
       							  <label for="radio05">동의함</label>
       							</div>
                     <div class="radio_row">
-      								<input type="radio" id="radio06" name="chk03" value="" disabled>
+      								<input type="radio" id="radio06" class="chkDisagree" name="chk03" value="" disabled>
       							  <label for="radio06">동의하지 않음</label>
       							</div>
                   </div>
@@ -779,7 +804,7 @@ if("" != ""){
       							  <label for="radio07">동의함</label>
       							</div>
                     <div class="radio_row">
-      								<input type="radio" id="radio08" name="chk04" value="" disabled>
+      								<input type="radio" id="radio08" class="chkDisagree" name="chk04" value="" disabled>
       							  <label for="radio08">동의하지 않음</label>
       							</div>
        </div>

@@ -464,7 +464,7 @@ ExtraBold - 'NanumSquareEB'
 /////////////////////////////////////////////////////////////////////////*/
 .con_login { min-height: 100vh; padding: 0 15px 25px; position: relative; }
 .con_login .logo { padding: 100px 0 25px; text-align: center; }
-.con_login .logo img { width: 202px; }
+.con_login .logo img { width: 206px; }
 .con_login .authentic_cont { padding: 0 20px; }
 .con_login .authentic_cont > p { font-size: 13px; text-align: center; color: #727272; }
 .con_login .authentic_cont > p > b { font-family: 'NanumSquareEB'; color: #79bd28; display: block; margin-bottom: 9px; }

@@ -55,7 +55,6 @@
 .con_main .main_top .btn_mychar {/* position: absolute;bottom: 77px;right: 15px; */flex-shrink: 0;}
 .con_main .main_top .btn_mychar .btn_my_arrow {background: url('../images/main/icon_arrow00.png') no-repeat 100% 50%;background-size: 5.5px 9px;text-align: right;font-size: 10px;color: rgba(255, 255, 255,0.8);line-height: 1.2;padding: 0 11px 0 0;}
 /* .con_main .main_info {margin-top: -66px;} */
-.con_main .main_top .btn_webtoon {position: absolute; width: 115px; height: 27.5px; bottom: 10px; right: 10px;z-index: 1;}
 /* .con_main .main_top .btn_webtoon img {width: 73px;height: 70px;}  */
 .con_main .main_info {padding: 0 15px;}
 .con_main .main_info .inner {padding: 0;background: #fff;border-radius: 20px;background: #fff; box-shadow: .5px 1px 10px 0px rgba(0, 0, 0, 0.2);}
@@ -199,8 +198,15 @@
 .con_join .agree_box .agree_list>ul>li.agreeAll {background: #fff;}
 .con_join .agree_box .agree_list>ul>li.agreeAll .checkbox_row input[type="checkbox"] + label {color: #333;}
 .con_join .agree_box .agree_list>ul>li .checkbox_row input[type="checkbox"] + label::before {top: -3px;}
+.con_join .agree_box .agree_list>ul>li .cont_tit {font-family: 'NanumSquareB';font-size: 12px;}
 .con_join .agree_box .agree_list>ul>li .cont_box {height: 150px; margin-top: 10px; line-height:1.4; border:1px solid #e9e9e9; background: #fff; border-radius:5px; font-size: 12px; overflow-y: scroll;}
+.con_join .agree_box .agree_list>ul>li .cont_box b {font-family: 'NanumSquareB';}
 /* .con_join .agree_box .agree_list>ul>li .cont_box h3 {padding: 10px 0;margin-bottom: 10px;font-family: 'NanumSquareB';font-size: 13px;} */
+.con_join .agree_box .agree_list>ul>li .agree_chk>p {font-size: 12px;color: #333;margin: 10px 0;line-height: 1.25;} 
+.con_join .agree_box .agree_list>ul>li .agree_chk>div {text-align: right;}
+.con_join .agree_box .agree_list>ul>li .agree_chk>div+div {margin-top: 10px;}
+.con_join .agree_box .agree_list>ul>li .agree_chk>div>b {font-family: 'NanumSquareB';font-size: 12px;margin-top: 5px;}
+.con_join .agree_box .agree_list>ul>li .agree_chk>div .radio_row input[type="radio"] + label {margin-right: 0;margin-left: 10px;}
 .con_join .checkbox_row input[type="checkbox"] + label {padding: 0 10px 0 25px;font-family: 'NotoSansR';font-size: 12px;color: #727272;}
 .con_join .checkbox_row input[type="checkbox"] + label:before {width:18px; height:18px;}
 .con_join .agree_box .agree_list>ul>li .ag_pop {display: block;position: absolute;right: 10px;top: 10px;width: 20px;height: 20px;font-size: 0;background-image: url(../images/common/icon_btn02.png);background-size: 20px 20px;background-position: 50% 50%;background-repeat: no-repeat;}
@@ -258,6 +264,9 @@
 .pop_wrap.pop_agree02 .pop_tb table tbody td.tit p {color: #333;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td p {font-size: 12px;text-align: center;color: #727272;line-height: 1.5;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td p.bold {font-family: 'NanumSquareEB';}
+.pop_wrap.pop_agree02 .pop_tb table tbody td>ul>li {position: relative;margin-top: 8px;padding-left: 13px;font-size: 12px;color: #727272;line-height: 1.2;}
+.pop_wrap.pop_agree02 .pop_tb table tbody td>ul>li:first-child {margin-top: 0;}
+.pop_wrap.pop_agree02 .pop_tb table tbody td>ul>li>span {display: block;position: absolute;top: 0;left: 0;}
 .pop_wrap.pop_agree02 .agree_area {margin-top: 10px;border-top: 1px solid #333;}
 .pop_wrap.pop_agree02 .agree_area>p {padding: 20px 15px;font-size: 13px;line-height: 1.3}
 .pop_wrap.pop_agree02 .agree_area>p>span {display: inline-block;width: 11px;}
@@ -267,6 +276,12 @@
 .pop_wrap.pop_agree02 .radio_row  input[type="radio"] + label {font-size: 12px;}
 .pop_wrap.pop_agree02 .radio_row input[type="radio"] + label:before {background: url(../images/common/bg_check.png) 50% 50% no-repeat;background-size: 100%;}
 .pop_wrap.pop_agree02 .radio_row input[type="radio"]:checked + label:before {background: url(../images/common/bg_check_on.png) 50% 50% no-repeat;background-size: 100%;}
+
+.pop_wrap.pop_agree02 .pop_cont02,
+.pop_wrap.pop_agree02 .pop_cont03 {display: none;} 
+.pop_wrap.pop_agree02 .policy_version {display: flex;justify-content: space-between;padding: 0 20px;} 
+.pop_wrap.pop_agree02 .policy_version .select_row {width: calc(100% - 65px);}
+.pop_wrap.pop_agree02 .policy_version>button {width: 60px;height: 40px;background: #727272;border-radius: 5px;font-size: 13px;color: #fff;}
 
 .con_join .agree_box .cont_box .pop_top {position: fixed;z-index: 20;}
 /* .con_join .agree_box .cont_box .pop_cont {padding-top: 50px;} */
@@ -1300,13 +1315,13 @@
 .pop_webtoon .webtoon_cont .slick-dots li button {width: 16px;height: 16px;}
 .pop_webtoon .webtoon_cont .slick-dots li button:before {border: 4px solid #cfcfcf;}
 .pop_webtoon .webtoon_cont .slick-dots li.slick-active button:before {border: 4px solid #79bd28;}
-.pop_webtoon .webtoon_cont .webtoon_slider {display: none; width: calc(100% + 30px); margin-left: -15px; }
-.pop_webtoon .webtoon_cont .webtoon_slider01 {display: block; }
+.pop_webtoon .webtoon_cont .webtoon_slider {/* display: none; */ width: calc(100% + 30px); margin-left: -15px; }
+/* .pop_webtoon .webtoon_cont .webtoon_slider01 {display: block; } */
 .pop_webtoon .webtoon_cont .webtoon_slider .webtoon_img {width: 100vw; padding: 0 4px; }
 
-.con_main .main_top .btn_webtoon { display: flex; align-items: center; white-space: nowrap; justify-content: center; font-size: 10px; padding:0 26.5px 0 12px; background: rgba(0, 0, 0, .3) url(../images/main/icon_arrow00.png) calc(100% - 10px) center no-repeat; background-size: 3.5px 5.5px; border-radius: 13.75px; color: #ffffff; font-family: 'NanumSquareL'; }
+.con_main .main_top .btn_webtoon { display: flex; align-items: center; white-space: nowrap; justify-content: center; font-size: 12px; padding: 0 26.5px 0 12.5px; background: rgba(0, 0, 0, .3) url(../images/main/icon_arrow00.png) calc(100% - 12.5px) center no-repeat; background-size: 4.04px 6.3px; border-radius: 16px; color: #ffffff; font-family: 'NanumSquareL'; position: absolute; height: 32px; bottom: 10px; right: 10px;z-index: 1; }
 .con_main .main_top .btn_webtoon b { font-family: 'NanumSquareB'; margin-right: 2px; }
-.con_main .main_top .btn_webtoon img { width: 19.5px; margin-right: 5.5px; }
+.con_main .main_top .btn_webtoon img { width: 22px; margin-right: 7.5px; }
 
 /* 업데이트 공지 팝업*/
 .pop_update .pop_con .noti { display: flex; margin-top: 20px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e8e8e8; }

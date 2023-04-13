@@ -52,11 +52,11 @@ var agreeChk = {
         $('.chkAgree').prop('checked', false);
       }
     });
-    $('.chkAgree').click(function(){
-      if($("input[name='chkag[]']:checked").length == 3){
-        $('.chkAgreeAll').prop('checked', true);
-      }else{
+    $('.chkDisagree').click(function(){
+      if($(".chkDisagree").is(":checked")){
         $('.chkAgreeAll').prop('checked', false);
+      }else{
+      
       }
     });
   }
