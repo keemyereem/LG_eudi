@@ -331,7 +331,7 @@ if("" != ""){
                   </tr>
                 </tbody>
               </table>
-   
+  
             </div>
 
             <h3 class="info02">아이 정보</h3>
@@ -999,11 +999,11 @@ if("" != ""){
             
             
           </div>
-	           <div class="btn_box btn_box02 mt40">
-	                 <div class="btn_add"><a href="javascript:;" onclick="fnAddChild()"><span>+</span> 아이 추가 하기</a></div>
-	            </div>
+              <div class="btn_box btn_box02 mt40">
+                <div class="btn_add"><a href="javascript:;" onclick="fnAddChild()"><span>+</span> 아이 추가 하기</a></div>
+              </div>
 
-              <div class="auto_login">
+              <!-- <div class="auto_login">
                 <div class="checkbox_row">
                   <input type="checkbox" id="saveId">
                   <label for="saveId">아이디 저장 및 자동로그인 사용</label>
@@ -1011,12 +1011,20 @@ if("" != ""){
                 <p class="info">
                   자동로그인을 선택하시면 승인 알림에서 교육신청 페이지로<br> 바로 이동 가능합니다.
                 </p>
+              </div> -->
+              <div class="mt20">
+                <div class="checkbox_row">
+                  <input type="checkbox" id="idSaveCheck">
+                  <label for="idSaveCheck">아이디 저장 및 자동로그인 사용</label>
+                </div>
+                <div class="auto mt20">
+                  <p class="info">자동로그인을 선택하시면 승인 알림에서<br>교육신청 페이지로 바로 이동 가능합니다 </p>
+                </div>
               </div>
-          
-             <div class="btn_box btn_box02 mt50">
-	              <div class="btn_gray"><a href="/child/join_step01.do">취소</a></div>
-	              <div class="btn_green"><a href="javascript:;" onclick="fnJoinChk()">회원가입</a></div>
-          	  </div>
+              <div class="btn_box btn_box02 mt50">
+                <div class="btn_gray"><a href="/child/join_step01.do">취소</a></div>
+                <div class="btn_green"><a href="javascript:;" onclick="fnJoinChk()">회원가입</a></div>
+              </div>
             
 
               
@@ -1385,107 +1393,906 @@ if("" != ""){
 		  
 
 /* 퍼블추가 2023.03.10 */
+$(function(){
+       		$('[name=id]').change(function(){
+       			$('[name=IDCHECK]').val('N');
+       		})
+       		
+       		
+       		//연락처 중복체크 추가
+       		$('[name=mCpnumber2]').change(function(){
+       			$('[name=CPCHECK]').val('N');
+       		})
+       		
+       		$('[name=mCpnumber3]').change(function(){
+       			$('[name=CPCHECK]').val('N');
+       		})
+       		
+       		
+       	});
+       	
+       	
+       	//회원 가입 유효성 체크
+		function fnJoinChk(){
+			var frm = 'frmJoin';
+			
+		
+			
+			if($("#mId").val().search(/\s/) != -1) {
+				alert("아이디 공백을 제거해주세요");
+				return;
+			} 
+			
+		
+			if($("#password").val().search(/\s/) != -1 || $("#password_confirm").val().search(/\s/) != -1) {
+				alert("비밀번호 공백을 제거해주세요");
+				return;
+			}
+			
+		
+				if(checkValidation(frm)){
+					
+					if($('[name=IDCHECK]').val()!="Y"){
+						alert('아이디 중복체크를 해주세요.');
+						return;
+					}
 
-        // 우편번호 찾기 찾기 화면을 넣을 element
-        //var element_wrap = document.getElementById('addr_wrap');
-        var element_layer = document.getElementById('layer');
-    
-    /*     function foldDaumPostcode() {
+					if($('[name=CPCHECK]').val()!="Y"){
+						alert('휴대폰번호 중복확인을 해주세요.');
+						return;
+					}
+					
+					
+		            //아이명 공백 가입 추가 2020-01-30
+					var str = $("#cName").val();
+					var str1 = $("#cName_01").val();
+					var str2 = $("#cName_02").val();
+					var blank_pattern = /^\s+|\s+$/g;
+					
+		
+				
+					if(str.replace(blank_pattern,'') == "" ){
+					    alert("아이명을 입력해주세요");
+					    $("#cName").focus();
+					    return false;
+					}
+					
+					if($("#child_02").css("display") != "none"){
+						if(str1.replace(blank_pattern,'') == "" ){
+						    alert("아이명을 입력해주세요");
+						    $("#cName_01").focus();
+						    return false;
+						}
+					}
+					
+					if($("#child_03").css("display") != "none"){
+						if(str2.replace(blank_pattern,'') == "" ){
+						    alert("아이명을 입력해주세요");
+						    $("#cName_02").focus();
+						    return false;
+						}
+					}
+					
+					
+					$("#cBirth").val($("#sel01").val()+"-"+$("#sel02").val()+"-"+$("#sel03").val());
+					$("#cBirth_01").val($("#sel01_01").val()+"-"+$("#sel02_01").val()+"-"+$("#sel03_01").val());
+					$("#cBirth_02").val($("#sel01_02").val()+"-"+$("#sel02_02").val()+"-"+$("#sel03_02").val());
+					
+					$("#cInitialPrescription").val($("#sel04").val()+"-"+$("#sel05").val()+"-"+$("#sel06").val());
+					$("#cInitialPrescription_01").val($("#sel04_01").val()+"-"+$("#sel05_01").val()+"-"+$("#sel06_01").val());
+					$("#cInitialPrescription_02").val($("#sel04_02").val()+"-"+$("#sel05_02").val()+"-"+$("#sel06_02").val());
+
+					//푸쉬정보 업데이트
+					eudiApiCall('getUuid?succUuid');
+					
+				/* 	var formData = $("#"+frm).serialize();
+					$.ajax({
+						type : "POST",
+						url : $("#"+frm).attr("action"),
+						cache : false,
+						data : formData,
+						success : function(data, status){
+							var result = data.result;
+							if(result == 5){//아이디 중복
+								 alert("중복된 아이디가 있습니다,다시 시도해주세요");
+							}
+							else  if(result == 1){//가입성공
+								 window.location.href="/child/join_end.do";
+				            } else {
+				            	 alert("시스템 오류 입니다,다시 시도해주세요");
+				            }
+						},
+						error : function(data,status){
+							alert("시스템 오류 입니다,다시 시도해주세요");
+						}
+					});  */
+					document.frmJoin.submit();
+				}
+				return false;
+		}
+		
+	 	//아이디 중복 확인
+		function chkId(){
+
+			if($("#mId").val().trim() == ""){
+				alert("아이디를 입력해주세요");
+				$("#mId").focus();
+				return;
+			}
+			
+			
+			if($("#mId").val().search(/\s/) != -1) {
+				alert("공백을 제거해주세요");
+				return;
+			} 
+				
+			
+			if($("#mId").val().length > 13 || $("#mId").val().length < 4){
+				alert("아이디를 4자리 이상 13자리 이하로 입력해주세요.");
+				$("#mId").focus();
+				return;
+			}
+
+			var data = {"mId": $("#mId").val(),"chkMode":"J"};
+		    var actionurl = "/child/idChk.do";
+ 
+			 $.ajax({
+		            async: false,
+		            type: "POST",
+		            url : actionurl,
+		            cache : false,
+		            data : data,
+		            dataType : "json",
+		            success: function(obj){
+		            
+		            	var result = obj.result;
+			             if(result > 0){//아이디 존재
+			            	alert("사용할 수 없는 아이디입니다");
+			                return;
+			             } else {
+			                $('[name=IDCHECK]').val('Y');
+			            	alert("사용할 수 있는 아이디입니다");
+			                return;
+			             }
+		          
+		            },
+		            error: function(xhr, option, error){
+		                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		            }
+		        });
+		        
+		}
+	 	
+	 	
+	 	
+		//휴대폰번호 중복 확인
+		function chkCp(){
+
+			if($("#mCpnumber2").val().trim() == ""){
+				alert("휴대폰번호를 입력해주세요");
+				$("#mCpnumber2").focus();
+				return;
+			}
+			
+			
+			if($("#mCpnumber3").val().trim() == ""){
+				alert("휴대폰번호를 입력해주세요");
+				$("#mCpnumber3").focus();
+				return;
+			}
+			
+
+			var data = {"mCpnumber1": $("#mCpnumber1").val(),"mCpnumber2": $("#mCpnumber2").val(),"mCpnumber3": $("#mCpnumber3").val()};
+		    var actionurl = "/child/cpChk.do";
+ 
+			 $.ajax({
+		            async: false,
+		            type: "POST",
+		            url : actionurl,
+		            cache : false,
+		            data : data,
+		            dataType : "json",
+		            success: function(obj){
+		            
+		            	var result = obj.result;
+			             if(result > 0){//아이디 존재
+			            	alert("이미 가입된 휴대폰 번호입니다 다른 번호로 가입해 주세요");
+			                return;
+			             } else {
+			            	    var result = confirm("가입 가능한 휴대폰 번호입니다 이 번호로 진행하시겠습니까?");
+					   			  if(result){
+					   			   $('[name=CPCHECK]').val('Y');
+					   			  } else {
+					   				$("#mCpnumber2").val("");
+					   				$("#mCpnumber3").val("");
+					   				$('[name=CPCHECK]').val('N');
+					   				return;
+					             }
+			             }
+		          
+		            },
+		            error: function(xhr, option, error){
+		                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		            }
+		        });
+		        
+		}
+	 	
+		
+		
+		$("#mCpnumber2").keyup(function(event){
+		    var inputVal = $(this).val();
+		    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+
+		});
+
+
+		
+		$("#mCpnumber3").keyup(function(event){
+		    var inputVal = $(this).val();
+		    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+
+		});
+
+
+		/*   //파일 확장자,용량 체크
+		  $("input[id*=add_file").change(function(){
+		      if($(this).val() != ""){
+		          // 확장자 체크
+		              var ext = $(this).val().split(".").pop().toLowerCase();
+
+		              if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
+		                  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file").val("");
+		                  return;
+		              }
+		              
+		              // 용량 체크
+		              var fileSize = this.files[0].size;
+		              var maxSize =  5 * 1024 * 1024;
+		       
+		              if(fileSize > maxSize){
+		            	  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file").val("");
+		                  return;
+		              }
+		              
+		           
+		      }
+		  }); */
+		  
+
+		  //파일 확장자,용량 체크
+		  $("input[id*=add_file_name2").change(function(){
+		      if($(this).val() != ""){
+		          // 확장자 체크
+		              var ext = $(this).val().split(".").pop().toLowerCase();
+
+		              if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
+		                  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file_name2").val("");
+		                  return;
+		              }
+		              
+		              // 용량 체크
+		              var fileSize = this.files[0].size;
+		              var maxSize =  5 * 1024 * 1024;
+		       
+		              if(fileSize > maxSize){
+		            	  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file_name2").val("");
+		                  return;
+		              }
+		              
+		           
+		      }
+		  });
+		  
+		  //파일 확장자,용량 체크
+		  $("input[id*=add_file_name3").change(function(){
+		      if($(this).val() != ""){
+		          // 확장자 체크
+		              var ext = $(this).val().split(".").pop().toLowerCase();
+
+		              if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
+		                  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file_name3").val("");
+		                  return;
+		              }
+		              
+		              // 용량 체크
+		              var fileSize = this.files[0].size;
+		              var maxSize =  5 * 1024 * 1024;
+		       
+		              if(fileSize > maxSize){
+		            	  alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+		                  $("#add_file_name3").val("");
+		                  return;
+		              }
+		              
+		           
+		      }
+		  });
+		  
+
+	      function eudiApiCall(api)
+	      {
+	          var iframe = document.createElement('IFRAME');
+	          iframe.setAttribute('src', 'eudi://' + api);
+	          iframe.setAttribute('frameborder', '0');
+	          iframe.style.width='1px';
+	          iframe.style.height='1px';
+	          document.body.appendChild(iframe);
+	          document.body.removeChild(iframe);
+	          iframe = null;
+	      }
+
+	      function succUuid(uuid)
+	      {
+	    	   actionurl = "/child/updatePushInfo.do";
+	 		   var chkData = { "puDeviceId": uuid ,"mId":$("#mId").val()};
+	 		   $.ajax({
+	 	            async: false,
+	 	            type: "POST",
+	 	            data:chkData,
+	 	            url : actionurl,
+	 	            dataType : "json",
+	 	            success: function(obj){
+	 	              // alert(obj.result);
+	 	            },
+	 	            error: function(xhr, option, error){
+	 	                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+	 	            }
+	 	        }) ;
+	      }
+		  
+		  
+
+/* 퍼블추가 2023.03.10 */
+var element_layer = document.getElementById('layer');
+
+
+function closeDaumPostcode() {
+    // iframe을 넣은 element를 안보이게 한다.
+    element_layer.style.display = 'none';
+}
+
+
+
+function sample2_execDaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+
+            //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+
+            // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+            if(data.userSelectedType === 'R'){
+                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                // 건물명이 있고, 공동주택일 경우 추가한다.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+                // 조합된 참고항목을 해당 필드에 넣는다.
+                //document.getElementById("pAddr2").value = extraAddr;
+                addr = addr + extraAddr;
+
+            } else {
+                document.getElementById("mAddr2").value = '';
+            }
+
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('mPost').value = data.zonecode;
+            document.getElementById("mAddr1").value = addr;
+            // 커서를 상세주소 필드로 이동한다.
+            document.getElementById("mAddr2").focus();
+        
+
             // iframe을 넣은 element를 안보이게 한다.
-            element_wrap.style.display = 'none';
-        }
-         */
-        function closeDaumPostcode() {
-            // iframe을 넣은 element를 안보이게 한다.
+            // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
             element_layer.style.display = 'none';
-        }
 
-        function sample2_execDaumPostcode() {
-            new daum.Postcode({
-                oncomplete: function(data) {
-                    // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-    
-                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                    var addr = ''; // 주소 변수
-                    var extraAddr = ''; // 참고항목 변수
-    
-                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                        addr = data.roadAddress;
-                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                        addr = data.jibunAddress;
-                    }
-    
-                    // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                    if(data.userSelectedType === 'R'){
-                        // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                        // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                            extraAddr += data.bname;
-                        }
-                        // 건물명이 있고, 공동주택일 경우 추가한다.
-                        if(data.buildingName !== '' && data.apartment === 'Y'){
-                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                        }
-                        // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                        if(extraAddr !== ''){
-                            extraAddr = ' (' + extraAddr + ')';
-                        }
-                        // 조합된 참고항목을 해당 필드에 넣는다.
-                        document.getElementById("pAddr2").value = extraAddr;
-    
-                    } else {
-                        document.getElementById("pAddr2").value = '';
-                    }
-    
-                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                    document.getElementById('pPost').value = data.zonecode;
-                    document.getElementById("pAddr1").value = addr;
-                    // 커서를 상세주소 필드로 이동한다.
-                    document.getElementById("pAddr2").focus();
-                    $("#addr_box01").removeClass("blind");
-                    $("#addr_box02").addClass("blind");
-    
-                    // iframe을 넣은 element를 안보이게 한다.
-                    // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
-                    element_layer.style.display = 'none';
-    
-    
-                },
-                width : '100%',
-                height : '100%',
-                maxSuggestItems : 5
-            }).embed(element_layer);
-    
-            // iframe을 넣은 element를 보이게 한다.
-            element_layer.style.display = 'block';
-    
-            // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
-            initLayerPosition();
-        }
-    
-    
-        function initLayerPosition(){
-            var width = 300; //우편번호서비스가 들어갈 element의 width
-            var height = 400; //우편번호서비스가 들어갈 element의 height
-            var borderWidth = 5; //샘플에서 사용하는 border의 두께
-    
-            // 위에서 선언한 값들을 실제 element에 넣는다.
-            element_layer.style.width = width + 'px';
-            element_layer.style.height = height + 'px';
-            element_layer.style.border = borderWidth + 'px solid';
-            // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
-            element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
-            element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
-        }
-    
-    
-        function maxLengthCheck(object){
-        if(object.value.length > object.maxLength) {
-          object.value = object.value.slice(0, object.maxLength);
-        }
+
+        },
+        width : '100%',
+        height : '100%',
+        maxSuggestItems : 5
+    }).embed(element_layer);
+
+    // iframe을 넣은 element를 보이게 한다.
+    element_layer.style.display = 'block';
+
+    // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+    initLayerPosition();
+}
+
+
+function initLayerPosition(){
+    var width = 300; //우편번호서비스가 들어갈 element의 width
+    var height = 400; //우편번호서비스가 들어갈 element의 height
+    var borderWidth = 5; //샘플에서 사용하는 border의 두께
+
+    // 위에서 선언한 값들을 실제 element에 넣는다.
+    element_layer.style.width = width + 'px';
+    element_layer.style.height = height + 'px';
+    element_layer.style.border = borderWidth + 'px solid';
+    // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+    element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2) + 'px';  /* 위치값 수정 2023.04.24 */
+    element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2) + 'px';  /* 위치값 수정 2023.04.24 */
+}
+
+$("#mId").on("propertychange change keyup paste input", function() {
+  $('[name=IDCHECK]').val('N');
+});
+
+$("#MCpNumber2").on("propertychange change keyup paste input", function() {
+  $('[name=CPCHECK]').val('N');
+});
+
+$("#MCpNumber3").on("propertychange change keyup paste input", function() {
+  $('[name=CPCHECK]').val('N');
+});
+
+
+$('[name=MCpNumber1]').change(function(){
+  $('[name=CPCHECK]').val('N');
+})
+
+$('[name=sel01]').change(function(){
+ let selectMonth = $("#sel02_txt").text();
+ $("select[name='sel02'] option").remove();    
+ $("select[name='sel03'] option").remove();    
+ 
+ if(Number(this.value) < Number("2023")){
+   $('#sel02').append('<option value="">월</option>');
+   for(i=1;i<13;i++){
+     var month;
+     if(i < 10){
+       month = "0"+i;
+     } else {
+       month = i;
+     }
+     $('#sel02').append('<option value="'+month+'">'+month+'</option>');
+   }
+   $('#sel03').append('<option value="">일</option>');
+   for(i=1;i<=Number(fnLeapYear($("#sel01").val(),selectMonth));i++){
+     var day;
+     if(i < 10){
+       day = "0"+i;
+     } else {
+       day = i;
+     }
+     $('#sel03').append('<option value="'+day+'">'+day+'</option>');
+   }
+ } else {
+   $("#sel02_txt").text("").text("04");
+   $('#sel02').append('<option value="">월</option>');
+   for(i=1;i<=Number("04");i++){
+     var month;
+     if(i < 10){
+       month = "0"+i;
+     } else {
+       month = i;
+     }
+     $('#sel02').append('<option value="'+month+'">'+month+'</option>');
+   }
+   $("#sel03_txt").text("").text("24");
+   $('#sel03').append('<option value="">일</option>');
+   for(i=1;i<=Number("24");i++){
+     var day;
+     if(i < 10){
+       day = "0"+i;
+     } else {
+       day = i;
+     }
+     $('#sel03').append('<option value="'+day+'">'+day+'</option>');
+   }
+ }
+ 
+ 
+})
+
+
+
+ $('[name=sel01_01]').change(function(){
+ let selectMonth_01 = $("#sel02_01_txt").text();
+ $("select[name='sel02_01'] option").remove();    
+ $("select[name='sel03_01'] option").remove();    
+ 
+ if(Number(this.value) < Number("2023")){
+   $('#sel02_01').append('<option value="">월</option>');
+   for(i=1;i<13;i++){
+     var month;
+     if(i < 10){
+       month = "0"+i;
+     } else {
+       month = i;
+     }
+     $('#sel02_01').append('<option value="'+month+'">'+month+'</option>');
+   }
+  
+   $('#sel03_01').append('<option value="">일</option>');
+   for(i=1;i<=Number(fnLeapYear($("#sel01_01").val(),selectMonth_01));i++){
+     var day;
+     if(i < 10){
+       day = "0"+i;
+     } else {
+       day = i;
+     }
+     $('#sel03_01').append('<option value="'+day+'">'+day+'</option>');
+   }
+ } else {
+   $("#sel02_01_txt").text("").text("04");
+   $('#sel02_01').append('<option value="">월</option>');
+   for(i=1;i<=Number("04");i++){
+     var month;
+     if(i < 10){
+       month = "0"+i;
+     } else {
+       month = i;
+     }
+     $('#sel02_01').append('<option value="'+month+'">'+month+'</option>');
+   }
+   $("#sel03_01_txt").text("").text("24");
+   $('#sel03_01').append('<option value="">일</option>');
+   for(i=1;i<=Number("24");i++){
+     var day;
+     if(i < 10){
+       day = "0"+i;
+     } else {
+       day = i;
+     }
+     $('#sel03_01').append('<option value="'+day+'">'+day+'</option>');
+   }
+ }
+ 
+ 
+})
+
+ $('[name=sel01_02]').change(function(){
+  let selectMonth_02 =$("#sel02_02_txt").text();
+ $("select[name='sel02_02'] option").remove();    
+ $("select[name='sel03_02'] option").remove();    
+ 
+ if(Number(this.value) < Number("2023")){
+   $('#sel02_02').append('<option value="">월</option>');
+   for(i=1;i<13;i++){
+     var month;
+     if(i < 10){
+       month = "0"+i;
+     } else {
+       month = i;
+     }
+     $('#sel02_02').append('<option value="'+month+'">'+month+'</option>');
+   }
+   for(i=1;i<=Number(fnLeapYear($("#sel01_02").val(),selectMonth_02));i++){
+     var day;
+     $('#sel03_02').append('<option value="">일</option>');
+     if(i < 10){
+       day = "0"+i;
+     } else {
+       day = i;
+     }
+     $('#sel03_02').append('<option value="'+day+'">'+day+'</option>');
+   }
+ } else {
+   $("#sel02_02_txt").text("").text("04");
+   $('#sel02_02').append('<option value="">월</option>');
+   for(i=1;i<=Number("04");i++){
+     var month;
+     if(i < 10){
+       month = "0"+i;
+     } else {
+       month = i;
+     }
+     $('#sel02_02').append('<option value="'+month+'">'+month+'</option>');
+   }
+   $("#sel03_02_txt").text("").text("24");
+   $('#sel03_02').append('<option value="">일</option>');
+   for(i=1;i<=Number("24");i++){
+     var day;
+     if(i < 10){
+       day = "0"+i;
+     } else {
+       day = i;
+     }
+     $('#sel03_02').append('<option value="'+day+'">'+day+'</option>');
+   }
+ }
+ 
+ 
+})
+
+  $("input[name='pstGrwTrtmEprnYn']:radio").change(function () {
+   if($(this).val() == "N"){
+       $("#pst_area").css("display", "none");
+   } else {
+       $("#pst_area").css("display", "");
+     
+   }
+  });
+
+   $("input[name='pstGrwTrtmEprnYn_01']:radio").change(function () {
+      if($(this).val() == "N"){
+          $("#pst_area_01").css("display", "none");
+      } else {
+          $("#pst_area_01").css("display", "");
+        
       }
+   });
+   
+   $("input[name='pstGrwTrtmEprnYn_02']:radio").change(function () {
+     if($(this).val() == "N"){
+         $("#pst_area_02").css("display", "none");
+     } else {
+         $("#pst_area_02").css("display", "");
+     }
+    });
+   
+   
+  $('[name=sel04]').change(function(){
+   $("select[name='sel05'] option").remove();    
+   $("select[name='sel06'] option").remove();    
+   
+   if(Number(this.value) < Number("2023")){
+     $('#sel05').append('<option value="">월</option>');
+     for(i=1;i<13;i++){
+       var month;
+       if(i < 10){
+         month = "0"+i;
+       } else {
+         month = i;
+       }
+       $('#sel05').append('<option value="'+month+'">'+month+'</option>');
+     }
+     $('#sel06').append('<option value="">일</option>');
+     for(i=1;i<32;i++){
+    
+       var day;
+       if(i < 10){
+         day = "0"+i;
+       } else {
+         day = i;
+       }
+       $('#sel06').append('<option value="'+day+'">'+day+'</option>');
+     }
+   } else {
+     $("#sel05_txt").text("").text("04");
+     $('#sel05').append('<option value="">월</option>');
+     for(i=1;i<=Number("04");i++){
+       var month;
+       if(i < 10){
+         month = "0"+i;
+       } else {
+         month = i;
+       }
+       $('#sel05').append('<option value="'+month+'">'+month+'</option>');
+     }
+     $("#sel06_txt").text("").text("24");
+     $('#sel06').append('<option value="">일</option>');
+     for(i=1;i<=Number("24");i++){
+       var day;
+       if(i < 10){
+         day = "0"+i;
+       } else {
+         day = i;
+       }
+       $('#sel06').append('<option value="'+day+'">'+day+'</option>');
+     }
+   }
+   
+   
+  })
+  
+   $('[name=sel04_01]').change(function(){
+   $("select[name='sel05_01'] option").remove();    
+   $("select[name='sel06_01'] option").remove();    
+   
+   if(Number(this.value) < Number("2023")){
+     $('#sel05_01').append('<option value="">월</option>');
+     for(i=1;i<13;i++){
+       var month;
+       if(i < 10){
+         month = "0"+i;
+       } else {
+         month = i;
+       }
+       $('#sel05_01').append('<option value="'+month+'">'+month+'</option>');
+     }
+     $('#sel06_01').append('<option value="">일</option>');
+     for(i=1;i<32;i++){
+       var day;
+       if(i < 10){
+         day = "0"+i;
+       } else {
+         day = i;
+       }
+       $('#sel06_01').append('<option value="'+day+'">'+day+'</option>');
+     }
+   } else {
+     $("#sel05_01_txt").text("").text("04");
+     $('#sel05_01').append('<option value="">월</option>');
+     for(i=1;i<=Number("04");i++){
+       var month;
+       if(i < 10){
+         month = "0"+i;
+       } else {
+         month = i;
+       }
+       $('#sel05_01').append('<option value="'+month+'">'+month+'</option>');
+     }
+     $("#sel06_01_txt").text("").text("24");
+     $('#sel06_01').append('<option value="">일</option>');
+     for(i=1;i<=Number("24");i++){
+       var day;
+       if(i < 10){
+         day = "0"+i;
+       } else {
+         day = i;
+       }
+       $('#sel06_01').append('<option value="'+day+'">'+day+'</option>');
+     }
+   }
+   
+   
+  })
+
+   $('[name=sel04_02]').change(function(){
+   $("select[name='sel05_02'] option").remove();    
+   $("select[name='sel06_02'] option").remove();    
+   
+   if(Number(this.value) < Number("2023")){
+     $('#sel05_02').append('<option value="">월</option>');
+     for(i=1;i<13;i++){
+       var month;
+       if(i < 10){
+         month = "0"+i;
+       } else {
+         month = i;
+       }
+       $('#sel05_02').append('<option value="'+month+'">'+month+'</option>');
+     }
+     $('#sel06_02').append('<option value="">일</option>');
+     for(i=1;i<32;i++){
+       var day;
+       if(i < 10){
+         day = "0"+i;
+       } else {
+         day = i;
+       }
+       $('#sel06_02').append('<option value="'+day+'">'+day+'</option>');
+     }
+   } else {
+     $("#sel05_02_txt").text("").text("04");
+     $('#sel05_02').append('<option value="">월</option>');
+     for(i=1;i<=Number("04");i++){
+       var month;
+       if(i < 10){
+         month = "0"+i;
+       } else {
+         month = i;
+       }
+       $('#sel05_02').append('<option value="'+month+'">'+month+'</option>');
+     }
+     $("#sel06_02_txt").text("").text("24");
+     $('#sel06_02').append('<option value="">일</option>');
+     for(i=1;i<=Number("24");i++){
+       var day;
+       if(i < 10){
+         day = "0"+i;
+       } else {
+         day = i;
+       }
+       $('#sel06_02').append('<option value="'+day+'">'+day+'</option>');
+     }
+   }
+   
+   
+  })
+  
+  
+   $('[name=sel02]').change(function(){
+     $('#sel03').empty();
+     $('#sel03').append('<option value="">일</option>');
+      for(i=1;i<=Number(fnLeapYear($("#sel01").val(),$("#sel02").val()));i++){
+       var day;
+       if(i < 10){
+         day = "0"+i;
+       } else {
+         day = i;
+       }
+       $('#sel03').append('<option value="'+day+'">'+day+'</option>');
+     }
+   });
+  
+
+
+  
+  $('[name=sel02_01]').change(function(){
+   $('#sel03_01').empty();
+   $('#sel03_01').append('<option value="">일</option>');
+    for(i=1;i<=Number(fnLeapYear($("#sel01_01").val(),$("#sel02_01").val()));i++){
+     var day;
+     if(i < 10){
+       day = "0"+i;
+     } else {
+       day = i;
+     }
+     $('#sel03_01').append('<option value="'+day+'">'+day+'</option>');
+   }
+ });
+
+  
+  $('[name=sel02_02]').change(function(){
+   $('#sel03_02').empty();
+   $('#sel03_02').append('<option value="">일</option>');
+    for(i=1;i<=Number(fnLeapYear($("#sel01_02").val(),$("#sel02_02").val()));i++){
+     var day;
+     if(i < 10){
+       day = "0"+i;
+     } else {
+       day = i;
+     }
+     $('#sel03_02').append('<option value="'+day+'">'+day+'</option>');
+   }
+ });
+  
+ 
+  
+  
+  function  fnLeapYear(year,month){//월별 마지막일 체크
+      return new Date(year,month,0).getDate();
+    
+    }
+  
+  
+     $("#password").on("propertychange change keyup paste input", function() {
+             
+
+       let passChk = isValidFormPasswordAuto($("#password").val());
+       if(!passChk){
+            //$("#pass_chk").html('<font color="red">비밀번호 형식을 확인해주세요.</font>');
+         $('[name=PWCHECK]').val('N');
+       } else {
+         if($("#mId").val().trim() ==  $("#password").val().trim()){//아이디와 비교 
+               $("#pass_chk").html("");
+               $("#pass_chk").html('<font color="red">아이디를 비밀번호로 사용하실 수 없습니다.</font>');
+         }//아이디와 비교 
+         else {  
+           $('[name=PWCHECK]').val('Y');
+          }
+         //$("#pass_chk").html("");
+       }
+         
+   
+         });
+/* 		 
+   $("#mId").on("propertychange change keyup paste input", function() {
+     var reg_id = /^[a-z0-9_-]{4,12}$/;
+      if(!reg_id.test($("#mId").val())){
+           console.log("아이디는 3-15자,영문소문자,숫자,'-', '_'를 제외한 문자는 사용하실수 없습니다.");
+
+       }
+      });
+       */
 	</script>
 		
   </body>

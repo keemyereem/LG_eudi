@@ -798,7 +798,7 @@ function popupHeight() {
 				} else {
 					document.getElementById("cheer_mesage").innerHTML = "<span>@"+cheerList[cheerArrays-1].name+"&nbsp;&nbsp;</span>"+cheerList[cheerArrays-1].message;
 				}
-		
+
 				
 				
 				let cCharacterId =  cheerList[cheerArrays-1].ccharacterId;
