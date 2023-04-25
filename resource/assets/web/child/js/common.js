@@ -465,7 +465,7 @@ var eduApply = {
 
     //오늘 표시
     var today = $('.time_wrap thead tr .today');
-    var idx = $('.time_wrap thead tr td').index(today);
+    var idx = $('.time_wrap thead tr th').index(today);
 
     $('.time_wrap tbody tr').each(function(i){
       $('.time_wrap tbody tr').eq(i).children('td').eq(idx).css({'background':'#fff7f8'});
