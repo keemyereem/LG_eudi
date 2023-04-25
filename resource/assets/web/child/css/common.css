@@ -117,8 +117,7 @@ input[type="text"]:disabled {background: #fff;}
 .sub_top .tab ul>li.active {border-bottom: 2px solid #79bd28;}
 .sub_top .tab ul>li>a {display: block;width: 100%;color: #666;text-align: center;}
 .sub_top .tab ul>li.active>a {font-family: 'NanumSquareEB';color: #79bd28;}
-.sub_top .tab.tab02 ul>li {width: 30%;}
-.sub_top .tab.tab02 ul>li:last-child {width: 40%;}
+.sub_top .tab.tab02 ul>li {width: calc(100% / 3);}
 
 /* .sub_top .tab 메뉴 3개 이상일 경우 */
 .sub_top .tab_slide { height: 52px; }
@@ -133,7 +132,7 @@ input[type="text"]:disabled {background: #fff;}
 .input_row .input_box {position: relative;display: block;width: 100%;overflow: hidden;}
 .input_row .input_box input::placeholder {font-family: 'NanumSquareR';font-size: 12px;color: #999;}
 .input_row .input_box .ipt {position: relative;width: 100%;height: 100%;border: none;font-size: 12px;line-height: 1.2;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
-.input_row .btn_chk {position: absolute;right: 0;top: 0;width: 60px;height: 100%;background: #cfcfcf;border-left: 1px solid #e9e9e9;z-index: 20;}
+.input_row .btn_chk {position: absolute;right: 0;top: 0;width: 60px;height: 100%;background: #cfcfcf;border-left: 1px solid #e9e9e9;z-index: 1;}
 .input_row .btn_chk>a {display: block;width: 100%;height: 100%;font-family: 'NanumSquareB';font-size: 12px;color: #727272;text-align: center;}
 .input_row02 {display:inline-block; *display:inline-block;width: 135px;vertical-align: middle;}
 
@@ -186,8 +185,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 
 .checkbox_row {display:inline-block; *display:inline-block; position:relative; top:0; zoom:1;}
 .checkbox_row input[type="checkbox"] {display:none;}
-.checkbox_row input[type="checkbox"] + label {display:inline-block; *display:inline-block; position: relative;top: 0;cursor:pointer; zoom:1; padding-left: 25px; font-size: 12px;}
-.checkbox_row input[type="checkbox"] + label:before {content:""; display:inline-block; *display:inline-block; width: 18px; height: 18px; position:absolute;top: 0;left: 0;background: url("../images/common/bg_check.png") 50% 50% no-repeat;background-size: cover;zoom:1;}
+.checkbox_row input[type="checkbox"] + label {display:inline-block; *display:inline-block; position: relative;top: 10px;cursor:pointer; zoom:1; padding-left: 25px; font-size: 12px;}
+.checkbox_row input[type="checkbox"] + label:before {content:""; display:inline-block; *display:inline-block; width: 18px; height: 18px; position:absolute;top: -4px;left: 0;background: url("../images/common/bg_check.png") 50% 50% no-repeat;background-size: cover;zoom:1;}
 .checkbox_row input[type="checkbox"]:checked + label:before {content:""; background: url("../images/common/bg_check_on.png") 50% 50% no-repeat;background-size: cover;}
 
 .radio_row {display:inline-block; *display:inline-block; position:relative; zoom:1;}

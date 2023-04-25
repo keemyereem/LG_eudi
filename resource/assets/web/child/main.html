@@ -2577,8 +2577,7 @@ function fnLogOut(){
                           <div class="btn_mychar"><a href="/child/character/view.do" class="btn_my_arrow">나의 캐릭터<br>확인하기</a></div>
                         </div>
                         <button class="btn_webtoon" onclick="popupOpen('pop_webtoon');">
-                          <img src="/resource/assets/web/child/images/webtoon/icon_webtoon_book.png" alt="웹툰">
-                          <b>웹툰</b>바로가기
+                          <img src="/resource/assets/web/child/images/webtoon/icon_webtoon02.png" alt="웹툰">
                         </button>
 
                         <div class="my_bar">
@@ -2800,7 +2799,7 @@ function fnLogOut(){
         </div>
       </div>
 
-      	<!-- 앱 평가하기 팝업 -->
+      <!-- 앱 평가하기 팝업 -->
       <div class="pop_mask"></div>
       <div class="pop_info pop_eval" >
         <div class="pop_info_inner">
@@ -2820,7 +2819,32 @@ function fnLogOut(){
         </div>
       </div>
 
-           <!-- 유트로핀 spen -->
+      <!-- 회원정보변경 팝업 -->
+      <div class="pop_info pop_pass">
+        <div class="pop_info_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <p class="pop_tit">회원정보변경</p>
+            <p class="pop_txt">
+              회원님의 기본정보 및 아이의 정보를<br> 수정할 수 있습니다.<br>
+              개인정보 보호를 위해<br> 먼저 비밀번호를 입력해 주세요.
+            </p>
+            <p class="pop_txt">
+              아이디:4mtest222
+            </p>  
+            <div class="input_row mt10">  <!-- mt10 추가 2023.04.24 -->
+              <span class="input_box">
+                <input type="password" id="pass_chk" name="pass_chk" class="ipt" minlength="4" maxlength="13" data-title="아이디를" placeholder="비밀번호를 입력하세요">	
+              </span>	
+            </div>
+            <div class="btn_box btn_box01">
+              <div class="btn_green"><a href="javascript:fnPassChk();">확인</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 유트로핀 spen -->
       <div class="pop_mask"></div>
       <div class="pop_info pop_spen" id="pop_spen">
         <div class="pop_info_inner">

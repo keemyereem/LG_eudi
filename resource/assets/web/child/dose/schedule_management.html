@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+<script>
+
+/*ë©ì¸ì§*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+
+</script>
+
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<!-- TITLE -->
+<title>EuDi</title>
+
+<!-- common css file-->
+
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=2.1">
+
+
+<!-- child css file -->
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
+
+
+
+<!-- child js file--> 
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230223060144"></script>
+<!--   multi 달력 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<script type="text/javascript" src="/resource/assets/web/child/js/jquery-ui.multidatespicker.js"></script>
+  <script>
+      $(function(){
+    	  
+    	  
+        selEvent.init();
+
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_sub').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+        var dosePattern  = $("#dosePattern").val();
+        
+        if(dosePattern == "1"){
+    		$("#wk1").addClass("active");
+    		$("#wk2").removeClass("active");
+    		$("#wk3").removeClass("active");
+    		$("#wk4").removeClass("active");
+    		
+    		$("#wk_l_1").show();
+    		$("#wk_l_2").hide();
+    		$("#wk_l_3").hide();
+    		$("#wk_l_4").hide();
+    		
+    		 $('#5week_text').text("");
+    
+    		
+  
+    	} else if(dosePattern == "2"){
+    		$("#wk1").removeClass("active");
+    		$("#wk2").addClass("active");
+    		$("#wk3").removeClass("active");
+    		$("#wk4").removeClass("active");
+    		
+    		$("#wk_l_1").show();
+    		$("#wk_l_2").show();
+    		$("#wk_l_3").hide();
+    		$("#wk_l_4").hide();
+    		
+    		 $('#5week_text').text("");
+
+    		
+    	} else if(dosePattern == "3"){
+    		$("#wk1").removeClass("active");
+    		$("#wk2").removeClass("active");
+    		$("#wk3").addClass("active");
+    		$("#wk4").removeClass("active");
+    		
+    		$("#wk_l_1").show();
+    		$("#wk_l_2").show();
+    		$("#wk_l_3").show();
+    		$("#wk_l_4").hide();
+    		
+    		 $('#5week_text').text("");
+
+    		
+    	} else if(dosePattern == "4"){
+    		$("#wk1").removeClass("active");
+    		$("#wk2").removeClass("active");
+    		$("#wk3").removeClass("active");
+    		$("#wk4").addClass("active");
+    		
+    		$("#wk_l_1").show();
+    		$("#wk_l_2").show();
+    		$("#wk_l_3").show();
+    		$("#wk_l_4").show();
+    		
+    		 $('#5week_text').text("5주차는 4주차와 동일하게 설정됩니다");
+
+    		
+    	}
+    	
+        
+        
+      });
+  </script>
+  </head>
+  <body>
+	  <div class="wrap wrap_sub">
+      <!--// nav -->
+      <div class="sub_top">
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">투여관리</h2>
+            <div class="back"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
+        <div class="tab tab02">
+          <div class="inner">
+            <ul>
+              <li class="active"><a href="/child/schedule_management.do">투여계획</a></li>
+              <li><a href="/child/dose_input_cal.do">투여입력</a></li>
+              <li><a href="/child/dose_pre.do">의사선생님함께보기</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- nav //-->
+      <!--// content -->
+      <form id="frmRegi" name="frmRegi" action="/chlid/scheduleProc.do" role="form" method="post">
+      <input type="hidden" id="sIdx" name="sIdx" value=""/>
+      <input type="hidden" id="idx" name="idx" value=""/>
+      <c:choose>
+      	<c:when test="${ScheduleInfo.dosePattern eq '0' or empty ScheduleInfo.dosePattern}"><c:set var="pattern" value="1"/></c:when>
+      	<c:otherwise><c:set var="pattern" value="${ScheduleInfo.dosePattern}"/></c:otherwise>
+      </c:choose>
+      <input type="hidden" id="dosePattern" name="dosePattern" value=""/>
+<!--       <input type="hidden" id="doseStartDate" name="doseStartDate" value="">
+      <input type="hidden" id="doseEndDate" name="doseEndDate" value=""> -->
+      
+
+      
+      
+      <div class="content con_sub con_sub01">
+        <div class="con_box">
+          <div class="profile">
+            <div class="pro_pic"><img src="/resource/assets/web/child/images/character/img_profile_null.png" alt="프로필 사진" /></div>
+            <div class="pro_name"><div><p><span></span> 어린이</p></div></div>
+          </div>
+        </div>
+        <div class="con_box">
+          <div class="con_inner">
+            <div class="tb">
+              <table summary="투여선택" cellpadding="0" cellspacing="0" border="0">
+                <caption>투여선택</caption>
+                <colgroup>
+                    <col style="width:110px;">
+                    <col style="*">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="tit"><p>투여기간</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <div class="date_box">
+                          <span>시작일</span>
+                          <div class="inputBox_DP">
+                            <input type="date" name="doseStartDate" id="doseStartDate" class="date" value="${ScheduleInfo.doseStartDate}"  required="required" data-title="투여기간을" title="투여기간을"/>
+                          </div>
+                        </div>
+                        <div class="date_box">
+                          <span>종료일</span>
+                          <div class="inputBox_DP">
+                            <input type="date" name="doseEndDate" id="doseEndDate" class="date" value="${ScheduleInfo.doseEndDate}"  required="required" data-title="투여기간을" title="투여기간을"/>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="cont cont_week" colspan="2">
+                   	 <p class="week_tit">요일선택</p>
+                   	 <div class="week_tab">
+                        <ul>
+                          <li class="active" id="wk1"><a href="javascript:changeWeek('1');">1주 패턴</a></li>
+                          <li id="wk2"><a href="javascript:changeWeek('2');">2주 패턴</a></li>
+                          <li id="wk3"><a href="javascript:changeWeek('3');">3주 패턴</a></li>
+                          <li id="wk4"><a href="javascript:changeWeek('4');">4주 패턴</a></li> <!-- class="disabled" -->
+                        </ul>
+                      </div>
+                      <!-- 기존 -->
+                      <%-- <div class="cont_inner">
+                        <c:forEach var="i" begin="1" end="7">
+							<div class="week_chk">
+                			    <input type="checkbox" id="wk0${i}" name="doseDay" value="${i}" <c:if test="${fn:contains(ScheduleInfo.doseDay,i)}">checked</c:if>>
+                			    <label for="wk0${i}">
+                			   <c:choose>
+	                			   	<c:when test="${i eq 1}">일</c:when>
+									<c:when test="${i eq 2}">월</c:when>
+									<c:when test="${i eq 3}">화</c:when>
+									<c:when test="${i eq 4}">수</c:when>
+									<c:when test="${i eq 5}">목</c:when>
+									<c:when test="${i eq 6}">금</c:when>
+									<c:when test="${i eq 7}">토</c:when>			
+                			   </c:choose> 
+                
+                			    </label>
+                  			</div>
+							</c:forEach>
+                      </div> --%>
+                      <!-- 변경 -->
+                      <div class="cont_inner">
+                        <div class="week_box" id="wk_l_1">
+                        <!--   <div class="week_chk">
+                  			    <input type="checkbox" id="wk01_01">
+                  			    <label for="wk01_01">월</label>
+                    			</div>
+                          <div class="week_chk">
+                  			    <input type="checkbox" id="wk01_02">
+                  			    <label for="wk01_02">화</label>
+                    			</div>
+                          <div class="week_chk">
+                  			    <input type="checkbox" id="wk01_03">
+                  			    <label for="wk01_03">수</label>
+                    			</div>
+                          <div class="week_chk">
+                  			    <input type="checkbox" id="wk01_04">
+                  			    <label for="wk01_04">목</label>
+                    			</div>
+                          <div class="week_chk">
+                  			    <input type="checkbox" id="wk01_05">
+                  			    <label for="wk01_05">금</label>
+                    			</div>
+                          <div class="week_chk">
+                  			    <input type="checkbox" id="wk01_06">
+                  			    <label for="wk01_06">토</label>
+                    			</div>
+                          <div class="week_chk">
+                  			    <input type="checkbox" id="wk01_07">
+                  			    <label for="wk01_07">일</label>
+                    			</div> -->
+                    	   <c:forEach var="i" begin="1" end="7">
+							<div class="week_chk">
+                			    <input type="checkbox" id="wk1${i}" name="doseDay" value="${i}" <c:if test="${fn:contains(ScheduleInfo.doseDay,i)}">checked</c:if>>
+                			    <label for="wk1${i}">
+                			   <c:choose>
+	                			   	<c:when test="${i eq 1}">일</c:when>
+									<c:when test="${i eq 2}">월</c:when>
+									<c:when test="${i eq 3}">화</c:when>
+									<c:when test="${i eq 4}">수</c:when>
+									<c:when test="${i eq 5}">목</c:when>
+									<c:when test="${i eq 6}">금</c:when>
+									<c:when test="${i eq 7}">토</c:when>			
+                			   </c:choose> 
+                
+                			    </label>
+                  			</div>
+							</c:forEach>
+                        </div>
+                        <div class="week_box" id="wk_l_2" style="display:none">
+                          <c:forEach var="i" begin="1" end="7">
+							<div class="week_chk">
+                			    <input type="checkbox" id="wk2${i}" name="doseDay2" value="${i}" <c:if test="${fn:contains(ScheduleInfo.doseDay2,i)}">checked</c:if>>
+                			    <label for="wk2${i}">
+                			   <c:choose>
+	                			   	<c:when test="${i eq 1}">일</c:when>
+									<c:when test="${i eq 2}">월</c:when>
+									<c:when test="${i eq 3}">화</c:when>
+									<c:when test="${i eq 4}">수</c:when>
+									<c:when test="${i eq 5}">목</c:when>
+									<c:when test="${i eq 6}">금</c:when>
+									<c:when test="${i eq 7}">토</c:when>			
+                			   </c:choose> 
+                
+                			    </label>
+                  			</div>
+							</c:forEach>
+                        </div>
+                        <div class="week_box" id="wk_l_3" style="display:none">
+                           <c:forEach var="i" begin="1" end="7">
+							<div class="week_chk">
+                			    <input type="checkbox" id="wk3${i}" name="doseDay3" value="${i}" <c:if test="${fn:contains(ScheduleInfo.doseDay3,i)}">checked</c:if>>
+                			    <label for="wk3${i}">
+                			   <c:choose>
+	                			   	<c:when test="${i eq 1}">일</c:when>
+									<c:when test="${i eq 2}">월</c:when>
+									<c:when test="${i eq 3}">화</c:when>
+									<c:when test="${i eq 4}">수</c:when>
+									<c:when test="${i eq 5}">목</c:when>
+									<c:when test="${i eq 6}">금</c:when>
+									<c:when test="${i eq 7}">토</c:when>			
+                			   </c:choose> 
+                
+                			    </label>
+                  			</div>
+							</c:forEach>
+                        </div>
+                        <div class="week_box" id="wk_l_4" style="display:none">
+                           <c:forEach var="i" begin="1" end="7">
+							<div class="week_chk">
+                			    <input type="checkbox" id="wk4${i}" name="doseDay4" value="${i}" <c:if test="${fn:contains(ScheduleInfo.doseDay4,i)}">checked</c:if>>
+                			    <label for="wk4${i}">
+                			   <c:choose>
+	                			   	<c:when test="${i eq 1}">일</c:when>
+									<c:when test="${i eq 2}">월</c:when>
+									<c:when test="${i eq 3}">화</c:when>
+									<c:when test="${i eq 4}">수</c:when>
+									<c:when test="${i eq 5}">목</c:when>
+									<c:when test="${i eq 6}">금</c:when>
+									<c:when test="${i eq 7}">토</c:when>			
+                			   </c:choose> 
+                
+                			    </label>
+                  			</div>
+							</c:forEach>
+                        </div>
+                        <p class="info" id="5week_text"></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tit"><p>투여시간</p></td>
+                    <td class="cont">
+                    <div class="cont_inner">
+                      <div class="cont_inner">
+                          <div class="dosetime_check">  <!-- class 추가 2023.04.24 -->
+                            <div class="radio_row radio_time">
+                              <input type="radio" id="radio01" name="doseAmpm" value="P">
+                              <label for="radio01">PM</label>
+                            </div>
+                            <div class="radio_row radio_time">
+                              <input type="radio" id="radio02" name="doseAmpm" value="A">
+                              <label for="radio02">AM</label>
+                            </div>
+                            <div class="radio_row radio_time">
+                              <input type="radio" id="radio03" name="doseAmpm" value="N">
+                              <label for="radio03">알림없음</label>
+                            </div>
+                          </div>
+		                        <div class="select_time_box mt10">
+		                          <div class="select_row select_time">
+		                            <label for="doseTime">    
+		                            </label>
+		                            <select id="doseTime" name="doseTime">
+		                                    <c:forEach var="i" begin="1" end="12">
+									     		<option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${ScheduleInfo.doseTime eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+											</c:forEach>
+		                            </select>
+		                          </div>
+		                          <div class="select_row select_time">
+		                            <label for="doseMinute"></label>
+		                            <select id="doseMinute" name="doseMinute">
+		                                      <option value="00" <c:if test="${ScheduleInfo.doseMinute eq '00'}">selected</c:if>>00</option>
+                              			      <option value="10" <c:if test="${ScheduleInfo.doseMinute eq '10'}">selected</c:if>>10</option>
+                              			      <option value="20" <c:if test="${ScheduleInfo.doseMinute eq '20'}">selected</c:if>>20</option>
+                              			      <option value="30" <c:if test="${ScheduleInfo.doseMinute eq '30'}">selected</c:if>>30</option>
+                              			      <option value="40" <c:if test="${ScheduleInfo.doseMinute eq '40'}">selected</c:if>>40</option>
+                              			      <option value="50" <c:if test="${ScheduleInfo.doseMinute eq '50'}">selected</c:if>>50</option>
+		                            </select>
+		                          </div>
+		                        </div>
+		                        <p class="info">시간을 설정하시면 해당 시간에 알림이 발송됩니다.</p>
+		                      </div>
+                   <%--    <div class="select_row">
+                        <label for="doseTime">
+								<c:choose>
+									<c:when test="${empty ScheduleInfo}">선택</c:when>
+								    <c:when test="${ScheduleInfo.doseTime == '0'}">알림 없음 </c:when>
+								   <c:otherwise><c:out value="${ScheduleInfo.doseTime}"/>:00</c:otherwise>
+				
+								</c:choose>
+                        </label>
+                        <select id="doseTime" name="doseTime"  readonly="">
+                            <option value="" selected="selected">선택</option>
+                            <option value="0" <c:if test="${ScheduleInfo.doseTime eq '0'}">selected</c:if>>알림 없음</option>
+                           <c:set var="nowNum" value="24"></c:set>
+                            <c:forEach var="i" begin="0" end="24">
+                              <c:set var="newTime" value="${nowNum - i}"/>
+								<c:choose>
+									<c:when test="${newTime < 10}">
+										    <option value="0${newTime}" <c:if test="${ScheduleInfo.doseTime eq newTime}">selected</c:if>>0${newTime}:00</option>
+									</c:when>
+									<c:otherwise> <option value="${newTime}" <c:if test="${ScheduleInfo.doseTime eq newTime}">selected</c:if>>${newTime}:00</option></c:otherwise>
+								</c:choose>
+							</c:forEach>
+
+                        </select>
+                      </div> --%>
+                     
+                      <!-- 시간선택 셀렉트박스
+                      <div class="cont_inner">
+                        <div>
+                          <div class="radio_row radio_time">
+            								<input type="radio" id="radio01" name="chk01" value="" checked="">
+            							  <label for="radio01">PM</label>
+            							</div>
+                          <div class="radio_row radio_time">
+            								<input type="radio" id="radio02" name="chk01" value="">
+            							  <label for="radio02">AM</label>
+            							</div>
+                          <div class="radio_row radio_time">
+            								<input type="radio" id="radio03" name="chk01" value="">
+            							  <label for="radio03">알림없음</label>
+            							</div>
+                        </div>
+                        <div class="select_time_box mt10">
+                          <div class="select_row select_time">
+                            <label for="sel_t01">시간선택</label>
+                            <select id="sel_t01">
+                                <option value="" selected="selected">00</option>
+                                <option value="">01</option>
+                            </select>
+                          </div>
+                          <div class="select_row select_time">
+                            <label for="sel_t02">분선택</label>
+                            <select id="sel_t02">
+                                <option value="" selected="selected">00</option>
+                                <option value="">01</option>
+                            </select>
+                          </div>
+                        </div>
+                        <p class="info">시간을 설정하시면 해당 시간에 알림이 발송됩니다.</p>
+                      </div>
+                       -->
+                       </div>
+                    </td>
+                  </tr>
+                  
+                <!--     다음 병원 방문일 -->
+                  
+                 <tr>
+                    <td class="tit2"><p>다음 병원 방문일</p></td>
+                    <td class="cont">
+                    <div class="cont_inner">
+                     <div class="inputBox_DP">
+                            <input type="date" name="visitDate" id="visitDate" class="date" value="${visitInfo.visitDate}"  required="required" data-title="다음 병원 방문일을" title="다음 병원 방문일을"/>
+                          </div>
+                  <%--    <div class="cont_inner">
+                        <div>
+                          <div class="radio_row radio_time">
+            								<input type="radio" id="radio04" name="visitAmpm" value="P"  <c:if test="${empty visitInfo or visitInfo.visitAmpm eq 'P' or visitInfo.visitAmpm eq '0'}">checked</c:if>>
+            							  <label for="radio04">PM</label>
+            							</div>
+		                          <div class="radio_row radio_time">
+		            								<input type="radio" id="radio05" name="visitAmpm" value="A" <c:if test="${visitInfo.visitAmpm eq 'A'}">checked</c:if>>
+		            							  <label for="radio05">AM</label>
+		            							</div>
+		                          <div class="radio_row radio_time">
+		            								<input type="radio" id="radio06" name="visitAmpm" value="N" <c:if test="${visitInfo.visitAmpm eq 'N'}">checked</c:if>>
+		            							  <label for="radio06">알림없음</label>
+		            							</div>
+		                        </div>
+		                        <div class="select_time_box mt10">
+		                          <div class="select_row select_time">
+		                            <label for="visitTime">
+		                       			 <c:choose>
+				                           	<c:when test="${visitInfo.visitTime eq '0'}">시간선택</c:when>
+				                           	<c:otherwise>
+					                          	 ${visitInfo.visitTime}
+			                        	 </c:otherwise>
+		                          	 </c:choose>      
+		                            </label>
+		                            <select id="visitTime" name="visitTime">
+		                                    <c:forEach var="i" begin="1" end="12">
+									     		<option value="<c:if test="${i < 10}">0</c:if>${i}" <c:if test="${visitInfo.visitMinute eq i}">selected</c:if>><c:if test="${i < 10}">0</c:if>${i}</option>
+											</c:forEach>
+		                            </select>
+		                          </div>
+		                          <div class="select_row select_time">
+		                            <label for="visitMinute">
+			                             <c:choose>
+				                           	<c:when test="${visitInfo.visitMinute eq '0'}">분선택</c:when>
+				                           	<c:otherwise>${visitInfo.visitMinute}</c:otherwise>
+			                          	 </c:choose>
+		                            </label>
+		                            <select id="visitMinute" name="visitMinute">
+		                                      <option value="00" <c:if test="${visitInfo.visitMinute eq '00'}">selected</c:if>>00</option>
+                              			      <option value="10" <c:if test="${visitInfo.visitMinute eq '10'}">selected</c:if>>10</option>
+                              			      <option value="20" <c:if test="${visitInfo.visitMinute eq '20'}">selected</c:if>>20</option>
+                              			      <option value="30" <c:if test="${visitInfo.visitMinute eq '30'}">selected</c:if>>30</option>
+                              			      <option value="40" <c:if test="${visitInfo.visitMinute eq '40'}">selected</c:if>>40</option>
+                              			      <option value="50" <c:if test="${visitInfo.visitMinute eq '50'}">selected</c:if>>50</option>
+		                            </select>
+		                          </div>
+		                        </div> --%>
+		                        <p class="info">방문 하루전에 카카오 알림톡이 발송됩니다.</p>
+		                      </div>
+        
+                       </div>
+                    </td>
+                  </tr>
+                  
+            
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+      <!-- content //-->
+      <div class="btn_box btn_box02 btn_bottom">
+        <div class="inner">
+          <div class="btn_gray"><a href="/child/main.do">취소</a></div>
+          <div class="btn_green"><a href="javascript:;" onclick="fnScheduleProc()">
+          <c:choose>
+          		<c:when test="${empty ScheduleInfo}">저장</c:when>
+          		<c:otherwise>수정</c:otherwise>
+          </c:choose>
+          </a></div>
+        </div>
+      </div>
+      <!--// pop -->
+      <div class="pop_wrap pop_ij">
+        <div class="pop_box">
+          <div class="pop_top">
+            <div class="pop_inner">
+              <h2 class="title">투여관리</h2>
+              <div class="pop_close close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/close.png" alt="닫기" /></a></div>
+            </div>
+          </div>
+          <div class="pop_cont">
+            <div class="ij_img"><img src="/resource/assets/web/child/images/sub/img_pop01.png" alt="투여부위" /></div>
+            <div class="pop_inner">
+              <ul class="ij_list">
+                <li><p><span>01</span>팔뚝의 뒷면 부위 (왼쪽/오른쪽)</p></li>
+                <li><p><span>02</span>엉덩이 부위 (왼쪽/오른쪽)</p></li>
+                <li>
+                  <p><span>03</span>허벅지 몸바깥쪽 부위 (왼쪽/오른쪽)</p>
+                  <div><span>(주의)</span>사타구니를 중심으로 성기, 항문 주위는 주사하지 말 것.</div>
+                </li>
+                <li>
+                  <p><span>04</span>배 (왼쪽/오른쪽)</p>
+                  <div><span>(주의)</span>배꼽을 중심으로 상하 5cm 및 좌우 10cm의  타원형 부분과 벨트나 고무밴드의 압박을 받는 부위는 주사하지 말 것</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="pop_btn">
+            <div class="btn_box">
+              <div class="pop_close btn_green"><a href="javascript:;">확인</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- pop //-->
+	  </div>
+	  <script>
+		function fnScheduleProc(){
+
+         //일정 등록
+			    var frm = 'frmRegi';
+		
+         
+         
+			       if($("#doseStartDate").val() == ""){
+			    	   alert("시작일을 선택해주세요");
+			    	   return;
+			       }
+			       
+			       if($("#doseEndDate").val() == ""){
+			    	   alert("종료일을 선택해주세요");
+			    	   return;
+			       }
+			
+			       
+			/* 		if($("#sel01").val() > $("#sel04").val()){
+						alert("기간 설정이 잘못되었습니다(시작일이 종료일 보다 나중입니다)");
+						 return;
+					} */
+					
+					
+					if(parseInt($("#doseStartDate").val().replace(/-/g, "")) > parseInt($("#doseEndDate").val().replace(/-/g, ""))){
+						alert("기간 설정이 잘못되었습니다(시작일이 종료일 보다 나중입니다)");
+						 return;
+					}
+					
+					
+					
+					  var chk_count =  $('input:checkbox[name=doseDay]:checked').length;//체크 된 요일 idx 가져오기
+					  var chk_count2 =  $('input:checkbox[name=doseDay2]:checked').length;//체크 된 요일 idx 가져오기
+					  var chk_count3 =  $('input:checkbox[name=doseDay3]:checked').length;//체크 된 요일 idx 가져오기
+					  var chk_count4 =  $('input:checkbox[name=doseDay4]:checked').length;//체크 된 요일 idx 가져오기
+
+				      if(chk_count < 1 && chk_count2 < 1 && chk_count3 < 1 && chk_count4 < 1){
+				    	  alert("요일을 선택해주세요.");
+				    	  return;
+				      } else{
+				    	  
+				    	  var chkValue = '';
+						   $('input[id^=wk0]:checked').each(function(index,item){
+							   if(index!=0){
+							    	 chkValue += ',';
+							    }
+							   		 chkValue += $(this).val();
+							   });
+				      }
+					  
+					  if($("#doseTime").val() == ""){
+						  alert("투여시간을 선택해주세요.");
+						  return;
+					  }
+					  
+/* 					  $("#doseStartDate").val($("#sel01").val()+"-"+$("#sel02").val()+"-"+$("#sel03").val());
+					  $("#doseEndDate").val($("#sel04").val()+"-"+$("#sel05").val()+"-"+$("#sel06").val()); */
+	
+					    if($("input:radio[name=doseAmpm]:checked").val() == "N"){
+					    	  $('#doseTime').val("0");
+					    	  $('#doseMinute').val("0");
+					    }
+					    
+	
+					  
+	                 if($("#sIdx").val() != ""){
+						  document.frmRegi.action = "/chlid/scheduleModify.do";
+						  
+					  }//일정이 있으면 수정한다
+				     document.frmRegi.submit();
+
+ 
+
+		}
+		
+		
+		function selectDisabled(){
+		      if($("input:radio[name=doseAmpm]:checked").val() == "N"){
+		    	  $('#doseTime').prop('disabled', true);
+		    	  $('#doseMinute').prop('disabled', true);
+		    	  $("#doseTime option:eq(0)").prop("selected", true);
+		          $("#doseMinute option:eq(0)").prop("selected", true);
+
+		      } else {
+		    	  $('#doseTime').prop('disabled', false);
+		    	  $('#doseMinute').prop('disabled', false);
+		      }
+	    }
+		
+        $("input:radio[name=doseAmpm]").click(function()
+		    {
+      			selectDisabled();
+		    });
+
+        
+        function changeWeek(weekNum){
+
+        	if(weekNum == "1"){
+        		$("#wk1").addClass("active");
+        		$("#wk2").removeClass("active");
+        		$("#wk3").removeClass("active");
+        		$("#wk4").removeClass("active");
+        		
+        		$("#wk_l_1").show();
+        		$("#wk_l_2").hide();
+        		$("#wk_l_3").hide();
+        		$("#wk_l_4").hide();
+        		
+        		 $('#5week_text').text("");
+        		 $("#dosePattern").val("1");
+        		
+      
+        	} else if(weekNum == "2"){
+        		$("#wk1").removeClass("active");
+        		$("#wk2").addClass("active");
+        		$("#wk3").removeClass("active");
+        		$("#wk4").removeClass("active");
+        		
+        		$("#wk_l_1").show();
+        		$("#wk_l_2").show();
+        		$("#wk_l_3").hide();
+        		$("#wk_l_4").hide();
+        		
+        		 $('#5week_text').text("");
+        		 $("#dosePattern").val("2");
+        		
+        	} else if(weekNum == "3"){
+        		$("#wk1").removeClass("active");
+        		$("#wk2").removeClass("active");
+        		$("#wk3").addClass("active");
+        		$("#wk4").removeClass("active");
+        		
+        		$("#wk_l_1").show();
+        		$("#wk_l_2").show();
+        		$("#wk_l_3").show();
+        		$("#wk_l_4").hide();
+        		
+        		 $('#5week_text').text("");
+        		 $("#dosePattern").val("3");
+        		
+        	} else if(weekNum == "4"){
+        		$("#wk1").removeClass("active");
+        		$("#wk2").removeClass("active");
+        		$("#wk3").removeClass("active");
+        		$("#wk4").addClass("active");
+        		
+        		$("#wk_l_1").show();
+        		$("#wk_l_2").show();
+        		$("#wk_l_3").show();
+        		$("#wk_l_4").show();
+        		
+        		 $('#5week_text').text("5주차는 4주차와 동일하게 설정됩니다");
+        		 $("#dosePattern").val("4");
+        		
+        	}
+        	
+        	
+        }
+	  </script>
+  </body>
+</html>

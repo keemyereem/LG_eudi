@@ -465,7 +465,7 @@ var eduApply = {
 
     //오늘 표시
     var today = $('.time_wrap thead tr .today');
-    var idx = $('.time_wrap thead tr td').index(today);
+    var idx = $('.time_wrap thead tr th').index(today);
 
     $('.time_wrap tbody tr').each(function(i){
       $('.time_wrap tbody tr').eq(i).children('td').eq(idx).css({'background':'#fff7f8'});
@@ -536,14 +536,16 @@ function popupInfo(popInfo) {
   });
   popthis.fadeIn(300);
   mask.css("display","block");
-  popthis.find(".pop_close").click(function(){
+  popthis.find(".pop_close").off('click');
+  popthis.find(".pop_close").on('click', function(){
       popthis.fadeOut(300);
       mask.css("display","none");
   });
 
   // 2차 팝업 띄우기 - 2023.03.17
   if ($('.pop_apply2').length) {
-    $('.pop_continue').click(function() {
+    $('.pop_continue').off('click');
+    $('.pop_continue').on('click', function() {
       $('.pop_apply').hide();
     })
   }
@@ -773,8 +775,8 @@ function popupHeight() {
 						
 								
 								
-								let cCharacterId =  cheerList[cheerArrays-1].cCharacterId;
-								let cCharacterLevel =   cheerList[cheerArrays-1].cCharacterLevel;
+								let cCharacterId =  cheerList[cheerArrays-1].ccharacterId;
+								let cCharacterLevel =   cheerList[cheerArrays-1].ccharacterLevel;
 								var imgurl;
 								imgur = "/resource/assets/web/child/images/profile/img_profile_"+cCharacterId+"eudi_"+cCharacterLevel+".png";
 								document.getElementById("cheer_img").src = imgur;
@@ -796,11 +798,11 @@ function popupHeight() {
 				} else {
 					document.getElementById("cheer_mesage").innerHTML = "<span>@"+cheerList[cheerArrays-1].name+"&nbsp;&nbsp;</span>"+cheerList[cheerArrays-1].message;
 				}
-		
+
 				
 				
-				let cCharacterId =  cheerList[cheerArrays-1].cCharacterId;
-				let cCharacterLevel =   cheerList[cheerArrays-1].cCharacterLevel;
+				let cCharacterId =  cheerList[cheerArrays-1].ccharacterId;
+				let cCharacterLevel =   cheerList[cheerArrays-1].ccharacterLevel;
 				var imgurl;
 				imgur = "/resource/assets/web/child/images/profile/img_profile_"+cCharacterId+"eudi_"+cCharacterLevel+".png";
 				document.getElementById("cheer_img").src = imgur;
@@ -869,19 +871,26 @@ function popupdoctor() {
   });
 }
 
-$(document).on('keyup keydown','input[data-format-validate]',function(e){
+$(document).on('keyup focusin focusout','input[data-format-validate]',function(e){
 	const format = $(this).data('format-validate');
 	const oriVal = $(this).val();
-	
-	if (e.type=='keydown') {
-		$(this).data('prev-value', oriVal);
-	} else {
+	if (e.type=='keyup') {
+		if (validateRexg(format, oriVal)===true){
+			$(this).data('prev-value', oriVal);
+		}
+	} else if (e.type=='focusin') {
+		$(this).removeClass('placeholder-err');
+		$(this).attr('placeholder','');
+	} else if (e.type=='focusout') {
 		if (validateRexg(format, oriVal)===false && oriVal){
-			$(this).css('color','red');
+			$(this).addClass('placeholder-err');
 			// 이전값으로 복원
-			$(this).val($(this).data('prev-value'));
+			// $(this).val($(this).data('prev-value'));
+			$(this).val('');
+			$(this).attr('placeholder',oriVal + '은(는) 입력 할 수 없는 범위입니다.');
 		} else {
-			$(this).css('color','initial');
+			$(this).removeClass('placeholder-err');
+			$(this).attr('placeholder','');
 		}
 	}
 });

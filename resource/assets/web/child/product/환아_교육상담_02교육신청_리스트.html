@@ -64,6 +64,7 @@ if("" != ""){
 <!-- common js file-->
 <script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/common/js/common.js?20230206042416"></script>
+<script type="text/javascript" src="/resource/assets/common/js/calendar.dev.js"></script>
 
 <script>
   $(document).ready(()=> {
@@ -71,6 +72,7 @@ if("" != ""){
     eduApply.init();
     selEvent.init();
   })
+
 </script>
 
 </head>
@@ -110,18 +112,18 @@ if("" != ""){
             <a href="javascript:;" class="nav-btn go-next">next</a>
           </div>
           <div class="select_date">신청 내역이 없습니다.</div>
-          <div class="time_wrap">
+          <div class="time_wrap" id="divTimeTable">
             <!-- <span>시간</span> -->
             <table>
               <thead>
                 <tr>
-                  <td><span>11</span>(토)</td>
-                  <td><span>12</span>(일)</td>
-                  <td class="today"><span>13</span>(월)</td>
-                  <td><span>14</span>(화)</td>
-                  <td><span>15</span>(수)</td>
-                  <td><span>16</span>(목)</td>
-                  <td><span>17</span>(금)</td>
+                  <th class="sat"><span>11</span>(토)</th>
+                  <th class="sun"><span>12</span>(일)</th>
+                  <th class="today"><span>13</span>(월)</th>
+                  <th><span>14</span>(화)</th>
+                  <th><span>15</span>(수)</th>
+                  <th><span>16</span>(목)</th>
+                  <th><span>17</span>(금)</th>
                 </tr>
               </thead>
               <tbody>
