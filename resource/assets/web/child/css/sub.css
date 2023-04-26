@@ -1309,7 +1309,7 @@
 .pop_webtoon .webtoon_info{background: #f5f5f5;padding: 30px 0 20px; margin: 8px 0;}
 .pop_webtoon .webtoon_info .pop_inner>p {font-family: 'NanumSquareEB';font-size: 15px;color: #333;letter-spacing: -0.75px;line-height: 1.5;}
 .pop_webtoon .webtoon_info .pop_inner>p+p {margin-top: 5px;}
-.pop_webtoon .webtoon_info .pop_inner>p:last-of-type {font-size: 11px;color: #727171;letter-spacing: -0.275px;}
+.pop_webtoon .webtoon_info .pop_inner>p:last-of-type {font-family: 'NanumSquareB';font-size: 12px;color: #727171;letter-spacing: -0.6px;}
 .pop_webtoon .webtoon_info .pop_inner>p:last-of-type span {color: #333;}
 .pop_webtoon .webtoon_info .pop_inner>p:last-of-type span::after {content:'';display: inline-block;width: 3px;height: 3px;background: #79bd28;border-radius: 100%;margin-bottom: 5px;margin-left: 2px;}
 .pop_webtoon .webtoon_info .pop_inner>p>b {font-family: 'NanumSquareEB';color: #78bc27;}

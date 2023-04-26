@@ -333,19 +333,24 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal { padding: 35px 0 57px; overflow: hidden; }
 .wrap_sub .register .sec_cal .cal_nav .year-month { width: 157.5px; }
 .wrap_sub .register .sec_cal .time_wrap { position: relative; height: 375px; margin: 30px 0 25px 15px; overflow: scroll; }
+/*
 .wrap_sub .register .sec_cal .time_wrap > span { background: #ffffff; display: inline-block; position: absolute; top: 1px; left: 0; z-index: 9; font-size: 15px; font-family: 'NanumSquareEB'; height: 47.5px; width: 18.7vw; display: flex; align-items: center; justify-content: center; border-width: 0 1px 1px 0; border-style: solid; border-color: #333333 #eeeeee #eeeeee transparent; }
+*/
 .wrap_sub .register .sec_cal .time_wrap table { width: calc((25.75vw * var(--dn)) + 18.7vw); position: relative; margin-right: 15px; }
 .wrap_sub .register .sec_cal .time_wrap table tr { height: 47.5px; }
-.wrap_sub .register .sec_cal .time_wrap table tr td { background: #ffffff; width: 25.75vw; height: inherit; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #eeeeee; border-width: 0 1px 1px 0; }
+.wrap_sub .register .sec_cal .time_wrap table tr th,
+.wrap_sub .register .sec_cal .time_wrap table tr td { background: #ffffff; width: 25.75vw; height: inherit; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #eeeeee;  border-width: 0 1px 1px 0;}
+.wrap_sub .register .sec_cal .time_wrap table tr th,
 .wrap_sub .register .sec_cal .time_wrap table tr td:last-child { border-width: 0 0 1px 0; }
-.wrap_sub .register .sec_cal .time_wrap table thead { position: absolute; width: 100%; z-index: 1; border-top: 1px solid #333333; }
-.wrap_sub .register .sec_cal .time_wrap table thead tr { position: relative; }
-.wrap_sub .register .sec_cal .time_wrap table thead tr td { height: inherit; font-size: 15px; font-family: 'NanumSquareEB'; }
-.wrap_sub .register .sec_cal .time_wrap table thead tr td.past_date { background: #f6f6f6; }
-.wrap_sub .register .sec_cal .time_wrap table thead tr td:first-child { width: 18.7vw; }
-.wrap_sub .register .sec_cal .time_wrap table thead tr td span { font-family: 'NanumSquareR'; margin-left: 4px; }
-.wrap_sub .register .sec_cal .time_wrap table tbody { padding-left: 18.7vw; margin-top: 47.5px; display: inline-block; }
-.wrap_sub .register .sec_cal .time_wrap table tbody tr td.moveL { width: 18.7vw; position: absolute; left: 0; font-size: 14px; }
+.wrap_sub .register .sec_cal .time_wrap table thead { position: sticky; top: 0; width: 100%; z-index: 1; }
+/*.wrap_sub .register .sec_cal .time_wrap table thead tr { position: relative; }*/
+.wrap_sub .register .sec_cal .time_wrap table thead tr th { height: inherit; font-size: 15px; font-weight: normal; font-family: 'NanumSquareEB'; border-width: 1px 1px 1px 0; border-color: #333333 #eeeeee #eeeeee transparent; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr th.cross_tit { background: #ffffff; display: inline-flex; font-size: 15px; font-family: 'NanumSquareEB'; border-width: 1px 1px 1px 0; border-style: solid; border-color: #333333 #eeeeee #eeeeee transparent; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr th.past_date { background: #f6f6f6; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr th:first-child { width: 18.7vw; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr th span { font-family: 'NanumSquareR'; margin-left: 4px; }
+.wrap_sub .register .sec_cal .time_wrap table tbody { /*padding-left: 18.7vw; margin-top: 47.5px;*/ display: inline-block; }
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td.moveL { width: 18.7vw; /*position: absolute; left: 0;*/ font-size: 14px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td.past_time { background: #f6f6f6; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button { width: 72px; height: 30px; border-radius: 15px; line-height: 29px; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button::after { display: block; font-size: 14px; font-family: 'NanumSquareR'; }
@@ -357,6 +362,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button:not([data-type="0"], [data-type="1"], [data-type="7"]).on { background: #79bd28; color: #ffffff; border: 1px solid #79bd28; }
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button em {font-size: 10px;}
 .wrap_sub .register .sec_cal .time_wrap table tbody tr td button.on  { color: #ffffff; }
+.wrap_sub .register .sec_cal .time_wrap table thead tr th:first-child,
+.wrap_sub .register .sec_cal .time_wrap table tbody tr td:first-child { position: sticky; left: 0; }
 .wrap_sub .register .sec_cal .btn_box02 { padding: 0 15px; }
 .wrap_sub .register .sec_cal .btn_box02 .btn_gray a { pointer-events: none; }
 .wrap_sub .register .sec_cal .btn_box02 > div:first-child { float: left; }
@@ -372,9 +379,10 @@ ExtraBold - 'NanumSquareEB'
   .wrap_sub .register .sec_cal .time_wrap > span { height: 72.5px; width: 105px; } 
   .wrap_sub .register .sec_cal .time_wrap table { width: calc((105px * var(--dn)) + 105px); }
   .wrap_sub .register .sec_cal .time_wrap table tr { height: 72.5px; }
+  .wrap_sub .register .sec_cal .time_wrap table tr th,
   .wrap_sub .register .sec_cal .time_wrap table tr td,
-  .wrap_sub .register .sec_cal .time_wrap table thead tr td:first-child { width: 105px; }
-  .wrap_sub .register .sec_cal .time_wrap table tbody { padding-left: 105px; margin-top: 72.5px; }
+  .wrap_sub .register .sec_cal .time_wrap table thead tr th:first-child { width: 105px; }
+/*  .wrap_sub .register .sec_cal .time_wrap table tbody { padding-left: 105px; margin-top: 72.5px; }*/
   .wrap_sub .register .sec_cal .time_wrap table tbody tr td.moveL { width: 105px; }
 }
 

@@ -64,11 +64,12 @@ if("" != ""){
 <!-- common js file-->
 <script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/common/js/common.js?20230206042416"></script>
-<script type="text/javascript" src="/resource/assets/common/js/calendar.dev.js"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/calendar.dev.js?20230426032641"></script>
 
 <script>
   $(document).ready(()=> {
-    calendar.init();
+    calendarJs.init('20230427');
+    // calendar.init();
     eduApply.init();
     selEvent.init();
   })
