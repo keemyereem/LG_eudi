@@ -47,6 +47,14 @@
     <script>
       $(document).ready(()=> {
         nurseJS.init();
+
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_sub').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
       })
     </script>
   </head>

@@ -94,6 +94,7 @@ ExtraBold - 'NanumSquareEB'
 .duplicateChild_pop .con_list>ul>li>a>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
 .duplicateChild_pop>p { font-size: 18px; text-align: center; line-height: 1.25; margin: 35px 0 40px; }
 
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .popup .inner_pop { width: 345px; }
   .scheduleEdit_pop { padding: 30px 15px 70px; }
@@ -465,7 +466,7 @@ ExtraBold - 'NanumSquareEB'
 .con_login { min-height: 100vh; padding: 0 15px 25px; position: relative; }
 .con_login .logo { padding: 100px 0 25px; text-align: center; }
 .con_login .logo img { width: 206px; }
-.con_login .authentic_cont { padding: 0 20px; }
+.con_login .authentic_cont { padding: 0 20px 100px 20px; }
 .con_login .authentic_cont > p { font-size: 13px; text-align: center; color: #727272; }
 .con_login .authentic_cont > p > b { font-family: 'NanumSquareEB'; color: #79bd28; display: block; margin-bottom: 9px; }
 .con_login .authentic_cont .input_row { padding: 0 15px; height: 50px; line-height: 50px; border: 1px solid #cfcfcf; margin: 40px auto 0; max-width: 610px; }

@@ -2830,9 +2830,9 @@ function fnLogOut(){
               개인정보 보호를 위해<br> 먼저 비밀번호를 입력해 주세요.
             </p>
             <p class="pop_txt">
-              아이디:4mtest222
+              <b>ID: </b>4mtest222  <!-- ID: 수정 2023.04.26 -->
             </p>  
-            <div class="input_row mt10">  <!-- mt10 추가 2023.04.24 -->
+            <div class="input_row mt20">
               <span class="input_box">
                 <input type="password" id="pass_chk" name="pass_chk" class="ipt" minlength="4" maxlength="13" data-title="아이디를" placeholder="비밀번호를 입력하세요">	
               </span>	
@@ -2840,6 +2840,7 @@ function fnLogOut(){
             <div class="btn_box btn_box01">
               <div class="btn_green"><a href="javascript:fnPassChk();">확인</a></div>
             </div>
+            <a href="javascript:;" title="비밀번호 재설정" class="reset_pw">비밀번호 재설정</a> <!-- 비밀번호 재설정 버튼 추가 2023.04.26 -->
           </div>
         </div>
       </div>
