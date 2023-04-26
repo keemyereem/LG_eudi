@@ -90,6 +90,7 @@ function popupOpen(popConts) {
 }
 
 function popupsrh() {
+	$("#search_name").val($("#cHospitalName").val());
 	  var popthis = $(".pop_search");
 	  var mask = $(".pop_mask");
 	  popthis.css({
@@ -192,19 +193,26 @@ var datetimeEvent = {
 };
 
 
-$(document).on('keyup keydown','input[data-format-validate]',function(e){
+$(document).on('keyup focusin focusout','input[data-format-validate]',function(e){
 	const format = $(this).data('format-validate');
 	const oriVal = $(this).val();
-	
-	if (e.type=='keydown') {
-		$(this).data('prev-value', oriVal);
-	} else {
+	if (e.type=='keyup') {
+		if (validateRexg(format, oriVal)===true){
+			$(this).data('prev-value', oriVal);
+		}
+	} else if (e.type=='focusin') {
+		$(this).removeClass('placeholder-err');
+		$(this).attr('placeholder','');
+	} else if (e.type=='focusout') {
 		if (validateRexg(format, oriVal)===false && oriVal){
-			$(this).css('color','red');
+			$(this).addClass('placeholder-err');
 			// 이전값으로 복원
-			$(this).val($(this).data('prev-value'));
+			// $(this).val($(this).data('prev-value'));
+			$(this).val('');
+			$(this).attr('placeholder',oriVal + '은(는) 입력 할 수 없는 범위입니다.');
 		} else {
-			$(this).css('color','initial');
+			$(this).removeClass('placeholder-err');
+			$(this).attr('placeholder','');
 		}
 	}
 });
