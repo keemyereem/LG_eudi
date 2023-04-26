@@ -1306,14 +1306,14 @@
 
 /* 유디웹툰 팝업*/
 .pop_webtoon {background: #e6e6e6;letter-spacing: -0.5px;}
-.pop_webtoon .webtoon_info{background: #f5f5f5;padding: 18px 0 20px; margin: 8px 0;}
-.pop_webtoon .webtoon_info .pop_inner>p {display: flex;align-items: flex-end;font-family: 'NanumSquareB';font-size: 13px;color: #333;letter-spacing: -0.65px;}
-.pop_webtoon .webtoon_info .pop_inner>p+p {margin-top: 10px;}
+.pop_webtoon .webtoon_info{background: #f5f5f5;padding: 30px 0 20px; margin: 8px 0;}
+.pop_webtoon .webtoon_info .pop_inner>p {font-family: 'NanumSquareEB';font-size: 15px;color: #333;letter-spacing: -0.75px;line-height: 1.5;}
+.pop_webtoon .webtoon_info .pop_inner>p+p {margin-top: 5px;}
 .pop_webtoon .webtoon_info .pop_inner>p:last-of-type {font-size: 11px;color: #727171;letter-spacing: -0.275px;}
 .pop_webtoon .webtoon_info .pop_inner>p:last-of-type span {color: #333;}
 .pop_webtoon .webtoon_info .pop_inner>p:last-of-type span::after {content:'';display: inline-block;width: 3px;height: 3px;background: #79bd28;border-radius: 100%;margin-bottom: 5px;margin-left: 2px;}
 .pop_webtoon .webtoon_info .pop_inner>p>b {font-family: 'NanumSquareEB';color: #78bc27;}
-.pop_webtoon .webtoon_info .pop_inner>p>img {width: 61.5px;}
+.pop_webtoon .webtoon_info .pop_inner>p>img {width: 61.5px;margin-top: -15px;}
 .pop_webtoon .webtoon_info .pop_inner ul {display: flex;flex-wrap: wrap;justify-content: space-between;margin-top: 15px;}
 .pop_webtoon .webtoon_info .pop_inner ul li {display: flex;align-items: center;width: calc(50% - 2.5px);height: 32px;border-radius: 5px;border: 1px solid #dddeda;background: #fff;}
 .pop_webtoon .webtoon_info .pop_inner ul li:nth-child(n+3):nth-child(-n+4) {margin-top: 5px;}
