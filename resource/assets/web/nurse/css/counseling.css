@@ -165,8 +165,9 @@ ExtraBold - 'NanumSquareEB'
 /* .wrap_sub .sec_cal .current.today,  */
 .wrap_sub .sec_cal .cal_wrap .dates .day.disable { background: #f6f6f6; }
 .wrap_sub .sec_cal .cal_wrap .dates .day button.on { background: #79bd28; color: #fff; }
-.wrap_sub .sec_cal .current .hpc_block { width: 57%; max-width: 25px; height: 15px; border: 1px solid #13bfd6; color: #13bfd6; text-align: center; font-size: 9px; line-height: 14px; border-radius: 7.5px; margin:-3px .3vw 0 0; }
 .wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
+.wrap_sub .sec_cal .current .schedule.hpc_block { bottom: 41px; border: 1px solid #13bfd6; color: #13bfd6; font-family: 'NanumSquareR'; font-size: 8px; text-align: center; justify-content: center; }
+.wrap_sub .sec_cal .current .schedule.hpc_block>b { font-size: 9px;font-family: 'NanumSquareB'; }
 .wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #f49baa; }
 .wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #9ed363; }
 
