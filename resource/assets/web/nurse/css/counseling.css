@@ -434,6 +434,8 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .list_box .con_flex .con_head  .search_total { display: inline-block; font-size: 13px; color: #333; }
 .con_sub .list_box .child_list>ul>li>a { display: block; }
 .con_sub .list_box .child_list>ul>li>a>div { display: block; font-family: 'NanumSquareB'; color: #333; }
+.con_sub .list_box .child_list>ul>li>a>div:first-child { display: inline-block; }
+.con_sub .list_box .child_list>ul>li>a>div .lblbox { min-width: 50px; width: auto; padding: 4px 5px; }
 .con_sub .list_box .child_list>ul>li>a>div+div { margin-top: 10px; }
 .con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)>div { /* display: inline-block; */ float: left; min-width: 50%; }
 .con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)::after { content:''; display: block; clear: both; } 
