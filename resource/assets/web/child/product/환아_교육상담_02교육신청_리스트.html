@@ -64,11 +64,12 @@ if("" != ""){
 <!-- common js file-->
 <script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/common/js/common.js?20230206042416"></script>
-<script type="text/javascript" src="/resource/assets/common/js/calendar.dev.js"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/calendar.dev.js?20230426032641"></script>
 
 <script>
   $(document).ready(()=> {
-    calendar.init();
+    calendarJs.init('20230427');
+    // calendar.init();
     eduApply.init();
     selEvent.init();
   })
@@ -114,6 +115,7 @@ if("" != ""){
           <div class="select_date"><!-- 신청 내역이 없습니다. -->
             <b>신청일자 </b>
             <a href="javascript:;"> [교육] 2022.12.16 10:30 ~ 11:30</a>
+            <button class="btn_cancel">취소</button>
           </div>
           <div class="time_wrap" id="divTimeTable">
             <!-- <span>시간</span> -->

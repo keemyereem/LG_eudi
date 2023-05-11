@@ -89,15 +89,15 @@ var nurseJS = {
         
       // 지난달
       for (var i = prevDate - prevDay; i <= (prevDay == 6 ? 0 : prevDate); i++) {
-          calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable">' + i + '</div>';     
+          calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable"><button href="javascript:;" title="dates">' + i + '</button></div>';     
       }
       // 이번달
       for (var i = 1; i <= nextDate; i++) {
-          calendar.innerHTML = calendar.innerHTML + '<div class="day current"><a href="javascript:;" title="dates">' + i + '</a></div>'
+          calendar.innerHTML = calendar.innerHTML + '<div class="day current"><button href="javascript:;" title="dates">' + i + '</button></div>'
       }
       // 다음달
       for (var i = 1; i <= (6 - nextDay == 7 ? 0 : 6 - nextDay); i++) {
-          calendar.innerHTML = calendar.innerHTML + '<div class="day next disable">' + i + '</div>'
+          calendar.innerHTML = calendar.innerHTML + '<div class="day next disable"><button href="javascript:;" title="dates">' + i + '</button></div>'
       }
 
       // 오늘 날짜 표기
@@ -110,24 +110,24 @@ var nurseJS = {
     
       if(!$('.calendar .cal_wrap').hasClass('register')){  //상담일정관리 캘린더
         // 연도수와 월을 데이터로 저장
-        var getData = ['2023', '2'];
+        var getData = ['2023', '4'];
   
         if (calendar.dataset.cal === getData[0] + '년 ' + getData[1] + '월') { // 해당 데이터로 이동 시 정보 불러오기
           
           // 정보 예제 출력
-          var cb = $('.dates .day.current a');
+          var cb = $('.dates .day.current button');
   
           const data_edu = ['2', '5', '5']
           const data_cs = ['4', '2']
-          const data_hpc = ['3', '2', '9']
+          const data_hpc = ['3', '4', '9']
   
           cb.eq(2).addClass('edu');
           cb.eq(7).addClass('hpc edu');
-          cb.eq(8).addClass('edu cs');
+          cb.eq(8).addClass('edu cs hpc');
           cb.eq(13).addClass('hpc');
           cb.eq(19).addClass('cs');
   
-          $('.hpc').append('<span class="hpc_block">' + data_hpc[0] + '</span>');
+          $('.hpc').append('<span class="schedule hpc_block"><b>1</b>/' + data_hpc[0] + '</span>');
           $('.edu').append('<span class="schedule edu_block">교육<b>' + data_edu[0] + '</b></span>');
           $('.cs').append('<span class="schedule cs_block">상담<b>' + data_cs[0] + '</b></span>');
         }

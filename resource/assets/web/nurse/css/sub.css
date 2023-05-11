@@ -259,7 +259,7 @@
 .con_sub01 .con_list>ul>li>a>div > p:nth-child(2) {width: 30%;text-align: right;}
 .con_sub01 .con_list>ul>li>a>div:nth-child(2){font-size: 13px;color: #333;}
 .con_sub01 .con_list>ul>li>a>div:nth-child(3){font-size: 11px;color: #999;}
-.con_sub01 .con_list>ul>li>a>div:last-child {width: auto;text-align: left;}
+.con_sub01 .con_list>ul>li>a>div:last-child {width: auto;text-align: left;align-items: flex-start;}
 .con_sub01 .con_list>ul>li>a>div .datebox {font-family: 'NanumSquareB';letter-spacing: -0.65px;margin-top: 0;}
 .con_sub01 .con_list>ul>li>a>div .idbox {font-family: 'NanumSquareB';line-height: initial;margin-top: 0;}
 .con_sub01 .con_list>ul>li>a>div .namebox .genderbox {font-size: 11px;color: #727272;}
@@ -302,7 +302,7 @@
 .con_sub01 .search_lbl>ul>li:last-child {background-color: #79bd28;}
 .con_sub01 .search_lbl>ul>li>p {padding: 15px;font-family: 'NanumSquareEB';font-size: 13px;color: #fff;}
 .con_sub01 .search_lbl>ul>li>div {padding: 10px 15px;font-family: 'NanumSquareEB';font-size: 13px;color: #fff;text-align: right;}
-.con_sub01 .search_lbl>ul>li>div>span {font-size: 25px;}
+.con_sub01 .search_lbl>ul>li>div>span {font-size: 25px;letter-spacing: -0.7px;}
 
 .con_sub01 .btn_note {display: inline-block;width: 15px;height: 12px;vertical-align: middle;}
 .con_sub01 .btn_note a {display: block;width: 100%;height: 100%;background: url(../images/common/icon_note.png) no-repeat;background-size: 15px 12px;text-indent: -9999px;font-size: 0;}
@@ -433,7 +433,7 @@
 .con_sub03 .con_list>ul>li>a>div i.bar {margin: 0 8px;display: inline-block;width: 1px;height: 10px;background: #e5e5e5;vertical-align: middle;}
 .con_sub03 .con_list>ul>li>a>div .datebox {margin-top: 0;display: inline-block;}
 .con_sub03 .con_list>ul>li>a>div .namebox {position: relative;display: inline-block;}
-.con_sub03 .con_list>ul>li>a>div .hospitalbox {font-size: 11px;color: #999;position: absolute;top: 5px;right: 0;}
+.con_sub03 .con_list>ul>li>a>div .hospitalbox {font-size: 11px;color: #999;position: absolute;top: 5px;right: 0;width: calc(100% - 55px);text-align: right;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
 .con_sub03 .con_list>ul>li {position: relative;padding-left: 30px;}
 .con_sub03 .sel_all {padding-bottom: 20px;}
 .con_sub03 .sel_all .checkbox_row input[type="checkbox"]:checked + label:before {background: url(../images/common/bg_check_pink_on.png) 50% 50% no-repeat;background-size: cover;}
@@ -540,8 +540,8 @@
 
 /* 투여관리 */
 .con_sub .day_tit {padding-bottom: 10px;font-size: 12px;}
-.con_sub .radio_time input[type="radio"] + label {margin-right:15px;}
-.con_sub .radio_time:last-child input[type="radio"] + label {margin-right: 0;}
+.con_sub .tb table tbody td.cont .radio_time input[type="radio"] + label {margin-right:10px;margin-left: 0;}
+.con_sub .tb table tbody td.cont .radio_time:last-child input[type="radio"] + label {margin-right: 0;}
 .con_sub .select_time_box:after {content: "";display: block;clear: both;}
 .con_sub .select_time_box .select_time {float: left;display: block;width: 49.5%;}
 .con_sub .select_time_box .select_time:last-child {margin-left: 1%;}
@@ -560,6 +560,8 @@
 .con_sub01 .date_box:last-child {margin-bottom: 0;}
 .con_sub01 .date_box:after {content: "~";display: inline-block;position: absolute;bottom: -6px;left: 0;line-height: 1px;color: #d1d1d1;}
 .con_sub01 .date_box:last-child:after {display: none;}
+.con_sub01 .date_box .checkbox_row input[id="infiniteChk"] + label {top: 8px;}
+.con_sub01 .date_box .checkbox_row input[id="infiniteChk"] + label::before {top: 0;}
 
 .con_sub01 .week_chk {padding: 2px 0;line-height: normal;}
 .con_sub01 .week_chk .rdoBox {display:inline-block; *display:inline-block; position:relative; width:calc(50% - 2.5px); zoom:1;}
@@ -625,3 +627,6 @@
 .con_sub .tb table tbody td.tit2 p {font-family: 'NanumSquareB';font-size: 12px;overflow: hidden;line-height: 1.5;letter-spacing: -.5px;}
 .con_sub .tb table tbody td.tit2 p>span {margin-left: 4px;display: inline-block;width: 3px;height: 3px;background: #7cbe2d;border-radius: 100%;vertical-align: middle;}
 
+.con_sub .ipt_box .btn_add {margin-top: 10px;width: 100%;height: 40px;line-height: 40px;border: 1px solid #79bd28;border-radius: 5px;}
+.con_sub .ipt_box .btn_add>a {display: block;font-family: 'NanumSquareB';font-size: 12px;color: #79bd28;text-align: center;}
+.con_sub .ipt_box .btn_add>a>span {font-family: 'NanumSquareR';font-size: 20px;vertical-align: middle;}
