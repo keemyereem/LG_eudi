@@ -2400,6 +2400,7 @@ function fnLogOut(){
                   <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_01.jpg" alt="유디 웹툰"></div>
                   <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_02.jpg" alt="유디 웹툰"></div>
                   <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_03.jpg" alt="유디 웹툰"></div>
+                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_01.jpg" alt="유디 웹툰"></div>
                 </div>
 
               </div>
@@ -2526,6 +2527,13 @@ function fnLogOut(){
       $('.webtoon_slider .webtoon_img').eq(0).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_01.jpg');
       $('.webtoon_slider .webtoon_img').eq(1).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_02.jpg');
       $('.webtoon_slider .webtoon_img').eq(2).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_03.jpg');
+
+      if(ep == "4"){//4화는 4장
+        $('.webtoon_slider .webtoon_img').eq(3).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_04.jpg');
+      }  else {
+        $(".slick-dots li").eq(3).remove();
+      }
+
       selectChange(selectType0);
 
       function selectChange(type){
@@ -2538,6 +2546,15 @@ function fnLogOut(){
               $('.webtoon_slider .webtoon_img').eq(0).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_01.jpg');
               $('.webtoon_slider .webtoon_img').eq(1).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_02.jpg');
               $('.webtoon_slider .webtoon_img').eq(2).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_03.jpg');
+
+              if(ep_num == "4"){//4화는 4장
+                //$('.webtoon_slider .webtoon_img').eq(3).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_04.jpg');
+                $(".slick-dots").append('<li role="presentation"><button type="button" role="tab" id="slick-slide-control03" aria-controls="slick-slide03" aria-label="4 of 4" tabindex="-1">4</button></li>');
+                $('.webtoon_slider').slick('slickAdd','<div class="webtoon_img slick-slide slick-current slick-active" data-slick-index="3" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon04_04.jpg" alt="유디 웹툰"></div>', $('.slider').slick('slickCurrentSlide')+1);
+              }  else {//나머지화 3장
+                $('.webtoon_slider').slick('slickRemove', 3);
+                $(".slick-dots li").eq(3).remove();
+              }
           });
       };
       
