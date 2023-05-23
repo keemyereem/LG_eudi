@@ -42,5 +42,5 @@
     font-style: normal;
     src: url('../font/NotoSansCJKkr-Regular.eot');
     src: url('../font/NotoSansCJKkr-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../font/NotoSansCJKkr-Regular.woff') format('woff');
+         url('../font/NotoSansCJKkr-Regular.ttf') format('truetype');
 }
