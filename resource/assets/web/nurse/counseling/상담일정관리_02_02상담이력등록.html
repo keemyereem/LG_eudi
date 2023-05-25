@@ -73,7 +73,7 @@
     <!-- top //-->
 
     <!--// content --> 
-    <div class="content con_sub con_sub02">
+    <div class="content con_sub con_sub02 consultHistory">
       <div class="con_box">
         <div class="info_box">
           <h2>상담이력 상세</h2>
@@ -143,6 +143,119 @@
 
         <div class="form_box">
           <p class="con_tit">상담이력</p>
+          <div class="tb tb_none">
+            <table summary="상담이력">
+              <caption>상담이력</caption>
+              <colgroup>
+                  <col style="width:110px;">
+                  <col style="*">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td class="tit"><p>상담예정일</p></td>
+                  <td class="cont flex">
+                    <div class="inputBox_DP">
+                      <input type="date" name="csltExpcDt" id="csltExpcDt" class="date" value="2023-05-31" required="required" data-title="상담예정일" title="상담예정일">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>상담일자</p></td>
+                  <td class="cont flex">
+                    <div class="inputBox_DP">
+                      <input type="date" name="csltDt" id="csltDt" class="date" value="2023-05-25" required="required" data-title="상담일자" title="상담일자">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>상담분류</p></td>
+                  <td class="cont">
+                    <div class="select_row">
+                      <label for="csltTpCd">전화 상담(해피콜)</label>
+                      <select id="csltTpCd" name="csltTpCd">
+                        <option value="">선택하세요</option>
+                        
+                          <option value="11">신환교육(비대면)</option>
+                        
+                          <option value="12">신환교육(대면)</option>
+                        
+                          <option value="03">구환교육</option>
+                        
+                          <option value="07" selected="">전화 상담(해피콜)</option>
+                        
+                          <option value="06">기타</option>
+                        
+                      </select>
+                      <div class="con_form">
+                        <p class="hpc_date" name="notiHappyCall" style="display: none;">+7 업무일 (<span name="hcDate">2023-06-01</span>) 에 해피콜 등록</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>키</p></td>
+                  <td class="cont">
+                    <div class="input_physics">
+                      <span class="input_box">
+                        <input type="number" id="sichHigh" name="sichHigh" required="required" data-title="신장길이를" title="신장길이를" data-format-validate="height" value="0.0" class="ipt" maxlength="3">
+                      </span>
+                      <span class="physic">cm</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>몸무게</p></td>
+                  <td class="cont">
+                    <div class="input_physics">
+                      <span class="input_box">
+                        <input type="number" id="sichWgt" name="sichWgt" required="required" data-title="몸무게를" title="몸무게를" data-format-validate="weight" value="0.0" class="ipt" maxlength="3">
+                      </span>
+                      <span class="physic">kg</span>
+                    </div>
+                  </td>
+                </tr>
+                <!-- 
+                <tr>
+                  <td class="tit"><p>담당 간호사</p></td>
+                  <td class="cont">
+                    <div class="select_row">
+                      <label for="cChargNurseId">박소라</label>
+                      <select id="cChargNurseId" name="cChargNurseId">
+                        <option value="chloe1" >김광열</option>
+                        <option value="jeewoo1025" >김영미</option>
+                        <option value="rajhkim" >김지혜</option>
+                        <option value="cokiri" >김진경</option>
+                        <option value="lgrhj" >노희정</option>
+                        <option value="ekgml38" >류다희</option>
+                        <option value="jieun.park" >박지은</option>
+                        <option value="skywlgp" >박지혜</option>
+                        <option value="jiyoung.seo" >서지영</option>
+                        <option value="sheom" >엄소희</option>
+                        <option value="twofuture" >이미래</option>
+                        <option value="iamej" >이은주</option>
+                        <option value="jiyoun0531" >이지연</option>
+                        <option value="echoran" >이초란</option>
+                        <option value="hyeyeonyi124" >이혜연</option>
+                        <option value="happyjw116" >임종원</option>
+                        <option value="valavazz" >최지현</option>
+                        <option value="hanmijin" >한미진</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                 -->
+                <tr>
+                  <td class="tit"><p>상담내역</p></td>
+                  <td class="cont">
+                    <div class="area_box">
+                      <textarea type="text" id="csltCtn" name="csltCtn"></textarea>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
 
           <!-- <div class="con_form">
             <div class="tit">신청사유</div>
@@ -167,13 +280,12 @@
             </div>
           </div> -->
 
-          <div class="con_form">
+          <!-- <div class="con_form">
             <div class="con_date">
               <div class="inputBox_DP">
                 <div class="tit">상담예정일</div>
                 <input type="date" name="consultDate" id="consultDate" class="date" value="2022-12-10" required="required" data-title="상담예정일" title="상담예정일">
               </div>
-              <!-- <span class="hypen">~</span> -->
               <div class="inputBox_DP">
                 <div class="tit">상담일자</div>
                 <input type="date" name="consultDate" id="consultDate" class="date" value="2022-12-10" required="required" data-title="상담일자" title="상담일자">
@@ -215,7 +327,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- <div class="con_form">
             <div class="tit">환아관리자</div>
@@ -230,16 +342,114 @@
             </div>
           </div> -->
 
-          <div class="con_form">
+          <!-- <div class="con_form">
             <div class="tit">상담내역</div>
             <div class="area_box">
               <textarea type="text" id="" name=""></textarea>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="form_box form_box02">
-          <p class="con_tit">처방내역</p>
+          <h4 class="con_tit">처방내역</h4>
+          <div class="tb tb_none">
+            <table summary="처방내역" cellpadding="0" cellspacing="0" border="0">
+              <caption>처방내역</caption>
+              <colgroup>
+                  <col style="width:110px;">
+                  <col style="*">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td class="tit"><p>처방일자</p></td>
+                  <td class="cont flex">
+                    <div class="inputBox_DP">
+                      <input type="date" name="prescriptionDate" class="date" value="" data-placeholder="YYYY-MM-DD" required>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>담당의사</p></td>
+                  <td class="cont">
+                    <div class="input_search">
+                      <span class="input_box">
+                          <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
+                        <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>소속병원</p></td>
+                  <td class="cont">
+                    <div class="input_search">
+                      <span class="input_box">
+                        <input type="text" class="ipt"   id="selectHname"  value="연세대학교 병원" readonly="">
+                        <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>영업부서</p></td>
+                  <td class="cont"><p id="mDepartmentText">Speciallty Care. 마케팅.마케팅 1팀</p></td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>영업사원명</p></td>
+                  <td class="cont"><p id="mNameText">임종원</p></td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>제품</p></td>
+                  <td class="cont">
+                    <div class="select_row">
+                      <label for="sel01">유트로핀 펜주</label>
+                      <select id="sel01" name="">
+                        <option value="" >유트로핀 펜주</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>실투여량</p></td>
+                  <td class="cont">
+                    <div class="input_row">
+                      <span class="input_box">
+                        <input type="number" id="dose01" name="doseNumber1" required="required" data-title="실투여량" title="실투여량" value="" class="ipt" >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>주간투여횟수</p></td>
+                  <td class="cont">
+                    <div class="select_row">
+                      <label for="prescriptionName">주간투여횟수 선택</label>
+                      <select id="prescriptionName" name="prescriptionName">
+                        <option value="" >주간투여횟수 선택</option>
+                        <option value="1" >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                        <option value="6" >6</option>
+                        <option value="7" >7</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tit"><p>특이사항</p></td>
+                  <td class="cont">
+                    <div class="area_box">
+                      <textarea type="text" id="" name="" placeholder="내용을 입력하세요"></textarea>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- <p class="con_tit">처방내역</p>
 
           <div class="con_form con_flex">
             <div>
@@ -250,11 +460,6 @@
             </div>
             <div>
               <div class="tit">담당의사</div>
-              <!-- <div class="input_srh input_srh03">
-                <div class="input_box">
-                  <input type="text" id="weight" name="" class="ipt" placeholder="kg" value="">
-                </div>
-              </div> -->
               <div class="input_search">
                 <span class="input_box">
                     <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
@@ -266,11 +471,6 @@
 
           <div class="con_form">
             <div class="tit">소속병원</div>
-            <!-- <div class="input_srh input_srh03">
-              <div class="input_box">
-                <input type="text" id="height" name="" class="ipt" value="">
-              </div>
-            </div> -->
             <div class="input_search">
               <span class="input_box">
                 <input type="text" class="ipt" id="selectHname" value="연세대학교 병원" readonly="">
@@ -282,20 +482,10 @@
           <div class="con_form con_flex">
             <div>
               <div class="tit">영업부서</div>
-              <!-- <div class="input_srh input_srh03">
-                <div class="input_box">
-                  <input type="text" id="height" name="" class="ipt" value="">
-                </div>
-              </div> -->
               <p id="mDepartText">Speciallty Care. 마케팅.마케팅 1팀</p>
             </div>
             <div>
               <div class="tit">영업사원명</div>
-              <!-- <div class="input_srh input_srh03">
-                <div class="input_box">
-                  <input type="text" id="weight" name="" class="ipt" value="">
-                </div>
-              </div> -->
               <p id="mNameText">임종원</p>
             </div>
           </div>
@@ -348,11 +538,11 @@
             <div class="area_box">
               <textarea type="text" id="" name="" placeholder="특이사항을 입력해주세요"></textarea>
             </div>
-          </div>
+          </div> -->
 
           <div class="btn_box btn_box03 mt50">
-            <div class="btn_white"><a href="javascript:;">삭제</a></div>                           
             <div class="btn_gray"><a href="javascript:;">취소</a></div>
+            <div class="btn_white"><a href="javascript:;">삭제</a></div>                           
             <div class="btn_orange"><a href="javascript:;">등록</a></div>
           </div>
 
