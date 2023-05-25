@@ -459,7 +459,7 @@ ExtraBold - 'NanumSquareEB'
 .con_sub.consultHistory .tb .inputBox_DP { width: 100%; }
 .con_sub.consultHistory .tb .hpc_date { font-size: 12px; color: #79bd28; }
 
-.con_sub .form_box .con_form .hpc_date { font-size: 12px; color: #f18e1e; margin-top: 10px; }
+.con_sub .ipt_box .inner .tb .hpc_date { font-size: 12px; color: #f18e1e; margin-top: 10px; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .con_sub .list_box { padding: 35px 15px 150px; }
