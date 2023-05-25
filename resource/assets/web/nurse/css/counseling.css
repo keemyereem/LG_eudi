@@ -107,6 +107,7 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .search_box .srh_box02 { margin-bottom: 0; }
 .con_sub .tb03,
 .con_sub .tb04 {border-top: 1px solid #ececec;}
+.con_sub .tb_none {border-top: none;}
 
 .btn_box04 .btn_orange { float: left; width: 60px; height: 40px; line-height: 40px; margin-left: 4px; }
 .btn_box04 .btn_orange button,
@@ -243,6 +244,7 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .con_sub .info_box { padding: 30px 15px 25px; background: #fff; }
 .wrap_sub .con_sub .con_box .con_tit { font-family: 'NanumSquareEB'; font-size: 13px; color: #f18e1e; }
 .wrap_sub .con_sub .con_box .con_tit::after { content:''; display: block; width: 100%; height: 1px; background: #f18e1e; margin-top: 8px; }
+.wrap_sub .con_sub .con_box .tb_tit { font-family: 'NanumSquareEB'; font-size: 13px; color: #f18e1e; margin-bottom: 15px; }
 .wrap_sub .con_sub .info_box h2 { font-size: 18px; font-family: 'NanumSquareB'; color: #f18e1e; letter-spacing: -1px; padding-bottom: 15px; }
 .wrap_sub .con_sub .info_box .con_tit { margin-bottom: 20px; }
 .wrap_sub .con_sub .info_box>ul { display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 20px; font-size: 13px; }
@@ -457,7 +459,7 @@ ExtraBold - 'NanumSquareEB'
 .con_sub.consultHistory .tb .inputBox_DP { width: 100%; }
 .con_sub.consultHistory .tb .hpc_date { font-size: 12px; color: #79bd28; }
 
-.con_sub .form_box .con_form .hpc_date { font-size: 12px; color: #f18e1e; margin-top: 10px; }
+.con_sub .ipt_box .inner .tb .hpc_date { font-size: 12px; color: #f18e1e; margin-top: 10px; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .con_sub .list_box { padding: 35px 15px 150px; }
