@@ -919,10 +919,10 @@
 
 /* 투여방법 */
 .wrap_sub03 .sub_top .nav {background: #79bd28;}
+.wrap_sub03 .sub_top .tab ul {display: flex;}
 
 .con_sub03 {position: relative;padding-bottom: 25px;background: #fff;}
-.con_sub03 .con_bg {position: absolute;top: 0;left: 0;width: 100%;height: 1120px;border-top: 1px solid #79bd28;background: #79bd28;} 
-/* .con_sub03 .con_bg {position: absolute;top: 0;left: 0;width: 100%;height: 25%;border-top: 1px solid #67cedc;background: #13bfd6;} */
+.con_sub03 .con_bg {position: absolute;top: 0;left: 0;width: 100%;height: 1056px;background: #79bd28;border-top: 8px solid #f1f1f1;} 
 .con_sub03 .video_wrap {position: relative;padding: 0 28px;}
 .con_sub03 .video_wrap .video_tit {padding: 30px 0 15px 0;font-family: 'NanumSquareB';font-size: 15px;color: #fff;}
 .con_sub03 .video_wrap .video_box {position:relative;width: 100%;height: auto;overflow: hidden;}
@@ -933,11 +933,11 @@
 .con_sub03 .info_num {margin-top: 25px;padding-top:16px;width: 100%;height: 75px;border-radius: 5px;background: #f5f5f5;text-align: center;}
 .con_sub03 .info_num p {display: inline-block;padding: 12px 0 12px 50px;height: 40px;font-family: 'NanumSquareEB';font-size: 18px;color: #1cb4c8;line-height: 1;background-image: url('../images/sub/icon_call.png');background-size: 40px 40px;background-position: 0 50%;background-repeat: no-repeat;}
 .con_sub03 .info_num p span {margin-right: 5px;font-family: 'NanumSquareR';font-size: 12px;color: #727272;vertical-align: middle;}
-.con_sub03 .info_num p a {color: #1cb4c8;}
+.con_sub03 .info_num p a {color: #79bd28;}
 .con_sub03 .sub_tab {position: relative;width: 100%;margin: 30px 0 0 0;}
 .con_sub03 .sub_tab ul:after {content: "";display: block;clear: both;}
-.con_sub03 .sub_tab ul>li {position: relative;float: left;width: 50%;height: 40px;line-height: 40px;margin-left: -1px;background: #f5f5f5;border: 1px solid #ececec;border-bottom: 1px solid #13bfd6;border-radius: 5px 5px 0 0;box-sizing: border-box;}
-.con_sub03 .sub_tab ul>li.active {border: 1px solid #13bfd6;border-bottom-color: transparent;background: #fff;z-index: 10;}
+.con_sub03 .sub_tab ul>li {position: relative;float: left;width: 50%;height: 40px;line-height: 40px;margin-left: -1px;background: #f5f5f5;border: 1px solid #ececec;border-bottom: 1px solid #79bd28;border-radius: 5px 5px 0 0;box-sizing: border-box;}
+.con_sub03 .sub_tab ul>li.active {border: 1px solid #79bd28;border-bottom-color: transparent;background: #fff;z-index: 10;}
 .con_sub03 .sub_tab ul>li>a {display: block;width: 100%;color: #727272;font-size: 13px;text-align: center;}
 .con_sub03 .sub_tab ul>li.active>a {font-family: 'NanumSquareEB';color: #333;}
 .con_sub03 .mv_wrap {padding-bottom: 35px;}
@@ -957,7 +957,10 @@
 
 /* 투여방법 - 핑크색 */
 .wrap_pink .sub_top .nav {background: #fc637d;}
-.wrap_pink .con_sub03 .con_bg {border-top: 1px solid #fc637d;background: #fc637d;} 
+.wrap_pink .sub_top .tab ul li {flex-grow: 1;width: auto;}
+.wrap_pink .sub_top .tab ul>li.active>a {color: #fc637d;}
+.wrap_pink .sub_top .tab ul>li.active {border-bottom: 2px solid #fc637d;}
+.wrap_pink .con_sub03 .con_bg {background: #fc637d;} 
 .wrap_pink .con_sub03 .info_num p {color: #fc637d;background-image: url('../images/sub/icon_call2.png');}
 .wrap_pink .con_sub03 .info_num p a {color: #fc637d;}
 .wrap_pink .con_sub03 .sub_tab ul>li {border-bottom: 1px solid #fc637d;}
@@ -1345,23 +1348,5 @@
 .con_main .main_top .btn_webtoon b { font-family: 'NanumSquareB'; margin-right: 2px; }
 .con_main .main_top .btn_webtoon img { width: 22px; margin-right: 7.5px; } */
 .con_main .main_top .btn_webtoon {position: absolute;top: 88px;right: 15px;z-index: 1; width: 73px;}
-
-/* 업데이트 공지 팝업*/
-.pop_update .pop_con .noti { display: flex; margin-top: 20px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e8e8e8; }
-.pop_update .pop_con .noti b { display: inline-block; width: 51px; height: 20px; border-radius: 10px; background: #e8e8e8; text-align: center; flex-shrink: 0; margin-right: 8px; font-family: 'NanumSquareB'; font-size: 10px; color: #222; line-height: 20px; }
-.pop_update .pop_con .noti span { font-family: 'NanumSquareR'; font-size: 11px; color: #555; line-height: 1.54; letter-spacing: -.825px; }
-.pop_update .pop_con .noti span em { font-size: 10px; color: #999; }
-.pop_update .pop_con ul li { font-size: 11px; color: #555; line-height: 1.45; letter-spacing: -.6px; padding-left: 10px; position: relative; }
-.pop_update .pop_con ul li+li { margin-top: 5px; }
-.pop_update .pop_con ul li::before { content:''; display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: #999; position: absolute; top: 7px; left: 0; }
-.pop_update .pop_con ul li:first-child:before { background: #79bd28; }
-.pop_update .pop_con ul li > b { font-size: 13px; color: #222; }
-.pop_update .pop_con ul li > span { font-size: 10px; color: #999; }
-.pop_update .pop_con ul li > div { height: 62px; background: #f9f9f9; border: 1px solid #e8e8e8; border-radius: 5px; display: flex; align-items: center; justify-content: center; margin: 5px 0 10px 0; }
-.pop_update .pop_con ul li > div > img { width: 92px; }
-.pop_update .pop_con .btn_box { margin-top: 20px; }
-
-
-
 
 
