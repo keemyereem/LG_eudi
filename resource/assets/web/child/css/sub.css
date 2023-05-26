@@ -1350,3 +1350,20 @@
 .con_main .main_top .btn_webtoon {position: absolute;top: 88px;right: 15px;z-index: 1; width: 73px;}
 
 
+/* 안드로이드 자동 업데이트 공지 팝업*/
+.pop_AndroidUpdate { text-align: center; font-weight: normal; }
+.pop_AndroidUpdate .pop_con .pop_tit { font-family: 'NanumSquareR'; font-size: 17px; letter-spacing: -1.7px; }
+.pop_AndroidUpdate .pop_con .circle { display: flex; justify-content: center; margin: 15px 0 5px; }
+.pop_AndroidUpdate .pop_con .circle > div { width: 3px; height: 3px; border-radius: 50%; background: #79bd28; margin: 0 2.5px; }
+.pop_AndroidUpdate .pop_con .circle + p { font-family: 'NanumSquareB'; font-size: 13px; color: #222; letter-spacing: -1.3px; line-height: 1.46; }
+.pop_AndroidUpdate .pop_con .grysml { margin-top: 10px; }
+.pop_AndroidUpdate .pop_con .gray_line { margin: 20px 0; }
+.pop_AndroidUpdate .pop_con .green_tit::before,
+.pop_AndroidUpdate .pop_con .green_tit::after { content:'';display: inline-block;width: 3px;height: 3px;background: #79bd28;border-radius: 50%;vertical-align: middle; margin: 0 10px; }
+.pop_AndroidUpdate .pop_con > ul { margin-top: 8px; }
+.pop_AndroidUpdate .pop_con > ul > li { display: flex; }
+.pop_AndroidUpdate .pop_con > ul > li+li { margin-top: 4px; }
+.pop_AndroidUpdate .pop_con > ul > li > .tit { flex-shrink: 0; width: 44px; height: 20px; border-radius: 10px; background: #e8e8e8; font-family: 'NanumSquareB'; font-size: 10px; color: #222; line-height: 20px; margin-right: 5px; }
+.pop_AndroidUpdate .pop_con > ul > li > p { font-size: 11px; font-family: 'NanumSquareR'; color: #555; line-height: 1.45; letter-spacing: -1.1px; margin-top: 2.5px; text-align: left; }
+.pop_AndroidUpdate .pop_con > ul + .grysml { text-align: left; letter-spacing: -.9px; position: relative; padding-left: 5px; }
+.pop_AndroidUpdate .pop_con > ul + .grysml::before { content:''; display: block; width: 3px; height: 3px; border-radius: 50%; background: #999; position: absolute; top: 5px; left: 0; }

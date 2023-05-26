@@ -1,71 +1,118 @@
+
 <!DOCTYPE html>
- 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <html>
-<head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+		
+	
+
+
+
+
 <script>
 
 /*ë©ì¸ì§*/
 if("" != ""){
-    var msg = "".replace("<br>", "\n");
+	var msg = "".replace("<br>", "\n");
 	alert(msg);
-    
+	
 }
 
 </script>
 
-<!-- SET FILE PATH :: compatibility ie9 code -->
-<base href="../" />
-<!--[if IE]><script type="text/javascript">
-    // Fix for IE ignoring relative base tags.
-    (function() {
-        var baseTag = document.getElementsByTagName('base')[0];
-        baseTag.href = baseTag.href;
-    })();
-</script><![endif]-->
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
-<meta name="format-detection" content="telephone=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="no-cache"/>
-<meta http-equiv="Expires" content="0"/>
-<meta http-equiv="Pragma" content="no-cache"/>
 
-<!-- TITLE -->
-<title>EuDi</title>
+	<!-- SET FILE PATH :: compatibility ie9 code -->
+		<base href="../" />
+		<!--[if IE]><script type="text/javascript">
+			// Fix for IE ignoring relative base tags.
+			(function() {
+				var baseTag = document.getElementsByTagName('base')[0];
+				baseTag.href = baseTag.href;
+			})();
+		</script><![endif]-->
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+			
+			
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+			
+		
+		<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<meta http-equiv="Expires" content="0"/>
+		<meta http-equiv="Pragma" content="no-cache"/>
 
-    <!-- 스마트 케이스 팝업 추가 -->
+		<!-- TITLE -->
+		<title>EuDi</title>
+	  	
+		<!-- 스마트 케이스 팝업 추가 -->
 
 
 <!--2019-09-16 4M 김현빈-->
 <!-- common css file-->
 
-<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=2.1">
-<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=2.1">
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?20230526043003">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20230526043003">
 
 
 <!-- child css file -->
-<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230223060144">
-<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230223060144">
-<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230223060144">
-<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230223060144">
-
-
-
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230526043003">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230526043003">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230526043003">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230526043003">
 <!-- child js file--> 
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
-<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230526043003"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
 
 <!-- common js file-->
 <script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
-<script type="text/javascript" src="/resource/assets/common/js/common.js?20230223060144"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230526043003"></script>
 
+<script type="text/javascript" src="/resource/assets/nurse/js/lib/datepicker-ko.js?version=1.2"></script>
 
+<!-- 개발용 css -->
+<style>
+	.placeholder-err::placeholder{
+	  color: red;
+	  opacity: 1; /* 파이어폭스에서 뿌옇게 나오는 현상을 방지하기 위한 css */
+	}
+	.placeholder-err::-webkit-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-ms-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-mos-input-placeholder {
+	  color: red;
+	}
+</style>
 <script type="text/javascript">
     function SHA256(s){
       
@@ -336,58 +383,12 @@ if("" != ""){
             });
     }
 	  
-    function fnPopUpClose(){
-  	  if(Number(totalCnt) > 1){//2번이상 물품신청
-  		  actionurl = "/child/appReviewChk.do";
-			   $.ajax({
-		            async: false,
-		            type: "POST",
-		            url : actionurl,
-		            dataType : "json",
-		            success: function(obj){
-		            	  $(".pop_order_result").css("display","none");
-	            	      $(".pop_mask").css("display","none");
-	            	      //인앱리뷰 
-	            	      if(Number(obj.chk) < 2){
-			            	      if (isMobile.any()) {
-			          				if (isMobile.Android()) {
-			          					window.eudiApp.showInAppReview();
-			          				} else if (isMobile.iOS()) {
-			          					webkit.messageHandlers.showInAppReview.postMessage('');
-			          				}
-			          			}
-	            	      }
-	            	      location.href="/product/product_list.do";
-		            },
-		            error: function(xhr, option, error){
-		                 // alert(xhr.status+" | "+error); //오류코드 | 오류내용
-		            }
-		        }) ;
-			   
-  	
-  		  //location.href="/product/product_list.do";
-  	  } else {
-  		  location.href="/product/product_list.do";
-  	  }
-
-  	  
-    }
-
+	 
 	$(window).load(function() {
-		if("19474"){
+		if("39192"){
 			fnAppPopupCheck(0);//로드시 팝업 호출
 		}
-
-    $(window).resize(resizeContents);
-    resizeContents();
-    function resizeContents() {
-      $('.wrap_main').css({
-        'min-height': $(window).height() + 'px'
-      });
-    }
-    gnbMenu.init();
 	});
-
 </script>
 
 
@@ -399,447 +400,344 @@ if("" != ""){
         </div>
       </div>
 
-    <style>
-    #pop_d{top:150px !important;}
-    </style>
-  <script>
-  /* 팝업쿠키-김은기*/
-  function setCookie(cname, cvalue, exdays) {
-	  const d = new Date();
-	  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-	  let expires = "expires="+d.toUTCString();
-	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-	}
-
-	function getCookie(cname) {
-	  let name = cname + "=";
-	  let ca = document.cookie.split(';');
-	  for(let i = 0; i < ca.length; i++) {
-	    let c = ca[i];
-	    while (c.charAt(0) == ' ') {
-	      c = c.substring(1);
-	    }
-	    if (c.indexOf(name) == 0) {
-	      return c.substring(name.length, c.length);
-	    }
-	  }
-	  return "";
-	}
-
-
-
-
-/*   window.onbeforeunload = function (event) {
-	 event.preventDefault();
-	 $.cookie('bin_','ok', { expires: 1, path: '/' });
-  } */
-
-  	/* 팝업쿠키-김은기*/
-  
-	  $(document).ready(function() {
-		  var newCheer;
-		  const cheerList = new Array(10);
-
-	     /*
-	    응원메시지 호출
-	     해당 부분 테스트 요망
-		메인에 머무는 유저가 적을 거 같으나 메인에 접속하고 계속 있게 되면 계속 새 응원메세지 호출
-	     갱신 시간이 짧으면 서버 부하 예상 현재는 2초로 입니다 2000=>2초
-		  */
-		newCheer = setInterval(cheerRefresh,10000);//메인에 있으면 10(10000)초마다 응원메시지 갱신합니다
-
-		 //<========================IOS는 팝업 기능 작업 전이라 웹에서 임시로 작업(2022-11-10)===============================>
-/* 		  if (isMobile.any()) {
-				if (isMobile.Android()) {
-					//앱에서 띄움
-				} else if (isMobile.iOS()) {
-					if (getCookie('iosAppUpdate') != null && getCookie('iosAppUpdate') != '') {
-						    $('#pop_appUpdate').css("display","none");
-						    $(".pop_mask2").css("display","none");
-					} else {
-							 popupInfo2('pop_appUpdate');
+		<style>
+			#pop_d{top:150px !important;}
+		</style>
+		<script>
+			/* 팝업쿠키-김은기*/
+			function setCookie(cname, cvalue, exdays) {
+				const d = new Date();
+				d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+				let expires = "expires="+d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			}
+			function getCookie(cname) {
+				let name = cname + "=";
+				let ca = document.cookie.split(';');
+				for(let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+			/*   window.onbeforeunload = function (event) {
+				 event.preventDefault();
+				 $.cookie('bin_','ok', { expires: 1, path: '/' });
+				} */
+			/* 팝업쿠키-김은기*/
+			
+			$(function() {
+				const cheerList = new Array(10);
+				/*
+					응원메시지 호출 
+					해당 부분 테스트 요망
+					메인에 머무는 유저가 적을 거 같으나 메인에 접속하고 계속 있게 되면 계속 새 응원메세지 호출
+					갱신 시간이 짧으면 서버 부하 예상 현재는 2초로 입니다 2000=>2초
+				*/
+				const newCheer = setInterval(cheerRefresh,10000);//메인에 있으면 10(10000)초마다 응원메시지 갱신합니다
+				const mobileType = navigator.userAgent.toLowerCase();
+				
+				/* 페이징 로딩 > 팝업 처리 */
+				if (getCookie('popd') != null && getCookie('popd') != '') {
+					$('#pop_d').css("display","none");
+					$(".pop_mask").css("display","none");
+				}
+				$('#cbpopup').on('change', function() {
+					var popthis = $('#pop_d');
+					var mask = $(".pop_mask");
+					popthis.css("display","none");
+					mask.css("display","none");
+		
+					// 체크박스 체크 유무
+					if ($('#cbpopup').prop('checked')) {
+						// 쿠키 저장
+						setCookie('popd', '1', 7);
+					}
+				});
+				
+				var chChk = "com.lg.web.vo.MemberVO@215df066";
+				var cidx = "39192";
+				if(chChk == null || chChk == ""){
+					if($.cookie("character_select_"+cidx) !=  'ok'){
+						popupInfo('pop_character');
+					}
+				}
+				//1월 18일(토) 오전 11시까지 시간 팝업 스크립트
+			 	if((parseInt($("#nowMonth").val()) == 09 && parseInt($("#nowDate").val()) < 13)){
+					if((parseInt($("#nowDate").val()) < 13 && parseInt($("#nowTime").val()) > 22)){
+						if (!(getCookie('popd') != null && getCookie('popd') != '')) {
+							popupInfo('pop_notice');
+						}
+					}
+				   if((parseInt($("#nowDate").val()) < 13)){
+						if (!(getCookie('popd') != null && getCookie('popd') != '')) {
+							popupInfo('pop_notice');
 						}
 					}
 				}
-
-
-		  $('#appUpdatepopup').change(function() {
-
-				var popthis = $('#pop_appUpdate');
-			    var mask = $(".pop_mask2");
-			    popthis.css("display","none");
-			    mask.css("display","none");
-
-				// 체크박스 체크 유무
-				if ($('#appUpdatepopup').prop('checked')) {
-					// 쿠키 저장
-					setCookie('iosAppUpdate', '1', 9999999999);
-				}
-			}); */
-		  //<========================IOS는 팝업 기능 작업 전이라 웹에서 임시로 작업(2022-11-10)===============================>
-
-
-		  const mobileType = navigator.userAgent.toLowerCase();
-
-		 //popupInfo('pop_eval');
-
-		  /* 페이징 로딩 > 팝업 처리 */
-			if (getCookie('popd') != null && getCookie('popd') != '') {
-			    $('#pop_d').css("display","none");
-			    $(".pop_mask").css("display","none");
-			}
-		  $('#cbpopup').change(function() {
-
-				var popthis = $('#pop_d');
-			    var mask = $(".pop_mask");
-			    popthis.css("display","none");
-			    mask.css("display","none");
-
-				// 체크박스 체크 유무
-				if ($('#cbpopup').prop('checked')) {
-					// 쿠키 저장
-					setCookie('popd', '1', 7);
+				if((parseInt($("#nowMonth").val()) == 09 && parseInt($("#nowDate").val()) == 13 && parseInt($("#nowTime").val()) < 22)){
+					if (!(getCookie('popd') != null && getCookie('popd') != '')) {
+						popupInfo('pop_notice');
+					}
 				}
 			});
 
-/* 			if (getCookie('appUpdate') != null && getCookie('appUpdate') != '') {
-			    $('#pop_appUpdate').css("display","none");
-			    $(".pop_mask2").css("display","none");
-			}
-		  $('#appUpdatepopup').change(function() {
-
-				var popthis = $('#pop_appUpdate');
-			    var mask = $(".pop_mask2");
-			    popthis.css("display","none");
-			    mask.css("display","none");
-
-				// 체크박스 체크 유무
-				if ($('#appUpdatepopup').prop('checked')) {
-					// 쿠키 저장
-					setCookie('iosAppUpdate', '1', 9999999999);
+			$(function(){
+				mySlider.init();
+				gnbMenu.init();
+	
+				$(window).resize(resizeContents);
+				resizeContents();
+				function resizeContents() {
+					$('.wrap_main').css({
+						'min-height': $(window).height() + 'px'
+					});
 				}
-			}); */
+				eudiApiCall('getUuid?succUuid');
+			});
+		
+			function fnGoPage(gubun){
+				if(gubun == "D"){
+		  			location.href="/child/dose_input_cal.do";
+	 			} else if (gubun == "G"){
+	 	 			if("7" == 0){
+	 	 				location.href="/growth/growth_input.do";
+	 	 	 		} else {
+	 	 	 			location.href="/growth/growth_graph.do";
+	 	 	 	 	}
+	 			} else if (gubun == "DI"){
+	 				location.href="/child/dose_info.do";
+	 			} else if (gubun == "C"){
+	 				location.href="/child/dose_pre.do";
+	 			} else if (gubun == "B"){
+	 				location.href="/child/badgeGrowth.do";
+	 			} else if (gubun == "R"){
+	 				location.href="/counsel/rsvt_monthly.do";
+	 			} else {
+	 				location.href="/product/product_list.do";
+	 			}
+			}
+		
+			function eudiApiCall(api) {
+				const getUuid = (api)=>{
+					var iframe = document.createElement('IFRAME');
+					iframe.setAttribute('src', 'eudi://' + api);
+					iframe.setAttribute('frameborder', '0');
+					iframe.style.width='1px';
+					iframe.style.height='1px';
+					document.body.appendChild(iframe);
+					setTimeout(function(){
+						document.body.removeChild(iframe);
+						iframe = null;
+					},3000);
+				}
+				//App에 Javascript Bridge 연결하여 전달
+				if (isMobile.any()) {
+					if (isMobile.Android()) {
+						try{
+							// 230504 : FCM 토큰 전송 브릿지 함수 추가
+							window.eudiApp.getToken();
+						} catch {
+							getUuid(api);
+						}
+					} else if (isMobile.iOS()) {
+						getUuid(api);
+					}
+				}
+			}
 
+			function succUuid(uuid) {
+				actionurl = "/child/updatePushInfo.do";
+ 				var chkData = { "puDeviceId": uuid };
+ 				$.ajax({
+	 				async: false,
+	 				type: "POST",
+	 				data:chkData,
+	 				url : actionurl,
+	 				dataType : "json",
+	 				success: function(obj){
+ 						// alert(obj.result);
+ 					},
+ 					error: function(xhr, option, error){
+ 						alert(xhr.status+" | "+error); //오류코드 | 오류내용
+ 					}
+	 			}) ;
+			}
 
-		 // alert("Y");
-		  //스마트 케이스 투여
-		/*   const popUpCnt = "";
-		  if(Number(popUpCnt) > 0){//1건 이상시
-			  popupInfo('pop_smarcase_dose');
-		  }
-		 */
+			function goCharacterPage(cidx){
+				$.cookie('character_select_'+cidx, 'ok', { expires: 1, path: '/' });
+				location.href="/child/character/main.do";
+			}
+		</script>
+  	</head>
+	<body>
+		<form>
+			
+			
+			
+			
+			<input type="hidden" name="nowMonth" id="nowMonth"  value="05"/>
+			<input type="hidden" name="nowDate" id="nowDate"  value="26"/>
+			<input type="hidden" name="nowTime" id="nowTime"  value="16"/>
+			<input type="hidden" name="cheerIdx" id="cheerIdx"  value="9736"/>
+			<input type="hidden" name="cheerArrays" id="cheerArrays"  value="0"/>
+		</form>
 
-        /*  if($.cookie("eudi_private_yn") != 'ok' && "Y" == 'N'){//개인정보 동의 팝업  */
-   /*      if($.cookie("eudi_private_yn") != 'ok'){
-        	 popupInfo('pop_privateYn');
-         } */
-         /* 성장 곡선 동의 팝업 DB로 변경 자동 로그인 유저도 있어서 세션에도 값이 있지만 select 에도 추가*/
-        if('1' < 1){
-        	if($.cookie("eudi_private_yn") != 'ok' || $.cookie("eudi_private_yn")  == ""){
-					  popupInfo('pop_privateYn');
- 			 }
-      	  }
-
-
-
-
-          var chChk = "com.lg.web.vo.MemberVO@567c12e8";
-          var cIdx = "19474";
-		  if(chChk == null || chChk == ""){
-			  if($.cookie("character_select_"+cIdx) !=  'ok'){
-			  	popupInfo('pop_character');
-			  }
-		  }
-           /*
-		  if($.cookie("notice_view") !=  'ok'){
-			  popupInfo('pop_notice');
-		   } */
-
-
-/* 		   if (!(getCookie('appUpdate') != null && getCookie('appUpdate') != '')) {
-	       		if(mobileType.indexOf('android') > -1) {//안드로이드만
-		    		popupInfo2('pop_appUpdate');
-		    	}
-	    	}
-		    */
-		  // popupInfo('pop_characnotice_viewter');
-		  //1월 18일(토) 오전 11시까지 시간 팝업 스크립트
-	 	   if((parseInt($("#nowMonth").val()) == 01 && parseInt($("#nowDate").val()) < 01)){
-			    if((parseInt($("#nowDate").val()) < 01 && parseInt($("#nowTime").val()) > 24)){
-			    	if (!(getCookie('popd') != null && getCookie('popd') != '')) {
-			    		popupInfo('pop_notice');
-			    	}
-			      /*  	if (!(getCookie('appUpdate') != null && getCookie('appUpdate') != '')) {
-			       		if(mobileType.indexOf('android') > -1) {//안드로이드만
-				    		popupInfo2('pop_appUpdate');
-				    	}
-			    	} */
-
-			   }
-			   if((parseInt($("#nowDate").val()) < 01)){
-				   if (!(getCookie('popd') != null && getCookie('popd') != '')) {
-				    	popupInfo('pop_notice');
-				    	}
-					/* if (!(getCookie('appUpdate') != null && getCookie('appUpdate') != '')) {
-			       		if(mobileType.indexOf('android') > -1) {//안드로이드만
-				    		popupInfo2('pop_appUpdate');
-				    	}
-			    	} */
-			  }
-
-		   }
-		  if((parseInt($("#nowMonth").val()) == 01 && parseInt($("#nowDate").val()) == 01 && parseInt($("#nowTime").val()) < 24)){
-			  if (!(getCookie('popd') != null && getCookie('popd') != '')) {
-			    	popupInfo('pop_notice');
-			    	}
-			/* 	if (!(getCookie('appUpdate') != null && getCookie('appUpdate') != '')) {
-		       		if(mobileType.indexOf('android') > -1) {//안드로이드만
-			    		popupInfo2('pop_appUpdate');
-			    	}
-		    	} */
-		   }
-	  });
-
-      $(function(){
-        mySlider.init();
-        gnbMenu.init();
-
-        eudiApiCall('getUuid?succUuid');
-
-      });
-
-      function fnGoPage(gubun){
-    	   if(gubun == "D"){
-      			location.href="/child/dose_input_cal.do";
- 		   } else if (gubun == "G"){
- 	 		   if("2" == 0){
- 	 			    location.href="/growth/growth_input.do";
- 	 	 		  } else {
- 	 	 			location.href="/growth/growth_graph.do";
- 	 	 	 	}
- 		   } else if (gubun == "DI"){
- 			    location.href="/child/dose_info.do";
- 		   } else if (gubun == "C"){
- 			    location.href="/child/dose_pre.do";
- 		   } else if (gubun == "B"){
- 			   location.href="/child/badgeGrowth.do";
- 		   }   else {
- 			  location.href="/product/product_list.do";
- 		   }
-
-      }
-
-
-
-      function eudiApiCall(api)
-      {
-          var iframe = document.createElement('IFRAME');
-          iframe.setAttribute('src', 'eudi://' + api);
-          iframe.setAttribute('frameborder', '0');
-          iframe.style.width='1px';
-          iframe.style.height='1px';
-          document.body.appendChild(iframe);
-          document.body.removeChild(iframe);
-          iframe = null;
-      }
-
-      function succUuid(uuid)
-      {
-    	   actionurl = "/child/updatePushInfo.do";
- 		   var chkData = { "puDeviceId": uuid };
- 		   $.ajax({
- 	            async: false,
- 	            type: "POST",
- 	            data:chkData,
- 	            url : actionurl,
- 	            dataType : "json",
- 	            success: function(obj){
- 	              // alert(obj.result);
- 	            },
- 	            error: function(xhr, option, error){
- 	                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
- 	            }
- 	        }) ;
-      }
-
-
-
-
-
-var popupMember = ["102","108","123","129","135","140","144","159","161","165","175","181","227","228","236","240","241","255","261","265","272","276","277","280"
-
-       ,"286","300","302","305","307","311","319","324","326","327","328","335","341","348","356","392","394","395","396","402","407","412","413","436","439","444","453","459"
-
-       ,"460","461","471","472","485","489","492","493","503","515","516","530","531","536","554","562","563","585","587","593","602","613","619","623","641","642","644","675"
-
-       ,"676","686","693","714","735","748","757","781","789","791","796","822","825","851","858","862","898","905","906","910","914","915","916","929","934","941","942","946"
-
-       ,"957","982","983","993","1009","1011","1016","1021","1023","1033","1034","1037","1039","1041","1048","1056","1059","1063","1066","1075","1077","1084","1089","1097"
-
-       ,"1101","1102","1105","1106","1119","1121","1128","1139","1141","1144","1149","1155","1157","1175","1178","1181","1186","1219","1220","1234","1242","1251","1260","1270"
-
-       ,"1280","1281","1284","1294","1317","1321","1323","1324","1333","1334","1339","1340","1345","1372","1374","1413","1416","1431","1432","1433","1439","1451","1472","1483","1487","1541"
-
-       ,"1579","1588","1590","1631","1662","1691","1699","1701","1709","1713","1720","1722","1734","1737","1745","1755","1759","1761","1772","1776","1777","1796","1800","1801"
-
-       ,"1817","1821","1828","1847","1858","1888","1898","1904","1933","1940","1970","1979","1980","1993","2007","2008","2044","2046","2089","2103","2115","2124","2136"
-
-       ,"2158","2175","2191","2193","2217","2226","2354","2409","2415","2437","2457","2468","2570","2602","2603","2617","2623","2624","2648","2649","2722","2725","2727","2751"
-
-       ,"2757","2762","2776","2789","2793","2799","2814","2820","2843","2853","2867","2880","2883","2931","2937","2964","3021","3059","3133","3141","3162","3182","3190","3216"
-
-       ,"3232","3258","3270","3287","3314","3343","3358","3359","3362","3378","3406","3539","3572","3602","3615","3669","717"];
-
-        function popYn(reChild) {
-
-                     var popupYn = $.inArray(reChild, popupMember);
-
-                     return popupYn;
-
-        }
-
-        function goCharacterPage(cIdx){
-        	$.cookie('character_select_'+cIdx, 'ok', { expires: 1, path: '/' });
-        	location.href="/child/character/main.do";
-        }
-
-
-
-
-
-  </script>
-	 
-	 
-	 
-	 
-  <script src='/eum_.js'></script></head>
-  <form>
-      <input type="hidden" name="nowMonth" id="nowMonth"  value="02"/>
-      <input type="hidden" name="nowDate" id="nowDate"  value="23"/>
-      <input type="hidden" name="nowTime" id="nowTime"  value="18"/>
-      <input type="hidden" name="cheerIdx" id="cheerIdx"  value="5106"/>
-      <input type="hidden" name="cheerArrays" id="cheerArrays"  value="0"/>
-
-  </form>
-
-  <body>
-        <div class="wrap wrap_main">
-          <!--// header -->
-          <div class="header">
-            <div class="header_inner">
-              <h1 class="logo"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/logo.png" alt="EuDi" /></a></h1>
-              <div class="menu"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/menu.png" alt="메뉴" /></a></div>
-              <div class="end"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/icon_end.png" alt="종료" /></a></div>
-            </div>
-              
+		<div class="wrap wrap_main">
+			<!--// header -->
+			<div class="header">
+					<div class="header_inner">
+					  <h1 class="logo"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/logo.png" alt="EuDi" /></a></h1>
+					  <div class="menu"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/menu.png" alt="메뉴" /></a></div>
+					 <!--  <div class="end"><a href="javascript:alert('N/A');"><img src="/resource/assets/web/child/images/common/icon_end.png" alt="종료" /></a></div> -->
+					</div>
+			  
 
 
 <script>
+$(function(){
+    selEvent.init();
+    
+
+
+
+});
+
 function fnLogOut(){
+	  //localStorage.removeItem("id");
+	  //localStorage.removeItem("autochk");
+	  //localStorage.removeItem("sessionKey");
+	  
+	   $.removeCookie('id'); 
+	   $.removeCookie('autochk'); 
+	   $.removeCookie('sessionKey'); 
+	  
 	location.href = "/child/logout.do";
 }
-</script>
-<form>
-<input type="hidden" id="childIdx" value="159,19474"/>
-</form>
-          <div class="gnb_box">
-            <div class="gnb_bg">
-              <div class="gnb_close"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
-              <div class="gnb_inner">
-                <div class="gnb_top">
-                  <ul>
-                    <li><a href="/child/modify_info.do">회원정보변경</a></li>
-                    <li><a href="javascript:;">블루투스</a></li>
-                    <li><a href="javascript:;" onclick="fnLogOut()">로그아웃</a></li>
-                  </ul>
-                </div>
-                <div class="gnb_sel">
-                  <div></div>
-                  <ul>
-                    <li id="child_159" ><a href="javascript:;" onclick="fnChildChange('159')"> 이지운</a></li>
-                    <li id="child_19474" class="active"><a href="javascript:;" onclick="fnChildChange('19474')"> 이지현</a></li>
-                    <li class="active"><a href="javascript:;">홍길동</a></li>
-                    <li><a href="javascript:;">이하준</a></li>
-                    <li><a href="javascript:;">이유준</a></li>
-                  </ul>
-                </div>
-                <div class="gnb_menu">
-                  <div class="gnb_home"><p><span><a href="/child/main.do">HOME</a></span></p></div>
-                  <ul>
-                    <li>
-                      <div class="gnb_tit"><a href="/child/schedule_management.do">투여관리</a></div>
-                      <div class="gnb_list">
-                        <ul>
-                          <li><a href="/child/schedule_management.do">- 투여계획</a></li>
-                          <li><a href="/child/dose_input_cal.do">- 투여입력</a></li>
-                          <li><a href="/child/dose_info.do">- 투여방법</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="gnb_tit"><a href="/growth/growth_record.do">성장관리</a></div>
-                      <div class="gnb_list">
-                        <ul>
-                          <li><a href="/growth/growth_graph_h4.do">- 성장곡선</a></li>
-                          <li><a href="/growth/growth_record.do">- 성장기록</a></li>
-                        </ul>
-                      </div>
-                    </li>
 
-                    <li>
-                      <div class="gnb_tit"><a href="/product/rsvt_monthly.do">상담하기</a></div>
-                      <div class="gnb_list">
-                        <ul>
-                          <li><a href="/counsel/rsvt_monthly.do">- 교육/상담신청</a></li>
-                          <li><a href="/counsel/counseling_list.do">- 온라인문의</a></li>
-                          <li><a href="/product/product_question.do">- FAQ</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="gnb_tit"><a href="/child/dose_pre.do">치료과정 공유</a></div>
-                      <div class="gnb_list">
-                        <ul>
-                          <li><a href="/child/dose_pre.do">- 의사선생님과 함께보기</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="gnb_tit"><a href="/product/product_list.do">물품신청</a></div>
-                      <div class="gnb_list">
-                        <ul>
-                          <li><a href="/product/product_request.do">- 물품요청</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="gnb_tit"><a href="/child/badgeGrowth.do">유디뱃지</a></div>
-                      <div class="gnb_list">
-                        <ul>
-                          <li><a href="/child/badgeGrowth.do">- 성장뱃지</a></li>
-                          <li><a href="/child/badgeMedicine.do">- 투여뱃지</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                  <!--   <li>
-                      <div class="gnb_tit"><a href="javascript:;" onclick="fnAppDeviceSetup()">스마트기기 관리</a></div>
-                    </li> -->
-                  </ul>
-                </div>
-                <div class="gnb_bot">
-                  <ul>
-                    <li><a href="javascript:;" onclick="popupOpen('pop_agree01');">이용약관</a></li>
-                    <li><a href="javascript:;" onclick="popupOpen('pop_agree02');" style="font-family: 'NanumSquareB'; color: #222222;">개인정보 처리방침</a></li><!--  -->
-                    <li><a href="javascript:;" onclick="popupOpen('pop_drop');">탈퇴신청</a></li>
-                  </ul>
-                </div>
+
+function fnModifyInfo(){
+	popupInfo('pop_pass');
+}
+
+function fnPassChk(){
+	if($("#pass_chk").val() ==""){
+		alert("현재 비빌번호를 입력하세요");
+		$("#pass_chk").focus();
+		return;
+	}
+ 	$("#mbrPwd").val($("#pass_chk").val());
+	$("#frmPass").attr("action", "/child/selectMyPassChk.do");
+	document.frmPass.submit(); 
+
+}
+</script>
+<form name="frmPass" id="frmPass" method="post"> 
+	<input type="hidden" id="childIdx" value="39192,39193"/>
+	<input type="hidden" id="mbrPwd" name="mbrPwd" value=""/>
+</form>
+   <div class="gnb_box">
+          <div class="gnb_bg">
+            <div class="gnb_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
+            <div class="gnb_inner">
+              <div class="gnb_top">
+                <ul>
+                  <li><a href="javascript:;" onclick="fnModifyInfo()">회원정보변경</a></li>
+                  <li><a href="javascript:;" onclick="fnAppDeviceSetup()">블루투스</a></li>
+                  <li><a href="javascript:;" onclick="fnLogOut()">로그아웃</a></li>
+                </ul>
+              </div>
+              <div class="gnb_sel">
+                <div></div>
+                <ul>
+                
+				     <li id="child_39192" class="active"><a href="javascript:;" onclick="fnChildChange('39192')"> 림링</a></li>
+				
+				     <li id="child_39193" ><a href="javascript:;" onclick="fnChildChange('39193')"> 아이추거</a></li>
+				
+
+
+
+               <!--    <li class="active"><a href="javascript:;">홍길동</a></li>
+                  <li><a href="javascript:;">이하준</a></li>
+                  <li><a href="javascript:;">이유준</a></li> -->
+                </ul>
+              </div>
+              <div class="gnb_menu">
+                <div class="gnb_home"><p><span><a href="/child/main.do">HOME</a></span></p></div>
+                <ul>
+                  <li>
+                    <div class="gnb_tit"><a href="/child/schedule_management.do">투여관리</a></div>
+                    <div class="gnb_list">
+                      <ul>
+                        <li><a href="/child/schedule_management.do">- 투여계획</a></li>
+                        <li><a href="/child/dose_input_cal.do">- 투여입력</a></li>
+                        <li><a href="/child/dose_info.do">- 투여방법</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="gnb_tit"><a href="/growth/growth_record.do">성장관리</a></div>
+                    <div class="gnb_list">
+                      <ul>
+                        <li><a href="/growth/growth_graph_h4.do">- 성장곡선</a></li>
+                        <li><a href="/growth/growth_input.do">- 성장기록</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="gnb_tit"><a href="/counsel/rsvt_monthly.do">상담하기</a></div>
+                    <div class="gnb_list">
+                      <ul>
+                        <li><a href="/counsel/rsvt_monthly.do">- 교육/상담신청</a></li>
+                        <li><a href="/counsel/counseling_list.do">- 온라인문의</a></li>
+                        <li><a href="/counsel/product_faq.do">- FAQ</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="gnb_tit"><a href="/child/dose_pre.do">치료과정 공유</a></div>
+                    <div class="gnb_list">
+                      <ul>
+                        <li><a href="/child/dose_pre.do">- 의사선생님과 함께보기</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="gnb_tit"><a href="/product/product_request.do">물품신청</a></div>
+                  </li>
+                  <li>
+                    <div class="gnb_tit"><a href="/child/badgeGrowth.do">유디뱃지</a></div>
+                    <div class="gnb_list">
+                      <ul>
+                        <li><a href="/child/badgeGrowth.do">- 성장뱃지</a></li>
+                        <li><a href="/child/badgeMedicine.do">- 투여뱃지</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                <!--   <li>
+                    <div class="gnb_tit"><a href="javascript:;" onclick="fnAppDeviceSetup()">스마트기기 관리</a></div>
+                  </li> -->
+                </ul>
+              </div>
+              <div class="gnb_bot">
+                <ul>
+                  <li><a href="javascript:;" onclick="popupOpen('pop_agree01');">이용약관</a></li>
+                  <li><a href="javascript:;" onclick="popupOpen('pop_agree02');"><b>개인정보처리방침</b></a></li>
+                  <li><a href="javascript:;" onclick="popupOpen('pop_drop');">탈퇴신청</a></li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+      </div>
       
-      
-        <!--// pop -->
+    <!--// pop -->
        <!-- 이용약관 -->
       <div class="pop_wrap pop_agree01">
         <div class="pop_box">
@@ -873,7 +771,7 @@ function fnLogOut(){
               <h3>제 2장 서비스 이용계약</h3>
               <h4>제4조 이용계약의 성립</h4>
               <ul>
-                <li><span>①</span>이용계약은 이용자의 이용 신청에 대한 회사의 이용 승낙과 이용자의 약관 내용에 대한 동의로 성립됩니다.</li>
+                <li><span>①</span>이용계약은 이용자의 이용 신청에 대한 회사의 이용 승낙과 이용자의 약관 및 내용에 대한 동의로 성립됩니다.</li>
                 <li><span>②</span>회원으로 가입하여 서비스를 이용하기를 희망하는 자는 회사가 요청하는 소정의 신규 회원가입 양식에서 요구하는 사항을 기록하여 신청합니다.</li>
                 <li><span>③</span>온라인 가입신청 양식에 기재하는 모든 회원 정보는 실제 데이터인 것으로 간주합니다. 실명이나 실제 정보를 입력하지 않은 사용자는 법적인 보호를 받을 수 없으며, 서비스 사용의 제한을 받을 수 있습니다.</li>
                 <li>
@@ -905,7 +803,7 @@ function fnLogOut(){
                     <li><span>아.</span>회원이 담당간호사에게 성장호르몬 투여 종료를 유선, 문자, 카카오톡등을 통하여 고지한 경우</li>
                   </ul>
                 </li>
-                <!-- <li><span>⑤</span>회사는 제4항의 규정에 의하여 회원 또는 비회원의 이용을 제한하고자 하는 경우에는 그 사유, 일시 및 기간을 정하여 이메일 또는 전화 등의 방법에 의하여 해당 이용자 또는 대리인에게 통지합니다. 다만, 회사가 긴급하게 이용을 정지할 필요가 있다고 인정하는 경우에는 그러하지 아니합니다.</li>
+  <!--               <li><span>⑤</span>회사는 제4항의 규정에 의하여 회원 또는 비회원의 이용을 제한하고자 하는 경우에는 그 사유, 일시 및 기간을 정하여 이메일 또는 전화 등의 방법에 의하여 해당 이용자 또는 대리인에게 통지합니다. 다만, 회사가 긴급하게 이용을 정지할 필요가 있다고 인정하는 경우에는 그러하지 아니합니다.</li>
                 <li><span>⑥</span>제5항에 의하여 이용정지의 통지를 받은 이용자 또는 그 대리인은 그 이용정지의 통지에 대하여 이의가 있을 때에는 이용정지의 통지를 받은 날로부터 [  ]일 이내에 이의신청을 할 수 있습니다.</li>
                 <li><span>⑦</span>회사는 제6항의 규정에 의한 이의신청에 대하여 그 확인을 위한 기간까지 이용정지 조치를 보류할 수 있으며, 확인 결과를 이용자 또는 그 대리인에게 통지합니다.</li>
                 <li><span>⑧</span>회사는 이용저지 기간 중에 그 이용정지 사유가 해소된 것이 확인된 경우에는 이용정지 조치를 즉시 해제합니다.</li> -->
@@ -915,7 +813,7 @@ function fnLogOut(){
                 <li><span>①</span>제5조에 의하여 서비스에서 직접 탈퇴한 사용자가 재가입을 원할 경우 탈퇴 즉시 동일 명의의 재가입이 허용됩니다. 단, 기존에 사용하던 아이디는 다시 사용할 수 없으며 제5조 4항에 의하여 서비스 이용이 중지된 경우 회사의 판단에 따라 회원 재가입이 영구적으로 불가능할 수 있습니다. </li>
                 <li><span>②</span>제5조에 의하여 서비스에서 직접 탈퇴한 사용자가 재가입을 할 경우에는 최초 가입 시 제공되었던 혜택은 중복하여 제공되지 않습니다.</li>
               </ul>
-              <h4>제7조 휴면 계정 </h4>
+                <h4>제7조 휴면 계정 </h4>
               <ul>
                 <li><span>①</span>회원이 1년 이상 로그인을 하지 않은 경우 회원의 계정을 휴면상태로 전환하고, 해당 계정의 개인정보를 다른 회원의 개인정보와 분리하여 별도로 보관합니다.</li>
                 <li><span>②</span>휴면상태의 계정으로는 EuDi 회원 로그인 서비스 이용이 제한되고 회사는 휴면상태로 전환된 계정의 개인정보를 이용, 제공하지 않습니다.</li>
@@ -984,7 +882,7 @@ function fnLogOut(){
                     <li><span>다.</span>기타 관계법령이 정한 절차에 따른 요청이 있는 경우</li>
                   </ul>
                 </li>
-                <li><span>③</span>회사는 서비스 제공 설비를 운용 가능한 상태로 항상 유지해야 하며 장애가 발생했을 때에는 지체 없이 이를 수리, 복구하여 이용자의 서비스 이용에 불편이 없도록 합니다.</li>
+               <li><span>③</span>회사는 서비스 제공 설비를 운용 가능한 상태로 항상 유지해야 하며 장애가 발생했을 때에는 지체 없이 이를 수리, 복구하여 이용자의 서비스 이용에 불편이 없도록 합니다.</li>
                 <li>
                   <span>④</span>단 아래의 경우에는 회사가 책임을 지지 아니합니다.
                   <ul>
@@ -996,7 +894,7 @@ function fnLogOut(){
               </ul>
               <h4>제13조 회원의 의무</h4>
               <ul>
-                <li><span>①</span>회원은 서비스를 이용할 때 다음 각 호의 행위를 해서는 안됩니다.
+                 <li><span>①</span>회원은 서비스를 이용할 때 다음 각 호의 행위를 해서는 안됩니다.
                   <ul>
                     <li><span>가.</span>다른 회원의 ID를 부정하게 사용하는 행위</li>
                     <li><span>나.</span>서비스에서 얻은 정보를 회사의 사전 승낙 없이 회원의 이용 이외의 목적으로 복제하거나 이를 출판 및 방송 등에 사용하거나 제3자에게 제공하는 행위 </li>
@@ -1015,7 +913,7 @@ function fnLogOut(){
               <ul>
                 <li><span>①</span>"회사"와 이용자간에 발생한 서비스 이용에 관한 분쟁에 대하여는 대한민국 법을 적용하며, 본 분쟁으로 인한 소는 회사의 소재지를 관할하는 법원에 제기합니다.</li>
               </ul>
-              <!-- <h4>제15조 저작권의 귀속</h4>
+            <!--   <h4>제15조 저작권의 귀속</h4>
               <ul>
                 <li><span>①</span>회사에서 제공하는 모든 저작물의 저작권 및 기타 지식재산권은 저작권자 또는 회사에 귀속합니다.</li>
                 <li><span>②</span>이용자는 어플리케이션(APP)을 이용함으로써 얻은 정보를 회사의 사전 승낙 없이 복제, 송신, 출판, 재배포, 방송 기타 방법에 의하여 이용할 수 없습니다.</li>
@@ -2236,8 +2134,8 @@ function fnLogOut(){
 
             var selectedOption = $('#privacyPolicy').val();
               if (selectedOption = subject_idx){
-                $('.pop_agree02 .pop_cont').hide();
-                $('.pop_agree02 .pop_cont0' + selectedOption).show();
+                  $('.pop_agree02 .pop_cont').hide();
+                  $('.pop_agree02 .pop_cont0' + selectedOption).show();
               }
 
             $('.policy_version>button').on('click', ()=> {
@@ -2262,85 +2160,136 @@ function fnLogOut(){
 
         </script>
       </div>
+      <!-- pop //-->
+               <!-- 응원 메시지 -->
+      <div class="pop_mask"></div>
+      <div class="pop_info pop_pass" >
+        <div class="pop_info_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+          <div class="pop_con">
+            <p class="pop_tit">회원정보변경</p>
+		    <p class="pop_txt">
+				회원님의 기본정보 및 아이의 정보를<br> 수정할 수 있습니다.<br>
+					개인정보 보호를 위해<br> 먼저 비밀번호를 입력해 주세요.
+			</p>
+			
+            <p class="pop_txt">
+				<b>ID: </b>4mtest222
+			</p>  
+			
+		  <div class="input_row mt20">
+                  <span class="input_box">
+			
+					<input type="password" id="pass_chk" name="pass_chk" class="ipt"  minlength="4" maxlength="13" data-title="아이디를"  placeholder="비밀번호를 입력하세요" >	
+					</span>	
+			</div>
 
-      <!-- 탈퇴신청 팝업 UI추가 및 수정 - 2023.03.17 -->
+			<div class="btn_box btn_box01">
+				<div class="btn_green"><a href="javascript:fnPassChk();">확인</a></div>
+				
+			</div>
+          </div>
+        </div>
+      </div>
+      
+      <form id="frmJoin" name="frmJoin" method="post" action="/child/memberUpdate.do">
+       <!--// pop 탈퇴 프로세스-->
       <div class="pop_wrap pop_drop">
         <div class="pop_box">
           <div class="pop_top">
             <div class="pop_inner">
               <h2 class="title">회원탈퇴신청</h2>
-              <div class="pop_close close">
-                <!--<a href="/child/modify_info.do">-->
-                <a href="javascript:;">
-                  <img src="/resource/assets/web/child/images/common/close.png" alt="닫기" />
-                </a>
-              </div>
+              <div class="pop_close close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/close.png" alt="닫기" /></a></div>
             </div>
           </div>
           <div class="pop_cont">
             <div class="pop_inner">
               <div class="tb">
-                <table summary="탈퇴신청" cellpadding="0" cellspacing="0" border="0">
+                <table summary="탈퇴신청" >
                   <caption>탈퇴신청</caption>
                   <colgroup>
-                      <col style="width:110px;">
+                      <col style="width:90px;">
                       <col style="*">
                   </colgroup>
                   <tbody>
                     <tr>
-                      <td class="tit"><p>탈퇴사유</p></td>
-                      <td class="cont">
-                        <div class="cont_inner">
-                          <div class="select_row">
-                            <label for="mWithdrawReason">탈퇴사유를 입력해주세요</label>
-                            <select id="mWithdrawReason" name="mWithdrawReason">
-                              <option value="complete" >치료완료(치료목표달성/ 효과만족/ 성장판닫힘)</option>
-                              <option value="pauseForM" >치료중단(경제적부담)</option>
-                              <option value="pauseForP" >치료중단(주사스트레스/통증)</option>
-                              <option value="pauseForE" >치료중단(효과미비) </option>
-                              <option value="pauseForW" >치료중단(부작용발생/우려) </option>
-                              <option value="change" >타제품 전환</option>
-                              <option value="etc" >기타(사유를 서술형으로 적어주세요)</option>
-                            </select>
-                          </div>
-                          <div class="area_box">
-                            <textarea type="text" id="mWithdrawReason" name="mWithdrawReason" placeholder="탈퇴사유를 입력해주세요."></textarea>
-                          </div>
-                        </div>
+                      <td class="tit"><p>탈퇴사유<span></span></p></td>
+                       <td class="cont">
+	                        <div class="select_row">
+	                          <label for="mWithdrawCode">탈퇴 유형를 선택해주세요</label>
+		                         <select id="mWithdrawCode" name="mWithdrawCode">
+		                            <option value="0" selected>탈퇴 유형를 선택해주세요</option>
+		                            
+		                             	<option value="1">치료 완료(효과만족/성장판닫힘)</option>
+		                            
+		                             	<option value="2">타제품 전환(경제적부담)</option>
+		                            
+		                             	<option value="3">타제품 전환(주사스트레스/통증)</option>
+		                            
+		                             	<option value="4">타제품 전환(효과미비)</option>
+		                            
+		                             	<option value="5">타제품 전환(부작용발생)</option>
+		                            
+		                             	<option value="6">타제품 전환(기타)</option>
+		                            
+		                             	<option value="7">치료 중단(경제적부담)</option>
+		                            
+		                             	<option value="8">치료 중단(주사스트레스/통증)</option>
+		                            
+		                             	<option value="9">치료 중단(효과미비)</option>
+		                            
+		                             	<option value="10">치료 중단(부작용발생/우려)</option>
+		                            
+		                             	<option value="11">상담 중단(연락두절)</option>
+		                            
+		                             	<option value="12">상담 중단(해외출국)</option>
+		                            
+		                             	<option value="13">동의 철회(해피콜 거부/삭제 요청)</option>
+		                            
+		                             	<option value="14">기타 (사유를 서술형으로 적어주세요)</option>
+		                            
+		                        </select>
+	                        </div>
                       </td>
                     </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="tb">
-                <table summary="탈퇴신청" cellpadding="0" cellspacing="0" border="0">
-                  <caption>탈퇴신청</caption>
-                  <colgroup>
-                      <col style="width:110px;">
-                      <col style="*">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <td class="tit"><p>스마트기기 <br>반납여부</p></td>
-                      <td class="cont mainWithdrawlRad">
-                        <div class="radio_row">
-                          <input type="radio" id="radio01" name="returnSmartDevice" class="radio" value="" checked >
-                          <label for="radio01">반납</label>
-                        </div>
-                        <div class="radio_row">
-                          <input type="radio" id="radio02" name="returnSmartDevice" class="radio" value="">
-                          <label for="radio02">미반납(반납예정)</label>
-                        </div>
-                        <div class="radio_row">
-                          <input type="radio" id="radio03" name="returnSmartDevice" class="radio" value="">
-                          <label for="radio03">처음부터 받지 않았음</label>
-                        </div>
-                        <div class="radio_row">
-                          <input type="radio" id="radio04" name="returnSmartDevice" class="radio" value="">
-                          <label for="radio04">분실</label>
-                        </div>
-                      </td>
+                      <tr id="withdrawContent" style="display:none">
+	                      <td class="tit"><p>기타사유</p></td>
+	                      <td class="cont">
+		                       <div class="area_box">
+           						   <textarea id="mWithdrawContent" name="mWithdrawContent" maxlength="1000" cols="30" rows="10"></textarea>
+       						   </div>
+		                   </td>
+	                    </tr>
+                     <tr>
+                      <td class="tit"><p>스마트기기반납여부<span></span></p></td>
+                           <td class="cont">
+	                            
+				                       				 <div class="radio_row">
+				          								<input type="radio" id="RTRN_CD1" name="rState" value="01">
+				          							    <label for="RTRN_CD1">반납</label>
+				          							</div>
+				          				
+	                            
+				                       				 <div class="radio_row">
+				          								<input type="radio" id="RTRN_CD2" name="rState" value="02">
+				          							    <label for="RTRN_CD2">미 반납(반납예정)</label>
+				          							</div>
+				          				
+	                            
+				                       				 <div class="radio_row">
+				          								<input type="radio" id="RTRN_CD3" name="rState" value="03">
+				          							    <label for="RTRN_CD3">처음부터 받지 않았음</label>
+				          							</div>
+				          				
+	                            
+				                       				 <div class="radio_row">
+				          								<input type="radio" id="RTRN_CD4" name="rState" value="04">
+				          							    <label for="RTRN_CD4">분실</label>
+				          							</div>
+				          				
+	                            
+			             </td>
+			                        
                     </tr>
                   </tbody>
                 </table>
@@ -2348,565 +2297,669 @@ function fnLogOut(){
               <p class="comment">탈퇴를 하면, 기존 서비스 활용을 더 이상 할 수 없으며<br>기존의 데이터도 모두 사라지게 됩니다.</p>
             </div>
           </div>
-          <div class="pop_btn">
+        </div>
+           <div class="pop_btn">
             <div class="btn_box">
               <div class="pop_close btn_gray"><a href="javascript:;">닫기</a></div>
               <div class="btn_green"><a href="javascript:;" onclick="fnWithdraw()">탈퇴신청</a></div>
             </div>
           </div>
-        </div>
       </div>
-
-      <script>
-        // 탈퇴신청팝업 셀렉트바 제목 바꾸기/ 기타버튼 선택시 사유 열기 - 2023.03.17
-        var selectType = $(".pop_drop .select_row>select");
-        selectChange(selectType);
-        function selectChange(type) {
-          type.change(function () {
-            var select_name = $(this).children("option:selected");
-            $(this).siblings("label").text(select_name.text());
-            if (select_name.val() === "etc") {
-              $(".pop_drop .area_box").show();
-            } else {
-              $(".pop_drop .area_box").hide();
-            }
-          });
-        }
-      </script>
-
-      <!-- 유디웹툰 -->
-      <div class="pop_wrap pop_webtoon">
-        <div class="pop_box">
-          <div class="pop_top">
-            <div class="pop_inner">
-              <h2 class="title">EuDi 스토리</h2>
-              <div class="pop_close close"><a href="/child/modify_info.do"><img src="/resource/assets/web/child/images/common/close.png" alt="닫기" /></a></div>
-            </div>
-          </div>
-          <div class="pop_cont">
-            
-            <div class="webtoon_cont">
-              <div class="pop_inner">
-                <div class="select_row">
-                  <label for="episode">3화 보기</label> <!-- 최신화 보기로 변경 -->
-                  <select name="episode" id="episode">
-                    <option value="1">1화 보기</option>
-                    <option value="2">2화 보기</option>
-                    <option value="3">3화 보기</option>
-                  </select>
-                </div>
-                
-                <div class="webtoon_slider">
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_01.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_02.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_03.jpg" alt="유디 웹툰"></div>
-                  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_01.jpg" alt="유디 웹툰"></div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="webtoon_info">
-              <div class="pop_inner">
-                <p>
-                  <img src="/resource/assets/web/child/images/common/logo.png" alt="eudi">
-                  그림 실력 뽐내기!
-                </p>
-                <p>여러분들만의&nbsp;<b>EuDi</b>&nbsp;를 그려주세요!</p>
-                <ul>
-                  <li>
-                    <div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_championeudi_08.png" alt="유테"></div>
-                    <p>
-                      운동을 좋아하는 <b>[ 유테 ]</b>
-                    </p>
-                  </li>
-                  <li>
-                    <div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_musicianeudi_08.png" alt="로미나"></div>
-                    <p>
-                      노래를 좋아하는 <b>[ 로미나 ]</b>
-                    </p>
-                  </li>
-                  <li>
-                    <div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_stylisheudi_08.png" alt="투루디"></div>
-                    <p>
-                      건강한 음식을 만드는 <b>[ 트루디 ]</b>
-                    </p>
-                  </li>
-                  <li>
-                    <div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_smarteudi_08.png" alt="핀텔"></div>
-                    <p>
-                      궁금한 것이 많은 <b>[ 핀델 ]</b>                    
-                    </p>
-                  </li>
-                </ul>
-                <p><span>eudiworld@lgchem.com</span> &nbsp;으로 EuDi 친구들을 직접 그려서 보내주면
-                  우리 아이 그림 실력을 모두에게 자랑할 수 있어요!</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- pop //-->
-      
-      
+      </form>
       <script>
       
       function fnChildChange(cIdx){
-    	   //삭제 처리
-		   actionurl = "/child/childChange.do";
-		   var chkData = {"cIdx": cIdx};
-		   $.ajax({
-	            async: false,
-	            type: "POST",
-	            data:chkData,
-	            url : actionurl,
-	            dataType : "json",
-	            success: function(obj){
-		            if(obj.cState == "A" || obj.cState == "AA" || typeof obj.cState  == "undefined" || obj.cState == null){
-		            	alert("승인 대기중입니다");
-		            	return;
-				    } else if(obj.cState == "R") {
-				    	alert("반려 되었습니다.");
-				    	return;
-				    } else {
-				    	 if(obj.result > 0){
-		                	 var chlidArray = $('#childIdx').val().split(",");
-		                	 for(var i=0;i<chlidArray.length;i++){
-		                		  if(chlidArray[i] == cIdx){
-		                			  $('#child_'+cIdx).addClass("active");
-		                		  } else {
-		                			  $('#child_'+chlidArray[i]).removeClass("active");
-		                		  }
-		                	 }
-		                	$("#reChildName").html("");
-		                	$("#reChildName").html(obj.reChildName);
-		                	location.href="/child/main.do"
-		                	   
-		                	   
-		                } else {
-		                	alert("일시적인 오류로 변경이 실패 하였습니다,다시 시도 해주세요");
-		                	 location.reload();
-		                }
-				}
-	               
-	                	
-	            },
-	            error: function(xhr, option, error){
-	            	 alert("일시적인 오류로 변경이 실패 하였습니다,다시 시도 해주세요");
-	            	 location.reload();
-	                  //alert(xhr.status+" | "+error); //오류코드 | 오류내용
-	            }
-	        })  
+    	  if(confirm('아이선택을 변경하시겠습니까?변경시에 모든 정보는 선택 된 아이의 정보로 보여집니다')){
+    		  actionurl = "/child/childChange.do";
+   		   var chkData = {"cIdx": cIdx};
+   		   $.ajax({
+   	            async: false,
+   	            type: "POST",
+   	            data:chkData,
+   	            url : actionurl,
+   	            dataType : "json",
+   	            success: function(obj){
+   		            if(obj.cState == "A" || obj.cState == "AA" || typeof obj.cState  == "undefined" || obj.cState == null){
+   		            	alert("승인 대기중입니다");
+   		            	return;
+   				    } else if(obj.cState == "R"){
+   				    	alert("반려 상태 입니다");
+   		            	return;
+   				     } else {
+   				    	 if(obj.result > 0){
+   		                	 var chlidArray = $('#childIdx').val().split(",");
+   		                	 for(var i=0;i<chlidArray.length;i++){
+   		                		  if(chlidArray[i] == cIdx){
+   		                			  $('#child_'+cIdx).addClass("active");
+   		                		  } else {
+   		                			  $('#child_'+chlidArray[i]).removeClass("active");
+   		                		  }
+   		                	 }
+   		                	$("#reChildName").html("");
+   		                	$("#reChildName").html(obj.reChildName);
+   		                	location.href="/child/main.do"
+   		                	   
+   		                	   
+   		                } else {
+   		                	alert("일시적인 오류로 변경이 실패 하였습니다,다시 시도 해주세요");
+   		                	 location.reload();
+   		                }
+   				}
+   	               
+   	                	
+   	            },
+   	            error: function(xhr, option, error){
+   	            	 alert("일시적인 오류로 변경이 실패 하였습니다,다시 시도 해주세요");
+   	            	 location.reload();
+   	                  //alert(xhr.status+" | "+error); //오류코드 | 오류내용
+   	            }
+   	        })  
+		    }else{
+		        return;
+		   }
+		 
     	  
       }
       
-      //유디 웹툰
-      $(".webtoon_slider").slick({
-        infinite: false,
-        dots: true,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        touchMove : true,
-        draggable : true,
-        focusOnSelect: false,
-        variableWidth : true,
-      });
-
-      // 웹툰 회차 셀렉트박스 클릭시 해당 이미지로 변경
-      var selectType0 = $("#episode");
-      var str = $('#episode').siblings("label").text(),
-          regex = /[^0-9]/g,
-          ep = str.replace(regex, "");
-
-      $('#episode option:eq(0)').attr('selected','selected');
-      $('#episode').val(ep);  
-      
-      $('.webtoon_slider').attr('data-value',ep);
-      $('.webtoon_slider .webtoon_img').eq(0).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_01.jpg');
-      $('.webtoon_slider .webtoon_img').eq(1).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_02.jpg');
-      $('.webtoon_slider .webtoon_img').eq(2).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_03.jpg');
-
-      if(ep == "4"){//4화는 4장
-        $('.webtoon_slider .webtoon_img').eq(3).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep+'_04.jpg');
-      }  else {
-        $(".slick-dots li").eq(3).remove();
-      }
-
-      selectChange(selectType0);
-
-      function selectChange(type){
-          type.change(function(){
-              var ep_num = $(this).children("option:selected").val(),
-                  ep_txt = $(this).children("option:selected").text();
-              $(this).siblings("label").text(ep_txt);
-              $('.webtoon_slider').slick('slickGoTo', 0);
-              $('.webtoon_slider').attr('data-value',ep_num);
-              $('.webtoon_slider .webtoon_img').eq(0).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_01.jpg');
-              $('.webtoon_slider .webtoon_img').eq(1).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_02.jpg');
-              $('.webtoon_slider .webtoon_img').eq(2).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_03.jpg');
-
-              if(ep_num == "4"){//4화는 4장
-                //$('.webtoon_slider .webtoon_img').eq(3).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_04.jpg');
-                $(".slick-dots").append('<li role="presentation"><button type="button" role="tab" id="slick-slide-control03" aria-controls="slick-slide03" aria-label="4 of 4" tabindex="-1">4</button></li>');
-                $('.webtoon_slider').slick('slickAdd','<div class="webtoon_img slick-slide slick-current slick-active" data-slick-index="3" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon04_04.jpg" alt="유디 웹툰"></div>', $('.slider').slick('slickCurrentSlide')+1);
-              }  else {//나머지화 3장
-                $('.webtoon_slider').slick('slickRemove', 3);
-                $(".slick-dots li").eq(3).remove();
-              }
-          });
-      };
-      
-      </script>
-          		  <img src="/resource/assets/web/child/images/main/spen_guideText.png" alt="spen_guideText" onclick="popupInfo2('pop_spen');"/>
-            <!-- header //-->
-			  
-            <!--// content -->
-            <div class="content con_main">
-              
-                <!-- 응원 메시지 테스트 요망(view)-->
-                <div class="my_msg">
-                  <div class="char">
-                    <img id="cheer_img" src="/resource/assets/web/child/images/profile/img_profile_musicianeudi_14.png" alt="아이 캐릭터" onError="this.src='/resource/assets/web/child/images/profile/img_profile_null.png';"/>
-                  </div>
-                  <p id="cheer_mesage"><span>@김*서&nbsp;&nbsp;</span>
-                    <marquee scrollamount="10" id="cm">쑥쑥크장ㅇ!! 화이티잉!!:) 쑥쑥크장ㅇ!! 화이티잉!!:)</marquee>
-                    <!-- 쑥쑥크장ㅇ!! 화이티잉!!:) -->
-                  </p>
-                  <a href="javascript:popupInfo('pop_msg');" class="btn_write"></a>
-                </div>
-
-                <div class="main_info">
-                  <div class="inner">
-                    
-                    <div class="main_top top_bg01 bg_musician"><!-- 캐릭터 선택 전 top_bg02 / 캐릭터 선택 후 top_bg01 -->
-                      <!-- 캐릭터 선택 후 -->
-                      <div class="my_box01">
-                        <div class="my_step">
-                          <p>뮤지션 유디 <span>6단계</span></p>
-                          <div class="btn_mychar"><a href="/child/character/view.do" class="btn_my_arrow">나의 캐릭터<br>확인하기</a></div>
-                        </div>
-                        <button class="btn_webtoon" onclick="popupOpen('pop_webtoon');">
-                          <img src="/resource/assets/web/child/images/webtoon/icon_webtoon02.png" alt="웹툰">
-                        </button>
-
-                        <div class="my_bar">
-                          <div class="bar"><span style="width: 60%"></span></div>
-                          <div class="lbl"><b>36</b> / 60</div>
-                        </div>
+      function fnWithdraw(){
+    	  
+    	 if($("#mWithdrawCode").val() == "0"){
+    		 alert("탈퇴 유형을 선택해주세요.");
+    		 return;
+    	 }
+    	 
+    	 if($("#mWithdrawCode").val() == "14"){
+	   		  if($.trim($("#mWithdrawContent").val())  == ""){
+				   alert("탈퇴사유를 입력해주세요.");
+				   $("#mWithdrawContent").focus();
+				   return;
+			  } ;
+    	 }
+    	 
+    	 
+    	 
+    	 if($('input[name=rState]').is(":checked") == false){
+    		 alert("스마트기기반납여부를 선택해주세요.");
+    		 return;
+    	 }
     
-                        <div class="my_char">
-                          <img src="/resource/assets/web/child/images/character/musician/musician_eudi02.png" alt="EuDi" />
-                        </div>
-                        
-                      </div>
-                      <!-- 캐릭터 선택 전 -->
-                      <div class="my_box02">
-                        <div class="my_step"><p>선택된 캐릭터가 없습니다.</p></div>
-                        <div class="btn_char"><a href="/child/character/main.do" class="btn_arrow">캐릭터 선택 바로가기</a></div>
+    	 
 
-                        <div class="my_char">
-                          <img src="/resource/assets/web/child/images/main/character00.png" alt="EuDi" />
-                        </div>
-                      </div>
-                    </div>
+			  var result = confirm("회원탈퇴신청을 하시겠습니까?");
+			  if(result){
+				   actionurl = "/child/Withdraw.do";
+		              $.ajax({
+		                  async: false,
+		                  type: "POST",
+		                  url : actionurl,
+		                  data : $("#frmJoin").serialize(),
+		                  dataType : "json",
+		                  success: function(obj){
+		                	  if(obj.result > 0){
+		                		  alert("탈퇴 되었습니다. 이용해주셔서 감사합니다.");
+		                		  location.href="/child/logout.do";
+		                	  } else {
+		                		  alert("일시적인 오류입니다, 다시 시도해 주세요.");
+		                		  return;
+		                	  }
+		                    
+		                
+		                  },
+		                  error: function(xhr, option, error){
+		                        //alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		                	    alert("일시적인 오류입니다, 다시 시도해 주세요.");
+		                  }
+		                  /*error : function(success){
+		                      meg = "서버와 통신중 에러가 발생하였습니다."
+		                      alert("처리결과 : "+meg);
+		                  }*/
+		              });
+			  }
 
-                    <div class="infobox">
-                      <div class="my_info">
-                        <div class="profile_img">
-                          <img src="/upload/child/cbc122cd5e114bbeb26128b307f81888.png" alt="EuDi" onerror="this.src='/resource/assets/web/child/images/character/img_profile_null.png'">
-                        </div>
-                        <div class="profile_info">
-                          <div>
-                            <div class="name"><p><b> 이지현</b> 어린이</p></div>
-                            <div class="date">2023.02.23 기준</div>
-                          </div>
-                              
-                          <!--// 입력 완료 -->
-                          <div class="info">
-                            <span>키:154cm · 상위 50%</span>
-                            <span>체중:42kg · 상위 60%</span>
-                          </div>
-                        </div>
-                      </div>
+		
+	  }
+      
+      $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
+	  		if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술
+		 		$("#withdrawContent").css("display", "");
+		 	} else {
+		 		$("#withdrawContent").css("display", "none");
+		 	}
+		});
+      </script>
+			<!-- 유디웹툰 -->
+	  <div class="pop_wrap pop_webtoon">
+		<div class="pop_box">
+		  <div class="pop_top">
+			<div class="pop_inner">
+			  <h2 class="title">EuDi 스토리</h2>
+			  <div class="pop_close close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/close.png" alt="닫기" /></a></div>
+			</div>
+		  </div>
+		  <div class="pop_cont">
+			
+			<div class="webtoon_cont">
+			  <div class="pop_inner">
+				<div class="select_row">
+				  <label for="episode">6화 보기</label> <!-- 최신화 보기로 변경 -->
+				  <select name="episode" id="episode">
+					<option value="1" data-cut="3">1화 보기</option>
+					<option value="2" data-cut="3">2화 보기</option>
+					<option value="3" data-cut="3">3화 보기</option>
+					<option value="4" data-cut="4">4화 보기</option>
+					<option value="5" data-cut="3">5화 보기</option>
+					<option value="6" data-cut="1">6화 보기</option>
+				  </select>
+				</div>
+				
+				<div class="webtoon_slider">
+				<!-- 웹툰 출력영역 -->
+				<!-- 
+				  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_01.jpg" alt="유디 웹툰"></div>
+				  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_01.jpg" alt="유디 웹툰"></div>
+				  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_02.jpg" alt="유디 웹툰"></div>
+				  <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_03.jpg" alt="유디 웹툰"></div>
+				 -->
+				<!--   <div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon01_01.jpg" alt="유디 웹툰"></div> -->
+				</div>
 
-                      <!-- 투여 계획 분기 -->
-                      <div class="my_dose">
-                        <c:choose>
-                          <c:when test="${shYn eq 'Y'}">
-                            <div class="dose_date">
-                              <div class="last">
-                                <div class="tit">지난 투여일</div>
-                                <div class="date">
-                                  2022.12.12
-                                </div>
-                              </div>
-                              <div class="schedule">
-                                <div class="tit">예정 투여일</div>
-                                <div class="date">
-                                  2023.01.12
-                                </div>
-                              </div>
-                              <a href="javascript:;" title="투여입력 바로가기">투여입력<br>바로가기</a>
-                            </div>
-                          </c:when>
-                        </c:choose>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="main_menu">
-                    <div class="inner">
-                        <ul class="menu_top">
-                            <li>
-                              <a href="javascript:;" onclick="fnGoPage('D')">
-                                <div>투여관리</div>
-                                <p>언제 투여할까요?</p>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="javascript:;" onclick="fnGoPage('G')">
-                                <div>성장관리</div>
-                                <p>얼마나 성장했나요?</p>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="javascript:;" onclick="fnGoPage('P')">
-                                <div>상담예약</div>
-                                <p>무엇을 도와드릴까요?</p>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="javascript:;"  onclick="fnGoPage('C')">
-                                <div>치료과정 공유</div>
-                                <p>의사와 함께보기</p>
-                              </a>
-                            </li>
+			  </div>
+			</div>
 
-                            <li>
-                              <a href="javascript:;"  onclick="fnGoPage('DI')">
-                                <div>물품신청</div>
-                                <p>무엇이 필요하세요?</p>
-                              </a>
-                            </li>
+			<div class="webtoon_info">
+			  <div class="pop_inner">
+				<p>
+				  <img src="/resource/assets/web/child/images/common/logo.png" alt="eudi">
+				 <!--  새싹동산에는&nbsp;<b>네명의 EuDi</b>가&nbsp;<b>함께 살고</b>&nbsp;있어요.<br> -->
+				  그림 실력 뽐내기!
+				</p>
+			 <!--	<p>오늘은 EuDi 아이들이 자기들을 소개한다고해요.</p> -->
+			 <p>여러분들만의&nbsp;<b>EuDi</b>&nbsp;를 그려주세요!</p>
+				<ul>
+				  <li>
+					<div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_championeudi_08.png" alt="유테"></div>
+					<p>
+					  운동을 좋아하는 <b>[ 유테 ]</b>
+					</p>
+				  </li>
+				  <li>
+					<div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_musicianeudi_08.png" alt="로미나"></div>
+					<p>
+					  노래를 좋아하는 <b>[ 로미나 ]</b>
+					</p>
+				  </li>
+				  <li>
+					<div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_stylisheudi_08.png" alt="투루디"></div>
+					<p>
+					  건강한 음식을 만드는 <b>[ 트루디 ]</b>
+					</p>
+				  </li>
+				  <li>
+					<div class="img"><img src="/resource/assets/web/child/images/profile/img_profile_smarteudi_08.png" alt="핀텔"></div>
+					<p>
+					  궁금한 것이 많은 <b>[ 핀델 ]</b>					
+					</p>
+				  </li>
+				</ul>
+		  <!--	   <p>여러분도 자기만의 EuDi에게 첫 인사 한번 해볼까요?</p>
+				<p><span>eudiworld@lgchem.com</span> &nbsp;으로 인사를 보내주세요!</p> -->
+				<p><span>eudiworld@lgcpartner.com</span> &nbsp;으로 EuDi 친구들을 직접 그려서 보내주면
+				  우리 아이 그림 실력을 모두에게 자랑할 수 있어요!</p>
+			  </div>
+			</div>
+		  </div>
 
-                            <li>
-                              <a href="javascript:;" onclick="fnGoPage('B')">
-                                <div>유디뱃지</div>
-                                <p>성장을 칭찬합니다!</p>
-                              </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- content //-->
+		</div>
+	  </div>
+			  <script type="text/javascript">
+			  //유디 웹툰
+			  $(function(){
+				  // slick init
+				  const webtoonslick = $(".webtoon_slider").slick({
+						infinite: false,
+						dots: true,
+						arrows: false,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						touchMove : true,
+						draggable : true,
+						focusOnSelect: false,
+						variableWidth : true,
+					  });
+
+				  function selectChange(){
+					const $ep = $('#episode');
+					const beforeSize = $('.webtoon_slider .slick-slide').length;
+					var ep_num = $ep.children("option:selected").val(),
+						ep_txt = $ep.children("option:selected").text();
+					  	ep_cut = ~~ $ep.children("option:selected").data('cut');
+					$ep.siblings("label").text(ep_txt);
+					webtoonslick.slick('slickGoTo', 0);
+
+					$('.webtoon_slider .slick-slide').each(function(idx, obj){
+						const cur = idx + 1
+						if (cur > ep_cut) {
+							// 삭제
+							webtoonslick.slick('slickRemove', $('.webtoon_slider .slick-slide').length - 1);
+						} else {
+							// 이미지경로 변경
+							$(obj).find('img').attr('src','/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_0'+(cur)+'.jpg')
+						}
+					});
+					for (let i = beforeSize + 1; i <= ep_cut; i++) {
+						webtoonslick.slick('slickAdd','<div class="webtoon_img"><img src="/resource/assets/web/child/images/webtoon/eudi_webtoon0'+ep_num+'_0'+i+'.jpg" alt="유디 웹툰"></div>', $('.slider').slick('slickCurrentSlide')+1);
+					}
+				  };
+				  $('#episode').on('change', selectChange);
+				  $('[name="btnWebtoon"]').on('click',function(){
+					  // 웹툰 회차 셀렉트박스 클릭시 해당 이미지로 변경
+					  const selectType0 = $("#episode");
+					  const str = $('#episode').siblings("label").text(),
+						  regex = /[^0-9]/g,
+						  ep = str.replace(regex, "");
+				
+					  $('#episode option:eq(0)').attr('selected','selected');
+					  $('#episode').val(ep);
+
+					  selectChange();
+
+					  popupOpen('pop_webtoon');				  
+				  });
+			  });
+			  </script>
+			  <!-- 유디웹툰 -->
+		  		
+			<!-- header //-->
+			  
+				  	
+				  	
+				  		 
+						  	 
+							 
+							 
+						  	 
+						  
+				  	
+				  
+				 
+				  	
+				  	
+				  
+			<!--// content -->
+			<div class="content con_main">
+			
+					   <!-- 응원 메시지 테스트 요망(view)-->
+					   <div class="my_msg">
+				   				
+				   					
+				   					
+				   						<div class="char">
+											<img id="cheer_img" src="/resource/assets/web/child/images/profile/img_profile_musicianeudi_14.png" alt="아이 캐릭터" onError="this.src='/resource/assets/web/child/images/profile/img_profile_null.png';"/>
+										</div>
+										  <p id="cheer_mesage"><span>@권*채&nbsp;&nbsp;</span>
+											 
+											  		
+											  		 나머리아프고속이매스꺼움
+왜그럴까?
+너
+											  
+										  </p> 
+				   					
+				   				
+								<a href="javascript:popupInfo('pop_msg');" class="btn_write"></a>
+							</div>
+				  
+			   <div class="main_info">
+				  <div class="inner">   
+							
+				<div class="main_top top_bg01 bg_champion"><!-- 캐릭터 선택 전 top_bg02 / 캐릭터 선택 후 top_bg01 -->
+					<!-- 캐릭터 선택 후 -->
+					<div class="my_box01">
+						<div class="my_step"><p>챔피언 유디
+					 <span>
+					 
+					   3단계
+					 
+					 </span></p>
+					   <div class="btn_mychar"><a href="/child/character/view.do" class="btn_my_arrow">나의 캐릭터<br>확인</a></div>
+					 </div>
+		   
+						<button type="button" class="btn_webtoon" name="btnWebtoon">
+							<!--  <img src="/resource/assets/web/child/images/webtoon/icon_webtoon_book.png" alt="웹툰">
+				 			  <b>웹툰</b>바로가기 -->
+						   <img src="/resource/assets/web/child/images/webtoon/icon_webtoon02.png" alt="웹툰">
+						</button>
+						<div class="my_bar" onclick="location.href='/child/character/view.do'">
+							<div class="bar"><span style="width: -113%"></span></div>
+							<div class="lbl"><b>1</b> / 18</div>
+						</div>
+						<div class="my_char" onclick="location.href='/child/character/view.do'">
+						   
+								
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   		
+						   
+						   <img src="/resource/assets/web/child/images/character/champion/champion_eudi03.png" alt="EuDi" />
+						</div>
+						
+					</div>
+					<!-- 캐릭터 선택 전 -->
+					<div class="my_box02">
+						<div class="my_step"><p>선택된 캐릭터가 없습니다.</p></div>
+						 <div class="btn_char"><a href="/child/character/main.do" class="btn_arrow">캐릭터 선택 바로가기</a></div>
+						   <button type="button" class="btn_webtoon" name="btnWebtoon">
+							<!--  <img src="/resource/assets/web/child/images/webtoon/icon_webtoon_book.png" alt="웹툰">
+				 			  <b>웹툰</b>바로가기 -->
+						   <img src="/resource/assets/web/child/images/webtoon/icon_webtoon02.png" alt="웹툰">
+						</button>
+						<div class="my_char">
+							 <img src="/resource/assets/web/child/images/main/character00.png" alt="EuDi" />
+						</div>
+					</div>
+				</div>
+			
+						<div class="infobox">
+							<div class="my_info">
+								<div class="profile_img">
+
+													
+												 		
+												 		 <img src="/upload/child/0cffaca61b9f4cbabdadf92235f1f34f.PNG" alt="EuDi" onerror="this.src='/resource/assets/web/child/images/character/img_profile_null.png'">
+												 	
 
 
-          <!-- 앱 업데이트(web version)-->
-      <div class="pop_mask2"></div>
-      <div class="pop_info pop_appUpdate"  id="pop_appUpdate" >
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
-          <div class="pop_con">
-            <p class="pop_tit">유디앱 업데이트 알림</p>
-            <p class="pop_txt">
+								</div>
+								<div class="profile_info">
+									<div>
+									<div class="name"><p><b>
+											 
+												 
+												 	
+												 		
+												 		 림링
+												 	
+												 
+											
+												 
+											
+									   </b> 어린이</p></div>
+										 
+										  	
+										  	
+										  		 <!--// 입력 완료 -->
+													<div class="date">2023.05.26 기준</div>
+								   
+													<div class="info">
+													   <span>키:110cm / 98.54%</span>
+													   <span>체중 : 20.3kg / 98.3%</span>
+													</div>
+									  
+										  	
+										  
+								</div>
+
+				   
+						
+						
+				  <!-- 투여 계획 분기 -->
+					 
+					</div>
+				  </div>
+				</div>
+				
+				</div>
+		  
+			</div>
+			<!-- content //-->
+				   <div class="main_menu">
+					<div class="inner">
+						<ul class="menu_top">
+							<li>
+							  <a href="javascript:;" onclick="fnGoPage('D')">
+								<div>투여관리</div>
+								<p>언제 투여할까요?</p>
+							  </a>
+							</li>
+							<li>
+							  <a href="javascript:;" onclick="fnGoPage('G')">
+								<div>성장관리</div>
+								<p>얼마나 성장했나요?</p>
+							  </a>
+							</li>
+							<li>
+							  <a href="javascript:;" onclick="fnGoPage('R')">
+								<div>교육/상담 신청</div>
+								<p>무엇을 도와드릴까요?</p>
+							  </a>
+							</li>
+							<li>
+							  <a href="javascript:;"  onclick="fnGoPage('C')">
+								<div>치료과정 공유</div>
+								<p>의사선생님과 함께보기</p>
+							  </a>
+							</li>
+
+							<li>
+							  <a href="javascript:;"  onclick="fnGoPage('P')">
+								<div>물품신청</div>
+								<p>무엇이 필요하세요?</p>
+							  </a>
+							</li>
+
+							<li>
+							  <a href="javascript:;" onclick="fnGoPage('B')">
+								<div>유디뱃지</div>
+								<p>성장을 칭찬합니다!</p>
+							  </a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			
+		  <!-- 앱 업데이트(web version)-->
+	  <div class="pop_mask2"></div>
+	  <div class="pop_info pop_appUpdate"  id="pop_appUpdate" >
+		<div class="pop_info_inner">
+		  <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+		  <div class="pop_con">
+			<p class="pop_tit">유디앱 업데이트 알림</p>
+			<p class="pop_txt">
 							유디앱에서 발생하던 몇가지 <br/>오류가 개선되었습니다<br/>
 							그동안 불편을 드려 죄송합니다<br/>
 							앱스토에서 업데이트 부탁드리겠습니다<br/><br/>
 							업데이트 내용<br/>
 							- 스마트케이스 안정화 <br/>
 							- 기타 버그 수정<br/><br/>
-						     <a href="https://apps.apple.com/app/1483724406">[ 업데이트 하러가기 ]</a>  <br/> <br/>
+							 <a href="https://apps.apple.com/app/1483724406">[ 업데이트 하러가기 ]</a>  <br/> <br/>
 						  	<input type="checkbox" id="appUpdatepopup" />
 							그만보기
 							</label>
-			</p>
-          </div>
-        </div>
-      </div>
+			</p>  
+		  </div>
+		</div>
+	  </div>
+	  
+	  
+	  <!--  공지팝업 추가7일체크 김은기 -->
 
 
-      <!--  공지팝업 추가7일체크 김은기 -->
-      <div class="pop_mask"></div>
-      <div class="pop_info pop_notice" id="pop_d">
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:cookie_notice();"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
-          <div class="pop_con">
-            <img src="/resource/assets/web/child/images/common/2023sul.jpg" alt="유디앱 배송 중단" />
-            <br>
-            <label>
-			<input type="checkbox" id="cbpopup" />
-			7일 동안 열지 않겠습니다.
-			</label>
+
+		 <!--  캐릭터 선택팝업 -->
+	  <div class="pop_mask"></div>
+	  <div class="pop_info pop_character">
+		<div class="pop_info_inner">
+		  <div class="btn_close pop_close"><a href="javascript:cookie(39192);"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+		  <div class="pop_con">
+			<p class="pop_tit">캐릭터가 선택되어 있지 않습니다 캐릭터를 선택해 주세요</p>
+			<p class="pop_txt">투여입력 횟수에 따라 4종의 캐릭터 <br /> 중 하나를 선택하여 키울 수 있습니다</p>
+			<div class="btn_box btn_box01">
+			  <div class="btn_green pop_close"><a href="javascript:goCharacterPage(39192)">확인</a></div>
 			</div>
-        </div>
-      </div>
+		  </div>
+		</div>
+	  </div>
 
 
-         <!--  캐릭터 선택팝업 -->
-      <div class="pop_mask"></div>
-      <div class="pop_info pop_character">
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:cookie(19474);"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
-          <div class="pop_con">
-            <p class="pop_tit">캐릭터가 선택되어 있지 않습니다 캐릭터를 선택해 주세요</p>
-            <p class="pop_txt">투여입력 횟수에 따라 4종의 캐릭터 <br /> 중 하나를 선택하여 키울 수 있습니다</p>
-            <div class="btn_box btn_box01">
-              <div class="btn_green pop_close"><a href="javascript:goCharacterPage(19474)">확인</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-         <!--  개인정보 동의 -->
-      <div class="pop_mask"></div>
-      <div class="pop_info pop_privateYn">
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
-          <div class="pop_con">
-            <p class="pop_tit">약관 변경</p>
-            <p class="pop_txt">기존 약관의 변경된 내용을 고지합니다<br/><br/>
-            						     <b><font color="#000000"><b>성장 기록을 담당간호사와 공유 (선택)</font></b><br/>
-									     성장 기록 공유를 통해 간호사에게<br/>
-									     사용 상담 등이 가능합니다
+		 <!--  개인정보 동의 -->
+	  <div class="pop_mask"></div>
+	  <div class="pop_info pop_privateYn">
+		<div class="pop_info_inner">
+		  <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+		  <div class="pop_con">
+			<p class="pop_tit">약관 변경</p>
+			<p class="pop_txt">기존 약관의 변경된 내용을 고지합니다<br/><br/>
+										 <b><font color="#000000"><b>성장 기록을 담당간호사와 공유 (선택)</font></b><br/>
+										 성장 기록 공유를 통해 간호사에게<br/>
+										 사용 상담 등이 가능합니다
 			</p>
-            <div class="btn_box btn_box02">
-               <div class="btn_black pop_close"><a href="javascript:fnChangePrivateYn('4mtest','Y')">승락</a></div>
-               <div class="btn_gray pop_close"><a href="javascript:fnChangePrivateYn('4mtest','N')">거절</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-         <!-- 응원 메시지 -->
-      <div class="pop_mask"></div>
-      <div class="pop_info pop_msg" >
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
-          <div class="pop_con">
-            <p class="pop_tit">응원 메시지</p>
-            <p class="pop_txt">
+			<div class="btn_box btn_box02">
+			   <div class="btn_black pop_close"><a href="javascript:fnChangePrivateYn('4mtest222','Y')">승락</a></div>
+			   <div class="btn_gray pop_close"><a href="javascript:fnChangePrivateYn('4mtest222','N')">거절</a></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+		 <!-- 응원 메시지 -->
+	  <div class="pop_mask"></div>
+	  <div class="pop_info pop_msg" >
+		<div class="pop_info_inner">
+		  <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+		  <div class="pop_con">
+			<p class="pop_tit">응원 메시지</p>
+			<p class="pop_txt">
 				우리아이와 유트로핀을 투여하는<br/> 모든 아이에게 응원메세지를 보내세요<br/>
-				(유디앱 전체 사용자에게 노출 됩니다)<br/><br/>
-			</p>
+				(유디앱 전체 사용자에게 노출 됩니다)<br/><br/>				
+			</p>  
 			<div class="area_box">
-				<textarea style="resize: none;" maxlength="20" id="message"></textarea>
+				<textarea style="resize: none;" maxlength="20" id="message"></textarea>				
 			</div>
 			<p class="pop_txt">
 				*20자 이내로 입력하세요(띄어쓰기 포함)<br/>
 				*응원메시지는 10초마다 변경되며<br/> 10초 동안 여러 사용자가 입력하였을 경우<br/> 노출되지 않을 수도 있습니다.<br/>
-				10초 후 다음 입력글이 없을 경우는<br/>
+				10초 후 다음 입력글이 없을 경우는<br/> 
 				마지막 글이 계속 노출 됩니다<br/>
 				*욕이나 비방글,홍보글은<br/> 등록하실 수 없습니다.
-			</p>
+			</p>  
 			<div class="btn_box btn_box02">
 				<div class="btn_gray"><a href="javascript:fnCheerClose();">취소</a></div>
 				<div class="btn_green"><a href="javascript:fnCheerInsert();">등록</a></div>
 			</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 앱 평가하기 팝업 -->
-      <div class="pop_mask"></div>
-      <div class="pop_info pop_eval" >
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
-          <div class="pop_con">
-          <p class="pop_tit">유디 앱은 고객만족을 위해<br/> 지금도 업데이트 중입니다.</p>
-            <p class="pop_txt">
+		  </div>
+		</div>
+	  </div>
+	  
+	  	<!-- 앱 평가하기 팝업 -->
+	  <div class="pop_mask"></div>
+	  <div class="pop_info pop_eval" >
+		<div class="pop_info_inner">
+		  <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+		  <div class="pop_con">
+		  <p class="pop_tit">유디 앱은 고객만족을 위해<br/> 지금도 업데이트 중입니다.</p>
+			<p class="pop_txt">
 				유디 앱을 응원해주세요!<br/>
 				200분을 선정하여 스타벅스<br/> 아메리카노 쿠폰을 드립니다.<br/><br/>
 				(평가 시 유디 아이디를 적어주세요.<br/> 회원 정보에 입력된 전화번호로<br/> 12월 말 일괄 발송됩니다.)
-			</p>
+			</p>  
 			<div class="btn_box btn_box01">
 				<div class="btn_green"><a href="javascript:;">유디 앱 평가하러 가기 </a></div>
 				<div class="btn_gray"><a href="javascript:;">다음에 할게요</a></div>
 			</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 회원정보변경 팝업 -->
-      <div class="pop_info pop_pass">
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
-          <div class="pop_con">
-            <p class="pop_tit">회원정보변경</p>
-            <p class="pop_txt">
-              회원님의 기본정보 및 아이의 정보를<br> 수정할 수 있습니다.<br>
-              개인정보 보호를 위해<br> 먼저 비밀번호를 입력해 주세요.
-            </p>
-            <p class="pop_txt">
-              <b>ID: </b>4mtest222  <!-- ID: 수정 2023.04.26 -->
-            </p>  
-            <div class="input_row mt20">
-              <span class="input_box">
-                <input type="password" id="pass_chk" name="pass_chk" class="ipt" minlength="4" maxlength="13" data-title="아이디를" placeholder="비밀번호를 입력하세요">	
-              </span>	
-            </div>
-            <div class="btn_box btn_box01">
-              <div class="btn_green"><a href="javascript:fnPassChk();">확인</a></div>
-            </div>
-            <a href="javascript:;" title="비밀번호 재설정" class="reset_pw">비밀번호 재설정</a> <!-- 비밀번호 재설정 버튼 2023.05.12 -->
-          </div>
-        </div>
-      </div>
-
-      <!-- 유트로핀 spen -->
-      <div class="pop_mask"></div>
-      <div class="pop_info pop_spen" id="pop_spen">
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
-          <div class="pop_con">
-            <p class="pop_tit"><img src="/resource/assets/web/child/images/main/spen_popup_video.png" alt="spen_guideText" class="spen_popup_video" /></p><!-- 2022.12.01 'spen_popup_video' 클래스 추가  -->
-            <p class="pop_txt spen_popup_video_txt"><!-- 2022.12.01 'spen_popup_video_txt' 클래스 추가  -->
-      				<b><font color="#000000"><b>유트로핀에스펜</b><br/>
-			    	대체처방을 위한 안내영상</font>
+		  </div>
+		</div>
+	  </div>
+	  
+    <!-- 유트로핀 spen -->
+	  <div class="pop_mask"></div>
+	  <div class="pop_info pop_spen" id="pop_spen">
+		<div class="pop_info_inner">
+		  <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+		  <div class="pop_con">
+			<p class="pop_tit"><img src="/resource/assets/web/child/images/main/spen_popup_video.png" alt="spen_guideText" class="spen_popup_video" /></p><!-- 2022.12.01 'spen_popup_video' 클래스 추가  -->
+			<p class="pop_txt spen_popup_video_txt"><!-- 2022.12.01 'spen_popup_video_txt' 클래스 추가  -->
+	  				<b><font color="#000000"><b>유트로핀에스펜</b><br/>
+					대체처방을 위한 안내영상</font>
 			</p>
-           <div class="btn_box btn_box01 spen_popup_video_btnBox"><!-- 2022.12.01 'spen_popup_video_btnBox' 클래스 추가  -->
-              <div class="btn_green pop_close"><a href="/child/dose_info.do?type=s">영상 보러가기</a></div>
-            </div>
+		   <div class="btn_box btn_box01 spen_popup_video_btnBox"><!-- 2022.12.01 'spen_popup_video_btnBox' 클래스 추가  -->
+			  <div class="btn_green pop_close"><a href="/child/dose_info.do?type=s">영상 보러가기</a></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+    <!-- 안드로이드 자동 업데이트 공지 팝업 2023.05.26 -->
+    <div class="pop_mask"></div>
+    <div class="pop_info pop_AndroidUpdate">
+      <div class="pop_info_inner">
+        <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+        <div class="pop_con">
+          <p class="pop_tit">안드로이드앱 자동 업데이트 공지</p>
+          <div class="circle"><div></div><div></div><div></div></div>
+          <p>
+            EuDi앱 서비스 안정화를 위하여<br>
+            자동 업데이트를 진행 예정입니다.<br>
+            아래 일시 이후 유디 접속 시 자동으로<br>
+            업데이트 진행 후 앱이 실행됩니다.
+          </p>
+          <p class="grysml">( 업데이트 후에도 투여 기록 등의 <br>
+            데이터는 그대로 유지됩니다. )</p>
+          <div class="gray_line"></div>
+          <p class="green_tit">업데이트 정보</p>
+          <ul>
+            <li>
+              <div class="tit">일정</div>
+              <p>2023년 6월 2일(금) 오전 10시</p>
+            </li>
+            <li>
+              <div class="tit">대상</div>
+              <p>안드로이드 앱 사용자</p>
+            </li>
+            <li>
+              <div class="tit">내용</div>
+              <p>푸시 알림 수정, 일부 기기에서<br>
+                스마트케이스 연동 오류 및 앱 종료 현상<br>
+                수정, 히스토리 전송 기능 수정 등</p>
+            </li>
+          </ul>
+          <p class="grysml">
+            업데이트는 위의 일시 이후 처음 접속 시 1회만 진행되며,<br>
+            업데이트 진행해야만 사용이 가능한 점 참고 부탁드립니다.
+          </p>
+
+          <div class="btn_box btn_box01">
+            <div class="btn_green"><a href="javascript:;">확인</a></div>
           </div>
         </div>
       </div>
-
-        <!-- 업데이트 공지 팝업 -->
-        <div class="pop_mask"></div>
-        <div class="pop_info pop_update">
-          <div class="pop_info_inner">
-            <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
-            <div class="pop_con">
-              <p class="pop_tit">EuDi 4.0 업데이트 공지</p>
-              <div class="noti">
-                <b>작업 기간</b>
-                <span>4/15일(토) 13시 <em>(물품마감-14시)</em> ~<br>
-                  4/17일(월) 10시
-                </span>
-              </div>
-              <ul>
-                <li>
-                  <b>스마트 케이스 정보 중요 공지</b><br>
-                  <span>(스마트 케이스(하얀색) 사용 중인 회원만 해당함)</span>
-                  <div><img src="/resource/assets/web/child/images/main/smartcase.png" alt="스마트케이스"></div>
-                </li>
-                <li>
-                  스마트 케이스에 저장된 투여 정보를<br>
-                  4월 14일 16시까지 반드시 전송하여 주세요!!
-                </li>
-                <li>업데이트 이후에는 새롭게 페어링이 필요합니다</li>
-              </ul>
-              <div class="btn_box btn_box01">
-                <div class="btn_green"><a href="javascript:;">확인</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
 
 	  </div>
-        </div>
-    </body>
+		</div>
+	</body>
+	 <script>
+   
+
+	//fnAppChild_Res 스마트 케이스 연결 브릿지 함수 호출
+		if (isMobile.any()) {
+			if (isMobile.Android()) {
+				window.eudiApp.fnAppChild_Res('4mtest222','195','39192','WBlZZqxF2vVS6Ozs','E8:DA:0E:34:04:52');
+			} else if (isMobile.iOS()) {
+				// N/A
+			}
+		}
+	</script>
 </html>
