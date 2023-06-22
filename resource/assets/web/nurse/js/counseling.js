@@ -128,8 +128,8 @@ var nurseJS = {
           cb.eq(19).addClass('cs');
   
           $('.hpc').append('<span class="schedule hpc_block"><b>1</b>/' + data_hpc[0] + '</span>');
-          $('.edu').append('<span class="schedule edu_block">교육<b>' + data_edu[0] + '</b></span>');
-          $('.cs').append('<span class="schedule cs_block">상담<b>' + data_cs[0] + '</b></span>');
+          $('.edu').append('<span class="schedule edu_block"><b>2</b>' + data_edu[0] + '</span>');
+          $('.cs').append('<span class="schedule cs_block"><b>3</b>' + data_cs[0] + '</span>');
         }
         
       } else {  //상담가능일정관리 캘린더
