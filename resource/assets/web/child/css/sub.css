@@ -1142,16 +1142,29 @@
   .con_sub03 .ij_img img {width: 100%;height: auto;}
   
 }
+
 @media all and (max-width: 359px) {
 
-    .con_main .main_info .my_dose .date {font-size: 9px;}
+  .con_main .main_info .my_dose .date {font-size: 9px;}
 
 }
+
 @media all and (min-height: 700px) {
+  .con_main .main_menu {padding: 30px 0;}
+}
 
-    /* .con_main .main_top {height: 400px;} */
-    .con_main .main_menu {padding: 30px 0;}
+@media all and (min-height: 747px) {
+  .con_main {height: calc(100vh - 73px); position: relative;}
+  .con_main .my_msg {padding: 5px 12px 5px 2px;margin: 15px auto 15px;border-radius: 20px;}
+  .con_main .my_msg #cheer_mesage {font-size: 12px;}
+  .con_main .main_info {height: calc(100% - 281px);}
+  .con_main .main_info .inner {height: 100%;}
+  .con_main .main_top {height: calc(100% - 10vh);min-height: 305px;}
+  .con_main .main_top .my_bar {margin: 3vh auto 0;}
+  .con_main .main_top .btn_webtoon {top: 13vh!important;}
+  .con_main .main_info .infobox {height: 10vh;}
 
+  .con_main .main_menu {position: absolute;}
 }
 
 /* 2022.12.01 유디 팝업 비디오 아이콘 및 메인 영상유도 텍스트 퍼블 추가 */
