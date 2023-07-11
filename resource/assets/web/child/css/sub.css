@@ -24,10 +24,16 @@
 .con_intro .checkbox_row input[type="checkbox"] + label:before {width:18px; height:18px;}
 .con_intro .login_btn {margin-top: 30px;width: 100%;height: 50px;line-height: 50px;background: #79bd28;border-radius: 5px;}
 .con_intro .login_btn a {display: block;width: 100%;height: 100%;font-family: 'NanumSquareEB';font-size: 15px;color: #fff;text-align: center;}
-.con_intro .login_link {padding-top: 30px;text-align: center;}
-.con_intro .login_link ul li {/* margin: 0 5px; */position: relative;display: inline-block;}
-.con_intro .login_link ul li a {padding: 1px 14px 1px 0;font-size: 13px;color: #727272;letter-spacing: -1.3px;}
-.con_intro .login_link ul li a:after {content: ">";display: block;position: absolute;right: 0;top: 2px;font-size: 13px;color: #727272;}
+.con_intro .login_link {padding-top: 30px;}
+.con_intro .login_link ul {display: flex;align-items: center;}
+.con_intro .login_link ul li {flex: auto;}
+.con_intro .login_link ul li a {font-size: 13px;color: #727272;letter-spacing: -1.3px;display:block;width: 100%;position: relative;text-align: center;}
+.con_intro .login_link ul li:first-child a {font-family: 'NanumSquareB';color: #222;text-align: left;}
+.con_intro .login_link ul li:last-child a {text-align: right;}
+.con_intro .login_link ul li a:after {content: "";display: block;width: 1px;height: 11px;background: #cfcfcf;position: absolute;top: 0;}
+.con_intro .login_link ul li:first-child a:after {right: 1vw;}
+.con_intro .login_link ul li:nth-child(2) a:after {display: none;}
+.con_intro .login_link ul li:last-child a:after {left: 1.7vw;}
 
 .con_findid .find_none {position: relative;overflow: hidden;padding: 150px 15px 100px 15px;background-image: url('../images/common/icon_error01.png');background-size: 80px 80px;background-position: 50% 50px;background-repeat: no-repeat;}
 .con_findid .find_none>p {font-size: 20px;color: #727272;text-align: center;line-height: 1.2;}
@@ -678,21 +684,24 @@
 .con_sub01 .cld_box .cld_area table th {position: relative;height: 35px;line-height: 35px;border-bottom: 1px solid #eee;font-family: 'NanumSquareB';font-size: 10px;color: #727272;text-align: center;}
 .con_sub01 .cld_box .cld_area table th.sun {color: #e32828;}
 .con_sub01 .cld_box .cld_area table th.sat {color: #3263e0;}
-.con_sub01 .cld_box .cld_area table td {position: relative;padding: 7px 5px;height: 85px;border-bottom: 1px solid #eeeeee;border-left: 1px solid #eeeeee;box-sizing: border-box;}
+.con_sub01 .cld_box .cld_area table td {position: relative;padding: 7px 4px;height: 80px;border-bottom: 1px solid #eeeeee;border-left: 1px solid #eeeeee;box-sizing: border-box;}
 .con_sub01 .cld_box .cld_area table td:first-child {border-left: 0;}
 .con_sub01 .cld_box .cld_area table td .dayBox {position: relative;width: 100%;height: 100%;}
 .con_sub01 .cld_box .cld_area table td .dayBox .cld_day {position: absolute;top: 0;left: 0;font-family: 'NanumSquareB';font-size: 9px;color: #727272;}
 .con_sub01 .cld_box .cld_area table td .dayBox .cld_day.sat {color: #3263e0;}
 .con_sub01 .cld_box .cld_area table td .dayBox .cld_day.sun {color: #e32828;}
-.con_sub01 .cld_box .cld_area table td .dayBox .stamp_tit {padding-top: 20px;font-family: 'NanumSquareEB';font-size: 7px;color: #79bd28;text-align: center;letter-spacing: -0.5px;line-height: 1;}
+.con_sub01 .cld_box .cld_area table td .dayBox .stamp_tit {padding-top: 20px;font-family: 'NanumSquareEB';font-size: 7px;color: #333;text-align: center;letter-spacing: -0.7px;line-height: 1;position: absolute;bottom: 0;left: 0;width: 100%;}
+.con_sub01 .cld_box .cld_area table td .dayBox .stamp_amount {font-family: 'NanumSquareEB';font-size: 9px;color: #79bd28;letter-spacing: -0.7px;position: absolute;top: 0;right: 0;}
 .con_sub01 .cld_box .cld_area table td .dayBox .stamp {position: relative;top: 20px;margin: 0 auto;width: 100%;max-width: 40px;}
+.con_sub01 .cld_box .cld_area table td .dayBox .stamp .stamp_memo {position: absolute;top: 1px;right: 1px;width: 9.5px;}
+.con_sub01 .cld_box .cld_area table td .dayBox .stamp .stamp_pen {position: absolute;top: 1px;left: 2px;width: 10.5px;}
 .con_sub01 .cld_box .cld_area table td .dayBox .stamp>p {position: absolute;top: 50%;margin-top: -4px;width: 100%;font-family: 'NanumSquareEB';font-size: 10px;color: #fff;text-align: center;letter-spacing: -0.5px;}
 .con_sub01 .cld_box .cld_area table td .dayBox .stamp.on {position: relative;top: 12px;}
 .con_sub01 .cld_box .cld_area table td .dayBox.disabled {filter: alpha(opacity=40);opacity: 0.4;zoom: 1;}
 .con_sub01 .cld_box .cld_area table td .dayBox.disabled .cld_day.sat,
 .con_sub01 .cld_box .cld_area table td .dayBox.disabled .cld_day.sun {color: #727272;}
 
-.con_sub01 .cld_box .cld_info {margin-top: 20px;font-family: 'NanumSquareB';font-size: 13px;text-align: center;}
+.con_sub01 .cld_box .cld_info {margin-top: 20px;font-family: 'NanumSquareR';font-size: 13px;text-align: center;letter-spacing: -1.3px;}
 
 /*투여기록 검색 팝업*/
 /* .con_sub01 .overlay {width: 100vw;height: 100vh;background: rgba(0,0,0,.6);position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 900;} */
@@ -1150,7 +1159,7 @@
 }
 
 @media all and (min-height: 700px) {
-  .con_main .main_menu {padding: 30px 0;}
+  .con_main .main_menu {padding: 30px 0 0 0;}
 }
 
 @media all and (min-height: 747px) {
@@ -1164,7 +1173,9 @@
   .con_main .main_top .btn_webtoon {top: 13vh!important;}
   .con_main .main_info .infobox {height: 10vh;}
 
-  .con_main .main_menu {position: absolute;}
+  .con_main .main_menu {position: absolute;width: 100%;}
+  .con_main .main_menu>.inner,
+  .con_main .main_menu ul {width: 100%;}
 }
 
 /* 2022.12.01 유디 팝업 비디오 아이콘 및 메인 영상유도 텍스트 퍼블 추가 */
@@ -1329,15 +1340,16 @@
 
 /* 유디웹툰 팝업*/
 .pop_webtoon {background: #e6e6e6;letter-spacing: -0.5px;}
-.pop_webtoon .webtoon_info{background: #f5f5f5;padding: 30px 0 20px; margin: 8px 0;}
-.pop_webtoon .webtoon_info .pop_inner>p {font-family: 'NanumSquareEB';font-size: 15px;color: #333;letter-spacing: -0.75px;line-height: 1.5;}
+.pop_webtoon .webtoon_info{background: #f5f5f5;padding: 25px 0 15px; margin: 8px 0;}
+.pop_webtoon .webtoon_info .pop_inner>p {font-family: 'NanumSquareEB';font-size: 12px;color: #333;letter-spacing: -1.3px;line-height: 1.5;}
+.pop_webtoon .webtoon_info .pop_inner>.sub {font-family: 'NanumSquareB';color: #727171;}
 .pop_webtoon .webtoon_info .pop_inner>p+p {margin-top: 5px;}
-.pop_webtoon .webtoon_info .pop_inner>p:last-of-type {font-family: 'NanumSquareB';font-size: 12px;color: #727171;letter-spacing: -0.6px;}
-.pop_webtoon .webtoon_info .pop_inner>p:last-of-type span {color: #333;}
+.pop_webtoon .webtoon_info .pop_inner>p:last-of-type {font-family: 'NanumSquareB';font-size: 12px;color: #727171;letter-spacing: -1px;}
+.pop_webtoon .webtoon_info .pop_inner>p:last-of-type span {color: #333;letter-spacing: -0.3px;}
 .pop_webtoon .webtoon_info .pop_inner>p:last-of-type span::after {content:'';display: inline-block;width: 3px;height: 3px;background: #79bd28;border-radius: 100%;margin-bottom: 5px;margin-left: 2px;}
 .pop_webtoon .webtoon_info .pop_inner>p>b {font-family: 'NanumSquareEB';color: #78bc27;}
 .pop_webtoon .webtoon_info .pop_inner>p>img {width: 61.5px;margin-top: -15px;}
-.pop_webtoon .webtoon_info .pop_inner ul {display: flex;flex-wrap: wrap;justify-content: space-between;margin-top: 15px;}
+.pop_webtoon .webtoon_info .pop_inner ul {display: flex;flex-wrap: wrap;justify-content: space-between;margin-top: 5px;}
 .pop_webtoon .webtoon_info .pop_inner ul li {display: flex;align-items: center;width: calc(50% - 2.5px);height: 32px;border-radius: 5px;border: 1px solid #dddeda;background: #fff;}
 .pop_webtoon .webtoon_info .pop_inner ul li:nth-child(n+3):nth-child(-n+4) {margin-top: 5px;}
 .pop_webtoon .webtoon_info .pop_inner ul li .img {width: 18px;height: 18px;flex-shrink: 0;margin: 0 5px;}
@@ -1347,7 +1359,7 @@
 .pop_webtoon .webtoon_info .pop_inner ul li:nth-child(2) p b {color: #ffb412;}
 .pop_webtoon .webtoon_info .pop_inner ul li:nth-child(3) p b {color: #79bd28;}
 .pop_webtoon .webtoon_info .pop_inner ul li:nth-child(4) p b {color: #fc647e;}
-.pop_webtoon .webtoon_info .pop_inner ul+p {margin-top: 15px;}
+.pop_webtoon .webtoon_info .pop_inner ul+p {margin-top: 10px;}
 .pop_webtoon .webtoon_cont {background: #fff; padding: 20px 0 30px;}
 .pop_webtoon .webtoon_cont .select_row {width: 170px;height: 40px;margin-bottom: 5px;}
 .pop_webtoon .webtoon_cont .slick-dots {position: initial;margin-top: 10px;}

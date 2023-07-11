@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+    <head>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+
+ 
+	
+	
+		
+	
+
+
+
+
+<script>
+
+/*메세지*/
+if("" != ""){
+	var msg = "".replace("<br>", "\n");
+	alert(msg);
+	
+}
+
+</script>
+
+
+	<!-- SET FILE PATH :: compatibility ie9 code -->
+		<base href="../" />
+		<!--[if IE]><script type="text/javascript">
+			// Fix for IE ignoring relative base tags.
+			(function() {
+				var baseTag = document.getElementsByTagName('base')[0];
+				baseTag.href = baseTag.href;
+			})();
+		</script><![endif]-->
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+			
+			
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+			
+		
+		<link rel="canonical" href="https://eudi.lgchem.com/child/dose_input_cal.do" />
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<meta http-equiv="Expires" content="0"/>
+		<meta http-equiv="Pragma" content="no-cache"/>
+
+		<!-- TITLE -->
+		<title>투여입력 - 달력 | EuDi</title>
+	  	
+    <!-- 스마트 케이스 팝업 추가 -->
+
+
+<!--2019-09-16 4M 김현빈-->
+<!-- common css file-->
+
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?20230711113109">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20230711113109">
+
+
+<!-- child css file -->
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230711113109">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230711113109">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230711113109">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230711113109">
+<!-- child js file--> 
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230711113109"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20230711113109"></script>
+
+<script type="text/javascript" src="/resource/assets/nurse/js/lib/datepicker-ko.js?version=1.2"></script>
+
+<!-- 개발용 css -->
+<style>
+	.placeholder-err::placeholder{
+	  color: red;
+	  opacity: 1; /* 파이어폭스에서 뿌옇게 나오는 현상을 방지하기 위한 css */
+	}
+	.placeholder-err::-webkit-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-ms-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-mos-input-placeholder {
+	  color: red;
+	}
+</style>
+<script type="text/javascript">
+    function SHA256(s){
+      
+        var chrsz   = 8;
+        var hexcase = 0;
+      
+        function safe_add (x, y) {
+            var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+            var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+            return (msw << 16) | (lsw & 0xFFFF);
+        }
+      
+        function S (X, n) { return ( X >>> n ) | (X << (32 - n)); }
+        function R (X, n) { return ( X >>> n ); }
+        function Ch(x, y, z) { return ((x & y) ^ ((~x) & z)); }
+        function Maj(x, y, z) { return ((x & y) ^ (x & z) ^ (y & z)); }
+        function Sigma0256(x) { return (S(x, 2) ^ S(x, 13) ^ S(x, 22)); }
+        function Sigma1256(x) { return (S(x, 6) ^ S(x, 11) ^ S(x, 25)); }
+        function Gamma0256(x) { return (S(x, 7) ^ S(x, 18) ^ R(x, 3)); }
+        function Gamma1256(x) { return (S(x, 17) ^ S(x, 19) ^ R(x, 10)); }
+      
+        function core_sha256 (m, l) {
+             
+            var K = new Array(0x428A2F98, 0x71374491, 0xB5C0FBCF, 0xE9B5DBA5, 0x3956C25B, 0x59F111F1,
+                0x923F82A4, 0xAB1C5ED5, 0xD807AA98, 0x12835B01, 0x243185BE, 0x550C7DC3,
+                0x72BE5D74, 0x80DEB1FE, 0x9BDC06A7, 0xC19BF174, 0xE49B69C1, 0xEFBE4786,
+                0xFC19DC6, 0x240CA1CC, 0x2DE92C6F, 0x4A7484AA, 0x5CB0A9DC, 0x76F988DA,
+                0x983E5152, 0xA831C66D, 0xB00327C8, 0xBF597FC7, 0xC6E00BF3, 0xD5A79147,
+                0x6CA6351, 0x14292967, 0x27B70A85, 0x2E1B2138, 0x4D2C6DFC, 0x53380D13,
+                0x650A7354, 0x766A0ABB, 0x81C2C92E, 0x92722C85, 0xA2BFE8A1, 0xA81A664B,
+                0xC24B8B70, 0xC76C51A3, 0xD192E819, 0xD6990624, 0xF40E3585, 0x106AA070,
+                0x19A4C116, 0x1E376C08, 0x2748774C, 0x34B0BCB5, 0x391C0CB3, 0x4ED8AA4A,
+                0x5B9CCA4F, 0x682E6FF3, 0x748F82EE, 0x78A5636F, 0x84C87814, 0x8CC70208,
+                0x90BEFFFA, 0xA4506CEB, 0xBEF9A3F7, 0xC67178F2);
+ 
+            var HASH = new Array(0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A, 0x510E527F, 
+                       0x9B05688C, 0x1F83D9AB, 0x5BE0CD19);
+ 
+            var W = new Array(64);
+            var a, b, c, d, e, f, g, h, i, j;
+            var T1, T2;
+      
+            m[l >> 5] |= 0x80 << (24 - l % 32);
+            m[((l + 64 >> 9) << 4) + 15] = l;
+      
+            for ( var i = 0; i<m.length; i+=16 ) {
+                a = HASH[0];
+                b = HASH[1];
+                c = HASH[2];
+                d = HASH[3];
+                e = HASH[4];
+                f = HASH[5];
+                g = HASH[6];
+                h = HASH[7];
+      
+                for ( var j = 0; j<64; j++) {
+                    if (j < 16) W[j] = m[j + i];
+                    else W[j] = safe_add(safe_add(safe_add(Gamma1256(W[j - 2]), W[j - 7]), Gamma0256(W[j - 15])), W[j - 16]);
+      
+                    T1 = safe_add(safe_add(safe_add(safe_add(h, Sigma1256(e)), Ch(e, f, g)), K[j]), W[j]);
+                    T2 = safe_add(Sigma0256(a), Maj(a, b, c));
+      
+                    h = g;
+                    g = f;
+                    f = e;
+                    e = safe_add(d, T1);
+                    d = c;
+                    c = b;
+                    b = a;
+                    a = safe_add(T1, T2);
+                }
+      
+                HASH[0] = safe_add(a, HASH[0]);
+                HASH[1] = safe_add(b, HASH[1]);
+                HASH[2] = safe_add(c, HASH[2]);
+                HASH[3] = safe_add(d, HASH[3]);
+                HASH[4] = safe_add(e, HASH[4]);
+                HASH[5] = safe_add(f, HASH[5]);
+                HASH[6] = safe_add(g, HASH[6]);
+                HASH[7] = safe_add(h, HASH[7]);
+            }
+            return HASH;
+        }
+      
+        function str2binb (str) {
+            var bin = Array();
+            var mask = (1 << chrsz) - 1;
+            for(var i = 0; i < str.length * chrsz; i += chrsz) {
+                bin[i>>5] |= (str.charCodeAt(i / chrsz) & mask) << (24 - i%32);
+            }
+            return bin;
+        }
+      
+        function Utf8Encode(string) {
+            string = string.replace(/\r\n/g,"\n");
+            var utftext = "";
+      
+            for (var n = 0; n < string.length; n++) {
+      
+                var c = string.charCodeAt(n);
+      
+                if (c < 128) {
+                    utftext += String.fromCharCode(c);
+                }
+                else if((c > 127) && (c < 2048)) {
+                    utftext += String.fromCharCode((c >> 6) | 192);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+                else {
+                    utftext += String.fromCharCode((c >> 12) | 224);
+                    utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+      
+            }
+      
+            return utftext;
+        }
+      
+        function binb2hex (binarray) {
+            var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+            var str = "";
+            for(var i = 0; i < binarray.length * 4; i++) {
+                str += hex_tab.charAt((binarray[i>>2] >> ((3 - i%4)*8+4)) & 0xF) +
+                hex_tab.charAt((binarray[i>>2] >> ((3 - i%4)*8  )) & 0xF);
+            }
+            return str;
+        }
+      
+        s = Utf8Encode(s);
+        return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
+      
+    }
+     
+
+    
+	/*
+	 * App & 스마트케이스 관련.. 
+	 * */
+	// 현재 호출한 디바이스가 어떤 것인지 체크합니다.
+	var isMobile = {
+		Android: function () {
+			return navigator.userAgent.match(/Android/i) == null ? false : true;
+		},
+		iOS: function () {
+			return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+		},
+		any: function () {
+			return (isMobile.Android() || isMobile.iOS());
+		}
+	};
+	
+	 
+	//App에 로그인정보 전달
+	function fnAppLoginChk() {
+		$.ajax({
+			type: "POST",
+			url: "/smart/getLoginInfo.do",
+			//data:JSON.stringify(data),
+			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			dataType: "json"
+		}).done(function(resp){
+			console.log(JSON.stringify(resp));
+			//App에 Javascript Bridge 연결하여 전달
+			if (isMobile.any()) {
+				if (isMobile.Android()) {
+					window.eudiApp.fnAppLoginChk_Res(JSON.stringify(resp));
+				} else if (isMobile.iOS()) {
+					webkit.messageHandlers.fnAppLoginChk_Res.postMessage(JSON.stringify(resp));
+				}
+			}
+		}).fail(function(error){
+			//alert(JSON.stringify(error));
+		});
+	}
+	
+	
+	// 로그인 페이지로 이동
+	function fnAppLoginForm() {
+		location.href = "/child/login.do";
+	}
+	
+	
+	// 환아 변경하기
+	function fnAppChangeChild(mId, cIdx) {
+		var data = {
+				mId: mId,
+				cIdx: cIdx
+			};
+		
+		$.ajax({
+			type: "POST",
+			url: "/smart/changeSelectChild.do",
+			data: data,
+			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			dataType: "json"
+		}).done(function(resp){
+			console.log(JSON.stringify(resp));
+			//App에 Javascript Bridge 연결하여 전달
+			if (isMobile.any()) {
+				if (isMobile.Android()) {
+					window.eudiApp.fnAppChangeChild_Res(JSON.stringify(resp));
+				} else if (isMobile.iOS()) {
+					webkit.messageHandlers.fnAppChangeChild_Res.postMessage(JSON.stringify(resp));
+				}
+			}
+			
+			//정상적으로 완료하였으면 메인으로 이동
+			if (resp.result == "success") location.href = "/child/main.do";
+		}).fail(function(error){
+			//alert(JSON.stringify(error));
+		});
+	}
+	
+	
+	// 스마트기기 관리 열기
+	function fnAppDeviceSetup() {
+		if (isMobile.any()) {
+			if (isMobile.Android()) {
+				window.eudiApp.fnDeviceSetup();
+			} else if (isMobile.iOS()) {
+				webkit.messageHandlers.fnDeviceSetup.postMessage("");
+			}
+		}
+	}
+	
+	
+	// 스마트케이스에서 등록된 투여정보 팝업으로 보여주기
+	function fnAppPopupCheck(cIdx) {
+		var data = {
+				cIdx: cIdx
+			};
+		$.ajax({
+			type: "POST",
+			url: "/smart/selectPopupCheck.do",
+			data: data,
+			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			dataType: "html"
+		}).done(function(resp){
+			if(resp != 'noList'){
+				 $(".pop_info_inner").html(resp);
+				 popupInfoSmart('pop_smartcase_dose');
+			}
+		}).fail(function(error){
+			//alert(JSON.stringify(error));
+		});
+	}
+	
+
+	  //팝업 확인 한 데이터 날짜 수정 
+    function fnPopupDateUpdate(cidx){
+    	const data = {"cIdx":cidx};
+        actionurl = "/child/updatePopupDate.do";
+            $.ajax({
+                async: false,
+                type: "POST",
+                url : actionurl,
+                data : data,
+                dataType : "json",
+                success: function(obj){
+              
+                },
+                error: function(xhr, option, error){
+                	   msg = "서버와 통신중 에러가 발생하였습니다.다시 시도 해주세요"
+                          // alert(msg);
+                }
+                
+            });
+    }
+	  
+	 
+	$(window).load(function() {
+		if("39192"){
+			fnAppPopupCheck(0);//로드시 팝업 호출
+		}
+	});
+</script>
+
+
+<!--  스마트 케이스 연동 투여 팝업 -->
+      <div class="pop_mask_smart"></div>
+      <div class="pop_info pop_smartcase_dose">
+        <div class="pop_info_inner">
+
+        </div>
+      </div>
+
+ <script>
+      $(function(){
+        tabEvent.init();
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_sub').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+      });
+
+      $(function(){
+
+    	  if($("#lvup").val()  == "1"){//1단계
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "2"){
+    		   popupLevel();
+    	  } else if($("#lvup").val()  == "3"){
+    		   popupLevel();
+    	  } else if($("#lvup").val()  == "4"){
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "5"){
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "6"){
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "7"){
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "8"){
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "9"){
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "10"){
+    		   popupLevel();
+    	  }  else  if($("#lvup").val()  == "11"){
+    		   popupLevel();
+    	  }  else  if($("#lvup").val()  == "12"){
+    		   popupLevel();
+    	  }  else  if($("#lvup").val()  == "13"){
+    		   popupLevel();
+    	  }  else  if($("#lvup").val()  == "14"){
+    		   popupLevel();
+    	  }  else  if($("#lvup").val()  == "15"){
+    		   popupLevel();
+    	  }
+    /* 	  var level;
+    	  var ch_name;
+
+    	  if($("#characterId").val()  == "stylish"){//1단계
+    		  ch_name = "스타일리쉬 유디";
+    	  } else  if($("#characterId").val()   == "musician"){
+    		  ch_name = "뮤지션 유디";
+    	  }  else  if($("#characterId").val()   == "smart"){
+    		  ch_name = "스마트 유디";
+    	  }  else  if($("#characterId").val()   == "champion"){
+    		  ch_name = "챔피언 유디";
+    	  }
+
+
+    	  $("#chname_text1").text(ch_name);
+    	  $("#chname_text2").text(ch_name);
+
+
+
+
+    	  if($("#lvup").val()  == "1"){//1단계
+    		  level = "1";
+    		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "5"){
+    		  level = "2";
+    		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else if($("#lvup").val()  == "10"){
+    		  level = "3";
+    		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else if($("#lvup").val()  == "18"){
+    		  level = "4";
+    		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "28"){
+    		  level = "5";
+    		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "41"){
+    		  level = "6";
+    		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "59"){
+    		  level = "7";
+     		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "83"){
+    		  level = "8";
+     		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "108"){
+    		  level = "9";
+     		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } else  if($("#lvup").val()  == "140"){
+    		  level = "10";
+     		  $("#level_text1").text(level);
+    		   popupLevel();
+    	  } */
+
+
+        });
+   	/*pagination 페이지 링크 function*/
+    	function fnLinkPage(pageNo){
+    	  document.listForm.pageIndex.value = pageNo;
+       	  document.listForm.action = "/child/dose_record.do";
+          document.listForm.submit();
+    	}
+
+
+
+   // 달력 세팅 부분
+      function calendar_view(amYear,amMonth){
+          var actionurl = "";
+ 		  $("#amYear").val(amYear);
+          $("#amMonth").val(amMonth);
+          $("#amDate").val(amYear+"-"+amMonth);
+
+          actionurl = "/child/dose/ajax_dose_calendar_view.do";
+              $.ajax({
+                  async: false,
+                  type: "POST",
+                  url : actionurl,
+                  data : $("#listForm").serialize(),
+                  dataType : "html",
+                  success: function(obj){
+
+                      $("#calendar_view_ajax").html(obj);
+                      $("#calYear").html(amYear);
+                      $("#calMonth").html(amMonth);
+
+                  },
+                  error: function(xhr, option, error){
+                        alert(xhr.status+" | "+error); //오류코드 | 오류내용
+                  }
+                  /*error : function(success){
+                      meg = "서버와 통신중 에러가 발생하였습니다."
+                      alert("처리결과 : "+meg);
+                  }*/
+              });
+
+
+      }
+
+   function fndeleteDose(amidx){
+	   var result = confirm("투여 기록을 삭제하시겠습니까?");
+		  if(result){
+
+		   actionurl = "/child/deleteAdministerMedicineInfo.do";
+			   var chkData = { "amIdx": amidx };
+			   $.ajax({
+		            async: false,
+		            type: "POST",
+		            data:chkData,
+		            url : actionurl,
+		            dataType : "json",
+		            success: function(obj){
+		            	   if(obj.result > 0){
+			                	alert("삭제 되었습니다.");
+			                } else {
+			                	alert("일시적인 오류 입니다,다시 시도해주세요");
+			                	return;
+			                }
+		            	   location.href="/child/dose_input_cal.do";
+		            },
+		            error: function(xhr, option, error){
+		                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		            }
+		        }) ;
+		  }
+
+
+   }
+
+   function fnGoDose(doseType,amidx,amdate){
+	   var nowDate = Number($("#nowYear").val()+ $("#nowMonth").val()+$("#nowDate").val());
+	   if(doseType == "N"){
+		   var amiDate = Number(amidx);
+	   } else {
+		   var amiDate = Number(amdate);
+	   }
+
+	   if(nowDate >= amiDate){
+			  document.listForm.amIdx.value = amidx;
+			  document.listForm.doseType.value = doseType;
+			  var amidx = amidx;
+			  if(doseType == "N"){
+				  $("#amYear").val(String(amidx).substring(0,4));
+				  $("#amMonth").val(String(amidx).substring(4,6));
+				  $("#amDate").val(String(amidx).substring(6,8));
+			  } else {
+				  $("#amYear").val(String(amdate).substring(0,4));
+				  $("#amMonth").val(String(amdate).substring(4,6));
+				  $("#amDate").val(String(amdate).substring(6,8));
+			  }
+
+
+			  //스케줄 없는 날짜에 투여 할시 스케줄 시퀀스 
+			 if(amdate == 'no'){
+				$("#sIdx").val("no");
+			 }
+	
+	       	 document.listForm.action = "/child/dose_input.do";
+	         document.listForm.submit();
+	   } else {
+		   return;
+	   }
+
+
+   }
+
+  </script>
+  </head>
+  <body><div class="pop_mask_smart"></div>
+    <div class="pop_info pop_smartcase_dose">
+      <div class="pop_info_inner">
+
+      </div>
+    </div>
+
+<script>
+    $(function(){
+      tabEvent.init();
+      $(window).resize(resizeContents);
+      resizeContents();
+      function resizeContents() {
+        $('.wrap_sub').css({
+          'min-height': $(window).height() + 'px'
+        });
+      }
+    });
+
+    $(function(){
+
+      if($("#lvup").val()  == "1"){//1단계
+         popupLevel();
+      } else  if($("#lvup").val()  == "2"){
+         popupLevel();
+      } else if($("#lvup").val()  == "3"){
+         popupLevel();
+      } else if($("#lvup").val()  == "4"){
+         popupLevel();
+      } else  if($("#lvup").val()  == "5"){
+         popupLevel();
+      } else  if($("#lvup").val()  == "6"){
+         popupLevel();
+      } else  if($("#lvup").val()  == "7"){
+         popupLevel();
+      } else  if($("#lvup").val()  == "8"){
+         popupLevel();
+      } else  if($("#lvup").val()  == "9"){
+         popupLevel();
+      } else  if($("#lvup").val()  == "10"){
+         popupLevel();
+      }  else  if($("#lvup").val()  == "11"){
+         popupLevel();
+      }  else  if($("#lvup").val()  == "12"){
+         popupLevel();
+      }  else  if($("#lvup").val()  == "13"){
+         popupLevel();
+      }  else  if($("#lvup").val()  == "14"){
+         popupLevel();
+      }  else  if($("#lvup").val()  == "15"){
+         popupLevel();
+      }
+  /* 	  var level;
+      var ch_name;
+
+      if($("#characterId").val()  == "stylish"){//1단계
+        ch_name = "스타일리쉬 유디";
+      } else  if($("#characterId").val()   == "musician"){
+        ch_name = "뮤지션 유디";
+      }  else  if($("#characterId").val()   == "smart"){
+        ch_name = "스마트 유디";
+      }  else  if($("#characterId").val()   == "champion"){
+        ch_name = "챔피언 유디";
+      }
+
+
+      $("#chname_text1").text(ch_name);
+      $("#chname_text2").text(ch_name);
+
+
+
+
+      if($("#lvup").val()  == "1"){//1단계
+        level = "1";
+        $("#level_text1").text(level);
+         popupLevel();
+      } else  if($("#lvup").val()  == "5"){
+        level = "2";
+        $("#level_text1").text(level);
+         popupLevel();
+      } else if($("#lvup").val()  == "10"){
+        level = "3";
+        $("#level_text1").text(level);
+         popupLevel();
+      } else if($("#lvup").val()  == "18"){
+        level = "4";
+        $("#level_text1").text(level);
+         popupLevel();
+      } else  if($("#lvup").val()  == "28"){
+        level = "5";
+        $("#level_text1").text(level);
+         popupLevel();
+      } else  if($("#lvup").val()  == "41"){
+        level = "6";
+        $("#level_text1").text(level);
+         popupLevel();
+      } else  if($("#lvup").val()  == "59"){
+        level = "7";
+         $("#level_text1").text(level);
+         popupLevel();
+      } else  if($("#lvup").val()  == "83"){
+        level = "8";
+         $("#level_text1").text(level);
+         popupLevel();
+      } else  if($("#lvup").val()  == "108"){
+        level = "9";
+         $("#level_text1").text(level);
+         popupLevel();
+      } else  if($("#lvup").val()  == "140"){
+        level = "10";
+         $("#level_text1").text(level);
+         popupLevel();
+      } */
+
+
+      });
+   /*pagination 페이지 링크 function*/
+    function fnLinkPage(pageNo){
+      document.listForm.pageIndex.value = pageNo;
+         document.listForm.action = "/child/dose_record.do";
+        document.listForm.submit();
+    }
+
+
+
+ // 달력 세팅 부분
+    function calendar_view(amYear,amMonth){
+        var actionurl = "";
+     $("#amYear").val(amYear);
+        $("#amMonth").val(amMonth);
+        $("#amDate").val(amYear+"-"+amMonth);
+
+        actionurl = "/child/dose/ajax_dose_calendar_view.do";
+            $.ajax({
+                async: false,
+                type: "POST",
+                url : actionurl,
+                data : $("#listForm").serialize(),
+                dataType : "html",
+                success: function(obj){
+
+                    $("#calendar_view_ajax").html(obj);
+                    $("#calYear").html(amYear);
+                    $("#calMonth").html(amMonth);
+
+                },
+                error: function(xhr, option, error){
+                      alert(xhr.status+" | "+error); //오류코드 | 오류내용
+                }
+                /*error : function(success){
+                    meg = "서버와 통신중 에러가 발생하였습니다."
+                    alert("처리결과 : "+meg);
+                }*/
+            });
+
+
+    }
+
+ function fndeleteDose(amidx){
+   var result = confirm("투여 기록을 삭제하시겠습니까?");
+    if(result){
+
+     actionurl = "/child/deleteAdministerMedicineInfo.do";
+       var chkData = { "amIdx": amidx };
+       $.ajax({
+              async: false,
+              type: "POST",
+              data:chkData,
+              url : actionurl,
+              dataType : "json",
+              success: function(obj){
+                   if(obj.result > 0){
+                      alert("삭제 되었습니다.");
+                    } else {
+                      alert("일시적인 오류 입니다,다시 시도해주세요");
+                      return;
+                    }
+                   location.href="/child/dose_input_cal.do";
+              },
+              error: function(xhr, option, error){
+                    alert(xhr.status+" | "+error); //오류코드 | 오류내용
+              }
+          }) ;
+    }
+
+
+ }
+
+ function fnGoDose(doseType,amidx,amdate){
+   var nowDate = Number($("#nowYear").val()+ $("#nowMonth").val()+$("#nowDate").val());
+   if(doseType == "N"){
+     var amiDate = Number(amidx);
+   } else {
+     var amiDate = Number(amdate);
+   }
+
+   if(nowDate >= amiDate){
+      document.listForm.amIdx.value = amidx;
+      document.listForm.doseType.value = doseType;
+      var amidx = amidx;
+      if(doseType == "N"){
+        $("#amYear").val(String(amidx).substring(0,4));
+        $("#amMonth").val(String(amidx).substring(4,6));
+        $("#amDate").val(String(amidx).substring(6,8));
+      } else {
+        $("#amYear").val(String(amdate).substring(0,4));
+        $("#amMonth").val(String(amdate).substring(4,6));
+        $("#amDate").val(String(amdate).substring(6,8));
+      }
+
+
+      //스케줄 없는 날짜에 투여 할시 스케줄 시퀀스 
+     if(amdate == 'no'){
+      $("#sIdx").val("no");
+     }
+
+          document.listForm.action = "/child/dose_input.do";
+         document.listForm.submit();
+   } else {
+     return;
+   }
+
+
+ }
+
+</script>
+
+ 
+   
+  
+ 
+ 
+
+  <div class="wrap wrap_sub" style="min-height: 640px;">
+    <!--// nav -->
+    <div class="sub_top">
+  
+
+      <div class="nav">
+        <div class="nav_inner">
+          <h2 class="title">
+            
+              투여관리
+              
+              
+              
+              
+            
+          </h2>
+          <div class="back"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/back.png" alt="뒤로가기"></a></div>
+        </div>
+      </div>
+      
+        
+          <div class="tab tab02">
+            <div class="inner">
+              <ul>
+                <li><a href="/child/schedule_management.do">투여계획</a></li>
+                <li class="active"><a href="/child/dose_input_cal.do">투여입력</a></li>
+                <li><a href="/child/dose_info.do">투여방법</a></li>
+              </ul>
+            </div>
+          </div>
+        
+        
+        
+        
+        
+      
+    </div>
+    <!-- nav //-->
+
+
+    <!--// content -->
+    <div class="content con_sub con_sub01">
+      <div class="con_box">
+        <div class="profile">
+          <div class="pro_pic">
+             
+                  
+                  
+                         
+                        
+                        
+                        
+                           <img src="/resource/assets/web/child/images/profile/img_profile_championeudi_03.png" alt="프로필 사진">
+                        
+                      
+                  
+                
+
+          </div>
+          <div class="pro_name"><div><p><span>
+            
+            
+                
+                  
+                
+              
+                
+                  
+                
+              
+               
+                
+                     
+                       림링
+                     
+                
+                     
+                
+          </span> 어린이</p></div></div>
+        </div>
+      </div>
+      <div class="con_box">
+        <div class="con_inner con_inner02">
+
+          <form id="listForm" name="listForm" commandname="memberVO" action="/child/dose_input_cal.do" method="post">
+           <input type="hidden" name="pageUnit" id="pageUnit" value="10">
+           <input type="hidden" name="amYear" id="amYear" value="2023">
+       <input type="hidden" name="amMonth" id="amMonth" value="07">
+       <input type="hidden" name="amDate" id="amDate" value="2023-07">
+        <input type="hidden" name="lvup" id="lvup" value="0">
+           <input type="hidden" name="characterId" id="characterId" value="champion">
+      <input type="hidden" name="amIdx" id="amIdx" value="">
+      <input type="hidden" name="doseType" id="doseType" value="">
+      <input type="hidden" name="nowYear" id="nowYear" value="2023">
+       <input type="hidden" name="nowMonth" id="nowMonth" value="07">
+       <input type="hidden" name="nowDate" id="nowDate" value="11">
+       <input type="hidden" name="sIdx" id="sIdx" value="">
+            <div class="tab_cont tab_cont00" id="calendar_view_ajax">
+
+
+       <div class="cld_box">
+              <div class="date_select">
+                <a href="javascript:;" class="cld_prev" onclick="calendar_view('2023','06')"><img src="/resource/assets/web/child/images/common/cld_left.png" alt="이전"></a>
+                <span class="cld_date">
+                  <span class="year" id="calYear">2023</span><span class="cld_dot">년</span>
+                  <span class="cld_month" id="calMonth">07</span>월
+                </span>
+                <a href="javascript:;" class="cld_next" onclick="calendar_view('2023','08')"><img src="/resource/assets/web/child/images/common/cld_right.png" alt="다음"></a>
+              </div>
+              
+              <!-- 투여용량 추가 -->
+              <div class="cld_info">투여용량 합계 : 4.0 IU (펜 : 0.1 개)</div>
+
+              <div class="cld_area">
+                <table summary="캘린더">
+                <caption>캘린더</caption>
+                <colgroup>
+                  <col style="width:14.28%;">
+                  <col style="width:14.28%;">
+                  <col style="width:14.28%;">
+                  <col style="width:14.28%;">
+                  <col style="width:14.28%;">
+                  <col style="width:14.28%;">
+                  <col style="width:14.28%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col" class="sun"><span>일</span></th>
+                    <th scope="col"><span>월</span></th>
+                    <th scope="col"><span>화</span></th>
+                    <th scope="col"><span>수</span></th>
+                    <th scope="col"><span>목</span></th>
+                    <th scope="col"><span>금</span></th>
+                    <th scope="col"><span>토</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr> <td><div class="dayBox disabled"><div class="cld_day sun">25</div></div></td> <td><div class="dayBox disabled"><div class="cld_day">26</div></div></td> <td><div class="dayBox disabled"><div class="cld_day">27</div></div></td> <td><div class="dayBox disabled"><div class="cld_day">28</div></div></td> <td><div class="dayBox disabled"><div class="cld_day">29</div></div></td> <td><div class="dayBox disabled"><div class="cld_day">30</div></div></td> <td onclick="fnGoDose('N',20230701,'0')"><div class="dayBox"><div class="cld_day sat">01</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td></tr><tr> <td onclick="fnGoDose('N',20230702,'0')"><div class="dayBox"><div class="cld_day sun">02</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230703,'0')"><div class="dayBox"><div class="cld_day">03</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230704,'no')"><div class="dayBox"><div class="cld_day">04</div></div></td> 
+                  <td onclick="fnGoDose('N',20230705,'0')"><div class="dayBox">
+                    <div class="cld_day">05</div>
+                    <p class="stamp_amount">7.0 IU</p>
+                    <div class="stamp on">
+                      <img src="/resource/assets/web/child/images/sub/stamp_complete.png" alt="투여완료">
+                    </div>
+                    <p class="stamp_tit">오른쪽 팔</p>
+                  </div></td> 
+                  <td onclick="fnGoDose('N',20230706,'no')"><div class="dayBox"><div class="cld_day">06</div></div></td> 
+                  <td onclick="fnGoDose('U','4212516','20230707')"><div class="dayBox">
+                    <div class="cld_day">07</div>
+                    <p class="stamp_amount">2.0 IU</p>
+                    <div class="stamp on">
+                      <img src="/resource/assets/web/child/images/sub/stamp_stylish_eudi05.png" alt="투여">
+                      <img src="/resource/assets/web/child/images/sub/stamp_memo.png" alt="투여" class="stamp_memo">
+                      <img src="/resource/assets/web/child/images/sub/stamp_pen.png" alt="투여" class="stamp_pen">
+                    </div>
+                    <p class="stamp_tit">오른쪽 팔</p>
+                  </div></td> 
+                  <td onclick="fnGoDose('N',20230708,'0')"><div class="dayBox"><div class="cld_day sat">08</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td></tr><tr> <td onclick="fnGoDose('N',20230709,'0')"><div class="dayBox"><div class="cld_day sun">09</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230710,'no')"><div class="dayBox"><div class="cld_day">10</div></div></td> 
+                  <td onclick="fnGoDose('U','4212517','20230711')"><div class="dayBox"
+                    ><div class="cld_day">11</div>
+                    <p class="stamp_amount">2.0 IU</p>
+                    <div class="stamp on">
+                      <img src="/resource/assets/web/child/images/sub/stamp_musician_eudi05.png" alt="투여">
+                      <img src="/resource/assets/web/child/images/sub/stamp_pen.png" alt="투여" class="stamp_pen">
+                    </div>
+                    <p class="stamp_tit">왼쪽 팔</p>
+                  </div></td> 
+                  <td onclick="fnGoDose('N',20230712,'no')"><div class="dayBox"><div class="cld_day">12</div></div></td> 
+                  <td onclick="fnGoDose('N',20230713,'0')"><div class="dayBox">
+                    <div class="cld_day">13</div>
+                    <p class="stamp_amount">2.0IU</p>
+                    <div class="stamp on">
+                      <img src="/resource/assets/web/child/images/sub/stamp_smart_eudi02.png" alt="투여예정일">
+                    </div>
+                    <p class="stamp_tit">오른쪽 허벅지</p>
+                  </div></td> 
+                  <td onclick="fnGoDose('N',20230714,'no')"><div class="dayBox"><div class="cld_day">14</div></div></td> <td onclick="fnGoDose('N',20230715,'0')"><div class="dayBox"><div class="cld_day sat">15</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td></tr><tr> <td onclick="fnGoDose('N',20230716,'0')"><div class="dayBox"><div class="cld_day sun">16</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230717,'0')"><div class="dayBox"><div class="cld_day">17</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230718,'0')"><div class="dayBox"><div class="cld_day">18</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230719,'0')"><div class="dayBox"><div class="cld_day">19</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230720,'0')"><div class="dayBox"><div class="cld_day">20</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230721,'0')"><div class="dayBox"><div class="cld_day">21</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230722,'0')"><div class="dayBox"><div class="cld_day sat">22</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td></tr><tr> <td onclick="fnGoDose('N',20230723,'0')"><div class="dayBox"><div class="cld_day sun">23</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230724,'0')"><div class="dayBox"><div class="cld_day">24</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230725,'0')"><div class="dayBox"><div class="cld_day">25</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230726,'0')"><div class="dayBox"><div class="cld_day">26</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230727,'0')"><div class="dayBox"><div class="cld_day">27</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230728,'0')"><div class="dayBox"><div class="cld_day">28</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230729,'0')"><div class="dayBox"><div class="cld_day sat">29</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td></tr><tr> <td onclick="fnGoDose('N',20230730,'0')"><div class="dayBox"><div class="cld_day sun">30</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td onclick="fnGoDose('N',20230731,'0')"><div class="dayBox"><div class="cld_day">31</div><div class="stamp"><img src="/resource/assets/web/child/images/sub/stamp.png" alt="투여예정일"></div></div></td> <td><div class="dayBox disabled"><div class="cld_day">01</div></div></td> <td><div class="dayBox disabled"><div class="cld_day">02</div></div></td> <td><div class="dayBox disabled"><div class="cld_day">03</div></div></td> <td><div class="dayBox disabled"><div class="cld_day">04</div></div></td> <td><div class="dayBox disabled"><div class="cld_day sat">05</div></div></td></tr>
+                </tbody>
+                </table>
+              </div></div></div>
+
+        </form></div>
+
+      </div>
+
+    </div>
+    
+    <!-- content //-->
+
+       <!-- 레벨업 팝업 -->
+    <div class="pop_mask"></div>
+    <div class="pop_level">
+      <div class="level_wrap">
+        <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
+        <div class="level_box">
+          <div class="level_top level_champion"> <!-- level_smart / level_stylish / levle_musician / levle_champion -->
+            <div class="bg_fireworks"><img src="/resource/assets/web/child/images/level/bg_fireworks.png" alt="EuDi"></div>
+            <div class="level_info">
+             <!--  <div class="level_inner">
+                <p class="level_tit"><span id="chname_text1"></span>가<br /><span id="level_text1"></span>단계로 진화하였습니다.</p>
+              </div>  -->
+              <div class="level_img">
+                      
+                        
+
+                        
+                            <img src="/resource/assets/web/child/images/level/level_champion03.png" alt="캐릭터 이미지">
+                        
+                      
+              </div>
+              <!-- level_smart01~10 / level_stylish01~10 / levle_musician01~10 / level_champion01~10 -->
+              <div class="ribbon">LEVEL UP</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <!-- 레벨업 팝업 -->
+
+  </div>
+  <script>
+  calendar_view("2023","07");
+  </script>
+
+
+
+
+
+
+
+  
+  <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-9YP2FZMHRQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9YP2FZMHRQ');
+  </script>
+
+ 
+
+
+
+</body>
+  
+		<!-- Google tag (gtag.js) -->
+		<script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-9YP2FZMHRQ"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-9YP2FZMHRQ');
+		</script>
+	
+	 
+
+
+</html>
