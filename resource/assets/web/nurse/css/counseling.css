@@ -128,15 +128,10 @@ ExtraBold - 'NanumSquareEB'
 
 /* 상담일정관리 - 공통 */
 .wrap_sub .sec_cal { width: 100%; padding: 35px 15px 57px; letter-spacing: -1px; background: #ffffff; }
-.wrap_sub .sec_cal .alert_wrap { display: flex; }
-.wrap_sub .sec_cal .alert { font-size: 12px; letter-spacing: -1.2px; color: #333333; line-height: 1; display: flex; align-items: center; padding-bottom: 15px; }
-.wrap_sub .sec_cal .alert01 { margin-right: 6px; }
-.wrap_sub .sec_cal .alert02 { margin-right: 15px; }
-.wrap_sub .sec_cal .alert small { font-size: 9px; color: #727272; letter-spacing: -0.54px; }
-.wrap_sub .sec_cal .alert i { width: 5px; height: 5px; display: inline-block; border-radius: 100%; margin-right: 6px; }
-.wrap_sub .sec_cal .alert01 i { background: #13bfd6; }
-.wrap_sub .sec_cal .alert02 i { background: #f49baa; }
-.wrap_sub .sec_cal .alert03 i { background: #9ed363; }
+.wrap_sub .sec_cal .alert,
+.wrap_sub .sec_cal .alert01 { font-size: 12px; letter-spacing: -1.2px; color: #333333; line-height: 1; display: flex; align-items: center; padding-bottom: 15px; }
+.wrap_sub .sec_cal .alert i,
+.wrap_sub .sec_cal .alert01 i { background: #13bfd6; width: 5px; height: 5px; display: inline-block; border-radius: 100%; margin-right: 6px; }
 .wrap_sub .sec_cal .cal_nav .year-month { font-family: 'NanumSquareEB'; text-align: center; line-height: .8; font-size: 22.85px; color: #333333; letter-spacing: -1.2px; }
 .wrap_sub .sec_cal .cal_nav .year-month span { font-size: 24.83px; }
 .wrap_sub .sec_cal .cal_nav { display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 48px; line-height: 78px }
@@ -155,6 +150,11 @@ ExtraBold - 'NanumSquareEB'
 /* 상담일정관리 - 캘린더 */
 .wrap_sub .calendar .sec_cal .cal_nav .year-month { width: 157.5px; }
 .wrap_sub .sec_cal .cal_wrap { padding-top: 30px; position: relative; margin: 0 auto; }
+.wrap_sub .sec_cal .alert_wrap { display: flex; align-items: center; }
+.wrap_sub .sec_cal .alert_wrap .alert:not(:last-of-type) { margin-right: 15px; }
+.wrap_sub .sec_cal .alert_wrap .alert01 small { font-size: 9px; color: #727272; }
+.wrap_sub .sec_cal .alert_wrap .alert02 i { background: #f49baa; }
+.wrap_sub .sec_cal .alert_wrap .alert03 i { background: #9ed363; }
 .wrap_sub .sec_cal .cal_wrap .days { display: flex; padding: 11.5px 0 13px; border-top: 1px solid #333333; border-bottom: .5px solid #e5e5e5; }
 .wrap_sub .sec_cal .cal_wrap .day { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; width: calc(100% / 7); font-family: 'NanumSquareB'; color: #727272; font-size: 10px; text-align: center; }
 .wrap_sub .sec_cal .cal_wrap .day.disable a { color: rgba(114, 114, 114, .4); }
@@ -173,20 +173,22 @@ ExtraBold - 'NanumSquareEB'
 /* .wrap_sub .sec_cal .current.today,  */
 .wrap_sub .sec_cal .cal_wrap .dates .day.disable { background: #f6f6f6; }
 .wrap_sub .sec_cal .cal_wrap .dates .day button.on { background: #79bd28; color: #fff; }
-.wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: center; text-align: center; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; }
-.wrap_sub .sec_cal .current .schedule.hpc_block { bottom: 41px; border: 1px solid #13bfd6; color: rgba(19, 191, 214,.8); font-size: 8px; }
-.wrap_sub .sec_cal .current .schedule.hpc_block>b { font-size: 9px; color: #13bfd6; }
-.wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #f49baa;padding: 0 8px }
-.wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #9ed363;padding: 0 8px; }
-.wrap_sub .sec_cal .current .schedule.edu_block>b { display: inline-block; width: 20px; border-radius: 5.5px; background: #fff; color: #f49baa; margin-right: 5px; margin-left: -3px; }
-.wrap_sub .sec_cal .current .schedule.cs_block>b { display: inline-block; width: 20px; border-radius: 5.5px; background: #fff; color: #9ed363; margin-right: 5px; margin-left: -3px; }
+.wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
+.wrap_sub .sec_cal .current .schedule.hpc_block { bottom: 41px; border: 1px solid #13bfd6; color: #13bfd6; font-family: 'NanumSquareR'; font-size: 8px; text-align: center; justify-content: center; }
+.wrap_sub .sec_cal .current .schedule.hpc_block>b { font-size: 9px;font-family: 'NanumSquareB'; }
+.wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #f49baa; padding: 0 8px 0 3px; }
+.wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #9ed363; padding: 0 8px 0 3px; }
+.wrap_sub .sec_cal .current .schedule.edu_block>b,
+.wrap_sub .sec_cal .current .schedule.cs_block>b { background: #fff;border-radius: 5.5px;width: 20px;height: 11px;font-size: 8px;display: flex;align-items: center;justify-content: center; }
+.wrap_sub .sec_cal .current .schedule.edu_block>b { color: #f49baa; }
+.wrap_sub .sec_cal .current .schedule.cs_block>b { color: #9ed363; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrap_sub .calendar .sec_cal .cal_nav .year-month { width: 187.5px; }
   .wrap_sub .sec_cal .cal_wrap .dates .day { height: 18.3vw; }
+  .wrap_sub .sec_cal .cal_wrap .dates .day button { padding: 7.5px 5px 12px; }
+  .wrap_sub .sec_cal .current .hpc_block { max-width: 35px; height: 20px; line-height: 20px; font-size: 12px; border-radius: 10px; margin:-4px 4px 0 0; }
   .wrap_sub .sec_cal .current .schedule { width: calc(100% - 10px); height: 20px; font-size: 12px; left: 5px; }
-  .wrap_sub .sec_cal .current .schedule.hpc_block { font-size: 12px; bottom: 62px; }
-  .wrap_sub .sec_cal .current .schedule.hpc_block>b { font-size: 12px; }
   .wrap_sub .sec_cal .current .schedule.edu_block { bottom: 37px; }
   .wrap_sub .sec_cal .current .schedule.cs_block { bottom: 12px; }
 }
@@ -201,8 +203,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .schedule_wrap .lines > *:not(:last-of-type) { padding-bottom: 53px; }
 .wrap_sub .sec_cal .schedule_wrap .lines > *::after { content: ''; display: inline-block; width: 100%; height: 1px; background: #e5e5e5; margin-left: 16px; }
 .wrap_sub .sec_cal .schedule_wrap .dates { position: absolute; top: 42px; right: 0; width: calc(100% - 39px); height: calc(100% - 47px); padding: 0 3px; z-index: 1; }
-.wrap_sub .sec_cal .schedule_wrap .dates li { display: inline-flex; width: 100%; height: calc(100% / 30 - 10px); border-radius: 10px; font-size: 13px; line-height: 1.2; margin: 5px 0; padding: 0 15px; position: relative; justify-content: space-between; align-items: center; font-family: 'NanumSquareB'; overflow: visible; }
-.wrap_sub .sec_cal .schedule_wrap .dates li .new { position: absolute; top: 6.5px; left: -42px; z-index: 1; font-family: 'NanumSquareB'; font-size: 8px; color: #f18e1e; width: 35px; border: 1px solid #f18e1e; border-radius: 6.5px; display: flex; justify-content: center; align-items: center; text-transform: uppercase; }
+.wrap_sub .sec_cal .schedule_wrap .dates li { display: inline-flex; width: 100%; height: calc(100% / 18 - 10px); border-radius: 10px; font-size: 13px; line-height: 1.2; margin: 5px 0; padding: 0 15px; position: relative; justify-content: space-between; align-items: center; font-family: 'NanumSquareB';overflow: visible; }
+.wrap_sub .sec_cal .schedule_wrap .dates li .new { width: 35px;height: 13px;border-radius: 6.5px;border: 1px solid #f18e1e;font-size: 8px;color: #f18e1e;position: absolute;top: 6.5px;left: -42px;line-height: 13px;display: flex;justify-content: center;text-transform: uppercase;}
 .wrap_sub .sec_cal .schedule_wrap .dates li.available { color: #ffffff; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available.edu { background: #f49baa; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available.cs { background: #9ed363; }
@@ -231,8 +233,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .schedule_wrap .dates li.available a,
 .wrap_sub .sec_cal .schedule_wrap .dates li.available button { border: 1px solid #ffffff; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.available .not_registered { opacity: 0.3; }
-.wrap_sub .sec_cal .schedule_wrap .dates li[data-type="row-2"] { height: calc(100% / 15 - 10px); }
-.wrap_sub .sec_cal .schedule_wrap .dates li[data-type="row-3"] { height: calc(100% / 10 - 10px); } /* 더 필요할 경우 칸 추가 */
+.wrap_sub .sec_cal .schedule_wrap .dates li[data-type="row-2"] { height: calc(100% / 9 - 10px); }
+.wrap_sub .sec_cal .schedule_wrap .dates li[data-type="row-3"] { height: calc(100% / 6 - 10px); } /* 더 필요할 경우 칸 추가 */
 .wrap_sub .sec_cal .schedule_wrap .dates li[data-type="blind"] { display: none; visibility: hidden; }
 .wrap_sub .sec_cal .hpc_wrap { margin-top: 40px; }
 .wrap_sub .sec_cal .hpc_wrap .alert01 { padding-bottom: 15px; border-bottom: 1px solid #727272; }
