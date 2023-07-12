@@ -173,13 +173,13 @@ ExtraBold - 'NanumSquareEB'
 /* .wrap_sub .sec_cal .current.today,  */
 .wrap_sub .sec_cal .cal_wrap .dates .day.disable { background: #f6f6f6; }
 .wrap_sub .sec_cal .cal_wrap .dates .day button.on { background: #79bd28; color: #fff; }
-.wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: space-between; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
+.wrap_sub .sec_cal .current .schedule { width: calc(100% - 5px); height: 15px; position: absolute; left: 2.5px; display: flex; align-items: center; justify-content: center; border-radius: 2px; color: #ffffff; font-size: 9px; font-family: 'NanumSquareB'; padding: 0 5.5px; }
 .wrap_sub .sec_cal .current .schedule.hpc_block { bottom: 41px; border: 1px solid #13bfd6; color: #13bfd6; font-family: 'NanumSquareR'; font-size: 8px; text-align: center; justify-content: center; }
 .wrap_sub .sec_cal .current .schedule.hpc_block>b { font-size: 9px;font-family: 'NanumSquareB'; }
-.wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #f49baa; padding: 0 8px 0 3px; }
-.wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #9ed363; padding: 0 8px 0 3px; }
+.wrap_sub .sec_cal .current .schedule.edu_block { bottom: 23.5px; background: #f49baa; }
+.wrap_sub .sec_cal .current .schedule.cs_block { bottom: 6px; background: #9ed363; }
 .wrap_sub .sec_cal .current .schedule.edu_block>b,
-.wrap_sub .sec_cal .current .schedule.cs_block>b { background: #fff;border-radius: 5.5px;width: 20px;height: 11px;font-size: 8px;display: flex;align-items: center;justify-content: center; }
+.wrap_sub .sec_cal .current .schedule.cs_block>b { background: #fff;border-radius: 5.5px;width: 20px;padding: 1.5px 0 1px;font-size: 8px;display: flex;justify-content: center;margin-right: 9px;margin-left: -2px; }
 .wrap_sub .sec_cal .current .schedule.edu_block>b { color: #f49baa; }
 .wrap_sub .sec_cal .current .schedule.cs_block>b { color: #9ed363; }
 
