@@ -1169,9 +1169,11 @@
   .con_main .main_info {height: calc(100% - 281px);}
   .con_main .main_info .inner {height: 100%;}
   .con_main .main_top {height: calc(100% - 10vh);min-height: 305px;}
+  .con_main .main_top.top_bg02 {height: calc(100% - 11vh);min-height: 305px;}
   .con_main .main_top .my_bar {margin: 3vh auto 0;}
   .con_main .main_top .btn_webtoon {top: 13vh!important;}
   .con_main .main_info .infobox {height: 10vh;}
+  .con_main .main_info .top_bg02 + .con_main .main_info .infobox {height: 11vh;}
 
   .con_main .main_menu {position: absolute;width: 100%;}
   .con_main .main_menu>.inner,
