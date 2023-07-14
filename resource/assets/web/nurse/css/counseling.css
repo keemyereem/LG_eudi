@@ -317,12 +317,13 @@ ExtraBold - 'NanumSquareEB'
 .happycall .con_box h4 { font-size: 13px; }
 .happycall .con_box .info01 { padding: 30px 15px; background: #fff; position: relative; }
 .happycall .con_box .info01::after { content: ''; display: block; width: calc(100% - 30px); height: 1px; background: #e5e5e5; position: absolute; bottom: 0; left: 15px; }
-.happycall .con_box .info01 ul { display: flex; padding: 15px 12px; margin-top: 10px; background: #f6f6f6; border-radius: 5px; }
-.happycall .con_box .info01 ul li { font-family: 'NanumSquareB'; }
-.happycall .con_box .info01 ul .name,
-.happycall .con_box .info01 ul .id { font-size: 13px; }
-.happycall .con_box .info01 ul .date { color: #999; font-size: 11px; line-height: 1.3; }
-.happycall .con_box .info01 ul .date::after { content:''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px; line-height: 1.3; vertical-align: middle; }
+.happycall .con_box .info01 ul { display: flex; flex-wrap: wrap; padding: 15px 12px; margin-top: 10px; background: #f6f6f6; border-radius: 5px; }
+.happycall .con_box .info01 ul li { font-family: 'NanumSquareB'; font-size: 13px; line-height: 1.5; }
+.happycall .con_box .info01 ul .date { color: #999; font-size: 11px; line-height: 1.85; }
+.happycall .con_box .info01 ul .phone { letter-spacing: -0.7px; }
+.happycall .con_box .info01 ul li::after { content:''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 8px; line-height: 1.3; vertical-align: middle; }
+.happycall .con_box .info01 ul .name::after,
+.happycall .con_box .info01 ul li:last-of-type::after { display: none; }
 .happycall .con_box .con_form { margin-top: 10px; }
 .happycall .con_box #appylyContent { display: none; }
 .happycall .con_box .info02 { padding: 30px 0 25px; }
