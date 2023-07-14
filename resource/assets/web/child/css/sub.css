@@ -80,7 +80,7 @@
 .con_main .main_info .my_info .profile_info .info span {float: left;display: block;font-family: 'NanumSquareB';font-size: 11px;letter-spacing: -0.5px;}
 .con_main .main_info .my_info .profile_info .info span:first-child {padding-right: 10px;border-right: 1px solid #e7eae7;}
 .con_main .main_info .my_info .profile_info .info span:last-child {padding-left: 10px;}
-.con_main .main_info .my_info .profile_info .box_info01 {padding-top: 12px;font-size: 11px;color: #999;line-height: 1.5;}
+.con_main .main_info .my_info .profile_info .box_info01 {/* padding-top: 12px; */font-size: 11px;color: #999;line-height: 1.5;}
 .con_main .main_info .my_dose {width: 100%;}
 .con_main .main_info .my_dose .dose_date {display: flex;width: 100%;}
 .con_main .main_info .my_dose .last,
