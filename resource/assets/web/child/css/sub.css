@@ -690,7 +690,7 @@
 .con_sub01 .cld_box .cld_area table td .dayBox .cld_day {position: absolute;top: 0;left: 0;font-family: 'NanumSquareB';font-size: 9px;color: #727272;}
 .con_sub01 .cld_box .cld_area table td .dayBox .cld_day.sat {color: #3263e0;}
 .con_sub01 .cld_box .cld_area table td .dayBox .cld_day.sun {color: #e32828;}
-.con_sub01 .cld_box .cld_area table td .dayBox .stamp_tit {padding-top: 20px;font-family: 'NanumSquareEB';font-size: 7px;color: #333;text-align: center;letter-spacing: -0.7px;line-height: 1;position: absolute;bottom: 0;left: 0;width: 100%;}
+.con_sub01 .cld_box .cld_area table td .dayBox .stamp_tit {padding-top: 20px;font-family: 'NanumSquareEB';font-size: 9px;color: #333;text-align: center;letter-spacing: -0.7px;line-height: 1;position: absolute;bottom: 0;left: 0;width: 100%;}
 .con_sub01 .cld_box .cld_area table td .dayBox .stamp_amount {font-family: 'NanumSquareEB';font-size: 9px;color: #79bd28;letter-spacing: -0.7px;position: absolute;top: 0;right: 0;}
 .con_sub01 .cld_box .cld_area table td .dayBox .stamp {position: relative;top: 20px;margin: 0 auto;width: 100%;max-width: 40px;}
 .con_sub01 .cld_box .cld_area table td .dayBox .stamp .stamp_memo {position: absolute;top: 1px;right: 1px;width: 9.5px;}
