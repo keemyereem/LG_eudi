@@ -89,8 +89,8 @@ var tabEvent02 = {
 var fileEvent = {
   init:function(){
 	  
-  var fileTarget = $('.upload_hidden');
-    fileTarget.on('change', function(){
+  // var fileTarget = $('.upload_hidden');
+    $(document).on('change', '.upload_hidden', function(){
        if(window.FileReader){
          var filename = $(this)[0].files[0].name;
        }
@@ -102,8 +102,8 @@ var fileEvent = {
     });
 	    
 	    
-    var fileTarget = $('.upload_hidden1');
-    fileTarget.on('change', function(){
+    // var fileTarget = $('.upload_hidden1');
+    $(document).on('change', '.upload_hidden1', function(){
        if(window.FileReader){
          var filename = $(this)[0].files[0].name;
        }
@@ -132,8 +132,8 @@ var fileEvent = {
        $('.upload_name1').val(filename);
     });
     
-    var fileTarget = $('.upload_hidden2');
-    fileTarget.on('change', function(){
+    // var fileTarget = $('.upload_hidden2');
+    $(document).on('change', '.upload_hidden2', function(){
        if(window.FileReader){
          var filename = $(this)[0].files[0].name;
        }
@@ -161,8 +161,8 @@ var fileEvent = {
        $('.upload_name2').val(filename);
     });
     
-    var fileTarget = $('.upload_hidden3');
-    fileTarget.on('change', function(){
+    // var fileTarget = $('.upload_hidden3');
+    $(document).on('change', '.upload_hidden3', function(){
        if(window.FileReader){
          var filename = $(this)[0].files[0].name;
        }
