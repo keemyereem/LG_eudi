@@ -70,7 +70,7 @@ if("" != ""){
   
       $(function(){
         selEvent.init();
-        fileEvent.init();
+        fileEvent.dynamicInit();
 
       });
       
@@ -81,23 +81,23 @@ if("" != ""){
     		}
     	}
 
-      function fnFileReset1(){
-    	  $("#add_file1").val("");
-    	  $("#add_file_name1").val("");
-    	  $(".upload_field1").hide();
-      }
+      // function fnFileReset1(){
+    	//   $("#add_file1").val("");
+    	//   $("#add_file_name1").val("");
+    	//   $(".upload_field1").hide();
+      // }
       
-      function fnFileReset2(){
-    	  $("#add_file2").val("");
-    	  $("#add_file_name2").val("");
-    	  $(".upload_field2").hide();
-      }
+      // function fnFileReset2(){
+    	//   $("#add_file2").val("");
+    	//   $("#add_file_name2").val("");
+    	//   $(".upload_field2").hide();
+      // }
       
-      function fnFileReset3(){
-    	  $("#add_file3").val("");
-    	  $("#add_file_name3").val("");
-    	  $(".upload_field3").hide();
-      }
+      // function fnFileReset3(){
+    	//   $("#add_file3").val("");
+    	//   $("#add_file_name3").val("");
+    	//   $(".upload_field3").hide();
+      // }
     	
     	
       function fnAddChild(){
@@ -413,13 +413,13 @@ if("" != ""){
                     <td class="tit"><p>프로필사진</p></td>
                     <td class="cont">
                       <div class="cont_inner">
-                        <div class="upload_field1">
+                        <div class="upload_field upload_field1">
                           <input class="upload_name1 ellipsis" id="add_file_name1" value="파일선택" disabled="disabled">
-                          <a href="javascript:;" class="upload_del" onclick="fnFileReset1()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
+                          <a href="javascript:;" class="upload_del"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
                         </div>
                         <div class="filebox">
                           <label for="add_file1">사진첨부</label>
-                          <input type="file" id="add_file1" name="file01" class="upload_hidden1">
+                          <input type="file" id="add_file1" name="file01" class="upload_hidden1" data-file >
                         </div>
                         <p class="txt">5MB 이하의 이미지 파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.</p>
                       </div>
@@ -631,13 +631,13 @@ if("" != ""){
                     <td class="tit"><p>프로필사진</p></td>
                     <td class="cont">
                       <div class="cont_inner">
-                        <div class="upload_field2">
+                        <div class="upload_field upload_field2">
                           <input class="upload_name2 ellipsis" id="add_file_name2" value="파일선택" disabled="disabled">
-                          <a href="javascript:;" class="upload_del" onclick="fnFileReset2()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
+                          <a href="javascript:;" class="upload_del"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
                         </div>
                         <div class="filebox">
                           <label for="add_file2">사진첨부</label>
-                          <input type="file" id="add_file2" name="file02" class="upload_hidden2">
+                          <input type="file" id="add_file2" name="file02" class="upload_hidden2" data-file >
                         </div>
                         <p class="txt">5MB 이하의 이미지 파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.</p>
                       </div>
@@ -849,13 +849,13 @@ if("" != ""){
                     <td class="tit"><p>프로필사진</p></td>
                     <td class="cont">
                       <div class="cont_inner">
-                        <div class="upload_field3">
+                        <div class="upload_field upload_field3">
                           <input class="upload_name3 ellipsis" id="add_file_name3" value="파일선택" disabled="disabled">
-                          <a href="javascript:;" class="upload_del" onclick="fnFileReset3()"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
+                          <a href="javascript:;" class="upload_del"><img src="${BASE_ROOT}/resource/assets/web/child/images/common/btn_del.png" alt="삭제" /></a>
                         </div>
                         <div class="filebox">
                           <label for="add_file3">사진첨부</label>
-                          <input type="file" id="add_file3" name="file03" class="upload_hidden3">
+                          <input type="file" id="add_file3" name="file03" class="upload_hidden3" data-file  >
                         </div>
                         <p class="txt">5MB 이하의 이미지 파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.</p>
                       </div>

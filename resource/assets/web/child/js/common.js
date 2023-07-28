@@ -29,17 +29,10 @@ var gnbMenu = {
 
 var selEvent = {
     init:function(){
-        var selectType0 = $(".select_row>select, .select_tel>select");
-
-        selectChange(selectType0);
-
-        function selectChange(type){
-            type.change(function(){
-                var select_name = $(this).children("option:selected").text();
-                $(this).siblings("label").text(select_name);
-            });
-        };
-        
+      $(document).on('change','.select_row>select, .select_tel>select',function(){
+        var select_name = $(this).children("option:selected").text();
+        $(this).siblings("label").text(select_name);
+      });
     }
 };
 
@@ -88,7 +81,7 @@ var tabEvent02 = {
 
 var fileEvent = {
   init:function(){
-	  
+
   var fileTarget = $('.upload_hidden');
     fileTarget.on('change', function(){
        if(window.FileReader){
@@ -100,8 +93,8 @@ var fileEvent = {
        $('.upload_field').css("display","block");
        $('.upload_name').val(filename);
     });
-	    
-	    
+
+	
     var fileTarget = $('.upload_hidden1');
     fileTarget.on('change', function(){
        if(window.FileReader){
@@ -112,7 +105,6 @@ var fileEvent = {
        }
        
        var ext = $(this).val().split(".").pop().toLowerCase();
-
        if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
            alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
            return;
@@ -189,7 +181,42 @@ var fileEvent = {
        $('.upload_field3').css("display","block");
        $('.upload_name3').val(filename);
     });
-  }
+  },
+
+  dynamicInit:function(){
+    $(document).on('change','[data-file]',function(){
+      if(window.FileReader){
+        var filename = $(this)[0].files[0].name;
+      }
+      else {
+        var filename = $(this).val().split('/').pop().split('\\').pop();
+      }
+  
+      var ext = $(this).val().split(".").pop().toLowerCase();
+      if($.inArray(ext, ["gif","jpg","png","jpeg"]) == -1){
+          alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+          return;
+      }
+      
+      // 용량 체크
+      var fileSize = this.files[0].size;
+      var maxSize =  5 * 1024 * 1024;
+  
+      if(fileSize > maxSize){
+        alert("5MB 이하의 이미지파일(JPG, PNG, GIF) 1개를 첨부하실 수 있습니다.");
+          return;
+      }
+      
+      $(this).parents('.filebox').siblings('.upload_field').css("display","block");
+      $(this).parents('.filebox').siblings('.upload_field').children('input').val(filename);
+    });
+  
+    $(document).on('click','.upload_del',function(){
+      $(this).parents('.upload_field').siblings('.filebox').children('[data-file]').val("");
+      $(this).siblings('input').val("");
+      $(this).parents('.upload_field').hide();
+    });
+  },
 };
 
 var accordEvent = {
