@@ -146,7 +146,7 @@ var calendarJs = {
 	},
 	getNurseScheduleApi : (params, fnCallback) => {
 		$.ajax({
-			type: "POST",
+			type: "GET",
 			data: params,
 			url : '/api/child/rsvt/getNrsSchdList.do',
 			dataType : "json",
