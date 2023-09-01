@@ -98,10 +98,11 @@
 .con_main .main_info .my_dose .dose_date > a {width: 75px;height: 36px;background: #85d624;border-radius: 5px;font-size: 10px;color: #fff;display: flex;justify-content: space-between;align-items: center;overflow: hidden;padding-left: 10px;line-height: 1.4;}
 .con_main .main_info .my_dose .dose_date > a::after {content:'';display: block;width: 18px;height: 100%;background: #77c020 url('../images/main/icon_arrow00.png') no-repeat 50% 50%;background-size: 5.5px 9px;}
 .con_main .main_info .my_dose .box_info02 {padding-left: 15px;font-size: 11px;color: #999;background: url('../images/main/icon_dose_on.png') no-repeat;background-size: 9px 9.5px;background-position: 0 50%;}
-.con_main/*  .main_info */ .my_msg {display: flex;align-items: center;width: calc(100% - 30px);margin: 12.5px auto 8px;padding: 2px 12px 2px 2px;background: #fff;border-radius: 14px;box-shadow: 1px 1.5px 3px 0px rgba(0, 0, 0, 0.06);}
+.con_main/*  .main_info */ .my_msg {display: flex;align-items: center;width: calc(100% - 30px);height: 30px;margin: 12.5px auto 8px;padding: 0 12px 0 2px;background: #fff;border-radius: 14px;box-shadow: 1px 1.5px 3px 0px rgba(0, 0, 0, 0.06);}
 .con_main/*  .main_info */ .my_msg .char {width: 25px;height: 25px;margin-right: 9px;flex-shrink: 0;border-radius: 100%;box-shadow: 1px 1.5px 2px 0px rgba(0, 0, 0, 0.1);}
-.con_main/*  .main_info */ .my_msg #cheer_mesage {display: flex;font-size: 11px;color: #727171;margin-right: 10px;}
+.con_main/*  .main_info */ .my_msg #cheer_mesage {display: flex;align-items: center;height: 100%;font-size: 11px;color: #727171;margin-right: 10px;}
 .con_main/*  .main_info */ .my_msg #cheer_mesage > span {flex-shrink: 0;font-family: 'NanumSquareEB';color: #333;}
+.con_main/*  .main_info */ .my_msg #cheer_mesage > marquee {display: inline-flex;align-items: center;height: 100%;}
 .con_main/*  .main_info */ .my_msg .btn_write {display: block;width: 11px;height: 12.5px;margin-left: auto;flex-shrink: 0;background: url('../images/main/icon_write02.png') no-repeat;background-size: contain;}
 
 .con_main .main_menu {padding: 13px 0 20px;}
