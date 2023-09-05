@@ -2,26 +2,7 @@
  
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <html>
-    <head>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<head>
 <script>
 
 /*메세지*/
@@ -32,90 +13,6 @@ if("" != ""){
 }
 
 </script>
-
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-	
-
- 
-	
-	
-		
-	
-
-
-
-
-
-
-
 	<!-- SET FILE PATH :: compatibility ie9 code -->
 		<base href="../" />
 		<!--[if IE]><script type="text/javascript">
@@ -127,12 +24,7 @@ if("" != ""){
 		</script><![endif]-->
 		<meta charset="UTF-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
-			
-			
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-			
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<link rel="canonical" href="https://eudi.lgchem.com/product/product_list.do" />
 		<meta name="format-detection" content="telephone=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -141,8 +33,8 @@ if("" != ""){
 		<meta http-equiv="Pragma" content="no-cache"/>
 
 		<!-- TITLE -->
-		<title>물품요청 - 목록 | EuDi</title>
-	  	
+		<title>배송조회 | EuDi</title>
+
     <!-- 스마트 케이스 팝업 추가 -->
 
 
@@ -494,14 +386,6 @@ if("" != ""){
 </script>
 
 
-<!--  스마트 케이스 연동 투여 팝업 -->
-      <div class="pop_mask_smart"></div>
-      <div class="pop_info pop_smartcase_dose">
-        <div class="pop_info_inner">
-
-        </div>
-      </div>
-
   <script>
       $(function(){
 
@@ -538,88 +422,84 @@ if("" != ""){
 
 				<div class="nav">
 					<div class="nav_inner">
-						<h2 class="title">
-							
-								
-								
-								
-								
-								물품신청
-							
-						</h2>
+						<h2 class="title">배송조회</h2>
 						<div class="back"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
 					</div>
 				</div>
-				
-					
-					
-					
-					
-					
-						<div class="tab">
-							<div class="inner">
-								<ul>
-									<li  class="active"><a href="/product/product_list.do">물품요청</a></li>
-									<li ><a href="/product/counseling_list.do">온라인문의</a></li>
-									<li ><a href="/product/product_faq.do">FAQ</a></li>
-								</ul>
-							</div>
-						</div>
-					
-				
       </div>
       <!-- nav //-->
       <!--// content -->
-      	<form id="listForm" name="listForm" method="post">
-				
-				    <input type="hidden" name="pageUnit" id="pageUnit" value="10">
-      			    <input type="hidden" name="pIdx" id="pIdx" value="">
       <div class="content con_sub con_sub04">
         <div class="con_box">
-          <div class="profile">
-            <div class="pro_pic"><img src="/resource/assets/web/child/images/profile/img_profile_smarteudi_04.png" alt="프로필 사진" /></div>
-            <div class="pro_name"><div><p><span>이포엠</span> 어린이</p></div></div>
+          <div class="delivery_status">
+            <ol>
+              <li>
+                <div class="img"></div>
+                <div class="txt">배송준비</div>
+              </li>
+              <li>
+                <div class="img"></div>
+                <div class="txt">배송중</div>
+              </li>
+              <li class="on">
+                <div class="img"></div>
+                <div class="txt">배송완료</div>
+              </li>
+            </ol>
+          </div>
+          <div class="delivery_product">
+            <div class="tit">배송물품</div>
+            <div class="con">
+              주사바늘 – 100 / 알콜솜 – 200 /
+              기타자재 – 보냉가방, 주사가이드, 케이스, 네임택, 바늘가리개
+            </div>
+          </div>
+          <div class="transport_num">
+            <span class="tit">운송장번호</span>
+            <span class="con">35872026735</span>
+            <a href="tel:010-1234-5678">로젠택배 고객센터</a>
           </div>
         </div>
         <div class="con_box">
-          <div class="con_inner">
-            <div class="con_list">
-              <ul>
+          <div class="con_inner02">
+            <div class="delivery_track">
+              <ol>
                 <li>
-				          <div>
-					          <span class="lblbox lblp">요청</span>
-                    <a href="javascript:;" title="배송조회" class="btn_delivery">배송조회</a>
-										<span class="datebox">2023.09.05</span>
-                  </div>
-				          <p><a href="javascript:;" onclick="fnViewPage('137030')" style="cursor:pointer">
-                        주사바늘-100 /
-                        알콜솜-200 /
-                        기타자재-
-                        없음
-					        </a></p>
-				        </li>
-			        </ul>
+                  <span class="loca"></span> <span class="status">배송시작</span>
+                  <div class="dateTime">06/20 (화) 11:40</div>
+                </li>
+                <li>
+                  <span class="loca">step01</span> <span class="status">집하완료</span>
+                  <div class="dateTime">06/20 (화) 11:40</div>
+                </li>
+                <li>
+                  <span class="loca">step02</span> <span class="status">입고</span>
+                  <div class="dateTime">06/20 (화) 11:40</div>
+                </li>
+                <li>
+                  <span class="loca">step03</span> <span class="status">간선상차</span>
+                  <div class="dateTime">06/21 (수) 08:40</div>
+                </li>
+                <li>
+                  <span class="loca">step04</span> <span class="status">배송출발</span>
+                  <div class="dateTime">06/21 (수) 11:07</div>
+                </li>
+                <li class="on">
+                  <span class="loca">step05</span> <span class="status complete">배송완료</span>
+                  <div class="dateTime">06/21 (수) 19:45</div>
+                </li>
+              </ol>
             </div>
-
-            <div class="paging">
-				    
-				        <a href="javascript:;"  title="맨 앞" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_front.png" alt="처음"></a><a href="javascript:;"  title="이 전" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_prev.png" alt="이전"></a><ul><li class="active"><a href="javascript:;" return false;">1</a></li></ul><a href="javascript:;"  title="다음" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_next.png" alt="다음"></a><a href="javascript:;"  title="맨끝" onclick="fnLinkPage(1); return false;"><img src="/resource/assets/web/child/images/common/arrow_last.png" alt="마지막"></a>
-
-				    
-				  <input id="pageIndex" name="pageIndex" type="hidden" value="1">
-			    </div>
-
+            <p class="info_txt">
+              배송 조회 서비스는 물품이 택배사에 전달된 후부터 택배사의 배송 추적
+              서비스를 통해 제공받는 정보로 <b>실 배송 현황과 차이가 있을 수 있습니다.</b>            
+            </p>
           </div>
         </div>
-        </form>
+
       </div>
       <!-- content //-->
-      <div class="btn_box btn_box01 btn_bottom">
-        <div class="inner">
 
-          <div class="btn_pink" id="btn_pink"> <a href="javascript:;" onclick="fnGoPage()">신청</a></div>
-        </div>
-      </div>
 	 </div>
   </body>
   <script>
