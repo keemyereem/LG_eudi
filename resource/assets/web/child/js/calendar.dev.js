@@ -709,7 +709,7 @@ var calendarJs = {
 
       $("#divTimeTable table").css(
         "width",
-        "calc((22.75vw * " + (nextDate + 1) + ") - 40px)"
+        "calc((24.75vw * " + (nextDate + 1) + ") + 12px)"
       );
       // 월별 일수 계산 후 타임테이블 세팅 및 공휴일 데이터값 보정
       let tbodyCell = $("#divTimeTable table tbody tr"),
