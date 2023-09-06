@@ -1000,6 +1000,7 @@
 .con_sub04 .con_list>ul>li>div .lblbox.lblp {border: 1px solid #fc637d;font-size: 9px;color: #fc637d;}
 .con_sub04 .con_list>ul>li>div .lblbox.lblg {border: 1px solid #999;color: #999;}
 .con_sub04 .con_list>ul>li>div .lblbox.lblb {border: 1px solid #333;color: #333;}
+.con_sub04 .con_list>ul>li>div .btn_delivery {display: inline-block;width: 50px;height: 17px;line-height: 17px;border-radius: 2px;background: #999;font-size: 9px;color: #fff;text-align: center;margin-left: 7px;}
 .con_sub04 .con_list>ul>li>div .datebox {float: right;display: block;margin-top: 4px;font-family: 'NanumSquareB';font-size: 11px;color: #999;}
 .con_sub04 .con_list>ul>li>p {padding-top: 7px;}
 .con_sub04 .con_list>ul>li>p>a {font-family: 'NanumSquareB';font-size: 13px;}
@@ -1058,6 +1059,48 @@
 .wrap_purple .faq_list>ul>li>a .tit p span {color: #7d35b1;}
 .wrap_purple .con_sub .sub_tab02 ul>li.active {border: 1px solid #7d35b1;border-bottom-color: transparent;}
 .wrap_purple .con_sub .sub_tab02 ul>li {border-bottom: 1px solid #7d35b1;}
+
+/* 배송조회 */
+.con_sub04 .delivery_status,
+.con_sub04 .delivery_product,
+.con_sub04 .transport_num,
+.con_sub04 .delivery_track {font-family: 'NanumSquareB';font-size: 13px;color: #333;letter-spacing: -.65px;background: #fff;}
+
+.con_sub04 .delivery_status {padding: 25px 15px 30px;}
+.con_sub04 .delivery_status>ol {display: flex;align-items: center;justify-content: space-around;overflow: visible;}
+.con_sub04 .delivery_status>ol>li {position: relative;overflow: visible;}
+.con_sub04 .delivery_status>ol>li .img {width: 65px;height: 65px;}
+.con_sub04 .delivery_status>ol>li:nth-child(1) .img {background: url(../images/sub/delivery_step01.png) no-repeat 50% 50%;background-size: contain;}
+.con_sub04 .delivery_status>ol>li:nth-child(2) .img {background: url(../images/sub/delivery_step02.png) no-repeat 50% 50%;background-size: contain;}
+.con_sub04 .delivery_status>ol>li:nth-child(3) .img {background: url(../images/sub/delivery_step03.png) no-repeat 50% 50%;background-size: contain;}
+.con_sub04 .delivery_status>ol>li.on:nth-child(1) .img {background: url(../images/sub/delivery_step01_on.png) no-repeat 50% 50%;background-size: contain;}
+.con_sub04 .delivery_status>ol>li.on:nth-child(2) .img {background: url(../images/sub/delivery_step02_on.png) no-repeat 50% 50%;background-size: contain;}
+.con_sub04 .delivery_status>ol>li.on:nth-child(3) .img {background: url(../images/sub/delivery_step03_on.png) no-repeat 50% 50%;background-size: contain;}
+.con_sub04 .delivery_status>ol>li:not(:last-child)::after {content:'';display: inline-block;width: 7.5px;height: 12.5px;background: url(../images/common/arrow@15x25.png)no-repeat;background-size: contain;position: absolute;top: 26px;right: calc(-50% + 4px);}
+.con_sub04 .delivery_status>ol>li .txt {color: #999;text-align: center;margin-top: 14px;}
+.con_sub04 .delivery_status>ol>li.on .txt {color: #7d35b1;}
+
+.con_sub04 .delivery_product {padding: 0 15px 30px;}
+.con_sub04 .delivery_product .con {background: #f6f6f6;border-radius: 5px;padding: 15px;margin-top: 10px;} 
+.con_sub04 .transport_num {padding: 20px 15px;display: flex;align-items: center;position: relative;}
+.con_sub04 .transport_num::before {content:'';display: block;width: calc(100% - 30px);height: 1px;background: #e5e5e5;position: absolute;top: 0;left: 15px;}
+.con_sub04 .transport_num .con {color: #7d35b1;margin-left: 10px;}
+.con_sub04 .transport_num>a {width: 130px;height: 30px;display: flex;align-items: center;justify-content: center;padding: 0 10px;border-radius: 5px;border: 1px solid #727272;margin-left: auto;}
+.con_sub04 .transport_num>a::before {content:'';display: block;width: 9px;height: 9.5px;background: url(../images/common/icon_phone02.png) no-repeat;background-size: contain;margin-right: 5px;}
+.con_sub04 .delivery_track {border-bottom: 1px solid #e5e5e5;}
+.con_sub04 .delivery_track ol {overflow: visible;display: flex;flex-direction: column-reverse;margin-left: 8px;padding: 10px 0 30px;}
+.con_sub04 .delivery_track ol li {color: #999;position: relative;padding-left: 20px;overflow: visible;border-left: 1px solid #e6e6e6;padding-bottom: 25px;}
+.con_sub04 .delivery_track ol li:first-child {border-left: 0;padding-bottom: 0;}
+.con_sub04 .delivery_track ol li::before {content:'';display: block;width: 15px;height: 15px;background: url(../images/sub/delivery_track.png) no-repeat;background-size: contain;position: absolute;top: 0;left: -8px;}
+.con_sub04 .delivery_track ol li.on::before {background: url(../images/sub/delivery_track_on.png) no-repeat;background-size: contain;}
+.con_sub04 .delivery_track ol li:not(:first-child) .loca::after {content:'';display: inline-block;width: 1px;height: 10px;background: #e5e5e5;margin: 0 10px;}
+.con_sub04 .delivery_track ol li .dateTime {margin-top: 10px;}
+.con_sub04 .delivery_track ol li.on .loca {color: #333;}
+.con_sub04 .delivery_track ol li.on .status {color: #7d35b1;}
+.con_sub04 .delivery_info {padding: 25px 0 40px;}
+.con_sub04 .delivery_info>p {font-size: 12px;color: #727272;position: relative;line-height: 1.2;letter-spacing: -.6px;padding-left: 7px;}
+.con_sub04 .delivery_info>p::before {content:'';display: block;width: 3px;height: 3px;background: #999;border-radius: 100%;position: absolute;top: 4px;left: 0;}
+.con_sub04 .delivery_info>p>b {font-family: 'NanumSquareEB';}
 
 /* levelup */
 .pop_level {display: none;position: absolute;width: 92%;z-index: 30;height:415px;max-width:345px;}
