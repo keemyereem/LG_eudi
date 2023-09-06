@@ -1087,6 +1087,7 @@
 .con_sub04 .transport_num .con {color: #7d35b1;margin-left: 10px;}
 .con_sub04 .transport_num>a {width: 130px;height: 30px;display: flex;align-items: center;justify-content: center;padding: 0 10px;border-radius: 5px;border: 1px solid #727272;margin-left: auto;}
 .con_sub04 .transport_num>a::before {content:'';display: block;width: 9px;height: 9.5px;background: url(../images/common/icon_phone02.png) no-repeat;background-size: contain;margin-right: 5px;}
+.con_sub04 .delivery_track {border-bottom: 1px solid #e5e5e5;}
 .con_sub04 .delivery_track ol {overflow: visible;display: flex;flex-direction: column-reverse;margin-left: 8px;padding: 10px 0 30px;}
 .con_sub04 .delivery_track ol li {color: #999;position: relative;padding-left: 20px;overflow: visible;border-left: 1px solid #e6e6e6;padding-bottom: 25px;}
 .con_sub04 .delivery_track ol li:first-child {border-left: 0;padding-bottom: 0;}
@@ -1096,9 +1097,10 @@
 .con_sub04 .delivery_track ol li .dateTime {margin-top: 10px;}
 .con_sub04 .delivery_track ol li.on .loca {color: #333;}
 .con_sub04 .delivery_track ol li.on .status {color: #7d35b1;}
-.con_sub04 .delivery_track+.info_txt {font-size: 12px;color: #727272;position: relative;padding-left: 7px;line-height: 1.2;letter-spacing: -.6px;padding-bottom: 40px;}
-.con_sub04 .delivery_track+.info_txt::before {content:'';display: block;width: 3px;height: 3px;background: #999;border-radius: 100%;position: absolute;top: 4px;left: 0;}
-.con_sub04 .delivery_track+.info_txt>b {font-family: 'NanumSquareEB';}
+.con_sub04 .delivery_info {padding: 25px 0 40px;}
+.con_sub04 .delivery_info>p {font-size: 12px;color: #727272;position: relative;line-height: 1.2;letter-spacing: -.6px;padding-left: 7px;}
+.con_sub04 .delivery_info>p::before {content:'';display: block;width: 3px;height: 3px;background: #999;border-radius: 100%;position: absolute;top: 4px;left: 0;}
+.con_sub04 .delivery_info>p>b {font-family: 'NanumSquareEB';}
 
 /* levelup */
 .pop_level {display: none;position: absolute;width: 92%;z-index: 30;height:415px;max-width:345px;}
@@ -1336,14 +1338,17 @@
 .wrap_sub04 .register .sec_cal .select_date > b { font-family: 'NanumSquareEB'; color: #fc637d; }
 .wrap_sub04 .register .sec_cal .select_date > a { color: #888; }
 .wrap_sub04 .con_sub04 .btn_cancel { background: #f1f1f1; border-radius: 4px; font-family: 'NanumSquareEB'; font-size: 12px; color: #727272; width: 35px; height: 17px; margin-left: 6px; }
-.wrap_sub04 .register .sec_cal .time_wrap { position: relative; height: 375px; display:flex; contain:content;}
-.wrap_sub04 .register .sec_cal .time_wrap .scrollbar-y { background: #efefef; border-left: 1px solid #fff; position: fixed; width: 0.6rem; top: 0; right:0; height:100%; }
-.wrap_sub04 .register .sec_cal .time_wrap .scrollbar-y .thumb { left: 0; position: absolute; width: 100%; background: #c0c0c0; border: 1px solid #eee;}
+.wrap_sub04 .register .sec_cal .time_wrap { position: relative; height: calc(100vh - 320px); display:flex; contain:content; box-shadow: 0px 0px 10px -10px rgba(0,0,0,.2); }
+.wrap_sub04 .register .sec_cal .time_wrap .scrollbar-y {/*  background: #efefef; border-left: 1px solid #fff; */ position: fixed; width: 13px; top: 0; right:0; height:100%; }
+.wrap_sub04 .register .sec_cal .time_wrap .scrollbar-y .thumb { left: 0; position: absolute; width: 6px; background: rgba(0,0,0,.4); border-radius: 2px; }
+.wrap_sub04 .register .sec_cal .time_wrap .scrollbar-x { position: fixed; width: 100%; bottom: 0; left:0; height:13px; }
+.wrap_sub04 .register .sec_cal .time_wrap .scrollbar-x .thumb { top: 0; position: absolute; height: 6px; background: rgba(0,0,0,.4); }
+
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner { height: 100%; overflow:hidden; }
-.wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table { width: calc(25.75vw * 7); position: relative;}
+.wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table { width: calc(22.75vw * 7); position: relative;}
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tr { height: 47.5px; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tr th,
-.wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tr td { background: #ffffff; width: 25.6vw; height: inherit; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #eeeeee; border-width: 0 1px 1px 0; }
+.wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tr td { background: #ffffff; width: 23vw; height: inherit; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #eeeeee; border-width: 0 1px 1px 0; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tr td:last-child { border-width: 0 0 1px 0; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table thead { position: sticky; top:0; z-index: 2; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table thead tr { position: relative; }
@@ -1353,7 +1358,7 @@
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table thead tr th.sun { color: #f00; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table thead tr th span { font-family: 'NanumSquareEB'; margin-right: 4px; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tbody { display: inline-block; }
-.wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tbody tr td button { width: 72px; height: 30px; border-radius: 15px; line-height: 28px; border: 1px solid #fc637d; font-size: 14px; color: #fc637d; }
+.wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tbody tr td button { width: 65px; height: 28px; border-radius: 14px; line-height: 26px; border: 1px solid #fc637d; font-size: 14px; color: #fc637d; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tbody tr td button[data-type="0"] { color: #eee; border: 1px solid #eee; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tbody tr td button[data-type="1"].on  { color: #fff; border: 0px solid #eee; background: #fc637d; }
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tbody tr td { position: relative; }

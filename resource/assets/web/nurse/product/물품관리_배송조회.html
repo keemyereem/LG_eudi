@@ -1,74 +1,64 @@
 <!DOCTYPE html>
  
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <html>
 <head>
+    
 <script>
 
-/*메세지*/
+/*ControllerUtil.redirectPost alert*/
 if("" != ""){
-	var msg = "".replace("<br>", "\n");
+    var msg = "".replace("<br>", "\n");
 	alert(msg);
-	
+    
 }
-
 </script>
-	<!-- SET FILE PATH :: compatibility ie9 code -->
-		<base href="../" />
-		<!--[if IE]><script type="text/javascript">
-			// Fix for IE ignoring relative base tags.
-			(function() {
-				var baseTag = document.getElementsByTagName('base')[0];
-				baseTag.href = baseTag.href;
-			})();
-		</script><![endif]-->
-		<meta charset="UTF-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-		<link rel="canonical" href="https://eudi.lgchem.com/product/product_list.do" />
-		<meta name="format-detection" content="telephone=no">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta http-equiv="Cache-Control" content="no-cache"/>
-		<meta http-equiv="Expires" content="0"/>
-		<meta http-equiv="Pragma" content="no-cache"/>
+<!-- SET FILE PATH :: compatibility ie9 code -->
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+// Fix for IE ignoring relative base tags.
+(function() {
+    var baseTag = document.getElementsByTagName('base')[0];
+    baseTag.href = baseTag.href;
+})();
+</script><![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- TITLE -->
+<title>EuDi</title>
 
-		<!-- TITLE -->
-		<title>배송조회 | EuDi</title>
-
-    <!-- 스마트 케이스 팝업 추가 -->
-
-
-<!--2019-09-16 4M 김현빈-->
 <!-- common css file-->
 
-<link rel="stylesheet" href="/resource/assets/web/css/main.css?20230905044025">
-<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20230905044025">
+<!-- common css file-->
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?20230906112900">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20230906112900">
 
+<!-- nurse css file -->
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?20230906112900">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?20230906112900">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?20230906112900">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css?20230906112900">
 
-<!-- child css file -->
-<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20230905044025">
-<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20230905044025">
-<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20230905044025">
-<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20230905044025">
-<!-- child js file--> 
-<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
-<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
-<script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
-<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20230905044025"></script>
-<script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
+<!-- nurse js file-->
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?20230906112900"></script>
 
 
 <!-- common js file-->
-<script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
-<script type="text/javascript" src="/resource/assets/common/js/common.js?20230905044025"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
+<script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
 
-<script type="text/javascript" src="/resource/assets/nurse/js/lib/datepicker-ko.js?version=1.2"></script>
-
-<!-- 개발용 css -->
+<!-- ê°ë°ì© css -->
 <style>
 	.placeholder-err::placeholder{
 	  color: red;
-	  opacity: 1; /* 파이어폭스에서 뿌옇게 나오는 현상을 방지하기 위한 css */
+	  opacity: 1; /* íì´ì´í­ì¤ìì ë¿ìê² ëì¤ë íìì ë°©ì§íê¸° ìí css */
 	}
 	.placeholder-err::-webkit-input-placeholder{
 	  color: red;
@@ -80,7 +70,9 @@ if("" != ""){
 	  color: red;
 	}
 </style>
+
 <script type="text/javascript">
+
     function SHA256(s){
       
         var chrsz   = 8;
@@ -214,222 +206,37 @@ if("" != ""){
       
     }
      
-
-    
-	/*
-	 * App & 스마트케이스 관련.. 
-	 * */
-	// 현재 호출한 디바이스가 어떤 것인지 체크합니다.
-	var isMobile = {
-		Android: function () {
-			return navigator.userAgent.match(/Android/i) == null ? false : true;
-		},
-		iOS: function () {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
-		},
-		any: function () {
-			return (isMobile.Android() || isMobile.iOS());
-		}
-	};
-	
-	 
-	//App에 로그인정보 전달
-	function fnAppLoginChk() {
-		$.ajax({
-			type: "POST",
-			url: "/smart/getLoginInfo.do",
-			//data:JSON.stringify(data),
-			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-			dataType: "json"
-		}).done(function(resp){
-			console.log(JSON.stringify(resp));
-			//App에 Javascript Bridge 연결하여 전달
-			if (isMobile.any()) {
-				if (isMobile.Android()) {
-					window.eudiApp.fnAppLoginChk_Res(JSON.stringify(resp));
-				} else if (isMobile.iOS()) {
-					webkit.messageHandlers.fnAppLoginChk_Res.postMessage(JSON.stringify(resp));
-				}
-			}
-		}).fail(function(error){
-			//alert(JSON.stringify(error));
-		});
-	}
-	
-	
-	// 로그인 페이지로 이동
-	function fnAppLoginForm() {
-		location.href = "/child/login.do";
-	}
-	
-	
-	// 환아 변경하기
-	function fnAppChangeChild(mId, cIdx) {
-		var data = {
-				mId: mId,
-				cIdx: cIdx
-			};
-		
-		$.ajax({
-			type: "POST",
-			url: "/smart/changeSelectChild.do",
-			data: data,
-			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-			dataType: "json"
-		}).done(function(resp){
-			console.log(JSON.stringify(resp));
-			//App에 Javascript Bridge 연결하여 전달
-			if (isMobile.any()) {
-				if (isMobile.Android()) {
-					window.eudiApp.fnAppChangeChild_Res(JSON.stringify(resp));
-				} else if (isMobile.iOS()) {
-					webkit.messageHandlers.fnAppChangeChild_Res.postMessage(JSON.stringify(resp));
-				}
-			}
-			
-			//정상적으로 완료하였으면 메인으로 이동
-			if (resp.result == "success") location.href = "/child/main.do";
-		}).fail(function(error){
-			//alert(JSON.stringify(error));
-		});
-	}
-	
-	
-	// 스마트기기 관리 열기
-	function fnAppDeviceSetup() {
-		if (isMobile.any()) {
-			if (isMobile.Android()) {
-				window.eudiApp.fnDeviceSetup();
-			} else if (isMobile.iOS()) {
-				webkit.messageHandlers.fnDeviceSetup.postMessage("");
-			}
-		}
-	}
-	
-	
-	// 스마트케이스에서 등록된 투여정보 팝업으로 보여주기
-	function fnAppPopupCheck(cIdx) {
-		var data = {
-				cIdx: cIdx
-			};
-		$.ajax({
-			type: "POST",
-			url: "/smart/selectPopupCheck.do",
-			data: data,
-			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-			dataType: "html"
-		}).done(function(resp){
-			if(resp != 'noList'){
-				 $(".pop_info_inner").html(resp);
-				 popupInfoSmart('pop_smartcase_dose');
-			}
-		}).fail(function(error){
-			//alert(JSON.stringify(error));
-		});
-	}
-	
-
-	  //팝업 확인 한 데이터 날짜 수정 
-    function fnPopupDateUpdate(cidx){
-    	const data = {"cIdx":cidx};
-        actionurl = "/child/updatePopupDate.do";
-            $.ajax({
-                async: false,
-                type: "POST",
-                url : actionurl,
-                data : data,
-                dataType : "json",
-                success: function(obj){
-              		//window.location.href='/child/dose_input_cal.do';
-              		window.location.reload();
-                },
-                error: function(xhr, option, error){
-                	   msg = "서버와 통신중 에러가 발생하였습니다.다시 시도 해주세요"
-                          // alert(msg);
-                }
-                
-            });
-    }
-	
-	$(function(){
-        // APP 상태바 색상 변경
-        
-        const thisPath = window.location.pathname;
-		//const appStateGreenUris = ['/child/login.do','/child/main.do'];
-		const appStateGreenUris = ['/child/login.do'];
-		let appStateBg = '#ffffff';
-		let appStateTxtIsDark = true;
-        try{
-        	if (appStateGreenUris.find(el => el === thisPath)) {
-        		appStateBg = '#79bd28';
-        		appStateTxtIsDark = false;
-        	}
-    		if (isMobile.any()) {
-    			if (isMobile.Android()) {
-   					window.eudiApp.setStatusBarColor(appStateBg, appStateTxtIsDark);
-    			} else if (isMobile.iOS()) {
-   					webkit.messageHandlers.setStatusBarColor.postMessage(appStateBg);
-    			}
-    		}		
-        } catch (e) {
-        	// TODO : exception
-        	console.log(e);
-        }
-	});
-	  
-	 
-	$(window).load(function() {
-		if("39513"){
-			fnAppPopupCheck(0);//로드시 팝업 호출
-		}
-	});
 </script>
 
-
   <script>
-      $(function(){
+    $(function(){
+      $(window).resize(resizeContents);
+      resizeContents();
+      function resizeContents() {
+        $('.wrap_main').css({
+          'min-height': $(window).height() + 'px'
+        });
+      }
 
-        $(window).resize(resizeContents);
-        resizeContents();
-        function resizeContents() {
-          $('.wrap_sub').css({
-            'min-height': $(window).height() + 'px'
-          });
-        }
-      });
+    });
 
-  	/*pagination 페이지 링크 function*/
-  	function fnLinkPage(pageNo){
-  	  document.listForm.pageIndex.value = pageNo;
-      document.listForm.action = "/product/product_list.do";
-      document.listForm.submit();
-  	}
-
-  	function fnViewPage(pIdx){
-		$("#pIdx").val(pIdx);
-	 	document.listForm.action = "/product/product_view.do";
-	    document.listForm.submit();
-
-	}
 
   </script>
   </head>
   <body>
-	  <div class="wrap wrap_sub wrap_sub04 wrap_purple">
-      <!--// nav -->
+	  <div class="wrap wrap_sub wrap_sub03">
+      <!--// top -->
       <div class="sub_top">
-				
-
-				<div class="nav">
-					<div class="nav_inner">
-						<h2 class="title">배송조회</h2>
-						<div class="back"><a href="/child/main.do"><img src="/resource/assets/web/child/images/common/back.png" alt="뒤로가기" /></a></div>
-					</div>
-				</div>
+        <div class="nav">
+          <div class="nav_inner">
+            <h2 class="title">물품관리</h2>
+            <div class="back"><a href="javascript:;" onclick="fnListPage()"><img src="/resource/assets/web/nurse/images/common/back.png" alt="뒤로가기" /></a></div>
+          </div>
+        </div>
       </div>
-      <!-- nav //-->
+      <!-- top //-->
       <!--// content -->
-      <div class="content con_sub con_sub04">
+      <div class="content con_sub con_sub03">
         <div class="con_box">
           <div class="delivery_status">
             <ol>
@@ -498,34 +305,11 @@ if("" != ""){
             </div>
           </div>
         </div>
-
       </div>
+      </form>
       <!-- content //-->
 
-	 </div>
+	  </div>
   </body>
-  <script>
-  function fnGoPage(){
-	  location.href="/product/product_request.do";
-
-  }
-  </script>
-  
-
-
-
-
-	
-		<!-- Google tag (gtag.js) -->
-		<!-- <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-9YP2FZMHRQ"></script> -->
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-9YP2FZMHRQ');
-		</script>
-	
-	 
-
 
 </html>

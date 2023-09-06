@@ -31,6 +31,10 @@ ExtraBold - 'NanumSquareEB'
 .popup .pop_alert .btn_box > div { height: 40px; }
 .popup .pop_alert .btn_box > div a { line-height: 40px; font-size: 13px; }
 
+.wrap_sub03 .popup .pop_alert.step01 button,
+.wrap_sub03 .popup .pop_alert button {background: #fc637d;}
+.wrap_sub03 .pop_delivery {}
+
 /* 팝업 - 공통 - 밑에서 나오는 팝업 */
 .popup.popup_bottom { padding: 0; }
 .popup.popup_bottom .inner_pop { position: absolute; top: initial; bottom: 0; transform: translate(-50%, 0); width: 100%; margin: 0; }

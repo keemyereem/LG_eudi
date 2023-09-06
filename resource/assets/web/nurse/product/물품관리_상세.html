@@ -6,6 +6,31 @@
     <head>
     
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+		
+	
+
+
+
+
 <script>
 
 /*ControllerUtil.redirectPost alert*/
@@ -38,41 +63,62 @@ if("" != ""){
 	     <meta http-equiv="X-UA-Compatible" content="IE=edge">
          <!-- TITLE -->
          <title>EuDi</title>
-	     <link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
-	     
-
+	    
     
 
 
+<!--2019-09-16 4M ê¹íë¹-->
 <!-- common css file-->
-<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=1.3">
-<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=1.3">
+
+<!-- common css file-->
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?20230906112900">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20230906112900">
 
 
 <!-- nurse css file -->
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?version=2.1">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?20230906112900">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?20230906112900">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?20230906112900">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css?20230906112900">
+
+
 
 <!-- nurse js file-->
-<!-- <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
 <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
-<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script> -->
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?20230906112900"></script>
 
 
-<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?version=1.2"></script>
-<script src="/resource/assets/web/nurse/js/counseling.js"></script> 
+	
+
+
 
 
 <!-- common js file-->
 <script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
 <script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
 
+<!-- ê°ë°ì© css -->
+<style>
+	.placeholder-err::placeholder{
+	  color: red;
+	  opacity: 1; /* íì´ì´í­ì¤ìì ë¿ìê² ëì¤ë íìì ë°©ì§íê¸° ìí css */
+	}
+	.placeholder-err::-webkit-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-ms-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-mos-input-placeholder {
+	  color: red;
+	}
+</style>
 
 <script type="text/javascript">
 
-
+      
     function SHA256(s){
       
         var chrsz   = 8;
@@ -206,50 +252,9 @@ if("" != ""){
       
     }
      
-	/*
-	 * App & ì¤ë§í¸ì¼ì´ì¤ ê´ë ¨.. 
-	 * */
-	// íì¬ í¸ì¶í ëë°ì´ì¤ê° ì´ë¤ ê²ì¸ì§ ì²´í¬í©ëë¤.
-	var isMobile = {
-		Android: function () {
-			return navigator.userAgent.match(/Android/i) == null ? false : true;
-		},
-		iOS: function () {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
-		},
-		any: function () {
-			return (isMobile.Android() || isMobile.iOS());
-		}
-	};
-	
-	//Appì ë¡ê·¸ì¸ì ë³´ ì ë¬
-	function fnAppLoginChk() {
-		$.ajax({
-			type: "POST",
-			url: "/smart/getLoginInfo.do",
-			//data:JSON.stringify(data),
-			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-			dataType: "json"
-		}).done(function(resp){
-			  	data = {"result":"success","memberInfo":{"mIdx":"122","mId":"4mtest"}};
-			 
-			//Appì Javascript Bridge ì°ê²°íì¬ ì ë¬
-			if (isMobile.any()) {
-				if (isMobile.Android()) {
-					window.eudiApp.fnAppLoginChk_Res(JSON.stringify(data));
-				} else if (isMobile.iOS()) {
-					webkit.messageHandlers.fnAppLoginChk_Res.postMessage(JSON.stringify(data));
-				}
-			}
-		}).fail(function(error){
-			//alert(JSON.stringify(error));
-		});
-	}
-	
+
+ 
 </script>
-
-
-
 
   <script>
       $(function(){
@@ -308,9 +313,36 @@ if("" != ""){
 	}
 
   </script>
-  <script src='/eum_.js'></script></head>
+  </head>
   <body>
-	  <div class="wrap wrap_sub wrap_sub03">
+    <div class="wrap wrap_sub wrap_sub03">
+      <!-- 팝업 -->
+      <div class="popup popup_alert">
+        <div class="inner_pop">
+          <button type="button" class="btn_close close_pop"></button>
+          <div id="" class="pop_alert pop_delivery" style="display: none;">
+            <div class="pop_tit">
+              운송장번호를 입력하세요.
+            </div>
+            <button type="button">확인</button>
+          </div>
+          <div id="" class="pop_alert pop_delivery" style="display: none;">
+            <div class="pop_tit">
+              운송장번호가<br>유효하지 않습니다.
+            </div>
+            <button type="button">확인</button>
+          </div>
+          <div id="" class="pop_alert pop_delivery">
+            <div class="pop_tit">
+              아직 배송추적 데이터를<br>
+              제공하지 않는<br>
+              운송장 번호입니다. 
+            </div>
+            <button type="button">확인</button>
+          </div>
+        </div>
+      </div>
+
       <!--// top -->
       <div class="sub_top">
         <div class="nav">
@@ -324,68 +356,75 @@ if("" != ""){
       <!--// content -->
         <form name="viewForm" id="viewForm" role="form" method="post">
         <input type="hidden" name="pageIndex" id="pageIndex" value="1">
-        <input type="hidden" name="pIdx" id="pIdx" value="37122">
+        <input type="hidden" name="pIdx" id="pIdx" value="137030">
         <input type="hidden" name="searchKeyword" id="searchKeyword" value="">
         <input type="hidden" name="pState" id="pState" value="R">
-        <input type="hidden" name="searchId" id="searchId" value="4mnurse">
+        <input type="hidden" name="searchId" id="searchId" value="barakee82">
         <input type="hidden" name="searchName" id="searchName" value="">
-      	<input type="hidden" name="pGubun" id="pGubun" value="view"><!-- 상세에서 주사바늘,알콜솜,기타자재,요청내용 수정 가능 -->
-      	<input type="hidden" name="reSearch" id="reSearch" value="Y">
-         <input type="hidden" name="pProductSort" id="pProductSort" value="U">
-      	
+        
+        <input type="hidden" name="searchSichNm" id="searchSichNm" value="">
+        <input type="hidden" name="searchsichPrntMbrId" id="searchsichPrntMbrId" value="">
+        <input type="hidden" name="searchHsptNm" id="searchHsptNm" value="">
+        <input type="hidden" name="startSmatRqstDtm" id="startSmatRqstDtm" value="">
+        <input type="hidden" name="endSmatRqstDtm" id="endSmatRqstDtm" value="">
+        <input type="hidden" name="startSmatShpDtm" id="startSmatShpDtm" value="">
+        <input type="hidden" name="endSmatShpDtm" id="endSmatShpDtm" value="">
+
+        
+        
+        <input type="hidden" name="pGubun" id="pGubun" value="view"><!-- 상세에서 주사바늘,알콜솜,기타자재,요청내용 수정 가능 -->
+        <input type="hidden" name="reSearch" id="reSearch" value="Y">
+        <input type="hidden" name="pProductSort" id="pProductSort" value="6101200009">
+        <input type="hidden" name="searchPhn" id="searchPhn" value="">
+          
 
       <div class="content con_sub con_sub03">
         <div class="sub_box">
           <div class="inner">
             <div class="tb_top">
               <div class="tit">
-                <p>유트로핀</p>
-                <div class="date">2022.02.10</div>
+                <p>유트로핀 에스펜</p>
+                <div class="date">2023.09.05</div>
               </div>
             </div>
             <div class="tb02">
-              <table summary="물품상세" cellpadding="0" cellspacing="0" border="0">
+              <table summary="물품상세" >
                 <caption>물품상세</caption>
                 <colgroup>
                     <col style="width:110px;">
                     <col style="*">
                 </colgroup>
                 <tbody>
-                  <!-- 2023.02.02 아이디/병원명/의사명 추가 -->
                   <tr>
                     <td class="tit"><p>회원 아이디</p></td>
-                    <td class="cont"><p>hb0232</p></td>
+                    <td class="cont"><p>4mtest1</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>아이명</p></td>
-                    <td class="cont"><p>현빈</p></td>
+                    <td class="cont"><p>이포엠</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>병원명</p></td>
-                    <td class="cont">
-                      <p>연세대학교 병원</p>
-                    </td>
+                    <td class="cont"><p>LGLS</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>의사명</p></td>
-                    <td class="cont">
-                      <p>김기준</p>
-                    </td>
+                    <td class="cont"><p>김가림</p></td>
                   </tr>
-                  <!-- // 2023.02.02 아이디/병원명/의사명 추가 -->
+                  
                   <tr>
                     <td class="tit"><p>주사바늘</p></td>
                     <td class="cont">
                       <div class="cont_inner">
-                          <div class="select_row select_row02">
-                            <label for="requestCottonNeedleAmount" id="requestCottonNeedleAmount_txt">200</label>
-                            <select id="requestCottonNeedleAmount" name="requestCottonNeedleAmount">
-                                <option value="0" >0</option>
-                                <option value="100" >100</option>
-                                <option value="200"  selected="selected">200</option>
-                            </select>
-                          </div>
+                        <div class="select_row select_row02">
+                          <label for="requestCottonNeedleAmount" id="requestCottonNeedleAmount_txt">100</label>
+                          <select id="requestCottonNeedleAmount" name="requestCottonNeedleAmount">
+                            <option value="0" >0</option>
+                            <option value="100"  selected="selected">100</option>
+                            <option value="200" >200</option>
+                          </select>
                         </div>
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -393,12 +432,12 @@ if("" != ""){
                     <td class="cont">
                       <div class="cont_inner">
                         <div class="select_row select_row02">
-                          <label for="requestAddCotton" id="requestAddCotton_txt">400</label>
+                          <label for="requestAddCotton" id="requestAddCotton_txt">200</label>
                           <select id="requestAddCotton" name="requestAddCotton">
+                          <!--유트로핀펜 주사바늘 0일때 알콜솜 100,200,300 으로 세팅 2021-02-03-->
                               <option value="0" >0</option>
-                              <option value="100" >100</option>
-                              <option value="200" >200</option>
-                              <option value="400"  selected="selected">400</option>
+                              <option value="200"  selected="selected">200</option>
+                              <option value="400" >400</option>
                           </select>
                         </div>
                       </div>
@@ -406,31 +445,33 @@ if("" != ""){
                   </tr>
                   <tr>
                     <td class="tit"><p>기타자재</p></td>
-                    <td class="cont03">
+                    <td class="cont">
                       <div class="cont_inner">
                         <div class="input_row">
                           <span class="input_box">
-                            <input type="text" id="requestEtcInfo" name="requestEtcInfo" class="ipt" maxlength="50" value="test">
+                            <input type="text" id="requestEtcInfo" name="requestEtcInfo" class="ipt" maxlength="50" value="없음">
                           </span>
                         </div>
-                    </div>
-                  </td>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="tit"><p>요청 내용</p></td>
-                    <td class="cont03">
+                    <td class="cont">
                       <div class="cont_inner">
                         <p>
-                          <div class="area_box"><textarea type="text" id="pContent" name="pContent">test</textarea></div>
+                          <div class="area_box"><textarea type="text" id="pContent" name="pContent"></textarea></div>
                         </p>
                       </div>
                     </td>
                   </tr>
                     <tr>
                     <td class="tit"><p>휴대폰 번호</p></td>
-                    <td class="cont03">
+                    <td class="cont">
                       <div class="cont_inner">
-                        <p>010-4726-8132</p>
+                        <p>
+                          010-3186-7221
+                        </p>
                       </div>
                     </td>
                   </tr>
@@ -438,9 +479,27 @@ if("" != ""){
                     <td class="tit"><p>주소</p></td>
                     <td class="cont03">
                       <div class="cont_inner">
-                        <p>06000</p>
-                        <p>서울 강남구 강남대로 708   (압구정동)</p>
+                        <p>06122</p>
+                        <p>서울 강남구 논현로111길 3 (논현동, 휴먼스페이스주상복합아파트)  1</p>
                       </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="tit"><p>운송장번호</p></td>
+                    <td class="cont">
+                      <div class="select_row">
+                        <label for="sel02">로젠택배</label>
+                        <select id="sel02" name="">
+                          <option value="" selected="selected">로젠택배</option>
+                        </select>
+                      </div>
+                      <div class="input_row mt5">
+                        <span class="input_box">
+                          <input type="text" id="" name="" class="ipt" value="453265235264" >
+                        </span>
+                      </div>
+                      <button class="btn_delivery mt5">배송조회</button>
                     </td>
                   </tr>
 
@@ -452,49 +511,49 @@ if("" != ""){
                         <select id="sel01" name="pState2">
                             <option value="R" selected="selected">요청</option>
                             <option value="W" >준비중</option>
-                            <option value="P" >접수완료</option>
+                            <option value="P" >발송대기</option>
                             <option value="S" >발송완료</option>
                             <option value="C" >요청취소</option>
                         </select>
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td class="tit"><p>발송 완료 내역</p></td>
-                    <td class="cont03">
-                      <div class="cont_inner">
-                        <table>
-                        <!-- <table id="testTable"> -->
-                          <colgroup>
-                <!-- <col style="width:25%;">
-                      <col style="width:25%;">
-                      <col style="width:25%;">
-                      <col style="width:25%;"> -->
-                      <!-- <col style="*"> -->
-                          </colgroup>
-                          <thead>
-                            <tr>
-                              <td style="padding:15px 1px; text-align:center;"><p>년도</p></td>
-                              <td style="padding:15px 1px; text-align:center;"><p>2021</p></td>
-                              <td style="padding:15px 1px; text-align:center;"><p>2022</p></td>
-                              <td style="padding:15px 1px; text-align:center;"><p>2023</p></td>
-                            </tr>
-                            <tr>
-                              <td style="padding:15px 1px; text-align:center;"><p>바늘</td>
-                              <td style="padding:15px 1px; text-align:center;"><p></p></td>
-                              <td style="padding:15px 1px; text-align:center;"><p></p></td>
-                              <td style="padding:15px 1px; text-align:center;"><p></p></td>
-                            </tr>
-                            <tr>
-                              <td style="padding:3px 1px; text-align:center;"><p>알콜솜</p></td>
-                              <td style="padding:3px 1px; text-align:center;"><p></p></td>
-                              <td style="padding:3px 1px; text-align:center;"><p></p></td>
-                              <td style="padding:3px 1px; text-align:center;"><p></p></td>
-                            </tr>
 
-                          </thead>
-                        </table>
-                      </div>
+                  <tr>
+                  	<td class="tit"><p>발송 완료 내역</p></td>
+                  	<td class="cont">
+                    <div class="cont_inner">
+                      <table>
+                      <!-- <table id="testTable"> -->
+                        <colgroup>
+<!--                     <col style="width:25%;">
+                    <col style="width:25%;">
+                    <col style="width:25%;">
+                    <col style="width:25%;"> -->
+                    <!-- <col style="*"> -->
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <td style="padding:10px 1px; text-align:center;"><p>년도</p></td>
+                            <td style="padding:10px 1px; text-align:center;"><p>2022</p></td>
+                            <td style="padding:10px 1px; text-align:center;"><p>2023</p></td>
+                            <td style="padding:10px 1px; text-align:center;"><p>2024</p></td>
+                          </tr>
+                          <tr>
+                            <td style="padding:10px 1px; text-align:center;"><p>바늘</td>
+                            <td style="padding:10px 1px; text-align:center;"><p>0</p></td>
+                            <td style="padding:10px 1px; text-align:center;"><p>0</p></td>
+                            <td style="padding:10px 1px; text-align:center;"><p>0</p></td>
+                          </tr>
+                          <tr>
+                            <td style="padding:10px 1px; text-align:center;"><p>알콜솜</p></td>
+                            <td style="padding:10px 1px; text-align:center;"><p>0</p></td>
+                            <td style="padding:10px 1px; text-align:center;"><p>0</p></td>
+                            <td style="padding:10px 1px; text-align:center;"><p>0</p></td>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
                   </tr>
                 </tbody>
               </table>
@@ -510,105 +569,51 @@ if("" != ""){
           <div class="btn_pink"><a href="javascript:;" onclick="productUpdate()">저장</a></div>
         </div>
       </div>
-
-      <!-- 병원명 검색 -->
-      <div class="pop_mask"></div>
-      <div class="pop_search">
-        <div class="pop_search_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
-          <div class="pop_con">
-            <div class="pop_tit">병원명 검색</div>
-            <div class="search_area">
-              <p>등록되어 있는 병원명 또는 간략한 주소를 입력하시고 [검색]버튼을 클릭해주세요.</p>
-              <div class="search_ipt">
-                <div class="search_cell">
-                  <div class="input_row">
-                    <span class="input_box">
-                      <input type="text" id="search_name"  class="ipt">
-                    </span>
-                  </div>
-                </div>
-                <div class="search_cell btn">
-                  <div class="btn_search"><a href="javascript:fnHospitalSearch();">검색</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="search_list" id="search_hospital">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 의사 검색 -->
-      <div class="pop_mask_doctor"></div>
-      <div class="pop_search_doctor">
-        <div class="pop_search_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
-          <div class="pop_con">
-            <div class="pop_tit">의사명 검색</div>
-            <div class="search_area">
-                <p>등록되어 있는 의사명 입력하시고 [검색]버튼을 클릭해주세요.</p>
-              <div class="search_ipt">
-                <div class="search_cell">
-                  <div class="input_row">
-                    <span class="input_box">
-                      <input type="text" id="search_doctor_name"  class="ipt">
-                    </span>
-                  </div>
-                </div>
-                <div class="search_cell btn">
-                  <div class="btn_search"><a href="javascript:fnDoctorSearch();">검색</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="search_list" id="search_doctor">
-            </div>
-          </div>
-        </div>
-      </div>
-
 	  </div>
   </body>
   <script>
       //주사바늘,추가 알콜솜 로직 변경 2020-01-30
-    $("#requestCottonNeedleAmount").change(function() {
-	    	if($("#pProductSort").val() == "P"){
-	    		$("select[name='requestAddCotton'] option").remove();
-	    		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
-	    		  $("#requestAddCotton_txt").text(changeValue +" 개");
-	    		  $("select#requestAddCotton option").remove();
-	    		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
-	    		  $("#requestAddCotton").append("<option value='100'>100 개</option>");
-	    		  $("#requestAddCotton").append("<option value='200'>200 개</option>");
-	    		  $("#requestAddCotton").append("<option value='400'>400 개</option>");
+	    $("#requestCottonNeedleAmount").change(function() {
+		    	if( $("input[type='radio']:checked").val() == "6101200006" ||  $("input[type='radio']:checked").val() == "6101200009"){
+		    		$("select[name='requestAddCotton'] option").remove();
+		    		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
+		    		  $("#requestAddCotton_txt").text(changeValue +" 개");
+		    		  $("select#requestAddCotton option").remove();
+		    		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
+		    		  $("#requestAddCotton").append("<option value='100'>100 개</option>");
+		    		  $("#requestAddCotton").append("<option value='200'>200 개</option>");
+		    		  if(changeValue == "400"){
+		    			  $("#requestAddCotton").append("<option value='400'>400 개</option>");
+		    		  }
 
-	    		  $("#requestAddCotton").val(changeValue).prop("selected", true);
-	    	}
+		    		  $("#requestAddCotton").val(changeValue).prop("selected", true);
+		    	}
 
-	    	if($("#pProductSort").val() == "U" || $("#pProductSort").val() == "A"){
-	    		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
-	    		  $("#requestAddCotton_txt").text(changeValue +" 개");
-	    		  $("select#requestAddCotton option").remove();
-	    		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
-	    		  $("#requestAddCotton").append("<option value='100'>100 개</option>");
-	    		  $("#requestAddCotton").append("<option value='200'>200 개</option>");
-	    		  $("#requestAddCotton").append("<option value='400'>400 개</option>");
+		    	if( $("input[type='radio']:checked").val() == "6101200001" ||  $("input[type='radio']:checked").val() == "6101200007"){
+		    		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
+		    		  $("#requestAddCotton_txt").text(changeValue +" 개");
+		    		  $("select#requestAddCotton option").remove();
+		    		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
+		    		  $("#requestAddCotton").append("<option value='100'>100 개</option>");
+		    		  $("#requestAddCotton").append("<option value='200'>200 개</option>");
+		    		  if(changeValue == "400"){
+		    			  $("#requestAddCotton").append("<option value='400'>400 개</option>");
+		    		  }
 
-	    		  $("#requestAddCotton").val(changeValue).prop("selected", true);
-	    	}
+		    		  $("#requestAddCotton").val(changeValue).prop("selected", true);
+		    	}
 
-		    if($("#pProductSort").val() == "PL"){
-		  		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
-		  		  $("#requestAddCotton_txt").text(changeValue +" 개");
-		  		  $("select#requestAddCotton option").remove();
-		  		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
-				  $("#requestAddCotton").append("<option value='100'>100 개</option>");
+			    if( $("input[type='radio']:checked").val()== "6101200003"){
+			  		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
+			  		  $("#requestAddCotton_txt").text(changeValue +" 개");
+			  		  $("select#requestAddCotton option").remove();
+			  		  $("#requestAddCotton").append("<option value='0'>0 개</option>");
+					  $("#requestAddCotton").append("<option value='100'>100 개</option>");
 
-				  $("#requestAddCotton").val(changeValue).prop("selected", true);
-		  	}
+					  $("#requestAddCotton").val(changeValue).prop("selected", true);
+			  	}
 
-    });
- 
+	    });
 
  
 $('#sel01').focus(function() {
@@ -618,15 +623,21 @@ $('#sel01').focus(function() {
 
  	let now = new Date();
 	let nowHour = now.getHours();
-	if("N" == 'N' && (nowHour == 15 || nowHour == 16 || nowHour == 17)){
+	/* if("" == 'N' && (nowHour == 15 || nowHour == 16 || nowHour == 17)){
 		alert("현재 시간에는 변경이 불가능합니다.(제한 시간 : 15~18)");
 	 	   $(this).val(prev_val);
 	       return false; 
 	}
-     
+      */
+      
+	if((nowHour == 15 || nowHour == 16 || nowHour == 17)){
+		alert("현재 시간에는 변경이 불가능합니다.(제한 시간 : 15~18)");
+	 	   $(this).val(prev_val);
+	       return false; 
+	}
  
 });
 
-    
+ 
 </script>
 </html>
