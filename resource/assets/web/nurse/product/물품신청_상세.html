@@ -5,6 +5,31 @@
     <head>
     
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+		
+	
+
+
+
+
 <script>
 
 /*ControllerUtil.redirectPost alert*/
@@ -17,33 +42,43 @@ if("" != ""){
 
 
 	<!-- SET FILE PATH :: compatibility ie9 code -->
-<base href="../" />
-<!--[if IE]><script type="text/javascript">
-    // Fix for IE ignoring relative base tags.
-    (function() {
-        var baseTag = document.getElementsByTagName('base')[0];
-        baseTag.href = baseTag.href;
-    })();
-</script><![endif]-->
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-<meta name="format-detection" content="telephone=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- TITLE -->
-<title>EuDi</title>
-<link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
+        <base href="../" />
+        <!--[if IE]><script type="text/javascript">
+            // Fix for IE ignoring relative base tags.
+            (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+            })();
+        </script><![endif]-->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+          
+        	
+        	
+        		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        	
+        
+        <meta name="format-detection" content="telephone=no">
+	     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <!-- TITLE -->
+         <title>EuDi</title>
+	    
+    
+
+
+<!--2019-09-16 4M ê¹íë¹-->
+<!-- common css file-->
 
 <!-- common css file-->
-<link rel="stylesheet" href="/resource/assets/web/css/main.css?version=1.3">
-<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=1.3">
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?20230906022313">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20230906022313">
 
 
 <!-- nurse css file -->
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?version=2.1">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?20230906022313">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?20230906022313">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?20230906022313">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css?20230906022313">
 
 
 
@@ -51,18 +86,38 @@ if("" != ""){
 <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
 <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
 <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
-<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?version=1.2"></script>
-<script src="/resource/assets/web/nurse/js/counseling.js"></script> 
+<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?20230906022313"></script>
+
+
+	
+
+
 
 
 <!-- common js file-->
 <script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
 <script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
 
+<!-- ê°ë°ì© css -->
+<style>
+	.placeholder-err::placeholder{
+	  color: red;
+	  opacity: 1; /* íì´ì´í­ì¤ìì ë¿ìê² ëì¤ë íìì ë°©ì§íê¸° ìí css */
+	}
+	.placeholder-err::-webkit-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-ms-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-mos-input-placeholder {
+	  color: red;
+	}
+</style>
 
 <script type="text/javascript">
 
-
+      
     function SHA256(s){
       
         var chrsz   = 8;
@@ -196,50 +251,9 @@ if("" != ""){
       
     }
      
-	/*
-	 * App & ì¤ë§í¸ì¼ì´ì¤ ê´ë ¨.. 
-	 * */
-	// íì¬ í¸ì¶í ëë°ì´ì¤ê° ì´ë¤ ê²ì¸ì§ ì²´í¬í©ëë¤.
-	var isMobile = {
-		Android: function () {
-			return navigator.userAgent.match(/Android/i) == null ? false : true;
-		},
-		iOS: function () {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
-		},
-		any: function () {
-			return (isMobile.Android() || isMobile.iOS());
-		}
-	};
-	
-	//Appì ë¡ê·¸ì¸ì ë³´ ì ë¬
-	function fnAppLoginChk() {
-		$.ajax({
-			type: "POST",
-			url: "/smart/getLoginInfo.do",
-			//data:JSON.stringify(data),
-			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-			dataType: "json"
-		}).done(function(resp){
-			  	data = {"result":"success","memberInfo":{"mIdx":"122","mId":"4mtest"}};
-			 
-			//Appì Javascript Bridge ì°ê²°íì¬ ì ë¬
-			if (isMobile.any()) {
-				if (isMobile.Android()) {
-					window.eudiApp.fnAppLoginChk_Res(JSON.stringify(data));
-				} else if (isMobile.iOS()) {
-					webkit.messageHandlers.fnAppLoginChk_Res.postMessage(JSON.stringify(data));
-				}
-			}
-		}).fail(function(error){
-			//alert(JSON.stringify(error));
-		});
-	}
-	
+
+ 
 </script>
-
-
-
     <!-- <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> -->
 
   <script>
@@ -307,7 +321,133 @@ if("" != ""){
 
   	}
 
+  	function fnHospitalSearch(){
+   	    var hospital_list ="";
+   	 $("#search_hospital").html("");
 
+   	 
+   		var chkData = { "searchKeyword": $("#search_name").val() };
+   	 
+	 	if($("#search_name").val() == "") {
+	  		alert("병원명을 입력해주세요");
+	  		$("#search_name").focus();
+	  		return;
+	  	} 
+	  	$("#loading").show();
+	 	 setTimeout(function() {
+  		      actionurl = "/search_hospital.do";
+		      $.ajax({
+		          async: false,
+		          type: "POST",
+		          url : actionurl,
+		          data:chkData,
+		          dataType : "json",
+		          complete: function(){ $("#loading").hide();},
+		          success: function(obj){
+		        	
+		        	if(obj.result.length < 1){
+		        	 hospital_list += "<ul>";
+		             hospital_list += "<li class='result_none'><p>검색결과가 없습니다.</p></li>";
+		             hospital_list += "</ul>";
+		        	} else {
+		        				hospital_list += "<ul>";
+					           		 for(var i=0;i < obj.result.length;i++){
+					           			 hospital_list += "<li><a href='javascript:selectHospitalName(\""+obj.result[i].hmHospCd+"\",\""+obj.result[i].hmHospNm+"\",\""+obj.result[i].hmHospAddress1+"\",\""+obj.result[i].hmHospAddress2+"\");''>"+obj.result[i].hmHospNm+"("+obj.result[i].hmHospAddress1+obj.result[i].hmHospAddress2+")</a></li>";
+					           		 }
+		        		 		hospital_list += "</ul>";
+		        	}
+		        	
+		          },
+		          error: function(xhr, option, error){
+		                alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		          }
+		          /*error : function(success){
+		              meg = "서버와 통신중 에러가 발생하였습니다."
+		              alert("처리결과 : "+meg);
+		          }*/
+		      }); 
+		      
+		      
+		   	 $("#search_hospital").html(hospital_list);
+		}, 0); // End setTimeout(function()
+				
+   	}
+ 	
+ 	function fnDoctorSearch(){
+  		var hm_hosp_cd = $("#cHospitalIdx").val();//선택한 병원 코드
+		if(hm_hosp_cd == null || hm_hosp_cd == ""){
+			alert("병원을 먼저 선택하시면 해당 병원 소속 의사를 검색합니다.");
+			return;
+		}
+  		
+		if($("#search_doctor_name").val() == "") {
+      		alert("의사명을 입력해주세요");
+      		$("#search_doctor_name").focus();
+      		return;
+      	}
+		
+			 var doctor_list ="";
+	      	 var chkData = { "hmHospCd": $("#cHospitalIdx").val(),"searchKeyword": $("#search_doctor_name").val() };
+	     	 $("#search_doctor").html("");
+	         $("#loading").show();
+	         setTimeout(function() {
+		         actionurl = "/search_doctor_nopaging.do";
+		         $.ajax({
+		             async: false,
+		             type: "POST",
+		             url : actionurl,
+		             data:chkData,
+		             dataType : "json",
+		             complete: function(){ $("#loading").hide();},
+		             success: function(obj){
+		           	
+		           	if(obj.result.length < 1){
+		           		doctor_list += "<ul>";
+		           		doctor_list += "<li class='result_none'><p>검색결과가 없습니다.</p></li>";
+		           		doctor_list += "</ul>";
+		           	} else {
+		           		doctor_list += "<ul>";
+					           		 for(var i=0;i < obj.result.length;i++){
+					           			doctor_list += "<li><a href='javascript:selectDoctorName(\""+obj.result[i].docNo+"\",\""+obj.result[i].docNm+"\");''>"+obj.result[i].docNm+"("+obj.result[i].docNo+")</a></li>";
+					           		 }
+					           		doctor_list += "</ul>";
+		           	}
+		           	
+		             },
+		             error: function(xhr, option, error){
+		                   alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		             }
+		             /*error : function(success){
+		                 meg = "서버와 통신중 에러가 발생하였습니다."
+		                 alert("처리결과 : "+meg);
+		             }*/
+		         }); 
+		         
+		         
+		      	 $("#search_doctor").html(doctor_list);
+	     	}, 0); // End setTimeout(function()
+
+  	}
+   	
+  	function selectHospitalName(hidx,hname,haddr1,haddr2){
+   	   $("#selectHname").val(hname+"("+haddr1+haddr2+")");
+   	   $("#cHospitalIdx").val(hidx);
+   	   $("#cHospitalName").val(hname);
+   	   $("#hNameText").text(hname+"("+haddr1+haddr2+")");
+   	   $(".pop_mask").css("display","none");
+   	   $(".pop_search").css("display","none");
+ /*   	   $('[name=HOSPCHECK]').val('Y'); */
+
+   	}
+	
+	function selectDoctorName(docNo,docNm){
+ 	   $("#cDoctorName").val(docNm);
+       $("#doctOnkyCd").val(docNo);
+	   $(".pop_mask_doctor").css("display","none");
+	   $(".pop_search_doctor").css("display","none");
+/* 	   $('[name=DOCCHECK]').val('Y'); */
+ 	}
+	
     /*   function openDaumZipAddress() {
 
           // 우편번호 찾기 화면을 넣을 element를 지정
@@ -377,7 +517,7 @@ if("" != ""){
       	document.writeForm.submit();
       }
   </script>
-  <script src='/eum_.js'></script></head>
+  </head>
  <style>
 .dark {background-color:#B2B2B2;opacity:0.5;filter:Alpha(opacity:'30');width:100%;height:100%;top:0;left:0;position:fixed;z-index:9000;}
 </style>
@@ -387,31 +527,34 @@ if("" != ""){
       <div class="sub_top">
         <div class="nav">
           <div class="nav_inner">
-            <h2 class="title">물품관리</h2><!-- 2023.02.09 퍼블수정 -->
-            <div class="back"><a href="javascript:fnProductList()"><img src="/resource/assets/web/nurse/images/common/back.png" alt="뒤로가기" /></a></div><!-- 2023.02.09 퍼블수정 -->
+            <h2 class="title">물품관리</h2>
+            <div class="back"><a href="javascript:fnProductList()"><img src="/resource/assets/web/nurse/images/common/back.png" alt="뒤로가기" /></a></div>
           </div>
         </div>
 
       </div>
       <!-- nav //-->
       <!--// content -->
-       <form id="writeForm" name="writeForm" action="/nurse/product/writeProc.do" method="post">
+       <form id="writeForm" name="writeForm" commandName="ProductVO" action="/nurse/product/writeProc.do" method="post">
        	<input type="hidden" name="searchKeyword" id="searchKeyword" value="">
-       	<input type="hidden" name="srh03" id="srh03" value="4mnurse">
+       	<input type="hidden" name="srh03" id="srh03" value="barakee82">
        	<input type="hidden" name="pageIndex" id="pageIndex" value="1">
        	<input type="hidden" name="searchName" id="searchName" value="">
-       	<input type="hidden" name="searchId" id="searchId" value="4mnurse">
+       	<input type="hidden" name="searchId" id="searchId" value="barakee82">
 
-        <input type="hidden" name="pRegcIdx" id="pRegcIdx" value="31476">
-	      <input type="hidden" name="pRegId" id="pRegId" value="whyfrees">
-  		  <input type="hidden" name="pNurseId" id="pNurseId" value="">
-
+       	  <input type="hidden" name="pRegcIdx" id="pRegcIdx" value="43885">
+	      <input type="hidden" name="pRegId" id="pRegId" value="4mtest6">
+  		  <input type="hidden" name="pNurseId" id="pNurseId" value="barakee82">
+  		  
+  		  
+  		  <input type="hidden" name="cHospitalIdx" id="cHospitalIdx" value="WKRH00001611">
+  		  <input type="hidden" name="doctOnkyCd" id="doctOnkyCd" value="WKRM00129065">
 
       <div class="content con_sub con_sub04">
         <div class="con_box">
-          <div class="con_inner05"><!-- 2023.02.08 퍼블수정 -->
+          <div class="con_inner05">
             <div class="tb">
-              <table summary="물품요청" cellpadding="0" cellspacing="0" border="0">
+              <table summary="물품요청" >
                 <caption>물품요청</caption>
                 <colgroup>
                     <col style="width:110px;">
@@ -419,22 +562,20 @@ if("" != ""){
                 </colgroup>
                  <form name="writeForm" id="writeForm" role="form" method="post">
                 <tbody>
-
-                  <!-- 2023.02.08 아이디/병원명/의사명 추가 -->
                   <tr>
                     <td class="tit"><p>회원 아이디</p></td>
-                    <td class="cont"><p>hb0232</p></td>
+                    <td class="cont"><p>4mtest6</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>아이명</p></td>
-                    <td class="cont"><p>현빈</p></td>
+                    <td class="cont"><p>개*********3</p></td>
                   </tr>
                   <tr>
                     <td class="tit"><p>병원명</p></td>
                     <td class="cont">
                       <div class="input_search">
                         <span class="input_box">
-                          <input type="text" class="ipt"   id="selectHname"  value="연세대학교 병원" readonly="">
+                          <input type="text" class="ipt"   id="cHospitalName" name="cHospitalName" value="아산사회복지재단보성아산병원" readonly="">
                           <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
                         </span>
                       </div>
@@ -445,27 +586,41 @@ if("" != ""){
                     <td class="cont">
                       <div class="input_search">
                         <span class="input_box">
-                            <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
+                            <input type="text" id="cDoctorName" name="cDoctorName" value="김종우" class="ipt">
                           <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
                         </span>
                       </div>
                     </td>
                   </tr>
-                  <!-- // 2023.02.08 아이디/병원명/의사명 추가 -->
-
                   <tr>
                     <td class="tit"><p>제품선택</p></td>
                     <td class="cont">
 	                    <div class="cont_inner">
 	                    	<div class="select_row">
 		                        <label for="pProductSort">선택</label>
-		                        <select id="pProductSort"  name="pProductSort">
+		                         <select id="pProductSort"  name="pProductSort">
 		                            <option value="">선택</option>
-		                            <option value="S">유트로핀에스펜</option>
-		                            <option value="P">유트로핀 펜</option>
-		                            <option value="U">유트로핀</option>
-		                            <option value="PL">유트로핀플러스</option>
-		                            <option value="A">유트로핀12IU</option>
+		                            		
+	          					    	
+	          					    		 <option value="6101200009">유트로핀 에스펜</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="6101200007">유트로핀 12IU</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="6101200006">유트로핀 펜</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="6101200001">유트로핀 4IU</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="6101200003">유트로핀 플러스</option>
+	          					    	
+									 
 		                        </select>
 		                      </div>
 		                      <p class="txt">제품선택시 '반드시' 포장지의 제품명을 확인하여 주세요.(제품별 주사바늘 종류 다름)</p>
@@ -475,31 +630,27 @@ if("" != ""){
                   <tr>
                     <td class="tit"><p>주사바늘</td>
                     <td class="cont">
-                      <div class="cont_inner">
-                        <div class="select_row select_row02">
-                          <label for="requestCottonNeedleAmount" id="requestCottonNeedleAmount_txt">0 개</label>
-                          <select id="requestCottonNeedleAmount" name="requestCottonNeedleAmount">
-                              <option value="0" selected="selected" >0 개</option>
-                            <!--   <option value="90">90 개</option>
-                              <option value="120">120 개</option>
-                              <option value="150">150 개</option> -->
-                          </select>
-                        </div>
+                      <div class="select_row select_row02">
+                        <label for="requestCottonNeedleAmount" id="requestCottonNeedleAmount_txt">0 개</label>
+                        <select id="requestCottonNeedleAmount" name="requestCottonNeedleAmount">
+                            <option value="0" selected="selected" >0 개</option>
+                          <!--   <option value="90">90 개</option>
+                            <option value="120">120 개</option>
+                            <option value="150">150 개</option> -->
+                        </select>
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <td class="tit"><p>알콜솜</p></td>
                     <td class="cont">
-                      <div class="cont_inner">
-                        <div class="select_row select_row02">
-                          <label for="requestAddCotton" id="requestAddCotton_txt">0 개</label>
-                          <select id="requestAddCotton" name="requestAddCotton">
-                              <option value="0" selected="selected">0 개</option>
-                        <!--       <option value="100">100 개</option>
-                              <option value="200">200 개</option> -->
-                          </select>
-                        </div>
+                      <div class="select_row select_row02">
+                        <label for="requestAddCotton" id="requestAddCotton_txt">0 개</label>
+                        <select id="requestAddCotton" name="requestAddCotton">
+                            <option value="0" selected="selected">0 개</option>
+                      <!--       <option value="100">100 개</option>
+                            <option value="200">200 개</option> -->
+                        </select>
                       </div>
                     </td>
                   </tr>
@@ -518,70 +669,70 @@ if("" != ""){
                     <td class="cont">
                       <div class="cont_inner">
                         <div class="area_box">
-                          <textarea type="text" id="pContent" name="pContent"></textarea>
-                        </div>
+          						    <textarea type="text" id="pContent" name="pContent"></textarea>
+            						</div>
                       </div>
                     </td>
                   </tr>
-                  <tr>
+                     <tr>
                     <td class="tit"><p>연락처</p></td>
-                    <td class="cont">
+                     <td class="cont">
                       <div class="select_tel">
                         <label for="pCpNumber1">010</label>
                         <select id="pCpNumber1" name="pCpNumber1">
-                          <option value="010" selected="selected">010</option>
-                          <option value="011" >011</option>
-                          <option value="017" >017</option>
-                          <option value="018" >018</option>
-                          <option value="019" >019</option>
+                            <option value="010" selected="selected">010</option>
+                  			 <option value="011" >011</option>
+                            <option value="017" >017</option>
+                            <option value="018" >018</option>
+                            <option value="019" >019</option>
                         </select>
                       </div>
                       <span class="hyphen">-</span>
                       <div class="input_tel">
-                        <span class="input_box">
-                          <input type="tel" id="pCpNumber2" name="pCpNumber2" value="1111" class="ipt" style="ime-mode:disabled" required="required" data-title="휴대폰번호를" title="휴대폰번호를" maxlength="4" oninput="maxLengthCheck(this)">
-                        </span>
-                      </div>
+            						<span class="input_box">
+            							<input type="tel" id="pCpNumber2" name="pCpNumber2" value="2788" class="ipt" style="ime-mode:disabled" required="required" data-title="휴대폰번호를" title="휴대폰번호를" maxlength="4" oninput="maxLengthCheck(this)">
+            						</span>
+            					</div>
                       <span class="hyphen">-</span>
                       <div class="input_tel">
-                        <span class="input_box">
-                          <input type="tel" id="pCpNumber3" name="pCpNumber3" value="2222" class="ipt" style="ime-mode:disabled" required="required" data-title="휴대폰번호를" title="휴대폰번호를" maxlength="4" oninput="maxLengthCheck(this)">
-                        </span>
-                      </div>
+            						<span class="input_box">
+            							<input type="tel" id="pCpNumber3" name="pCpNumber3" value="7221" class="ipt" style="ime-mode:disabled" required="required" data-title="휴대폰번호를" title="휴대폰번호를" maxlength="4" oninput="maxLengthCheck(this)">
+            						</span>
+            					</div>
                     </td>
                   </tr>
                   <tr>
-                    <td class="tit"><p>배송주소</p></td>
+                    <td class="tit"><p>배송주소</p></td><!-- readonly -->
                     <td class="cont">
                       <div class="cont_inner">
 
-                        <div class="addr_box01" id="addr_box01">
+                      	 <div class="addr_box01 blind" id="addr_box01">
                           <div class="input_addr">
                             <span class="input_box">
-                              <input type="text" id="pPost" name="pPost" class="ipt" value="" readonly>
+                              <input type="text" id="pPost" name="pPost" class="ipt" value="06753">
                             </span>
                             <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
                           </div>
-                          <div class="input_row mt5">
+                          <div class="input_row mt4">
                             <span class="input_box">
-                              <input type="text" id="pAddr1" name="pAddr1" class="ipt"  value=""readonly>
+                              <input type="text" id="pAddr1" name="pAddr1" class="ipt"  value="서울 서초구 양재천로19길 28 (양재동)">
                             </span>
                           </div>
-                          <div class="input_row mt5">
+                          <div class="input_row mt4">
                             <span class="input_box">
-                              <input type="text" id="pAddr2" name="pAddr2" class="ipt" value="">
+                              <input type="text" id="pAddr2" name="pAddr2" class="ipt" value="4F">
                             </span>
                           </div>
                         </div>
 
 
                         <!--// 주소 입력 후 -->
-                        <div class="addr_box02 blind"  id="addr_box02">
+                        <div class="addr_box02"  id="addr_box02">
                           <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
                           <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>06753</li>
+                            <li>서울 서초구 양재천로19길 28 (양재동)</li>
+                            <li>4F</li>
                           </ul>
                         </div>
 
@@ -598,9 +749,8 @@ if("" != ""){
 				<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="width:20px;cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
 			</div> -->
 
-			<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
-			<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="width:20px;cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
-		<!-- 	<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼"> -->
+		<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+				<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="width:20px;cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
 			</div>
 
 
@@ -622,9 +772,26 @@ if("" != ""){
           <div class="btn_pink"><a href="javascript:;" onclick="fnWriteChk()">신청</a></div>
         </div>
       </div>
+	  </div>
+	  </form>
 
-      <!-- 2023.02.08 추가 -->
-      <!-- 병원명 검색 -->
+
+
+
+
+  </body>
+            <!-- 로딩 div -->
+    <div id="div-dark" class="dark" style="display:none;"></div>
+    <div id="loading"
+            style="display:none; top: 45%; left: 70%;  margin-left:-100px;z-index: 9999; border: 3px #2B97D6;position:fixed">
+            <p style="text-align: center;">
+                <img src="/resource/assets/nurse/images/common/loading.gif" alt="loading" />
+                <font color="#0054FF"><span id="percentage"></span></font>
+            </p>
+     </div>
+     
+     
+       <!-- 병원명 검색 -->
       <div class="pop_mask"></div>
       <div class="pop_search">
         <div class="pop_search_inner">
@@ -651,8 +818,9 @@ if("" != ""){
           </div>
         </div>
       </div>
-
-      <!-- 의사 검색 -->
+      
+      
+            <!-- 의사 검색 -->
       <div class="pop_mask_doctor"></div>
       <div class="pop_search_doctor">
         <div class="pop_search_inner">
@@ -679,24 +847,7 @@ if("" != ""){
           </div>
         </div>
       </div>
-
-    </div>
-    </form>
-
-
-
-
-
-  </body>
-            <!-- 로딩 div -->
-    <div id="div-dark" class="dark" style="display:none;"></div>
-    <div id="loading"
-            style="display:none; top: 45%; left: 70%;  margin-left:-100px;z-index: 9999; border: 3px #2B97D6;position:fixed">
-            <p style="text-align: center;">
-                <img src="/resource/assets/nurse/images/common/loading.gif" alt="loading" />
-                <font color="#0054FF"><span id="percentage"></span></font>
-            </p>
-     </div>
+      
     <script>
   function fnListPage(){
 	 	document.writeForm.action = "/product/product_list.do";
@@ -824,8 +975,7 @@ if("" != ""){
                         extraAddr = ' (' + extraAddr + ')';
                     }
                     // 조합된 참고항목을 해당 필드에 넣는다.
-                    //document.getElementById("pAddr2").value = extraAddr;
-                    addr = addr + extraAddr;
+                    document.getElementById("pAddr2").value = extraAddr;
 
                 } else {
                     document.getElementById("pAddr2").value = '';
@@ -933,7 +1083,7 @@ if("" != ""){
     	});
     //주사바늘,추가 알콜솜 로직 변경 2020-01-30
     $("#requestCottonNeedleAmount").change(function() {
-	    	if($("#pProductSort").val() == "P" || $("#pProductSort").val() == "S"){
+	    	if($("#pProductSort").val() == "P"){
 	    		$("select[name='requestAddCotton'] option").remove();
 	    		  var changeValue = $("#requestCottonNeedleAmount").val()*2;
 	    		  $("#requestAddCotton_txt").text(changeValue +" 개");
