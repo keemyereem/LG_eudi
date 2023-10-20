@@ -24,6 +24,7 @@ ExtraBold - 'NanumSquareEB'
 .popup.popup_alert .inner_pop { max-width: 260px; }
 .popup .pop_alert { padding: 35px 20px 20px; background: #fff; border-radius: 10px; flex-wrap: wrap; }
 .popup .pop_alert .pop_tit { font-size: 18px; line-height: 1.25; text-align: center; width: 100%; }
+.popup .pop_alert .pop_tit>b { font-family: 'NanumSquareB'; }
 .popup .pop_alert button { margin-top: 24px; background: #f18e1e; color: #ffffff; width: 100%; padding: 14px 0; border-radius: 5px; }
 .popup .pop_alert.step01 button { font-size: 13px; font-family: 'NanumSquareB'; }
 .popup .pop_alert.step01 button:last-child { margin-top: 9px; background: #79bd28; }
@@ -94,6 +95,24 @@ ExtraBold - 'NanumSquareEB'
 .duplicateChild_pop .con_list>ul>li>a>div .phone::before { content:''; display: inline-block; margin: 10px 7px 0 0; width: 9px; height: 10px; background: url(../images/common/icon_phone.png) no-repeat; background-size: contain; }
 .duplicateChild_pop>p { font-size: 18px; text-align: center; line-height: 1.25; margin: 35px 0 40px; }
 
+/* 취소된 일정 팝업 */
+#divCclSchdWrap form { width: 100%; }
+#divCclSchdWrap ul { margin-top: 20px; }
+#divCclSchdWrap ul>li { display: flex;align-items: center; }
+#divCclSchdWrap ul>li+li { margin-top: 12px; }
+#divCclSchdWrap ul>li .name { font-family: 'NanumSquareEB';font-size: 15px;color: #333; }
+#divCclSchdWrap ul>li .name::after { content:'';display: inline-block;width: 1px;height: 10px;background: #e5e5e5;margin: 0 10px; }
+#divCclSchdWrap ul>li .hospital { font-size: 11px;color: #999; }
+#divCclSchdWrap ul>li .type { font-family: 'NanumSquareB';font-size: 13px;color: #333;margin-right: 10px; }
+#divCclSchdWrap ul>li .type::before { content:'';display: inline-block;width: 3px;height: 3px;border-radius: 100%;background: #f18e1e;vertical-align: middle;margin-right: 6px; }
+#divCclSchdWrap ul>li .time { font-family: 'NanumSquareB';font-size: 13px;color: #999; }
+#divCclSchdWrap ul>li .reason { width: 100%;background: #f5f5f5;border-radius: 5px;padding: 15px 0;text-align: center;font-size: 13px; }
+#divCclSchdWrap ul>li .reason dt { font-family: 'NanumSquareB';color: #333; }
+#divCclSchdWrap ul>li .reason dd { color: #888;margin-top: 5px; }
+
+/* 상담취소사유 선택 팝업 */
+.impossible_pop ul li.alignLeft { justify-content: flex-start;color: #999; }
+.impossible_pop ul li.alignLeft span { margin-right: 10px;color: #333; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .popup .inner_pop { width: 345px; }
@@ -216,8 +235,8 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .schedule_wrap .dates li.disable button { background: #cfcfcf; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.empty { justify-content: flex-end; }
 .wrap_sub .sec_cal .schedule_wrap .dates li.empty button { background: #f18e1e url(../images/common/sked_icon03.png) 50% 50% no-repeat; background-size: 11px 11px;}
-.wrap_sub .sec_cal .schedule_wrap .dates li div,
-.wrap_sub .sec_cal .hpc_wrap li div { display: flex; }
+.wrap_sub .sec_cal .schedule_wrap .dates li div { display: flex; }
+/* .wrap_sub .sec_cal .hpc_wrap li div { display: flex; } */
 .wrap_sub .sec_cal .schedule_wrap .dates li a,
 .wrap_sub .sec_cal .hpc_wrap li a,
 .wrap_sub .sec_cal .schedule_wrap .dates li button,
@@ -238,10 +257,18 @@ ExtraBold - 'NanumSquareEB'
 .wrap_sub .sec_cal .schedule_wrap .dates li[data-type="blind"] { display: none; visibility: hidden; }
 .wrap_sub .sec_cal .hpc_wrap { margin-top: 40px; }
 .wrap_sub .sec_cal .hpc_wrap .alert01 { padding-bottom: 15px; border-bottom: 1px solid #727272; }
-.wrap_sub .sec_cal .hpc_wrap li { padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e5e5; }
-.wrap_sub .sec_cal .hpc_wrap li p { font-size: 13px; color: #333333; font-family: 'NanumSquareB'; }
-.wrap_sub .sec_cal .hpc_wrap li p span { font-family: 'NanumSquareR'; font-size: 11px; color: #999999; }
-.wrap_sub .sec_cal .hpc_wrap li p span::before { content: ''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px; vertical-align: middle; }
+.wrap_sub .sec_cal .hpc_wrap li { padding: 15px; border-bottom: 1px solid #e5e5e5; }
+.wrap_sub .sec_cal .hpc_wrap li .today_hpc,
+.wrap_sub .sec_cal .hpc_wrap li .cancelled_sch { display: flex;align-items: center;justify-content: space-between; }
+.wrap_sub .sec_cal .hpc_wrap li .btn_wrap { max-width: 136px;display: flex;align-items: center;margin-left: auto; }
+.wrap_sub .sec_cal .hpc_wrap li .today_hpc .info {}
+.wrap_sub .sec_cal .hpc_wrap li p { font-size: 13px; color: #333333; font-family: 'NanumSquareB';display: flex;flex-wrap: wrap;align-items: center; }
+.wrap_sub .sec_cal .hpc_wrap li .hospital { font-family: 'NanumSquareR';font-size: 11px; color: #999999; }
+.wrap_sub .sec_cal .hpc_wrap li .phone { font-family: 'NanumSquareR';font-size: 11px; color: #727272;margin-left: 8px; }
+.wrap_sub .sec_cal .hpc_wrap li .type { font-size: 11px; }
+.wrap_sub .sec_cal .hpc_wrap li .time { font-size: 11px;font-family: 'NanumSquareR'; }
+.wrap_sub .sec_cal .hpc_wrap li p+p { margin-top: 6px; }
+.wrap_sub .sec_cal .hpc_wrap li .cancelled_sch .time::after { content: ''; display: inline-block; width: 1px; height: 10px; background: #e5e5e5; margin: 0 10px; vertical-align: middle; }
 .wrap_sub .sec_cal .hpc_wrap li a,
 .wrap_sub .sec_cal .hpc_wrap li button { border: 1px solid #f18e1e; }
 .wrap_sub .sec_cal .hpc_wrap li .not_registered {opacity: 0.3;}
