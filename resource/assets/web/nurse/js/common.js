@@ -52,13 +52,30 @@ var tabClick = {
 	
 var noteOpen = {
 	init:function(){
+		$(".note_box").each(function(){
+			if($(this).find("p").text()==""){
+				$(this).prev("tr").find(".btn_note").css("opacity","0.3");
+			}else {
+				$(this).prev("tr").find(".btn_note").css("opacity","1");
+			}
+
+		});
+
 		$(".btn_note").on("click",function(){
+
 			if(!$(this).parents().next(".note_box").hasClass("blind")){
 			   $(this).parents("tr").next(".note_box").addClass("blind");
 			   $(this).removeClass("on");
 			}else{
-			   $(this).parents("tr").next(".note_box").removeClass("blind");
-			   $(this).addClass("on");
+				if(!$(this).parents("tr").next(".note_box").find("p").text()=="") {
+					$(this).parents("tr").next(".note_box").removeClass("blind");
+					$(this).addClass("on");
+				}else {
+					
+					$(this).parents("tr").next(".note_box").addClass("blind");
+					$(this).removeClass("on");
+				}
+
 			}
 		});
 	}
