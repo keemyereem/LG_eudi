@@ -790,14 +790,12 @@
 /* 투여관리 자료실 2023-10-05 */
 .con_sub01 .con_list>ul {border-top: 1px solid #727272;}
 .con_sub01 .con_list>ul>li>a {display: flex;flex-wrap: wrap;padding: 15px;border-bottom: 1px solid #e5e5e5;}
-.con_sub01 .con_list>ul>li.list_none {background: url(../images/common/icon_none.png) no-repeat 50% 50px;background-size: 45px 45px;}
-.con_sub01 .con_list>ul>li.list_none>a {display: block;height: 170px;}
-.con_sub01 .con_list>ul>li.list_none>a>p {font-size: 15px;color: #999;padding-top: 90px;text-align: center;}
+.con_sub01 .con_list>ul>li.list_none {background: url(../images/common/icon_none.png) no-repeat 50% 50px;background-size: 45px 45px;height: 170px;border-bottom: 1px solid #e5e5e5;}
+.con_sub01 .con_list>ul>li.list_none p {font-size: 15px;color: #999;padding-top: 105px;text-align: center;}
 .con_sub01 .con_list>ul>li .ref_title {width: 100%;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;font-family: 'NanumSquareB';font-size: 13px;color: #333;line-height: 1.38;margin-bottom: 5px;}
 .con_sub01 .con_list>ul>li .pdf_tag {display: inline-block;width: 50px;height: 17px;border-radius: 2px;background: #727272;text-align: center;color: #fff;font-family: 'NanumSquareB';font-size: 9px;margin-right: 7px;line-height: 17px;}
 .con_sub01 .con_list>ul>li .new_tag {display: inline-block;width: 50px;height: 18px;border-radius: 9px;border: 1px solid #79bd28;font-family: 'NanumSquareB';font-size: 9px;color: #79bd28;text-align: center;line-height: 16px;} 
 .con_sub01 .tb .filebox {/* height: 40px; */background: #f5f5f5;border-radius: 5px;padding: 15px 10px;margin: 5px 0;}
-/* .con_sub01 .tb .filebox+.filebox {margin-top: 5px;} */
 .con_sub01 .tb .filebox>a {font-size: 13px;color: #333;}
 .con_sub01 .tb .ellipsis2 {width: 100%;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
 
