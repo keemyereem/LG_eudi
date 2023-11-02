@@ -447,6 +447,7 @@
 .pop_search .pop_con .search_area .search_ipt .search_cell.btn {width: 65px;}
 .pop_search .pop_con .search_area .search_ipt .btn_search {margin-left: 5px;width: 60px;height: 40px;background: #78bc27;border-radius: 5px;}
 .wrap_sub04 .pop_search .pop_con .search_area .search_ipt .btn_search {background: #fc637d;}
+.wrap_purple .pop_search .pop_con .search_area .search_ipt .btn_search {background: #7d35b1;}
 .pop_search .pop_con .search_area .search_ipt .btn_search a {display: block;font-size: 12px;color: #fff;line-height: 40px;text-align: center;}
 .pop_search .pop_con .search_list {padding: 10px 15px;height: 165px;overflow-y: auto;border-bottom: 1px solid #e5e5e5;}
 .pop_search .pop_con .search_list ul li {padding: 6px 0;}
@@ -467,6 +468,7 @@
 .pop_search_doctor .pop_con .search_area .search_ipt .search_cell.btn {width: 65px;}
 .pop_search_doctor .pop_con .search_area .search_ipt .btn_search {margin-left: 5px;width: 60px;height: 40px;background: #78bc27;border-radius: 5px;}
 .wrap_sub04 .pop_search_doctor .pop_con .search_area .search_ipt .btn_search {background: #fc637d;}
+.wrap_purple .pop_search_doctor .pop_con .search_area .search_ipt .btn_search {background: #7d35b1;}
 .pop_search_doctor .pop_con .search_area .search_ipt .btn_search a {display: block;font-size: 12px;color: #fff;line-height: 40px;text-align: center;}
 .pop_search_doctor .pop_con .search_list {padding: 10px 15px;height: 165px;overflow-y: auto;border-bottom: 1px solid #e5e5e5;}
 .pop_search_doctor .pop_con .search_list ul li {padding: 6px 0;}
@@ -1328,7 +1330,6 @@
 .wrap_sub04 .register .sec_cal .time_wrap .time_wrap_inner table tbody tr td .scheduled.on p { color: #333; }
 .wrap_sub04 .register .sec_cal .btn_box { padding: 0 15px; margin-top: 25px; }
 
-
 /* 교육/상담신청 팝업*/
 .pop_apply { width: calc(100% - 30px); max-width: 345px; }
 .pop_apply .pop_con { padding: 30px 25px; letter-spacing: -0.5px; }
@@ -1420,3 +1421,7 @@
 .pop_AndroidUpdate .pop_con > ul + .grysml { text-align: left; letter-spacing: -.9px; position: relative; padding-left: 5px; }
 .pop_AndroidUpdate .pop_con > ul + .grysml::before { content:''; display: block; width: 3px; height: 3px; border-radius: 50%; background: #999; position: absolute; top: 5px; left: 0; }
 .pop_AndroidUpdate .pop_con .checkbox_row {display: block; text-align: left;}
+
+.pop_productNoti,
+.pop_productNoti+.pop_mask {display: block;}
+.pop_productNoti {top: 50%;left: 50%;transform: translate(-50%,-50%);}
