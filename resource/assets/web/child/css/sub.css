@@ -1497,6 +1497,5 @@
 .pop_AndroidUpdate .pop_con > ul + .grysml::before { content:''; display: block; width: 3px; height: 3px; border-radius: 50%; background: #999; position: absolute; top: 5px; left: 0; }
 .pop_AndroidUpdate .pop_con .checkbox_row {display: block; text-align: left;}
 
-.pop_productNoti,
-.pop_productNoti+.pop_mask {display: block;}
-.pop_productNoti {top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.pop_productNoti {position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.pop_productNoti .pop_inner {max-width: 300px;margin: 0 auto;}

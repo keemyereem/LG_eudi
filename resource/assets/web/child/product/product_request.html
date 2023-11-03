@@ -864,53 +864,64 @@ if("" != ""){
 
   <!-- 제품선택: 유트로핀펜, 유트로핀에스펜 선택시 노출 -->
   <div class="pop_mask"></div>
-  <div class="pop_info pop_productNoti">
+  <div class="pop_info pop_wide pop_productNoti">
     <div class="pop_info_inner">
       <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
       <div class="pop_con">
         <p class="fc222 fz13 tcenter">
-          유트로핀펜, 유트로핀에스펜<br>
-          투여를 위해 무상 제공되는<br>
-          <b class="fwB">주사바늘(노보파인 32G 6mm)이<br>
-            BD 32G 4mm 로 변경</b>되어 제공됩니다.
+          유트로핀펜, 유트로핀에스펜 투여를 위해<br>
+          무상 제공되는 <b class="fwB">주사바늘(노보파인 32G 6mm)이<br>
+          BD 32G 4mm 로 변경</b>되어 제공됩니다.
         </p>
         <p class="fc999 fz10 tcenter mt10">(23.11.06 신청분부터)</p>
-        <p class="fc999 fz11 tcenter mt10">
-          원활한 주사바늘 지급을 위해 제품을<br>
-          교체하게 된 점 양해 부탁드립니다.
-        </p>
-        <div class="btn_box">
-          <div class="btn_purple"><button class="pop_close">확인</button></div>
+        <div class="pop_inner">
+          <p class="fc999 fz10 mt10 gray_list">
+            원활한 주사바늘 지급을 위해 제품을 교체하게 된 점 양해 부탁드립니다.
+          </p>
+          <p class="fc999 fz10 gray_list">
+            기존 주사바늘(노보파인 32G 6mm)에 대한 문의가 있으실 경우, <br>
+            온라인 문의 게시판 또는 담당 간호사에게 연락 부탁드립니다.
+          </p>
         </div>
-        <button class="btn_closeForToday fz10 fc999 mt10">오늘 다시 보지 않기</button>
+        <div class="pop_btn">
+          <div class="btn_box btn_box02">
+            <div class="btn_gray"><button class="pop_close">닫기</button></div>
+            <div class="btn_purple btn_purple2">
+              <a href="/counsel/product_faq.do?idx=39">4mm 주사방법</a>
+            </div>
+          </div>
+          <div class="checkbox_row purple_checkbox_row">
+            <input type="checkbox" id="closeForToday" name="closeForToday">
+            <label for="closeForToday">하루 동안 열지 않기</label>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <script>
-    var toggleMainPopup = function() {
+  var toggleMainPopup = function() {
     
     /* 스토리지 제어 함수 정의 */
     var handleStorage = {
-        // 스토리지에 데이터 쓰기(이름, 만료일)
-        setStorage: function (name, exp) {
-        // 만료 시간 구하기(exp를 ms단위로 변경)
-        var date = new Date();
-        date = date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+      // 스토리지에 데이터 쓰기(이름, 만료일)
+      setStorage: function (name, exp) {
+      // 만료 시간 구하기(exp를 ms단위로 변경)
+      var date = new Date();
+      date = date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
 
-        // 로컬 스토리지에 저장하기
-        // (값을 따로 저장하지 않고 만료 시간을 저장)
-        localStorage.setItem(name, date)
-        },
-        // 스토리지 읽어오기
-        getStorage: function (name) {
-        var now = new Date();
-        now = now.setTime(now.getTime());
-        // 현재 시각과 스토리지에 저장된 시각을 각각 비교하여
-        // 시간이 남아 있으면 true, 아니면 false 리턴
-        return parseInt(localStorage.getItem(name)) > now
-        }
+      // 로컬 스토리지에 저장하기
+      // (값을 따로 저장하지 않고 만료 시간을 저장)
+      localStorage.setItem(name, date)
+      },
+      // 스토리지 읽어오기
+      getStorage: function (name) {
+      var now = new Date();
+      now = now.setTime(now.getTime());
+      // 현재 시각과 스토리지에 저장된 시각을 각각 비교하여
+      // 시간이 남아 있으면 true, 아니면 false 리턴
+      return parseInt(localStorage.getItem(name)) > now
+      }
     };
-    
     
     // 쿠키 읽고 화면 보이게
     if (handleStorage.getStorage("today")) {
@@ -921,26 +932,23 @@ if("" != ""){
         $(".pop_productNoti").prev('.pop_mask').css('display','block');
     }
 
-    // 오늘하루 보지 않기 버튼
-    $(".pop_productNoti").on("click", ".btn_closeForToday", function () {
-        // 로컬 스토리지에 today라는 이름으로 1일(24시간 뒤) 동안 보이지 않게
-        handleStorage.setStorage("today", 1);
-        $(this).parents(".pop_productNoti").css('display','none');
-        $(this).parents(".pop_productNoti").prev('.pop_mask').css('display','none');
-    });
-
-    // 일반 닫기 버튼
     $(".pop_productNoti").on("click", ".pop_close", function () {
-        $(this).parents(".pop_productNoti").css('display','none');
+      $(this).parents(".pop_productNoti").css('display','none');
         $(this).parents(".pop_productNoti").prev('.pop_mask').css('display','none');
-    });
-    }
+      // 체크박스 체크 유무
+      if ($('#closeForToday').prop('checked')) {
+        // 쿠키 저장
+        handleStorage.setStorage("today", 1);
 
-    $(function() {
-        toggleMainPopup();
+      }
     });
+  }
 
-</script>
+  $(function() {
+      toggleMainPopup();
+  });
+
+  </script>
 
 </body>
 <script>
