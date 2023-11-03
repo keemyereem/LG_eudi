@@ -188,6 +188,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 .checkbox_row input[type="checkbox"] + label {display:inline-block; *display:inline-block; position: relative;top: 10px;cursor:pointer; zoom:1; padding-left: 25px; font-size: 12px;}
 .checkbox_row input[type="checkbox"] + label:before {content:""; display:inline-block; *display:inline-block; width: 18px; height: 18px; position:absolute;top: -4px;left: 0;background: url("../images/common/bg_check.png") 50% 50% no-repeat;background-size: cover;zoom:1;}
 .checkbox_row input[type="checkbox"]:checked + label:before {content:""; background: url("../images/common/bg_check_on.png") 50% 50% no-repeat;background-size: cover;}
+.purple_checkbox_row input[type="checkbox"]:checked + label:before {background: url("../images/common/bg_check_on_purple.png") 50% 50% no-repeat;background-size: cover;}
 
 .radio_row {display:inline-block; *display:inline-block; position:relative; zoom:1;}
 .radio_row input[type="radio"] {display:none;}
@@ -352,6 +353,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 .pop_info .fc222 {color: #222;}
 .pop_info .tcenter {text-align: center;}
 .pop_info .btn_box button {font-family: 'NanumSquareB';font-size: 13px;}
+.pop_btn .checkbox_row {display: block;text-align: center;padding-bottom: 10px;}
 
 /* ERROR */
 .wrap_error {position: relative;width: 100%;height: 100%;}
