@@ -264,6 +264,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 .btn_box a.disabled {background: #cfcfcf;color: #727272!important;border-radius: 5px;}
 
 .btn_box .btn_green {width: 100%;}
+.btn_box .btn_purple {width: 100%;}
 .btn_box01 .btn_gray {width: 100%;}
 .btn_box01 .btn_green {width: 100%;}
 .btn_box01 .btn_orange {width: 100%;}
@@ -321,7 +322,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 .pop_info .pop_con .check_box label {font-size: 13px;margin-left: 5px;}
 .pop_info .pop_con .check_box .ag_pop {display: inline-block;width: 8px;height: 11px;background: url(../images/common/arrow_g_right.png)no-repeat;background-size: contain;font-size: 0;text-indent: 9999px;margin-left: 10px;}
 .pop_info .pop_con .pop_txt02 {padding-top: 20px;font-size: 13px;line-height: 1.2;color: #333;text-align: center;font-weight: 400;}
-.pop_info .pop_con .btn_box {margin-top: 30px;}
+.pop_info .pop_con .btn_box {margin-top: 20px;}
 .pop_info .pop_con .grysml {font-family: 'NanumSquareR';font-size: 10px;font-weight: normal;color: #999;letter-spacing: -.5px;text-align: center;line-height: 1.5;}
 .pop_info .pop_con .gray_line {width: 100%;height: 1px;background: #e8e8e8;}
 .pop_info .pop_con .green_tit {font-family: 'NanumSquareB';color: #79bd28;letter-spacing: -.65px;}
@@ -342,6 +343,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 .pop_info .pop_con .area_box {height: 40px}
 .pop_info .pop_con .area_box textarea {padding: 5px;line-height: 1.2;}
 
+/* 2023.11.02 팝업 텍스트 */
+.pop_info .fwB {font-family: 'NanumSquareB';}
+.pop_info .fz13 {font-size: 13px;line-height: 1.46;letter-spacing: -.65px;}
+.pop_info .fz11 {font-size: 11px;line-height: 1.45;letter-spacing: -.825px;}
+.pop_info .fz10 {font-size: 10px;letter-spacing: -.5px;}
+.pop_info .fc999 {color: #999;}
+.pop_info .fc222 {color: #222;}
+.pop_info .tcenter {text-align: center;}
+.pop_info .btn_box button {font-family: 'NanumSquareB';font-size: 13px;}
 
 /* ERROR */
 .wrap_error {position: relative;width: 100%;height: 100%;}
