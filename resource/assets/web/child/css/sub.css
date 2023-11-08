@@ -813,6 +813,7 @@
 .con_sub01 .tb .filebox>a {font-size: 13px;color: #333;}
 .con_sub01 .tb .ellipsis2 {width: 100%;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
 
+#popPreviewTit {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;width: calc(100% - 18px);}
 .pop_iframe .pop_cont {height: calc(100% - 50px);}
 .pop_iframe .pop_box {overflow-y: hidden;}
 .pop_iframe iframe {width: 100%;height: 100%;}
