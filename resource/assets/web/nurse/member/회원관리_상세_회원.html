@@ -3,76 +3,978 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <html>
-<head> 
-
-  <script>
-
-  /*ControllerUtil.redirectPost alert*/
-  if("" != ""){
-    var msg = "".replace("<br>", "\n");
-    alert(msg);
-
-  }
-  </script>
-
-
-    <!-- SET FILE PATH :: compatibility ie9 code -->
-    <base href="../" />
-    <!--[if IE]><script type="text/javascript">
-        // Fix for IE ignoring relative base tags.
-        (function() {
-            var baseTag = document.getElementsByTagName('base')[0];
-            baseTag.href = baseTag.href;
-        })();
-    </script><![endif]-->
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-      
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- TITLE -->
-    <title>EuDi</title>
-    <link rel="icon" type="image/gif" href="http://www.lgchem.com/images/kr/common/logo.ico" />
+    <head> 
     
 
-    <!-- common css file-->
-    <link rel="stylesheet" href="/resource/assets/web/css/main.css?version=1.3">
-    <link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?version=1.3">
 
 
-    <!-- nurse css file -->
-    <link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?version=2.1">
-    <link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?version=2.1">
-    <link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?version=1.2">
-    <link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css">
 
-    <!-- nurse js file-->
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?version=1.2"></script>
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/counseling.js"></script> 
 
-    <!-- common js file-->
-    <script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
-    <script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
 
-    <script type="text/javascript" src="/resource/assets/web/nurse/js/clipboard.min.js"></script>
 
-    <script src='/eum_.js'></script>
 
-    <script>
-      $(document).ready(()=> {
-        selEvent.init();
-        nurseJS.init();
-      })
+
+
+
+
+
+
+
+
+
+ 
+	
+	
+		
+	
+
+
+
+
+<script>
+
+/*ControllerUtil.redirectPost alert*/
+if("" != ""){
+    var msg = "".replace("<br>", "\n");
+	alert(msg);
+    
+}
+</script>
+
+
+	<!-- SET FILE PATH :: compatibility ie9 code -->
+        <base href="../" />
+        <!--[if IE]><script type="text/javascript">
+            // Fix for IE ignoring relative base tags.
+            (function() {
+                var baseTag = document.getElementsByTagName('base')[0];
+                baseTag.href = baseTag.href;
+            })();
+        </script><![endif]-->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+          
+        	
+        	
+        		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        	
+        
+        <meta name="format-detection" content="telephone=no">
+	     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <!-- TITLE -->
+         <title>EuDi</title>
+	    
+   	
+
+
+<!--2019-09-16 4M ê¹íë¹-->
+<!-- common css file-->
+
+<!-- common css file-->
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?20231110112920">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20231110112920">
+
+
+<!-- nurse css file -->
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?20231110112920">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?20231110112920">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?20231110112920">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css?20231110112920">
+
+
+
+<!-- nurse js file-->
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?20231110112920"></script>
+
+
+	
+		<!-- í¼ë¸ ìì¤ overwrite ë°©ì§ë¡ ê°ë°ìì¤ ì´ë¦ ë³ê²½
+		<script src="/resource/assets/web/nurse/js/counseling.js"></script>
+		-->
+		<script src="/resource/assets/web/nurse/js/counseling.dev.js?20231110112920"></script>
+	
+
+
+
+
+<!-- common js file-->
+<script type="text/javascript" src="/resource/assets/common/js/common.js?version=1.3"></script>
+<script type="text/javascript" src="/resource/assets/common/js/jquery.cookie.js?version=1.2"></script>
+
+<!-- ê°ë°ì© css -->
+<style>
+	.placeholder-err::placeholder{
+	  color: red;
+	  opacity: 1; /* íì´ì´í­ì¤ìì ë¿ìê² ëì¤ë íìì ë°©ì§íê¸° ìí css */
+	}
+	.placeholder-err::-webkit-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-ms-input-placeholder{
+	  color: red;
+	}
+	.placeholder-err:-mos-input-placeholder {
+	  color: red;
+	}
+</style>
+
+<script type="text/javascript">
+
       
-    </script>
-</head>
+    function SHA256(s){
+      
+        var chrsz   = 8;
+        var hexcase = 0;
+      
+        function safe_add (x, y) {
+            var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+            var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+            return (msw << 16) | (lsw & 0xFFFF);
+        }
+      
+        function S (X, n) { return ( X >>> n ) | (X << (32 - n)); }
+        function R (X, n) { return ( X >>> n ); }
+        function Ch(x, y, z) { return ((x & y) ^ ((~x) & z)); }
+        function Maj(x, y, z) { return ((x & y) ^ (x & z) ^ (y & z)); }
+        function Sigma0256(x) { return (S(x, 2) ^ S(x, 13) ^ S(x, 22)); }
+        function Sigma1256(x) { return (S(x, 6) ^ S(x, 11) ^ S(x, 25)); }
+        function Gamma0256(x) { return (S(x, 7) ^ S(x, 18) ^ R(x, 3)); }
+        function Gamma1256(x) { return (S(x, 17) ^ S(x, 19) ^ R(x, 10)); }
+      
+        function core_sha256 (m, l) {
+             
+            var K = new Array(0x428A2F98, 0x71374491, 0xB5C0FBCF, 0xE9B5DBA5, 0x3956C25B, 0x59F111F1,
+                0x923F82A4, 0xAB1C5ED5, 0xD807AA98, 0x12835B01, 0x243185BE, 0x550C7DC3,
+                0x72BE5D74, 0x80DEB1FE, 0x9BDC06A7, 0xC19BF174, 0xE49B69C1, 0xEFBE4786,
+                0xFC19DC6, 0x240CA1CC, 0x2DE92C6F, 0x4A7484AA, 0x5CB0A9DC, 0x76F988DA,
+                0x983E5152, 0xA831C66D, 0xB00327C8, 0xBF597FC7, 0xC6E00BF3, 0xD5A79147,
+                0x6CA6351, 0x14292967, 0x27B70A85, 0x2E1B2138, 0x4D2C6DFC, 0x53380D13,
+                0x650A7354, 0x766A0ABB, 0x81C2C92E, 0x92722C85, 0xA2BFE8A1, 0xA81A664B,
+                0xC24B8B70, 0xC76C51A3, 0xD192E819, 0xD6990624, 0xF40E3585, 0x106AA070,
+                0x19A4C116, 0x1E376C08, 0x2748774C, 0x34B0BCB5, 0x391C0CB3, 0x4ED8AA4A,
+                0x5B9CCA4F, 0x682E6FF3, 0x748F82EE, 0x78A5636F, 0x84C87814, 0x8CC70208,
+                0x90BEFFFA, 0xA4506CEB, 0xBEF9A3F7, 0xC67178F2);
+ 
+            var HASH = new Array(0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A, 0x510E527F, 
+                       0x9B05688C, 0x1F83D9AB, 0x5BE0CD19);
+ 
+            var W = new Array(64);
+            var a, b, c, d, e, f, g, h, i, j;
+            var T1, T2;
+      
+            m[l >> 5] |= 0x80 << (24 - l % 32);
+            m[((l + 64 >> 9) << 4) + 15] = l;
+      
+            for ( var i = 0; i<m.length; i+=16 ) {
+                a = HASH[0];
+                b = HASH[1];
+                c = HASH[2];
+                d = HASH[3];
+                e = HASH[4];
+                f = HASH[5];
+                g = HASH[6];
+                h = HASH[7];
+      
+                for ( var j = 0; j<64; j++) {
+                    if (j < 16) W[j] = m[j + i];
+                    else W[j] = safe_add(safe_add(safe_add(Gamma1256(W[j - 2]), W[j - 7]), Gamma0256(W[j - 15])), W[j - 16]);
+      
+                    T1 = safe_add(safe_add(safe_add(safe_add(h, Sigma1256(e)), Ch(e, f, g)), K[j]), W[j]);
+                    T2 = safe_add(Sigma0256(a), Maj(a, b, c));
+      
+                    h = g;
+                    g = f;
+                    f = e;
+                    e = safe_add(d, T1);
+                    d = c;
+                    c = b;
+                    b = a;
+                    a = safe_add(T1, T2);
+                }
+      
+                HASH[0] = safe_add(a, HASH[0]);
+                HASH[1] = safe_add(b, HASH[1]);
+                HASH[2] = safe_add(c, HASH[2]);
+                HASH[3] = safe_add(d, HASH[3]);
+                HASH[4] = safe_add(e, HASH[4]);
+                HASH[5] = safe_add(f, HASH[5]);
+                HASH[6] = safe_add(g, HASH[6]);
+                HASH[7] = safe_add(h, HASH[7]);
+            }
+            return HASH;
+        }
+      
+        function str2binb (str) {
+            var bin = Array();
+            var mask = (1 << chrsz) - 1;
+            for(var i = 0; i < str.length * chrsz; i += chrsz) {
+                bin[i>>5] |= (str.charCodeAt(i / chrsz) & mask) << (24 - i%32);
+            }
+            return bin;
+        }
+      
+        function Utf8Encode(string) {
+            string = string.replace(/\r\n/g,"\n");
+            var utftext = "";
+      
+            for (var n = 0; n < string.length; n++) {
+      
+                var c = string.charCodeAt(n);
+      
+                if (c < 128) {
+                    utftext += String.fromCharCode(c);
+                }
+                else if((c > 127) && (c < 2048)) {
+                    utftext += String.fromCharCode((c >> 6) | 192);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+                else {
+                    utftext += String.fromCharCode((c >> 12) | 224);
+                    utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+      
+            }
+      
+            return utftext;
+        }
+      
+        function binb2hex (binarray) {
+            var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+            var str = "";
+            for(var i = 0; i < binarray.length * 4; i++) {
+                str += hex_tab.charAt((binarray[i>>2] >> ((3 - i%4)*8+4)) & 0xF) +
+                hex_tab.charAt((binarray[i>>2] >> ((3 - i%4)*8  )) & 0xF);
+            }
+            return str;
+        }
+      
+        s = Utf8Encode(s);
+        return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
+      
+    }
+     
 
+ 
+</script>
+    <script type="text/javascript" src="/resource/assets/web/nurse/js/clipboard.min.js"></script>
+  <script>
+  <!-- 빌리버, 화상 통화 화면 띄우는 javascript, 간호사idx가 숫자로 넘어가야하나 현재 stringID만 넘어와 우선은 환아 idx로 대체해둠  -->
+  function fnJoinVideoCall(){
+		  //var web_rtc_server_url = 'https://api.webrtc.belivvr.com';
+		  var web_rtc_server_url = 'https://jitsi.belivvr.com/';
+		  var seed = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+		  var open_url = web_rtc_server_url + seed + '/nurse/' + '43886';
+		  window.open(open_url, 'window','height=' + screen.height + ',width=' + screen.width + 'fullscreen=yes');
+	  return;
+  }
+  /* 빌리버 코드변경 끝 */
+  
+      $(function(){
+    	  /* inEvent.init(); */
+          selEvent.init();
+          nurseJS.init();
+         var clipboard = new Clipboard('.clipboard');//붙여넣기
+        $(window).resize(resizeContents);
+        resizeContents();
+        function resizeContents() {
+          $('.wrap_main').css({
+            'min-height': $(window).height() + 'px'
+          });
+        }
+
+      });
+      
+      
+   	function fnListPage(){
+   		if($("#cState").val() == "RM" || $("#cState").val() == "D"){
+   			$("#cState").val("M");
+   		}
+	 	document.viewForm.action = "/nurse/member/list.do";
+	    document.viewForm.submit();
+		
+	}
+   	
+
+	
+	function fnViewPage(){
+	 	document.viewForm.action = "/nurse/member/view.do";
+	    document.viewForm.submit();
+		
+	}
+
+
+
+	function childInfoUpdate(){
+		var frm = 'viewForm';
+		if(checkValidation(frm)){
+			 if($("#sel02").val() == "0"){
+				  alert("병원명을 확인해주세요");
+				  return false;
+			  }
+			 
+			 
+				if($("input[name='pstGrwTrtmEprnYn']:checked").val() == "N"){
+					$("#pstUseMedcCd").prop('selectedIndex', '');
+					$("#pstUseMedcCd").val("").prop("selected", true);
+				}
+				
+				
+				if($("#mCpNumber2").val() == ""){
+		  		    alert("휴대폰번호를 입력해 주세요.");
+		  		    $("#tel02").focus();
+		  		    return;
+		  		}
+
+
+				if($("#mCpNumber3").val() == ""){
+		  		    alert("휴대폰번호를 입력해 주세요.");
+		  		    $("#tel03").focus();
+		  		    return;
+		  		}
+
+				
+				/* 
+				if($("#mPost").val() == ""){
+		  		    alert("주소를 입력해 주세요.");
+		  		    $("#mPost").focus();
+		  		    return;
+		  		}
+
+		  		
+		  		if($("#mAddr2").val() == ""){
+		  		    alert("상세주소를 입력해 주세요.");
+		  		    $("#mAddr2").focus();
+		  		    return;
+		  		} */
+		  		
+		  		if($('[name=CPCHECK]').val()!="Y"){
+					alert('휴대폰번호 중복확인을 해주세요.');
+					return;
+				}
+		  		
+
+				
+				if($("#cChargNurseId").val() == ""){
+					alert("담당 간호사를 선택해주세요.");
+					return;
+				}
+				
+				/*   if($("#cChargNurseId").val() != $("#ori_cChargNurseId").val()){
+					  console.log("담당 간호사 " + $("#cChargNurseId").val() +" 으로 변경 됨");
+			
+				  } */
+				  
+				  
+				  
+			  var result = confirm("저장하겠습니까?");
+			  if(result){
+				  
+				  //담당간호사 변경시 프로세스 추가
+				  //if($("#cChargNurseId").val() != $("#ori_cChargNurseId").val()){
+					  //  console.log("담당 간호사 " + $("#cChargNurseId").val() +" 으로 변경 됨");
+					  //현재 상담 상태 조회
+				  //}
+				  
+				   actionurl = "/nurse/mis/updateChildInfo.do";
+			          $.ajax({
+			              async: false,
+			              type: "POST",
+			              url : actionurl,
+			              data : $("#viewForm").serialize(),
+			              dataType : "json",
+			              success: function(obj){
+			            	  if(obj.result < 1){
+			            		  alert("일시적인 오류 입니다,다시 시도 해주세요");
+			            		  return;
+			            	  } else {
+			            		 // location.reload();
+			            		  //fnViewPage($("#cIdx").val());
+			            		  fnListPage();
+			            		  
+			            	  }
+			           			            
+			              },
+			              error: function(xhr, option, error){
+			                   // alert(xhr.status+" | "+error); //오류코드 | 오류내용
+			                    
+			                    alert("code:"+xhr.status+"\n"+"message:"+xhr.responseText+"\n"+"error:"+error);
+			              }
+			              /*error : function(success){
+			                  meg = "서버와 통신중 에러가 발생하였습니다."
+			                  alert("처리결과 : "+meg);
+			              }*/
+			          });
+			  }
+		}
+		 
+	}
+
+
+	function childStateUpdate(Cstate){
+		
+		
+		if($("input[name='pstGrwTrtmEprnYn']:checked").val() == "N"){
+			$("#pstUseMedcCd").prop('selectedIndex', '');
+			$("#pstUseMedcCd").val("").prop("selected", true);
+		}
+		
+		
+		if($("#mCpNumber2").val() == ""){
+  		    alert("휴대폰번호를 입력해 주세요.");
+  		    $("#tel02").focus();
+  		    return;
+  		}
+
+
+		if($("#mCpNumber3").val() == ""){
+  		    alert("휴대폰번호를 입력해 주세요.");
+  		    $("#tel03").focus();
+  		    return;
+  		}
+
+		
+		
+	/* 	if($("#mPost").val() == ""){
+  		    alert("주소를 입력해 주세요.");
+  		    $("#mPost").focus();
+  		    return;
+  		}
+
+  		
+  		if($("#mAddr2").val() == ""){
+  		    alert("상세주소를 입력해 주세요.");
+  		    $("#mAddr2").focus();
+  		    return;
+  		} */
+  		
+  		if($('[name=CPCHECK]').val()!="Y"){
+			alert('휴대폰번호 중복확인을 해주세요.');
+			return;
+		}
+  		
+		$("#cState").val(Cstate);
+
+		if(Cstate == "M"){
+			if($("#sel02").val() == "0"){
+				alert("병원명을 확인해주세요.");
+				return;
+			}
+		}
+		
+		
+		if(Cstate != "R"){//반려,복구는 확인 안 함
+			if(Cstate != "RMA"){
+				if($("#cChargNurseId").val() == ""){
+					alert("담당 간호사를 선택해주세요.");
+					return;
+				}
+			}
+		}
+	
+		var questionStr = "";
+		if(Cstate == "M" || Cstate == "NM"){
+			questionStr ="승인하시겠습니까?";
+		} else if(Cstate == "R") {
+			questionStr ="반려하시겠습니까?";
+		} else if(Cstate == "RM") {
+			questionStr ="복구하시겠습니까?";
+		} else if(Cstate == "RMA") {
+			questionStr ="복구하시겠습니까?";
+			$("#cState").val("A");
+		} else {
+			questionStr ="회원 탈퇴처리시 모든 환아 및 아이디도 삭제 됩니다. 계속 진행하시겠습니까?";
+		}
+
+
+		if($("#ori_cState").val() == "DR"){
+			if(Cstate == "D"){
+				$("#cState").val("D");
+			} else {
+				$("#cState").val("M");
+			}
+		}
+		
+		if($("#cState").val() == "D"){//탈퇴사유 추가
+			if($("#mWithdrawCode option:selected").val() == "" || $("#mWithdrawCode option:selected").val() == null  || $("#mWithdrawCode option:selected").val() == 0){
+				alert("탈퇴 유형을 선택해 주세요.");
+				return;
+			}
+
+			if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술 선택 했으면 사유 체크
+				if($("#mWithdrawContent").val() == ""){
+					alert("탈퇴 사유를 작성해 주세요.");
+					return;
+				}
+			}
+		
+			
+			if($("#rState option:selected").val()  == ""){//기타 서술 선택 했으면 사유 체크
+				alert("스마트케이스 반납 여부를 선택해 주세요.");
+				return;
+			}
+		}
+
+		
+		if(Cstate == "M"){//승인 신규 환아 팝업 추가
+			
+
+
+			
+		
+			
+			if($('[name=HOSPCHECK]').val()!="Y"){
+				alert('병원명을 확인해주세요.');
+				return;
+			}
+
+			if($('[name=DOCCHECK]').val()!="Y"){
+				alert('의사명을 확인해주세요.');
+				return;
+			}
+			
+			$("#cNurseName").val($("#cChargNurseId option:selected").text());
+			
+			let data = {"cName": $("#cName").val(),"cBirth": $("#cBirth").val(),"cIdx":43886,"mId":$("#mId").val()};
+		    let dup_list = "";
+			              actionurl = "/nurse/selectDupChildDetailInfo.do";
+				          $.ajax({
+				              async: false,
+				              type: "POST",
+				              url : actionurl,
+				              data : data,
+				              dataType : "json",
+				              success: function(obj){
+				            	  if(obj.result.length > 0){//중복데이터 존재
+				            		 $("#dup_info").html("<b>"+$("#cName").val()+ " " +$("#cBirth").val()+"</b> 으로 아이 검색결과");
+				            	     $("#dup_total").html(obj.result.length);
+				            		  dup_list += "<ul>";
+						           		 for(var i=0;i < obj.result.length;i++){
+											dup_list += "<li>";						         
+											dup_list += "<a href='javascript:selectHospitalName(\""+obj.result[i].cidx+"\")'>";
+											dup_list += "<div>";
+											dup_list += "<ul>";
+											dup_list += "<li class='name'>"+ obj.result[i].cname+"</li>";
+											if(obj.result[i].csex == "M"){
+												dup_list += "<li class='gender'>남아</li>";
+											} else {
+												dup_list += "<li class='gender'>여아</li>";
+											}
+											dup_list += "<li class='date'>"+ obj.result[i].cbirth+"</li>";
+											dup_list += "</ul>";
+											dup_list += "<p class='idbox'>"+ obj.result[i].mid+"</p>";
+											dup_list += "</div>";
+											dup_list += "<div>";
+											dup_list += "<p class='hospital'>"+ obj.result[i].chospitalName+"</p>";
+											dup_list += "<p class='phone'>"+ obj.result[i].mcpNumber1+"</p>";
+											dup_list += "</div>";
+											dup_list += "</a>";
+											dup_list += "</li>";
+
+						           			
+						           		 }
+						           		dup_list += "</ul>";
+
+			   	                        $("#dup_list").html(dup_list);
+					            	    openPopup('duplicateChild_pop');
+				            	  } else {
+				            		  
+				            			var result = confirm(questionStr);
+				            	  	    if(result){
+				            				      actionurl = "/nurse/mis/updateMemberState.do";
+				            			          $.ajax({
+				            			              async: false,
+				            			              type: "POST",
+				            			              url : actionurl,
+				            			              data : $("#viewForm").serialize(),
+				            			              dataType : "json",
+				            			              success: function(obj){
+				            			            	  if(obj.result < 1){
+				            			            		  alert("일시적인 오류 입니다,다시 시도 해주세요");
+				            			            		  return;
+				            			            	  } else {
+				            				              alert("승인 되었습니다");
+				            			            		  fnListPage();
+				            			            	  }
+				            			            
+				            			              },
+				            			              error: function(xhr, option, error){
+				            			                    alert(xhr.status+" | "+error); //오류코드 | 오류내용
+				            			              }
+				            			          });
+				            			          
+				            	  	  		  }
+				            	  }
+				            
+				              },
+				              error: function(xhr, option, error){
+				                    alert(xhr.status+" | "+error); //오류코드 | 오류내용
+				              }
+				             
+				          });
+				          
+		} else {
+			if(Cstate == "NM"){Cstate = "M";$("#cState").val("M");}//중복 환아 검색 팝업에서 승인
+			
+			if(Cstate == "R"){
+				//사유 넣기
+				let rejectReason = $("#rejectReason").val();
+				if(rejectReason != ""){
+					$("#entyRqstRjtRsnCtn").val(rejectReason);
+				}
+			}
+			
+			
+			var result = confirm(questionStr);
+	  	    if(result){
+				      actionurl = "/nurse/mis/updateMemberState.do";
+			          $.ajax({
+			              async: false,
+			              type: "POST",
+			              url : actionurl,
+			              data : $("#viewForm").serialize(),
+			              dataType : "json",
+			              success: function(obj){
+			            	  if(obj.result < 1){
+			            		  alert("일시적인 오류 입니다,다시 시도 해주세요");
+			            		  return;
+			            	  } else {
+			            		  if(Cstate == "A" || Cstate == "M"){
+				            		  alert("승인 되었습니다");
+				            	 }  else if(Cstate == "RM" || Cstate == "RMA"){
+				            		  alert("복구 되었습니다");
+				            	 } else if(Cstate == "R"){
+				            		  alert("반려 되었습니다");
+				            	 } 
+			            		  fnListPage();
+			            	  }
+			            
+			              },
+			              error: function(xhr, option, error){
+			                    alert(xhr.status+" | "+error); //오류코드 | 오류내용
+			              }
+			              /*error : function(success){
+			                  meg = "서버와 통신중 에러가 발생하였습니다."
+			                  alert("처리결과 : "+meg);
+			              }*/
+			          });
+			          
+	  	  		  }
+		}
+		
+	}
+	  
+ 	function fnHospitalSearch(){
+   	    var hospital_list ="";
+   	 $("#search_hospital").html("");
+
+   	 
+   		var chkData = { "searchKeyword": $("#search_name").val() };
+   	 
+	 	if($("#search_name").val() == "") {
+	  		alert("병원명을 입력해주세요");
+	  		$("#search_name").focus();
+	  		return;
+	  	} 
+	  	$("#loading").show();
+	 	 setTimeout(function() {
+  		      actionurl = "/search_hospital.do";
+		      $.ajax({
+		          async: false,
+		          type: "POST",
+		          url : actionurl,
+		          data:chkData,
+		          dataType : "json",
+		          complete: function(){ $("#loading").hide();},
+		          success: function(obj){
+		        	
+		        	if(obj.result.length < 1){
+		        	 hospital_list += "<ul>";
+		             hospital_list += "<li class='result_none'><p>검색결과가 없습니다.</p></li>";
+		             hospital_list += "</ul>";
+		        	} else {
+		        				hospital_list += "<ul>";
+					           		 for(var i=0;i < obj.result.length;i++){
+					           			 hospital_list += "<li><a href='javascript:selectHospitalName(\""+ hospInfoClean(obj.result[i].hmHospCd) +"\",\"" + hospInfoClean(obj.result[i].hmHospNm) + "\",\""+ hospInfoClean(obj.result[i].hmHospAddress1) + "\",\"" + hospInfoClean(obj.result[i].hmHospAddress2) +"\");''>"+ obj.result[i].hmHospNm +"("+ obj.result[i].hmHospAddress1+ " " +obj.result[i].hmHospAddress2 +")</a></li>";
+					           		 }
+		        		 		hospital_list += "</ul>";
+		        	}
+		        	
+		          },
+		          error: function(xhr, option, error){
+		                alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		          }
+		          /*error : function(success){
+		              meg = "서버와 통신중 에러가 발생하였습니다."
+		              alert("처리결과 : "+meg);
+		          }*/
+		      }); 
+		      
+		      
+		   	 $("#search_hospital").html(hospital_list);
+		}, 0); // End setTimeout(function()
+				
+   	}
+ 	function hospInfoClean(str){
+ 		if (str) {
+ 			str = $.trim(str);
+ 			str = str.replace(/"/g, '\\"');
+ 		}
+ 		return str;
+ 	}
+ 	
+ 	function fnDoctorSearch(){
+  		var hm_hosp_cd = $("#cHospitalIdx").val();//선택한 병원 코드
+		if(hm_hosp_cd == null || hm_hosp_cd == ""){
+			alert("병원을 먼저 선택하시면 해당 병원 소속 의사를 검색합니다.");
+			return;
+		}
+  		
+		if($("#search_doctor_name").val() == "") {
+      		alert("의사명을 입력해주세요");
+      		$("#search_doctor_name").focus();
+      		return;
+      	}
+		
+			 var doctor_list ="";
+	      	 var chkData = { "hmHospCd": $("#cHospitalIdx").val(),"searchKeyword": $("#search_doctor_name").val() };
+	     	 $("#search_doctor").html("");
+	         $("#loading").show();
+	         setTimeout(function() {
+		         actionurl = "/search_doctor_nopaging.do";
+		         $.ajax({
+		             async: false,
+		             type: "POST",
+		             url : actionurl,
+		             data:chkData,
+		             dataType : "json",
+		             complete: function(){ $("#loading").hide();},
+		             success: function(obj){
+		           	
+		           	if(obj.result.length < 1){
+		           		doctor_list += "<ul>";
+		           		doctor_list += "<li class='result_none'><p>검색결과가 없습니다.</p></li>";
+		           		doctor_list += "</ul>";
+		           	} else {
+		           		doctor_list += "<ul>";
+					           		 for(var i=0;i < obj.result.length;i++){
+					           			doctor_list += "<li><a href='javascript:selectDoctorName(\""+obj.result[i].docNo+"\",\""+obj.result[i].docNm+"\");''>"+obj.result[i].docNm+"("+obj.result[i].docNo+")</a></li>";
+					           		 }
+					           		doctor_list += "</ul>";
+		           	}
+		           	
+		             },
+		             error: function(xhr, option, error){
+		                   alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		             }
+		             /*error : function(success){
+		                 meg = "서버와 통신중 에러가 발생하였습니다."
+		                 alert("처리결과 : "+meg);
+		             }*/
+		         }); 
+		         
+		         
+		      	 $("#search_doctor").html(doctor_list);
+	     	}, 0); // End setTimeout(function()
+
+  	}
+   	
+  	function selectHospitalName(hidx,hname,haddr1,haddr2){
+   	   //$("#selectHname").val(hname+"("+haddr1+haddr2+")");
+   	   $("#selectHname").val(hname);
+   	   $("#cHospitalIdx").val(hidx);
+   	   $("#cHospitalName").val(hname);
+   	   //$("#hNameText").text(hname+"("+haddr1+haddr2+")");
+   	   $("#hNameText").text(hname);
+   	   $(".pop_mask").css("display","none");
+   	   $(".pop_search").css("display","none");
+   	   $('[name=HOSPCHECK]').val('Y');
+
+   	}
+	
+	function selectDoctorName(docNo,docNm){
+ 	   $("#cDoctorName").val(docNm);
+       $("#doctOnkyCd").val(docNo);
+	   $(".pop_mask_doctor").css("display","none");
+	   $(".pop_search_doctor").css("display","none");
+	   $('[name=DOCCHECK]').val('Y');
+ 	}
+	
+	function fnCreateTempPassword(){
+		var result = confirm("비밀번호 초기화가 되면 기존 비밀번호는 찾을 수 없습니다,초기화 시키시겠습니까?");
+	    if(result){
+	    	
+		      actionurl = "/nurse/createTempPassword.do";
+	          $.ajax({
+	              async: false,
+	              type: "POST",
+	              url : actionurl,
+	              data : $("#viewForm").serialize(),
+	              dataType : "json",
+	              success: function(obj){
+	            	  let result = obj.result;
+	            	  alert("임시 비밀번호가 알림톡으로 전송 되었습니다");
+	            	  console.log("전송결과==>" +result);
+	            	  if(result == "kok"){
+	            		  alert("임시 비밀번호가 회원 연락처의 알림톡으로 전송 되었습니다");
+	            	  } else   if(result == "pno"){
+	            		  alert("회원의 연락처가 없습니다");
+	            	  } else {
+	            		  alert("일시적인 오류 입니다,다시 시도해주세요");
+	            	  }
+	            	  
+	            	  
+	            		/*   $("#temp_pass").val(obj.result);
+	          	    	  var popthis = $(".pop_search_temp");
+	          	    	  popthis.css({
+	          	    	    "top":  (($(window).height()-popthis.outerHeight())/2) + $(window).scrollTop()+"px",
+	          	    	    "left": (($(window).width()-popthis.outerWidth())/2+$(window).scrollLeft())+"px",
+	          	    	  });
+
+	          	    	  popthis.css("display","block");
+	          	    	  $(".pop_mask_temp").css("display","block");
+	          	    	  popthis.find(".pop_close").click(function(){
+	          	    	    $(".pop_mask_temp").css("display","none");
+	          	    	    popthis.css("display","none");
+	          	    	  });
+	      */
+	            
+	              },
+	              error: function(xhr, option, error){
+	                    alert(xhr.status+" | "+error); //오류코드 | 오류내용
+	              }
+	              /*error : function(success){
+	                  meg = "서버와 통신중 에러가 발생하였습니다."
+	                  alert("처리결과 : "+meg);
+	              }*/
+	          });
+	          
+	          
+	  
+	    }
+	    
+	    
+	}
+
+	
+	function fnGrowthGraphPage(){
+ 	   if("Y" == "N"){
+ 		   alert("해당 환아는 정보를 공개하지 않았습니다");
+ 		   return;
+ 	   }
+ 	   document.viewForm.action = "/nurse/member/growth_graph.do";
+	       document.viewForm.submit();
+		
+ 		
+ 	}
+ 	
+ 	function fnDosePage(){
+  	   document.viewForm.action = "/nurse/member/dose_pre.do";
+ 	   document.viewForm.submit();
+  	}
+ 	
+  	
+  	function fnScheduleManagementPage(){
+  	   document.viewForm.action = "/nurse/member/scheduleManagement.do";
+ 	   document.viewForm.submit();
+  	}
+  	
+	function fnCounselListPage(){
+	  	   document.viewForm.action = "/nurse/member/counsel_list.do";
+	 	   document.viewForm.submit();
+	  	}
+
+
+	
+	function childDelete(){
+		
+
+		if($("#mWithdrawCode option:selected").val() == "" || $("#mWithdrawCode option:selected").val() == null  || $("#mWithdrawCode option:selected").val() == 0){
+			alert("탈퇴 유형을 선택해 주세요.");
+			return;
+		}
+
+		if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술 선택 했으면 사유 체크
+			/* if($("#mWithdrawContent").val() == ""){
+				alert("탈퇴 사유를 작성해 주세요.");
+				return;
+			} */
+		}
+	
+		
+		if($("#rState option:selected").val()  == ""){//기타 서술 선택 했으면 사유 체크
+			alert("스마트케이스 반납 여부를 선택해 주세요.");
+			return;
+		}
+		
+		$("#cState").val("D");
+		
+		var result = confirm("회원 탈퇴처리시 모든 환아 및 아이디도 삭제 됩니다. 계속 진행하시겠습니까?");
+  	    if(result){
+			      actionurl = "/nurse/mis/updateMemberState.do";
+		          $.ajax({
+		              async: false,
+		              type: "POST",
+		              url : actionurl,
+		              data : $("#viewForm").serialize(),
+		              dataType : "json",
+		              success: function(obj){
+		            	  if(obj.result < 1){
+		            		  alert("일시적인 오류 입니다,다시 시도 해주세요");
+		            		  return;
+		            	  } else {
+		            		  fnListPage();
+		            	  }
+		            
+		              },
+		              error: function(xhr, option, error){
+		                    alert(xhr.status+" | "+error); //오류코드 | 오류내용
+		              }
+		              /*error : function(success){
+		                  meg = "서버와 통신중 에러가 발생하였습니다."
+		                  alert("처리결과 : "+meg);
+		              }*/
+		          });
+		          
+  	  		  }
+	}
+ 	
+	
+	function fnCloseReject(){
+
+	   	   $(".pop_mask_reject").css("display","none");
+	   	   $(".pop_reject").css("display","none");
+	
+	       
+	   	}
+  </script>
+  </head>
    <body>
 	  <div class="wrap wrap_sub wrap_sub01">
+
+      <!-- 담당 간호사 변경 팝업 2023.11.10 -->
+      <div class="popup popup_alert">
+				<div class="inner_pop">
+					<button type="button" onclick="javascript:;" class="btn_close close_pop"></button>
+	
+					<div id="" class="pop_content pop_alert">
+						<div class="pop_tit">담당간호사 변경 불가로<br> 저장 실패</div>
+            <p class="tcenter mt15">
+              예약된 상담 시간에 <strong>{박소라}</strong> 간호사는<br>
+              상담이 불가합니다. 상담 가능한 다른 간호사를 지정하여 재신청 하시기 바랍니다. 
+            </p>
+            <ul class="pop_txt_list mt20">
+              <li><strong>대상:</strong> OOO (병원명) 상담 신청</li>
+              <li><strong>시간:</strong> YYYY-MM-DD HH:MM ~ HH:MM</li>
+            </ul>
+						<button type="button" name="">확인</button>
+					</div>
+				</div>
+			</div>
+
       <!--// top -->
       <div class="sub_top">
         <div class="nav">
@@ -82,15 +984,15 @@
           </div>
         </div>
         <!--// 수정 -->
-        
-        <div class="tab tab_border tab_slide">
+  		<div class="tab tab_border">
           <div class="inner">
             <ul>
-              <li class="active"><a href="/nurse/member/view.do">회원상세</a></li>
-              <li><a href="javascript:;">상담관리</a></li>  <!-- 메뉴 추가 2023.02 -->
-              <li><a href="javascript:fnDosePage()">투여확인</a></li>
-              <li><a href="javascript:fnScheduleManagementPage()">투여계획</a></li>
-              <li><a href="javascript:fnGrowthGraphPage()">성장관리</a></li>
+                  <li class="active"><a href="javascript:fnViewPage()">회원상세</a></li>  
+                  <li><a href="javascript:fnCounselListPage()">상담관리</a></li>  <!-- 메뉴 추가 2023.02 -->
+                  <li><a href="javascript:fnScheduleManagementPage()">투여계획</a></li>
+	              <li><a href="javascript:fnDosePage()">투여확인</a></li>
+	              <li><a href="javascript:fnGrowthGraphPage()">성장관리</a></li>
+
             </ul>
           </div>
         </div>
@@ -98,34 +1000,64 @@
       </div>
       <!-- top //-->
       <!--// content -->
-      <form id="viewForm" name="viewForm" role="form" action="/nurse/member/view.do" method="post">
-        <input type="hidden" name="pageIndex" id="pageIndex" value="1">
-        <input type="hidden" name="cHospitalIdx" id="cHospitalIdx" value="">
-        <input type="hidden" name="cHospitalName" id="cHospitalName" value="dsad">
-        <input type="hidden" name="cIdx" id="cIdx" value="18135">
-        <input type="hidden" name="cBirth" id="cBirth" value="2008-01-27">
-        <input type="hidden" name="mId" id="mId" value="4mtest3">
-        <input type="hidden" name="ori_cState" id="ori_cState" value="AA">
-        <input type="hidden" name="searchName" id="searchName" value="">
-        <input type="hidden" name="searchId" id="searchId" value="4mnurse">
-        <input type="hidden" name="srh03" id="srh03" value="4mnurse">
-        <input type="hidden" name="searchKeyword" id="searchKeyword" value="">
-        <input type="hidden" name="cState" id="cState" value="AA">
-        <input type="hidden" name="hIdx" id="hIdx" value="">
-        <input type="hidden" name="hName" id="hName" value="">
-        <input type="hidden" name="docNo" id="docNo" value="">
-        <input type="hidden" name="reSearch" id="reSearch" value="Y">
-        <input type="hidden" name="privateYn" id="privateYn" value="N">
-      <div class="content con_sub con_sub01 member"><!-- 퍼블 클래스 'member'추가 - 2023.02 -->
+       <form id="viewForm" name="viewForm" commandName="memberVo" role="form" action="/nurse/member/view.do" method="post">
+       <input type="hidden" name="pageIndex" id="pageIndex" value="1">
+       <input type="hidden" name="cHospitalIdx" id="cHospitalIdx" value="WKRH00000158">
+        <input type="hidden" name="cHospitalName" id="cHospitalName" value="아주대학교병원">
+		<input type="hidden" name="cIdx" id="cIdx" value="43886">
+		<input type="hidden" name="mId" id="mId" value="4mtest8">
+		<input type="hidden" name="ori_cState" id="ori_cState" value="M">
+		<input type="hidden" name="searchName" id="searchName" value="">
+		  <input type="hidden" name="searchNurseId" id="searchNurseId" value="">
+			<input type="hidden" name="srh04" id="srh04" value="">
+		<input type="hidden" name="searchKeyword" id="searchKeyword" value="">
+		<input type="hidden" name="cState" id="cState" value="">
+		<input type="hidden" name="hIdx" id="hIdx" value="">
+		<input type="hidden" name="hName" id="hName" value="">
+		<input type="hidden" name="doctOnkyCd" id="doctOnkyCd" value="WKRM00126983">
+		<input type="hidden" name="reSearch" id="reSearch" value="Y">
+		<input type="hidden" name="privateYn" id="privateYn" value="Y">
+		<input type="hidden" name="frstRcp1DtCfmYn" id="frstRcp1DtCfmYn" value="">
+		
+	   <input type="hidden" name="HOSPCHECK" value=""> <!-- 병원명 체크 --> 
+	   <input type="hidden" name="DOCCHECK" value="">	<!-- 의사명 체크 --> 
+	   <input type="hidden" name="CPCHECK" value="Y">	<!-- 연락처 중복체크 추가 -->
+	 
+	 
+	 	<!-- 검색조건 -->
+	 	<input type="hidden" name="searchSichNm" id="searchSichNm" value="">
+	 	<input type="hidden" name="searchsichPrntMbrId" id="searchsichPrntMbrId" value="">
+	 	<input type="hidden" name="hNasearchSichBtdyme" id="searchSichBtdy" value="">
+	 	<input type="hidden" name="searchSearchCrgeDoctNm" id="searchSearchCrgeDoctNm" value="">
+	 	<input type="hidden" name="searchSichMgtProgStatCd" id="searchSichMgtProgStatCd" value="">
+	 	<input type="hidden" name="searchPhn" id="searchPhn" value="">
+
+
+	 
+	    <!--  기존 핸드폰 번호 갖고 있어야 함 -->
+     <input type="hidden" name="mCpNumber1Reg" id="mCpNumber1Reg" value="010">     
+     <input type="hidden" name="mCpNumber2Reg" id="mCpNumber2Reg" value="0000">
+     <input type="hidden" name="mCpNumber3Reg" id="mCpNumber3Reg" value="0000">
+     
+	 <input type="hidden" name="cNurseName" id="cNurseName" value=""><!-- 알림톡 때문에 간호사 이름 필요 -->
+	 
+	 
+	 
+	<!--  기존 담당간호사 아이디 가지고 있어야 함(담당간호사 변경 프로세스) -->
+	 <input type="hidden" name="ori_cChargNurseId" id="ori_cChargNurseId" value="barakee82">
+	 
+	 <input type="hidden" name="cDocName" id="cDocName" value="김가희">
+	 
+	 	 <!-- 반려사유 -->
+	 <input type="hidden" name="entyRqstRjtRsnCtn" id="entyRqstRjtRsnCtn" value="">
+	 
+      <div class="content con_sub con_sub01">
         <div class="ipt_box">
           <div class="inner">           
-            <h3 class="info01">회원 정보
-              <p class="child_info"><img src="/resource/assets/web/nurse/images/member/character.png" alt="character"><span><b>홍길동</b> 어린이</span><i>33개월 (만 6살)</i></p>
-            </h3>
-            
+            <h3 class="info01">기본 정보</h3>
             <div class="tb">
-              <table summary="회원 정보" cellpadding="0" cellspacing="0" border="0">
-                <caption>회원 정보</caption>
+              <table summary="기본 정보" >
+                <caption>기본 정보</caption>
                 <colgroup>
                     <col style="width:110px;">
                     <col style="*">
@@ -133,216 +1065,407 @@
                 <tbody>
                   <tr>
                     <td class="tit"><p>가입일자</p></td>
-                    <td class="cont"><p>2020-01-09</p></td>
+                    <td class="cont"><p>2023-08-03</p></td>
                   </tr>
+                
                   <tr>
                     <td class="tit"><p>아이디</p></td>
-                    <td class="cont"><p>4mtest3</p></td>
+                    <td class="cont"><p>4mtest8</p></td>
                   </tr>
-                  <tr>
+                 <tr>
                     <td class="tit"><p>회원상태</p></td>
-                    <td class="cont"><p>회원</p></td>
+                    <td class="cont"><p>
+                    
+				     	 
+             			       
+                         
+             			       
+                           			회원
+                           		
+                         
+             			       
+                         
+             			       
+                         
+             			       
+                         
+             			       
+                         
+             			       
+                         
+             			       
+                         
+		                            
+		                            
+                    </p></td>
                   </tr>
-                  <tr>
-                    <td class="tit"><p>휴대폰번호</p></td>
-                    <td class="cont">
-                      <div class="select_tel">
-                        <label for="tel01">010</label>
-                        <select id="tel01" name="mCpnumber1">
-                          <option selected="selected">010</option>
-                          <option value="011">011</option>
-                          <option value="017">017</option>
-                          <option value="018">018</option>
-                          <option value="019">019</option>
-                        </select>
-                      </div>
-                      <span class="hyphen">-</span>
-                      <div class="input_tel">
-            						<span class="input_box">
-          							  <input type="text" id="tel02" name="mCpnumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="4726" class="ipt"  maxlength="4">
-            						</span>
-            					</div>
-                      <span class="hyphen">-</span>
-                      <div class="input_tel">
-            						<span class="input_box">
-          							  <input type="text" id="tel03" name="mCpnumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="8132" class="ipt"  maxlength="4">
-            						</span>
-            					</div>
-                    </td>
-                  </tr>
+               
                   
-<!--///////////////////////////////////////////////////////////////////////
-///////////             ** 퍼블추가/ 수정 - 2023.02 **              ///////
-////////////////////////////////////////////////////////////////////////-->
-
-                  <tr>
+                          <tr>
                     <td class="tit"><p>주소</p></td>
                     <td class="cont">
-                      <!-- <div class="cont_inner"> -->
+                      <!-- <div class="cont_inner">  readonly=""-->
                         <div class="addr_box01" id="addr_box01">
                           <div class="input_addr">
                             <span class="input_box">
-                              <input type="text" id="pPost" name="pPost" class="ipt" value="" readonly="" placeholder="06760">
+                              <input type="text" id="mPost" name="mPost" class="ipt" value="06753" readonly>
                             </span>
                             <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
                           </div>
                           <div class="input_row mt5">
                             <span class="input_box">
-                              <input type="text" id="pAddr1" name="pAddr1" class="ipt" value="" readonly="" placeholder="서울시 서초구 태봉로2길 60">
+                              <input type="text" id="mAddr1" name="mAddr1" class="ipt" value="서울 서초구 양재천로19길 28 (양재동)" readonly>
                             </span>
                           </div>
                           <div class="input_row mt5">
                             <span class="input_box">
-                              <input type="text" id="pAddr2" name="pAddr2" class="ipt" value="" placeholder="(우면동, 네이처힐 4단지)">
+                              <input type="text" id="mAddr2" name="mAddr2" class="ipt" value="4F">
                             </span>
                           </div>
                         </div>
                         <div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
                           <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="width:20px;cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
                         </div>
-                        <!--// 주소 입력 후 -->
-                        <div class="addr_box02 blind" id="addr_box02">
-                          <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
-                          <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                          </ul>
-                        </div>
+              
                       <!-- </div> -->
+                    </td>
+                  </tr>
+                     <tr>
+                    <td class="tit"><p>휴대폰번호</p></td>
+                    <td class="cont">
+                      <div class="select_tel">
+                        <label for="tel01">010</label>
+                        <select id="mCpNumber1" name="mCpNumber1">
+                            <option selected="selected">010</option>
+                  		    <option value="011">011</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                      </div>
+                      <span class="hyphen">-</span>
+                      <div class="input_tel">
+            						<span class="input_box">
+          							<input type="text" id="mCpNumber2" name="mCpNumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="0000" class="ipt"  maxlength="4">
+            						</span>
+            					</div>
+                      <span class="hyphen">-</span>
+                      <div class="input_tel">
+            						<span class="input_box">
+          							<input type="text" id="mCpNumber3" name="mCpNumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="0000" class="ipt"  maxlength="4">
+            						</span>
+            					</div>
                     </td>
                   </tr>
                 </tbody>
               </table>
+                <div class="btn_add"><a href="javascript:chkCp();">휴대폰번호 중복확인</a></div>
             </div>
 
             <h3 class="info02">아이 정보</h3>
             <div>
               <h4>기본 정보</h4>
               <div class="tb">
-                <table summary="기본 정보" cellpadding="0" cellspacing="0" border="0">
+                <table summary="기본 정보" >
                   <caption>기본 정보</caption>
                   <colgroup>
                       <col style="width:110px;">
                       <col style="*">
                   </colgroup>
                   <tbody>
-                    <tr>
+       			 <tr>
+                    <td class="tit"><p>등록일자</p></td>
+                    <td class="cont"><p>2023-08-03</p></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="tit"><p>승인일자</p></td>
+                    <td class="cont"><p>2023-11-10</p></td>
+                  </tr>
+
+                  <tr>
+                    <td class="tit"><p>신환교육</p></td>
+                    <td class="cont">
+                      <div class="cont_inner">
+                        <p>2023-06-09 14:00~15:00</p>
+                        <p><span class="gray">(2023-06-08)</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                      <tr>
                       <td class="tit"><p>아이명</p></td>
                       <!--  빌리버 화상통신 버튼 추가 -->
                       <td class="cont flex">
                         <div class="input_search">
                           <span class="input_box">
-                            <input type="text" class="ipt" id="selectHname" value="이하준">
+                            <input type="text" class="ipt" id="cName" name="cName" value="개발사테스트중입니다1">
                           </span>
                         </div>
                         <div class="btn_green"><a href="javascript:;" onclick="fnJoinVideoCall();">&nbsp;화상미팅&nbsp;</a></div>
                       </td>
                       <!--  빌리버 코드 끝 -->
                     </tr>
-                    <tr>
+         
+                       <tr>
                       <td class="tit"><p>성별</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="selectHgender">남자</label>
-                          <select id="selectHgender" name="selectHgender">
-                            <option value="남자">남자</option>
-                            <option value="여자" >여자</option>
+                          <label for="cSex">
+                           
+						    	남자
+						    	
+				   			 
+                          </label>
+                          <select id="cSex" name="cSex">
+                                   
+		                             	<option value="M"  selected>남자</option>
+		                            
+		                             	<option value="F"  >여자</option>
+		                            
                           </select>
                         </div>
                       </td>
                     </tr>
-                    <tr>
+           
+                     <tr>
                       <td class="tit"><p>생년월일</p></td>
                       <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="" class="date" value="2010-05-03">
+                          <input type="date" name="cBirth"  id="cBirth" class="date" value="2023-01-01">
                         </div>
-                        <p class="shrink0"><span>12</span>세</p>
+                      <!--   <p class="shrink0"><span>12</span>세</p> -->
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              
-<!-- 처방 및 병원 -->
               <h4>처방 및 병원 정보</h4>
-              <div class="tb tb03">
-                <table summary="처방 및 병원 정보" cellpadding="0" cellspacing="0" border="0">
+                <div class="tb tb03">
+                <table summary="처방 및 병원 정보" >
                   <caption>처방 및 병원 정보</caption>
                   <colgroup>
                       <col style="width:110px;">
                       <col style="*">
                   </colgroup>
                   <tbody>
-                    <tr>
+                
+                     <tr>
+                      <td class="tit"><p>LG화학 유트로핀을 처음 처방 받으셨나요?<br></p></td>
+                      <td class="cont">
+                        <div class="radio_row">
+                          <input type="radio" id="radio01" name="orcoIjtAstEduYn" class="radio" value="N"   />
+                          <label for="radio01">예</label>
+                        </div>
+                        <div class="radio_row">
+                          <input type="radio" id="radio02" name="orcoIjtAstEduYn" value="Y"  class="radio" checked="checked"/>
+                          <label for="radio02">아니요</label>
+                        </div>
+                      </td>
+                    </tr>
+                   
+                    <tr id="hope1">
+                      <td class="tit"><p>요청 간호사</p></td>
+                       <td class="cont flex">
+                        <div class="input_search">
+                          <span class="input_box">
+                            <input type="text" class="ipt"  value="" readonly>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  
+                    
+                    <tr id="char1">
                       <td class="tit"><p>담당 간호사</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="cChargNurseId">박소라</label>
-                          <select id="cChargNurseId" name="cChargNurseId">
-                            <option value="chloe1" >김광열</option>
-                            <option value="jeewoo1025" >김영미</option>
-                            <option value="rajhkim" >김지혜</option>
-                            <option value="cokiri" >김진경</option>
-                            <option value="lgrhj" >노희정</option>
-                            <option value="ekgml38" >류다희</option>
-                            <option value="jieun.park" >박지은</option>
-                            <option value="skywlgp" >박지혜</option>
-                            <option value="jiyoung.seo" >서지영</option>
-                            <option value="sheom" >엄소희</option>
-                            <option value="twofuture" >이미래</option>
-                            <option value="iamej" >이은주</option>
-                            <option value="jiyoun0531" >이지연</option>
-                            <option value="echoran" >이초란</option>
-                            <option value="hyeyeonyi124" >이혜연</option>
-                            <option value="happyjw116" >임종원</option>
-                            <option value="valavazz" >최지현</option>
-                            <option value="hanmijin" >한미진</option>
-                          </select>
+                          <label for="cChargNurseId">
+                          	
+                          	 
+                          	    강미현
+                          	
+
+                          </label>
+                         <select id="cChargNurseId" name="cChargNurseId">
+                          <option value="">선택하세요</option>
+                          
+                             <option value="barakee82" selected="selected">강미현</option>
+                           
+                             <option value="andari" >강수진</option>
+                           
+                             <option value="kyungsooko" >고경수</option>
+                           
+                             <option value="kwak_jh" >곽지현</option>
+                           
+                             <option value="chloe1" >김광열</option>
+                           
+                             <option value="kimbkc" >김봉국</option>
+                           
+                             <option value="sunilkim" >김선일</option>
+                           
+                             <option value="dudal33" >김영미</option>
+                           
+                             <option value="camila" >김은영</option>
+                           
+                             <option value="rajhkim" >김지혜</option>
+                           
+                             <option value="cokiri" >김진경</option>
+                           
+                             <option value="ajelier" >김춘홍</option>
+                           
+                             <option value="khb4m" >김현빈</option>
+                           
+                             <option value="skywlgp" >박지혜</option>
+                           
+                             <option value="jiyoung.seo" >서지영</option>
+                           
+                             <option value="sheom" >엄소희</option>
+                           
+                             <option value="gwonsoo" >이관수</option>
+                           
+                             <option value="twofuture" >이미래</option>
+                           
+                             <option value="iamej" >이은주</option>
+                           
+                             <option value="jiyoun0531" >이지연</option>
+                           
+                             <option value="ayyotrip" >이진표</option>
+                           
+                             <option value="echoran" >이초란</option>
+                           
+                             <option value="germano" >임성훈</option>
+                           
+                             <option value="happyjw" >임종원</option>
+                           
+                             <option value="pal1427" >조은겸</option>
+                           
+                             <option value="valavazz" >최지현</option>
+                           
+                             <option value="sshh503" >하승희</option>
+                           
+                             <option value="dkttk4444" >하정화</option>
+                           
+                             <option value="hanmijin" >한미진</option>
+                           
+                             <option value="hans7012" >한화숙</option>
+                           
+                             <option value="jonghyukh" >홍종혁</option>
+                           
+                             <option value="hyoo0315" >황윤주</option>
+                           
+                      </select>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>최초 처방일</p></td>
+                            
+						    	
+						    	
+						    
+						    
                       <td class="cont flex">
                         <div class="inputBox_DP">
-                          <input type="date" name="cInitialPrescription" class="date" value="2010-05-03" />
+                                <input type="date" name="cInitialPrescription" class="date" value="2023-08-03" />
                         </div>
-                        <div class="checkbox_row shrink0">
-                          <input type="checkbox" id="checkbox01" name="" class="checkbox" />
-                          <label for="checkbox01">확정</label>
-                        </div>
+                         
+	                         <div class="checkbox_row shrink0">
+	                          <input type="checkbox" id="frstChk" name="frstChk" class="checkbox" />
+	                          <label for="frstChk">확정</label>
+	                        </div>
+                         
                       </td>
                     </tr>
-                    <tr>
+                       <tr>
                       <td class="tit"><p>처방제품명</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="sel03">유트로핀 펜</label>
-                          <select id="sel03" name="">
-                            <option value="" >유트로핀에스펜</option>
-                            <option value="" >유트로핀 펜</option>
-                            <option value="" >유트로핀</option>
-                            <option value="" >유트로핀플러스</option>
-                            <option value="" >유트로핀12IU</option>
+                          <label for="sichMedcCd">
+                          		
+	          					    	
+	          					    		유트로핀 에스펜
+	          					    	
+											
+	          					    	
+	          					    		
+	          					    	
+											
+	          					    	
+	          					    		
+	          					    	
+											
+	          					    	
+	          					    		
+	          					    	
+											
+	          					    	
+	          					    		
+	          					    	
+											
+	          					    	
+	          					    		
+	          					    	
+									 
+                          </label>
+                          <select id="sichMedcCd" name="sichMedcCd">
+                            <option value="">선택</option>
+		                            		
+	          					    	
+	          					    		 <option value="6101200009" selected>유트로핀 에스펜</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="6101200007" >유트로핀 12IU</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="6101200006" >유트로핀 펜</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="6101200001" >유트로핀 4IU</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="6101200003" >유트로핀 플러스</option>
+	          					    	
+											
+	          					    	
+	          					    		 <option value="99" >모름</option>
+	          					    	
+									 
                           </select>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>병원명</p></td>
-                      <td class="cont"><p id="hNameText">연세대학병원</p></td>
+                      <td class="cont"><p id="hNameText">
+                        
+				    	
+					   
+					   		아주대학교병원
+					   
+				   
+                      </p></td>
                     </tr>
                     <tr>
                       <td class="tit"><p>병원명 확인</p></td>
                       <td class="cont">
                         <div class="input_search">
                           <span class="input_box">
-                            <input type="text" class="ipt"   id="selectHname"  value="연세대학교 병원" readonly="">
+                              
+					    	
+						   
+						   		
+						   
+					   
+                            <input type="text" class="ipt"   id="selectHname"  value="아주대학교병원" readonly="">
                             <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
                           </span>
                         </div>
+                        
                       </td>
                     </tr>
                     <tr>
@@ -350,59 +1473,129 @@
                       <td class="cont">
                         <div class="input_search">
                           <span class="input_box">
-                              <input type="text" id="cDoctorName" name="cDoctorName" value="김기준" class="ipt">
-                              <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
+                              <input type="text" id="cDoctorName" name="cDoctorName" value="김가희" class="ipt">
+                        	  <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
                           </span>
                         </div>
                       </td>
                     </tr>
-                    <tr>
-                      <td class="tit"><p>타사제품<br> 사용경험</p></td>
-                      <td class="cont">
-                        <div class="radio_row">
-                          <input type="radio" id="radio02" name="exp" class="radio" value="" checked="checked" />
-                          <label for="radio02">네</label>
-                        </div>
-                        <div class="radio_row">
-                          <input type="radio" id="radio03" name="exp" class="radio" />
-                          <label for="radio03">아니요</label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
+                  
+                           <tr>
+		                      <td class="tit"><p>과거 성장호르몬 치료 여부</p></td>
+		                      <td class="cont">
+		                     <!--    <div class="select_row">
+		                          <label for="pstGrwTrtmEprnYn">네</label>
+		                          <select id="pstGrwTrtmEprnYn" name="pstGrwTrtmEprnYn">
+		                            <option value="Y" >네</option>
+		                            <option value="N" >아니오</option>
+		                          </select>
+		                        </div>
+		                        </div>
+		                         -->
+		                         <div class="radio_row">
+			                          <input type="radio" id="radio03" name="pstGrwTrtmEprnYn" class="radio" value="Y"   />
+			                          <label for="radio03">있음</label>
+			                        </div>
+			                        <div class="radio_row">
+			                          <input type="radio" id="radio04" name="pstGrwTrtmEprnYn" class="radio" value="N" checked="checked"/>
+			                          <label for="radio04">없음</label>
+			                        </div>
+			                        
+			                        
+		                      </td>
+		                    </tr>
+		                      <tr id="pst_area" style="display:none">
+			                      <td class="tit"><p>과거사용제품</p></td>
+			                      <td class="cont">
+			                          <div class="select_row">
+				                         
+				                        	<label for="pstUseMedcCd">선택하세요</label>
+				                        	
+				                        
+			                        
+			                           
+			                          <select id="pstUseMedcCd" name="pstUseMedcCd">
+			                          			 <option value="">선택하세요</option>
+			                          			
+					                             	<option value="99"  >모름</option>
+					                            
+					                             	<option value="02"  >그로트로핀</option>
+					                            
+					                             	<option value="04"  >노디트로핀</option>
+					                            
+					                             	<option value="01"  >싸이젠</option>
+					                            
+					                             	<option value="05"  >싸이트로핀</option>
+					                            
+					                             	<option value="06"  >조맥톤</option>
+					                            
+					                             	<option value="03"  >지노트로핀</option>
+					                            
+					                             	<option value="07"  >유트로핀</option>
+					                            
+			                          </select>
+			                        </div>
+			                      </td>
+			                    </tr>
+                      
+
+           
+                     
+                      <tr>
                       <td class="tit"><p>키 / 몸무게</p></td>
                       <td class="cont flex">
                         <div class="input_row">
                           <span class="input_box">
-                            <input type="text" class="ipt" id="" value="120">
+                            <input type="text" class="ipt" id="sichHigh" name="sichHigh" data-format-validate="height" value="" maxlength="5"  onkeyUp="Tcheck(this)">
                           </span>
                         </div>
                         <span class="unit">cm</span>
                         <div class="input_row">
                           <span class="input_box">
-                            <input type="text" class="ipt" id="" value="27">
+                            <input type="text" class="ipt" id="sichWgt" name="sichWgt" data-format-validate="weight" value="" maxlength="5"  onkeyUp="Tcheck(this)">
                           </span>
                         </div>
                         <span class="unit">kg</span>
+                        
+                        
                       </td>
                     </tr>
                     <tr>
                       <td class="tit"><p>처방병명</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="prescriptionName">Normal</label>
-                          <select id="prescriptionName" name="prescriptionName">
-                            <option value="Normal" >Normal</option>
-                            <option value="" >소아GHD</option>
-                            <option value="" >터너증후군</option>
-                            <option value="" >CRF</option>
-                            <option value="" >SGA</option>
-                            <option value="" >특발성저신장</option>
-                            <option value="" >PWS</option>
-                            <option value="" >성조숙증</option>
-                            <option value="" >누난증후군</option>
-                            <option value="" >성인GHD</option>
-                            <option value="" >기타</option>
+ 
+                              
+	                        	<label for="hsptRcp1PathCd">선택하세요</label>
+	                        	
+	                        
+                        
+                        
+                          <select id="diseCd" name="diseCd">
+                           			<option value="">선택하세요</option>
+		                            
+		                             	<option value="65" >Normal</option>
+		                            
+		                             	<option value="10" >소아 GHD</option>
+		                            
+		                             	<option value="20" >터너증후군</option>
+		                            
+		                             	<option value="30" >소아 CRF</option>
+		                            
+		                             	<option value="50" >SGA</option>
+		                            
+		                             	<option value="60" >특발성저신장</option>
+		                            
+		                             	<option value="40" >PWS</option>
+		                            
+		                             	<option value="55" >성조숙증</option>
+		                            
+		                             	<option value="70" >누난증후군</option>
+		                            
+		                             	<option value="80" >성인 GHD</option>
+		                            
+		                             	<option value="99" >기타</option>
+		                            
                           </select>
                         </div>
                       </td>
@@ -411,41 +1604,49 @@
                       <td class="tit"><p>처방경로</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="prescriptionRoute">본인의사</label>
-                          <select id="prescriptionRoute" name="prescriptionRoute">
-                            <option value="" >의사권유</option>
-                            <option value="" >본인의사</option>
-                            <option value="" >매체정보</option>
-                            <option value="" >지인추천</option>
-                            <option value="" >LG임직원 소개</option>
-                            <option value="" >LG복지재단</option>
-                            <option value="" >기타</option>
+
+                            
+	                        	<label for="hsptRcp1PathCd">선택하세요</label>
+	                        	
+	                        
+                        
+                        
+                        
+                          <select id="hsptRcp1PathCd" name="hsptRcp1PathCd">
+                         		   <option value="">선택하세요</option>
+                             		
+		                             	<option value="01" >의사권유</option>
+		                            
+		                             	<option value="02" >매체정보</option>
+		                            
+		                             	<option value="03" >지인추천</option>
+		                            
+		                             	<option value="04" >LG임직원 소개</option>
+		                            
+		                             	<option value="05" >LG행사참여(건강강좌)</option>
+		                            
+		                             	<option value="06" >LG행사참여(캠프)</option>
+		                            
+		                             	<option value="07" >기타</option>
+		                            
+		                             	<option value="08" >매체정보</option>
+		                            
+		                             	<option value="09" >본인의사</option>
+		                            
+		                             	<option value="10" >의사권유</option>
+		                            
+		                             	<option value="11" >지인추천</option>
+		                            
                           </select>
                         </div>
                       </td>
                     </tr>
-                    <tr>
-                      <td class="tit"><p>과거사용제품</p></td>
-                      <td class="cont">
-                        <div class="select_row">
-                          <label for="prescriptionNamePrev">싸이젠</label>
-                          <select id="prescriptionNamePrev" name="prescriptionNamePrev">
-                            <option value="" >싸이젠</option>
-                            <option value="" >그로트로핀</option>
-                            <option value="" >지노트로핀</option>
-                            <option value="" >노디트로핀</option>
-                            <option value="" >싸이트로핀</option>
-                            <option value="" >조맥톤</option>
-                            <option value="" >모름</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
+                   
                     <tr>
                       <td class="tit"><p>제품변경사유</p></td>
                       <td class="cont">
                         <div class="area_box">
-                          <textarea type="text" id="" name="" placeholder="사유를 입력해주세요"></textarea>
+                          <textarea type="text" id="medcChgRsnDesc" name="medcChgRsnDesc" placeholder="사유를 입력해주세요"></textarea>
                         </div>
                       </td>
                     </tr>
@@ -453,89 +1654,172 @@
                       <td class="tit"><p>진행상황</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="prescriptionName">진행</label>
-                          <select id="prescriptionName" name="prescriptionName">
-                            <option value="proceed" >진행</option>
-                            <option value="pause" >보류 </option>
-                            <option value="cancel" >중지</option>
+                        
+                        	
+                        	
+                        	  
+                 					  <label for="sichMgtProgStatCd">진행</label>
+                            
+                 					  
+                            
+                        	
+                        
+                          
+                            
+                          <select id="sichMgtProgStatCd" name="sichMgtProgStatCd">
+                           <option value="">선택하세요</option>
+                            
+		                             	<option value="01"  selected>진행</option>
+		                            
+		                             	<option value="02"  >종료</option>
+		                            
                           </select>
                         </div>
                       </td>
                     </tr>
+                     
+                     
+                      
+                                  <tr>   
+				                      <td class="tit"><p>종료예정일</p></td><!-- childDetailInfo.sixMonthOverDate -->
+				                      <td class="cont flex">
+				                        <div class="inputBox_DP">
+				                          <input type="date" name="grwMgtEndExpcDt" class="date" value="2024-08-02" data-placeholder="YYYY-MM-DD">
+				                        </div>
+				                      </td>
+				                    </tr>
+				                    <tr>
+				                      <td class="tit"><p>종료일</p></td>
+				                      <td class="cont flex">
+				                        <div class="inputBox_DP">
+				                          <input type="date" name="grwMgtEndDt" class="date" value="--" data-placeholder="YYYY-MM-DD">
+				                        </div>
+				                      </td>
+				                    </tr>
+				                     <tr>
+				                      <td class="tit"><p>종료사유(선택)</p></td>
+				                        <td class="cont">
+				                          <div class="select_row">
+				                     
+				                        	<label for="sichMgtEndRsnCd">선택하세요</label>
+				                        	
+				                        
+                        
+                        
+				                            <select id="sichMgtEndRsnCd" name="sichMgtEndRsnCd">
+				                              <option value="">선택하세요</option>
+				                      				 
+						                             	<option value="01" >치료 완료(효과만족/성장판닫힘)</option>
+						                            
+						                             	<option value="02" >치료 중단(경제적부담)</option>
+						                            
+						                             	<option value="03" >상담 중단(연락두절)</option>
+						                            
+						                             	<option value="04" >상담 중단(해외출국)</option>
+						                            
+						                             	<option value="05" >동의 거부(동의취득 시행 이전 환아)</option>
+						                            
+						                             	<option value="06" >동의 철회(해피콜 거부/삭제 요청)</option>
+						                            
+						                             	<option value="07" >타제품 전환(경제적부담)</option>
+						                            
+						                             	<option value="08" >타제품 전환(주사스트레스/통증)</option>
+						                            
+						                             	<option value="09" >타제품 전환(효과미비)</option>
+						                            
+						                             	<option value="10" >타제품 전환(부작용발생)</option>
+						                            
+						                             	<option value="11" >치료 중단(주사스트레스/통증)</option>
+						                            
+						                             	<option value="12" >치료 중단(효과미비)</option>
+						                            
+						                             	<option value="13" >치료 중단(부작용발생/우려)</option>
+						                            
+						                             	<option value="14" >기타 (사유를 서술형으로 적어주세요)</option>
+						                            
+						                             	<option value="15" >타제품 전환(기타)</option>
+						                            
+				                            </select>
+				                          </div>
+				                        </td>
+				                    </tr>
+			                    <tr id="endContent" style="display:none">
+			                      <td class="tit"><p>종료사유<br>(직접입력)</p></td>
+			                      <td class="cont">
+			                        <div class="area_box">
+			                          <textarea type="text" id="grwMgtEndRsnDesc" name="grwMgtEndRsnDesc" placeholder="사유를 입력해주세요" maxlength="300"></textarea>
+			                        </div>
+			                      </td>
+			                    </tr>
+			                 
+			                    <!-- 반려 사유추가 -->
+			                      
+			                   
+                    
                   </tbody>
                 </table>
-              </div>
-<!-- 종료 및 탈퇴 -->
-              <h4>종료 및 탈퇴 정보</h4>
-              <div class="tb tb04">
-                <table summary="종료 및 탈퇴 정보" cellpadding="0" cellspacing="0" border="0">
-                  <caption>종료 및 탈퇴 정보</caption>
-                  <colgroup>
-                      <col style="width:110px;">
-                      <col style="*">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <td class="tit"><p>종료예정일</p></td>
-                      <td class="cont flex">
-                        <div class="inputBox_DP">
-                          <input type="date" name="preordination" class="date" value="" data-placeholder="YYYY-MM-DD" required>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>종료일</p></td>
-                      <td class="cont flex">
-                        <div class="inputBox_DP">
-                          <input type="date" name="withdrawalDay" class="date" value="" data-placeholder="YYYY-MM-DD" required>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>종료사유(선택)</p></td>
-                        <td class="cont">
-                          <div class="select_row">
-                            <label for="endReason">선택하세요</label>
-                            <select id="endReason" name="endReason">
-                              <option value="0">선택하세요</option>
-                              <option value="1">치료완료(치료목표달성/효과만족/성장판닫힘)</option>
-                              <option value="2">치료 중단(경제적부담)</option>
-                              <option value="3">치료중단(주사스트레스/통증)</option>
-                              <option value="4">치료중단(효과미비)</option>
-                              <option value="5">치료중단(부작용발생/우려)</option>
-                              <option value="6">타제품 전환</option>
-                              <option value="7">기타(사유를 서술형으로 적어주세요)</option>
-                            </select>
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                      <td class="tit"><p>종료사유<br>(직접입력)</p></td>
-                      <td class="cont">
-                        <div class="area_box">
-                          <textarea type="text" id="" name="" placeholder="사유를 입력해주세요"></textarea>
-                        </div>
-                      </td>
-                    </tr>
+                
+                
+                
+                     
+                        <h4>탈퇴 정보</h4>
+			              <div class="tb tb04">
+			                <table summary="탈퇴 정보" >
+			                  <caption>탈퇴 정보</caption>
+			                  <colgroup>
+			                      <col style="width:110px;">
+			                      <col style="*">
+			                  </colgroup>
+			                  <tbody>
+			                     <tr>
+			                      <td class="tit"><p>탈퇴유형</p></td>
+				                  <td class="cont">
+				                        <div class="select_row">
+				                       
+				                             
+					                        	<label for="mWithdrawCode">탈퇴사유를 선택해주세요</label>
+					                        	
+					                        
+					                        
+					                        
+				                          <select id="mWithdrawCode" name="mWithdrawCode">
+				                           <option value="0">탈퇴사유를 선택해주세요</option> 
+				                            
+						                             	<option value="1" >치료 완료(효과만족/성장판닫힘)</option>
+						                            
+						                             	<option value="2" >타제품 전환(경제적부담)</option>
+						                            
+						                             	<option value="3" >타제품 전환(주사스트레스/통증)</option>
+						                            
+						                             	<option value="4" >타제품 전환(효과미비)</option>
+						                            
+						                             	<option value="5" >타제품 전환(부작용발생)</option>
+						                            
+						                             	<option value="6" >타제품 전환(기타)</option>
+						                            
+						                             	<option value="7" >치료 중단(경제적부담)</option>
+						                            
+						                             	<option value="8" >치료 중단(주사스트레스/통증)</option>
+						                            
+						                             	<option value="9" >치료 중단(효과미비)</option>
+						                            
+						                             	<option value="10" >치료 중단(부작용발생/우려)</option>
+						                            
+						                             	<option value="11" >상담 중단(연락두절)</option>
+						                            
+						                             	<option value="12" >상담 중단(해외출국)</option>
+						                            
+						                             	<option value="13" >동의 철회(해피콜 거부/삭제 요청)</option>
+						                            
+						                             	<option value="14" >기타 (사유를 서술형으로 적어주세요)</option>
+						                            
+				                          </select>
+				                        </div>
+				                      </td>
+			                    </tr>
+			                    
+			           
                     
-                    <tr>
-                      <td class="tit"><p>탈퇴사유</p></td>
-                      <td class="cont">
-                        <div class="select_row">
-                          <label for="mWithdrawCode">선택하세요</label>
-                          <select id="mWithdrawCode" name="mWithdrawCode">
-                            <option value="0">탈퇴사유를 선택해주세요</option>
-                            <option value="1">치료완료(치료목표달성/효과만족/성장판닫힘)</option>
-                            <option value="2">치료 중단(경제적부담)</option>
-                            <option value="3">치료중단(주사스트레스/통증)</option>
-                            <option value="4">치료중단(효과미비)</option>
-                            <option value="5">치료중단(부작용발생/우려)</option>
-                            <option value="6">타제품 전환</option>
-                            <option value="7">기타(사유를 서술형으로 적어주세요)</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
                     <tr id="withdrawContent" style="display:none">
                       <td class="tit"><p>탈퇴사유<br>(서술)</p></td>
                       <td class="cont">
@@ -549,35 +1833,95 @@
                       <td class="tit"><p>스마트케이스 <br>반납여부</p></td>
                       <td class="cont">
                         <div class="select_row">
-                          <label for="returnSmartcase">미사용</label>
-                          <select id="returnSmartcase" name="returnSmartcase">
-                            <option value="notUsed" >미사용</option>
-                            <option value="return" >반납</option>
-                            <option value="yet" >미반납</option>
+                      
+                          
+                               
+				                        	<label for="rState">반납여부 선택해주세요</label>
+				                        	
+				                        
+				                        
+				                        
+				                        
+                          <select id="rState" name="rState">
+                             <option value="">반납여부 선택해주세요</option>
+                           
+		                             	<option value="01" >반납</option>
+		                            
+		                             	<option value="02" >미 반납(반납예정)</option>
+		                            
+		                             	<option value="03" >처음부터 받지 않았음</option>
+		                            
+		                             	<option value="04" >분실</option>
+		                            
                           </select>
                         </div>
                       </td>
                     </tr>
-                  </tbody>
-                </table>
+			                      
+			                  </tbody>
+			                </table>
+                    
+                    
               </div>
-            </div>    
-            
-            <div class="btn_box btn_box03 mt50">
-              <div class="btn_white"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
-              <div class="btn_gray"><a href="javascript:;" onclick="">비밀번호<br> 초기화</a></div>
-              <div class="btn_line_green"><a href="javascript:;" onclick="openPopup('duplicateChild_pop'); childStateUpdate('M');" class="open_pop">탈퇴</a></div>
             </div>
-            <div class="btn_box btn_box01 mt10">
-              <div class="btn_green"><a href="javascript:;">저장</a></div>
-            </div>
+
+
+       
+       
+       
+				             
+					                  	 
+					                  	
+													
+														
+													
+														
+														 <div class="btn_box btn_box03 mt50">
+														
+													    
+														
+													
+					                  	
+				                  
+				                  
+							
+								
+								<div class="btn_gray"><a href="javascript:;" onclick="fnListPage()">목록</a></div>
+		
+
+
+    						
+					                  	 
+					                  				     	  
+														     	
+														     	
+														     	
+														     	
+														       	
+														     		 <div class="btn_gray"><a href="javascript:;" onclick="fnCreateTempPassword()">비밀번호<br> 초기화</a></div>
+														     		 <!--  <div class="btn_line_green"><a href="javascript:;" onclick="childStateUpdate('D')" class="open_pop">회원탈퇴</a></div> -->
+														     		   <div class="btn_line_green"><a href="javascript:;" onclick="childDelete()" class="open_pop">회원탈퇴</a></div>
+														     	
+														       	<!-- 회원 복구 2021-10-26 -->
+														     
+														     		
+														     		 
+												            </div>
+												             
+												             	   <div class="btn_box btn_box01 mt10"><div class="btn_green"><a href="javascript:;" onclick="childInfoUpdate()">저장</a></div></div>
+												             
+					                  	
+					                  	
+				                  
+				                  
+				                  
+
+		    	
           </div>
         </div>
-
-        </div>
       </div>
-    </form>
-      <!-- content //-->  
+      </form>
+      <!-- content //-->
       
       <!-- 병원명 검색 -->
       <div class="pop_mask"></div>
@@ -608,7 +1952,7 @@
       </div>
       
       
-      <!-- 의사 검색 -->
+            <!-- 의사 검색 -->
       <div class="pop_mask_doctor"></div>
       <div class="pop_search_doctor">
         <div class="pop_search_inner">
@@ -636,7 +1980,37 @@
         </div>
       </div>
       
-<!--///////////////////////////////////////////////////////////////////////
+   <!-- 반려 사유 추가 -->
+      <div class="pop_mask_reject"></div>
+      <div class="pop_reject">
+        <div class="pop_search_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="pop_tit">반려 사유가 있을 경우 입력하세요.</div>
+            <div class="search_area">
+              <p></p>
+        <!--       <div class="search_ipt">
+                <div class="search_cell">
+                  <div class="input_row">
+                    <span class="area_box">
+                        <textarea type="text" id="medcChgRsnDesc" name="medcChgRsnDesc" placeholder="사유를 입력해주세요"></textarea>
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+                  <span class="area_box">
+                        <textarea type="text" id="rejectReason" name="rejectReason" placeholder="메모해야 할 사유가 있을 경우에만 입력하세요."></textarea>
+                    </span>
+            </div>
+            <div class="btn_box btn_box02 mt50">
+				<div class="btn_gray"><a href="javascript:;" onclick="fnCloseReject()">닫기</a></div>
+				 <div class="btn_green"><a href="javascript:;" onclick="childStateUpdate('R')">반려</a></div>
+		      </div>
+          </div>
+        </div>
+      </div>
+           
+      <!--///////////////////////////////////////////////////////////////////////
 ///////////             ** 퍼블추가 - 2023.02 **              ///////
 ////////////////////////////////////////////////////////////////////////-->
 
@@ -648,70 +2022,13 @@
           <div class="pop_content duplicateChild_pop">
             <h3>중복 환아 검색 결과</h3>
 
-            <div class="search_info"><span class="search_info_tit"><b>이하준 2010-05-03</b> 으로 아이 검색결과</span><span class="search_info_total">총 <b>2명</b></span></div>
-            <div class="con_list">
-              <ul>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-                <li><a href="javascript:;">
-                  <div>
-                    <ul>
-                      <li class="name">장기훈</li>
-                      <li class="gender">남아</li>
-                      <li class="date">2011.12.03</li>
-                    </ul>
-                    <p class="idbox">abcdabcd12312</p>
-                  </div>
-                  <div>
-                    <p class="hospital">연세세브란스병원</p>
-                    <p class="phone">010-1234-5678</p>
-                  </div>
-                </a></li>
-              </ul>
+            <div class="search_info"><div class="search_info_tit" id="dup_info"><b>이하준 2010-05-03</b> 으로 아이 검색결과</div><div class="search_info_total">총 <span><b id="dup_total">2</b>명</span></div></div>
+            <div class="con_list" id="dup_list">
+          
             </div>
             <div class="search_info">
-              <b>20명까지 확인 가능합니다.</b><br>
-              모든 중복 환아 검색은 <b>목록 페이지</b>를 이용해 주세요.
+              <span>20명까지 확인 가능합니다.</span><br>
+              모든 중복 환아 검색은 <span>목록 페이지</span>를 이용해 주세요.
             </div>
             <p>
               중복된 환아정보가 존재합니다. <br>
@@ -722,21 +2039,13 @@
                 <a href="javascript:;" title="취소" class="close_pop">취소</a>
               </div>
               <div class="btn_green">
-                <a href="javascript:;" title="승인">승인</a>
+                <a href="javascript:childStateUpdate('NM');" title="승인">승인</a>
               </div>
             </div>
         </div>
       </div>
       
-      <!-- 로딩바 -->
-      <div id="loading"  style=" display:none;top: 60%; left: 70%;  margin-left:-100px;z-index: 9999; border: 3px #2B97D6;position:fixed">
-        <p style="text-align: center;">
-          <img src="/resource/assets/nurse/images/common/loading.gif" alt="loading" />
-          <font color="#0054FF"><span id="percentage"></span></font>
-        </p>
-      </div>
-
-      <!-- 임시비밀번호 -->
+       		<!-- 임시비밀번호 -->
       <div class="pop_mask_temp"></div>
       <div class="pop_search_temp">
         <div class="pop_search_inner">
@@ -744,7 +2053,7 @@
           <div class="pop_con">
             <div class="pop_tit">임시 비밀번호 발급</div>
             <div class="search_area">
-              <p>임시 비밀번호 복사를 터치하여 임시 비밀번호를 전달하세요.</p>
+           <p>임시 비밀번호 복사를 터치하여 임시 비밀번호를 전달하세요.</p>
               <div class="search_ipt">
                 <div class="search_cell">
                   <div class="input_row">
@@ -753,142 +2062,382 @@
                     </span>
                   </div>
                 </div>  
-              </div>
+             </div>
               <div class="search_ipt">
                 <div class="search_cell btn" style="width: 100%;">
                   <div class="btn_search" style="margin-left: 0;width: 100%;"><a  href="javascript:alert('임시비밀번호가 복사되었습니다');" class="clipboard"  data-clipboard-target="#temp_pass">임시 비밀번호 복사</a></div>
                 </div>   
-              </div>
-              <div class="search_list" id="search_doctor">
-              </div>
+             </div>
+            <div class="search_list" id="search_doctor">
+            </div>
           </div>
         </div>
       </div>
       
+      
+       		<!-- 임시비밀번호 -->
+      <div class="pop_mask_temp"></div>
+      <div class="pop_search_temp">
+        <div class="pop_search_inner">
+          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기"></a></div>
+          <div class="pop_con">
+            <div class="pop_tit">임시 비밀번호 발급</div>
+            <div class="search_area">
+           <p>임시 비밀번호 복사를 터치하여 임시 비밀번호를 전달하세요.</p>
+              <div class="search_ipt">
+                <div class="search_cell">
+                  <div class="input_row">
+                    <span class="input_box">
+                      <input type="text" id="temp_pass"class="ipt" readonly>
+                    </span>
+                  </div>
+                </div>  
+             </div>
+              <div class="search_ipt">
+                <div class="search_cell btn" style="width: 100%;">
+                  <div class="btn_search" style="margin-left: 0;width: 100%;"><a  href="javascript:alert('임시비밀번호가 복사되었습니다');" class="clipboard"  data-clipboard-target="#temp_pass">임시 비밀번호 복사</a></div>
+                </div>   
+             </div>
+            <div class="search_list" id="search_doctor">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+       <!-- 로딩바 -->
+       <div id="loading"  style=" display:none;top: 60%; left: 70%;  margin-left:-100px;z-index: 9999; border: 3px #2B97D6;position:fixed">
+	        <p style="text-align: center;">
+	            <img src="/resource/assets/nurse/images/common/loading.gif" alt="loading" />
+	            <font color="#0054FF"><span id="percentage"></span></font>
+	        </p>
+ 		</div>
+ 		
+ 		
+
+      
 	  </div>
-        
-<!--///////////////////////////////////////////////////////////////////////
-///////////             ** 퍼블추가 - 2023.02 **              ///////
-////////////////////////////////////////////////////////////////////////-->
+	  
+	  	 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
+	  	 
+	  	 
+	  <script>
+	  
+	    // 우편번호 찾기 찾기 화면을 넣을 element
+	    //var element_wrap = document.getElementById('addr_wrap');
+	    var element_layer = document.getElementById('layer');
 
-    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script>
-        // 우편번호 찾기 찾기 화면을 넣을 element
-        //var element_wrap = document.getElementById('addr_wrap');
-        var element_layer = document.getElementById('layer');
-    
-    /*     function foldDaumPostcode() {
-            // iframe을 넣은 element를 안보이게 한다.
-            element_wrap.style.display = 'none';
-        }
-         */
-        function closeDaumPostcode() {
-            // iframe을 넣은 element를 안보이게 한다.
-            element_layer.style.display = 'none';
-        }
+	    function closeDaumPostcode() {
+	        // iframe을 넣은 element를 안보이게 한다.
+	        element_layer.style.display = 'none';
+	    }
 
-        function sample2_execDaumPostcode() {
-            new daum.Postcode({
-                oncomplete: function(data) {
-                    // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-    
-                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                    var addr = ''; // 주소 변수
-                    var extraAddr = ''; // 참고항목 변수
-    
-                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                        addr = data.roadAddress;
-                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                        addr = data.jibunAddress;
-                    }
-    
-                    // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                    if(data.userSelectedType === 'R'){
-                        // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                        // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                            extraAddr += data.bname;
-                        }
-                        // 건물명이 있고, 공동주택일 경우 추가한다.
-                        if(data.buildingName !== '' && data.apartment === 'Y'){
-                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                        }
-                        // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                        if(extraAddr !== ''){
-                            extraAddr = ' (' + extraAddr + ')';
-                        }
-                        // 조합된 참고항목을 해당 필드에 넣는다.
-                        document.getElementById("pAddr2").value = extraAddr;
-    
-                    } else {
-                        document.getElementById("pAddr2").value = '';
-                    }
-    
-                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                    document.getElementById('pPost').value = data.zonecode;
-                    document.getElementById("pAddr1").value = addr;
-                    // 커서를 상세주소 필드로 이동한다.
-                    document.getElementById("pAddr2").focus();
-                    $("#addr_box01").removeClass("blind");
-                    $("#addr_box02").addClass("blind");
-    
-                    // iframe을 넣은 element를 안보이게 한다.
-                    // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
-                    element_layer.style.display = 'none';
-    
-    
-                },
-                width : '100%',
-                height : '100%',
-                maxSuggestItems : 5
-            }).embed(element_layer);
-    
-            // iframe을 넣은 element를 보이게 한다.
-            element_layer.style.display = 'block';
-    
-            // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
-            initLayerPosition();
-        }
-    
-    
-        function initLayerPosition(){
-            var width = 300; //우편번호서비스가 들어갈 element의 width
-            var height = 400; //우편번호서비스가 들어갈 element의 height
-            var borderWidth = 5; //샘플에서 사용하는 border의 두께
-    
-            // 위에서 선언한 값들을 실제 element에 넣는다.
-            element_layer.style.width = width + 'px';
-            element_layer.style.height = height + 'px';
-            element_layer.style.border = borderWidth + 'px solid';
-            // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
-            element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
-            element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
-        }
-    
-    
-        function maxLengthCheck(object){
-        if(object.value.length > object.maxLength) {
-          object.value = object.value.slice(0, object.maxLength);
-        }
-      }
 
-      //select
-      $("#sel02").change(function() {
-        $("#cHospitalIdx").val($("#sel02 option:selected").val());
-        $("#cHospitalName").val($("#sel02 option:selected").text());
-        $("#hNameText").text($("#sel02 option:selected").text());
+	    function sample2_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var addr = ''; // 주소 변수
+	                var extraAddr = ''; // 참고항목 변수
+
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+	                    addr = data.roadAddress;
+	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+	                    addr = data.jibunAddress;
+	                }
+
+	                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+	                if(data.userSelectedType === 'R'){
+	                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                        extraAddr += data.bname;
+	                    }
+	                    // 건물명이 있고, 공동주택일 경우 추가한다.
+	                    if(data.buildingName !== '' && data.apartment === 'Y'){
+	                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                    }
+	                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                    if(extraAddr !== ''){
+	                        extraAddr = ' (' + extraAddr + ')';
+	                    }
+	                    // 조합된 참고항목을 해당 필드에 넣는다.
+	                    //document.getElementById("pAddr2").value = extraAddr;
+	                    addr = addr + extraAddr;
+
+	                } else {
+	                    document.getElementById("mAddr2").value = '';
+	                }
+
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('mPost').value = data.zonecode;
+	                document.getElementById("mAddr1").value = addr;
+	                // 커서를 상세주소 필드로 이동한다.
+	                document.getElementById("mAddr2").focus();
+	                $("#addr_box01").removeClass("blind");
+	                $("#addr_box02").addClass("blind");
+
+	                // iframe을 넣은 element를 안보이게 한다.
+	                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+	                element_layer.style.display = 'none';
+
+
+	            },
+	            width : '100%',
+	            height : '100%',
+	            maxSuggestItems : 5
+	        }).embed(element_layer);
+
+	        // iframe을 넣은 element를 보이게 한다.
+	        element_layer.style.display = 'block';
+
+	        // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+	        initLayerPosition();
+	    }
+
+
+	    
+	    function sample3_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var addr = ''; // 주소 변수
+	                var extraAddr = ''; // 참고항목 변수
+
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+	                    addr = data.roadAddress;
+	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+	                    addr = data.jibunAddress;
+	                }
+
+	                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+	                if(data.userSelectedType === 'R'){
+	                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                        extraAddr += data.bname;
+	                    }
+	                    // 건물명이 있고, 공동주택일 경우 추가한다.
+	                    if(data.buildingName !== '' && data.apartment === 'Y'){
+	                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                    }
+	                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                    if(extraAddr !== ''){
+	                        extraAddr = ' (' + extraAddr + ')';
+	                    }
+	                    // 조합된 참고항목을 해당 필드에 넣는다.
+	                    //document.getElementById("pAddr2").value = extraAddr;
+	                    addr = addr + extraAddr;
+
+	                } else {
+	                    document.getElementById("rAddr2").value = '';
+	                }
+
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('rPost').value = data.zonecode;
+	                document.getElementById("rAddr1").value = addr;
+	                // 커서를 상세주소 필드로 이동한다.
+	                document.getElementById("rAddr2").focus();
+	        
+
+	                // iframe을 넣은 element를 안보이게 한다.
+	                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+	                element_layer.style.display = 'none';
+
+
+	            },
+	            width : '100%',
+	            height : '100%',
+	            maxSuggestItems : 5
+	        }).embed(element_layer);
+
+	        // iframe을 넣은 element를 보이게 한다.
+	        element_layer.style.display = 'block';
+
+	        // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+	        initLayerPosition();
+	    }
+	    
+	    function initLayerPosition(){
+	        var width = 300; //우편번호서비스가 들어갈 element의 width
+	        var height = 400; //우편번호서비스가 들어갈 element의 height
+	        var borderWidth = 5; //샘플에서 사용하는 border의 두께
+
+	        // 위에서 선언한 값들을 실제 element에 넣는다.
+	        element_layer.style.width = width + 'px';
+	        element_layer.style.height = height + 'px';
+	        element_layer.style.border = borderWidth + 'px solid';
+	        // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+	        element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
+	        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+	    }
+		  
+	    
+		  	$("#sel02").change(function() {
+		  	  $("#cHospitalIdx").val($("#sel02 option:selected").val());
+			  $("#cHospitalName").val($("#sel02 option:selected").text());
+			  $("#hNameText").text($("#sel02 option:selected").text());
 			});
 		
-      $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
-        if($("#mWithdrawCode option:selected").val()  == "7"){//기타 서술
-          $("#withdrawContent").css("display", "");
-        } else {
-          $("#withdrawContent").css("display", "none");
-        }
+	  	   $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
+		  		if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술
+			 		$("#withdrawContent").css("display", "");
+			 	} else {
+			 		$("#withdrawContent").css("display", "none");
+			 	}
 			});
-    
-    </script>
+	  	   
+	 	   $("#endReason").change(function() {//종료사유 서술형 textarea 처리
+		  		if($("#endReason option:selected").val()  == "14"){//기타 서술
+			 		$("#endContent").css("display", "");
+			 	} else {
+			 		$("#endContent").css("display", "none");
+			 	}
+			});
+
+
+   
+   
+	  	    $("input[name='orcoIjtAstEduYn']:radio").change(function () {//LG화학 주사교육을 받으셨나요?
+		          let cEdu = this.value;
+		          if(cEdu == "N"){
+		        	  $("#char1").css("display", "");
+		        	  $("#hope1").css("display", "");
+		          } else {
+		        	  $("#char1").css("display", "");
+		        	  $("#hope1").css("display", "");
+		          }
+		            
+		      });
+	  	    
+	  	  $('#frstChk').click(function(){
+	  		var checked = $('#frstChk').is(':checked');
+	  		
+	  		if(checked){
+	  			$("#frstRcp1DtCfmYn").val("Y");
+	  		} else {
+	  			$("#frstRcp1DtCfmYn").val("N");
+	  		}
+	  
+	  		});
+	  	    
+
+	 	  $("input[name='pstGrwTrtmEprnYn']:radio").change(function () {
+	 		if($(this).val() == "Y"){
+	 			  $("#pst_area").css("display", "");
+	 		} else {
+	 			  $("#pst_area").css("display", "none");
+	 			  
+	 			  
+	 		}
+	 	 });
+	 	  
+		  
+	 	  $("#mCpNumber2").on("propertychange change keyup paste input", function() {
+	 	    	$('[name=CPCHECK]').val('N');
+	 	    });
+	 	    
+	 	    $("#mCpNumber3").on("propertychange change keyup paste input", function() {
+	 	    	$('[name=CPCHECK]').val('N');
+	 	    });
+
+	 	    
+	 	    $('[name=MCpNumber1]').change(function(){
+	 				$('[name=CPCHECK]').val('N');
+	 		});
+	 	    
+	 	    //휴대폰번호 중복 확인
+	 		function chkCp(){
+
+	 			if($("#mCpNumber2").val() == ""){
+	 				alert("휴대폰번호를 입력해주세요");
+	 				$("#mCpNumber2").focus();
+	 				return;
+	 			}
+	 			
+	 			
+	 			if($("#mCpNumber3").val() == ""){
+	 				alert("휴대폰번호를 입력해주세요");
+	 				$("#mCpNumber3").focus();
+	 				return;
+	 			}
+	 			
+
+	 			var data = {"MCpNumber1": $("#mCpNumber1").val(),"MCpNumber2": $("#mCpNumber2").val(),"MCpNumber3": $("#mCpNumber2").val(),"chkMode": "M"
+	 					,"mCpNumber1Reg": $("#mCpNumber1Reg").val(),"mCpNumber2Reg": $("#mCpNumber2Reg").val(),"mCpNumber3Reg": $("#mCpNumber3Reg").val()};
+	 		    var actionurl = "/child/cpChk.do";
+
+	 			 $.ajax({
+	 		            async: false,
+	 		            type: "POST",
+	 		            url : actionurl,
+	 		            cache : false,
+	 		            data : data,
+	 		            dataType : "json",
+	 		            success: function(obj){
+	 		            
+	 		            	var result = obj.result;
+	 			             if(result > 0){//아이디 존재
+	 			            	alert("이미 가입된 휴대폰 번호입니다 다른 번호로 가입해 주세요");
+	 			            	$("#mCpNumber1").val($("#mCpNumber1Reg").val());
+	 			            	$("#mCpNumber2").val($("#mCpNumber2Reg").val());
+	 			   				$("#mCpNumber3").val($("#mCpNumber3Reg").val());
+	 			   				
+	 			  
+	 			                return;
+	 			             } else {
+	 			            	    var result = confirm("가입 가능한 휴대폰 번호입니다 이 번호로 진행하시겠습니까?");
+	 					   			  if(result){
+	 					   				$('[name=CPCHECK]').val('Y');
+	 					   				
+	 					   			  } else {
+	 					   				$("#mCpNumber1").val($("#mCpNumber1Reg").val());
+	 					            	$("#mCpNumber2").val($("#mCpNumber2Reg").val());
+	 					   				$("#mCpNumber3").val($("#mCpNumber3Reg").val());
+	 					   				return;
+	 					             }
+	 			             }
+	 		          
+	 		            },
+	 		            error: function(xhr, option, error){
+	 		                  alert(xhr.status+" | "+error); //오류코드 | 오류내용
+	 		            }
+	 		        });
+	 		        
+	 		}
+	 	 	
+	 		
+	 		
+	 		$("#mCpNumber2").keyup(function(event){
+	 		    var inputVal = $(this).val();
+	 		    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+
+	 		});
+
+
+	 		
+	 		$("#mCpNumber2").keyup(function(event){
+	 		    var inputVal = $(this).val();
+	 		    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+
+	 		});
+	 		
+	 		  $("#sichMgtEndRsnCd").change(function() {//탈퇴사유 서술형 textarea 처리
+	 		  		if($("#sichMgtEndRsnCd option:selected").val()  == "14"){//기타 서술
+	 			 		$("#endContent").css("display", "");
+	 			 	} else {
+	 			 		$("#grwMgtEndRsnDesc").val("");
+	 			 		$("#endContent").css("display", "none");
+	 			 	}
+	 			});
+	  </script>
   </body>
 </html>
