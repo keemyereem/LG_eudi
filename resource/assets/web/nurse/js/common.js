@@ -106,6 +106,10 @@ function popupOpen(popConts) {
    });
 }
 
+function popupClose(element) {
+	$(element).parents('.popup').removeClass('on');
+}
+
 function popupsrh() {
 	$("#search_name").val($("#cHospitalName").val());
 	  var popthis = $(".pop_search");
