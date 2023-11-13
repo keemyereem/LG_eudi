@@ -106,7 +106,17 @@ function popupOpen(popConts) {
    });
 }
 
-function popupClose(element) {
+function popupAlert(popAlert) {
+  var popthis = $(".popup_alert#"+popAlert);
+  popthis.addClass("on");
+  $(".wrap_sub").addClass("not_scroll");
+   popthis.find(".pop_close").click(function(){
+       popthis.removeClass("on");
+       $(".wrap_sub").removeClass("not_scroll");
+   });
+}
+
+function popClose(element) {
 	$(element).parents('.popup').removeClass('on');
 }
 
