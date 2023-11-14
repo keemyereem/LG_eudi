@@ -111,16 +111,15 @@ function popupAlert(popAlert) {
   popthis.addClass("on");
 	popthis.find('.pop_content').css('display','block');
   $(".wrap_sub").addClass("not_scroll");
-   popthis.find(".pop_close").click(function(){
-       popthis.removeClass("on");
-			 popthis.find('.pop_content').css('display','none');
-       $(".wrap_sub").removeClass("not_scroll");
-   });
 }
 
-function popClose(element) {
-	$(element).parents('.popup').removeClass('on');
-}
+$(function(){
+	$(".pop_close").click(function(){
+		$(this).parents('.popup').removeClass("on");
+		$(this).parents('.pop_content').css('display','none');
+		$(".wrap_sub").removeClass("not_scroll");
+	});
+});
 
 function popupsrh() {
 	$("#search_name").val($("#cHospitalName").val());
