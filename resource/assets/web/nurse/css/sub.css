@@ -161,6 +161,7 @@
 .con_sub .tb table tbody td.cont p {padding-left: 10px;font-size: 13px;line-height:1.2;}
 .con_sub .tb table tbody td.cont p.txt {margin-top: 8px;font-size: 12px;color: #999;line-height: 1.2;}
 .con_sub .tb table tbody td.cont p.border {width:100%;height:40px;line-height:40px;font-size: 12px;background: #fff;border-radius:5px;border: 1px solid #e9e9e9;}
+.con_sub .tb table tbody td.cont p>.gray {color: #999;}
 .con_sub .tb table tbody td.cont .cont_inner {padding: 10px 0;line-height: 1.5;}
 .con_sub .tb table tbody td.cont .info {margin-top: 8px;font-size: 11px;color: #999;line-height: 1.2;}
 .con_sub .tb table tbody td.cont .btn_green {height:40px;flex-shrink: 0;margin-left: 5px;padding: 0 10px;}
@@ -261,11 +262,14 @@
 .con_sub01 .con_list>ul>li>a>div > p:nth-child(2) {width: 30%;text-align: right;}
 .con_sub01 .con_list>ul>li>a>div:nth-child(2){font-size: 13px;color: #333;}
 .con_sub01 .con_list>ul>li>a>div:nth-child(3){font-size: 11px;color: #999;}
-.con_sub01 .con_list>ul>li>a>div:last-child {width: auto;text-align: left;align-items: flex-start;}
+.con_sub01 .con_list>ul>li>a>div:last-child {width: 100%;text-align: left;align-items: flex-start;margin-top: 6px;}
 .con_sub01 .con_list>ul>li>a>div .datebox {font-family: 'NanumSquareB';letter-spacing: -0.65px;margin-top: 0;}
 .con_sub01 .con_list>ul>li>a>div .idbox {font-family: 'NanumSquareB';line-height: initial;margin-top: 0;}
 .con_sub01 .con_list>ul>li>a>div .namebox .genderbox {font-size: 11px;color: #727272;}
 .con_sub01 .con_list>ul>li>a>div .namebox .genderbox::before {content:'';display: inline-block;width: 1px;height: 10px;background: #e5e5e5;margin: 0 8px;}
+.con_sub01 .con_list>ul>li>a>div .new_edu {font-size: 11px;letter-spacing: -0.65px;color: #333;width: 100%!important;}
+.con_sub01 .con_list>ul>li>a>div .new_edu_finished {color: #999;}
+.con_sub01 .con_list>ul>li>a>div .new_edu>span {color: #999;}
 
 .con_sub .tb_top .ctg {padding-bottom: 20px;font-family: 'NanumSquareEB';font-size: 13px;}
 .con_sub .tb_top .tit {padding: 0 0 15px 0;}
