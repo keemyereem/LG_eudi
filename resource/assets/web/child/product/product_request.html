@@ -404,6 +404,7 @@ if("" != ""){
 
     $(function(){
       selEvent.init();
+      popupClose();
       $(window).resize(resizeContents);
       resizeContents();
       function resizeContents() {
@@ -949,6 +950,39 @@ if("" != ""){
   });
 
   </script>
+
+  <!-- 제품선택: 유트로핀펜, 유트로핀 에스펜, 제품명 모름 선택시 노출 2024.01.22 -->
+  <div class="pop_mask on"></div>
+  <div class="pop_info pop_wide pop_productNoti2 on">
+    <div class="pop_info_inner">
+      <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기"></a></div>
+      <div class="pop_con">
+        <p class="fz18 tcenter fwB mt20">
+          유트로핀 펜, 에스펜의 주사바늘은<br>
+          BD 4mm와 노보파인 6mm 중<br>
+          택 1 하여 신청 가능합니다. 
+        </p>
+        <div class="pop_inner">
+          <p class="fc999 fz13 mt10 gray_list tcenter">
+            두 주사바늘의 굵기는 동일하며<br>
+            주사바늘 길이만 상이합니다.
+          </p>
+          <p class="fc999 fz13 gray_list tcenter mt10">
+            각 주사바늘에 따른 주사방법 안내는<br>
+            FAQ-투여관련 안내를 참고 부탁드립니다.
+          </p>
+        </div>
+        <div class="pop_btn mt10">
+          <div class="btn_box btn_box02">
+            <div class="btn_gray"><button class="pop_close">닫기</button></div>
+            <div class="btn_purple btn_purple2">
+              <a href="/counsel/product_faq.do?idx=39">FAQ 보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 <script>

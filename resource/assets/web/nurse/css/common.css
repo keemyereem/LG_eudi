@@ -137,6 +137,10 @@ input[type="text"]:disabled {background: #fff;}
 .input_addr .input_box .ipt {position: relative;padding-left: 85px;width: 100%;height: 100%;border: none;font-size: 13px;line-height: 1.2;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
 .input_addr .btn_addr {position: absolute;left: 0;top: 0;width: 85px;height: 100%;background: #cfcfcf;border-right: 1px solid #e9e9e9;/* z-index: 20; */}
 .input_addr .btn_addr>a {display: block;width: 100%;height: 100%;font-family: 'NanumSquareB';font-size: 12px;color: #727272;text-align: center;}
+.addr_box02 .btn_addr {width: 85px;background: #cfcfcf;border-radius: 5px;}
+.addr_box02 .btn_addr>a {font-family: 'NanumSquareB';font-size: 12px;color: #727272;text-align: center;display: block;width: 100%;height: 100%;line-height: 40px;}
+.addr_box02>ul {margin-top: 5px;}
+.addr_box02>ul>li {font-size: 13px;}
 
 .input_search {position: relative;overflow: hidden;padding: 0 10px;width: 100%;height: 40px;line-height: 40px;background: #fff;border: 1px solid #e9e9e9;border-radius: 5px;}
 .input_search .input_box {position: relative;display: block;width: 100%;overflow: hidden;}
@@ -272,6 +276,9 @@ select option[value=""][disabled] { display: none; }
 .pop_mask_doctor {display: none;position:fixed; width:100%; height:100%; top:0px; left:0px; background-color:#000; opacity:0.4;z-index: 20;}
 .pop_mask_temp {display: none;position:fixed; width:100%; height:100%; top:0px; left:0px; background-color:#000; opacity:0.4;z-index: 20;}
 .pop_mask {display: none;position:fixed; width:100%; height:100%; top:0px; left:0px; background-color:#000; opacity:0.4;z-index: 20;}
+.pop_mask.on {display: block;}
+.pop_info .btn_close {position: absolute;top: 0;right: 0;width: 30px;height: 30px;}
+
 .pop_info.pop_01 {display: none;position:absolute;top: 0;width: 260px;z-index: 30;}
 .pop_info.pop_01 .pop_info_inner {position: relative;padding-top: 40px;}
 .pop_info.pop_01 .btn_close {position: absolute;top: 0;right: 0;width: 30px;height: 30px;}
@@ -318,6 +325,9 @@ select option[value=""][disabled] { display: none; }
 .pop_wrap.pop_image .pop_btn .btn_green {width: 100%;}
 .pop_wrap.pop_image .imgBox {padding: 15px 0;}
 
+/* 2024.01.22 팝업 텍스트 */
+.pop_info .btn_box button,
+.pop_info .btn_box a {font-family: 'NanumSquareB';font-size: 13px;}
 
 /* ERROR */
 .wrap_error {position: relative;width: 100%;height: 100%;}
