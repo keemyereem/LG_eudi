@@ -899,6 +899,14 @@ function popupdoctor() {
   });
 }
 
+function popupClose() {
+  var btnClose = $('.pop_close');
+  btnClose.click(function(){
+    $(this).parents('.pop_info').removeClass('on');
+    $(this).parents('.pop_info').prev('.pop_mask').removeClass('on');
+  });
+}
+
 $(document).on('keyup focusin focusout','input[data-format-validate]',function(e){
 	const format = $(this).data('format-validate');
 	const oriVal = $(this).val();
