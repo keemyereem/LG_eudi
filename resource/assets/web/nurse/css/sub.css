@@ -177,6 +177,7 @@
 .con_sub .tb02 table tbody th.tit {background: #f6f6f6;}
 .con_sub .tb02 table tbody td.tit .tit_inner {padding: 20px 0;line-height: 1.2;}
 .con_sub .tb02 table tbody td.tit p {font-family: 'NanumSquareB';font-size: 13px;overflow: hidden;line-height: 1.5;}
+.con_sub .tb02 table tbody td.flex {display:flex;align-items: center;flex-wrap: wrap;justify-content: space-between;}
 .con_sub .tb02 table tbody td.cont p {padding-left: 5px;overflow: hidden;}
 .con_sub .tb02 table tbody td.cont02 .cont_inner {padding: 20px 0;line-height: normal;}
 .con_sub .tb02 table tbody td.cont02 .cont_inner02 {padding: 20px 0 5px;}
@@ -193,6 +194,8 @@
 .con_sub .tb02 table thead tr th {height: 40px;line-height: 40px;background: #f6f6f6;}
 .con_sub .tb02 table thead tr th p {font-family: 'NanumSquareB';font-size: 12px;}
 .con_sub .tb02 table tbody tr th p {font-family: 'NanumSquareB';font-size: 12px;}
+.con_sub .tb02 table tbody td.cont .btn_pink {width: 70px;height:40px;flex-shrink: 0;margin-left: 5px;padding: 0 10px;}
+.con_sub .tb02 table tbody td.cont .btn_pink a {font-family: 'NanumSquareB';font-size: 12px;line-height:40px;}
 
 .con_sub .paging {margin-top: 25px;position:relative; text-align:center;}
 .con_sub .paging>a {display: inline-block;display: inline-block;width: 30px;height: 30px;margin:0 2px;vertical-align: top; zoom: 1;}
