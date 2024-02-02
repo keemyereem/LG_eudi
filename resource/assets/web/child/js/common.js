@@ -557,7 +557,7 @@ function popupInfo(popInfo) {
   //응원메시지 초기화
   if(popInfo == "pop_msg"){document.getElementById("message").value='';}
   var popthis = $(".pop_info."+popInfo);
-  var mask = $(".pop_mask");
+  var mask = popthis.prev(".pop_mask");
   popthis.css({
     "top":  (($(window).height()-popthis.outerHeight())/2) + $(window).scrollTop()+"px",
     "left": (($(window).width()-popthis.outerWidth())/2+$(window).scrollLeft())+"px",
@@ -896,6 +896,14 @@ function popupdoctor() {
   popthis.find(".pop_close").click(function(){
       popthis.fadeOut(300);
       mask.css("display","none");
+  });
+}
+
+function popupClose() {
+  var btnClose = $('.pop_close');
+  btnClose.click(function(){
+    $(this).parents('.pop_info').removeClass('on');
+    $(this).parents('.pop_info').prev('.pop_mask').removeClass('on');
   });
 }
 
