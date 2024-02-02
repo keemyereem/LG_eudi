@@ -545,8 +545,12 @@ if("" != ""){
 				if(parseInt($("#nowYear").val())  == "2024"){
 				 	if(((parseInt($("#nowMonth").val()) == 2 && parseInt($("#nowDate").val()) > 7) || (parseInt($("#nowMonth").val()) == 2  && parseInt($("#nowDate").val()) < 14))){
 				 		if($.cookie("Lunarship") == "" || $.cookie("Lunarship") == null ||  $.cookie("Lunarship") != 'Y'){
-							popupInfo('pop_lunarnewyr');
-						}
+              $('.pop_lunarnewyr').addClass('on');
+              $('.pop_lunarnewyr').prev(".pop_mask").addClass('on');
+						}else {
+              $('.pop_lunarnewyr').removeClass('on');
+              $('.pop_lunarnewyr').prev(".pop_mask").removeClass('on');
+            }
 				
 			 		}
 				}
@@ -3147,8 +3151,8 @@ function fnPassChk(){
     <!-- 유트로핀 주사 물품 배송 일정 안내 -->   
 
     <!-- 설연휴 배송안내 팝업 -->
-    <div class="pop_mask"></div>
-    <div class="pop_info pop_lunarnewyr" id="pop_lunarnewyr" >
+    <div class="pop_mask on"></div>
+    <div class="pop_info pop_lunarnewyr on" id="pop_lunarnewyr" >
       <div class="pop_info_inner">
         <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
         <div class="pop_con">
@@ -3168,6 +3172,7 @@ function fnPassChk(){
 
 		//안드로이드 업데이트
 		//X로 닫을시
+    popupClose();
 		$('#chkCloseAday').on('change', function() {
 					// 체크박스 체크 유무
 					if ($('#chkCloseAday').prop('checked')) {
@@ -3241,12 +3246,12 @@ function fnPassChk(){
       if($("#chkCloseAdayLunar").is(":checked")){ //하루 안보기
         // 쿠키 저장
         $.cookie('Lunarship','Y',{expires: 7});
-        popthis.css("display","none");
-        mask.css("display","none");
+
       } else {
         $.removeCookie('Lunarship');
       }
-
+      popthis.removeClass('on');
+        mask.removeClass('on');
     }
 
 	</script>
