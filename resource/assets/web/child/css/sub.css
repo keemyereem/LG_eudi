@@ -1483,3 +1483,5 @@
 
 .pop_productNoti {position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);}
 .pop_productNoti .pop_inner {max-width: 300px;margin: 0 auto;}
+
+.pop_lunarnewyr {width: calc(100% - 20px);}
