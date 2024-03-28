@@ -148,26 +148,26 @@
   <!--2019-09-16 4M 김현빈-->
   <!-- common css file-->
 
-  <link rel="stylesheet" href="/resource/assets/web/css/main.css?20240325060200">
-  <link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20240325060200">
+  <link rel="stylesheet" href="/resource/assets/web/css/main.css?20240328101528">
+  <link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20240328101528">
 
 
   <!-- child css file -->
-  <link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20240325060200">
-  <link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20240325060200">
-  <link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20240325060200">
-  <link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20240325060200">
+  <link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20240328101528">
+  <link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20240328101528">
+  <link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20240328101528">
+  <link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20240328101528">
   <!-- child js file-->
   <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
   <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
   <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
-  <script type="text/javascript" src="/resource/assets/web/child/js/common.js?20240325060200"></script>
+  <script type="text/javascript" src="/resource/assets/web/child/js/common.js?20240328101528"></script>
   <script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
 
 
   <!-- common js file-->
   <script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
-  <script type="text/javascript" src="/resource/assets/common/js/common.js?20240325060200"></script>
+  <script type="text/javascript" src="/resource/assets/common/js/common.js?20240328101528"></script>
 
   <script type="text/javascript" src="/resource/assets/nurse/js/lib/datepicker-ko.js?version=1.2"></script>
 
@@ -490,7 +490,7 @@
 
 
     $(window).load(function () {
-      if ("40095") {
+      if ("39513") {
         fnAppPopupCheck(0);//로드시 팝업 호출
       }
     });
@@ -609,8 +609,8 @@
         }
       });
 
-      var chChk = "com.lg.web.vo.MemberVO@6dcf8e66";
-      var cidx = "40095";
+      var chChk = "com.lg.web.vo.MemberVO@37a4b367";
+      var cidx = "39513";
       if (chChk == null || chChk == "") {
         if ($.cookie("character_select_" + cidx) != 'ok') {
           popupInfo('pop_character');
@@ -654,7 +654,7 @@
       if (gubun == "D") {
         location.href = "/child/dose_input_cal.do";
       } else if (gubun == "G") {
-        if ("0" == 0) {
+        if ("1" == 0) {
           location.href = "/growth/growth_input.do";
         } else {
           location.href = "/growth/growth_graph.do";
@@ -734,9 +734,9 @@
 
     <input type="hidden" name="nowYear" id="nowYear" value="2024" />
     <input type="hidden" name="nowMonth" id="nowMonth" value="03" />
-    <input type="hidden" name="nowDate" id="nowDate" value="25" />
-    <input type="hidden" name="nowTime" id="nowTime" value="18" />
-    <input type="hidden" name="cheerIdx" id="cheerIdx" value="28575" />
+    <input type="hidden" name="nowDate" id="nowDate" value="28" />
+    <input type="hidden" name="nowTime" id="nowTime" value="10" />
+    <input type="hidden" name="cheerIdx" id="cheerIdx" value="28823" />
     <input type="hidden" name="cheerArrays" id="cheerArrays" value="0" />
   </form>
 
@@ -808,10 +808,10 @@
               <div></div>
               <ul>
 
-                <li id="child_39513"><a href="javascript:;" onclick="fnChildChange('39513')"> 이포엠</a></li>
-
-                <li id="child_40095" class="active"><a href="javascript:;" onclick="fnChildChange('40095')"> 김포엠</a>
+                <li id="child_39513" class="active"><a href="javascript:;" onclick="fnChildChange('39513')"> 이포엠</a>
                 </li>
+
+                <li id="child_40095"><a href="javascript:;" onclick="fnChildChange('40095')"> 김포엠</a></li>
 
                 <li id="child_48801"><a href="javascript:;" onclick="fnChildChange('48801')"> 신규포엠</a></li>
 
@@ -3416,13 +3416,13 @@
 
 
         <div class="char">
-          <img id="cheer_img" src="/resource/assets/web/child/images/profile/img_profile_smarteudi_08.png" alt="아이 캐릭터"
-            onError="this.src='/resource/assets/web/child/images/profile/img_profile_null.png';" />
+          <img id="cheer_img" src="/resource/assets/web/child/images/profile/img_profile_musicianeudi_05.png"
+            alt="아이 캐릭터" onError="this.src='/resource/assets/web/child/images/profile/img_profile_null.png';" />
         </div>
-        <p id="cheer_mesage"><span>@이*현&nbsp;&nbsp;</span>
+        <p id="cheer_mesage"><span>@김*율&nbsp;&nbsp;</span>
 
 
-          굿모닝!학교 가기싫다!
+          이제 3학년
 
         </p>
 
@@ -3440,7 +3440,7 @@
                 <p>스마트 유디
                   <span>
 
-                    1단계
+                    4단계
 
                   </span>
                 </p>
@@ -3452,8 +3452,8 @@
                 <img src="/resource/assets/web/child/images/webtoon/icon_webtoon02.png" alt="웹툰">
               </button>
               <div class="my_bar" onclick="location.href='/child/character/view.do'">
-                <div class="bar"><span style="width: 25%"></span></div>
-                <div class="lbl"><b>2</b> / 5</div>
+                <div class="bar"><span style="width: 67%"></span></div>
+                <div class="lbl"><b>26</b> / 30</div>
               </div>
               <div class="my_char" onclick="location.href='/child/character/view.do'">
 
@@ -3474,7 +3474,7 @@
 
 
 
-                <img src="/resource/assets/web/child/images/character/smart/smart_eudi01.png" alt="EuDi" />
+                <img src="/resource/assets/web/child/images/character/smart/smart_eudi04.png" alt="EuDi" />
               </div>
 
             </div>
@@ -3500,7 +3500,7 @@
 
 
 
-                <img src="/upload/child/d5ea230c744947f4a290910f1b9a4cd2.png" alt="EuDi"
+                <img src="/upload/child/754b5edb9fb043f5a24320219bb78ed5.jpg" alt="EuDi"
                   onerror="this.src='/resource/assets/web/child/images/character/img_profile_null.png'">
 
 
@@ -3514,9 +3514,9 @@
 
 
 
+                        이포엠
 
 
-                        김포엠
 
 
 
@@ -3525,7 +3525,16 @@
                       </b> 어린이</p>
                   </div>
 
-                  <div class="box_info01">성장정보(키,몸무게)를 입력하시고<br />우리 아이 성장기록을 백분위로 확인하세요.</div>
+
+
+                  <!--// 입력 완료 -->
+                  <div class="date">2024.03.28 기준</div>
+
+                  <div class="info">
+                    <span>키:123cm / 100.0%</span>
+                    <span>체중 : 12kg / 98.77%</span>
+                  </div>
+
 
 
                 </div>
@@ -3588,15 +3597,15 @@
         </div>
       </div>
 
-      <!-- IF -->
-      <div class="main_footer">
+
+      <!--    <div class="main_footer">
         <div class="award_img">
           <img src="/resource/assets/web/child/images/main/if_award_2024.jpg" alt="iF DESIGN AWARD 2024">
         </div>
         <div class="award_text">
           iF DESIGN AWARD 2024<br> Winner
         </div>
-      </div>
+      </div> -->
 
       <!-- 앱 업데이트(web version)-->
       <div class="pop_mask2"></div>
@@ -3631,13 +3640,13 @@
       <div class="pop_mask"></div>
       <div class="pop_info pop_character">
         <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:cookie(40095);"><img
+          <div class="btn_close pop_close"><a href="javascript:cookie(39513);"><img
                 src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
           <div class="pop_con">
             <p class="pop_tit">캐릭터가 선택되어 있지 않습니다 캐릭터를 선택해 주세요</p>
             <p class="pop_txt">투여입력 횟수에 따라 4종의 캐릭터 <br /> 중 하나를 선택하여 키울 수 있습니다</p>
             <div class="btn_box btn_box01">
-              <div class="btn_green pop_close"><a href="javascript:goCharacterPage(40095)">확인</a></div>
+              <div class="btn_green pop_close"><a href="javascript:goCharacterPage(39513)">확인</a></div>
             </div>
           </div>
         </div>
@@ -3856,7 +3865,20 @@
             </div>
           </div>
         </div>
-        <!-- 설연휴 배송안내 팝업 -->
+      </div>
+      <!-- 설연휴 배송안내 팝업 -->
+      <!-- IF -->
+      <div class="main_footer">
+        <div class="award_img">
+          <img src="/resource/assets/web/child/images/main/if_award_2024.jpg" alt="iF DESIGN AWARD 2024">
+        </div>
+        <div class="award_text">
+          iF DESIGN AWARD 2024<br> Winner
+        </div>
+      </div>
+    </div>
+    <!--content // -->
+  </div>
 
 </body>
 <script>
@@ -3910,7 +3932,7 @@
   //fnAppChild_Res 스마트 케이스 연결 브릿지 함수 호출
   if (isMobile.any()) {
     if (isMobile.Android()) {
-      window.eudiApp.fnAppChild_Res('4mtest1', '25428', '40095', '0', '0');
+      window.eudiApp.fnAppChild_Res('4mtest1', '25428', '39513', 'Xz/FMRz+TVdGdpBh', 'D8:5E:81:06:14:8D');
     } else if (isMobile.iOS()) {
       // N/A
     }

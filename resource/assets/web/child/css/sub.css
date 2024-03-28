@@ -139,9 +139,10 @@
 .con_main .main_top.top_bg02 .my_char {padding-bottom: 57px;}
 .con_main .main_top.top_bg02 .btn_char {padding-top: 20px;text-align: center;}
 
-.con_main .main_footer {display: flex;align-items: center;justify-content: center;padding: 12px 0;background: #ebebeb;}
-.con_main .award_img {width: 47px;margin-right: 10px;}
-.con_main .award_text {font-family: 'NanumSquareB';font-size: 10px;color: #333;line-height: 0.9;}
+.main_footer {display: flex;align-items: center;justify-content: center;padding: 12px 0;background: #ebebeb;position: absolute;bottom: 0;left: 0;right: 0;}
+.award_img {width: 47px;margin-right: 10px;}
+.award_text {font-family: 'NanumSquareB';font-size: 10px;color: #333;line-height: 0.9;}
+
 
 .con_sub .character_box {padding-bottom: 100px;background: #fff;}
 .con_sub .character_box .info_list {margin-top: 0;padding: 20px 0;}
@@ -1254,13 +1255,8 @@
 
 }
 
-@media all and (min-height: 700px) {
-/*   .con_main .main_menu {padding: 30px 0;} */
-  .con_main .main_menu {padding: 30px 0 0 0;}
-}
-
 @media all and (min-height: 747px) {
-  .con_main {height: calc(100vh - 73px); position: relative;}
+  .con_main {height: calc(100vh - 65px); position: relative;}
   .con_main .my_msg {padding: 5px 12px 5px 2px;margin: 15px auto 15px;border-radius: 20px;}
   .con_main .my_msg #cheer_mesage {font-size: 12px;}
   .con_main .main_info {height: calc(100% - 281px);}
@@ -1271,13 +1267,14 @@
   .con_main .main_top .btn_webtoon {top: 13vh!important;}
   .con_main .main_info .infobox {height: 10vh;}
   .con_main .main_info .top_bg02 + .con_main .main_info .infobox {height: 12vh;}
-
-  /* .con_main .main_menu {position: absolute;} */
   
-  .con_main .main_menu {position: absolute;width: 100%;}
+  .con_main .main_menu {/* position: absolute; */width: 100%;}
   .con_main .main_menu>.inner,
   .con_main .main_menu ul {width: 100%;}
-  
+}
+
+@media all and (max-height: 747px) {
+  .main_footer {position: relative;}
 }
 
 /* 2022.12.01 유디 팝업 비디오 아이콘 및 메인 영상유도 텍스트 퍼블 추가 */
