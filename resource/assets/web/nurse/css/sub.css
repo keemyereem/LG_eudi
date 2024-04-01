@@ -240,9 +240,10 @@
 .con_sub .con_list>ul>li>a>div .lblbox.lbl04 {border: 1px solid #333;color: #333;} /* black */
 .con_sub .con_list>ul>li>a>div .lblbox.lbl05 {border: 1px solid #f18e1e;color: #f18e1e;} /* orange */
 .con_sub .con_list>ul>li>a>div .lblbox.lbl06 {border: 1px solid #fc637d;color: #fc637d;} /* pink */
-.con_sub .con_list>ul>li>a>div .lblbox.lbl07 {border: 1px solid #13bfd6;color: #13bfd6;} /* skyblue -추가 2023.02.07*/
+.con_sub .con_list>ul>li>a>div .lblbox.lbl07 {border: 1px solid #7d35b1;color: #7d35b1;} /* purple -수정 2024.03.06*/
 .con_sub .con_list>ul>li>a>div .lblbox.lbl08 {border: 1px solid #e5e5e5;color: #e5e5e5;} /* light gray -추가 2023.02.07 */
 .con_sub .con_list>ul>li>a>div .lblbox.lbl09 {border: 1px solid #89dfea;color: #13bfd6;} /* skyblue -추가 2023.03.06*/
+.con_sub .con_list>ul>li>a>div .lblbox.lbl13 {border: 1px solid #13bfd6;color: #13bfd6;}
 .con_sub .con_list>ul>li>a>div .idbox {display: inline-block;margin-top: 6px;font-family: 'NanumSquareB';font-size: 13px;line-height: 1.5;}
 .con_sub .con_list>ul>li>a>div .datebox {display: block;margin-top: 5px;font-family: 'NanumSquareB';font-size: 11px;color: #999;}
 .con_sub .con_list>ul>li>a>div .namebox {position: absolute;right: 0;bottom: 0;font-size: 13px;}
