@@ -495,7 +495,9 @@ ExtraBold - 'NanumSquareEB'
 .con_sub .list_box .child_list>ul>li>a>div+div { margin-top: 10px; }
 .con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)>div { /* display: inline-block; */ float: left; min-width: 50%; }
 .con_sub .list_box .child_list>ul>li>a>div:nth-of-type(2)::after { content:''; display: block; clear: both; } 
-.con_sub .list_box .child_list>ul>li>a>div:last-child { width: 100%; text-align: left; font-family: 'NanumSquareR'; color: #999; }
+.con_sub .list_box .child_list>ul>li>a>.child_hw {display: inline-block;width: auto; text-align: left; font-family: 'NanumSquareR'; color: #999; }
+.con_sub .list_box .child_list>ul>li>a>.nurse_info {width: 100%;text-align: left;font-size: 11px;color: #333;}
+.con_sub .list_box .child_list>ul>li>a>.nurse_info.resign {color: #999;}
 .con_sub .list_box .btn_bottom { width: calc(100% - 30px); left: 15px; }
 
 .con_sub .list_box { padding: 35px 15px 125px; background: #fff; box-sizing: content-box; }
