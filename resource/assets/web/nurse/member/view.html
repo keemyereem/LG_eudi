@@ -1,9 +1,9 @@
-<!DOCTYPE html>
- 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+
+<!DOCTYPE html>
 <html>
-    <head> 
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 
 
@@ -64,22 +64,22 @@ if("" != ""){
          <!-- TITLE -->
          <title>EuDi</title>
 	    
-   	
+    
 
 
 <!--2019-09-16 4M ê¹íë¹-->
 <!-- common css file-->
 
 <!-- common css file-->
-<link rel="stylesheet" href="/resource/assets/web/css/main.css?20240122113858">
-<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20240122113858">
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?20240510041538">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20240510041538">
 
 
 <!-- nurse css file -->
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?20240122113858">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?20240122113858">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?20240122113858">
-<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css?20240122113858">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/common.css?20240510041538">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/sub.css?20240510041538">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/font.css?20240510041538">
+<link rel="stylesheet" href="/resource/assets/web/nurse/css/counseling.css?20240510041538">
 
 
 
@@ -87,14 +87,14 @@ if("" != ""){
 <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-1.11.3.min.js?version=1.2"></script>
 <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery-ui-1.11.3.min.js?version=1.2"></script>
 <script type="text/javascript" src="/resource/assets/web/nurse/js/lib/jquery.easing.1.3.js?version=1.2"></script>
-<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?20240122113858"></script>
+<script type="text/javascript" src="/resource/assets/web/nurse/js/common.js?20240510041538"></script>
 
 
 	
 		<!-- í¼ë¸ ìì¤ overwrite ë°©ì§ë¡ ê°ë°ìì¤ ì´ë¦ ë³ê²½
 		<script src="/resource/assets/web/nurse/js/counseling.js"></script>
 		-->
-		<script src="/resource/assets/web/nurse/js/counseling.dev.js?20240122113858"></script>
+		<script src="/resource/assets/web/nurse/js/counseling.dev.js?20240510041538"></script>
 	
 
 
@@ -267,7 +267,7 @@ if("" != ""){
 		  //var web_rtc_server_url = 'https://api.webrtc.belivvr.com';
 		  var web_rtc_server_url = 'https://jitsi.belivvr.com/';
 		  var seed = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
-		  var open_url = web_rtc_server_url + seed + '/nurse/' + '43886';
+		  var open_url = web_rtc_server_url + seed + '/nurse/' + '40095';
 		  window.open(open_url, 'window','height=' + screen.height + ',width=' + screen.width + 'fullscreen=yes');
 	  return;
   }
@@ -285,7 +285,39 @@ if("" != ""){
             'min-height': $(window).height() + 'px'
           });
         }
-
+        // ### 탈퇴 신청 상태일때 입력값 변경 못하도록 제한 : start
+        if($("#ori_cState").val() == "DR"){
+        	const inputList = [
+        		'input',
+        		'select',
+        		'.select_row',
+        		'textarea',
+        		'.btn_addr a',
+        		'.btn_add a',
+        		'.btn_search a',
+        	];
+        	let preValue = '';
+        	let preLabel = '';
+        	$('#viewForm .ipt_box ' + inputList.join(', #viewForm .ipt_box '))
+	        	// .css('background','#eeeeee')
+	        	.attr('readonly',true)
+	        	.on('click', function(){
+	        		alert('탈퇴요청 회원 정보는 수정할 수 없습니다!');
+	        		return false;
+	        	})
+	        	.on('focus', function(){
+	        		preValue = $(this).val();
+	        		preLabel = $(this).siblings('label').html();
+	        	}).on('change', function(){
+	        		$(this).val(preValue);
+	        		console.log(preValue,$(this)[0],  $(this)[0].nodeName, $(this).siblings('label').html());
+	        		if ($(this)[0].nodeName == 'SELECT'){
+	        			$(this).siblings('label').text(preLabel);
+	        		}
+	        	});
+        	$('.btn_search a').hide();
+        }
+        // ### 탈퇴 신청 상태일때 입력값 변경 못하도록 제한 : end
       });
       
       
@@ -363,21 +395,8 @@ if("" != ""){
 					return;
 				}
 				
-				/*   if($("#cChargNurseId").val() != $("#ori_cChargNurseId").val()){
-					  console.log("담당 간호사 " + $("#cChargNurseId").val() +" 으로 변경 됨");
-			
-				  } */
-				  
-				  
-				  
 			  var result = confirm("저장하겠습니까?");
 			  if(result){
-				  
-				  //담당간호사 변경시 프로세스 추가
-				  //if($("#cChargNurseId").val() != $("#ori_cChargNurseId").val()){
-					  //  console.log("담당 간호사 " + $("#cChargNurseId").val() +" 으로 변경 됨");
-					  //현재 상담 상태 조회
-				  //}
 				  
 				   actionurl = "/nurse/mis/updateChildInfo.do";
 			          $.ajax({
@@ -387,26 +406,123 @@ if("" != ""){
 			              data : $("#viewForm").serialize(),
 			              dataType : "json",
 			              success: function(obj){
-			            	  if(obj.result < 1){
-			            		  alert("일시적인 오류 입니다,다시 시도 해주세요");
-			            		  return;
-			            	  } else {
-			            		 // location.reload();
-			            		  //fnViewPage($("#cIdx").val());
-			            		  fnListPage();
-			            		  
-			            	  }
-			           			            
+			            	  	const $alert = $('#popupSubmitWarn');
+			            	  	
+			            	  	// 환아 스캐줄 정보 조회
+               					const strNewLine = '<br>';
+								const sichNm = obj?.eduSchdInfo?.sichNm || '';
+								const hsptNm = obj?.eduSchdInfo?.hsptNm || '';
+								const schdTpNm = obj?.eduSchdInfo?.schdTpNm || '';
+								const schdDt = obj?.eduSchdInfo?.schdDt || '';
+								const schdStTi = obj?.eduSchdInfo?.schdStTi || '';
+								const schdEndTi = obj?.eduSchdInfo?.schdEndTi || '';
+								const nrsNmNew = obj?.eduSchdInfo?.nrsNmNew || '';
+              					const strSchdHtml = `
+           							<li><strong>대상:</strong> ${sichNm} (${hsptNm}) ${schdTpNm} 신청</li>
+           							<li><strong>시간:</strong> ${schdDt}&nbsp; ${schdStTi} ~ ${schdEndTi}</li>
+           						`;
+								const strSchdHtml2 = `<li><strong>담당:</strong> ${nrsNmNew} 간호사`;
+              					let printSchdYn = 'N';
+              					
+								if(obj.result < 1){
+									let altTitle = '저장 실패';
+									let altMessage = `일시적인 오류 입니다.${strNewLine}다시 시도 해주세요`;
+									switch(obj.errorCd){
+										case '001' : 
+											altTitle = '저장 실패'; 
+											altMessage = `
+												존재하지 않는 회원 정보 입니다.${strNewLine}
+												확인 후 다시 시도해주세요.
+											`;
+											break;
+										case '002' : // 이전 간호사 정보가 요청 정보와 다름
+											altTitle = `담당간호사 변경 불가로${strNewLine}저장 실패`; 
+											altMessage = `
+												담당간호사가 이미 변경되었습니다.${strNewLine}
+												새로고침 하여 다시 확인 바랍니다.
+											`;
+											break;
+										case '003' : // 변경 대상 간호사 정보가 존재하지 않음
+											altTitle = `담당간호사 변경 불가로${strNewLine}저장 실패`; 
+											altMessage = `
+												변경 대상 간호사 계정이 존재하지 않습니다.
+											`;
+											break;
+										case '004' : // 상담 신청이 정상적인 상태가 아님
+											altTitle = `담당간호사 변경 불가로${strNewLine}저장 실패`; 
+											altMessage = `
+												대기중인 교육/상담 신청 상태가${strNewLine}
+												바르지 않습니다.${strNewLine}
+    											확인 후 다시 시도해주세요.
+    										`;
+											break;
+										case '005' : // 간호사 스캐줄 정보가 정상적인 상태가 아님
+											altTitle = `담당간호사 변경 불가로${strNewLine}저장 실패`; 
+											altMessage = `
+												변경 대상 간호사의 일정 상태가${strNewLine}
+												설정이 바르지 않습니다.${strNewLine}
+    											확인 후 다시 시도해주세요.
+    										`;
+											break;
+										case '101' : // 교육시간 임박
+											altTitle = `담당간호사 변경 불가로${strNewLine}저장 실패`; 
+											altMessage = `
+    											다음의 예약된 ${schdTpNm} 시간이 임박하여${strNewLine}
+       											담당간호사 변경이 불가합니다.${strNewLine} 
+       											상담 시간 이후에 변경해주세요.
+    										`;
+											printSchdYn = 'Y';
+											break;
+										case '102' : // 이관할 간호사가 가능 스캐줄이 없음
+											altTitle = `담당간호사 변경 불가로${strNewLine}저장 실패`; 
+											altMessage = `
+												예약된 상담 시간에 <strong>${nrsNmNew}</strong> 간호사는${strNewLine}
+    											상담이 불가합니다. 상담 가능한 다른 간호사를${strNewLine}
+    											지정하여 재신청 하시기 바랍니다.
+    										`;
+											printSchdYn = 'Y';
+											break;
+										case '999' : // 오류 테스트 코드
+											altTitle = `담당간호사 변경 불가로${strNewLine}저장 실패`; 
+											altMessage = '간호사 변경 validation 작업중!!!';
+											break;
+									}
+									
+									$alert.find('[data-submit-alt="title"]').html(altTitle);
+									$alert.find('[data-submit-alt="message"]').html(altMessage);
+									$alert.find('[data-submit-alt="schdule"]').html(printSchdYn == 'Y' ? strSchdHtml : '');
+									
+									popupAlert($alert.attr('id'));
+									$('[name="btnSubmitWarnOk"]').off('click').on('click',function(){
+										$('#popupSubmitWarn .btn_close').click();
+									});
+									return;
+								} else {
+									if (obj.addSchdParam) {
+										const altTitle = '상담 신청 이전 완료';
+										const altMessage = `
+											담당간호사가 변경되어 상담${strNewLine}
+											<strong>${schdTpNm}</strong>이 이전 되었습니다.
+										`;
+										printSchdYn = 'Y';
+										
+										$alert.find('[data-submit-alt="title"]').html(altTitle);
+										$alert.find('[data-submit-alt="message"]').html(altMessage);
+										$alert.find('[data-submit-alt="schdule"]').html(printSchdYn == 'Y' ? strSchdHtml + strSchdHtml2  : '');
+										
+										popupAlert($alert.attr('id'));
+										$('[name="btnSubmitWarnOk"], #popupSubmitWarn .btn_close').off('click').on('click',function(){
+											fnListPage();
+										});
+										return;
+									}
+									fnListPage();
+								}
 			              },
 			              error: function(xhr, option, error){
 			                   // alert(xhr.status+" | "+error); //오류코드 | 오류내용
-			                    
 			                    alert("code:"+xhr.status+"\n"+"message:"+xhr.responseText+"\n"+"error:"+error);
 			              }
-			              /*error : function(success){
-			                  meg = "서버와 통신중 에러가 발생하였습니다."
-			                  alert("처리결과 : "+meg);
-			              }*/
 			          });
 			  }
 		}
@@ -538,7 +654,7 @@ if("" != ""){
 			
 			$("#cNurseName").val($("#cChargNurseId option:selected").text());
 			
-			let data = {"cName": $("#cName").val(),"cBirth": $("#cBirth").val(),"cIdx":43886,"mId":$("#mId").val()};
+			let data = {"cName": $("#cName").val(),"cBirth": $("#cBirth").val(),"cIdx":40095,"mId":$("#mId").val()};
 		    let dup_list = "";
 			              actionurl = "/nurse/selectDupChildDetailInfo.do";
 				          $.ajax({
@@ -890,16 +1006,10 @@ if("" != ""){
 	  	}
 
 
-	function withDrawDeleteChk() {
-    var chkValue = $('input[name="radioWithdrawDelete"]:checked').val();
-    if(chkValue == 'radioDelete'){
-      $('#select_box_childDelete').css('display','block');
-    }else{
-      $('#select_box_childDelete').css('display','none');
-    }
-  }
-
+	
 	function childDelete(){
+		
+
 		if($("#mWithdrawCode option:selected").val() == "" || $("#mWithdrawCode option:selected").val() == null  || $("#mWithdrawCode option:selected").val() == 0){
 			alert("탈퇴 유형을 선택해 주세요.");
 			return;
@@ -962,6 +1072,23 @@ if("" != ""){
   </head>
    <body>
 	  <div class="wrap wrap_sub wrap_sub01">
+      <!-- 담당 간호사 변경 팝업 2023.11.10 -->
+      <div class="popup popup_alert" id="popupSubmitWarn">
+        <div class="inner_pop">
+          <button type="button" class="btn_close pop_close"></button>
+  
+          <div class="pop_content pop_alert">
+            <div class="pop_tit" data-submit-alt="title"></div>
+            <p class="tcenter mt15" data-submit-alt="message">
+              
+            </p>
+            <ul class="pop_txt_list mt20" data-submit-alt="schdule">
+              
+            </ul>
+            <button type="button" name="btnSubmitWarnOk">확인</button>
+          </div>
+        </div>
+      </div>
       <!--// top -->
       <div class="sub_top">
         <div class="nav">
@@ -989,19 +1116,21 @@ if("" != ""){
       <!--// content -->
        <form id="viewForm" name="viewForm" commandName="memberVo" role="form" action="/nurse/member/view.do" method="post">
        <input type="hidden" name="pageIndex" id="pageIndex" value="1">
-       <input type="hidden" name="cHospitalIdx" id="cHospitalIdx" value="WKRH00000158">
-        <input type="hidden" name="cHospitalName" id="cHospitalName" value="아주대학교병원">
-		<input type="hidden" name="cIdx" id="cIdx" value="43886">
-		<input type="hidden" name="mId" id="mId" value="4mtest8">
-		<input type="hidden" name="ori_cState" id="ori_cState" value="M">
+       <input type="hidden" name="cHospitalIdx" id="cHospitalIdx" value="WKRH00001611">
+        <input type="hidden" name="cHospitalName" id="cHospitalName" value="아산사회복지재단보성아산병원">
+		<input type="hidden" name="cIdx" id="cIdx" value="40095">
+		<input type="hidden" name="mId" id="mId" value="4mtest1">
+		<input type="hidden" name="ori_cState" id="ori_cState" value="DR">
+		
+		<input type="hidden" name="oriCState" id="oriCState" value="DR">
 		<input type="hidden" name="searchName" id="searchName" value="">
 		  <input type="hidden" name="searchNurseId" id="searchNurseId" value="">
 			<input type="hidden" name="srh04" id="srh04" value="">
 		<input type="hidden" name="searchKeyword" id="searchKeyword" value="">
-		<input type="hidden" name="cState" id="cState" value="">
+		<input type="hidden" name="cState" id="cState" value="DR">
 		<input type="hidden" name="hIdx" id="hIdx" value="">
 		<input type="hidden" name="hName" id="hName" value="">
-		<input type="hidden" name="doctOnkyCd" id="doctOnkyCd" value="WKRM00126983">
+		<input type="hidden" name="doctOnkyCd" id="doctOnkyCd" value="WKRM00129065">
 		<input type="hidden" name="reSearch" id="reSearch" value="Y">
 		<input type="hidden" name="privateYn" id="privateYn" value="Y">
 		<input type="hidden" name="frstRcp1DtCfmYn" id="frstRcp1DtCfmYn" value="">
@@ -1023,17 +1152,17 @@ if("" != ""){
 	 
 	    <!--  기존 핸드폰 번호 갖고 있어야 함 -->
      <input type="hidden" name="mCpNumber1Reg" id="mCpNumber1Reg" value="010">     
-     <input type="hidden" name="mCpNumber2Reg" id="mCpNumber2Reg" value="0000">
-     <input type="hidden" name="mCpNumber3Reg" id="mCpNumber3Reg" value="0000">
+     <input type="hidden" name="mCpNumber2Reg" id="mCpNumber2Reg" value="3186">
+     <input type="hidden" name="mCpNumber3Reg" id="mCpNumber3Reg" value="7221">
      
 	 <input type="hidden" name="cNurseName" id="cNurseName" value=""><!-- 알림톡 때문에 간호사 이름 필요 -->
 	 
 	 
 	 
 	<!--  기존 담당간호사 아이디 가지고 있어야 함(담당간호사 변경 프로세스) -->
-	 <input type="hidden" name="ori_cChargNurseId" id="ori_cChargNurseId" value="barakee82">
+	 <input type="hidden" name="oriCChargNurseId" id="oriCChargNurseId" value="barakee82">
 	 
-	 <input type="hidden" name="cDocName" id="cDocName" value="김가희">
+	 <input type="hidden" name="cDocName" id="cDocName" value="김종우">
 	 
 	 	 <!-- 반려사유 -->
 	 <input type="hidden" name="entyRqstRjtRsnCtn" id="entyRqstRjtRsnCtn" value="">
@@ -1054,12 +1183,12 @@ if("" != ""){
                 <tbody>
                   <tr>
                     <td class="tit"><p>가입일자</p></td>
-                    <td class="cont"><p>2023-08-03</p></td>
+                    <td class="cont"><p>2022-10-14</p></td>
                   </tr>
                 
                   <tr>
                     <td class="tit"><p>아이디</p></td>
-                    <td class="cont"><p>4mtest8</p></td>
+                    <td class="cont"><p>4mtest1</p></td>
                   </tr>
                  <tr>
                     <td class="tit"><p>회원상태</p></td>
@@ -1069,14 +1198,14 @@ if("" != ""){
              			       
                          
              			       
-                           			회원
+                         
+             			       
+                         
+             			       
+                         
+             			       
+                           			탈퇴요청중
                            		
-                         
-             			       
-                         
-             			       
-                         
-             			       
                          
              			       
                          
@@ -1097,18 +1226,18 @@ if("" != ""){
                         <div class="addr_box01" id="addr_box01">
                           <div class="input_addr">
                             <span class="input_box">
-                              <input type="text" id="mPost" name="mPost" class="ipt" value="06753" readonly>
+                              <input type="text" id="mPost" name="mPost" class="ipt" value="06122" readonly>
                             </span>
                             <div class="btn_addr"><a href="javascript:;" onclick="sample2_execDaumPostcode();">우편번호 검색</a></div>
                           </div>
                           <div class="input_row mt5">
                             <span class="input_box">
-                              <input type="text" id="mAddr1" name="mAddr1" class="ipt" value="서울 서초구 양재천로19길 28 (양재동)" readonly>
+                              <input type="text" id="mAddr1" name="mAddr1" class="ipt" value="서울 강남구 논현로111길 3 (논현동, 휴먼스페이스주상복합아파트)" readonly>
                             </span>
                           </div>
                           <div class="input_row mt5">
                             <span class="input_box">
-                              <input type="text" id="mAddr2" name="mAddr2" class="ipt" value="4F">
+                              <input type="text" id="mAddr2" name="mAddr2" class="ipt" value="1">
                             </span>
                           </div>
                         </div>
@@ -1122,33 +1251,42 @@ if("" != ""){
                      <tr>
                     <td class="tit"><p>휴대폰번호</p></td>
                     <td class="cont">
-                      <div class="select_tel">
-                        <label for="tel01">010</label>
-                        <select id="mCpNumber1" name="mCpNumber1">
-                            <option selected="selected">010</option>
-                  		    <option value="011">011</option>
-                            <option value="017">017</option>
-                            <option value="018">018</option>
-                            <option value="019">019</option>
-                        </select>
-                      </div>
-                      <span class="hyphen">-</span>
-                      <div class="input_tel">
-            						<span class="input_box">
-          							<input type="text" id="mCpNumber2" name="mCpNumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="0000" class="ipt"  maxlength="4">
-            						</span>
-            					</div>
-                      <span class="hyphen">-</span>
-                      <div class="input_tel">
-            						<span class="input_box">
-          							<input type="text" id="mCpNumber3" name="mCpNumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="0000" class="ipt"  maxlength="4">
-            						</span>
-            					</div>
+											<div class="select_tel_wrap">
+												<div class="select_tel">
+													<label for="tel01">010</label>
+													<select id="mCpNumber1" name="mCpNumber1">
+															<option selected="selected">010</option>
+														<option value="011">011</option>
+															<option value="017">017</option>
+															<option value="018">018</option>
+															<option value="019">019</option>
+													</select>
+												</div>
+												<span class="hyphen">-</span>
+												<div class="input_tel">
+													<span class="input_box">
+													<input type="text" id="mCpNumber2" name="mCpNumber2" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="3186" class="ipt"  maxlength="4">
+													</span>
+												</div>
+												<span class="hyphen">-</span>
+												<div class="input_tel">
+													<span class="input_box">
+													<input type="text" id="mCpNumber3" name="mCpNumber3" required="required" data-title="휴대폰번호를" title="휴대폰번호를" value="7221" class="ipt"  maxlength="4">
+													</span>
+												</div>
+											</div>
+							
+											<div class="btn_wrap">
+												<div class="btn_add btn_phone_chk"><a href="javascript:chkCp();">휴대폰번호 중복확인</a></div>
+												<button type="button" class="btn_copy" onclick="copyPhoneNo()">복사</button>
+											</div>
+								
                     </td>
+
                   </tr>
                 </tbody>
               </table>
-                <div class="btn_add"><a href="javascript:chkCp();">휴대폰번호 중복확인</a></div>
+                
             </div>
 
             <h3 class="info02">아이 정보</h3>
@@ -1164,13 +1302,27 @@ if("" != ""){
                   <tbody>
        			 <tr>
                     <td class="tit"><p>등록일자</p></td>
-                    <td class="cont"><p>2023-08-03</p></td>
+                    <td class="cont"><p>2023-05-11</p></td>
                   </tr>
                   
                   <tr>
                     <td class="tit"><p>승인일자</p></td>
-                    <td class="cont"><p>2023-11-10</p></td>
+                    <td class="cont"><p>2023-11-28</p></td>
                   </tr>
+                  
+                  
+	                <tr>
+	                  <td class="tit"><p>신환교육</p></td>
+                      <td class="cont">
+                        <div class="cont_inner">
+                          <p>
+                            2023-06-30
+                            09:00~10:00
+                          </p>
+                          <p><span class="gray">(2023-06-15)</span></p>
+                        </div>
+                      </td>
+                    </tr>
                   
                       <tr>
                       <td class="tit"><p>아이명</p></td>
@@ -1178,7 +1330,7 @@ if("" != ""){
                       <td class="cont flex">
                         <div class="input_search">
                           <span class="input_box">
-                            <input type="text" class="ipt" id="cName" name="cName" value="개발사테스트중입니다1">
+                            <input type="text" class="ipt" id="cName" name="cName" value="김포엠">
                           </span>
                         </div>
                         <div class="btn_green"><a href="javascript:;" onclick="fnJoinVideoCall();">&nbsp;화상미팅&nbsp;</a></div>
@@ -1233,11 +1385,11 @@ if("" != ""){
                       <td class="tit"><p>LG화학 유트로핀을 처음 처방 받으셨나요?<br></p></td>
                       <td class="cont">
                         <div class="radio_row">
-                          <input type="radio" id="radio01" name="orcoIjtAstEduYn" class="radio" value="N"   />
+                          <input type="radio" id="radio01" name="orcoIjtAstEduYn" class="radio" value="N"  checked="checked" />
                           <label for="radio01">예</label>
                         </div>
                         <div class="radio_row">
-                          <input type="radio" id="radio02" name="orcoIjtAstEduYn" value="Y"  class="radio" checked="checked"/>
+                          <input type="radio" id="radio02" name="orcoIjtAstEduYn" value="Y"  class="radio" />
                           <label for="radio02">아니요</label>
                         </div>
                       </td>
@@ -1271,27 +1423,23 @@ if("" != ""){
                           
                              <option value="barakee82" selected="selected">강미현</option>
                            
-                             <option value="andari" >강수진</option>
+                             <option value="kangsujin80" >강수진</option>
                            
-                             <option value="kangsujin1" >강수진</option>
+                             <option value="kwak_jh" >곽지현</option>
                            
                              <option value="chloe1" >김광열</option>
                            
                              <option value="dudal33" >김영미</option>
                            
-                             <option value="camila" >김은영</option>
-                           
-                             <option value="camilaa" >김은영</option>
-                           
                              <option value="rajhkim" >김지혜</option>
                            
                              <option value="cokiri" >김진경</option>
                            
-                             <option value="ajelier" >김춘홍</option>
-                           
                              <option value="khb4m" >김현빈</option>
                            
                              <option value="skywlgp" >박지혜</option>
+                           
+                             <option value="jin_narwhal" >박진영</option>
                            
                              <option value="sheom" >엄소희</option>
                            
@@ -1317,8 +1465,6 @@ if("" != ""){
                            
                              <option value="hans7012" >한화숙</option>
                            
-                             <option value="hyoo0315" >황윤주</option>
-                           
                       </select>
                         </div>
                       </td>
@@ -1332,13 +1478,8 @@ if("" != ""){
 						    
                       <td class="cont flex">
                         <div class="inputBox_DP">
-                                <input type="date" name="cInitialPrescription" class="date" value="2023-08-03" />
+                                <input type="date" name="cInitialPrescription" class="date" value="2023-05-11" />
                         </div>
-                         
-	                         <div class="checkbox_row shrink0">
-	                          <input type="checkbox" id="frstChk" name="frstChk" class="checkbox" />
-	                          <label for="frstChk">확정</label>
-	                        </div>
                          
                       </td>
                     </tr>
@@ -1410,7 +1551,7 @@ if("" != ""){
                         
 				    	
 					   
-					   		아주대학교병원
+					   		아산사회복지재단보성아산병원
 					   
 				   
                       </p></td>
@@ -1426,7 +1567,7 @@ if("" != ""){
 						   		
 						   
 					   
-                            <input type="text" class="ipt"   id="selectHname"  value="아주대학교병원" readonly="">
+                            <input type="text" class="ipt"   id="selectHname"  value="아산사회복지재단보성아산병원" readonly="">
                             <div class="btn_search"><a href="javascript:;" onclick="popupsrh();"></a></div>
                           </span>
                         </div>
@@ -1438,7 +1579,7 @@ if("" != ""){
                       <td class="cont">
                         <div class="input_search">
                           <span class="input_box">
-                              <input type="text" id="cDoctorName" name="cDoctorName" value="김가희" class="ipt">
+                              <input type="text" id="cDoctorName" name="cDoctorName" value="김종우" class="ipt">
                         	  <div class="btn_search"><a href="javascript:;" onclick="popupdoctor();"></a></div>
                           </span>
                         </div>
@@ -1458,18 +1599,18 @@ if("" != ""){
 		                        </div>
 		                         -->
 		                         <div class="radio_row">
-			                          <input type="radio" id="radio03" name="pstGrwTrtmEprnYn" class="radio" value="Y"   />
+			                          <input type="radio" id="radio03" name="pstGrwTrtmEprnYn" class="radio" value="Y" checked="checked"  />
 			                          <label for="radio03">있음</label>
 			                        </div>
 			                        <div class="radio_row">
-			                          <input type="radio" id="radio04" name="pstGrwTrtmEprnYn" class="radio" value="N" checked="checked"/>
+			                          <input type="radio" id="radio04" name="pstGrwTrtmEprnYn" class="radio" value="N" />
 			                          <label for="radio04">없음</label>
 			                        </div>
 			                        
 			                        
 		                      </td>
 		                    </tr>
-		                      <tr id="pst_area" style="display:none">
+		                      <tr id="pst_area" >
 			                      <td class="tit"><p>과거사용제품</p></td>
 			                      <td class="cont">
 			                          <div class="select_row">
@@ -1649,7 +1790,7 @@ if("" != ""){
 				                      <td class="tit"><p>종료예정일</p></td><!-- childDetailInfo.sixMonthOverDate -->
 				                      <td class="cont flex">
 				                        <div class="inputBox_DP">
-				                          <input type="date" name="grwMgtEndExpcDt" class="date" value="2024-08-02" data-placeholder="YYYY-MM-DD">
+				                          <input type="date" name="grwMgtEndExpcDt" class="date" value="2024-05-10" data-placeholder="YYYY-MM-DD">
 				                        </div>
 				                      </td>
 				                    </tr>
@@ -1657,7 +1798,7 @@ if("" != ""){
 				                      <td class="tit"><p>종료일</p></td>
 				                      <td class="cont flex">
 				                        <div class="inputBox_DP">
-				                          <input type="date" name="grwMgtEndDt" class="date" value="--" data-placeholder="YYYY-MM-DD">
+				                          <input type="date" name="grwMgtEndDt" class="date" value="" data-placeholder="YYYY-MM-DD">
 				                        </div>
 				                      </td>
 				                    </tr>
@@ -1727,7 +1868,7 @@ if("" != ""){
                 
                 
                      
-                        <!-- <h4>탈퇴 정보</h4>
+                        <h4>탈퇴 정보</h4>
 			              <div class="tb tb04">
 			                <table summary="탈퇴 정보" >
 			                  <caption>탈퇴 정보</caption>
@@ -1742,7 +1883,37 @@ if("" != ""){
 				                        <div class="select_row">
 				                       
 				                             
-					                        	<label for="mWithdrawCode">탈퇴사유를 선택해주세요</label>
+					                        	
+					                        	
+					                        	  
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  
+					                            
+					                 					  <label for="mWithdrawCode">기타 (사유를 서술형으로 적어주세요)</label>
+					                            
 					                        	
 					                        
 					                        
@@ -1776,7 +1947,7 @@ if("" != ""){
 						                            
 						                             	<option value="13" >동의 철회(해피콜 거부/삭제 요청)</option>
 						                            
-						                             	<option value="14" >기타 (사유를 서술형으로 적어주세요)</option>
+						                             	<option value="14" selected>기타 (사유를 서술형으로 적어주세요)</option>
 						                            
 				                          </select>
 				                        </div>
@@ -1785,11 +1956,11 @@ if("" != ""){
 			                    
 			           
                     
-                    <tr id="withdrawContent">
+                    <tr id="withdrawContent" >
                       <td class="tit"><p>탈퇴사유<br>(서술)</p></td>
                       <td class="cont">
                         <div class="area_box">
-                          <textarea type="text" id="mWithdrawContent" name="mWithdrawContent" placeholder="내용을 입력해주세요"></textarea>
+                          <textarea type="text" id="mWithdrawContent" name="mWithdrawContent" placeholder="내용을 입력해주세요">개발테스트</textarea>
                         </div>                  
                       </td>
                     </tr>
@@ -1801,7 +1972,17 @@ if("" != ""){
                       
                           
                                
-				                        	<label for="rState">반납여부 선택해주세요</label>
+				                        	
+				                        	
+				                        	  
+				                 					  
+				                            
+				                 					  
+				                            
+				                 					  <label for="rState">처음부터 받지 않았음</label>
+				                            
+				                 					  
+				                            
 				                        	
 				                        
 				                        
@@ -1814,7 +1995,7 @@ if("" != ""){
 		                            
 		                             	<option value="02" >미 반납(반납예정)</option>
 		                            
-		                             	<option value="03" >처음부터 받지 않았음</option>
+		                             	<option value="03" selected>처음부터 받지 않았음</option>
 		                            
 		                             	<option value="04" >분실</option>
 		                            
@@ -1827,7 +2008,7 @@ if("" != ""){
 			                </table>
                     
                     
-              </div> -->
+              </div>
             </div>
 
 
@@ -1838,10 +2019,10 @@ if("" != ""){
 					                  	 
 					                  	
 													
-														
+														 <div class="btn_box btn_box03 mt50">
 													
 														
-														 <div class="btn_box btn_box03 mt50">
+														
 														
 													    
 														
@@ -1858,23 +2039,21 @@ if("" != ""){
     						
 					                  	 
 					                  				     	  
+														     		   <div class="btn_gray"><a href="javascript:;" onclick="popupReject()">반려</a></div>
 														     	
 														     	
 														     	
+														     	
+														     	
+														     		<!--   <div class="btn_green"><a href="javascript:;" onclick="childStateUpdate('D')">회원탈퇴</a></div> -->
+														     		  <div class="btn_green"><a href="javascript:;" onclick="childDelete()">회원탈퇴</a></div>
 														     	
 														       	
-														     		 <div class="btn_gray"><a href="javascript:;" onclick="fnCreateTempPassword()">비밀번호<br> 초기화</a></div>
-														     		 <!--  <div class="btn_line_green"><a href="javascript:;" onclick="childStateUpdate('D')" class="open_pop">회원탈퇴</a></div> -->
-														     		   <!-- <div class="btn_line_green"><a href="javascript:;" onclick="childDelete()" class="open_pop">회원탈퇴</a></div> -->
-														     		   <div class="btn_line_green"><a href="javascript:;" onclick="popupInfo('pop_withdrawDelete'),withDrawDeleteChk()" class="open_pop">회원탈퇴</a></div>
-														     	
 														       	<!-- 회원 복구 2021-10-26 -->
 														     
 														     		
 														     		 
 												            </div>
-												             
-												             	   <div class="btn_box btn_box01 mt10"><div class="btn_green"><a href="javascript:;" onclick="childInfoUpdate()">저장</a></div></div>
 												             
 					                  	
 					                  	
@@ -1975,116 +2154,6 @@ if("" != ""){
           </div>
         </div>
       </div>
-
-    <!-- 회원탈퇴 및 아이삭제 팝업 -->
-      <div class="pop_mask"></div>
-      <div class="pop_info pop_withdrawDelete">
-        <div class="pop_info_inner">
-          <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/nurse/images/common/btn_close.png" alt="닫기" /></a></div>
-          <div class="pop_con">
-            <div class="pop_tit">회원탈퇴 및 아이삭제</div>
-            <div>
-              <div class="radio_row">
-                <input type="radio" id="radioDelete" name="radioWithdrawDelete" class="radio" value="radioDelete"  />
-                <label for="radioDelete">아이 삭제</label>
-                <p>선택하신 아이만 삭제되며 EuDi 앱은 다른 아이로<br>
-                  계속 이용 가능합니다. </p>
-              </div>
-            </div>
-            <div class="mt15">
-              <div class="radio_row">
-                <input type="radio" id="radioWithdraw" name="radioWithdrawDelete" class="radio" value="radioWithdraw" checked />
-                <label for="radioWithdraw">회원 탈퇴</label>
-                <p>회원 탈퇴 처리 및 등록된 모든 아이 정보도 삭제 됩니다.<br>
-                  더 이상 EuDi 앱을 이용할 수 없습니다.</p>
-              </div>
-            </div>
-
-            <div class="select_wrap">
-              <div class="select_box" id="select_box_childDelete">
-                <p class="tit">아이 선택</p>
-                <div class="select_row">
-                  <label for="childDelete">삭제할 아이를 선택해주세요</label>
-                  <select id="childDelete" name="childDelete">
-                    <option value="" >1</option>
-                    <option value="" >2</option>
-                    <option value="" >3</option>
-                  </select>
-                </div>
-              </div>
-              <div class="select_box">
-                <p class="tit">탈퇴 유형</p>
-                <div class="select_row">
-                  <label for="mWithdrawCode">탈퇴사유를 선택해주세요</label>          
-                  <select id="mWithdrawCode" name="mWithdrawCode">
-                    <option value="0">탈퇴사유를 선택해주세요</option> 
-                      
-                    <option value="1" >치료 완료(효과만족/성장판닫힘)</option>
-                
-                    <option value="2" >타제품 전환(경제적부담)</option>
-                
-                    <option value="3" >타제품 전환(주사스트레스/통증)</option>
-                
-                    <option value="4" >타제품 전환(효과미비)</option>
-                
-                    <option value="5" >타제품 전환(부작용발생)</option>
-                
-                    <option value="6" >타제품 전환(기타)</option>
-                
-                    <option value="7" >치료 중단(경제적부담)</option>
-                
-                    <option value="8" >치료 중단(주사스트레스/통증)</option>
-                
-                    <option value="9" >치료 중단(효과미비)</option>
-                
-                    <option value="10" >치료 중단(부작용발생/우려)</option>
-                
-                    <option value="11" >상담 중단(연락두절)</option>
-                
-                    <option value="12" >상담 중단(해외출국)</option>
-                
-                    <option value="13" >동의 철회(해피콜 거부/삭제 요청)</option>
-                
-                    <option value="14" >기타 (사유를 서술형으로 적어주세요)</option>
-                  </select>
-                </div>
-                <div class="area_row" id="withdrawContent">
-                  <div class="tit"><p>탈퇴 사유</p></div>
-                  <div class="cont">
-                    <div class="area_box">
-                      <textarea id="mWithdrawContent" name="mWithdrawContent" maxlength="1000" cols="30" rows="10"></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="select_box">
-                <p class="tit">스마트케이스 반납여부 </p>
-                <div class="select_row">
-                  <label for="rState">반납여부 선택해주세요</label>
-                  <select id="rState" name="rState">
-                    <option value="">반납여부 선택해주세요</option>
-                  
-                    <option value="01" >반납</option>
-                  
-                    <option value="02" >미 반납(반납예정)</option>
-                  
-                    <option value="03" >처음부터 받지 않았음</option>
-                  
-                    <option value="04" >분실</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <p class="gray_list fz11 fc72 mt10">아이만 삭제 하더라도 탈퇴유형과 스마트케이스반납여부는 선택해주셔야 합니다.</p>
-            <div class="btn_box btn_box02">
-              <div class="btn_gray"><a href="javascript:;" class="pop_close">닫기</a></div>
-              <div class="btn_green"><a href="javascript:;" onclick="childDelete()">실행</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
            
       <!--///////////////////////////////////////////////////////////////////////
 ///////////             ** 퍼블추가 - 2023.02 **              ///////
@@ -2118,6 +2187,7 @@ if("" != ""){
                 <a href="javascript:childStateUpdate('NM');" title="승인">승인</a>
               </div>
             </div>
+          </div>
         </div>
       </div>
       
@@ -2189,10 +2259,12 @@ if("" != ""){
 	        </p>
  		</div>
  		
+ 		
+
       
 	  </div>
 	  
-	  	 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
+	  	 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" async="true"></script> 
 	  	 
 	  	 
 	  <script>
@@ -2363,10 +2435,10 @@ if("" != ""){
 		
 	  	   $("#mWithdrawCode").change(function() {//탈퇴사유 서술형 textarea 처리
 		  		if($("#mWithdrawCode option:selected").val()  == "14"){//기타 서술
-            $("#withdrawContent").css("display", "block");
-          } else {
-            $("#withdrawContent").css("display", "none");
-          }
+			 		$("#withdrawContent").css("display", "");
+			 	} else {
+			 		$("#withdrawContent").css("display", "none");
+			 	}
 			});
 	  	   
 	 	   $("#endReason").change(function() {//종료사유 서술형 textarea 처리
@@ -2489,7 +2561,26 @@ if("" != ""){
 	 		}
 	 	 	
 	 		
-	 		
+	 		function copyPhoneNo() {
+				const tel1 = document.getElementById('mCpNumber1').value;
+				const tel2 = document.getElementById('mCpNumber2').value;
+				const tel3 = document.getElementById('mCpNumber3').value;
+
+				const phoneNumber = tel1 + tel2 + tel3;
+
+				const textarea = document.createElement('textarea');
+				textarea.value = phoneNumber;
+
+				document.body.appendChild(textarea);
+				textarea.select();
+
+				document.execCommand('copy');
+
+				document.body.removeChild(textarea);
+
+				alert('휴대폰번호가 복사되었습니다: ' + phoneNumber);
+			}
+
 	 		$("#mCpNumber2").keyup(function(event){
 	 		    var inputVal = $(this).val();
 	 		    $(this).val(inputVal.replace(/[^0-9]/gi,''));
