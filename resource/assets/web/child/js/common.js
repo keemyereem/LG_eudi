@@ -183,7 +183,7 @@ var fileEvent = {
     });
   },
 
-  dynamicInit:function(){
+  dynamicInit : function(){
     $(document).on('change','[data-file]',function(){
       if(window.FileReader){
         var filename = $(this)[0].files[0].name;
@@ -221,7 +221,7 @@ var fileEvent = {
 
 var accordEvent = {
     init:function(){
-      $(".faq_list>ul>li>.faq_box").slideUp(0);
+      //$(".faq_list>ul>li>.faq_box").slideUp(0); 내용이 바로 열리게 안되서 주석처리
       $(".faq_list>ul>li>a").on("click",function(){
           if(!$(this).parent().hasClass("active")){
               $(this).parent().siblings().removeClass("active");
@@ -520,7 +520,6 @@ var eduApply = {
         }
       });
     }
-
   },
 };
 
@@ -899,6 +898,7 @@ function popupdoctor() {
   });
 }
 
+
 function popupClose() {
   var btnClose = $('.pop_close');
   btnClose.click(function(){
@@ -906,6 +906,8 @@ function popupClose() {
     $(this).parents('.pop_info').prev('.pop_mask').removeClass('on');
   });
 }
+
+
 
 $(document).on('keyup focusin focusout','input[data-format-validate]',function(e){
 	const format = $(this).data('format-validate');
@@ -961,3 +963,80 @@ function validateRexg(format, txt){
 	}
 	return res ? true : false;
 };
+
+/* 앱버전 정보 조회 */
+const validationMobile = {
+	Android: function () {
+		return navigator.userAgent.match(/Android/i) == null ? false : true;
+	},
+	iOS: function () {
+		return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+	},
+	any: function () {
+		return (validationMobile.Android() || validationMobile.iOS());
+	},
+	isEudi: function () {
+		return navigator.userAgent.match(/Eudi/i) == null ? false : true;
+	}
+};
+
+
+// app JsBridge 버전확인 요청
+function getAppBuildNo(now) {
+	try{
+		localStorage.setItem("app.date", now);
+		if (validationMobile.any()) {
+			if (validationMobile.Android()) {
+				// 조회기능 없음
+				localStorage.setItem("app.os", "A");
+				localStorage.removeItem("app.ver");
+				if (validationMobile.isEudi()) {
+					// window.eudiApp.getAppBuildNo();
+				} else {
+					localStorage.setItem("app.ver", "WEB"); // 웹
+				}
+				
+			} else if (validationMobile.iOS()) {
+				localStorage.setItem("app.os", "I");
+				if (validationMobile.isEudi()) {
+					localStorage.removeItem("app.ver");
+					webkit.messageHandlers.getAppBuildNo.postMessage("");
+				} else {
+					localStorage.setItem("app.ver", "WEB"); // 웹
+				}
+			} else {
+				localStorage.setItem("app.os", "W");
+				if (validationMobile.isEudi()) {
+					localStorage.removeItem("app.ver");
+				} else {
+					localStorage.setItem("app.ver", "WEB"); // 웹
+				}
+			}
+			console.log('validationMobile.isEudi()', validationMobile.isEudi());
+		}
+	} catch (e) {
+		localStorage.removeItem("app.ver");
+		console.log(e);
+	}
+}
+// app JsBridge 버전확인 콜백
+function cbAppBuildNo(versionNo) {
+	localStorage.setItem("app.ver", versionNo);
+}
+// app version 정보 업데이트
+$(function(){
+	try{
+		const now = Date.now();
+		const lastDate = localStorage.getItem("app.date");
+		const diffUpdate = 24 * 60 * 60 * 1000;
+		
+		// 24시간에 1회만 업데이트
+		if (lastDate!=null && now - lastDate < diffUpdate)
+			return;
+			
+		getAppBuildNo(now);
+	} catch (e) {
+		localStorage.removeItem("app.ver");
+		console.log(e);
+	}
+});
