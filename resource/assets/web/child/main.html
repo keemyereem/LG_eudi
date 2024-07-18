@@ -131,7 +131,7 @@ if("" != ""){
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 			
 		
-		<link rel="canonical" href="https://eudi.lgchem.com/child/main.do" />
+		<link rel="canonical" href="https://eudi.lgchem.com/" />
 		<meta name="format-detection" content="telephone=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Cache-Control" content="no-cache"/>
@@ -147,26 +147,26 @@ if("" != ""){
 <!--2019-09-16 4M 김현빈-->
 <!-- common css file-->
 
-<link rel="stylesheet" href="/resource/assets/web/css/main.css?20240202121115">
-<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20240202121115">
+<link rel="stylesheet" href="/resource/assets/web/css/main.css?20240718094114">
+<link rel="stylesheet" href="/resource/assets/web/css/mediaQuery.css?20240718094114">
 
 
 <!-- child css file -->
-<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20240202121115">
-<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20240202121115">
-<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20240202121115">
-<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20240202121115">
+<link rel="stylesheet" href="/resource/assets/web/child/css/common.css?20240718094114">
+<link rel="stylesheet" href="/resource/assets/web/child/css/slick.css?20240718094114">
+<link rel="stylesheet" href="/resource/assets/web/child/css/sub.css?20240718094114">
+<link rel="stylesheet" href="/resource/assets/web/child/css/font.css?20240718094114">
 <!-- child js file--> 
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-1.11.3.min.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery-ui-1.11.3.min.js?version=2.0"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/jquery.easing.1.3.js?version=2.0"></script>
-<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20240202121115"></script>
+<script type="text/javascript" src="/resource/assets/web/child/js/common.js?20240718094114"></script>
 <script type="text/javascript" src="/resource/assets/web/child/js/lib/slick.min.js"></script>
 
 
 <!-- common js file-->
 <script type="text/javascript" src="/resource/assets/web/js/jquery.cookie.js?version=2.0"></script>
-<script type="text/javascript" src="/resource/assets/common/js/common.js?20240202121115"></script>
+<script type="text/javascript" src="/resource/assets/common/js/common.js?20240718094114"></script>
 
 <script type="text/javascript" src="/resource/assets/nurse/js/lib/datepicker-ko.js?version=1.2"></script>
 
@@ -485,7 +485,7 @@ if("" != ""){
 	  
 	 
 	$(window).load(function() {
-		if("40095"){
+		if("55913"){
 			fnAppPopupCheck(0);//로드시 팝업 호출
 		}
 	});
@@ -534,7 +534,7 @@ if("" != ""){
 			$(function() {
 
 				if(parseInt($("#nowYear").val())  == "2023"){
-				 	if(((parseInt($("#nowMonth").val()) == 9 && parseInt($("#nowDate").val()) > 20) || (parseInt($("#nowMonth").val()) == 10  && parseInt($("#nowDate").val()) < 4))){
+				 	if(((parseInt($("#nowMonth").val()) == 6 && parseInt($("#nowDate").val()) > 01) || (parseInt($("#nowMonth").val()) == 10  && parseInt($("#nowDate").val()) < 4))){
 				 		if($.cookie("eudiship") == "" || $.cookie("eudiship") == null ||  $.cookie("eudiship") != 'Y'){
 							popupInfo('pop_ship');
 						}
@@ -542,19 +542,19 @@ if("" != ""){
 			 		}
 				}
 	
+		
 				if(parseInt($("#nowYear").val())  == "2024"){
-				 	if(((parseInt($("#nowMonth").val()) == 2 && parseInt($("#nowDate").val()) > 7) || (parseInt($("#nowMonth").val()) == 2  && parseInt($("#nowDate").val()) < 14))){
+				 	if(parseInt($("#nowMonth").val()) == 6  && parseInt($("#nowDate").val()) < 8){
 				 		if($.cookie("Lunarship") == "" || $.cookie("Lunarship") == null ||  $.cookie("Lunarship") != 'Y'){
-              $('.pop_lunarnewyr').addClass('on');
-              $('.pop_lunarnewyr').prev(".pop_mask").addClass('on');
-						}else {
-              $('.pop_lunarnewyr').removeClass('on');
-              $('.pop_lunarnewyr').prev(".pop_mask").removeClass('on');
-            }
-				
+				 			  $('.pop_lunarnewyr').addClass('on');
+				              $('.pop_lunarnewyr').prev(".pop_mask").addClass('on');
+						} else {
+				              $('.pop_lunarnewyr').removeClass('on');
+				              $('.pop_lunarnewyr').prev(".pop_mask").removeClass('on');
+				         }
+
 			 		}
 				}
-				
 				
 		
 
@@ -599,8 +599,8 @@ if("" != ""){
 					}
 				});
 
-				var chChk = "com.lg.web.vo.MemberVO@5aaaee63";
-				var cidx = "40095";
+				var chChk = "com.lg.web.vo.MemberVO@5cf6fbf1";
+				var cidx = "55913";
 				if(chChk == null || chChk == ""){
 					if($.cookie("character_select_"+cidx) !=  'ok'){
 						popupInfo('pop_character');
@@ -722,10 +722,10 @@ if("" != ""){
 			
 			
 			<input type="hidden" name="nowYear" id="nowYear"  value="2024"/>
-			<input type="hidden" name="nowMonth" id="nowMonth"  value="02"/>
-			<input type="hidden" name="nowDate" id="nowDate"  value="02"/>
-			<input type="hidden" name="nowTime" id="nowTime"  value="12"/>
-			<input type="hidden" name="cheerIdx" id="cheerIdx"  value="24881"/>
+			<input type="hidden" name="nowMonth" id="nowMonth"  value="07"/>
+			<input type="hidden" name="nowDate" id="nowDate"  value="18"/>
+			<input type="hidden" name="nowTime" id="nowTime"  value="09"/>
+			<input type="hidden" name="cheerIdx" id="cheerIdx"  value="36414"/>
 			<input type="hidden" name="cheerArrays" id="cheerArrays"  value="0"/>
 		</form>
 
@@ -764,7 +764,7 @@ function fnModifyInfo(){
 
 function fnPassChk(){
 	if($("#pass_chk").val() ==""){
-		alert("현재 비빌번호를 입력하세요");
+		alert("현재 비밀번호를 입력하세요");
 		$("#pass_chk").focus();
 		return;
 	}
@@ -775,7 +775,7 @@ function fnPassChk(){
 }
 </script>
 <form name="frmPass" id="frmPass" method="post"> 
-	<input type="hidden" id="childIdx" value="39513,40095,48801"/>
+	<input type="hidden" id="childIdx" value="40094,55913"/>
 	<input type="hidden" id="mbrPwd" name="mbrPwd" value=""/>
 </form>
    <div class="gnb_box">
@@ -793,11 +793,9 @@ function fnPassChk(){
                 <div></div>
                 <ul>
                 
-				     <li id="child_39513" ><a href="javascript:;" onclick="fnChildChange('39513')"> 이포엠</a></li>
+				     <li id="child_40094" ><a href="javascript:;" onclick="fnChildChange('40094')"> 최포엠</a></li>
 				
-				     <li id="child_40095" class="active"><a href="javascript:;" onclick="fnChildChange('40095')"> 김포엠</a></li>
-				
-				     <li id="child_48801" ><a href="javascript:;" onclick="fnChildChange('48801')"> 신규포엠</a></li>
+				     <li id="child_55913" class="active"><a href="javascript:;" onclick="fnChildChange('55913')"> 개발테스트중입니다</a></li>
 				
 
 
@@ -865,6 +863,13 @@ function fnPassChk(){
                   </li> -->
                 </ul>
               </div>
+ 			 <div class="gnb_award">
+              <div class="award_img"><img src="/resource/assets/web/child/images/main/if_award_2024.jpg"
+                  alt="iF DESIGN AWARD 2024"></div>
+              <div class="award_text">
+                iF DESIGN AWARD 2024<br> Winner
+              </div>
+            </div>
               <div class="gnb_bot">
                 <ul>
                   <li><a href="javascript:;" onclick="popupOpen('pop_agree01');">이용약관</a></li>
@@ -2317,7 +2322,7 @@ function fnPassChk(){
 			</p>
 			
             <p class="pop_txt">
-				<b>ID: </b>4mtest1
+				<b>ID: </b>4mctest
 			</p>  
 			
 		  <div class="input_row mt20">
@@ -2628,6 +2633,12 @@ function fnPassChk(){
 				                    <option value="18" data-cut="3">18화 보기</option>
 				                    <option value="19" data-cut="3">19화 보기</option>
 				                    <option value="20" data-cut="4">20화 보기</option>
+				                    <option value="21" data-cut="2">21화 보기</option>
+				                    <option value="22" data-cut="2">22화 보기</option>
+				                    <option value="23" data-cut="3">23화 보기</option>
+				                    <option value="24" data-cut="3">24화 보기</option>
+				                    <option value="25" data-cut="3">25화 보기</option>
+				                    <option value="26" data-cut="2">26화 보기</option>
 								  </select>
 								</div>
 								<div class="webtoon_slider">
@@ -2763,12 +2774,12 @@ function fnPassChk(){
 				   					
 				   					
 				   						<div class="char">
-											<img id="cheer_img" src="/resource/assets/web/child/images/profile/img_profile_championeudi_10.png" alt="아이 캐릭터" onError="this.src='/resource/assets/web/child/images/profile/img_profile_null.png';"/>
+											<img id="cheer_img" src="/resource/assets/web/child/images/profile/img_profile_stylisheudi_15.png" alt="아이 캐릭터" onError="this.src='/resource/assets/web/child/images/profile/img_profile_null.png';"/>
 										</div>
-										  <p id="cheer_mesage"><span>@박*열&nbsp;&nbsp;</span>
+										  <p id="cheer_mesage"><span>@장*윤&nbsp;&nbsp;</span>
 											 
 											  		
-											  		 심심심심심심심심심심심심심심심심심심심해
+											  		 1년에 10cm씩!!
 											  
 										  </p>
 				   					
@@ -2785,7 +2796,7 @@ function fnPassChk(){
 						<div class="my_step"><p>스마트 유디
 					 <span>
 					 
-					   1단계
+					   2단계
 					 
 					 </span></p>
 					   <div class="btn_mychar"><a href="/child/character/view.do" class="btn_my_arrow">나의 캐릭터<br>확인</a></div>
@@ -2795,8 +2806,8 @@ function fnPassChk(){
 						   <img src="/resource/assets/web/child/images/webtoon/icon_webtoon02.png" alt="웹툰">
 						</button>
 						<div class="my_bar" onclick="location.href='/child/character/view.do'">
-							<div class="bar"><span style="width: 25%"></span></div>
-							<div class="lbl"><b>2</b> / 5</div>
+							<div class="bar"><span style="width: -20%"></span></div>
+							<div class="lbl"><b>4</b> / 10</div>
 						</div>
 						<div class="my_char" onclick="location.href='/child/character/view.do'">
 						   
@@ -2817,7 +2828,7 @@ function fnPassChk(){
 						   		
 						   		
 						   
-						   <img src="/resource/assets/web/child/images/character/smart/smart_eudi01.png" alt="EuDi" />
+						   <img src="/resource/assets/web/child/images/character/smart/smart_eudi02.png" alt="EuDi" />
 						</div>
 
 					</div>
@@ -2840,7 +2851,7 @@ function fnPassChk(){
 
 													
 												 		
-												 		 <img src="/upload/child/d5ea230c744947f4a290910f1b9a4cd2.png" alt="EuDi" onerror="this.src='/resource/assets/web/child/images/character/img_profile_null.png'">
+												 		 <img src="/upload/child/" alt="EuDi" onerror="this.src='/resource/assets/web/child/images/character/img_profile_null.png'">
 												 	
 
 
@@ -2853,11 +2864,9 @@ function fnPassChk(){
 											
 												 
 												 	
+												 		개발테스트중입...
 												 		
-												 		 김포엠
 												 	
-												 
-											
 												 
 											
 									   </b> 어린이</p></div>
@@ -2926,9 +2935,18 @@ function fnPassChk(){
 				</div>
 				
 
+  <!--    <div class="main_footer">
+        <div class="award_img">
+          <img src="/resource/assets/web/child/images/main/if_award_2024.jpg" alt="iF DESIGN AWARD 2024">
+        </div>
+        <div class="award_text">
+          iF DESIGN AWARD 2024<br> Winner
+        </div>
+      </div> -->
+      
 		  <!-- 앱 업데이트(web version)-->
 	  <div class="pop_mask2"></div>
-	  <div class="pop_info pop_appUpdate"  id="pop_appUpdate" >
+	  <div class="pop_info pop_appUpdate"  id="pop_appUpdate">
 		<div class="pop_info_inner">
 		  <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
 		  <div class="pop_con">
@@ -2958,12 +2976,12 @@ function fnPassChk(){
 	  <div class="pop_mask"></div>
 	  <div class="pop_info pop_character">
 		<div class="pop_info_inner">
-		  <div class="btn_close pop_close"><a href="javascript:cookie(40095);"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+		  <div class="btn_close pop_close"><a href="javascript:cookie(55913);"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
 		  <div class="pop_con">
 			<p class="pop_tit">캐릭터가 선택되어 있지 않습니다 캐릭터를 선택해 주세요</p>
 			<p class="pop_txt">투여입력 횟수에 따라 4종의 캐릭터 <br /> 중 하나를 선택하여 키울 수 있습니다</p>
 			<div class="btn_box btn_box01">
-			  <div class="btn_green pop_close"><a href="javascript:goCharacterPage(40095)">확인</a></div>
+			  <div class="btn_green pop_close"><a href="javascript:goCharacterPage(55913)">확인</a></div>
 			</div>
 		  </div>
 		</div>
@@ -2983,8 +3001,8 @@ function fnPassChk(){
 										 사용 상담 등이 가능합니다
 			</p>
 			<div class="btn_box btn_box02">
-			   <div class="btn_black pop_close"><a href="javascript:fnChangePrivateYn('4mtest1','Y')">승락</a></div>
-			   <div class="btn_gray pop_close"><a href="javascript:fnChangePrivateYn('4mtest1','N')">거절</a></div>
+			   <div class="btn_black pop_close"><a href="javascript:fnChangePrivateYn('4mctest','Y')">승락</a></div>
+			   <div class="btn_gray pop_close"><a href="javascript:fnChangePrivateYn('4mctest','N')">거절</a></div>
 			</div>
 		  </div>
 		</div>
@@ -3114,65 +3132,125 @@ function fnPassChk(){
       <div class="pop_info_inner">
         <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
         <div class="pop_con">
-        <img src="/resource/assets/web/child/images/common/2023.jpg" alt="유디앱 배송 중단" />
-        <!--   <p class="pop_tit">[유트로핀 주사 물품 배송 일정 안내]</p>
+        
+         <p class="pop_tit">[주사 물품 배송 안내]</p>
           <div class="circle"><div></div><div></div><div></div></div>
           <p>
-            8/14,8/15이 전국 택배사 휴무일로 지정되어<br>
-            택배 집하 및 배송이 중단되며<br>
-            8/11~8/15에 신청하신 주사 물품은 <br>
-            8/16부터 순차적으로 다시 택배 집하 및 배송이 진행됩니다.<br><br>
-         
-       
-            택배사 휴무 기간 동안 누적된 배송을  <br> 
-            8/16부터 진행하는 관계로 평소보다 <br> 
-            배송 완료까지 기간이 더 소요될 수 있는 점 <br> 
-            양해 부탁드립니다.<br> 
-                
+	          현충일(6/6) 공휴일 택배사 휴무인 관계로<br>
+			  6/4(화) 3시 이후 주문 건은 6/7(금)부터 순차적으로 발송됩니다.
           </p>  
                 
          <div class="gray_line"></div>
          <p class="grysml" style="font-size:12px;color:#000000">
-        	    태풍 카눈 영향으로 제주행 선박이 결항되어<br>
-				8월 9,10에는 제주도 배송 <br>
-				택배 집하 및 배송이 중단되며<br>
-				8월 11부터 순차적으로 다시 집하 및 배송이 진행됩니다.
-          </p> -->
+        	  *택배 상황에 따라 배송이 다소 지연될 수 있는 점 양해 부탁드립니다.
+          </p> 
 		   <div class="checkbox_row">
             <input type="checkbox" id="chkCloseAdayShip" class="chkCloseAdayShip">
-            <label for="chkCloseAdayShip">7일간 열지 않기 </label>
+            <label for="chkCloseAdayShip">1일간 열지 않기 </label>
           </div>
           <div class="btn_box btn_box01">
             <div class="btn_green"><a href="javascript:fnShipPopUpClose();">확인</a></div>
           </div>
         </div>
       </div>
-	  </div>
-    <!-- 유트로핀 주사 물품 배송 일정 안내 -->   
-
-    <!-- 설연휴 배송안내 팝업 -->
-    <div class="pop_mask on"></div>
-    <div class="pop_info pop_lunarnewyr on" id="pop_lunarnewyr" >
+    <!-- 유트로핀 주사 물품 배송 일정 안내 -->    
+    
+    </div>
+	
+	  <!-- 설연휴 배송안내 팝업 -->
+    <div class="pop_mask"></div>
+    <div class="pop_info pop_lunarnewyr" id="pop_lunarnewyr">
       <div class="pop_info_inner">
-        <div class="btn_close pop_close"><a href="javascript:;"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+        <div class="btn_close pop_close"><a href="javascript:fnLunarPopUpClose();"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
         <div class="pop_con">
-        <img src="/resource/assets/web/child/images/common/pop_lunarnewyr.jpg" alt="설연휴 배송안내 " />
-        <div class="checkbox_row">
-            <input type="checkbox" id="chkCloseAdayLunar">
-            <label for="chkCloseAdayLunar">7일간 열지 않기 </label>
+            <!-- <img src="/resource/assets/web/child/images/common/pop_lunarnewyr.jpg" alt="설연휴 배송안내 " />
+            <div class="checkbox_row">
+                <input type="checkbox" id="chkCloseAdayLunar">
+                <label for="chkCloseAdayLunar">7일간 열지 않기 </label>
+              </div>
+              <div class="btn_box btn_box01">
+                <div class="btn_green"><a href="javascript:fnLunarPopUpClose();">확인</a></div>
+              </div>
+            </div>
+          </div> -->
+          <p class="pop_tit">[주사 물품 배송 안내]</p>
+          <br>
+          <p class="grysml" style="font-size:17px;color:#000000">
+            현충일(6/6) 공휴일 택배사 휴무인 관계로<br>
+            6/4(화) 3시 이후 주문 건은 <br>
+            6/7(금)부터 순차적으로 발송됩니다.
+          </p>  
+          <br>
+          <div class="gray_line"></div>
+          <br>
+          <p class="grysml" style="font-size:17px;color:#000000">
+            택배 상황에 따라 배송이 <br>다소 지연될 수 있는 점 양해 부탁드립니다.
+          </p> 
+          <div class="checkbox_row">
+            <input type="checkbox" id="chkCloseAdayLunar" class="chkCloseAdayLunar">
+            <label for="chkCloseAdayLunar">1일간 열지 않기 </label>
           </div>
           <div class="btn_box btn_box01">
             <div class="btn_green"><a href="javascript:fnLunarPopUpClose();">확인</a></div>
           </div>
         </div>
       </div>
-    <!-- 설연휴 배송안내 팝업 -->   
-	</body>
+      <!-- 설연휴 배송안내 팝업 -->
+    </div>
+
+	  <!-- EuDi 시스템 점검 공지 2024.07.18 -->
+    <div class="pop_mask on"></div>
+    <div class="pop_info on" id="pop_systemCheck">
+      <div class="pop_info_inner">
+        <div class="btn_close pop_close"><a href="javascript:fnSystemChkPopUpClose();"><img src="/resource/assets/web/child/images/common/btn_close.png" alt="닫기" /></a></div>
+        <div class="pop_con">
+          <p class="pop_tit">EuDi 시스템 점검 공지</p>
+          <ul class="gray_txt_list mt20">
+            <li>
+              <dt>작업기간</dt>
+              <dd>7/20(토) 09~13시 사이</dd>
+            </li>
+          </ul>
+          <div class="gray_line mt10"></div>
+          <p class="gray_list fz11 c555 mt10">
+            더 안정적인 서비스 제공을 위해
+            유디 모바일앱 시스템 점검이 
+            있을 예정입니다.
+          </p>
+          <p class="gray_list fz11 c555 mt10">
+            해당 시간 중에는 간헐적으로 접속이
+            중단될 수 있으니 유디 이용에
+            참고 부탁드립니다.
+          </p>
+          <div class="btn_box btn_box01">
+            <div class="btn_green"><a href="javascript:fnSystemChkPopUpClose();">확인</a></div>
+          </div>
+		      <div class="checkbox_row">
+            <input type="checkbox" id="chkCloseAdaySystemChk" class="chkCloseAdaySystemChk">
+            <label for="chkCloseAdaySystemChk">하루동안 열지 않기</label>
+          </div>
+        </div>
+      </div>
+	  </div>
+
+      <!-- IF -->
+      <div class="main_footer">
+        <div class="award_img">
+          <img src="/resource/assets/web/child/images/main/if_award_2024.jpg" alt="iF DESIGN AWARD 2024">
+        </div>
+        <div class="award_text">
+          iF DESIGN AWARD 2024<br> Winner
+        </div>
+      </div>
+    </div>
+    <!--content // -->
+  </div>
+
+</body>
 	 <script>
 
 		//안드로이드 업데이트
 		//X로 닫을시
-    popupClose();
 		$('#chkCloseAday').on('change', function() {
 					// 체크박스 체크 유무
 					if ($('#chkCloseAday').prop('checked')) {
@@ -3186,10 +3264,20 @@ function fnPassChk(){
 		$('#chkCloseAdayShip').on('change', function() {
 			// 체크박스 체크 유무
 			if ($('#chkCloseAdayShip').prop('checked')) {
-				$.cookie('eudiship','Y',{expires: 7});
+				$.cookie('eudiship','Y',{expires: 1});
 			} else {
 				$.removeCookie('eudiship');
 			}
+		});
+		
+
+		$('#chkCloseAdayLunar').on('change', function() {
+			 // 체크박스 체크 유무
+			if($('#chkCloseAdayLunar').prop('checked')) {
+				$.cookie('Lunarship','Y',{expires: 1});
+			} else {
+				$.removeCookie('Lunarship');
+			} 
 		});
 
 
@@ -3210,7 +3298,7 @@ function fnPassChk(){
 	//fnAppChild_Res 스마트 케이스 연결 브릿지 함수 호출
 		if (isMobile.any()) {
 			if (isMobile.Android()) {
-				window.eudiApp.fnAppChild_Res('4mtest1','25428','40095','0','0');
+				window.eudiApp.fnAppChild_Res('4mctest','35589','55913','WM51PpEtFWaHrcCx','CE:C2:CF:FA:0B:92');
 			} else if (isMobile.iOS()) {
 				// N/A
 			}
@@ -3225,7 +3313,7 @@ function fnPassChk(){
 	
 			if($("#chkCloseAdayShip").is(":checked")){ //하루 안보기
 				// 쿠키 저장
-				$.cookie('eudiship','Y',{expires: 7});
+				$.cookie('eudiship','Y',{expires: 1});
 			} else {
 				$.removeCookie('eudiship');
 			}
@@ -3239,21 +3327,52 @@ function fnPassChk(){
 			
 		}
 
+
+		
+		
+		
+		
 		//설연휴 배송안내
 		function fnLunarPopUpClose(){
-      var popthis = $('.pop_lunarnewyr');
-      var mask = popthis.prev(".pop_mask");
-      if($("#chkCloseAdayLunar").is(":checked")){ //하루 안보기
-        // 쿠키 저장
-        $.cookie('Lunarship','Y',{expires: 7});
+	        var popthis = $('.pop_lunarnewyr');
+	        var mask = popthis.prev(".pop_mask");
+	        if($("#chkCloseAdayLunar").is(":checked")){ //하루 안보기
+	        // 쿠키 저장
+	        $.cookie('Lunarship','Y',{expires: 1});
 
-      } else {
-        $.removeCookie('Lunarship');
-      }
-      popthis.removeClass('on');
-        mask.removeClass('on');
+		      } else {
+
+		          $.removeCookie('Lunarship');
+		      }
+
+	        popthis.removeClass('on');
+	        mask.removeClass('on');
+    }
+		
+    //EuDi 시스템 점검
+    if (!$.cookie('systemCheck')) {
+      $('#pop_systemCheck').addClass('on');
+      $('#pop_systemCheck').prev('.pop_mask').addClass('on');
+    }else {
+      $('#pop_systemCheck').removeClass('on'); // 팝업 다시 표시
+      $('#pop_systemCheck').prev('.pop_mask').removeClass('on');
     }
 
+    $('#chkCloseAdaySystemChk').on('change', function() {
+      // 체크박스 체크 유무
+      if ($(this).prop('checked')) {
+        $.cookie('systemCheck', 'Y', { expires: 1 }); // 하루 동안 쿠키 설정
+      } else {
+        $.removeCookie('systemCheck'); // 쿠키 삭제
+      }
+    });
+
+		function fnSystemChkPopUpClose(){
+      $('#pop_systemCheck').removeClass('on');
+      $('#pop_systemCheck').prev('.pop_mask').removeClass('on');
+		};
+
+		
 	</script>
 	
 
