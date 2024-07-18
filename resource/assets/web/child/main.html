@@ -3249,6 +3249,19 @@ function fnPassChk(){
 </body>
 	 <script>
 
+    // .pop_info.on 화면 가운데 정렬 (svh 대체)
+    function centerPopup() {
+        const popup = document.querySelector('.pop_info.on');
+        const { innerHeight } = window;
+        const popupHeight = popup.offsetHeight;
+
+        popup.style.top = `${(innerHeight - popupHeight) / 2}px`;
+    }
+
+    window.addEventListener('resize', centerPopup);
+    centerPopup(); // 초기 설정
+
+
 		//안드로이드 업데이트
 		//X로 닫을시
 		$('#chkCloseAday').on('change', function() {
