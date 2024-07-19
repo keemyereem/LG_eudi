@@ -1538,7 +1538,7 @@
 
 /* 공모전 팝업 */
 #pop_contest {width: calc(100% - 30px);max-width: 345px;top: 50%!important;transform: translate(-50%,-50%);display: block;}
-#pop_contest .pop_con {background: #fff url(../images/main/pop_contest_character.png) no-repeat calc(100% - 27px) calc(100% - 73px);background-size: 77px 107px;}
+#pop_contest .pop_con {background: #fff url(../images/main/pop_contest_character.png) no-repeat calc(100% - 27px) calc(100% - 80px);background-size: 77px 107px;}
 #pop_contest ul li {display: flex;align-items: center;}
 #pop_contest ul li+li {margin-top: 4px;}
 #pop_contest ul li dt {width: 52px;height: 20px;background: #e8e8e8;border-radius: 10px;line-height: 20px;margin-right: 8px;}

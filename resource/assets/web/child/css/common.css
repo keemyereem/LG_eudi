@@ -371,13 +371,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 /* 2023.11.02 팝업 텍스트 */
 .pop_info .fwB {font-family: 'NanumSquareB';}
 .pop_info .fz18 {font-size: 18px;line-height: 1.27;letter-spacing: -.9px;}
-.pop_info .fz13 {font-size: 13px;line-height: 1.46;letter-spacing: -.65px;}
+.pop_info .fz13 {font-size: 13px;line-height: 1.46;letter-spacing: -1.25px;}
 .pop_info .fz12 {font-size: 12px;line-height: 1.4;letter-spacing: -1px;}
 .pop_info .fz11 {font-size: 11px;line-height: 1.45;letter-spacing: -.825px;}
 .pop_info .fz10 {font-size: 10px;line-height: 1.7;letter-spacing: -.5px;}
 .pop_info .fc999 {color: #999;}
 .pop_info .fc222 {color: #222;}
 .pop_info .fc555 {color: #555;}
+.pop_info .fcff4200 {color: #ff4200;}
 .pop_info .fcgreen {color: #79bd28;}
 .pop_info .tcenter {text-align: center;}
 .pop_info .tLeft {text-align: left;}
