@@ -7,7 +7,15 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, article, aside, hgroup, header, footer, figure, figcaption, nav, section { margin:0; padding:0; border:0; font-size:100%; vertical-align:baseline; background:transparent; }
 article, aside, hgroup, header, footer, figure, figcaption, nav, section {display:block;}
 html, body {width:100%; height:100%; font-size:15px; font-family:'NanumSquareR','맑은 고딕','Malgun Gothic',sans-serif; color:#000; line-height:1; font-weight:normal;-webkit-font-smoothing: antialiased;}
-body {overflow-x:hidden;}
+body {
+  overflow-x:hidden;
+  /* iOS 11.0 버전 */
+  padding-top: constant(safe-area-inset-top);
+  padding-bottom: constant(safe-area-inset-bottom);
+  /* iOS 11.2 이상 */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
 h1, h2, h3, h4, h5, h6 {font-weight:normal; line-height:1; word-break: keep-all;}
 fieldset {border:none;}
 ol, li {list-style:none; overflow:hidden; zoom:1;}
