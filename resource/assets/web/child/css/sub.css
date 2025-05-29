@@ -254,6 +254,11 @@
 .pop_wrap.pop_agree02 .pop_cont .pop_inner>ul>li>ul>li>span {display: block;position: absolute;top: 0;left: 0;}
 .pop_wrap.pop_agree02 .pop_cont .pop_inner>ul>li>ul>li>b {font-family: 'NanumSquareEB';}
 .pop_wrap.pop_agree02 .pop_cont .pop_inner>ul>li>ul>li>em {color: #727272;font-size: 11px;}
+.pop_wrap.pop_agree02 .pop_cont .pop_inner>ul>li>ul>li>ul {padding-top: 8px;}
+.pop_wrap.pop_agree02 .pop_cont .pop_inner>ul>li>ul>li>ul>li  {position: relative;padding-left: 16px;color: #727272;line-height: 1.5}
+.pop_wrap.pop_agree02 .pop_cont .pop_inner>ul>li>ul>li>ul>li>span {display: block;position: absolute;top: 0;left: 0;}
+.pop_wrap.pop_agree02 .pop_cont .pop_inner>ul>li>ul>li>ul>li>b  {font-family: 'NanumSquareEB';}
+.pop_wrap.pop_agree02 .pop_cont .pop_inner>ul>li>ul>li>ul>li>em  {color: #727272;font-size: 11px;}
 .pop_wrap.pop_agree02 .pop_cont .pop_inner span.bold {display: inline-block;font-family: 'NanumSquareB';font-size: 15px;color: #333;border-bottom: 1px solid #333;line-height: 1.3;}
 .pop_wrap.pop_agree02 .pop_btn {padding: 25px 15px;width: 100%;}
 .pop_wrap.pop_agree02 .pop_btn .btn_green {width: 100%;}
@@ -264,10 +269,10 @@
 .pop_wrap.pop_agree02 .pop_tb table thead tr th:first-child {border-left: 0;}
 .pop_wrap.pop_agree02 .pop_tb table thead tr th p {font-family: 'NanumSquareB';font-size: 12px;line-height: 1.5;}
 .pop_wrap.pop_agree02 .pop_tb table tbody tr {border-bottom: 1px solid #ececec;}
-.pop_wrap.pop_agree02 .pop_tb table tbody td {position: relative;padding: 15px 5px;background: #fff;border-left: 1px solid #ececec;}
+.pop_wrap.pop_agree02 .pop_tb table tbody td {position: relative;padding: 15px 5px;background: #fff;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td.alignL {padding: 15px 5px 15px 10px;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td.alignL p {text-align: left;}
-.pop_wrap.pop_agree02 .pop_tb table tbody td:first-child {border-left: 0;}
+.pop_wrap.pop_agree02 .pop_tb table tbody tr > td:first-child {border-left: 0;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td.tit {background: #f6f6f6;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td.tit p {color: #333;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td p {font-size: 12px;text-align: center;color: #727272;line-height: 1.5;}
@@ -286,7 +291,8 @@
 .pop_wrap.pop_agree02 .radio_row input[type="radio"]:checked + label:before {background: url(../images/common/bg_check_on.png) 50% 50% no-repeat;background-size: 100%;}
 
 .pop_wrap.pop_agree02 .pop_cont02,
-.pop_wrap.pop_agree02 .pop_cont03 {display: none;} 
+.pop_wrap.pop_agree02 .pop_cont03,
+.pop_wrap.pop_agree02 .pop_cont04 {display: none;} 
 .pop_wrap.pop_agree02 .policy_version {display: flex;justify-content: space-between;padding: 0 20px;} 
 .pop_wrap.pop_agree02 .policy_version .select_row {width: calc(100% - 65px);}
 .pop_wrap.pop_agree02 .policy_version>button {width: 60px;height: 40px;background: #727272;border-radius: 5px;font-size: 13px;color: #fff;}
