@@ -264,17 +264,19 @@
 .pop_wrap.pop_agree02 .pop_cont .pop_inner span.bold {display: inline-block;font-family: 'NanumSquareB';font-size: 15px;color: #333;border-bottom: 1px solid #333;line-height: 1.3;}
 .pop_wrap.pop_agree02 .pop_btn {padding: 25px 15px;width: 100%;}
 .pop_wrap.pop_agree02 .pop_btn .btn_green {width: 100%;}
+.pop_wrap.pop_agree02 .table_scroll {overflow-x: scroll;}
+.pop_wrap.pop_agree02 .table_scroll .pop_tb {width: 500px;}
 .pop_wrap.pop_agree02 .pop_tb {border-top: 1px solid #727272;}
 .pop_wrap.pop_agree02 .pop_tb table {width: 100%;border-collapse: collapse;table-layout: fixed;}
 .pop_wrap.pop_agree02 .pop_tb table thead tr {border-bottom: 1px solid #ececec;}
-.pop_wrap.pop_agree02 .pop_tb table thead tr th {height: 40px;border-left: 1px solid #ececec;padding: 10px 5px;background: #f6f6f6;text-align: center;}
-.pop_wrap.pop_agree02 .pop_tb table thead tr th:first-child {border-left: 0;}
+.pop_wrap.pop_agree02 .pop_tb table thead tr th {height: 40px;border-left: 1px solid #ececec;border-right: 1px solid #ececec;padding: 10px 5px;background: #f6f6f6;text-align: center;}
+/* .pop_wrap.pop_agree02 .pop_tb table thead tr th:first-child {border-left: 0;} */
 .pop_wrap.pop_agree02 .pop_tb table thead tr th p {font-family: 'NanumSquareB';font-size: 12px;line-height: 1.5;}
 .pop_wrap.pop_agree02 .pop_tb table tbody tr {border-bottom: 1px solid #ececec;}
-.pop_wrap.pop_agree02 .pop_tb table tbody td {position: relative;padding: 15px 5px;background: #fff;border-left: 1px solid #ececec;}
+.pop_wrap.pop_agree02 .pop_tb table tbody td {position: relative;padding: 15px 5px;background: #fff;border-left: 1px solid #ececec;border-right: 1px solid #ececec;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td.alignL {padding: 15px 5px 15px 10px;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td.alignL p {text-align: left;}
-.pop_wrap.pop_agree02 .pop_tb table tbody td:first-child {border-left: 0;}
+/* .pop_wrap.pop_agree02 .pop_tb table tbody td:first-child {border-left: 0;} */
 .pop_wrap.pop_agree02 .pop_tb table tbody td.tit {background: #f6f6f6;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td.tit p {color: #333;}
 .pop_wrap.pop_agree02 .pop_tb table tbody td p {font-size: 12px;text-align: center;color: #727272;line-height: 1.5;}
@@ -292,8 +294,8 @@
 .pop_wrap.pop_agree02 .radio_row input[type="radio"] + label:before {background: url(../images/common/bg_check.png) 50% 50% no-repeat;background-size: 100%;}
 .pop_wrap.pop_agree02 .radio_row input[type="radio"]:checked + label:before {background: url(../images/common/bg_check_on.png) 50% 50% no-repeat;background-size: 100%;}
 
-.pop_wrap.pop_agree02 .pop_cont02,
-.pop_wrap.pop_agree02 .pop_cont03 {display: none;} 
+.pop_wrap.pop_agree02 .pop_cont {display: none;} 
+.pop_wrap.pop_agree02 .pop_cont01 {display: block;}
 .pop_wrap.pop_agree02 .policy_version {display: flex;justify-content: space-between;padding: 0 20px;} 
 .pop_wrap.pop_agree02 .policy_version .select_row {width: calc(100% - 65px);}
 .pop_wrap.pop_agree02 .policy_version>button {width: 60px;height: 40px;background: #727272;border-radius: 5px;font-size: 13px;color: #fff;}
@@ -1263,7 +1265,8 @@
   .con_main .main_top {height: calc(100% - 10vh);min-height: 305px;}
   .con_main .main_top.top_bg02 {height: calc(100% - 12vh);min-height: 305px;}
   .con_main .main_top .my_bar {margin: 3vh auto 0;}
-  .con_main .main_top .btn_webtoon {top: 13vh!important;}
+  .con_main .main_top .btn_webtoon {top: 132px !important;}
+  .con_main .main_top .btn_webtoon-join {top: 99px !important;}
   .con_main .main_info .infobox {height: 10vh;}
   .con_main .main_info .top_bg02 + .con_main .main_info .infobox {height: 12vh;}
 
@@ -1489,7 +1492,8 @@
 /* .con_main .main_top .btn_webtoon { display: flex; align-items: center; white-space: nowrap; justify-content: center; font-size: 12px; padding: 0 26.5px 0 12.5px; background: rgba(0, 0, 0, .3) url(../images/main/icon_arrow00.png) calc(100% - 12.5px) center no-repeat; background-size: 4.04px 6.3px; border-radius: 16px; color: #ffffff; font-family: 'NanumSquareL'; position: absolute; height: 32px; bottom: 10px; right: 10px;z-index: 1; }
 .con_main .main_top .btn_webtoon b { font-family: 'NanumSquareB'; margin-right: 2px; }
 .con_main .main_top .btn_webtoon img { width: 22px; margin-right: 7.5px; } */
-.con_main .main_top .btn_webtoon {position: absolute;top: 88px;right: 15px;z-index: 1; width: 73px;}
+.con_main .main_top .btn_webtoon {position: absolute;top: 117px;right: 10px;z-index: 1; width: 74px;}
+.con_main .main_top .btn_webtoon-join {position: absolute;top: 84px;right: 6px;z-index: 1; width: 86px;}
 
 
 /* 안드로이드 자동 업데이트 공지 팝업*/
@@ -1535,3 +1539,44 @@
 .pop_ship .pop_con > ul + .grysml { text-align: left; letter-spacing: -.9px; position: relative; padding-left: 5px; }
 .pop_ship .pop_con > ul + .grysml::before { content:''; display: block; width: 3px; height: 3px; border-radius: 50%; background: #999; position: absolute; top: 5px; left: 0; }
 .pop_ship .pop_con .checkbox_row {display: block; text-align: left;}
+
+/* 공모전 팝업 */
+#pop_contest {width: calc(100% - 30px);max-width: 345px;top: 50%!important;transform: translate(-50%,-50%);display: block;}
+#pop_contest .pop_con {background: #fff url(../images/main/pop_contest_character.png) no-repeat calc(100% - 27px) calc(100% - 80px);background-size: 77px 107px;}
+#pop_contest ul li {display: flex;align-items: center;}
+#pop_contest ul li+li {margin-top: 4px;}
+#pop_contest ul li dt {width: 52px;height: 20px;background: #e8e8e8;border-radius: 10px;line-height: 20px;margin-right: 8px;}
+
+/* 유디웹툰 팝업(참여)*/
+.pop_webtoon_part {background: #e6e6e6;letter-spacing: -0.5px;}
+/* .pop_webtoon .webtoon_info{background: #f5f5f5;padding: 30px 0 20px; margin: 8px 0;}
+.pop_webtoon_part .webtoon_info .pop_inner>p {font-family: 'NanumSquareEB';font-size: 15px;color: #333;letter-spacing: -0.75px;line-height: 1.5;} */
+.pop_webtoon_part .webtoon_info{background: #f5f5f5;padding: 25px 0 15px; margin: 8px 0;}
+.pop_webtoon_part .webtoon_info .pop_inner>p {font-family: 'NanumSquareEB';font-size: 12px;color: #333;letter-spacing: -1.3px;line-height: 1.5;}
+.pop_webtoon_part .webtoon_info .pop_inner>.sub {font-family: 'NanumSquareB';color: #727171;}
+.pop_webtoon_part .webtoon_info .pop_inner>p+p {margin-top: 5px;}
+.pop_webtoon_part .webtoon_info .pop_inner>p:last-of-type {font-family: 'NanumSquareB';font-size: 12px;color: #727171;letter-spacing: -1px;}
+.pop_webtoon_part .webtoon_info .pop_inner>p:last-of-type span {color: #333;letter-spacing: -0.3px;}
+.pop_webtoon_part .webtoon_info .pop_inner>p:last-of-type span::after {content:'';display: inline-block;width: 3px;height: 3px;background: #79bd28;border-radius: 100%;margin-bottom: 5px;margin-left: 2px;}
+.pop_webtoon_part .webtoon_info .pop_inner>p>b {font-family: 'NanumSquareEB';color: #78bc27;}
+.pop_webtoon_part .webtoon_info .pop_inner>p>img {width: 61.5px;margin-top: -15px;}
+.pop_webtoon_part .webtoon_info .pop_inner ul {display: flex;flex-wrap: wrap;justify-content: space-between;margin-top: 5px;}
+.pop_webtoon_part .webtoon_info .pop_inner ul li {display: flex;align-items: center;width: calc(50% - 2.5px);height: 32px;border-radius: 5px;border: 1px solid #dddeda;background: #fff;}
+.pop_webtoon_part .webtoon_info .pop_inner ul li:nth-child(n+3):nth-child(-n+4) {margin-top: 5px;}
+.pop_webtoon_part .webtoon_info .pop_inner ul li .img {width: 18px;height: 18px;flex-shrink: 0;margin: 0 5px;}
+.pop_webtoon_part .webtoon_info .pop_inner ul li p {font-family: 'NanumSquareB';font-size: 11px;color: #333;letter-spacing: -1px;line-height: initial;}
+.pop_webtoon_part .webtoon_info .pop_inner ul li p b{font-family: 'NanumSquareEB';}
+.pop_webtoon_part .webtoon_info .pop_inner ul li:nth-child(1) p b {color: #13bfd6;}
+.pop_webtoon_part .webtoon_info .pop_inner ul li:nth-child(2) p b {color: #ffb412;}
+.pop_webtoon_part .webtoon_info .pop_inner ul li:nth-child(3) p b {color: #79bd28;}
+.pop_webtoon_part .webtoon_info .pop_inner ul li:nth-child(4) p b {color: #fc647e;}
+.pop_webtoon_part .webtoon_info .pop_inner ul+p {margin-top: 10px;}
+.pop_webtoon_part .webtoon_cont {background: #fff; padding: 20px 0 30px;}
+.pop_webtoon_part .webtoon_cont .select_row {width: 170px;height: 40px;margin-bottom: 5px;}
+.pop_webtoon_part .webtoon_cont .slick-dots {position: initial;margin-top: 10px;}
+.pop_webtoon_part .webtoon_cont .slick-dots li {width: 16px;height: 16px;margin: 0 7.5px;}
+.pop_webtoon_part .webtoon_cont .slick-dots li button {width: 16px;height: 16px;}
+.pop_webtoon_part .webtoon_cont .slick-dots li button:before {border: 4px solid #cfcfcf;}
+.pop_webtoon_part .webtoon_cont .slick-dots li.slick-active button:before {border: 4px solid #79bd28;}
+.pop_webtoon_part .webtoon_cont .webtoon_slider_join {/* display: none; */ width: calc(100% + 30px); margin-left: -15px; }
+.pop_webtoon_part .webtoon_cont .webtoon_slider_join .webtoon_img {width: 100vw; padding: 0 4px; }

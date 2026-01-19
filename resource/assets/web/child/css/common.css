@@ -353,7 +353,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 .pop_info .pop_con .pop_txt {padding-top: 15px;font-size: 12px;line-height: 1.2;color: #999;text-align: center;font-weight: 400;}
 .pop_info .pop_con .check_box {width: 100%;padding: 20px 0;display: flex; align-items: center;}
 .pop_info .pop_con .check_box label {font-size: 13px;margin-left: 5px;}
-.pop_info .pop_con .check_box .ag_pop {display: inline-block;width: 8px;height: 11px;background: url(../images/common/arrow_g_right.png)no-repeat;background-size: contain;font-size: 0;text-indent: 9999px;margin-left: 10px;}
+.pop_info .pop_con .check_box .ag_pop {display: inline-block;width: 8px;height: 11px;background: url(../images/common/arrow_g_right.png) no-repeat;background-size: contain;font-size: 0;text-indent: 9999px;margin-left: 10px;}
 .pop_info .pop_con .pop_txt02 {padding-top: 20px;font-size: 13px;line-height: 1.2;color: #333;text-align: center;font-weight: 400;}
 .pop_info .pop_con .btn_box {margin-top: 20px;}
 .pop_info .pop_con .grysml {font-family: 'NanumSquareR';font-size: 10px;font-weight: normal;color: #999;letter-spacing: -.5px;text-align: center;line-height: 1.5;}
@@ -392,7 +392,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
 .pop_info .tLeft {text-align: left;}
 .pop_info .gray_txt_list li {display: flex;align-items: center;}
 .pop_info .gray_txt_list dt {flex-shrink: 0;border-radius: 10px;padding: 0 8px;background: #e8e8e8;font-family: 'NanumSquareB';font-size: 10px;color: #222;text-align: center;line-height: 20px;margin-right: 5px;}
-.pop_info .gray_txt_list dd {font-size: 11px;font-family: 'NanumSquareR';color: #555;line-height: 1.45;letter-spacing: -1.1px;margin-top: 2.5px;}ㅏ
+.pop_info .gray_txt_list dd {font-size: 11px;font-family: 'NanumSquareR';color: #555;line-height: 1.45;letter-spacing: -1.1px;margin-top: 2.5px;}
 .pop_info .gray_list {position: relative;padding-left: 8px;}
 .pop_info .gray_list::before {content:'';display: block;width: 3px;height: 3px;background: #999;border-radius: 100%;position: absolute;top: 5px;left: 0;}
 .pop_info .gray_list.tcenter::before {position: initial;display: inline-block;vertical-align: middle;}

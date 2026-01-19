@@ -546,9 +546,22 @@ function popupOpen(popConts) {
   var popthis = $(".pop_wrap."+popConts);
   popthis.fadeIn(300);
   $(".wrap_sub, .wrap_main").addClass("not_scroll");
-  popthis.find(".pop_close").click(function(){
-      popthis.fadeOut(300);
-      $(".wrap_sub, .wrap_main").removeClass("not_scroll");
+  popthis.find(".pop_close").off("click").on("click", function () {
+    popthis.fadeOut(300);
+    $(".wrap_sub, .wrap_main").removeClass("not_scroll");
+    // 스크롤 초기화
+    popthis.find('.pop_box').scrollTop(0);
+
+    // 개인정보처리방침 팝업 초기화
+    if (popConts === 'pop_agree02') {
+      // pop_cont 초기화
+      popthis.find('.pop_cont').hide();
+      popthis.find('.pop_cont01').show();
+
+      // selectbox 초기화
+      var select = popthis.find('#privacyPolicy');
+      select.prop('selectedIndex', 0).trigger('change');
+    }
   });
 }
 
